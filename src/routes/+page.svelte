@@ -1,6 +1,7 @@
 <script>
 	import {onMount} from "svelte"
 	import backgroundsList from "$lib/backgrounds.json"
+	import Partners from "$lib/Partners.svelte"
 
 	let formData = $state({
 		name: "",
@@ -46,22 +47,112 @@
 <div class="container">
 	<!-- Main Content Section -->
 	<section class="main-section parallax-section">
-		<img
-			src="/logo.png"
-			alt="Neuro Recursion Institute"
-			class="float-logo"
-		/>
-		<h2>Welcome to the Institute</h2>
-		<p class="lorem-text">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-			ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-			aliquip ex ea commodo consequat. Duis aute irure dolor in
-			reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-			pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-			culpa qui officia deserunt mollit anim id est laborum.
+		<h2>About the Neuro Recursion Institute</h2>
+		<p>
+			<img
+				src="/logo.png"
+				alt="Neuro Recursion Institute"
+				class="float-logo"
+			/>
+			The Neuro Recursion Institute (NRI) provides a specialized clinical approach
+			to managing the neurological feedback loops that drive chronic anxiety
+			and motor urgency in neurodivergent populations. At the core of many
+			neurodivergent conditions, such as, but not limited to Tourette Syndrome,
+			Stuttering, ADHD, OCD, and many phobias is a phenomenon of pathological
+			signaling within the Cortico-Striato-Thalamo-Cortical (CSTC) circuits.
+			When these inhibitory filters fail, a "premonitory urge" triggers a recursive
+			loop where the brain's output constantly re-feeds as a new, amplified
+			input. Our protocol focuses on interrupting these self-perpetuating cycles,
+			providing patients with a neurological "off-ramp" that de-escalates the
+			recursive activity before it manifests as a physical tic or a panic response.
 		</p>
+
+		<p>
+			Research indicates that neurodivergence often involves a distinct
+			processing of dopamine and sensory information within the basal
+			ganglia, leading to what is frequently described as a state of
+			"hyper-arousal." This heightened state of recursive anxiety not only
+			increases the frequency of symptoms but also their intensity, as the
+			limbic system becomes trapped in a persistent threat-detection mode.
+			By leveraging targeted neuroplasticity, the NRI method aims to
+			strengthen the brain’s natural lateral inhibition. This process
+			effectively "rewires" the pathway, decreasing the signal-to-noise
+			ratio in the brain and allowing the nervous system to return to a
+			state of homeostasis.
+		</p>
+
+		<p>
+			The efficacy of this approach is grounded in translational
+			neuroscience and the study of re-entrant signaling. Peer-reviewed
+			studies on non-invasive neuromodulation and habit reversal have
+			shown that focused, high-state interventions can significantly
+			reduce symptom severity by disrupting dysfunctional loops between
+			the amygdala and the motor cortex. By participating in our research,
+			patients contribute to a growing body of evidence that
+			neurodivergent symptoms are not static; rather, they are dynamic
+			processes that can be modulated through precise, evidence-based
+			neuroplastic training.
+		</p>
+		<p>
+			We are currently enrolling patients for our clinical trial. If you
+			or someone you know could benefit from our research, please contact
+			us to learn more about eligibility and how to participate.
+		</p>
+		<p class="button-container">
+			<button class="submit-btn">Sign up</button>
+		</p>
+
+		<div class="references">
+			<h3>Scientific References</h3>
+			<p>
+				Our work is grounded in the pioneering research and
+				computational models developed by the world’s leading
+				neurological institutions.
+			</p>
+			<ul>
+				<li>
+					<strong>University of California, Berkeley</strong> - Helen Wills
+					Neuroscience Institute and Department of Neurobiology; local
+					research leaders in computational neuroscience, neuroplasticity,
+					and circuit-level investigation of motor control and learning
+				</li>
+				<li>
+					<strong>MIT</strong> - Brain and Cognitive Sciences Division
+					and McGovern Institute for Brain Research; pioneering work in
+					neuroplasticity and neuromodulation
+				</li>
+				<li>
+					<strong>Stanford University</strong> - Department of Neurobiology;
+					leading research on neural circuits, habit formation, and therapeutic
+					neurotechnology
+				</li>
+				<li>
+					<strong>University of Cambridge</strong> - Department of Psychology;
+					advanced research in neurodevelopmental disorders and cognitive
+					neuroscience
+				</li>
+				<li>
+					<strong>Max Planck Institute for Brain Research</strong> (Frankfurt,
+					Germany) - Cutting-edge neurobiological research on brain connectivity
+					and learning mechanisms
+				</li>
+				<li>
+					<strong>ETH Zurich</strong> (Switzerland) - Institute for Neuroinformatics
+					and Brain Research Institute; world-leading research in computational
+					neuroscience, neural circuits, and neuromorphic systems relevant
+					to understanding recursive neural dynamics
+				</li>
+				<li>
+					<strong>University of Tokyo</strong> - Institute of Medical Science;
+					pioneering non-invasive neuromodulation and brain-computer interface
+					research
+				</li>
+			</ul>
+		</div>
 	</section>
+
+	<!-- Partners Section -->
+	<Partners />
 
 	<!-- Skeleton Loader -->
 	<section class="main-section">
@@ -223,10 +314,10 @@
 			#1a2447 50%,
 			#0f1829 100%
 		);
-		color: #e0e0e0;
+		color: #f0f0f0;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 			"Helvetica Neue", Arial, sans-serif;
-		line-height: 1.6;
+		line-height: 1.8;
 	}
 
 	.container {
@@ -243,20 +334,29 @@
 		border-radius: 8px;
 		position: relative;
 	}
+	.main-section p {
+		margin-top: 0.75rem;
+		margin-bottom: 0.75rem;
+		color: #e8e8e8;
+		font-size: 1.02rem;
+		line-height: 1.75;
+	}
 
 	.main-section.parallax-section {
-		padding: 4rem 2rem;
+		padding: 6rem 2rem;
 		background-attachment: fixed;
-		background-position: center;
+		background-position: center top;
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-color: rgba(10, 14, 39, 0.88);
-		background-blend-mode: overlay;
+		background-color: rgba(10, 14, 39, 0.85);
+		background-blend-mode: multiply;
 		border-left: none;
 		margin-left: calc(-50vw + 50%);
 		margin-right: calc(-50vw + 50%);
 		margin-bottom: 4rem;
 		width: 100vw;
+		min-height: 60vh;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
 	.main-section.parallax-section > * {
@@ -280,10 +380,53 @@
 		margin-top: 0;
 	}
 
+	h3 {
+		color: #4a9fd8;
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.references {
+		padding: 1.5rem;
+		background: rgba(20, 40, 80, 0.3);
+		border-left: 4px solid #4a9fd8;
+		border-radius: 6px;
+		margin-top: 2rem;
+	}
+
+	.references h3 {
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+	}
+
+	.references ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.references li {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+		position: relative;
+		line-height: 1.7;
+		color: #e8e8e8;
+		font-size: 0.98rem;
+	}
+
+	.references li:before {
+		content: "◆";
+		position: absolute;
+		left: 0;
+		color: #4a9fd8;
+		font-size: 0.8rem;
+	}
+
 	.lorem-text {
-		color: #d0d0d0;
+		color: #e8e8e8;
 		line-height: 1.8;
 		margin-bottom: 1.5rem;
+		font-size: 1.02rem;
 	}
 
 	.skeleton {
@@ -316,21 +459,56 @@
 		background: #333;
 	}
 
+	button {
+		transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	button:active {
+		transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	button:focus-visible {
+		outline: 2px solid #4a9fd8;
+		outline-offset: 2px;
+	}
+
+	.button-container {
+		text-align: center;
+		margin: 1.5rem 0;
+	}
+
 	.toggle-skeleton {
 		background: #4a9fd8;
 		color: white;
 		border: none;
 		padding: 0.75rem 1.5rem;
-		border-radius: 6px;
+		border-radius: 4px;
 		cursor: pointer;
-		font-size: 1rem;
+		font-size: 0.95rem;
 		margin-bottom: 1rem;
-		transition: all 0.3s ease;
+		box-shadow:
+			0 2px 4px rgba(0, 0, 0, 0.2),
+			0 4px 8px rgba(74, 159, 216, 0.15);
 	}
 
 	.toggle-skeleton:hover {
 		background: #2b7bc8;
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
+		box-shadow:
+			0 4px 8px rgba(0, 0, 0, 0.25),
+			0 8px 16px rgba(74, 159, 216, 0.35);
+		transform: translateY(-2px);
+	}
+
+	.toggle-skeleton:active {
+		box-shadow:
+			0 1px 3px rgba(0, 0, 0, 0.2),
+			0 2px 4px rgba(74, 159, 216, 0.15);
+		transform: translateY(0);
 	}
 
 	.form-section {
@@ -383,18 +561,28 @@
 		color: white;
 		border: none;
 		padding: 0.875rem 2rem;
-		border-radius: 6px;
+		border-radius: 4px;
 		cursor: pointer;
-		font-size: 1rem;
+		font-size: 0.95rem;
 		font-weight: 600;
-		transition: all 0.3s ease;
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.2);
+		box-shadow:
+			0 2px 4px rgba(0, 0, 0, 0.2),
+			0 4px 8px rgba(74, 159, 216, 0.15);
 	}
 
 	.submit-btn:hover {
 		background: #2b7bc8;
-		box-shadow: 0 6px 20px rgba(74, 159, 216, 0.4);
+		box-shadow:
+			0 4px 8px rgba(0, 0, 0, 0.25),
+			0 12px 24px rgba(74, 159, 216, 0.35);
 		transform: translateY(-2px);
+	}
+
+	.submit-btn:active {
+		box-shadow:
+			0 1px 3px rgba(0, 0, 0, 0.2),
+			0 2px 4px rgba(74, 159, 216, 0.15);
+		transform: translateY(0);
 	}
 
 	.alerts-grid {
@@ -455,8 +643,9 @@
 	}
 
 	.alert-message {
-		color: #d0d0d0;
-		font-size: 0.95rem;
+		color: #e8e8e8;
+		font-size: 1rem;
+		line-height: 1.7;
 	}
 
 	.status {
@@ -511,8 +700,9 @@
 	}
 
 	.card p {
-		color: #c0c0c0;
-		font-size: 0.95rem;
+		color: #e0e0e0;
+		font-size: 1rem;
+		line-height: 1.7;
 	}
 
 	@media (max-width: 799px) {
@@ -548,7 +738,7 @@
 	.float-logo {
 		float: left;
 		margin: 0 1.5rem 1rem 0;
-		max-width: 150px;
+		width: 25%;
 		height: auto;
 		border-radius: 8px;
 		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
