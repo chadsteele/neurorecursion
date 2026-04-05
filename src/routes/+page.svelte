@@ -54,17 +54,17 @@
 				alt="Neuro Recursion Institute"
 				class="float-logo"
 			/>
-			The Neuro Recursion Institute (NRI) provides a specialized clinical approach
-			to managing the neurological feedback loops that drive chronic anxiety
-			and motor urgency in neurodivergent populations. At the core of many
-			neurodivergent conditions, such as, but not limited to Tourette Syndrome,
-			Stuttering, ADHD, OCD, and many phobias is a phenomenon of pathological
-			signaling within the Cortico-Striato-Thalamo-Cortical (CSTC) circuits.
-			When these inhibitory filters fail, a "premonitory urge" triggers a recursive
-			loop where the brain's output constantly re-feeds as a new, amplified
-			input. Our protocol focuses on interrupting these self-perpetuating cycles,
-			providing patients with a neurological "off-ramp" that de-escalates the
-			recursive activity before it manifests as a physical tic or a panic response.
+			The Neuro Recursion Institute (NRI) studies the neurological feedback
+			loops that drive chronic anxiety and motor urgency in neurodivergent
+			populations. At the core of many neurodivergent conditions, such as,
+			but not limited to Tourette Syndrome, Stuttering, ADHD, OCD, and many
+			phobias is a phenomenon of pathological signaling within the Cortico-Striato-Thalamo-Cortical
+			(CSTC) circuits. When these inhibitory filters fail, a "premonitory urge"
+			triggers a recursive loop where the brain's output constantly re-feeds
+			as a new, amplified input. Our protocol focuses on interrupting these
+			self-perpetuating cycles, providing patients with a neurological "off-ramp"
+			that de-escalates the recursive activity before it manifests as a physical
+			tic or a panic response.
 		</p>
 
 		<p>
@@ -105,7 +105,7 @@
 		<div class="references">
 			<h3>Scientific References</h3>
 			<p>
-				Our work is grounded in the pioneering research and
+				Our work is grounded in the pioneering research and cognitive
 				computational models developed by the world’s leading
 				neurological institutions.
 			</p>
@@ -155,7 +155,7 @@
 	<Partners />
 
 	<!-- Skeleton Loader -->
-	<section class="main-section">
+	<!-- <section class="main-section">
 		<h2>Data Loading Example</h2>
 		<button class="toggle-skeleton" onclick={toggleSkeleton}>
 			{showSkeleton ? "Hide" : "Show"} Skeleton
@@ -165,7 +165,7 @@
 		{:else}
 			<div class="skeleton disabled"></div>
 		{/if}
-	</section>
+	</section> -->
 
 	<!-- Form Section -->
 	<section class="main-section parallax-section">

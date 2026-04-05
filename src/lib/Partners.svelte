@@ -3,28 +3,92 @@
 
 	const ngos = [
 		{
-			href: "https://tourette.org/",
-			imageSrc: "/partners/TouretteLogo.svg",
-			imageAlt: "Tourette Association of America Logo",
-			name: "Tourette Association of America (TAA)",
-			description:
-				"The premier global organization dedicated to making life better for all people affected by Tourette Syndrome and Tic Disorders through research, advocacy, and support.",
-		},
-		{
 			href: "https://www.autismspeaks.org/",
 			imageSrc: "/partners/autismspeaks.png",
 			imageAlt: "Autism Speaks Logo",
 			name: "Autism Speaks",
 			description:
-				"A global leader in promoting solutions for the needs of individuals with autism and their families through advocacy and support across the lifespan.",
+				"The world's largest autism advocacy organization, focusing on research and global awareness.",
 		},
 		{
 			href: "https://chadd.org/",
 			imageSrc: "/partners/chadd.png",
 			imageAlt: "CHADD Logo",
-			name: "CHADD",
+			name: "CHADD (Children and Adults with ADHD)",
 			description:
-				"The leading non-profit organization serving people affected by ADHD, providing evidence-based information and support for children and adults.",
+				"The leading non-profit providing evidence-based training and advocacy for the ADHD community.",
+		},
+		{
+			href: "https://tourette.org/",
+			imageSrc: "/partners/TouretteLogo.svg",
+			imageAlt: "Tourette Association of America Logo",
+			name: "Tourette Association of America (TAA)",
+			description:
+				"The premier global entity for research into the CSTC loops and clinical support for tic disorders.",
+		},
+		{
+			href: "https://iocdf.org/",
+			imageSrc: "/partners/international-ocd-foundation.webp",
+			imageAlt: "International OCD Foundation Logo",
+			name: "International OCD Foundation (IOCDF)",
+			description:
+				"A global donor-supported organization dedicated to helping those with OCD and related disorders.",
+		},
+		{
+			href: "https://ibpf.org/",
+			imageSrc: "/partners/ibf.png",
+			imageAlt: "International Bipolar Foundation Logo",
+			name: "International Bipolar Foundation (IBPF)",
+			description:
+				"Focuses on global outreach and providing free resources to those living with bipolar disorder.",
+		},
+		{
+			href: "https://www.dbsalliance.org/",
+			imageSrc: "/partners/dbsa.png",
+			imageAlt: "DBSA Logo",
+			name: "Depression and Bipolar Support Alliance (DBSA)",
+			description:
+				"A peer-led organization providing support groups and clinical information for mood disorders.",
+		},
+		{
+			href: "https://westutter.org/",
+			imageSrc: "/partners/westutter.avif",
+			imageAlt: "National Stuttering Association Logo",
+			name: "National Stuttering Association (NSA)",
+			description:
+				"The world's largest support organization for people who stutter.",
+		},
+		{
+			href: "https://adaa.org/",
+			imageSrc: "/partners/adda.png",
+			imageAlt: "ADAA Logo",
+			name: "Anxiety and Depression Association of America (ADAA)",
+			description:
+				"Focuses on the prevention and treatment of anxiety, phobias, and related disorders.",
+		},
+		{
+			href: "https://wfad.se/",
+			imageSrc: "/partners/WFAD_logo.jpg",
+			imageAlt: "World Federation Against Drugs Logo",
+			name: "World Federation Against Drugs (WFAD)",
+			description:
+				"A multilateral umbrella organization for NGOs working on drug prevention and recovery.",
+		},
+		{
+			href: "https://dyspraxiafoundation.co.uk/",
+			imageSrc: "/partners/dyspraxia.png",
+			imageAlt: "Dyspraxia Foundation Logo",
+			name: "Dyspraxia Foundation (UK)",
+			description:
+				"The leading international resource for Developmental Coordination Disorder research and support.",
+		},
+		{
+			href: "https://www.dyscalculia.me.uk/",
+			imageSrc: "/partners/dyscalculia.png",
+			imageAlt: "Dyscalculia Association Logo",
+			name: "The Dyscalculia Association",
+			description:
+				"Provides specialized research and teacher training for numerical processing disorders.",
 		},
 		{
 			href: "https://dyslexiaida.org/",
@@ -32,54 +96,32 @@
 			imageAlt: "IDA Logo",
 			name: "International Dyslexia Association (IDA)",
 			description:
-				"Dedicated to helping individuals who struggle with dyslexia and other related reading differences through research-based literacy programs.",
+				"The oldest organization dedicated to the study and treatment of dyslexia worldwide.",
 		},
 		{
-			href: "https://www.autism.org.uk/",
-			imageSrc: "/partners/nas.png",
-			imageAlt: "National Autistic Society Logo",
-			name: "National Autistic Society (UK)",
+			href: "https://sensoryhealth.org/",
+			imageSrc: "/partners/star.png",
+			imageAlt: "STAR Institute Logo",
+			name: "STAR Institute for Sensory Processing",
 			description:
-				"The UK's leading charity for autistic people and their families, providing specialist education, care, and employment support services.",
+				"The premier global center for SPD research, treatment, and education.",
 		},
+
 		{
-			href: "https://add.org/",
-			imageSrc: "/partners/adda.png",
-			imageAlt: "ADDA Logo",
-			name: "Attention Deficit Disorder Association (ADDA)",
+			href: "https://www.pdasociety.org.uk/",
+			imageSrc: "/partners/pda.avif",
+			imageAlt: "PDA Society Logo",
+			name: "PDA Society",
 			description:
-				"The world's largest organization specifically dedicated to helping adults with ADHD lead better lives through education and community.",
+				"The primary global organization defining and advocating for the PDA profile of autism.",
 		},
 		{
-			href: "https://www.bdadyslexia.org.uk/",
-			imageSrc: "/partners/britishdyslexia.png",
-			imageAlt: "BDA Logo",
-			name: "British Dyslexia Association (BDA)",
+			href: "https://world-gifted.org/",
+			imageSrc: "/partners/world-gifted.png",
+			imageAlt: "World Council for Gifted and Talented Children Logo",
+			name: "World Council for Gifted and Talented Children (WCGTC)",
 			description:
-				"Campaigns for a dyslexia-friendly society where every person with dyslexia has the opportunity to reach their full potential.",
-		},
-		{
-			href: "https://www.autismeurope.org/",
-			imageSrc: "/partners/autismeurope.png",
-			imageAlt: "Autism-Europe Logo",
-			name: "Autism-Europe",
-			description:
-				"An international association whose main objective is to advance the rights of autistic people and their families across Europe.",
-		},
-		{
-			href: "https://ldaamerica.org/",
-			imageSrc: "/partners/ldaa.png",
-			imageAlt: "LDA Logo",
-			name: "Learning Disabilities Association of America (LDA)",
-			description:
-				"Provides support to people with learning disabilities, their parents, teachers, and other professionals through advocacy and education.",
-		},
-		{
-			href: "https://www.westutter.org/",
-			imageSrc: "/partners/westutter.avif",
-			imageAlt: "National Stuttering Association Logo",
-			name: "National Stuttering Association (NSA)",
-			description: `79 Million People Stutter Worldwide <br/>The National Stuttering Association believes in a more accepting and understanding world for people who stutter.`,
+				"A worldwide network that supports research and educational policies for gifted individuals.",
 		},
 	]
 </script>

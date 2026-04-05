@@ -25,6 +25,7 @@
 	<img src={imageSrc} alt={imageAlt} />
 	<h3>{name}</h3>
 	<p>{@html description}</p>
+	<a {href}>{href}</a>
 </div>
 
 <style>
