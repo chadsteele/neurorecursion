@@ -1,0 +1,468 @@
+<script>
+	import Consent from "$lib/Consent.js"
+	import {onMount} from "svelte"
+
+	let formData = $state({
+		signupData: {
+			name: "",
+			email: "",
+			message: "",
+			conditions: {},
+		},
+		consent: {},
+		signature: {
+			fullName: "",
+			birthdate: "",
+		},
+	})
+
+	let errors = $state({
+		consent: "",
+		signature: "",
+	})
+
+	let touched = $state({
+		consent: false,
+		signature: false,
+	})
+
+	onMount(() => {
+		// Load signup form data from localStorage
+		const savedData = localStorage.getItem("signupFormData")
+		if (savedData) {
+			try {
+				const parsed = JSON.parse(savedData)
+				formData.signupData = parsed
+				// Pre-fill signature name if available
+				if (parsed.name) {
+					formData.signature.fullName = parsed.name
+				}
+			} catch (e) {
+				console.error("Failed to parse localStorage data:", e)
+			}
+		}
+	})
+
+	function validateConsent() {
+		const allAgreed = Consent.every(
+			(agreement) => formData.consent[agreement.id],
+		)
+		if (!allAgreed) {
+			errors.consent = "You must agree to all terms to proceed"
+		} else {
+			errors.consent = ""
+		}
+	}
+
+	function validateSignature() {
+		if (!formData.signature.fullName.trim()) {
+			errors.signature =
+				"Please enter your full name for digital signature"
+		} else if (!formData.signature.birthdate.trim()) {
+			errors.signature = "Please enter your birthdate for digital signature"
+		} else {
+			const birthDate = new Date(formData.signature.birthdate)
+			const today = new Date()
+			let age = today.getFullYear() - birthDate.getFullYear()
+			const monthDiff = today.getMonth() - birthDate.getMonth()
+			if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+				age--
+			}
+			if (age < 18) {
+				errors.signature = "You must be at least 18 years old"
+			} else {
+				errors.signature = ""
+			}
+		}
+	}
+
+	function handleConsentBlur() {
+		touched.consent = true
+		validateConsent()
+	}
+
+	function handleSignatureBlur() {
+		touched.signature = true
+		validateSignature()
+	}
+
+	let submitted = $state(false)
+
+	function handleSubmit(e) {
+		e.preventDefault()
+
+		// Validate all fields
+		touched.consent = true
+		touched.signature = true
+
+		validateConsent()
+		validateSignature()
+
+		// Check if there are any errors
+		if (errors.consent || errors.signature) {
+			return
+		}
+
+		submitted = true
+		// Store complete form data in localStorage
+		localStorage.setItem("consentFormData", JSON.stringify(formData))
+		setTimeout(() => {
+			submitted = false
+		}, 2000)
+	}
+</script>
+
+<section class="paper container">
+	<h2>Consent & Legal Agreements</h2>
+	<p>
+		Please review and accept all agreements below to proceed with the
+		research study.
+	</p>
+
+	{#if formData.signupData.name}
+		<div class="participant-info">
+			<p><strong>Participant Name:</strong> {formData.signupData.name}</p>
+			<p><strong>Email:</strong> {formData.signupData.email}</p>
+		</div>
+	{/if}
+
+	<form onsubmit={handleSubmit} novalidate>
+		<div class="consent-section">
+			<h3 class="consent-section-label">Consent & Legal Agreements</h3>
+			<div class="consent-agreements">
+				{#each Consent as agreement (agreement.id)}
+					<div class="consent-agreement-card">
+						<input
+							type="checkbox"
+							id={`consent-${agreement.id}`}
+							bind:checked={formData.consent[agreement.id]}
+							required
+							onblur={handleConsentBlur}
+							class:error={touched.consent && errors.consent}
+							class="consent-checkbox"
+						/>
+						<div class="consent-agreement-content">
+							<label
+								for={`consent-${agreement.id}`}
+								class="agreement-title"
+							>
+								{agreement.title}
+							</label>
+							<p class="agreement-text">{agreement.text}</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+			{#if touched.consent && errors.consent}
+				<div class="error-message consent-error">
+					<span class="error-icon">⚠</span>
+					{errors.consent}
+				</div>
+			{/if}
+		</div>
+
+		<div class="signature-section">
+			<h3 class="signature-section-label">Digital Signature</h3>
+			<p class="signature-instructions">
+				To complete your agreement, please enter your full name and birthdate
+				below as your digital signature.
+			</p>
+			<div class="signature-grid">
+				<div class="form-group">
+					<label for="signature-name">Full Name</label>
+					<div class="input-wrapper">
+						<input
+							type="text"
+							id="signature-name"
+							bind:value={formData.signature.fullName}
+							placeholder="Enter your full name"
+							required
+							onblur={handleSignatureBlur}
+							class:error={touched.signature && errors.signature}
+						/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="signature-birthdate">Birthdate</label>
+					<div class="input-wrapper">
+						<input
+							type="date"
+							id="signature-birthdate"
+							bind:value={formData.signature.birthdate}
+							required
+							onblur={handleSignatureBlur}
+							class:error={touched.signature && errors.signature}
+						/>
+					</div>
+				</div>
+			</div>
+			{#if touched.signature && errors.signature}
+				<div class="error-message signature-error">
+					<span class="error-icon">⚠</span>
+					{errors.signature}
+				</div>
+			{/if}
+		</div>
+
+		<button type="submit" class="submit-button">Accept Agreement</button>
+
+		{#if submitted}
+			<div class="status status-good">
+				✓ Consent submitted successfully!
+			</div>
+		{/if}
+	</form>
+</section>
+
+<style>
+	h2 {
+		color: #4a9fd8;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+		margin-top: 0;
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+		color: #a0d8ff;
+		font-weight: 500;
+	}
+
+	.input-wrapper {
+		position: relative;
+	}
+
+	input {
+		width: 100%;
+		padding: 0.75rem;
+		background: #1a2447;
+		border: 2px solid #2b3a54;
+		color: #e0e0e0;
+		border-radius: 6px;
+		font-size: 1rem;
+		font-family: inherit;
+		transition: all 0.3s ease;
+	}
+
+	input.error {
+		border-color: #ff6b6b;
+		background: rgba(255, 107, 107, 0.05);
+	}
+
+	input:focus {
+		outline: none;
+		border-color: #4a9fd8;
+		box-shadow: 0 0 0 3px rgba(74, 159, 216, 0.2);
+		background: #202844;
+	}
+
+	input.error:focus {
+		border-color: #ff6b6b;
+		box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+		background: #202844;
+	}
+
+	.error-message {
+		position: absolute;
+		bottom: -1.75rem;
+		left: 0;
+		color: #ff6b6b;
+		font-size: 0.85rem;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 0.375rem;
+	}
+
+	.error-icon {
+		font-size: 1rem;
+	}
+
+	.status {
+		display: inline-block;
+		padding: 0.25rem 0.75rem;
+		border-radius: 4px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		margin-top: 0.5rem;
+	}
+
+	.status-good {
+		background: #22c55e;
+		color: white;
+	}
+
+	.consent-section {
+		margin-bottom: 1.5rem;
+		margin-top: 2rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(74, 159, 216, 0.2);
+	}
+
+	.consent-section-label {
+		display: block;
+		margin-bottom: 1.5rem;
+		color: #a0d8ff;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.consent-agreements {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.consent-agreement-card {
+		display: flex;
+		gap: 0.75rem;
+		align-items: flex-start;
+		padding: 1rem;
+		background: rgba(26, 36, 71, 0.8);
+		border: 2px solid rgba(74, 159, 216, 0.2);
+		border-radius: 6px;
+		transition: all 0.3s ease;
+	}
+
+	.consent-agreement-card:hover {
+		background: rgba(26, 36, 71, 1);
+		border-color: rgba(74, 159, 216, 0.5);
+		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.15);
+	}
+
+	.consent-agreement-card:has(.consent-checkbox:checked) {
+		background: rgba(74, 159, 216, 0.15);
+		border-color: rgba(74, 159, 216, 0.6);
+	}
+
+	.consent-agreement-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		flex: 1;
+	}
+
+	.agreement-title {
+		color: #a0d8ff;
+		font-weight: 600;
+		cursor: pointer;
+		margin: 0;
+		display: block;
+	}
+
+	.agreement-text {
+		color: #d0d0d0;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.consent-checkbox {
+		min-width: 20px;
+		width: 20px;
+		height: 20px;
+		margin-top: 0.25rem;
+		cursor: pointer;
+		accent-color: #4a9fd8;
+		flex-shrink: 0;
+		transition: all 0.3s ease;
+	}
+
+	.consent-checkbox.error {
+		accent-color: #4a9fd8;
+	}
+
+	.consent-error {
+		position: static;
+		margin-top: 0.5rem;
+	}
+
+	.signature-section {
+		margin-bottom: 1.5rem;
+		margin-top: 2rem;
+		padding: 1.5rem;
+		background: rgba(74, 159, 216, 0.08);
+		border: 2px solid rgba(74, 159, 216, 0.3);
+		border-radius: 6px;
+	}
+
+	.signature-section-label {
+		display: block;
+		margin-bottom: 0.75rem;
+		color: #a0d8ff;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.signature-instructions {
+		color: #d0d0d0;
+		font-size: 0.95rem;
+		margin: 0 0 1rem 0;
+		line-height: 1.5;
+	}
+
+	.signature-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.signature-grid .form-group {
+		margin-bottom: 0;
+	}
+
+	.signature-error {
+		position: static;
+		margin-top: 0.5rem;
+	}
+
+	.submit-button {
+		background: linear-gradient(135deg, #4a9fd8, #2e7caf);
+		color: white;
+		border: none;
+		padding: 0.75rem 2rem;
+		border-radius: 6px;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.submit-button:hover {
+		background: linear-gradient(135deg, #5aafed, #3d8bc4);
+		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
+		transform: translateY(-2px);
+	}
+
+	.submit-button:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 6px rgba(74, 159, 216, 0.2);
+	}
+
+	.participant-info {
+		background: rgba(74, 159, 216, 0.08);
+		border: 2px solid rgba(74, 159, 216, 0.3);
+		border-radius: 6px;
+		padding: 1rem 1.5rem;
+		margin: 1.5rem 0;
+	}
+
+	.participant-info p {
+		color: #d0d0d0;
+		font-size: 0.95rem;
+		margin: 0.5rem 0;
+		line-height: 1.5;
+	}
+
+	.participant-info strong {
+		color: #a0d8ff;
+		font-weight: 600;
+	}
+</style>

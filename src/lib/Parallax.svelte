@@ -1,19 +1,26 @@
 <script>
 	let {background, children} = $props()
 
-	const bgValue =
-		background.startsWith("url") ||
-		background.startsWith("http") ||
-		background.includes(".")
-			? `url('${background}')`
-			: background
+	const bgValue = $derived(
+		background
+			? background.startsWith("url") ||
+				background.startsWith("http") ||
+				background.includes(".")
+				? `url('${background}')`
+				: background
+			: null,
+	)
 </script>
 
-<div class="parallax-container" style="--background: {bgValue};">
-	<div class="parallax-content">
-		{@render children?.()}
+{#if background}
+	<div class="parallax-container" style="--background: {bgValue};">
+		<div class="parallax-content">
+			{@render children?.()}
+		</div>
 	</div>
-</div>
+{:else}
+	{@render children?.()}
+{/if}
 
 <style>
 	@keyframes kenBurns {
@@ -36,6 +43,7 @@
 		background: var(--background) center / cover no-repeat;
 		background-attachment: fixed;
 		animation: kenBurns 60s ease-in-out infinite;
+		filter: blue(1.2) grayscale(0.5) brightness(0.8);
 	}
 
 	.parallax-content {

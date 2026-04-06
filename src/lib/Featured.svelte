@@ -1,29 +1,28 @@
+<script>
+	import Conditions from "./Conditions.js"
+</script>
+
 <section class="main-section">
-	<h2>Featured Sections</h2>
+	<h2>Conditions & Anxiety-Triggered Manifestations</h2>
 	<div class="grid-section">
-		<div class="card">
-			<h3>Research</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua.
-			</p>
-		</div>
-
-		<div class="card">
-			<h3>Innovation</h3>
-			<p>
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-
-		<div class="card">
-			<h3>Education</h3>
-			<p>
-				Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur excepteur.
-			</p>
-		</div>
+		{#each Conditions as condition (condition.name)}
+			<div class="card">
+				<h3>{condition.name}</h3>
+				<p>{condition.description}</p>
+				<div class="card-links">
+					<a
+						href={condition.ngo_url}
+						target="_blank"
+						rel="noopener noreferrer">Support Organization</a
+					>
+					<a
+						href={condition.scientific_reference}
+						target="_blank"
+						rel="noopener noreferrer">Research</a
+					>
+				</div>
+			</div>
+		{/each}
 	</div>
 </section>
 
@@ -61,6 +60,28 @@
 		color: #d0d0d0;
 		font-size: 0.95rem;
 		line-height: 1.6;
-		margin: 0;
+		margin: 0 0 1rem 0;
+	}
+
+	.card-links {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.card-links a {
+		color: #4a9fd8;
+		text-decoration: none;
+		font-size: 0.9rem;
+		border: 1px solid rgba(74, 159, 216, 0.4);
+		padding: 0.5rem 0.75rem;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+	}
+
+	.card-links a:hover {
+		background: rgba(74, 159, 216, 0.15);
+		border-color: rgba(74, 159, 216, 0.8);
+		color: #6ab5e8;
 	}
 </style>

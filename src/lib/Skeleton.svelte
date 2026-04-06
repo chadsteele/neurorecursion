@@ -12,11 +12,11 @@
 		{isVisible ? "Hide" : "Show"} Skeleton
 	</button>
 	{#if isVisible}
-		<div class="skeleton {customClass}" style="height: {height}px;" />
+		<div class="skeleton {customClass}" style="height: {height}px;"></div>
 	{:else}
 		<div
 			class="skeleton disabled {customClass}"
 			style="height: {height}px;"
-		/>
+		></div>
 	{/if}
 </div>
