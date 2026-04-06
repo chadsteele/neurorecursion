@@ -1,4 +1,8 @@
-<section class="main-section">
+<script>
+	let {...props} = $props()
+</script>
+
+<section {...props}>
 	<div class="references">
 		<h3>Scientific References</h3>
 		<p>

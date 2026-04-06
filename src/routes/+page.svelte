@@ -9,16 +9,16 @@
 	import Parallax from "$lib/Parallax.svelte"
 </script>
 
-<div class="container">
-	<Parallax background="/backgrounds/children.jpg">
-		<Intro class="paper container" />
-	</Parallax>
-	<References />
-	<SignUp />
-	<Partners />
-	<Alert />
-	<Featured />
-</div>
+<Parallax background="/backgrounds/children.jpg">
+	<Intro class="paper container" />
+
+	<References class="paper container" />
+</Parallax>
+
+<SignUp class="paper container" />
+<Partners class="paper container" />
+<Alert class="paper container" />
+<Featured class="paper container" />
 
 <style>
 </style>

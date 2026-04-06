@@ -124,9 +124,11 @@
 				"A worldwide network that supports research and educational policies for gifted individuals.",
 		},
 	]
+
+	let {...props} = $props()
 </script>
 
-<section class="partners-section parallax-section">
+<section {...props}>
 	<h2>Neuro Recursion Resources and Partners</h2>
 	<p>
 		The Neuro Recursion Institute supports the world's leading

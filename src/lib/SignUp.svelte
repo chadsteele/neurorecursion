@@ -14,9 +14,11 @@
 			submitted = false
 		}, 2000)
 	}
+
+	let {...props} = $props()
 </script>
 
-<section class="main-section">
+<section {...props}>
 	<h2>Contact Form</h2>
 	<form onsubmit={handleSubmit}>
 		<div class="form-group">

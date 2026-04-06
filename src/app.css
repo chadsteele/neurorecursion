@@ -13,12 +13,21 @@ body {
 	line-height: 1.8;
 }
 
-section.paper {
-	margin-bottom: 4rem;
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
 	padding: 2rem;
+}
+
+.paper {
 	background: rgba(70, 70, 90, 0.9);
 	border-radius: 8px;
 	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	padding: 2rem;
 }
 
 section p {
@@ -184,12 +193,6 @@ section > form {
 .skeleton.disabled {
 	animation: none;
 	background: #333;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 2rem;
 }
 
 @media (max-width: 799px) {
