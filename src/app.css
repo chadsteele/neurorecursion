@@ -8,6 +8,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+div[id] {
+	margin-bottom: 100px;
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;

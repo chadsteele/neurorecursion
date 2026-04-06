@@ -125,14 +125,9 @@
 		neuroplastic training.
 	</p>
 	<p>
-		While your participation is appreciated, it is important to understand
-		that individual results may vary and are influenced by a variety of
-		factors, including the specific nature of your condition and your
-		engagement with the protocol. We, the NRI nor any agents we represent,
-		are not liable for any outcomes or consequences resulting from your
-		participation.
+		If you or someone you know could benefit from our research, please
+		contact us to learn more about eligibility and how to participate.
 	</p>
-
 	<p></p>
 	<p></p>
 	<form method="POST" onsubmit={() => validateBeforeSubmit()}>

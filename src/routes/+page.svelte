@@ -27,12 +27,14 @@
 </script>
 
 <Parallax background="/backgrounds/children.jpg">
+	<div id="about"></div>
 	<Intro class="paper container" />
 	<References class="paper container" />
 </Parallax>
 
 <SignUp class="paper container" />
 
+<div id="trials"></div>
 {#each Conditions as condition (condition.name)}
 	<div id={condition.id}></div>
 	<Parallax background={condition.background_image}>
@@ -70,6 +72,7 @@
 	</Parallax>
 {/each}
 
+<div id="partners"></div>
 <Partners class="paper container" />
 
 <style>

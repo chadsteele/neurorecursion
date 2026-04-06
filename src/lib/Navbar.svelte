@@ -53,16 +53,23 @@
 		<div class="nav-links" class:open={isMenuOpen}>
 			<a href="/#about" class="nav-link">About</a>
 			<a href="/#trials" class="nav-link">Trials</a>
-			<a href="/#contact" class="nav-link">Contact Us</a>
+			<a href="/#partners" class="nav-link">Partners</a>
+			<a href="/#signup" class="nav-link">Sign Up</a>
+			<a href="/#careers" class="nav-link">Careers</a>
 		</div>
 
 		<!-- Right: User Avatar & Menu Toggle -->
 		<div class="nav-right">
-			<div class="user-avatar">
+			<a
+				class="user-avatar"
+				href="/#signup"
+				aria-label="Go to sign up"
+				title="Sign up"
+			>
 				{#if User}
 					<User size={40} strokeWidth={1.5} />
 				{/if}
-			</div>
+			</a>
 		</div>
 	</div>
 </nav>
@@ -193,6 +200,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
 	}
 
 	:global(.user-avatar svg) {
