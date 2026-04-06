@@ -13,7 +13,7 @@ body {
 	line-height: 1.8;
 }
 
-section {
+section.paper {
 	margin-bottom: 4rem;
 	padding: 2rem;
 	background: rgba(70, 70, 90, 0.9);
@@ -64,4 +64,146 @@ section > form {
 		0 1px 3px rgba(0, 0, 0, 0.2),
 		0 2px 4px rgba(74, 159, 216, 0.15);
 	transform: translateY(0);
+}
+
+/* References Component Styles */
+.references h3 {
+	color: #4a9fd8;
+	font-size: 1.3rem;
+	margin: 0 0 1rem 0;
+}
+
+.references p {
+	color: #d0d0d0;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	margin: 0 0 1.5rem 0;
+}
+
+.references ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.references li {
+	color: #b8b8b8;
+	font-size: 0.9rem;
+	line-height: 1.7;
+	margin-bottom: 1rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.references li:before {
+	content: "▪";
+	color: #4a9fd8;
+	position: absolute;
+	left: 0;
+}
+
+.references li strong {
+	color: #e8e8e8;
+}
+
+@media (max-width: 768px) {
+	.references {
+		padding: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.references h3 {
+		font-size: 1.1rem;
+	}
+
+	.references p {
+		font-size: 0.9rem;
+	}
+
+	.references li {
+		font-size: 0.85rem;
+		margin-bottom: 0.8rem;
+	}
+}
+
+/* Skeleton Component Styles */
+.skeleton-container {
+	margin: 1.5rem 0;
+}
+
+.toggle-skeleton {
+	background: #4a9fd8;
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.95rem;
+	margin-bottom: 1rem;
+	box-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.2),
+		0 4px 8px rgba(74, 159, 216, 0.15);
+	transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-skeleton:hover {
+	background: #2b7bc8;
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.25),
+		0 8px 16px rgba(74, 159, 216, 0.35);
+	transform: translateY(-2px);
+}
+
+.toggle-skeleton:active {
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.2),
+		0 2px 4px rgba(74, 159, 216, 0.15);
+	transform: translateY(0);
+}
+
+.skeleton {
+	width: 100%;
+	height: 300px;
+	background: linear-gradient(90deg, #1a2447 0%, #2b3a54 50%, #1a2447 100%);
+	background-size: 200% 100%;
+	animation: shimmer 2s infinite;
+	border-radius: 8px;
+	margin: 2rem 0;
+	border: 2px solid #2b7bc8;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
+}
+
+.skeleton.disabled {
+	animation: none;
+	background: #333;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+@media (max-width: 799px) {
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+}
+
+@media (max-width: 399px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 0.5rem;
+	}
 }
