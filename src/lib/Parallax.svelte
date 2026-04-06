@@ -16,6 +16,18 @@
 </div>
 
 <style>
+	@keyframes kenBurns {
+		0% {
+			background-size: 120%;
+		}
+		50% {
+			background-size: 150%;
+		}
+		100% {
+			background-size: 120%;
+		}
+	}
+
 	.parallax-container {
 		position: relative;
 		width: 100vw;
@@ -23,10 +35,12 @@
 		min-height: 50vh;
 		background: var(--background) center / cover no-repeat;
 		background-attachment: fixed;
+		animation: kenBurns 60s ease-in-out infinite;
 	}
 
 	.parallax-content {
 		position: relative;
 		padding: 3em;
+		z-index: 1;
 	}
 </style>
