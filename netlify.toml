@@ -3,7 +3,7 @@
   publish = ".svelte-kit/netlify"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "22.12.0"
 
 # Redirects for single page app
 [[redirects]]
