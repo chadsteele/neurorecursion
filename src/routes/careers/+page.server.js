@@ -6,7 +6,8 @@ export const actions = {
 			return {success: false}
 		}
 
-		// Redirect to success page with consent as next destination
-		throw redirect(303, "/success?redirectTo=/consent")
+		// Redirect to success page after form submission
+		// Netlify Forms automatically captures the form data
+		throw redirect(303, "/success?redirectTo=/")
 	},
 }

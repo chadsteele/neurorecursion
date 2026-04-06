@@ -55,7 +55,7 @@
 			<a href="/#trials" class="nav-link">Trials</a>
 			<a href="/#partners" class="nav-link">Partners</a>
 			<a href="/#signup" class="nav-link">Sign Up</a>
-			<a href="/#careers" class="nav-link">Join us</a>
+			<a href="/careers" class="nav-link">Join us</a>
 		</div>
 
 		<!-- Right: User Avatar & Menu Toggle -->

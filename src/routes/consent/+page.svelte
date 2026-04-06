@@ -59,13 +59,17 @@
 			errors.signature =
 				"Please enter your full name for digital signature"
 		} else if (!formData.signature.birthdate.trim()) {
-			errors.signature = "Please enter your birthdate for digital signature"
+			errors.signature =
+				"Please enter your birthdate for digital signature"
 		} else {
 			const birthDate = new Date(formData.signature.birthdate)
 			const today = new Date()
 			let age = today.getFullYear() - birthDate.getFullYear()
 			const monthDiff = today.getMonth() - birthDate.getMonth()
-			if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+			if (
+				monthDiff < 0 ||
+				(monthDiff === 0 && today.getDate() < birthDate.getDate())
+			) {
 				age--
 			}
 			if (age < 18) {
@@ -86,11 +90,7 @@
 		validateSignature()
 	}
 
-	let submitted = $state(false)
-
 	function handleSubmit(e) {
-		e.preventDefault()
-
 		// Validate all fields
 		touched.consent = true
 		touched.signature = true
@@ -100,15 +100,11 @@
 
 		// Check if there are any errors
 		if (errors.consent || errors.signature) {
+			e.preventDefault()
 			return
 		}
 
-		submitted = true
-		// Store complete form data in localStorage
-		localStorage.setItem("consentFormData", JSON.stringify(formData))
-		setTimeout(() => {
-			submitted = false
-		}, 2000)
+		// Allow form to submit to Netlify
 	}
 </script>
 
@@ -126,7 +122,9 @@
 		</div>
 	{/if}
 
-	<form onsubmit={handleSubmit} novalidate>
+	<form method="POST" onsubmit={handleSubmit} novalidate>
+		<!-- Hidden field for Netlify Forms -->
+		<input type="hidden" name="form-name" value="consent" />
 		<div class="consent-section">
 			<h3 class="consent-section-label">Consent & Legal Agreements</h3>
 			<div class="consent-agreements">
@@ -135,6 +133,8 @@
 						<input
 							type="checkbox"
 							id={`consent-${agreement.id}`}
+							name="consents"
+							value={agreement.id}
 							bind:checked={formData.consent[agreement.id]}
 							required
 							onblur={handleConsentBlur}
@@ -164,8 +164,8 @@
 		<div class="signature-section">
 			<h3 class="signature-section-label">Digital Signature</h3>
 			<p class="signature-instructions">
-				To complete your agreement, please enter your full name and birthdate
-				below as your digital signature.
+				To complete your agreement, please enter your full name and
+				birthdate below as your digital signature.
 			</p>
 			<div class="signature-grid">
 				<div class="form-group">
@@ -174,6 +174,7 @@
 						<input
 							type="text"
 							id="signature-name"
+							name="signature_full_name"
 							bind:value={formData.signature.fullName}
 							placeholder="Enter your full name"
 							required
@@ -188,6 +189,7 @@
 						<input
 							type="date"
 							id="signature-birthdate"
+							name="signature_birthdate"
 							bind:value={formData.signature.birthdate}
 							required
 							onblur={handleSignatureBlur}
@@ -205,12 +207,6 @@
 		</div>
 
 		<button type="submit" class="submit-button">Accept Agreement</button>
-
-		{#if submitted}
-			<div class="status status-good">
-				✓ Consent submitted successfully!
-			</div>
-		{/if}
 	</form>
 </section>
 

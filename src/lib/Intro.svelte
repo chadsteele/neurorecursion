@@ -63,7 +63,12 @@
 		unnecessary, but available according to your schedule.
 	</p>
 	<p class="button-container">
-		<button class="submit-btn">Sign up</button>
+		<button
+			class="submit-btn"
+			on:click={() => {
+				window.location.hash = "signup"
+			}}>Sign up</button
+		>
 	</p>
 	<p>This could be your breakthrough!</p>
 </section>
@@ -87,16 +92,5 @@
 	.button-container {
 		text-align: center;
 		margin: 1.5rem 0;
-	}
-
-	.float-logo {
-		float: left;
-		margin: 0 1.5rem 1rem 0;
-		width: 25%;
-		height: auto;
-		border-radius: 8px;
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
-		background: white;
-		padding: 8px;
 	}
 </style>

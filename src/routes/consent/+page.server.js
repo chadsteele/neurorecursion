@@ -6,7 +6,7 @@ export const actions = {
 			return {success: false}
 		}
 
-		// Redirect to success page with consent as next destination
-		throw redirect(303, "/success?redirectTo=/consent")
+		// Redirect to success page with home as next destination
+		throw redirect(303, "/success?redirectTo=/")
 	},
 }

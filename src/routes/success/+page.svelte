@@ -1,5 +1,6 @@
 <script>
 	import {goto} from "$app/navigation"
+	import {page} from "$app/stores"
 
 	let countdown = $state(5)
 
@@ -7,7 +8,9 @@
 		const interval = setInterval(() => {
 			countdown--
 			if (countdown === 0) {
-				goto("/consent")
+				const redirectTo =
+					$page.url.searchParams.get("redirectTo") || "/"
+				goto(redirectTo)
 			}
 		}, 1000)
 

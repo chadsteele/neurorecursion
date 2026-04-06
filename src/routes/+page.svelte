@@ -18,11 +18,8 @@
 			checkbox.checked = true
 		}
 
-		// Scroll to the SignUp form
-		const signUpForm = document.getElementById("signup")
-		if (signUpForm) {
-			signUpForm.scrollIntoView({behavior: "smooth", block: "center"})
-		}
+		// Update hash and let browser scroll to it
+		window.location.hash = "signup"
 	}
 </script>
 
