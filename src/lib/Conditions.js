@@ -32,7 +32,7 @@ The neurobiological impact is profound: adverse early experiences lock the devel
 Our research demonstrates that even deeply embedded developmental trauma patterns can be rewired through targeted interventions that safely recalibrate the limbic system's threat sensitivity. By helping individuals gradually restore prefrontal regulation, we create an opportunity for the brain to reprocess early experiences and develop new, healthier patterns of emotional response. This neuroplasticity-based approach offers hope for individuals who have been struggling with trauma-related symptoms their entire lives.`,
 		ngo_url: "https://www.nctsn.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3968326/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
 	},
 	{
 		id: "divorce-relational-trauma-family-systems-stress",
@@ -49,7 +49,7 @@ The mechanism of relational trauma operates through a feedback loop of collectiv
 Our approach to relational trauma focuses on helping individuals and couples restore the sense of safety necessary for authentic connection and communication. By working with the nervous systems of both partners or family members, we can interrupt the cycle of limbic reactivity that perpetuates conflict. When individuals regain prefrontal regulation, they become capable of genuine listening, perspective-taking, and collaborative problem-solving—the very capabilities that make relationship repair possible.`,
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6445171/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10938872/",
 		background_image: "/backgrounds/divorce.avif",
 	},
 	{
@@ -84,7 +84,7 @@ The connection between anxiety and migraines is mediated through multiple pathwa
 Our approach addresses migraines by reducing the underlying anxiety substrate that triggers these attacks while simultaneously promoting more balanced autonomic nervous system function. By helping individuals restore parasympathetic activation and reduce baseline stress reactivity, we can reduce both the frequency and intensity of migraine episodes. Many participants report that even as their anxiety decreases, their migraines become more manageable and less frequently disabling.`,
 		ngo_url: "https://americanmigrainefoundation.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3052640/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6603250/",
 		background_image: "/backgrounds/migraine.jpg",
 	},
 	{
@@ -102,7 +102,7 @@ The mechanism linking anxiety to stuttering operates through disruption of the p
 Our research demonstrates that by addressing the underlying social anxiety and restoring autonomic regulation, individuals often experience significant improvements in speech fluency even without direct speech therapy. When the nervous system is no longer in fight-or-flight mode, the motor systems involved in speech production can function with greater precision and coordination. Many participants report not only improved fluency but also increased confidence and willingness to communicate in social and professional settings.`,
 		ngo_url: "https://www.stutteringhelp.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4213193/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8608149/",
 	},
 
 	{
@@ -138,7 +138,7 @@ The contribution of anxiety to ADHD symptomatology is profound and often underre
 Our research reveals that a significant portion of ADHD-related impairment can be ameliorated by addressing the underlying anxiety infrastructure of the nervous system. By reducing threat-sensitivity and restoring executive capacity, individuals with ADHD often experience dramatic improvements in focus, task completion, time management, and emotional regulation. Many participants report that improvements in anxiety lead to measurable improvements in academic and occupational functioning.`,
 		ngo_url: "https://chadd.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4822480/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
 	},
 
 	{
@@ -156,7 +156,7 @@ The neurobiological underpinnings of Bipolar Disorder involve dysregulation of c
 Our approach to Bipolar Disorder focuses on stabilizing the nervous system's stress response patterns and restoring rhythm to the circadian and neurotransmitter systems. By reducing chronic anxiety and improving the brain's capacity to maintain equilibrium under stress, we aim to increase the interval between mood episodes and reduce their severity. Quality research continues to demonstrate that adjunctive anxiety reduction strategies significantly improve outcomes in individuals managing Bipolar Disorder with medication.`,
 		ngo_url: "https://www.bipolaruk.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3058865/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5109926/",
 		background_image: "/backgrounds/bipolar.jpg",
 	},
 	{
@@ -174,7 +174,7 @@ The neurobiological mechanism involves what researchers call a 'limbic hijack' w
 Our research specifically targets breaking this reinforcement cycle by providing more effective ways to down-regulate the nervous system than the maladaptive pattern of rage. By teaching individuals to access the parasympathetic system and develop prefrontal regulation, we eliminate the physiological need for rage as a tension-release mechanism. Participants typically report dramatic reductions in rage episodes, improved relationships, and greater sense of agency over their emotional responses.`,
 		ngo_url: "https://www.apa.org/topics/anger",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3103598/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2871162/",
 	},
 	{
 		id: "addiction-substance-abuse-disorders",
@@ -189,9 +189,9 @@ Our research specifically targets breaking this reinforcement cycle by providing
 Anxiety plays a critical role in the initiation and maintenance of substance addiction—many individuals with anxiety disorder initially turn to substances as a form of self-medication to reduce their overwhelming internal distress. Anxiety creates a state of physiological 'dis-ease' that drives the limbic system to seek immediate relief through dopamine-reward pathways, frequently triggering cravings and relapse. Over time, avoidance of withdrawal symptoms, environmental triggers, and anxiety about not having access to the substance becomes a powerful maintenance factor for continued use.
 
 Our approach addresses the anxiety infrastructure underlying addiction, recognizing that successful recovery requires addressing both the substance dependence and the emotional dysregulation it was masking. By helping individuals develop healthier, more effective ways to regulate their nervous system and manage anxiety, we reduce the emotional need for substances and lower relapse risk. Research supports that individuals who receive anxiety-reduction interventions alongside traditional addiction treatment have significantly better long-term recovery outcomes.`,
-		ngo_url: "https://www.samhsa.gov/",
+		ngo_url: "https://findtreatment.gov/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2732031/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3667556/",
 		background_image: "/backgrounds/addiction.jpg",
 	},
 	{
@@ -208,7 +208,7 @@ The basal ganglia, a set of brain structures crucial for voluntary motor control
 
 Our research shows that by reducing anxiety and restoring effective inhibitory control at the level of the basal ganglia, significant improvements in tic frequency and severity can be achieved. Many individuals report that as their anxiety decreases, their tics become less pronounced and less frequent, providing both functional improvement and psychological relief. The restoration of a sense of control over one's own body is transformative for individuals who have long felt at the mercy of involuntary movements.`,
 		ngo_url: "https://tourette.org/",
-		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/25541108/",
+		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/40585552/",
 	},
 	{
 		id: "epilepsy-seizure-disorders",
@@ -225,7 +225,7 @@ The connection between stress, anxiety, and seizure threshold is well-establishe
 Our approach to epilepsy management focuses on reducing the chronic physiological stress that lowers seizure threshold, complementing medical management with seizure medications. By helping individuals restore parasympathetic nervous system activation and reduce baseline anxiety, we create a neurophysiological environment less conducive to seizures. Many participants report meaningful reductions in seizure frequency and increased sense of predictability and control, allowing them to re-engage in activities they had avoided.`,
 		ngo_url: "https://www.epilepsy.com/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3930353/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5533817/",
 		background_image: "/backgrounds/seizure.jpg",
 	},
 
@@ -244,7 +244,7 @@ The neurobiological loop in OCD involves a circuit between the orbitofrontal cor
 Our research demonstrates that by targeting the amygdala-orbitofrontal circuit and restoring prefrontal-limbic regulation, significant improvements in OCD symptoms can be achieved. By reducing the underlying threat-sensitivity and anxiety substrate, we make intrusive thoughts less emotionally charged and the compulsive urges less overwhelming. Many individuals report being able to observe obsessive thoughts without the urgent need to engage compulsions, leading to substantial reductions in daily distress and improved functioning.`,
 		ngo_url: "https://iocdf.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4241662/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105517/",
 	},
 
 	{
@@ -262,7 +262,7 @@ Anxiety interacts with sensory processing in ways that significantly amplify hyp
 Our approach addresses the anxiety component of sensory processing difficulties, recognizing that sensory sensitivity is often amplified by nervous system dysregulation. By restoring parasympathetic activation and reducing baseline threat-sensitivity, individuals often experience dramatic improvements in sensory tolerance and comfort. This allows them to engage more fully in social, occupational, and recreational activities without being overwhelmed by the sensory environment.`,
 		ngo_url: "https://www.sensoryhealth.org/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4213271/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC12095537/",
 		background_image: "/backgrounds/spd.webp",
 	},
 	{
@@ -296,7 +296,7 @@ The neurobiological mechanism involves a conditioned fear response where the amy
 
 Our approach focuses on gradually and safely recalibrating the threat-sensitivity of the amygdala to social contexts while simultaneously building the individual's capacity to tolerate the discomfort of social attention. By addressing the underlying anxiety through our protocols, many individuals with selective mutism are able to gradually re-engage their vocal apparatus in progressively more challenging social situations. The restoration of the ability to speak in social contexts often leads to dramatic improvements in academic performance, peer relationships, and overall psychological wellbeing.`,
 		ngo_url: "https://www.selectivemutism.org/",
-		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/24641660/",
+		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/26709680/",
 		background_image: "/backgrounds/mute.avif",
 	},
 
@@ -313,8 +313,8 @@ Our approach focuses on gradually and safely recalibrating the threat-sensitivit
 The cerebellum and basal ganglia work together to create the fluid, coordinated movements we take for granted—they must perfectly time the contraction of hundreds of muscles with incredible precision. Anxiety disrupts the motor planning pathways between the cerebellum and cortex, causing increased physical clumsiness and difficulty with complex sequence movements. When anxiety is present, these motor coordination systems become even more dysregulated, leading to increased tension, tremors, and further deterioration of movement quality.
 
 Our research shows that by reducing anxiety and restoring the smooth communication between planning and execution regions of the brain, significant improvements in coordination can be achieved. Many individuals report that as their anxiety decreases, their physical movements become more fluid and automatic, with less conscious effort required. This often translates to improved athletic performance, better handwriting, and restored confidence in physical abilities.`,
-		ngo_url: "https://dyspraxiafoundation.org.uk/",
-		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/24036128/",
+		ngo_url: "https://dyspraxiausa.org/",
+		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/29159933/",
 	},
 	{
 		id: "dyscalculia",
@@ -329,9 +329,9 @@ Our research shows that by reducing anxiety and restoring the smooth communicati
 Math-related anxiety is endemic in dyscalculia and plays a significant amplifying role in academic difficulties. Math-related anxiety activates the amygdala while suppressing activity in the parietal lobes where numerical processing occurs, literally blocking the brain's ability to process numerical information and logic at the moment it's needed. When students with dyscalculia encounter math, anxiety surges, their brain's numerical processing capacity is suppressed, they struggle further, and anxiety escalates in a feedback loop of avoidance and academic failure.
 
 Our approach recognizes that a substantial portion of math difficulty in dyscalculia is exacerbated by anxiety, and that reducing this anxiety can meaningfully improve numerical processing and mathematical achievement. By addressing the anxiety component, we create a cognitive environment where the intact parts of numerical processing can function more effectively. Many individuals report that improvements in math anxiety translate directly to improvements in math performance, confidence, and willingness to engage with mathematical tasks.`,
-		ngo_url: "https://dyscalculia.org/",
+		ngo_url: "https://ldaamerica.org/what-is-dyscalculia/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5442220/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5987869/",
 		background_image: "/backgrounds/math.jpg",
 	},
 	{
@@ -349,6 +349,6 @@ Anxiety significantly exacerbates dysgraphia through multiple mechanisms involvi
 Our research demonstrates that reducing anxiety substantially improves writing performance in individuals with dysgraphia by freeing motor systems from tension and preserving cognitive resources for the composition process. By helping individuals restore a more relaxed neuromuscular state and reduce the cognitive load of anxiety, we observe meaningful improvements in handwriting legibility, writing speed, and written expression. Many individuals report that they can finally write without pain and that their writing performance more accurately reflects their knowledge and thinking ability.`,
 		ngo_url: "https://www.dysgraphia.life/",
 		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5116450/",
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4805091/",
 	},
 ]

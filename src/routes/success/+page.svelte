@@ -7,7 +7,7 @@
 		const interval = setInterval(() => {
 			countdown--
 			if (countdown === 0) {
-				goto('/')
+				goto("/consent")
 			}
 		}, 1000)
 
@@ -30,7 +30,12 @@
 
 <style>
 	:global(body) {
-		background: linear-gradient(135deg, #0a0e27 0%, #1a2447 50%, #0f1829 100%);
+		background: linear-gradient(
+			135deg,
+			#0a0e27 0%,
+			#1a2447 50%,
+			#0f1829 100%
+		);
 	}
 
 	.success-container {
