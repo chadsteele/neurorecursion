@@ -2,24 +2,27 @@
 	let {...props} = $props()
 </script>
 
+<div id="about"></div>
 <section {...props}>
-	<h2>About the Neuro Recursion Institute</h2>
+	<h1>Join our clinical trials</h1>
 	<p>
 		<img
 			src="/logo.png"
 			alt="Neuro Recursion Institute"
 			class="float-logo"
 		/>
-		The Neuro Recursion Institute (NRI) studies the neurological feedback loops
-		that drive chronic anxiety and motor urgency in neurodivergent populations.
-		At the core of many neurodivergent conditions, such as, but not limited to
-		Tourette Syndrome, Stuttering, ADHD, OCD, and many phobias is a phenomenon
-		of pathological signaling within the Cortico-Striato-Thalamo-Cortical (CSTC)
-		circuits. When these inhibitory filters fail, a "premonitory urge" triggers
-		a recursive loop where the brain's output constantly re-feeds as a new, amplified
-		input. Our protocol focuses on interrupting these self-perpetuating cycles,
-		providing patients with a neurological "off-ramp" that de-escalates the recursive
-		activity before it manifests as a physical tic or a panic response.
+		The Neuro Recursion Institute (<strong>NRI</strong>) studies the
+		neurological feedback loops that drive chronic anxiety and motor urgency
+		in neurodivergent populations. At the core of many neurodivergent
+		conditions, such as, but not limited to Tourette Syndrome, Stuttering,
+		ADHD, OCD, and many phobias is a phenomenon of pathological signaling
+		within the Cortico-Striato-Thalamo-Cortical (CSTC) circuits. When these
+		inhibitory filters fail, a "premonitory urge" triggers a recursive loop
+		where the brain's output constantly re-feeds as a new, amplified input.
+		Our protocol focuses on interrupting these self-perpetuating cycles,
+		providing patients with a neurological "off-ramp" that de-escalates the
+		recursive activity before it manifests as a physical tic, seizure, or a
+		panic response.
 	</p>
 
 	<p>
@@ -53,13 +56,14 @@
 	</p>
 
 	<p>
-		Sign up to join a clinical study designed to inhibit tic frequency
-		through targeted neuroplasticity. This research focuses on disrupting
-		dysfunctional limbic loops between the limbic system and the amygdala to
-		break the cycle of recursive anxiety and motor urgency. The protocol is
-		non-invasive, involves no pharmacological intervention, it is applied
-		neuroscience, no hypnosis, no psycho therapy, and often makes a profound
-		difference in one 30 minute session. More sessions are often
+		Sign up to join a clinical study designed to inhibit limbic loop
+		frequency and intensity, providing relief from chronic anxiety and motor
+		urgency through targeted neuroplasticity. This research focuses on
+		disrupting dysfunctional limbic loops between the limbic system and the
+		amygdala to break the cycle of recursive anxiety and motor urgency. The
+		protocol is non-invasive, involves no pharmacological intervention, it
+		is applied neuroscience, no hypnosis, no psycho therapy, and often makes
+		a profound difference in one 30 minute session. More sessions are often
 		unnecessary, but available according to your schedule.
 	</p>
 	<p class="button-container">

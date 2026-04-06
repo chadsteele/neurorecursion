@@ -1,4 +1,6 @@
 <script>
+	import {onMount} from "svelte"
+	import {page} from "$app/stores"
 	import Intro from "$lib/Intro.svelte"
 	import Partners from "$lib/Partners.svelte"
 	import References from "$lib/References.svelte"
@@ -21,6 +23,41 @@
 		// Update hash and let browser scroll to it
 		window.location.hash = "signup"
 	}
+
+	onMount(() => {
+		// Get query parameter and navigate to that section if it exists
+		const params = new URLSearchParams(window.location.search)
+		const query = params.get("q") || $page.params.query
+
+		if (query) {
+			// Skip if trying to navigate to svelte's internal elements
+			if (query.toLowerCase() === "svelte-announcer") return
+
+			// First, try exact ID match
+			let element = document.getElementById(query)
+
+			// If no exact match, find first element whose ID contains the query
+			if (!element) {
+				const allElements = document.querySelectorAll(
+					"[id]:not(#svelte-announcer)",
+				)
+				for (const el of allElements) {
+					if (
+						el.id &&
+						el.id.toLowerCase().includes(query.toLowerCase())
+					) {
+						element = el
+						break
+					}
+				}
+			}
+
+			// Navigate to the element if found
+			if (element) {
+				window.location.hash = "#" + element.id
+			}
+		}
+	})
 </script>
 
 <Parallax background="/backgrounds/children.jpg">
@@ -55,7 +92,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					❤️ NGO Support
+					❤️ Support
 				</a>
 				<a
 					href={condition.scientific_reference}
@@ -70,7 +107,9 @@
 {/each}
 
 <div id="partners"></div>
-<Partners class="paper container" />
+<Parallax background="/backgrounds/kids-blowing-bubbles.webp">
+	<Partners class="paper container" />
+</Parallax>
 
 <style>
 	.conditions-section h2 {

@@ -2,6 +2,7 @@
 	let {...props} = $props()
 </script>
 
+<div id="scientific-references"></div>
 <section {...props}>
 	<div class="references">
 		<h3>Scientific References</h3>

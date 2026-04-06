@@ -9,54 +9,52 @@
 	onMount(() => {
 		if (!browser) return
 
-		// Prevent hash change from scrolling
-		let hashChanging = false
+		const updateHash = () => {
+			// Get all elements with IDs, excluding svelte's internal elements
+			const elements = document.querySelectorAll(
+				"[id]:not(#svelte-announcer)",
+			)
+			let closestElement = null
+			let closestDistance = Infinity
 
-		const handleHashChange = () => {
-			hashChanging = true
+			// Find element whose top is closest to viewport top
+			elements.forEach((el) => {
+				const rect = el.getBoundingClientRect()
+				// Prefer elements in viewport or just above it
+				const distance = Math.abs(rect.top)
+
+				// Only consider elements that are visible or just off-screen
+				if (rect.top < window.innerHeight && rect.bottom > -100) {
+					if (distance < closestDistance) {
+						closestDistance = distance
+						closestElement = el
+					}
+				}
+			})
+
+			if (closestElement && closestElement.id) {
+				const newHash = "#" + closestElement.id
+				if (window.location.hash !== newHash) {
+					window.history.replaceState(null, "", newHash)
+				}
+			}
 		}
 
-		window.addEventListener("hashchange", handleHashChange)
+		// Debounce scroll updates
+		let scrollTimeout
+		const handleScroll = () => {
+			clearTimeout(scrollTimeout)
+			scrollTimeout = setTimeout(updateHash, 50)
+		}
 
-		// Set up Intersection Observer to update hash as elements scroll into view
-		const observer = new IntersectionObserver(
-			(entries) => {
-				// Find the topmost visible element
-				const visibleEntries = entries.filter(
-					(entry) => entry.isIntersecting,
-				)
-				if (visibleEntries.length === 0) return
+		window.addEventListener("scroll", handleScroll, {passive: true})
 
-				// Sort by their position on screen from top to bottom
-				visibleEntries.sort(
-					(a, b) =>
-						a.getBoundingClientRect().top -
-						b.getBoundingClientRect().top,
-				)
-
-				const topVisibleElement = visibleEntries[0]
-				const newHash = "#" + topVisibleElement.target.id
-
-				// Only update if it's different from current hash
-				if (window.location.hash !== newHash) {
-					hashChanging = true
-					window.history.replaceState(null, "", newHash)
-					hashChanging = false
-				}
-			},
-			{
-				threshold: [0, 0.25, 0.5, 0.75, 1],
-				rootMargin: "-20% 0px -80% 0px",
-			},
-		)
-
-		// Observe all elements with IDs
-		const elementsWithIds = document.querySelectorAll("[id]")
-		elementsWithIds.forEach((element) => observer.observe(element))
+		// Initial hash update
+		updateHash()
 
 		return () => {
-			observer.disconnect()
-			window.removeEventListener("hashchange", handleHashChange)
+			window.removeEventListener("scroll", handleScroll)
+			clearTimeout(scrollTimeout)
 		}
 	})
 </script>
