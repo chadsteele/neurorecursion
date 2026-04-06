@@ -1,5 +1,4 @@
 <script>
-	import {goto} from "$app/navigation"
 	import Conditions from "./Conditions.js"
 
 	let formData = $state({
@@ -85,11 +84,7 @@
 		validateEmail()
 	}
 
-	let submitted = $state(false)
-
-	function handleSubmit(e) {
-		e.preventDefault()
-
+	function validateBeforeSubmit() {
 		// Validate all fields
 		touched.name = true
 		touched.email = true
@@ -99,18 +94,8 @@
 		validateEmail()
 		validateMessage()
 
-		// Check if there are any errors
-		if (errors.name || errors.email || errors.message) {
-			return
-		}
-
-		// Store form data in localStorage
-		localStorage.setItem("signupFormData", JSON.stringify(formData))
-
-		submitted = true
-		setTimeout(() => {
-			goto("/consent")
-		}, 2000)
+		// Return true if no errors
+		return !(errors.name || errors.email || errors.message)
 	}
 
 	let {...props} = $props()
@@ -150,13 +135,17 @@
 
 	<p></p>
 	<p></p>
-	<form onsubmit={handleSubmit} novalidate>
+	<form method="POST" onsubmit={() => validateBeforeSubmit()}>
+		<!-- Hidden field for Netlify Forms -->
+		<input type="hidden" name="form-name" value="signup" />
+
 		<div class="form-group">
 			<label for="name">Name</label>
 			<div class="input-wrapper">
 				<input
 					type="text"
 					id="name"
+					name="name"
 					bind:value={formData.name}
 					placeholder="Enter your full name"
 					required
@@ -178,6 +167,7 @@
 				<input
 					type="email"
 					id="email"
+					name="email"
 					bind:value={formData.email}
 					placeholder="Enter your email address"
 					required
@@ -198,6 +188,7 @@
 			<div class="input-wrapper">
 				<textarea
 					id="message"
+					name="message"
 					bind:value={formData.message}
 					placeholder="Enter your message here... "
 					onblur={handleMessageBlur}
@@ -225,12 +216,14 @@
 					<div class="condition-card">
 						<input
 							type="checkbox"
-							id={`condition-${condition.name}`}
+							id={`condition-${condition.id}`}
+							name={`conditions`}
+							value={condition.name}
 							bind:checked={formData.conditions[condition.name]}
 							class="condition-checkbox"
 						/>
 						<label
-							for={`condition-${condition.name}`}
+							for={`condition-${condition.id}`}
 							class="condition-label"
 						>
 							{condition.name}
