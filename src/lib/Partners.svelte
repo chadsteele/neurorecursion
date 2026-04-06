@@ -126,7 +126,7 @@
 	]
 </script>
 
-<section class="partners-section">
+<section class="partners-section parallax-section">
 	<h2>Neuro Recursion Resources and Partners</h2>
 	<p>
 		The Neuro Recursion Institute supports the world's leading
@@ -142,29 +142,6 @@
 </section>
 
 <style>
-	.partners-section {
-		margin-bottom: 4rem;
-		padding: 3rem 2rem;
-		background: rgba(30, 90, 150, 0.1);
-		border-left: 4px solid #4a9fd8;
-		border-radius: 8px;
-		position: relative;
-	}
-
-	.partners-section h2 {
-		color: #4a9fd8;
-		font-size: 1.8rem;
-		margin-bottom: 1rem;
-		margin-top: 0;
-	}
-
-	.partners-section p {
-		color: #e8e8e8;
-		font-size: 1.02rem;
-		line-height: 1.75;
-		margin-bottom: 2rem;
-	}
-
 	.ngo-container {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

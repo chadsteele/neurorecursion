@@ -1,0 +1,67 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(135deg, #0a0e27 0%, #1a2447 50%, #0f1829 100%);
+	color: #f0f0f0;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+		Arial, sans-serif;
+	line-height: 1.8;
+}
+
+section {
+	margin-bottom: 4rem;
+	padding: 2rem;
+	background: rgba(70, 70, 90, 0.9);
+	border-radius: 8px;
+	position: relative;
+}
+
+section p {
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+	color: #e8e8e8;
+	font-size: 1.02rem;
+	line-height: 1.75;
+}
+
+section > h2,
+section > form {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.submit-btn {
+	background: #4a9fd8;
+	color: white;
+	border: none;
+	padding: 0.875rem 2rem;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.95rem;
+	font-weight: 600;
+	box-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.2),
+		0 4px 8px rgba(74, 159, 216, 0.15);
+	transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn:hover {
+	background: #2b7bc8;
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.25),
+		0 12px 24px rgba(74, 159, 216, 0.35);
+	transform: translateY(-2px);
+}
+
+.submit-btn:active {
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.2),
+		0 2px 4px rgba(74, 159, 216, 0.15);
+	transform: translateY(0);
+}
