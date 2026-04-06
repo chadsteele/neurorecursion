@@ -5,7 +5,6 @@
 	let formData = $state({
 		name: "",
 		email: "",
-		birthdate: "",
 		message: "",
 		conditions: {},
 	})
@@ -13,13 +12,13 @@
 	let errors = $state({
 		name: "",
 		email: "",
-		birthdate: "",
+		message: "",
 	})
 
 	let touched = $state({
 		name: false,
 		email: false,
-		birthdate: false,
+		message: false,
 	})
 
 	function validateName() {
@@ -41,26 +40,39 @@
 		}
 	}
 
-	function validateBirthdate() {
-		if (!formData.birthdate.trim()) {
-			errors.birthdate = "Birthdate is required"
-		} else {
-			const birthDate = new Date(formData.birthdate)
-			const today = new Date()
-			let age = today.getFullYear() - birthDate.getFullYear()
-			const monthDiff = today.getMonth() - birthDate.getMonth()
-			if (
-				monthDiff < 0 ||
-				(monthDiff === 0 && today.getDate() < birthDate.getDate())
-			) {
-				age--
-			}
-			if (age < 18) {
-				errors.birthdate = "You must be at least 18 years old"
-			} else {
-				errors.birthdate = ""
-			}
+	function validateMessage() {
+		if (!formData.message.trim()) {
+			errors.message = ""
+			return
 		}
+		// Check for HTML tags
+		if (/<[^>]*>/g.test(formData.message)) {
+			errors.message = "Please use plain text only (no HTML)"
+			return
+		}
+		// Check for SQL syntax patterns
+		if (
+			/\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC)\b/i.test(
+				formData.message,
+			)
+		) {
+			errors.message = "Please use plain English only (no SQL commands)"
+			return
+		}
+		// Check for JavaScript/code patterns
+		if (
+			/[{}<>()\[\]]/g.test(formData.message) &&
+			formData.message.length > 20
+		) {
+			errors.message = "Please use plain text only (avoid code syntax)"
+			return
+		}
+		errors.message = ""
+	}
+
+	function handleMessageBlur() {
+		touched.message = true
+		validateMessage()
 	}
 
 	function handleNameBlur() {
@@ -73,11 +85,6 @@
 		validateEmail()
 	}
 
-	function handleBirthdateBlur() {
-		touched.birthdate = true
-		validateBirthdate()
-	}
-
 	let submitted = $state(false)
 
 	function handleSubmit(e) {
@@ -86,14 +93,14 @@
 		// Validate all fields
 		touched.name = true
 		touched.email = true
-		touched.birthdate = true
+		touched.message = true
 
 		validateName()
 		validateEmail()
-		validateBirthdate()
+		validateMessage()
 
 		// Check if there are any errors
-		if (errors.name || errors.email || errors.birthdate) {
+		if (errors.name || errors.email || errors.message) {
 			return
 		}
 
@@ -109,6 +116,7 @@
 	let {...props} = $props()
 </script>
 
+<div id="signup"></div>
 <section {...props}>
 	<h2>Sign Up</h2>
 	<p>This could be your breakthrough!</p>
@@ -186,33 +194,22 @@
 		</div>
 
 		<div class="form-group">
-			<label for="birthdate">Birthdate</label>
+			<label for="message">Message (Optional)</label>
 			<div class="input-wrapper">
-				<input
-					type="date"
-					id="birthdate"
-					bind:value={formData.birthdate}
-					required
-					onblur={handleBirthdateBlur}
-					class:error={touched.birthdate && errors.birthdate}
-				/>
-				{#if touched.birthdate && errors.birthdate}
+				<textarea
+					id="message"
+					bind:value={formData.message}
+					placeholder="Enter your message here... "
+					onblur={handleMessageBlur}
+					class:error={touched.message && errors.message}
+				></textarea>
+				{#if touched.message && errors.message}
 					<div class="error-message">
 						<span class="error-icon">⚠</span>
-						{errors.birthdate}
+						{errors.message}
 					</div>
 				{/if}
 			</div>
-		</div>
-
-		<div class="form-group">
-			<label for="message">Message</label>
-			<textarea
-				id="message"
-				bind:value={formData.message}
-				placeholder="Enter your message here..."
-				required
-			></textarea>
 		</div>
 
 		<div class="conditions-section">
@@ -288,7 +285,7 @@
 	}
 
 	input.error,
-	textarea {
+	textarea.error {
 		border-color: #ff6b6b;
 		background: rgba(255, 107, 107, 0.05);
 	}

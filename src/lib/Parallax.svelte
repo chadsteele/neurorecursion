@@ -40,10 +40,31 @@
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		min-height: 50vh;
+	}
+
+	@keyframes bgFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.parallax-container::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 		background: var(--background) center / cover no-repeat;
 		background-attachment: fixed;
-		animation: kenBurns 60s ease-in-out infinite;
-		filter: blue(1.2) grayscale(0.5) brightness(0.8);
+		animation:
+			kenBurns 60s ease-in-out infinite,
+			bgFadeIn 0.8s ease-in-out;
+		filter: blur(1.5px) grayscale(0.35) brightness(0.8);
+		z-index: 0;
 	}
 
 	.parallax-content {

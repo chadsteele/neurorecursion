@@ -8,6 +8,22 @@
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
 	import Conditions from "$lib/Conditions.js"
+
+	function handleSignUpClick(conditionName) {
+		// Find the checkbox for this condition and check it
+		const checkbox = document.querySelector(
+			`input[id="condition-${conditionName}"]`,
+		)
+		if (checkbox) {
+			checkbox.checked = true
+		}
+
+		// Scroll to the SignUp form
+		const signUpForm = document.getElementById("signup")
+		if (signUpForm) {
+			signUpForm.scrollIntoView({behavior: "smooth", block: "center"})
+		}
+	}
 </script>
 
 <Parallax background="/backgrounds/children.jpg">
@@ -18,6 +34,7 @@
 <SignUp class="paper container" />
 
 {#each Conditions as condition (condition.name)}
+	<div id={condition.id}></div>
 	<Parallax background={condition.background_image}>
 		<section class="paper container">
 			<h3>{condition.name}</h3>
@@ -28,20 +45,25 @@
 					.map((line) => `<p>${line}</p>`)
 					.join("")}
 			</p>
+
+			<p>This could be your breakthrough! Sign up now.</p>
 			<div class="condition-links">
+				<a onclick={() => handleSignUpClick(condition.name)}
+					>✅ Sign up!</a
+				>
 				<a
 					href={condition.ngo_url}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Support Organization
+					❤️ NGO Support
 				</a>
 				<a
 					href={condition.scientific_reference}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Scientific Reference
+					🔬 Science
 				</a>
 			</div>
 		</section>
@@ -77,6 +99,15 @@
 		line-height: 1.6;
 	}
 
+	.stats {
+		background: rgba(74, 159, 216, 0.1);
+		border-left: 4px solid #4a9fd8;
+		padding: 1rem;
+		border-radius: 4px;
+		margin: 1.5rem 0;
+		font-size: 0.95rem;
+	}
+
 	.condition-links {
 		display: flex;
 		gap: 1rem;
@@ -92,6 +123,7 @@
 		border-radius: 4px;
 		transition: background 0.3s ease;
 		font-size: 0.9rem;
+		cursor: pointer;
 	}
 
 	.condition-links a:hover {
