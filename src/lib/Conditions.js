@@ -27,6 +27,19 @@ Our technique targets these ancient survival blueprints through creative reprogr
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
 	},
 	{
+		id: "cult-recovery-religious-trauma-damnation-fear",
+		path: "/cult-recovery/religious-trauma/damnation/recovery",
+		name: "Cult Recovery and Religious Trauma - Fear of Damnation",
+		description: `Your nervous system was programmed to fear cosmic punishment. Recovery requires recoding the existential threat system. Cult recovery and religious trauma encompass psychological injury sustained through involvement in high-control groups or religious systems that use shame, fear of damnation, thought control, and spiritual manipulation to maintain obedience. Individuals recovering from cult involvement or fundamentalist religious trauma experience profound anxiety about divine punishment or damnation, shame about their sexuality or autonomy, identity confusion following loss of prescribed identity, and difficulty trusting their own judgment. Complex PTSD is common, with religious concepts (sin, hellfire, divine judgment) triggering severe anxiety and dissociation.
+
+The neurobiological mechanism involves systematic amygdala conditioning where existential fear responses became paired with specific religious concepts, creating a state where thinking certain thoughts or experiencing certain desires (sexuality, questioning, independence) triggers existential threat experience of cosmic punishment. The insula becomes hyperactive to shame and sin-related thoughts. The prefrontal cortex loses capacity to evaluate religious teachings rationally, as the limbic system overrides logical processing with fear-based imperatives. The moral decision-making networks become hijacked by learned fear associations. The nervous system remains trapped in a state where autonomy and authentic self-expression trigger fear of divine punishment.
+
+Our technique systematically deconditions the amygdala's association between autonomy, sexuality, questioning, and cosmic threat through targeted limbic intervention. We restore prefrontal regulation of fear-based religious programming and dismantle shame-based conditioning. Religious autonomy, authentic self-expression, and sexuality no longer trigger threat response. This isn't deprogramming or religious argument. It's recoding of how your nervous system processes spiritual concepts and threat. You access genuine spiritual freedom, restored autonomy, and authentic identity integration.`,
+		ngo_url: "https://www.releaseint.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
+	},
+	{
 		id: "divorce-relational-trauma-family-systems-stress",
 		path: "/divorce/love/family/relationships",
 		name: "Divorce? - Relational Trauma and Family Systems Stress",
@@ -39,6 +52,33 @@ Our technique works with the nervous systems of both partners to recode the thre
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10938872/",
 		background_image: "/backgrounds/divorce.png",
+	},
+	{
+		id: "anxious-avoidant-attachment-relational-patterns",
+		path: "/attachment/anxious/avoidant/relational-patterns",
+		name: "Anxious and Avoidant Attachment Patterns",
+		description: `Your nervous system learned to approach relationships as either threats to escape or threats to cling to. Authentic connection restores secure integration. Attachment patterns are learned relational strategies established in early caregiving relationships and then generalized to all intimate connections. Anxiously attached individuals experience persistent fear of abandonment, seeking excessive reassurance and becoming hyper-responsive to partner availability. Avoidantly attached individuals experience discomfort with intimacy and closeness, maintaining emotional distance and dismissing relational needs. Both patterns create relationship instability, conflict, and prevent access to genuine secure connection and trust. These patterns often alternate or co-exist, creating chaotic relational dynamics.
+
+The neurobiological mechanism involves early programming of the attachment system where caregiving was either unreliably available (creating anxious hypervigilance to caregiver availability) or invalidating of needs (creating avoidant deactivation of attachment-seeking). These early experiences program the amygdala to perceive closeness as either dangerous (avoidant) or insufficiently available (anxious). The polyvagal complex—which governs relational engagement—becomes dysregulated. Intimate relationships trigger automatic protective patterns where the nervous system either desperately seeks reassurance or defensively withdraws. Genuine rest in another's presence becomes neurologically unavailable.
+
+Our technique reprograms the attachment circuitry by recalibrating the amygdala's perception of intimacy and relational threat. We restore ventral vagal tone—the neurological foundation for safe, connected relationships. Anxious clinging transforms into genuine confidence in connection; avoidant distance transforms into authentic intimacy capacity. This isn't relationship counseling or attachment education. It's recoding of early programming at the nervous system level. You access secure attachment capacity where both closeness and autonomy feel safe.`,
+		ngo_url: "https://www.aamft.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+	},
+	{
+		id: "loneliness-social-disconnection",
+		path: "/loneliness/isolation/social-disconnection",
+		name: "Loneliness and Social Disconnection",
+		description: `Your nervous system learned that being around others activated threat. So it chose isolation. But isolation compounds the threat perception. Loneliness is a state of perceived social disconnection and dissatisfaction with social relationships—crucially different from solitude, which is restorative. Individuals with chronic loneliness experience persistent feelings of not belonging, rejection by groups or individuals, difficulty forming or maintaining relationships, and a sense of being fundamentally misunderstood or unable to connect authentically. This is devastating to health: loneliness has mortality risk equivalent to smoking 15 cigarettes per day. Beyond its health consequences, chronic loneliness creates a vicious cycle where the nervous system's threat-related behaviors (withdrawal, hypervigilance, defensive posturing) further alienate others.
+
+The neurobiological mechanism involves dysregulation of the social brain systems. The amygdala becomes hyperactive to social threat while the ventral vagal complex—which enables safe social engagement—becomes suppressed. Individuals with chronic loneliness show heightened activation to potential social threats and reduced capacity to experience social reward and connection. Anxiety in social contexts drives withdrawal behaviors, which then confirm the prediction that connection isn't safe. The brain enters a state of social threat hypervigilance while simultaneously craving connection—creating internal conflict that drives isolated coping. The nervous system becomes trapped in a state where presence with others feels dangerous despite desperate longing for connection.
+
+Our technique recalibrates social threat perception and restores social reward capacity through targeted limbic recalibration. We dissolve the amygdala hijack in response to social presence and restore ventral vagal engagement. Your nervous system regains capacity for genuine connection and authentic presence with others. This isn't skills training or social forcing. It's recoding of how your nervous system detects threat in social contexts. You experience restored capacity for belonging, authentic connection, and the vital health and wellbeing that emerges from genuine relationship.`,
+		ngo_url:
+			"https://www.aarp.org/relationships/friends-family/info-2018/loneliness.html",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8209555/",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -66,6 +106,32 @@ Our technique targets the anxiety-pain signaling loop through conscious reprogra
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6603250/",
 		background_image: "/backgrounds/migraine.png",
+	},
+	{
+		id: "health-anxiety-hypochondriasis",
+		path: "/health-anxiety/hypochondria/health-preoccupation",
+		name: "Health Anxiety and Hypochondriasis",
+		description: `Your nervous system misinterprets neutral bodily signals as life-threatening disease. It's time to recalibrate the sensitivity. Health anxiety is characterized by preoccupation with having or acquiring serious illness despite medical reassurance, hypervigilance to bodily sensations, excessive health-seeking behaviors or avoidance of medical care, and significant distress and functional impairment. Individuals with health anxiety experience persistent catastrophic interpretations of normal bodily functions (heartbeats, aches, digestive sounds) as evidence of serious pathology. This creates anxiety-driven symptom escalation where worry about symptoms amplifies physical sensations, which amplifies worry—a vicious self-perpetuating cycle. Health anxiety costs billions in unnecessary medical care and creates immense suffering despite repeated normal test results.
+
+The neurobiological mechanism involves amygdala hyperactivity in response to interoceptive (bodily) signals combined with a failure of the brain's threat-extinction system to learn from repeated negative test results. The insula—which processes internal bodily signals—becomes hypersensitive, amplifying awareness of normal physiological variations. When bodily signals enter consciousness, the amygdala rapidly interprets them as threat before conscious assessment occurs. The brain's threat-extinction system fails to update despite evidence of safety (normal medical tests), suggesting a specific malfunction in how the amygdala processes health-related reassurance.
+
+Our technique recalibrates the amygdala's interpretation of bodily signals and restores the threat-extinction system through targeted limbic intervention. We reduce insula hypersensitivity and restore accurate threat-assessment in response to bodily sensations. Intrusive catastrophic health thoughts recede as the nervous system regains confidence in distinguishing serious disease from normal body function. This isn't reassurance-seeking or meditation. It's recoding of how your nervous system interprets interoceptive signals. You experience freedom from health preoccupation and restored trust in your body's signals.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6313631/",
+	},
+	{
+		id: "chronic-pain-psychosomatic",
+		path: "/chronic-pain/psychosomatic/pain-amplification",
+		name: "Chronic Pain - Psychosomatic and Nervous System Amplification",
+		description: `Your nervous system has trapped pain signals in an amplification loop. It's time to restore accurate pain signaling. Chronic pain that persists beyond reasonable healing timelines often involves nervous system amplification where the central nervous system produces pain signals that persist despite tissue healing, creating pain without ongoing injury. This creates a devastating trap: the nervous system remains in threat-based pain signaling, producing real pain that reinforces the perception of threat, which amplifies the pain signal. Beyond acute tissue damage, chronic pain is often sustained by anxiety, catastrophic thinking, movement avoidance, and nervous system trapped in a state of protective pain signaling.
+
+The neurobiological mechanism involves central sensitization where the nervous system's pain-processing circuits become hyperactive and misaligned. Gate-control mechanisms that normally filter pain signals malfunction, allowing minor sensations to be interpreted as significant pain. When anxiety or threat-perception is present, the amygdala activates descending pain amplification pathways that literally amplify pain signal intensity at the spinal cord level. The insula becomes hyperresponsive to pain signals, the anterior cingulate cortex catastrophizes pain meaning, and the prefrontal cortex loses regulatory capacity. The nervous system becomes trapped in a state of self-perpetuating pain amplification.
+
+Our technique recalibrates the pain-amplification circuitry by reducing threat perception and restoring accurate pain signal processing through targeted limbic intervention. We dissolve the anxiety-pain feedback loop and restore gate-control mechanisms. Pain signals normalize as the nervous system exits threat-based amplification mode. This isn't pain management or distraction. It's recoding of how your nervous system generates and sustains pain signals. You experience genuine pain reduction as the amplification system recalibrates.`,
+		ngo_url: "https://www.iasp-pain.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5563555/",
 	},
 	{
 		id: "stuttering-childhood-onset-fluency-disorder",
@@ -135,6 +201,32 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/",
 	},
 	{
+		id: "imposter-syndrome",
+		path: "/imposter/syndrome/fraud/inadequacy",
+		name: "Imposter Syndrome",
+		description: `Your nervous system adopted a false belief: that your success is fraudulent and exposure is inevitable. It's time to restore accurate self-assessment. Imposter syndrome is characterized by persistent self-doubt, feelings of fraudulence despite objective evidence of competence and accomplishment, and anxiety that one will be 'exposed' as inadequate. Individuals with imposter syndrome attribute success to external factors (luck, timing, others' help) while internalizing failure as confirmation of inadequacy. This creates a state of perpetual anxiety about being 'found out,' leading to over-preparation, perfectionism, difficulty accepting praise, and underutilization of capabilities. Imposter syndrome is extremely common, particularly among high-achievers, women, and marginalized populations.
+
+The neurobiological mechanism involves a systematic bias in threat-detection where the amygdala hypervigilantly monitors for evidence of inadequacy while minimizing evidence of competence. The prefrontal cortex becomes hijacked by catastrophic narratives about exposure and public failure. When accomplishments occur, the brain's reward system becomes suppressed—the amygdala treats success as danger (it increases visibility and exposure risk). This creates a perverse incentive structure where the nervous system paradoxically learns to fear success and competence-visibility. The neural networks encoding self-worth become dysregulated.
+
+Our technique recalibrates the threat-detection bias and restores accurate self-assessment through targeted limbic recalibration. We dissolve the hypervigilance to exposure threat and restore amygdala regulation when processing genuine accomplishments. You experience restored confidence in genuine competence, reduced anxiety about being 'found out,' and authentic pride in accomplishments. This isn't affirmation or confidence building. It's recoding of how your nervous system detects threat in success and visibility. You access genuine self-assurance based on accurate neural processing of your actual capabilities.`,
+		ngo_url: "https://www.apa.org/science/about/psa/imposter-syndrome",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC9684747/",
+	},
+	{
+		id: "performance-anxiety-evaluation-fear",
+		path: "/performance-anxiety/evaluation/judgment/social-threat",
+		name: "Performance Anxiety - Generalized Evaluation Anxiety",
+		description: `Your amygdala perceives being watched or judged as social death. It's time to recalibrate that threat signal. Performance anxiety, beyond specific contexts like public speaking, is a pervasive anxiety about being evaluated, judged, or observed in any situation where performance or competence will be assessed. Individuals with generalized performance anxiety experience trembling, sweating, racing thoughts, and panic whenever their actions, knowledge, or abilities might be scrutinized—during meetings, presentations, tests, interviews, or even casual conversations with authority figures. This anxiety can severely restrict career advancement, educational achievement, and social participation.
+
+The neurobiological mechanism involves amygdala hyperactivity in response to evaluation-threat combined with prefrontal cortex suppression. When the nervous system perceives potential judgment, the amygdala interprets this as social threat to status and belonging. This triggers sympathetic activation (visible physical symptoms) and suppression of executive function (creating the paradoxical performance decrements that the individual fears). The insula becomes hyperactive, amplifying awareness of physical symptoms, which further amplifies anxiety in a feedback loop. Social evaluation literally activates the same threat response as physical danger.
+
+Our technique recalibrates the social-evaluation threat response through targeted limbic intervention. We dissolve the automatic amygdala hijack in response to evaluation and restore executive function under performance pressure. Trembling, sweating, and racing thoughts subside as the threat signal resets. This isn't confidence building or gradual exposure. It's recoding of how your nervous system interprets social evaluation. You access genuine calm and cognitive clarity in performance situations, with your actual capabilities accessible regardless of observation or judgment.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+	},
+	{
 		id: "agoraphobia-social-phobia",
 		path: "/agoraphobia/social/phobia/crowds/open",
 		name: "Agoraphobia/Social Phobia - Fear of Open/Crowded Spaces",
@@ -160,6 +252,19 @@ Our technique targets the convergence of fears through precise limbic reprogramm
 		ngo_url: "https://www.flyingwithfear.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
+	},
+	{
+		id: "rejection-sensitivity",
+		path: "/rejection-sensitivity/rejection-dysphoria/social-pain",
+		name: "Rejection Sensitivity Dysphoria",
+		description: `Your amygdala treats subtle signs of rejection as social death threats. It's time to recalibrate that alarm. Rejection sensitivity dysphoria (RSD) is characterized by excessive emotional pain in response to perceived rejection, criticism, or abandonment, leading to hypervigilance to social cues indicating potential rejection. Individuals with RSD experience intense shame, rage, or despair in response to minor slights, perceived criticism, or situations where they might be excluded or judged. This hypersensitivity creates avoidance of social situations, perfectionist over-preparation to prevent criticism, and patterns of relationship dissolution when perceived rejection triggers explosive emotional responses. RSD is extremely common in ADHD, anxiety, and trauma populations.
+
+The neurobiological mechanism involves amygdala hyperactivity combined with neural pathways that encode rejection as existential threat rather than minor social event. The anterior insula—which processes social pain—becomes hyperresponsive to rejection cues. Individuals with RSD have heightened neural processing of rejection that literally registers as comparable to physical pain. The amygdala becomes primed to detect rejection signals at the threshold of perception, leading to misinterpretation of neutral actions as rejection. The prefrontal cortex loses regulatory capacity once rejection-threat is detected. The nervous system becomes trapped in a state of perpetual vigilance to social threat.
+
+Our technique recalibrates the rejection-threat response by resetting the amygdala's sensitivity to social cues through targeted limbic intervention. We dissolve the existential threat-perception in response to rejection and restore accurate social interpretation. Emotional pain in response to minor slights recedes as the nervous system distinguishes between genuine abandonment and minor social friction. This isn't resilience building or reframing. It's recoding of how your nervous system encodes rejection as threat. You experience restored calm in social interactions and genuine resilience to the inevitable minor rejections of social life.`,
+		ngo_url: "https://chadd.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
 	},
 	{
 		id: "cynophobia-fear-dogs",
@@ -273,6 +378,19 @@ Our technique breaks this reinforcement cycle by providing more effective ways t
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2871162/",
 	},
 	{
+		id: "burnout-exhaustion-depersonalization",
+		path: "/burnout/exhaustion/depersonalization/work-stress",
+		name: "Burnout - Chronic Exhaustion and Depersonalization",
+		description: `Your nervous system has been running in overdrive for so long that it lost the ability to shift gears. Burnout isn't laziness—it's a nervous system trapped in a state of chronic threat perception. Burnout is a state of emotional, physical, and mental exhaustion caused by prolonged exposure to stressors in work or caregiving contexts, characterized by emotional exhaustion, depersonalization (emotional distance, cynicism, reduced empathy), and reduced sense of accomplishment. Individuals with burnout experience profound fatigue despite rest, cynical disconnection from work and people, loss of meaning and purpose, physical illness, and sometimes complete incapacity to function. Burnout reflects a nervous system pathology, not personal weakness or moral failing.
+
+The neurobiological mechanism involves chronic activation of the stress response system that eventually leads to depletion of neurotransmitters (serotonin, dopamine, norepinephrine, cortisol dysregulation) and exhaustion of the hypothalamic-pituitary-adrenal axis. Prolonged threat-state consumes neural resources devoted to repair, memory consolidation, and meaning-making. Depersonalization emerges as a protective dissociation when the nervous system can no longer sustain emotional engagement. The prefrontal cortex becomes progressively compromised, reducing executive capacity and emotional regulation. The brain enters a state of 'learned shutdown' where further effort is perceived as dangerous. The default mode network becomes dysregulated, leading to loss of meaning and purpose.
+
+Our technique recalibrates the nervous system from chronic threat-state through targeted limbic recalibration and restoration of meaning-systems. We restore the capacity to downregulate threat-perception and re-engage the parasympathetic nervous system. Your nervous system regains capacity for genuine rest, renewed energy, and restored sense of purpose. This isn't vacation or work-life balance advice. It's recoding of how your nervous system responds to occupational stress. You experience restoration of vitality, genuine emotional connection, and renewed capability.`,
+		ngo_url: "https://www.headspace.com/articles/burnout",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7249520/",
+	},
+	{
 		id: "addiction-substance-abuse-disorders",
 		path: "/addiction/substance/abuse",
 		name: "Addiction and Substance Abuse Disorders",
@@ -285,6 +403,97 @@ Our technique targets the anxiety infrastructure underlying addiction by recalib
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3667556/",
 		background_image: "/backgrounds/addiction.png",
+	},
+	{
+		id: "screen-addiction",
+		path: "/screen-addiction/technology/compulsive-use",
+		name: "Screen Addiction and Digital Compulsivity",
+		description: `Your dopamine pathways learned that the screen is the most rewarding place on earth. It's time to restore balance. Screen addiction (behavioral addiction to digital devices, social media, gaming, or internet) is characterized by compulsive use of screens despite negative consequences, loss of control over usage, tolerance (requiring increasing amounts of use), and withdrawal symptoms when access is restricted. Individuals with screen addiction experience damaged relationships, academic and work performance decline, sleep disruption, physical health impacts, and profound difficulty disengaging from devices. Screen addiction is particularly prevalent in adolescents whose developing brains are especially vulnerable to reinforcement mechanisms.
+
+The neurobiological mechanism involves hijacking of the dopamine reward system by algorithmic platforms specifically engineered to maximize engagement and reward intensity. The apps and platforms exploit the brain's natural reward learning systems through variable ratio reinforcement schedules (random rewards increase engagement more than predictable ones), social proof mechanisms, and notifications designed to interrupt and recapture attention. The amygdala becomes hypersensitive to 'fear of missing out' (FOMO), and dopamine becomes dysregulated, leading to craving for screen engagement as a way to manage anxiety and emotional distress. The prefrontal cortex loses regulatory capacity as impulse control deteriorates.
+
+Our technique recalibrates the reward system and restores executive capacity through targeted limbic intervention. We dissolve the algorithmic hijacking and restore genuine dopamine sensitivity where natural rewards become accessible again. Compulsive screen use transforms into balanced, conscious technology engagement. This isn't screen time limiting or willpower training. It's recoding of how your nervous system processes digital rewards and manages FOMO-based anxiety. You access freedom and restored capacity for non-digital engagement and relationships.`,
+		ngo_url: "https://www.addictioncenter.com/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6323631/",
+	},
+	{
+		id: "porn-addiction-sexual-compulsivity",
+		path: "/porn-addiction/sexual-compulsivity/compulsive-use",
+		name: "Porn Addiction and Compulsive Sexual Behaviors",
+		description: `Your nervous system became wired for a supernormal stimulus that surpasses natural sexual engagement in reward intensity. It's time to restore natural sexual motivation. Porn addiction and compulsive sexual behaviors are characterized by compulsive engagement in explicit sexual content or sexual activities despite negative consequences, loss of control, escalation (requiring increasingly extreme content), and functional impairment in relationships and other life domains. Individuals with sexual compulsivity experience erectile dysfunction or anorgasmia with partners due to overstimulation from extreme content, damaged intimate relationships due to deception or partner distress, sexual shame, and profound difficulty disengaging from compulsive patterns. This often co-occurs with loneliness and social anxiety.
+
+The neurobiological mechanism involves hijacking of the sexual reward system by pornographic content engineered to maximize novelty and intensity beyond what natural sexual interaction can provide. The mesolimbic dopamine pathway becomes sensitized to porn-specific stimuli while showing tolerance to normal sexual stimuli, creating the sexually paradoxical situation where individuals feel strongly motivated toward porn but unable to become aroused by intimate partners. Anxiety and emotional avoidance drive compulsive use as a form of self-medication. The prefrontal cortex loses regulatory capacity as impulse control becomes increasingly insufficient. Shame and secrecy create additional anxiety loops that perpetuate compulsion.
+
+Our technique recalibrates the sexual reward system and dissolves shame-based reinforcement loops through targeted limbic intervention. We restore prefrontal regulation and sexual motivation toward genuine partners. Compulsive porn use transforms into balanced sexual expression in relationships. This isn't abstinence advocacy or willpower training. It's recoding of how your nervous system encodes sexual motivation and processes intimacy-related anxiety. You access restored sexual responsiveness to partners and genuine capacity for intimate connection.`,
+		ngo_url: "https://www.samhsa.gov/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6418607/",
+	},
+	{
+		id: "sexual-dysfunction-performance-anxiety-impotence",
+		path: "/sexual-dysfunction/impotence/performance-anxiety/ed",
+		name: "Sexual Dysfunction - Impotence and Performance Anxiety",
+		description: `Your nervous system learned that sexual performance is high-stakes threat assessment. It's time to restore authentic sexual presence. Sexual dysfunction encompasses erectile dysfunction (ED), premature ejaculation, anorgasmia, low libido and other sexual performance difficulties that significantly impact intimate relationships and self-esteem. Individuals with sexual dysfunction experience anxiety about sexual performance, shame about their bodies or abilities, avoidance of intimacy, and relationship conflict. Performance anxiety creates a vicious cycle where worry about dysfunction triggers the very physiological responses that prevent function.
+
+The neurobiological mechanism involves performance anxiety hijacking the sympathetic nervous system (fight-or-flight) when parasympathetic activation is essential for sexual arousal and function. The amygdala perceives sexual performance as social threat to status and attractiveness, triggering anxiety that suppresses the parasympathetic tone necessary for sexual response. The prefrontal cortex becomes dominated by catastrophic performance predictions ('I'll fail again'), creating a self-fulfilling prophecy where anxiety prevents the relaxed state required for sexual function. Additionally, low dopamine from depression or stress reduces sexual motivation. The nervous system becomes trapped in a state where sexuality triggers threat-response.
+
+Our technique recalibrates the amygdala's threat perception around sexual performance and restores parasympathetic activation through targeted limbic intervention. We dissolve the performance anxiety and restore authentic sexual presence. Erectile function, arousal capacity, and sexual motivation return as threat-detection resets. This isn't sexual technique training or gradual desensitization. It's recoding of how your nervous system processes sexual situations. You access genuine sexual confidence, restored function, and authentic intimate connection.`,
+		ngo_url: "https://www.aasect.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5829325/",
+	},
+	{
+		id: "fear-of-intimacy-commitment-fear",
+		path: "/fear-intimacy/commitment/closeness-phobia",
+		name: "Fear of Intimacy and Commitment",
+		description: `Your nervous system treats genuine closeness as existential threat. It's time to restore the capacity for authentic connection. Fear of intimacy is characterized by avoidance of emotional closeness, difficulty with vulnerability and self-disclosure, retreat when relationships deepen, and pervasive discomfort with being fully known by another person. Individuals with fear of intimacy often experience a paradox: they desperately want connection yet feel compelled to create distance or sabotage relationships as they become deeper. This creates a cycling pattern of brief attractions followed by withdrawal, leaving both individuals and partners confused and damaged.
+
+The neurobiological mechanism involves an amygdala that learned through early attachment experiences that closeness is dangerous. When relationships deepen and vulnerability is required, the amygdala interprets this as existential threat to autonomy or safety. The nervous system activates protective disconnection—emotional numbing, critical thoughts about the partner, sudden loss of attraction, or creation of conflict. The ventral vagal complex, which enables safe social engagement, becomes suppressed when true intimacy is approached. The individual remains neurologically trapped in a state where genuine closeness triggers threat response.
+
+Our technique recalibrates the intimacy-threat association by restoring secure attachment capacity and ventral vagal tone through targeted limbic intervention. We dissolve the false threat perception around vulnerability and authentic connection. Your nervous system regains capacity for genuine intimacy, authentic vulnerability, and sustained commitment. This isn't therapy process or gradual exposure. It's recoding of the neural patterns that learned to fear closeness. You access restored capacity for genuine intimate partnership and authentic connection.`,
+		ngo_url: "https://www.aamft.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+	},
+	{
+		id: "ai-anxiety-technophobia-fear-ai",
+		path: "/ai-anxiety/technophobia/fear-artificial-intelligence",
+		name: "AI Anxiety and Technophobia - Fear of Artificial Intelligence",
+		description: `Your nervous system perceives AI and technological change as existential threat. It's time to recalibrate threat-assessment in an age of technological transformation. AI anxiety is a form of specific anxiety about artificial intelligence, autonomous systems, technological automation, or technological disruption characterized by fear of AI replacing human capability, loss of employment/relevance, loss of control to machines, or existential risk from superintelligence. Individuals with AI anxiety experience persistent worry about technological job displacement, anxiety about AI making autonomous decisions affecting their lives, fear about loss of human agency, and generalized technophobia that creates avoidance of new technologies. This anxiety is becoming increasingly prevalent as AI capabilities advance and societal uncertainty about AI implications persists.
+
+The neurobiological mechanism involves uncertainty-based amygdala activation combined with realistic concern about technological disruption. The amygdala becomes hyperreactive to information about AI advancements, job displacement reports, or AI capability expansions—interpreted as existential threat. The loss of control element triggers heightened amygdala activation: when humans cannot predict or control AI system behavior, the nervous system perceives this as threat. Media narratives about AI risk and job displacement amplify this perception. For individuals with preexisting anxiety or perfectionism, AI uncertainty becomes encoded as catastrophic threat. The nervous system remains in a state of vigilance to AI-related threat cues.
+
+Our technique recalibrates threat-perception in response to AI and technological change through targeted limbic intervention. We restore accurate threat-assessment: distinguishing between genuine risks requiring adequate attention and anxiety-amplified catastrophic projections. Your nervous system regains capacity to engage with new technologies without threat-hijacking. This isn't technology education or exposure therapy. It's recoding of how your nervous system processes uncertainty about AI and technological change. You experience genuine curiosity and adaptive concern without the anxiety-based avoidance and rumination.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10527261/",
+	},
+	{
+		id: "social-media-anxiety-disorder",
+		path: "/social-media-anxiety/fomo/comparison/digital-judgment",
+		name: "Social Media Anxiety Disorder",
+		description: `Your nervous system treats social media platforms as high-stakes social evaluation environments where judgment is constant. It's time to recalibrate social threat perception. Social media anxiety disorder is a specific manifestation of anxiety related to social media use, characterized by fear of missing out (FOMO), anxiety about negative social judgment on platforms, compulsive social comparison, and anxiety-driven social media checking and posting behaviors. Individuals with social media anxiety experience intense anxiety if separated from social media, catastrophic interpretations of lack of engagement or 'likes,' and a pervasive sense that their social media presence determines social acceptability and status. This anxiety is amplified by algorithm-driven content and psychological manipulation in social media platform design.
+
+The neurobiological mechanism involves amygdala hyperactivity in response to social evaluation threat combined with dopamine-driven behavioral addiction. Social media platforms are specifically engineered to trigger dopamine-reward cycles (likes, comments, shares) that create compulsive checking behaviors. Simultaneously, the algorithmic curation shows content that triggers social comparison on the insula and amygdala threat-activation in response to perceived social exclusion (FOMO). The amygdala becomes conditioned to interpret lack of engagement as social rejection. Anxiety about posts or lack of engagement drives checking and posting cycles. The prefrontal cortex loses regulatory capacity as the amygdala and striatum (reward system) hijack decision-making.
+
+Our technique dissolves the social-evaluation threat perception specific to social media through targeted limbic recalibration. We interrupt the dopamine-driven compulsive checking and restore genuine social evaluation capacity grounded in real relationships rather than platform-based metrics. Your nervous system regains capacity to engage with social media without anxiety-driven compulsion or social comparison rumination. This isn't digital detox or social media limiting. It's recoding of how your nervous system processes social threat and reward in digital contexts. You experience freedom from platform-driven anxiety and restored capacity for genuine social connection.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6375637/",
+	},
+	{
+		id: "paranoia-scelerephobia-fear-strangers-criminals",
+		path: "/paranoia/fear-strangers/crime-threat/persecution",
+		name: "Paranoia and Scelerephobia - Fear of Strangers and Crime",
+		description: `Your amygdala declared the world full of criminals and threats hidden in every stranger. It's time to restore accurate threat assessment. Paranoia is characterized by persistent, unjustified suspicion of others' intentions, belief that people are plotting against you, hypervigilance to threat signs, and often magical thinking about persecution. Scelerephobia (fear of criminals and crime) involves intense dread of being victimized by crime, avoidance of normal situations due to exaggerated crime risk, and hypervigilance to strangers. Together, these conditions create a state of perpetual threat perception where the social world feels hostile and dangerous, severely restricting social engagement and quality of life.
+
+The neurobiological mechanism involves amygdala hyperactivity combined with failure of the prefrontal cortex to regulate threat interpretation and distinguish between genuine danger and neutral social cues. The amygdala becomes primed to detect threat in ambiguous social situations—a stranger's glance becomes evidence of malintent, accidental slights become intentional persecution. The insula becomes hyperactive, amplifying threat-related bodily sensations and creating the subjective experience of imminent danger. The theory of mind network—which interprets others' intentions—malfunctions, leading to systematic misinterpretation of benign intentions as harmful. The nervous system remains locked in a state of social threat hypervigilance.
+
+Our technique recalibrates threat perception in social contexts and restores accurate threat-assessment through targeted limbic intervention. We dissolve the systematic bias toward threat interpretation and restore the amygdala's capacity to distinguish genuine danger from normal social situations. Paranoid ideation recedes as the nervous system regains accurate perception of others' intentions. This isn't cognitive therapy or social exposure. It's recoding of how your nervous system interprets social threat. You experience freedom from persecution beliefs and restored capacity for authentic social engagement.`,
+		ngo_url: "https://www.nami.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6021151/",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -312,7 +521,19 @@ Our technique restores parasympathetic nervous system activation and reduces chr
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5533817/",
 		background_image: "/backgrounds/seizure.png",
 	},
+	{
+		id: "insomnia-sleep-hyperarousal",
+		path: "/insomnia/sleep/hyperarousal/wakefulness",
+		name: "Insomnia and Sleep Hyperarousal",
+		description: `Your nervous system learned to stay on alert at night when it should be resting. Sleep is where the threat-detection system downregulates. Insomnia is characterized by persistent difficulty initiating or maintaining sleep despite adequate opportunity, leading to daytime impairment. Insomnia is often perpetuated by sleep-related anxiety (anxiety about not sleeping), hyperarousal where the nervous system stays in alert/threat-detection mode throughout the night, racing thoughts about day stressors, and conditioned alertness where the bedroom becomes associated with worry-activation. Chronic insomnia profoundly impacts health, cognitive function, emotional regulation, and physical recovery.
 
+The neurobiological mechanism involves failure of the parasympathetic nervous system to activate at night combined with amygdala hyperactivity that maintains threat-vigilance. The default mode network—which normally quiets during sleep—remains hyperactive. Hyperarousal involves elevated cortisol, norepinephrine, and other stress neurochemicals at night when they should be low. Worry-rumination activates prefrontal-limbic circuits, preventing the shift to sleep-mode. Sleep-related anxiety creates classical conditioning where the bed/bedroom becomes associated with threat-processing rather than rest. The nervous system becomes trapped in a state where threat-detection remains activated when nervous system resources should be devoted to repair and memory consolidation.
+
+Our technique recalibrates night-time threat detection and restores parasympathetic activation through targeted limbic recalibration. We reduce sleep-related anxiety and reset the conditioned hyperarousal. Your nervous system regains capacity to shift into parasympathetic rest mode at night. This isn't sleep hygiene or stimulus control. It's recoding of how your nervous system manages threat-detection across the sleep-wake cycle. You experience restored capacity to sleep deeply, awakening refreshed.`,
+		ngo_url: "https://www.sleepfoundation.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6266436/",
+	},
 	{
 		id: "ocd-obsessive-compulsive-disorder",
 		path: "/ocd/obsessive/compulsive",
@@ -326,7 +547,45 @@ Our technique breaks the obsessive-compulsive circuit through targeted recalibra
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105517/",
 	},
+	{
+		id: "trichotillomania-hair-pulling",
+		path: "/trichotillomania/hair-pulling/body-focused-repetitive",
+		name: "Trichotillomania and Body-Focused Repetitive Behaviors",
+		description: `Your nervous system learned to use hair-pulling or skin-picking to self-soothe an anxious threat state. The calming is temporary but the damage is real. Trichotillomania (hair-pulling disorder) and related body-focused repetitive behaviors (BFRBs) like skin-picking, nail-biting, and lip-chewing are characterized by repetitive self-injurious behavior that provides temporary emotional regulation and anxiety relief but results in visible tissue damage, social shame, and significant functional and health consequences. Individuals with BFRBs often engage in these behaviors during stress or boring states, often without conscious awareness, creating dissociative-like trance states. Despite understanding the harm, individuals continue engaging in the behaviors because they provide genuine (though temporary) anxiety-regulation.
 
+The neurobiological mechanism involves a hijacking of the natural repetitive-behavior system (which provides soothing through rhythmic stimulation) to manage anxiety. When anxiety or internal distress emerges, the nervous system learns that hair-pulling or skin-picking produces temporary neurotransmitter-based soothing through endogenous opioid release. This creates a self-medication cycle where anxiety drives the behavior, temporary relief reinforces it, then rebound anxiety and tissue damage follow. The orbitofrontal cortex (involved in habit-formation) becomes hyperactive, the anterior cingulate cortex signals error-detection that escalates anxiety, and the amygdala drives the urge to engage in the BFRB for anxiety relief.
+
+Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous system manages distress and providing genuine anxiety-reduction alternatives. We reprogram the habit loop and restore genuine anxiety-regulation capacity. Urges to engage in self-injurious behaviors recede as the nervous system accesses healthier soothing pathways. This isn't habit replacement or willpower. It's recoding of how your nervous system learned to use self-injury for emotion regulation. You experience freedom from the urge and restored tissue integrity.`,
+		ngo_url: "https://www.bfrb.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7142407/",
+	},
+	{
+		id: "body-dysmorphia",
+		path: "/body-dysmorphia/body-image/appearance-preoccupation",
+		name: "Body Dysmorphia - Distorted Self-Image and Appearance Preoccupation",
+		description: `Your nervous system created a distorted map of your appearance and treats it as threat to social acceptability. It's time to restore accurate self-perception. Body dysmorphic disorder (BDD) is characterized by preoccupation with perceived defects in physical appearance that are not observable or appear trivial to others, leading to repetitive behaviors (mirror checking, excessive grooming, skin-picking, reassurance-seeking) and significant distress and functional impairment. Individuals with BDD spend hours preoccupied with appearance flaws, avoid social situations due to perceived unattractiveness, and often pursue cosmetic interventions that provide no relief—because the core issue is the nervous system's distorted threat-perception, not actual appearance defects.
+
+The neurobiological mechanism involves dysfunction in how the visual cortex processes facial features combined with amygdala hyperactivity in response to perceived appearance threat. Brain imaging shows that individuals with BDD have atypical visual processing of faces—focusing on minute details rather than holistic appearance—creating a distorted mental representation. The amygdala treats perceived appearance defects as social threat that threatens belonging and status. Body-checking and reassurance-seeking provide temporary anxiety reduction but reinforce the perception that appearance is a genuine threat. The ventromedial prefrontal cortex fails to regulate the amygdala's threat interpretation of appearance-related stimuli.
+
+Our technique recalibrates appearance-threat perception and restores accurate self-perception through targeted limbic recalibration. We dissolve the amygdala's hyperactivity in response to perceived appearance flaws and restore visual integration. You experience restored accurate perception of your appearance without the threat-based anxiety amplification. Preoccupation recedes as your nervous system stops treating appearance as a genuine social threat. This isn't affirmation or self-esteem work. It's recoding of how your nervous system perceives and encodes appearance threat. You access freedom from appearance preoccupation and authentic social presence.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105514/",
+	},
+	{
+		id: "eating-disorders-anorexia-bulimia-binge",
+		path: "/eating-disorders/anorexia/bulimia/binge-eating",
+		name: "Eating Disorders - Anorexia, Bulimia, and Binge Eating",
+		description: `Food became both control and threat, and your nervous system uses it to manage impossible internal states. It's time to restore genuine nourishment and regulation. Eating disorders (anorexia nervosa, bulimia nervosa, binge eating disorder, and other specified feeding/eating disorder) are serious psychiatric conditions characterized by disturbances in eating behaviors and related thoughts and emotions, leading to significant medical consequences, malnutrition, mortality risk, and severe psychological distress. Individuals with eating disorders use food restriction, purging, or binge-eating to manage anxiety, trauma, perfectionism, control-seeking, or dissociation. The eating disorder provides temporary anxiety regulation but creates severe health consequences including cardiac dysfunction, electrolyte imbalances, lost bone density, and death.
+
+The neurobiological mechanism involves amygdala hyperactivity combined with a loss of interoceptive awareness (the ability to sense internal bodily states like hunger/fullness). The insula becomes dysregulated, preventing accurate registration of hunger and satiety signals. Anxiety or emotional distress becomes mis-interpreted as physical hunger or, conversely, blocked from accessing hunger signals entirely. The nervous system uses food control/restriction or binge episodes to downregulate anxiety/trauma through temporary neurochemical shifts. Perfectionism-driven restrictive eating activates reward pathways, creating a pleasurable sense of control that reinforces restriction. The orbitofrontal cortex becomes hyperactive in habit-formation around eating behaviors. The neural circuits encoding safety, nourishment, and self-care become corrupted.
+
+Our technique recalibrates anxiety-management and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the amygdala hijack that drives restrictive/binge behaviors and restore accurate hunger/fullness signaling. Your nervous system regains capacity to use food for genuine nourishment rather than anxiety-regulation. This isn't nutrition education or cognitive-behavioral techniques. It's recoding of how your nervous system uses food and body control to manage threat and anxiety. You experience restored capacity for balanced eating, body trust, and genuine nourishment.`,
+		ngo_url: "https://www.nationaleatingdisorders.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6845995/",
+	},
 	{
 		id: "spd-sensory-processing-disorder",
 		path: "/spd/sensory/processing",
@@ -393,6 +652,32 @@ Our technique reduces math-related anxiety by recalibrating threat perception an
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5987869/",
 		background_image: "/backgrounds/math.png",
+	},
+	{
+		id: "test-anxiety",
+		path: "/test-anxiety/academic-performance/exam-anxiety",
+		name: "Test Anxiety",
+		description: `High-stakes performance paralyzes your nervous system despite knowing the material. Your brain learned that tests equal threat. Test anxiety is a specific performance anxiety manifesting during high-stakes academic testing where despite adequate preparation and knowledge, individuals experience debilitating anxiety that blocks access to knowledge and interferes with performance. Individuals with test anxiety experience racing thoughts, 'brain freeze,' physical panic symptoms, catastrophic predictions of failure, and significant score decrements despite genuine understanding of material. This creates a vicious cycle where poor performance due to anxiety then generates prognosticating anxiety about future tests. Test anxiety can severely impact educational trajectories and long-term academic achievement.
+
+The neurobiological mechanism involves amygdala hijack triggered by evaluation threat that blocks access to knowledge stored in hippocampus and cortex. When the amygdala perceives high-stakes threat, prefrontal cortex suppression occurs, limiting working memory and executive function access. The stress neurochemical cascade further impairs prefrontal function. Performance decrements due to anxiety then become encoded as predictors that 'tests are dangerous situations where performance fails,' further conditioning amygdala reactivity to testing contexts. The nervous system learns to treat test-taking as a threat to status and competence, triggering protective mechanisms that ironically prevent successful performance.
+
+Our technique recalibrates the evaluation-threat perception in testing contexts through targeted limbic intervention. We dissolve the amygdala hijack during high-stakes academic performance and restore executive function and knowledge access. Your brain regains ability to access learned knowledge under test conditions. This isn't test-prep or anxiety management techniques. It's recoding of how your nervous system responds to academic evaluation threat. You experience genuine calm during testing with full access to knowledge and capability.`,
+		ngo_url: "https://www.apa.org/science/about/psa/test-anxiety",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6605844/",
+	},
+	{
+		id: "perfectionism",
+		path: "/perfectionism/impossible-standards/self-imposed-threat",
+		name: "Perfectionism - Impossible Standards and Self-Imposed Threat",
+		description: `Your nervous system adopted an impossible standard and now treats anything short of perfection as threat. It's time to recalibrate what 'good enough' actually is. Perfectionism is characterized by setting impossibly high standards, persistent self-criticism for minor imperfections, and anxiety about making mistakes or being less than excellent in any endeavor. Individuals with perfectionism experience chronic stress, procrastination (avoiding tasks where perfectionism makes completion impossible), anxiety, depression, and often underperformance ironically because perfectionism becomes paralyzing. Perfectionism shares more neurobiological features with anxiety disorders than with goal-setting or excellence-seeking. The standards are self-imposed threats, not adaptive goals.
+
+The neurobiological mechanism involves amygdala-driven threat-perception in response to imperfection or mistakes, combined with a perfectionist's hyperactive anterior cingulate cortex that generates persistent error-detection and self-criticism. The amygdala treats making mistakes or producing imperfect work as social threat or competence threat, triggering anxiety. This drives compulsive checking, revision, and reassurance-seeking. Procrastination emerges not from laziness but from anxiety: the nervous system avoids initiating tasks where perfectionism standards create threat-perception. The perfectionist becomes trapped in a state where performance-initiation generates anxiety, prevention generates guilt, and the standards themselves become a source of chronic threat.
+
+Our technique recalibrates the threat-perception in response to imperfection and reduces the amygdala's sensitivity to minor mistakes through targeted limbic intervention. We restore accurate threat/non-threat assessment where true excellence becomes achievable without perfectionism-based anxiety. Your nervous system distinguishes between genuine quality and perfectionist threat-magnification. This isn't self-compassion training or standards reduction. It's recoding of how your nervous system encodes mistakes and imperfection as threat. You access genuine excellence production without the perfectionism-based anxiety and paralysis.`,
+		ngo_url: "https://www.apa.org/science/about/psa/perfectionism",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5603083/",
 	},
 	{
 		id: "dysgraphia",
