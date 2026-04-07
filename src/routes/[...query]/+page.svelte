@@ -9,7 +9,7 @@
 	import Featured from "$lib/Featured.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import Conditions from "$lib/Conditions.js"
+	import Conditions, {getCondition} from "$lib/Conditions.js"
 
 	function handleSignUpClick(conditionName) {
 		// Find the checkbox for this condition and check it
@@ -33,54 +33,66 @@
 			: queryArray
 
 		if (query) {
-			// Extract all words from the query path
-			const words = query
-				.toLowerCase()
-				.split(/[\s-_/]+/)
-				.filter(Boolean)
-
 			// Skip if trying to navigate to svelte's internal elements
-			if (words.includes("svelte-announcer")) return
+			if (query.toLowerCase().includes("svelte-announcer")) return
 
-			const allElements = document.querySelectorAll(
-				"[path],[id]:not(#svelte-announcer)",
-			)
-			const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6")
 			let targetElement = null
 
-			// Try each word in order, looking through IDs/paths, then headings
-			for (const word of words) {
-				if (targetElement) break
+			// First: try to find best matching condition using intelligent scoring
+			const matchedCondition = getCondition(query)
+			if (matchedCondition) {
+				// Look for the condition element by id
+				targetElement = document.getElementById(matchedCondition.id)
+			}
 
-				// Search in element IDs and paths
-				for (const el of allElements) {
-					// Skip elements inside forms
-					if (el.closest("form")) {
-						continue
-					}
-					const elPath = el.getAttribute("path")
-					if (
-						(el.id && el.id.toLowerCase().includes(word)) ||
-						(elPath && elPath.toLowerCase().includes(word))
-					) {
-						targetElement = el
-						break
-					}
-				}
+			// Fallback: if no condition matched, search DOM by word inclusion
+			if (!targetElement) {
+				const words = query
+					.toLowerCase()
+					.split(/[\s-_/]+/)
+					.filter(Boolean)
 
-				// If not found, search in headings
-				if (!targetElement) {
-					for (const heading of headings) {
-						// Skip headings inside forms
-						if (heading.closest("form")) {
+				const allElements = document.querySelectorAll(
+					"[path],[id]:not(#svelte-announcer)",
+				)
+				const headings = document.querySelectorAll(
+					"h1, h2, h3, h4, h5, h6",
+				)
+
+				// Try each word in order, looking through IDs/paths, then headings
+				for (const word of words) {
+					if (targetElement) break
+
+					// Search in element IDs and paths
+					for (const el of allElements) {
+						// Skip elements inside forms
+						if (el.closest("form")) {
 							continue
 						}
+						const elPath = el.getAttribute("path")
 						if (
-							heading.textContent &&
-							heading.textContent.toLowerCase().includes(word)
+							(el.id && el.id.toLowerCase().includes(word)) ||
+							(elPath && elPath.toLowerCase().includes(word))
 						) {
-							targetElement = heading
+							targetElement = el
 							break
+						}
+					}
+
+					// If not found, search in headings
+					if (!targetElement) {
+						for (const heading of headings) {
+							// Skip headings inside forms
+							if (heading.closest("form")) {
+								continue
+							}
+							if (
+								heading.textContent &&
+								heading.textContent.toLowerCase().includes(word)
+							) {
+								targetElement = heading
+								break
+							}
 						}
 					}
 				}

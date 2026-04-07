@@ -31,6 +31,56 @@ const CONDITIONS = [
 		name: "Stutter - Speech Fluency",
 	},
 	{
+		id: "arachnophobia-fear-spiders",
+		path: "/spider/arachnophobia/fear/phobia",
+		name: "Arachnophobia - Fear of Spiders",
+	},
+	{
+		id: "ophidiophobia-fear-snakes",
+		path: "/snake/ophidiophobia/fear/phobia",
+		name: "Ophidiophobia - Fear of Snakes",
+	},
+	{
+		id: "acrophobia-fear-heights",
+		path: "/height/acrophobia/fear/phobia",
+		name: "Acrophobia - Fear of Heights",
+	},
+	{
+		id: "glossophobia-fear-public-speaking",
+		path: "/speaking/glossophobia/fear/phobia",
+		name: "Glossophobia - Fear of Public Speaking",
+	},
+	{
+		id: "agoraphobia-social-phobia",
+		path: "/agoraphobia/social/phobia/crowds/open",
+		name: "Agoraphobia/Social Phobia",
+	},
+	{
+		id: "aerophobia-fear-flying",
+		path: "/flying/aerophobia/fear/phobia",
+		name: "Aerophobia - Fear of Flying",
+	},
+	{
+		id: "trypanophobia-fear-needles",
+		path: "/needle/trypanophobia/fear/phobia",
+		name: "Trypanophobia - Fear of Needles",
+	},
+	{
+		id: "cynophobia-fear-dogs",
+		path: "/dog/cynophobia/fear/phobia",
+		name: "Cynophobia - Fear of Dogs",
+	},
+	{
+		id: "claustrophobia-fear-enclosed-spaces",
+		path: "/enclosed/claustrophobia/fear/phobia",
+		name: "Claustrophobia - Fear of Enclosed Spaces",
+	},
+	{
+		id: "astraphobia-fear-storms",
+		path: "/storm/astraphobia/fear/phobia",
+		name: "Astraphobia - Fear of Storms",
+	},
+	{
 		id: "asd-autism-spectrum",
 		path: "/asd/autism/aspergers/spectrum",
 		name: "ASD - Autism Spectrum Disorder",
@@ -102,6 +152,74 @@ const CONDITIONS = [
 	},
 ]
 
+/**
+ * Score a condition based on word matches with position and field priority weighting
+ * (Same logic as src/lib/Conditions.js for consistency)
+ */
+function scoreCondition(condition, words) {
+	const condId = condition.id.toLowerCase()
+	const condPath = condition.path.toLowerCase()
+	const condName = condition.name.toLowerCase()
+	const condDesc = (condition.description || "").toLowerCase()
+
+	const pathSegments = condPath.split("/").filter(Boolean)
+
+	let totalScore = 0
+	let matchingWordCount = 0
+
+	for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+		const word = words[wordIndex]
+		let wordScore = 0
+
+		const pathPosition = pathSegments.findIndex((seg) => seg.includes(word))
+		if (pathPosition !== -1) {
+			const positionBonus = 100 - pathPosition * 15
+			wordScore += positionBonus
+			matchingWordCount++
+		}
+
+		if (condName.includes(word)) {
+			wordScore += 50 + (10 - wordIndex * 2)
+			if (pathPosition === -1) matchingWordCount++
+		}
+
+		if (condId.includes(word)) {
+			wordScore += 30
+			if (pathPosition === -1 && !condName.includes(word))
+				matchingWordCount++
+		}
+
+		if (condDesc.includes(word) && wordScore < 5) {
+			wordScore += 5
+		}
+
+		totalScore += wordScore
+	}
+
+	const frequencyBonus = 1 + matchingWordCount * 0.2
+	return totalScore * frequencyBonus
+}
+
+/**
+ * Find best matching condition (mirrors src/lib/Conditions.js)
+ */
+function getCondition(words) {
+	if (!words || words.length === 0) return null
+
+	let bestCondition = null
+	let bestScore = -1
+
+	for (const condition of CONDITIONS) {
+		const score = scoreCondition(condition, words)
+		if (score > bestScore) {
+			bestScore = score
+			bestCondition = condition
+		}
+	}
+
+	return bestScore > 0 ? bestCondition : null
+}
+
 export default async (request, context) => {
 	const url = new URL(request.url)
 	const pathname = url.pathname
@@ -128,10 +246,8 @@ export default async (request, context) => {
 		return response
 	}
 
-	// Extract the path (e.g., "/love" -> "love")
+	// Extract the path (e.g., "/love" -> "love") and find best matching condition
 	const path = pathname.slice(1)
-
-	// Try to match against conditions
 	let matchedCondition = null
 
 	if (path) {
@@ -140,24 +256,7 @@ export default async (request, context) => {
 			.split(/[\s-_/]+/)
 			.filter(Boolean)
 
-		for (const word of words) {
-			if (matchedCondition) break
-
-			for (const condition of CONDITIONS) {
-				const conditionId = condition.id.toLowerCase()
-				const conditionPath = condition.path.toLowerCase()
-				const conditionName = condition.name.toLowerCase()
-
-				if (
-					conditionId.includes(word) ||
-					conditionPath.includes(word) ||
-					conditionName.includes(word)
-				) {
-					matchedCondition = condition
-					break
-				}
-			}
-		}
+		matchedCondition = getCondition(words)
 	}
 
 	// If we found a matching condition, rewrite og tags

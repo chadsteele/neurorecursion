@@ -1,4 +1,4 @@
-export default [
+const Conditions = [
 	{
 		id: "depressed-suicidal-major-depressive-disorder",
 		path: "/depression/suicidal",
@@ -79,6 +79,136 @@ Our research demonstrates that by addressing the underlying social anxiety and r
 		ngo_url: "https://www.stutteringhelp.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8608149/",
+	},
+	{
+		id: "arachnophobia-fear-spiders",
+		path: "/spider/arachnophobia/fear/phobia",
+		name: "Arachnophobia - Fear of Spiders",
+		description: `Arachnophobia, the fear of spiders, is one of the most common specific phobias affecting a significant portion of the population. Despite the fact that most spiders are harmless to humans, individuals with arachnophobia experience intense panic, avoidance, and significant distress when encountering a spider or even a picture of one. This phobia can severely limit activities outdoors, in basements, or in other spaces where spiders may be present, and can negatively impact quality of life and relationships.
+
+The neurobiological mechanism of arachnophobia involves an evolutionary predisposition where the amygdala has been primed to detect certain threats with heightened sensitivity. A single negative experience or even witnessing another person's fear response can condition the amygdala to perceive spiders as life-threatening, creating a rapid, automatic fear response that bypasses higher-order cognition. The sight of a spider triggers immediate amygdala activation before conscious awareness is fully engaged, leading to panic and avoidance.
+
+Our approach to arachnophobia focuses on gradually recalibrating the amygdala's threat detection system while simultaneously building tolerance and cognitive reprocessing. By using exposure-based techniques within a regulated nervous system state, individuals can learn that spiders pose no threat and that their anxiety will naturally decrease with sustained exposure. Many individuals report complete resolution of their phobia following targeted intervention protocols.`,
+		ngo_url: "https://www.anxietycanada.com/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+	},
+	{
+		id: "ophidiophobia-fear-snakes",
+		path: "/snake/ophidiophobia/fear/phobia",
+		name: "Ophidiophobia - Fear of Snakes",
+		description: `Ophidiophobia, the fear of snakes, is a specific phobia characterized by severe anxiety, panic, and avoidance of snakes or snake-related stimuli. Like arachnophobia, it likely reflects an evolutionary preparedness where ancestral humans who were hypervigilant to snake threats had better survival outcomes. Individuals with ophidiophobia often experience panic attacks when encountering snakes, even if they are non-venomous and safely contained, and this fear can significantly restrict outdoor activities and travel.
+
+The amygdala rapidly detects snake-like shapes and movements, triggering an ancient survival response that may have been adaptive in ancestral environments but is maladaptive in modern contexts. This automatic threat detection occurs before conscious evaluation of whether the specific snake is actually dangerous, leading to immediate fear and avoidance. Repeated avoidance reinforces the amygdala's belief that snakes are dangers to be avoided at all costs.
+
+Our intervention approach directly targets the conditioned fear response by gradually and safely exposing individuals to snakes within a regulated nervous system state. Through repeated, non-threatening exposures combined with nervous system regulation techniques, the amygdala's threat assessment is updated and the automatic fear response diminishes. Many individuals report significant reductions in their fear of snakes and increased willingness to engage in outdoor activities and travel.`,
+		ngo_url: "https://www.iocdf.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3136004/",
+	},
+	{
+		id: "acrophobia-fear-heights",
+		path: "/height/acrophobia/fear/phobia",
+		name: "Acrophobia - Fear of Heights",
+		description: `Acrophobia, the fear of heights, is a specific phobia involving intense fear and panic when at elevation or looking down from a height. Unlike most other phobias, acrophobia has a strong physiological component as our vestibular system (which controls balance) naturally creates unease at heights as a survival mechanism. However, in individuals with acrophobia, this natural caution escalates into overwhelming panic, avoidance of bridges, tall buildings, and mountains, significantly restricting their activities and travel.
+
+The neurobiological mechanism combines vestibular dysregulation with amygdala hyperreactivity. The vestibular system sends signals of imbalance and threat to the amygdala, which becomes hyper-responsive and triggers a panic response. Individuals often catastrophize about falling, losing control, or having a panic attack at height, creating a feedback loop where anxiety about the anxiety further amplifies the threat response. The brain enters a state of hypervigilance to falling-related cues.
+
+Our approach combines techniques to stabilize vestibular function with systematic desensitization within regulated nervous system states. By gradually exposing individuals to heights while maintaining parasympathetic activation, we can recalibrate both the vestibular system's sensitivity and the amygdala's threat assessment. Many individuals report substantial reductions in acrophobia and restored ability to enjoy activities involving heights.`,
+		ngo_url: "https://adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4815873/",
+	},
+	{
+		id: "glossophobia-fear-public-speaking",
+		path: "/speaking/glossophobia/fear/phobia",
+		name: "Glossophobia - Fear of Public Speaking",
+		description: `Glossophobia, the fear of public speaking, is one of the most common specific phobias and social anxieties in the general population. Individuals with glossophobia experience intense anxiety, physical symptoms like trembling and accelerated heart rate, and often engage in significant avoidance of public speaking situations. This phobia can substantially limit career advancement, educational opportunities, and social participation, as public speaking is ubiquitous in professional and academic life.
+
+The neurobiological mechanism involves heightened amygdala reactivity to social evaluation threat combined with anterior insula activation related to bodily awareness. The prospect of being judged by an audience activates the limbic threat-detection system, triggering sympathetic nervous system activation that causes physical symptoms like trembling, sweating, and racing heart—symptoms that the individual then becomes hypervigilant to, creating a feedback loop of escalating anxiety. The social threat becomes compounded by interoceptive threat (fear of one's own anxiety symptoms).
+
+Our research-backed approach combines cognitive preparation with nervous system regulation techniques to reduce both the social threat perception and the physical anxiety symptoms. By helping individuals achieve parasympathetic activation before speaking and maintaining it during presentations, the amygdala's threat response is dampened. Repeated exposure practice within a regulated nervous system state leads to habituation and confidence building. Many individuals report dramatic improvements in their ability to speak publicly with reduced anxiety.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/",
+	},
+	{
+		id: "agoraphobia-social-phobia",
+		path: "/agoraphobia/social/phobia/crowds/open",
+		name: "Agoraphobia/Social Phobia - Fear of Open/Crowded Spaces",
+		description: `Agoraphobia is a panic/anxiety disorder characterized by intense fear and avoidance of situations from which escape might be difficult or embarrassing, particularly open spaces, crowds, public transportation, or being away from home. Severe agoraphobia can become completely disabling, with individuals becoming housebound and dependent on others for basic functioning. Social phobia often accompanies or overlaps with agoraphobia, with fear of negative social evaluation compounding the fear of being trapped in public spaces.
+
+The neurobiological mechanism involves a heightened threat response to situations where the individual perceives limited escape options or potential judgment from others. The amygdala becomes sensitized to crowd-related cues, open spaces, and social presence, triggering panic attacks that feel bodily overwhelming and create catastrophic thoughts about losing control or having a medical emergency. The individual then begins avoiding situations that triggered panic, which reinforces the amygdala's belief that these situations are dangerous.
+
+Our approach involves systematic exposure to feared situations within carefully controlled nervous system states, allowing the amygdala to learn that these situations are not actually dangerous. By combining exposure with parasympathetic nervous system activation and cognitive restructuring, we help individuals gradually restore their capacity to engage in previously avoided activities. Many individuals report significant reductions in agoraphobic avoidance and restoration of their mobility and independence.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2464606/",
+	},
+	{
+		id: "aerophobia-fear-flying",
+		path: "/flying/aerophobia/fear/phobia",
+		name: "Aerophobia - Fear of Flying",
+		description: `Aerophobia, the fear of flying, affects a substantial portion of the population and can range from mild anxiety to complete avoidance of air travel. Individuals with aerophobia experience intense anxiety before and during flights, often experiencing panic attacks, catastrophic thoughts about crashes, and significant avoidance that impacts travel, career opportunities, and vacation plans. For many, aerophobia severely restricts their life choices and leads to feelings of shame and limitation.
+
+The neurobiological mechanism combines actual lack of control (the flight is controlled by the pilot) with vestibular dysregulation (the unusual sensations of flight confuse the balance system) and catastrophic thinking patterns. The amygdala perceives the combination of altitude, enclosed space, and loss of control as existential threat, triggering panic responses that feel overwhelming and uncontrollable. Hypervigilance to flight-related bodily sensations (turbulence, slight noises, pressure changes) further amplifies anxiety.
+
+Our approach specifically targets the perceived loss of control by helping individuals develop alternative coping mechanisms and parasympathetic activation strategies that can be employed during flights. Through graduated exposure to flight-related stimuli and systematic desensitization, combined with techniques to regulate both vestibular and anxiety systems, many individuals report substantial reductions in aerophobia. Many clients report successfully completing previously-avoided flights with significantly reduced anxiety.`,
+		ngo_url: "https://www.flyingwithfear.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
+	},
+	{
+		id: "trypanophobia-fear-needles",
+		path: "/needle/trypanophobia/fear/phobia",
+		name: "Trypanophobia - Fear of Needles/Injections",
+		description: `Trypanophobia, the fear of needles or injections, is a specific phobia that can have serious health consequences as it often leads individuals to avoid necessary medical procedures, vaccinations, and dental care. Individuals with trypanophobia experience intense anxiety, panic, fainting, or avoidance when facing needle-related medical interventions. This phobia not only impacts individual health outcomes but can also have public health implications when it prevents people from receiving vaccinations or routine preventive care.
+
+The neurobiological mechanism involves a heightened threat response to potential pain combined with a unique vasovagal response where seeing or anticipating needles triggers parasympathetic activation that causes fainting. Many individuals report that their fear intensifies when they observe the injection itself, creating a temporary loss of consciousness that paradoxically reinforces their fear of needles. The blood-injection-injury phobia category (of which trypanophobia is a part) uniquely involves this fainting response due to the specific way the amygdala of susceptible individuals processes injury threat.
+
+Our approach involves exposure-based therapy combined with techniques specifically designed to prevent vasovagal fainting responses, such as applied muscle tension. By gradually exposing individuals to needle-related stimuli while maintaining consciousness and nervous system regulation, the amygdala's threat response can be recalibrated. Many individuals report successful completion of previously-avoided medical procedures with significantly reduced anxiety and no fainting episodes.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8119524/",
+	},
+	{
+		id: "cynophobia-fear-dogs",
+		path: "/dog/cynophobia/fear/phobia",
+		name: "Cynophobia - Fear of Dogs",
+		description: `Cynophobia, the fear of dogs, is a specific phobia affecting individuals who have experienced prior negative dog-related experiences or have learned fear responses through observation or instruction. Individuals with cynophobia experience intense anxiety in the presence of dogs or even at the sound of barking, and often engage in significant avoidance of parks, neighborhoods, and social situations where dogs might be present. This phobia can severely restrict social participation and outdoor activities, particularly in communities where dogs are common pets.
+
+The neurobiological mechanism often involves conditioning where a negative dog-related experience (being bitten, chased, or jumped on) becomes associated with threat in the amygdala. The dog's sudden movements, loud bark, or physical proximity can trigger an automatic threat response that the individual experiences as overwhelming fear. Unlike evolutionary fears like arachnophobia, cynophobia is typically learned, but once conditioned, the amygdala's threat response becomes equally automatic and difficult to override.
+
+Our intervention approach involves systematic desensitization to dogs starting with images and sounds, progressing to observing calm dogs from safe distances, and gradually building toward interaction with friendly dogs. By pairing dog-related stimuli with nervous system regulation and safety, the amygdala's conditioned threat response can be extinguished and replaced with new, safer associations. Many individuals report complete resolution of their cynophobia and restored ability to enjoy the company of dogs.`,
+		ngo_url: "https://adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+	},
+	{
+		id: "claustrophobia-fear-enclosed-spaces",
+		path: "/enclosed/claustrophobia/fear/phobia",
+		name: "Claustrophobia - Fear of Enclosed Spaces",
+		description: `Claustrophobia, the fear of enclosed spaces, is a specific phobia characterized by intense anxiety when in small, confined spaces such as elevators, small bathrooms, closets, or confined areas without clear exits. Individuals with claustrophobia often experience panic attacks in these situations and engage in significant avoidance that can substantially restrict their daily functioning, limiting their ability to use elevators, fly, or work in certain environments. The fear often involves catastrophic thoughts about being trapped, unable to escape, or suffocating.
+
+The neurobiological mechanism combines threat responses to spatial confinement with a heightened sensitivity to perceived loss of control and escape routes. The amygdala perceives enclosed spaces as threatening, triggering both anxious anticipation before entering and panic if actually confined. Hypervigilance to bodily sensations (breathing, chest tightness, temperature) combines with catastrophic thinking to create escalating anxiety. The sensation of walls closing in activates interoceptive threat detection alongside spatial threat detection.
+
+Our approach involves systematic exposure to progressively more confining spaces while maintaining parasympathetic nervous system activation. By beginning in gently confining environments and gradually progressing to more enclosed spaces, the amygdala learns that confinement is not actually dangerous. Paralleling this with cognitive restructuring about escape and safety, individuals develop confidence in their ability to tolerate enclosed spaces. Many individuals report dramatic improvements in their ability to use elevators, fly, and enter confined spaces with significantly reduced anxiety.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573563/",
+	},
+	{
+		id: "astraphobia-fear-storms",
+		path: "/storm/astraphobia/fear/phobia",
+		name: "Astraphobia - Fear of Storms/Thunder/Lightning",
+		description: `Astraphobia, the fear of storms, thunder, and lightning, is a specific phobia characterized by intense anxiety and panic during thunderstorms or when storms are forecast. Individuals with astraphobia often experience hypervigilance to weather forecasts, avoidance of outdoor activities during stormy seasons, and significant distress when storms occur. This phobia can restrict travel, limit outdoor recreation, and create significant anxiety during otherwise normal weather patterns, particularly for those living in regions with frequent thunderstorms.
+
+The neurobiological mechanism involves both realistic threat perception and amygdala hyperreactivity to sudden, loud noises and visual stimuli. Thunder and lightning are inherently startling to the human nervous system due to their unpredictable, loud, and intense nature, but individuals with astraphobia show exaggerated amygdala responses that trigger panic far beyond the actual risk level. The unpredictability of storms compounds the threat response, as the individual cannot anticipate when the next sound or flash will occur, creating sustained anxiety throughout the storm.
+
+Our approach combines systematic desensitization using recordings of thunder and visual storm stimuli with nervous system regulation techniques. By gradually exposing individuals to storm-related sounds and images within a controlled, regulated state, the amygdala's threat response can be recalibrated. Additionally, we teach individuals coping strategies for natural anxiety during actual storms, including grounding techniques and cognitive reframing. Many individuals report substantial reductions in storm-related anxiety and restored capacity to engage in outdoor activities during storm seasons.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573564/",
 	},
 
 	{
@@ -272,3 +402,94 @@ Our research demonstrates that reducing anxiety substantially improves writing p
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4805091/",
 	},
 ]
+
+/**
+ * Score a condition based on word matches with position and field priority weighting
+ */
+function scoreCondition(condition, words) {
+	const condId = condition.id.toLowerCase()
+	const condPath = condition.path.toLowerCase()
+	const condName = condition.name.toLowerCase()
+	const condDesc = (condition.description || "").toLowerCase()
+
+	// Extract path segments for position-based scoring
+	const pathSegments = condPath.split("/").filter(Boolean)
+
+	let totalScore = 0
+	let matchingWordCount = 0
+
+	// Score each query word
+	for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+		const word = words[wordIndex]
+		let wordScore = 0
+
+		// Path matches: highest priority, position matters
+		// Earlier words (first segment) get maximum points
+		const pathPosition = pathSegments.findIndex((seg) => seg.includes(word))
+		if (pathPosition !== -1) {
+			const positionBonus = 100 - pathPosition * 15 // First=100, second=85, third=70, etc
+			wordScore += positionBonus
+			matchingWordCount++
+		}
+
+		// Name matches: second priority (50 points base, earlier words get +10)
+		if (condName.includes(word)) {
+			wordScore += 50 + (10 - wordIndex * 2)
+			if (pathPosition === -1) matchingWordCount++ // Only count if not already in path
+		}
+
+		// ID matches: third priority (30 points)
+		if (condId.includes(word)) {
+			wordScore += 30
+			if (pathPosition === -1 && !condName.includes(word))
+				matchingWordCount++
+		}
+
+		// Description matches: lowest priority (5 points)
+		if (condDesc.includes(word) && wordScore < 5) {
+			wordScore += 5
+		}
+
+		totalScore += wordScore
+	}
+
+	// Frequency multiplier: more matching words = higher score
+	// Bonus grows exponentially with more matches (2 words = 1.2x, 3 words = 1.4x, etc)
+	const frequencyBonus = 1 + matchingWordCount * 0.2
+
+	return totalScore * frequencyBonus
+}
+
+/**
+ * Find the best matching condition for given words or string
+ * @param {string|string[]} input - Space-separated string or array of words
+ * @returns {object|null} - Best matching condition or null
+ */
+export function getCondition(input) {
+	if (!input) return null
+
+	const words = Array.isArray(input)
+		? input
+		: input
+				.toLowerCase()
+				.split(/[\s,/_-]+/)
+				.filter(Boolean)
+
+	if (words.length === 0) return null
+
+	let bestCondition = null
+	let bestScore = -1
+
+	for (const condition of Conditions) {
+		const score = scoreCondition(condition, words)
+		if (score > bestScore) {
+			bestScore = score
+			bestCondition = condition
+		}
+	}
+
+	// Only return a match if score is meaningful (not just random low matches)
+	return bestScore > 0 ? bestCondition : null
+}
+
+export default Conditions
