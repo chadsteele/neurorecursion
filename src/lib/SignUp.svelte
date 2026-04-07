@@ -346,30 +346,8 @@
 		font-size: 1rem;
 	}
 
-	.status {
-		display: inline-block;
-		padding: 0.25rem 0.75rem;
-		border-radius: 4px;
-		font-size: 0.85rem;
-		font-weight: 600;
-		margin-top: 0.5rem;
-	}
-
-	.status-good {
-		background: #22c55e;
-		color: white;
-	}
-
 	.conditions-section {
 		margin-bottom: 1.5rem;
-	}
-
-	.conditions-label {
-		display: block;
-		margin-bottom: 1rem;
-		color: #a0d8ff;
-		font-weight: 600;
-		font-size: 1rem;
 	}
 
 	.submit-button {

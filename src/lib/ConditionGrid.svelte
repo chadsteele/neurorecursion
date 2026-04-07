@@ -35,20 +35,21 @@
 	{#each Categories as category (category.category_name)}
 		{@const hasContent = hasBranchContent(category.ids)}
 		<div class="category-branch" class:has-content={hasContent}>
-			<div
-				class="category-header"
-				onclick={() => toggleCategory(category.category_name)}
+<button
+			type="button"
+			class="category-header"
+			onclick={() => toggleCategory(category.category_name)}
+		>
+			<span
+				class="expand-arrow"
+				class:expanded={expanded[category.category_name]}
 			>
-				<span
-					class="expand-arrow"
-					class:expanded={expanded[category.category_name]}
-				>
-					▶
-				</span>
-				<span class="category-label">
-					{category.category_name}
-				</span>
-			</div>
+				▶
+			</span>
+			<span class="category-label">
+				{category.category_name}
+			</span>
+		</button>
 
 			{#if isExpanded(category.category_name)}
 				<div
@@ -147,7 +148,13 @@
 		cursor: pointer;
 		transition: background 0.2s ease;
 		background: rgba(26, 36, 71, 0.6);
+		border: none;
 		border-bottom: 1px solid rgba(74, 159, 216, 0.2);
+		width: 100%;
+		text-align: left;
+		font-size: inherit;
+		font-family: inherit;
+		color: inherit;
 	}
 
 	.category-header:hover {

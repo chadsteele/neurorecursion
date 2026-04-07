@@ -2,16 +2,6 @@
 	import Parallax from "$lib/Parallax.svelte"
 
 	let {condition = {}, formData = {}} = $props()
-
-	function handleSignUp() {
-		// Update formData directly - category will auto-expand reactively
-		if (!formData.conditions) {
-			formData.conditions = {}
-		}
-		formData.conditions[condition.name] = true
-
-		window.location.href = "#signup"
-	}
 </script>
 
 <div id={condition.id} path={condition.path}></div>
@@ -19,18 +9,23 @@
 	<section class="paper container">
 		<h3>{condition.name}</h3>
 		<p>
-			{@html condition?.description
-				?.trim()
-				.split("\n")
-				.map((line) => `<p>${line}</p>`)
-				.join("")}
+			{condition?.description?.trim() || ""}
 		</p>
 
 		<p>This could be your breakthrough! Sign up now.</p>
 		<div class="condition-links">
-			<button type="button" class="signup-btn" onclick={handleSignUp}>
-				✅ Sign up!
-			</button>
+			<label class="toggle-slider">
+				<input
+					type="checkbox"
+					bind:checked={formData.conditions[condition.name]}
+				/>
+				<span class="slider"></span>
+				<span class="toggle-label">
+					{formData.conditions[condition.name] ? "me!" : "nope"}
+				</span>
+			</label>
+			<a type="button" class="signup-btn" href="#signup"> ✅ Sign up! </a>
+
 			<a
 				href={condition.ngo_url}
 				target="_blank"
@@ -84,18 +79,54 @@
 		background: #357ba8;
 	}
 
-	.condition-links .signup-btn {
-		padding: 0.5rem 1rem;
-		background: #4a9fd8;
-		color: white;
-		border: none;
-		border-radius: 4px;
-		transition: background 0.3s ease;
-		font-size: 0.9rem;
+	.toggle-slider {
+		display: flex;
+		align-items: center;
 		cursor: pointer;
+		user-select: none;
 	}
 
-	.condition-links .signup-btn:hover {
-		background: #357ba8;
+	.toggle-slider input {
+		display: none;
+	}
+
+	.slider {
+		position: relative;
+		display: inline-block;
+		width: 50px;
+		height: 26px;
+		background-color: #4a5f7f;
+		border-radius: 24px;
+		transition: background-color 0.3s ease;
+		border: 1px solid rgba(74, 159, 216, 0.3);
+	}
+
+	.slider::after {
+		content: "";
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 2px;
+		top: 2px;
+		background-color: white;
+		border-radius: 50%;
+		transition: transform 0.3s ease;
+	}
+
+	.toggle-slider input:checked + .slider {
+		background-color: #4a9fd8;
+		border-color: rgba(74, 159, 216, 0.8);
+	}
+
+	.toggle-slider input:checked + .slider::after {
+		transform: translateX(26px);
+	}
+
+	.toggle-label {
+		margin-left: 0.5rem;
+		font-weight: 600;
+		font-size: 0.85rem;
+		color: #a0d8ff;
+		min-width: 35px;
 	}
 </style>

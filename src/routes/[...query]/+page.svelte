@@ -1,6 +1,7 @@
 <script>
 	import {onMount} from "svelte"
 	import {page} from "$app/stores"
+	import {replaceState} from "$app/navigation"
 	import Intro from "$lib/Intro.svelte"
 	import Partners from "$lib/Partners.svelte"
 	import References from "$lib/References.svelte"
@@ -22,86 +23,98 @@
 	onMount(() => {
 		// Get query parameter and navigate to that section if it exists
 		// With [...query] rest parameter, $page.params.query is an array
-		const queryArray = $page.params.query
-		const query = Array.isArray(queryArray)
-			? queryArray.join("/")
-			: queryArray
+		try {
+			const queryArray = $page.params.query
+			const query = Array.isArray(queryArray)
+				? queryArray.join("/")
+				: queryArray
 
-		if (query) {
-			// Skip if trying to navigate to svelte's internal elements
-			if (query.toLowerCase().includes("svelte-announcer")) return
+			if (query && typeof query === "string") {
+				// Skip if trying to navigate to svelte's internal elements
+				if (query.toLowerCase().includes("svelte-announcer")) {
+					// continue to observer setup
+				} else {
+					let targetElement = null
 
-			let targetElement = null
+					// First: try to find best matching condition using intelligent scoring
+					const matchedCondition = getCondition(query)
+					if (matchedCondition) {
+						// Look for the condition element by id
+						targetElement = document.getElementById(
+							matchedCondition.id,
+						)
+					}
 
-			// First: try to find best matching condition using intelligent scoring
-			const matchedCondition = getCondition(query)
-			if (matchedCondition) {
-				// Look for the condition element by id
-				targetElement = document.getElementById(matchedCondition.id)
-			}
+					// Fallback: if no condition matched, search DOM by word inclusion
+					if (!targetElement) {
+						const words = query
+							.toLowerCase()
+							.split(/[\s-_/]+/)
+							.filter(Boolean)
 
-			// Fallback: if no condition matched, search DOM by word inclusion
-			if (!targetElement) {
-				const words = query
-					.toLowerCase()
-					.split(/[\s-_/]+/)
-					.filter(Boolean)
+						const allElements = document.querySelectorAll(
+							"[path],[id]:not(#svelte-announcer)",
+						)
+						const headings = document.querySelectorAll(
+							"h1, h2, h3, h4, h5, h6",
+						)
 
-				const allElements = document.querySelectorAll(
-					"[path],[id]:not(#svelte-announcer)",
-				)
-				const headings = document.querySelectorAll(
-					"h1, h2, h3, h4, h5, h6",
-				)
+						// Try each word in order, looking through IDs/paths, then headings
+						for (const word of words) {
+							if (targetElement) break
 
-				// Try each word in order, looking through IDs/paths, then headings
-				for (const word of words) {
-					if (targetElement) break
+							// Search in element IDs and paths
+							for (const el of allElements) {
+								// Skip elements inside forms
+								if (el.closest("form")) {
+									continue
+								}
+								const elPath = el.getAttribute("path")
+								if (
+									(el.id &&
+										el.id.toLowerCase().includes(word)) ||
+									(elPath &&
+										elPath.toLowerCase().includes(word))
+								) {
+									targetElement = el
+									break
+								}
+							}
 
-					// Search in element IDs and paths
-					for (const el of allElements) {
-						// Skip elements inside forms
-						if (el.closest("form")) {
-							continue
-						}
-						const elPath = el.getAttribute("path")
-						if (
-							(el.id && el.id.toLowerCase().includes(word)) ||
-							(elPath && elPath.toLowerCase().includes(word))
-						) {
-							targetElement = el
-							break
+							// If not found, search in headings
+							if (!targetElement) {
+								for (const heading of headings) {
+									// Skip headings inside forms
+									if (heading.closest("form")) {
+										continue
+									}
+									if (
+										heading.textContent &&
+										heading.textContent
+											.toLowerCase()
+											.includes(word)
+									) {
+										targetElement = heading
+										break
+									}
+								}
+							}
 						}
 					}
 
-					// If not found, search in headings
-					if (!targetElement) {
-						for (const heading of headings) {
-							// Skip headings inside forms
-							if (heading.closest("form")) {
-								continue
-							}
-							if (
-								heading.textContent &&
-								heading.textContent.toLowerCase().includes(word)
-							) {
-								targetElement = heading
-								break
-							}
-						}
+					// Scroll to the found element
+					if (targetElement) {
+						setTimeout(() => {
+							targetElement.scrollIntoView({
+								behavior: "smooth",
+								block: "start",
+							})
+						}, 100)
 					}
 				}
 			}
-
-			// Scroll to the found element
-			if (targetElement) {
-				setTimeout(() => {
-					targetElement.scrollIntoView({
-						behavior: "smooth",
-						block: "start",
-					})
-				}, 100)
-			}
+		} catch (error) {
+			console.error("Error navigating to query:", error)
 		}
 
 		// Setup Intersection Observer to update URL as elements scroll into view
@@ -119,7 +132,7 @@
 					urlUpdateTimeout = setTimeout(() => {
 						const path = visibleEntry.target.getAttribute("path")
 						if (path && window.location.pathname !== path) {
-							window.history.replaceState({}, "", path)
+							replaceState("", path)
 						}
 					}, 100)
 				}
