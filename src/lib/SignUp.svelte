@@ -177,6 +177,7 @@
 	<p></p>
 	<p></p>
 	<form
+		name="signup"
 		method="POST"
 		netlify-honeypot="bot-field"
 		data-netlify="true"

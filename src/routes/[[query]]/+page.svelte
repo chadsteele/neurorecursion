@@ -84,9 +84,13 @@
 
 			<p>This could be your breakthrough! Sign up now.</p>
 			<div class="condition-links">
-				<a onclick={() => handleSignUpClick(condition.name)}
-					>✅ Sign up!</a
+				<button
+					type="button"
+					class="signup-btn"
+					onclick={() => handleSignUpClick(condition.name)}
 				>
+					✅ Sign up!
+				</button>
 				<a
 					href={condition.ngo_url}
 					target="_blank"
@@ -112,20 +116,6 @@
 </Parallax>
 
 <style>
-	.conditions-section h2 {
-		color: #4a9fd8;
-		font-size: 1.8rem;
-		margin-bottom: 1rem;
-		margin-top: 0;
-	}
-
-	.conditions-section p {
-		color: #d0d0d0;
-		font-size: 1rem;
-		line-height: 1.6;
-		margin: 0 0 2rem 0;
-	}
-
 	h3 {
 		color: #4a9fd8;
 		font-size: 1.5rem;
@@ -136,15 +126,6 @@
 	p {
 		color: #d0d0d0;
 		line-height: 1.6;
-	}
-
-	.stats {
-		background: rgba(74, 159, 216, 0.1);
-		border-left: 4px solid #4a9fd8;
-		padding: 1rem;
-		border-radius: 4px;
-		margin: 1.5rem 0;
-		font-size: 0.95rem;
 	}
 
 	.condition-links {
@@ -166,6 +147,21 @@
 	}
 
 	.condition-links a:hover {
+		background: #357ba8;
+	}
+
+	.condition-links .signup-btn {
+		padding: 0.5rem 1rem;
+		background: #4a9fd8;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		transition: background 0.3s ease;
+		font-size: 0.9rem;
+		cursor: pointer;
+	}
+
+	.condition-links .signup-btn:hover {
 		background: #357ba8;
 	}
 </style>

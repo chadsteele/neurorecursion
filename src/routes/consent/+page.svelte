@@ -158,6 +158,7 @@
 	{/if}
 
 	<form
+		name="consent"
 		method="POST"
 		netlify-honeypot="bot-field"
 		data-netlify="true"
@@ -330,20 +331,6 @@
 
 	.error-icon {
 		font-size: 1rem;
-	}
-
-	.status {
-		display: inline-block;
-		padding: 0.25rem 0.75rem;
-		border-radius: 4px;
-		font-size: 0.85rem;
-		font-weight: 600;
-		margin-top: 0.5rem;
-	}
-
-	.status-good {
-		background: #22c55e;
-		color: white;
 	}
 
 	.consent-section {

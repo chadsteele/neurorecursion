@@ -78,13 +78,6 @@
 </section>
 
 <style>
-	h2 {
-		color: #4a9fd8;
-		font-size: 1.8rem;
-		margin-bottom: 1rem;
-		margin-top: 0;
-	}
-
 	p {
 		margin-top: 0.75rem;
 		margin-bottom: 0.75rem;
