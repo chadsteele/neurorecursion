@@ -11,6 +11,8 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import Conditions from "$lib/Conditions.js"
 
+	const {data} = $props()
+
 	function handleSignUpClick(conditionName) {
 		// Find the checkbox for this condition and check it
 		const checkbox = document.querySelector(
@@ -134,6 +136,16 @@
 		}
 	})
 </script>
+
+<svelte:head>
+	{#if data?.matchedCondition}
+		<meta property="og:title" content={data.matchedCondition.name} />
+		<meta
+			property="og:description"
+			content={data.matchedCondition.description}
+		/>
+	{/if}
+</svelte:head>
 
 <Parallax background="/backgrounds/children.jpg">
 	<div id="about"></div>
