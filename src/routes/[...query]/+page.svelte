@@ -11,8 +11,6 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import Conditions from "$lib/Conditions.js"
 
-	const {data} = $props()
-
 	function handleSignUpClick(conditionName) {
 		// Find the checkbox for this condition and check it
 		const checkbox = document.querySelector(
@@ -138,19 +136,14 @@
 </script>
 
 <svelte:head>
-	<title>
-		{data.matchedCondition?.name ||
-			"Sign up for remote clinical trials.  FREE!"}
-	</title>
+	<title>Sign up for remote clinical trials. FREE!</title>
 	<meta
 		property="og:title"
-		content={data.matchedCondition?.name ||
-			"Sign up for remote clinical trials.  FREE!"}
+		content="Sign up for remote clinical trials. FREE!"
 	/>
 	<meta
 		property="og:description"
-		content={data.matchedCondition?.description ||
-			"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity."}
+		content="Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity."
 	/>
 </svelte:head>
 
