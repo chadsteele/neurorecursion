@@ -60,8 +60,13 @@ export default async (request, context) => {
 	if (matchedCondition) {
 		const html = await response.text()
 
-		// Replace og:title - handle multi-line formatting
+		// Replace og:url
 		const newHtml = html
+			.replace(
+				/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/is,
+				`<meta property="og:url" content="${request.url.replace(/"/g, "&quot;")}" />`,
+			)
+			// Replace og:title - handle multi-line formatting
 			.replace(
 				/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/is,
 				`<meta property="og:title" content="${matchedCondition.name.replace(/"/g, "&quot;")}" />`,

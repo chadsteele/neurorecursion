@@ -137,6 +137,7 @@
 
 <svelte:head>
 	<title>Sign up for remote clinical trials. FREE!</title>
+	<meta property="og:url" content="https://neurorecursion.com" />
 	<meta
 		property="og:title"
 		content="Sign up for remote clinical trials. FREE!"
