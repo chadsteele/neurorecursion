@@ -5,58 +5,6 @@
 	import Navbar from "$lib/Navbar.svelte"
 
 	let {children} = $props()
-
-	onMount(() => {
-		if (!browser) return
-
-		const updateHash = () => {
-			// Get all elements with IDs, excluding svelte's internal elements
-			const elements = document.querySelectorAll(
-				"[id]:not(#svelte-announcer)",
-			)
-			let closestElement = null
-			let closestDistance = Infinity
-
-			// Find element whose top is closest to viewport top
-			elements.forEach((el) => {
-				const rect = el.getBoundingClientRect()
-				// Prefer elements in viewport or just above it
-				const distance = Math.abs(rect.top)
-
-				// Only consider elements that are visible or just off-screen
-				if (rect.top < window.innerHeight && rect.bottom > -100) {
-					if (distance < closestDistance) {
-						closestDistance = distance
-						closestElement = el
-					}
-				}
-			})
-
-			if (closestElement && closestElement.id) {
-				const newHash = "#" + closestElement.id
-				if (window.location.hash !== newHash) {
-					window.history.replaceState(null, "", newHash)
-				}
-			}
-		}
-
-		// Debounce scroll updates
-		let scrollTimeout
-		const handleScroll = () => {
-			clearTimeout(scrollTimeout)
-			scrollTimeout = setTimeout(updateHash, 50)
-		}
-
-		window.addEventListener("scroll", handleScroll, {passive: true})
-
-		// Initial hash update
-		updateHash()
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll)
-			clearTimeout(scrollTimeout)
-		}
-	})
 </script>
 
 <Navbar />

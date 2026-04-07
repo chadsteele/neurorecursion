@@ -26,35 +26,62 @@
 
 	onMount(() => {
 		// Get query parameter and navigate to that section if it exists
-		const params = new URLSearchParams(window.location.search)
-		const query = params.get("q") || $page.params.query
+		const query = $page.params.query
 
 		if (query) {
+			// Extract the first word from the query
+			const firstWord = query.toLowerCase().split(/[\s-_]+/)[0]
+
 			// Skip if trying to navigate to svelte's internal elements
-			if (query.toLowerCase() === "svelte-announcer") return
+			if (firstWord === "svelte-announcer") return
 
-			// First, try exact ID match
-			let element = document.getElementById(query)
+			// Find first element whose ID contains the first word
+			const allElements = document.querySelectorAll(
+				"[id]:not(#svelte-announcer)",
+			)
+			let targetElement = null
 
-			// If no exact match, find first element whose ID contains the query
-			if (!element) {
-				const allElements = document.querySelectorAll(
-					"[id]:not(#svelte-announcer)",
+			for (const el of allElements) {
+				// Skip elements inside forms
+				if (el.closest("form")) {
+					continue
+				}
+				if (el.id && el.id.toLowerCase().includes(firstWord)) {
+					targetElement = el
+					break
+				}
+			}
+
+			// If no ID found, search for h1 or h2 with the word in its text
+			if (!targetElement) {
+				const headings = document.querySelectorAll(
+					"h1, h2, h3, h4, h5, h6",
 				)
-				for (const el of allElements) {
+					? document.querySelectorAll("h1, h2, h3, h4, h5, h6")
+					: []
+				for (const heading of headings) {
+					// Skip headings inside forms
+					if (heading.closest("form")) {
+						continue
+					}
 					if (
-						el.id &&
-						el.id.toLowerCase().includes(query.toLowerCase())
+						heading.textContent &&
+						heading.textContent.toLowerCase().includes(firstWord)
 					) {
-						element = el
+						targetElement = heading
 						break
 					}
 				}
 			}
 
-			// Navigate to the element if found
-			if (element) {
-				window.location.hash = "#" + element.id
+			// Scroll to the found element
+			if (targetElement) {
+				setTimeout(() => {
+					targetElement.scrollIntoView({
+						behavior: "smooth",
+						block: "start",
+					})
+				}, 100)
 			}
 		}
 	})
