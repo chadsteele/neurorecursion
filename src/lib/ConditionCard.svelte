@@ -40,7 +40,7 @@
 				❤️ Support
 			</a>
 			<a
-				href={condition.scientific_reference}
+				href={`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
