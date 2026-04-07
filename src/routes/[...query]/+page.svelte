@@ -10,11 +10,8 @@
 	import Featured from "$lib/Featured.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import Conditions, {
-		getCondition,
-		Categories,
-		ConditionsMap,
-	} from "$lib/Conditions.js"
+	import Conditions, {getCondition, ConditionsMap} from "$lib/Conditions.js"
+	import {Categories} from "$lib/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 
 	let formData = $state({

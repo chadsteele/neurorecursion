@@ -1,6 +1,7 @@
 <script>
 	import {slide} from "svelte/transition"
-	import {Categories, ConditionsMap} from "$lib/Conditions.js"
+	import {Categories} from "$lib/Categories.js"
+	import {ConditionsMap} from "$lib/Conditions.js"
 
 	let {formData = {}} = $props()
 
@@ -35,21 +36,21 @@
 	{#each Categories as category (category.category_name)}
 		{@const hasContent = hasBranchContent(category.ids)}
 		<div class="category-branch" class:has-content={hasContent}>
-<button
-			type="button"
-			class="category-header"
-			onclick={() => toggleCategory(category.category_name)}
-		>
-			<span
-				class="expand-arrow"
-				class:expanded={expanded[category.category_name]}
+			<button
+				type="button"
+				class="category-header"
+				onclick={() => toggleCategory(category.category_name)}
 			>
-				▶
-			</span>
-			<span class="category-label">
-				{category.category_name}
-			</span>
-		</button>
+				<span
+					class="expand-arrow"
+					class:expanded={expanded[category.category_name]}
+				>
+					▶
+				</span>
+				<span class="category-label">
+					{category.category_name}
+				</span>
+			</button>
 
 			{#if isExpanded(category.category_name)}
 				<div

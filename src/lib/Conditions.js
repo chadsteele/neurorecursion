@@ -38,6 +38,7 @@ Our technique systematically deconditions the amygdala's association between aut
 		ngo_url: "https://www.releaseint.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
+		background_image: "/backgrounds/cult.jpg",
 	},
 	{
 		id: "divorce-relational-trauma-family-systems-stress",
@@ -79,6 +80,7 @@ Our technique recalibrates social threat perception and restores social reward c
 			"https://www.aarp.org/relationships/friends-family/info-2018/loneliness.html",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8209555/",
+		background_image: "/backgrounds/depressed.png",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -92,6 +94,7 @@ Our technique recodes the threat-detection and memory-processing systems through
 		ngo_url: "https://www.ptsd.va.gov/",
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181836/",
+		background_image: "/backgrounds/war.webp",
 	},
 	{
 		id: "migraines",
@@ -199,6 +202,7 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/",
+		background_image: "/backgrounds/tedtalk.webp",
 	},
 	{
 		id: "imposter-syndrome",
@@ -376,6 +380,7 @@ Our technique recalibrates the threat-response system and restores genuine safet
 		ngo_url: "https://www.gunviolencearchive.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5993560/",
+		background_image: "/backgrounds/guns.jpg",
 	},
 	{
 		id: "homicidal-ideation-violent-urges",
@@ -481,6 +486,7 @@ Our technique recalibrates the intimacy-threat association by restoring secure a
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+		background_image: "/backgrounds/commitment.jpg",
 	},
 	{
 		id: "ai-anxiety-technophobia-fear-ai",
@@ -494,6 +500,7 @@ Our technique recalibrates threat-perception in response to AI and technological
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10527261/",
+		background_image: "/backgrounds/terminator.jpg",
 	},
 	{
 		id: "social-media-anxiety-disorder",
@@ -507,6 +514,7 @@ Our technique dissolves the social-evaluation threat perception specific to soci
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6375637/",
+		background_image: "/backgrounds/social.jpg",
 	},
 	{
 		id: "paranoia-scelerephobia-fear-strangers-criminals",
@@ -520,6 +528,7 @@ Our technique recalibrates threat perception in social contexts and restores acc
 		ngo_url: "https://www.nami.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6021151/",
+		background_image: "/backgrounds/paranoid.jpg",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -559,6 +568,7 @@ Our technique recalibrates night-time threat detection and restores parasympathe
 		ngo_url: "https://www.sleepfoundation.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6266436/",
+		background_image: "/backgrounds/insomnia.jpg",
 	},
 	{
 		id: "ocd-obsessive-compulsive-disorder",
@@ -598,6 +608,7 @@ Our technique recalibrates appearance-threat perception and restores accurate se
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105514/",
+		background_image: "/backgrounds/vanity.jpg",
 	},
 	{
 		id: "eating-disorders-anorexia-bulimia-binge",
@@ -611,6 +622,7 @@ Our technique recalibrates anxiety-management and restores genuine interoceptive
 		ngo_url: "https://www.nationaleatingdisorders.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6845995/",
+		background_image: "/backgrounds/eat.jpg",
 	},
 	{
 		id: "spd-sensory-processing-disorder",
@@ -691,6 +703,7 @@ Our technique recalibrates the evaluation-threat perception in testing contexts 
 		ngo_url: "https://www.apa.org/science/about/psa/test-anxiety",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6605844/",
+		background_image: "/backgrounds/test.webp",
 	},
 	{
 		id: "perfectionism",
@@ -813,122 +826,5 @@ export const ConditionsMap = Conditions.reduce((map, condition) => {
 	map[condition.id] = condition
 	return map
 }, {})
-
-export const Categories = [
-	{
-		category_name: "Stress, Anxiety & Generalized Worry",
-		ids: [
-			"health-anxiety-hypochondriasis",
-			"performance-anxiety-evaluation-fear",
-			"social-media-anxiety-disorder",
-			"agoraphobia-social-phobia",
-			"ai-anxiety-technophobia-fear-ai",
-		],
-	},
-	{
-		category_name: "Fears & Phobias",
-		ids: [
-			"arachnophobia-fear-spiders",
-			"claustrophobia-fear-enclosed-spaces",
-			"acrophobia-fear-heights",
-			"ophidiophobia-fear-snakes",
-			"trypanophobia-fear-needles",
-			"astraphobia-fear-storms",
-			"aerophobia-fear-flying",
-			"cynophobia-fear-dogs",
-		],
-	},
-	{
-		category_name: "Mood Disorders",
-		ids: [
-			"depressed-suicidal-major-depressive-disorder",
-			"bpd-bipolar-disorder",
-			"burnout-exhaustion-depersonalization",
-		],
-	},
-	{
-		category_name: "Neurodevelopmental",
-		ids: [
-			"adhd-attention-deficit-hyperactivity-disorder",
-			"asd-autism-aspergers-autistic-spectrum-disorder",
-			"spd-sensory-processing-disorder",
-			"dyscalculia",
-			"dcd-dyspraxia-developmental-coordination-disorder",
-			"misophonia",
-		],
-	},
-	{
-		category_name: "Addictions",
-		ids: [
-			"screen-addiction",
-			"porn-addiction-sexual-compulsivity",
-			"addiction-substance-abuse-disorders",
-		],
-	},
-	{
-		category_name: "Neurological & Physical",
-		ids: [
-			"migraines",
-			"chronic-pain-psychosomatic",
-			"epilepsy-seizure-disorders",
-			"tics-tourette-syndrome-tic-disorders",
-			"insomnia-sleep-hyperarousal",
-		],
-	},
-	{
-		category_name: "Performance & Self-Perception",
-		ids: [
-			"imposter-syndrome",
-			"perfectionism",
-			"test-anxiety",
-			"body-dysmorphia",
-		],
-	},
-	{
-		category_name: "Obsessive-Compulsive Spectrum",
-		ids: [
-			"ocd-obsessive-compulsive-disorder",
-			"eating-disorders-anorexia-bulimia-binge",
-			"trichotillomania-hair-pulling",
-		],
-	},
-	{
-		category_name: "Attachment & Relational",
-		ids: [
-			"loneliness-social-disconnection",
-			"anxious-avoidant-attachment-relational-patterns",
-			"rejection-sensitivity",
-			"divorce-relational-trauma-family-systems-stress",
-			"sexual-dysfunction-performance-anxiety-impotence",
-			"fear-of-intimacy-commitment-fear",
-		],
-	},
-	{
-		category_name: "Communication Disorders",
-		ids: [
-			"stuttering-childhood-onset-fluency-disorder",
-			"glossophobia-fear-public-speaking",
-			"selective-mutism",
-			"dysgraphia",
-		],
-	},
-	{
-		category_name: "Trauma & Crisis",
-		ids: [
-			"developmental-trauma-childhood-trauma",
-			"ptsd-post-traumatic-stress-disorder",
-			"cult-recovery-religious-trauma-damnation-fear",
-		],
-	},
-	{
-		category_name: "Power & Control",
-		ids: [
-			"ied-rage-intermittent-explosive-disorder",
-			"gun-addiction-weapons-obsession",
-			"homicidal-ideation-violent-urges",
-			"paranoia-scelerephobia-fear-strangers-criminals",
-		],
-	},
-]
 
 export default Conditions
