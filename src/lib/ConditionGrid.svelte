@@ -4,20 +4,11 @@
 
 	let {formData = {}} = $props()
 
-	// Track expanded categories
-	let expandedCategories = $state({})
-
-	// Initialize expanded state for all categories
-	$effect(() => {
-		Categories.forEach((category) => {
-			if (!(category.category_name in expandedCategories)) {
-				expandedCategories[category.category_name] = false
-			}
-		})
-	})
+	// Local state for tracking which categories are expanded
+	let expanded = $state({})
 
 	function toggleCategory(categoryName) {
-		expandedCategories[categoryName] = !expandedCategories[categoryName]
+		expanded[categoryName] = !expanded[categoryName]
 	}
 
 	function hasBranchContent(categoryIds) {
@@ -25,6 +16,11 @@
 			const condition = ConditionsMap[conditionId]
 			return condition && formData.conditions[condition.name]
 		})
+	}
+
+	// Check if category is explicitly expanded by user
+	function isExpanded(categoryName) {
+		return expanded[categoryName] === true
 	}
 
 	function getCheckedConditions(categoryIds) {
@@ -45,7 +41,7 @@
 			>
 				<span
 					class="expand-arrow"
-					class:expanded={expandedCategories[category.category_name]}
+					class:expanded={expanded[category.category_name]}
 				>
 					▶
 				</span>
@@ -54,7 +50,7 @@
 				</span>
 			</div>
 
-			{#if expandedCategories[category.category_name]}
+			{#if isExpanded(category.category_name)}
 				<div
 					class="category-conditions"
 					transition:slide={{duration: 300}}

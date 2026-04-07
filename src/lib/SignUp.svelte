@@ -1,13 +1,7 @@
 <script>
-	import {Categories, ConditionsMap} from "./Conditions.js"
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 
-	let formData = $state({
-		name: "",
-		email: "",
-		message: "",
-		conditions: {},
-	})
+	let {formData = {conditions: {}}} = $props()
 
 	let errors = $state({
 		name: "",
@@ -144,12 +138,10 @@
 			alert("There was an error submitting the form. Please try again.")
 		}
 	}
-
-	let {...props} = $props()
 </script>
 
 <div id="signup"></div>
-<section {...props}>
+<section class="paper container">
 	<h2>Sign Up</h2>
 	<p>This could be your breakthrough!</p>
 	<p>

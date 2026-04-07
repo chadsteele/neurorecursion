@@ -9,12 +9,15 @@
 	import Featured from "$lib/Featured.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import ConditionsComponent from "$lib/Conditions.svelte"
 	import Conditions, {getCondition} from "$lib/Conditions.js"
+	import ConditionCard from "$lib/ConditionCard.svelte"
 
-	function onSignUpClick(conditionName) {
-		// Any additional logic when signing up for a condition can go here
-	}
+	let formData = $state({
+		name: "",
+		email: "",
+		message: "",
+		conditions: {},
+	})
 
 	onMount(() => {
 		// Get query parameter and navigate to that section if it exists
@@ -158,9 +161,12 @@
 	<References class="paper container" />
 </Parallax>
 
-<SignUp class="paper container" />
+<SignUp {formData} />
 
-<ConditionsComponent {onSignUpClick} />
+<div id="trials"></div>
+{#each Conditions as condition (condition.name)}
+	<ConditionCard {condition} {formData} />
+{/each}
 
 <div id="partners"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
