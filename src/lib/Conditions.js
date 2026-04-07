@@ -809,9 +809,14 @@ export function getCondition(input) {
 	return bestScore > 0 ? bestCondition : null
 }
 
+export const ConditionsMap = Conditions.reduce((map, condition) => {
+	map[condition.id] = condition
+	return map
+}, {})
+
 export const Categories = [
 	{
-		category_name: "Anxiety & Generalized Worry",
+		category_name: "Stress, Anxiety & Generalized Worry",
 		ids: [
 			"health-anxiety-hypochondriasis",
 			"performance-anxiety-evaluation-fear",
@@ -821,7 +826,7 @@ export const Categories = [
 		],
 	},
 	{
-		category_name: "Specific Phobias",
+		category_name: "Fears & Phobias",
 		ids: [
 			"arachnophobia-fear-spiders",
 			"claustrophobia-fear-enclosed-spaces",
@@ -853,7 +858,7 @@ export const Categories = [
 		],
 	},
 	{
-		category_name: "Behavioral Addictions",
+		category_name: "Addictions",
 		ids: [
 			"screen-addiction",
 			"porn-addiction-sexual-compulsivity",
@@ -916,7 +921,7 @@ export const Categories = [
 		],
 	},
 	{
-		category_name: "Power and Control",
+		category_name: "Power & Control",
 		ids: [
 			"ied-rage-intermittent-explosive-disorder",
 			"gun-addiction-weapons-obsession",

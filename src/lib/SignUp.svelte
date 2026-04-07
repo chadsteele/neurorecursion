@@ -1,5 +1,6 @@
 <script>
-	import Conditions from "./Conditions.js"
+	import {Categories, ConditionsMap} from "./Conditions.js"
+	import ConditionGrid from "$lib/ConditionGrid.svelte"
 
 	let formData = $state({
 		name: "",
@@ -270,26 +271,7 @@
 				protocols are best suited to your profile. If you have a
 				condition that is not listed, specify it in your message.
 			</p>
-			<div class="conditions-grid">
-				{#each Conditions as condition (condition.name)}
-					<div class="condition-card">
-						<input
-							type="checkbox"
-							id={`condition-${condition.id}`}
-							name={`conditions`}
-							value={condition.name}
-							bind:checked={formData.conditions[condition.name]}
-							class="condition-checkbox"
-						/>
-						<label
-							for={`condition-${condition.id}`}
-							class="condition-label"
-						>
-							{condition.name}
-						</label>
-					</div>
-				{/each}
-			</div>
+			<ConditionGrid {formData} />
 		</div>
 
 		<button type="submit" class="submit-button">Submit</button>
@@ -396,51 +378,6 @@
 		color: #a0d8ff;
 		font-weight: 600;
 		font-size: 1rem;
-	}
-
-	.conditions-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-		gap: 1rem;
-	}
-
-	.condition-card {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.75rem;
-		padding: 1rem;
-		background: rgba(26, 36, 71, 0.8);
-		border: 2px solid rgba(74, 159, 216, 0.2);
-		border-radius: 6px;
-		transition: all 0.3s ease;
-	}
-
-	.condition-card:hover {
-		background: rgba(26, 36, 71, 1);
-		border-color: rgba(74, 159, 216, 0.5);
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.15);
-	}
-
-	.condition-checkbox {
-		margin-top: 0.25rem;
-		min-width: 20px;
-		width: 20px;
-		height: 20px;
-		cursor: pointer;
-		accent-color: #4a9fd8;
-	}
-
-	.condition-label {
-		color: #d0d0d0;
-		margin: 0;
-		display: block;
-		cursor: pointer;
-		font-weight: 500;
-	}
-
-	.condition-card:has(.condition-checkbox:checked) {
-		background: rgba(74, 159, 216, 0.15);
-		border-color: rgba(74, 159, 216, 0.6);
 	}
 
 	.submit-button {
