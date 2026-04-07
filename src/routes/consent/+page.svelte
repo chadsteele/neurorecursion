@@ -90,7 +90,9 @@
 		validateSignature()
 	}
 
-	function handleSubmit(e) {
+	async function handleSubmit(e) {
+		e.preventDefault()
+
 		// Validate all fields
 		touched.consent = true
 		touched.signature = true
@@ -100,11 +102,44 @@
 
 		// Check if there are any errors
 		if (errors.consent || errors.signature) {
-			e.preventDefault()
 			return
 		}
 
-		// Allow form to submit to Netlify
+		// Prepare form data for submission
+		const form = e.target
+		const formDataObj = new FormData(form)
+
+		// Convert consents array to comma-separated string
+		const consents = Array.from(formDataObj.getAll("consents")).join(", ")
+		if (consents) {
+			formDataObj.set("consents", consents)
+		}
+
+		try {
+			// Submit to Netlify Forms via POST
+			const response = await fetch("/consent", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body: new URLSearchParams(formDataObj).toString(),
+			})
+
+			if (response.ok) {
+				// Show success and redirect after delay
+				alert("Thank you! Your consent has been recorded.")
+				setTimeout(() => {
+					window.location.href = "/success?redirectTo=/"
+				}, 1000)
+			} else {
+				alert(
+					"There was an error submitting the form. Please try again.",
+				)
+			}
+		} catch (error) {
+			console.error("Form submission error:", error)
+			alert("There was an error submitting the form. Please try again.")
+		}
 	}
 </script>
 
@@ -122,9 +157,27 @@
 		</div>
 	{/if}
 
-	<form method="POST" onsubmit={handleSubmit} novalidate>
+	<form
+		method="POST"
+		netlify-honeypot="bot-field"
+		data-netlify="true"
+		onsubmit={handleSubmit}
+		novalidate
+	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="consent" />
+		<!-- Honeypot field for spam protection -->
+		<div class="hidden">
+			<label for="bot-field">
+				Don't fill this out if you're human:
+				<input
+					id="bot-field"
+					type="text"
+					name="bot-field"
+					tabindex="-1"
+				/>
+			</label>
+		</div>
 		<div class="consent-section">
 			<h3 class="consent-section-label">Consent & Legal Agreements</h3>
 			<div class="consent-agreements">
@@ -460,5 +513,14 @@
 	.participant-info strong {
 		color: #a0d8ff;
 		font-weight: 600;
+	}
+
+	.hidden {
+		display: none !important;
+		position: absolute !important;
+		visibility: hidden !important;
+		height: 0 !important;
+		width: 0 !important;
+		overflow: hidden !important;
 	}
 </style>

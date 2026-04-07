@@ -107,6 +107,45 @@
 		)
 	}
 
+	async function handleFormSubmit(event) {
+		if (!validateBeforeSubmit()) {
+			event.preventDefault()
+			return
+		}
+
+		// Prepare form data for submission
+		const form = event.target
+		const formDataObj = new FormData(form)
+
+		try {
+			// Submit to Netlify Forms via POST
+			const response = await fetch("/careers", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body: new URLSearchParams(formDataObj).toString(),
+			})
+
+			if (response.ok) {
+				// Show success and redirect after delay
+				alert(
+					"Thank you for your interest! We'll review your application soon.",
+				)
+				setTimeout(() => {
+					window.location.href = "/success?redirectTo=/"
+				}, 1000)
+			} else {
+				alert(
+					"There was an error submitting the form. Please try again.",
+				)
+			}
+		} catch (error) {
+			console.error("Form submission error:", error)
+			alert("There was an error submitting the form. Please try again.")
+		}
+	}
+
 	function handleCancel() {
 		goto("/")
 	}
@@ -169,9 +208,26 @@
 			</div>
 		</div>
 
-		<form method="POST" onsubmit={() => validateBeforeSubmit()}>
+		<form
+			method="POST"
+			netlify-honeypot="bot-field"
+			data-netlify="true"
+			onsubmit={handleFormSubmit}
+		>
 			<!-- Hidden field for Netlify Forms -->
 			<input type="hidden" name="form-name" value="careers" />
+			<!-- Honeypot field for spam protection -->
+			<div class="hidden">
+				<label for="bot-field">
+					Don't fill this out if you're human:
+					<input
+						id="bot-field"
+						type="text"
+						name="bot-field"
+						tabindex="-1"
+					/>
+				</label>
+			</div>
 
 			<div class="form-group">
 				<label for="name">Name</label>
@@ -461,5 +517,14 @@
 
 	.cancel-button:active {
 		transform: translateY(0);
+	}
+
+	.hidden {
+		display: none !important;
+		position: absolute !important;
+		visibility: hidden !important;
+		height: 0 !important;
+		width: 0 !important;
+		overflow: hidden !important;
 	}
 </style>

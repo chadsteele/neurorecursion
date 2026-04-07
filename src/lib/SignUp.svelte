@@ -98,6 +98,52 @@
 		return !(errors.name || errors.email || errors.message)
 	}
 
+	async function handleFormSubmit(event) {
+		if (!validateBeforeSubmit()) {
+			event.preventDefault()
+			return
+		}
+
+		// Prepare form data for submission
+		const form = event.target
+		const formDataObj = new FormData(form)
+
+		// Convert conditions to comma-separated string
+		const selectedConditions = Object.keys(formData.conditions)
+			.filter((key) => formData.conditions[key])
+			.join(", ")
+
+		if (selectedConditions) {
+			formDataObj.set("conditions", selectedConditions)
+		}
+
+		try {
+			// Submit to Netlify Forms via POST
+			const response = await fetch("/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body: new URLSearchParams(formDataObj).toString(),
+			})
+
+			if (response.ok) {
+				// Show success and redirect after delay
+				alert("Thank you! We'll be in touch soon.")
+				setTimeout(() => {
+					window.location.href = "/success?redirectTo=/consent"
+				}, 1000)
+			} else {
+				alert(
+					"There was an error submitting the form. Please try again.",
+				)
+			}
+		} catch (error) {
+			console.error("Form submission error:", error)
+			alert("There was an error submitting the form. Please try again.")
+		}
+	}
+
 	let {...props} = $props()
 </script>
 
@@ -130,9 +176,26 @@
 	</p>
 	<p></p>
 	<p></p>
-	<form method="POST" onsubmit={() => validateBeforeSubmit()}>
+	<form
+		method="POST"
+		netlify-honeypot="bot-field"
+		data-netlify="true"
+		onsubmit={handleFormSubmit}
+	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="signup" />
+		<!-- Honeypot field for spam protection -->
+		<div class="hidden">
+			<label for="bot-field">
+				Don't fill this out if you're human:
+				<input
+					id="bot-field"
+					type="text"
+					name="bot-field"
+					tabindex="-1"
+				/>
+			</label>
+		</div>
 
 		<div class="form-group">
 			<label for="name">Name</label>
@@ -400,5 +463,14 @@
 	.submit-button:active {
 		transform: translateY(0);
 		box-shadow: 0 2px 6px rgba(74, 159, 216, 0.2);
+	}
+
+	.hidden {
+		display: none !important;
+		position: absolute !important;
+		visibility: hidden !important;
+		height: 0 !important;
+		width: 0 !important;
+		overflow: hidden !important;
 	}
 </style>

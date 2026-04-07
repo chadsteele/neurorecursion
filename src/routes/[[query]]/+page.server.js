@@ -1,12 +1,4 @@
-import {redirect} from "@sveltejs/kit"
-
-export const actions = {
-	default: async ({request}) => {
-		if (request.method !== "POST") {
-			return {success: false}
-		}
-
-		// Redirect to success page with consent as next destination
-		throw redirect(303, "/success?redirectTo=/consent")
-	},
-}
+// Server actions can no longer be used with prerendering
+// Forms now use client-side AJAX submission to Netlify Forms
+// The page is prerendered, and Netlify's JavaScript handles form interception at runtime
+export const prerender = true
