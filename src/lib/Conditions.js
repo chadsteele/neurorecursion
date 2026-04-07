@@ -38,7 +38,7 @@ Our technique systematically deconditions the amygdala's association between aut
 		ngo_url: "https://www.releaseint.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
-		background_image: "/backgrounds/cult.jpg",
+		background_image: "/backgrounds/cult.png",
 	},
 	{
 		id: "divorce-relational-trauma-family-systems-stress",
@@ -94,7 +94,7 @@ Our technique recodes the threat-detection and memory-processing systems through
 		ngo_url: "https://www.ptsd.va.gov/",
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181836/",
-		background_image: "/backgrounds/war.webp",
+		background_image: "/backgrounds/war.png",
 	},
 	{
 		id: "migraines",
@@ -202,7 +202,7 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/",
-		background_image: "/backgrounds/tedtalk.webp",
+		background_image: "/backgrounds/tedtalk.png",
 	},
 	{
 		id: "imposter-syndrome",
@@ -380,7 +380,7 @@ Our technique recalibrates the threat-response system and restores genuine safet
 		ngo_url: "https://www.gunviolencearchive.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5993560/",
-		background_image: "/backgrounds/guns.jpg",
+		background_image: "/backgrounds/guns.png",
 	},
 	{
 		id: "homicidal-ideation-violent-urges",
@@ -486,7 +486,7 @@ Our technique recalibrates the intimacy-threat association by restoring secure a
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
-		background_image: "/backgrounds/commitment.jpg",
+		background_image: "/backgrounds/commitment.png",
 	},
 	{
 		id: "ai-anxiety-technophobia-fear-ai",
@@ -500,7 +500,7 @@ Our technique recalibrates threat-perception in response to AI and technological
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10527261/",
-		background_image: "/backgrounds/terminator.jpg",
+		background_image: "/backgrounds/terminator.png",
 	},
 	{
 		id: "social-media-anxiety-disorder",
@@ -514,7 +514,7 @@ Our technique dissolves the social-evaluation threat perception specific to soci
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6375637/",
-		background_image: "/backgrounds/social.jpg",
+		background_image: "/backgrounds/social.png",
 	},
 	{
 		id: "paranoia-scelerephobia-fear-strangers-criminals",
@@ -528,7 +528,7 @@ Our technique recalibrates threat perception in social contexts and restores acc
 		ngo_url: "https://www.nami.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6021151/",
-		background_image: "/backgrounds/paranoid.jpg",
+		background_image: "/backgrounds/paranoid.png",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -568,7 +568,7 @@ Our technique recalibrates night-time threat detection and restores parasympathe
 		ngo_url: "https://www.sleepfoundation.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6266436/",
-		background_image: "/backgrounds/insomnia.jpg",
+		background_image: "/backgrounds/insomnia.png",
 	},
 	{
 		id: "ocd-obsessive-compulsive-disorder",
@@ -608,7 +608,7 @@ Our technique recalibrates appearance-threat perception and restores accurate se
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105514/",
-		background_image: "/backgrounds/vanity.jpg",
+		background_image: "/backgrounds/vanity.png",
 	},
 	{
 		id: "eating-disorders-anorexia-bulimia-binge",
@@ -622,7 +622,7 @@ Our technique recalibrates anxiety-management and restores genuine interoceptive
 		ngo_url: "https://www.nationaleatingdisorders.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6845995/",
-		background_image: "/backgrounds/eat.jpg",
+		background_image: "/backgrounds/eat.png",
 	},
 	{
 		id: "spd-sensory-processing-disorder",
@@ -703,7 +703,7 @@ Our technique recalibrates the evaluation-threat perception in testing contexts 
 		ngo_url: "https://www.apa.org/science/about/psa/test-anxiety",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6605844/",
-		background_image: "/backgrounds/test.webp",
+		background_image: "/backgrounds/test.png",
 	},
 	{
 		id: "perfectionism",
