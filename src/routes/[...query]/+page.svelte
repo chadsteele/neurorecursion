@@ -26,50 +26,62 @@
 
 	onMount(() => {
 		// Get query parameter and navigate to that section if it exists
-		const query = $page.params.query
+		// With [...query] rest parameter, $page.params.query is an array
+		const queryArray = $page.params.query
+		const query = Array.isArray(queryArray)
+			? queryArray.join("/")
+			: queryArray
 
 		if (query) {
-			// Extract the first word from the query
-			const firstWord = query.toLowerCase().split(/[\s-_]+/)[0]
+			// Extract all words from the query path
+			const words = query
+				.toLowerCase()
+				.split(/[\s-_/]+/)
+				.filter(Boolean)
 
 			// Skip if trying to navigate to svelte's internal elements
-			if (firstWord === "svelte-announcer") return
+			if (words.includes("svelte-announcer")) return
 
-			// Find first element whose ID contains the first word
 			const allElements = document.querySelectorAll(
-				"[id]:not(#svelte-announcer)",
+				"[path],[id]:not(#svelte-announcer)",
 			)
+			const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6")
 			let targetElement = null
 
-			for (const el of allElements) {
-				// Skip elements inside forms
-				if (el.closest("form")) {
-					continue
-				}
-				if (el.id && el.id.toLowerCase().includes(firstWord)) {
-					targetElement = el
-					break
-				}
-			}
+			// Try each word in order, looking through IDs/paths, then headings
+			for (const word of words) {
+				if (targetElement) break
 
-			// If no ID found, search for h1 or h2 with the word in its text
-			if (!targetElement) {
-				const headings = document.querySelectorAll(
-					"h1, h2, h3, h4, h5, h6",
-				)
-					? document.querySelectorAll("h1, h2, h3, h4, h5, h6")
-					: []
-				for (const heading of headings) {
-					// Skip headings inside forms
-					if (heading.closest("form")) {
+				// Search in element IDs and paths
+				for (const el of allElements) {
+					// Skip elements inside forms
+					if (el.closest("form")) {
 						continue
 					}
+					const elPath = el.getAttribute("path")
 					if (
-						heading.textContent &&
-						heading.textContent.toLowerCase().includes(firstWord)
+						(el.id && el.id.toLowerCase().includes(word)) ||
+						(elPath && elPath.toLowerCase().includes(word))
 					) {
-						targetElement = heading
+						targetElement = el
 						break
+					}
+				}
+
+				// If not found, search in headings
+				if (!targetElement) {
+					for (const heading of headings) {
+						// Skip headings inside forms
+						if (heading.closest("form")) {
+							continue
+						}
+						if (
+							heading.textContent &&
+							heading.textContent.toLowerCase().includes(word)
+						) {
+							targetElement = heading
+							break
+						}
 					}
 				}
 			}
@@ -84,6 +96,42 @@
 				}, 100)
 			}
 		}
+
+		// Setup Intersection Observer to update URL as elements scroll into view
+		let urlUpdateTimeout
+		const observer = new IntersectionObserver(
+			(entries) => {
+				// Find the first element that is intersecting
+				const visibleEntry = entries.find(
+					(entry) => entry.isIntersecting,
+				)
+
+				if (visibleEntry && visibleEntry.target.getAttribute("path")) {
+					// Debounce the URL update
+					clearTimeout(urlUpdateTimeout)
+					urlUpdateTimeout = setTimeout(() => {
+						const path = visibleEntry.target.getAttribute("path")
+						if (path && window.location.pathname !== path) {
+							window.history.replaceState({}, "", path)
+						}
+					}, 100)
+				}
+			},
+			{
+				threshold: 0.01,
+				rootMargin: "100% 0px -50% 0px",
+			},
+		)
+
+		// Observe all elements with path attributes
+		document.querySelectorAll("[path]").forEach((el) => {
+			observer.observe(el)
+		})
+
+		return () => {
+			clearTimeout(urlUpdateTimeout)
+			observer.disconnect()
+		}
 	})
 </script>
 
@@ -97,7 +145,7 @@
 
 <div id="trials"></div>
 {#each Conditions as condition (condition.name)}
-	<div id={condition.id}></div>
+	<div id={condition.id} path={condition.path}></div>
 	<Parallax background={condition.background_image}>
 		<section class="paper container">
 			<h3>{condition.name}</h3>
