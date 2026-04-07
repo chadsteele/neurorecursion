@@ -182,7 +182,22 @@
 			<h3 class="consent-section-label">Consent & Legal Agreements</h3>
 			<div class="consent-agreements">
 				{#each Consent as agreement (agreement.id)}
-					<div class="consent-agreement-card">
+					<div
+						class="consent-agreement-card"
+						role="button"
+						tabindex="0"
+						onclick={() => {
+							formData.consent[agreement.id] =
+								!formData.consent[agreement.id]
+						}}
+						onkeydown={(e) => {
+							if (e.key === "Enter" || e.key === " ") {
+								e.preventDefault()
+								formData.consent[agreement.id] =
+									!formData.consent[agreement.id]
+							}
+						}}
+					>
 						<input
 							type="checkbox"
 							id={`consent-${agreement.id}`}
@@ -193,11 +208,13 @@
 							onblur={handleConsentBlur}
 							class:error={touched.consent && errors.consent}
 							class="consent-checkbox"
+							onclick={(e) => e.stopPropagation()}
 						/>
 						<div class="consent-agreement-content">
 							<label
 								for={`consent-${agreement.id}`}
 								class="agreement-title"
+								onclick={(e) => e.stopPropagation()}
 							>
 								{agreement.title}
 							</label>
@@ -363,12 +380,17 @@
 		border: 2px solid rgba(74, 159, 216, 0.2);
 		border-radius: 6px;
 		transition: all 0.3s ease;
+		cursor: pointer;
 	}
 
 	.consent-agreement-card:hover {
 		background: rgba(26, 36, 71, 1);
 		border-color: rgba(74, 159, 216, 0.5);
 		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.15);
+	}
+
+	.consent-agreement-card:active {
+		transform: scale(0.98);
 	}
 
 	.consent-agreement-card:has(.consent-checkbox:checked) {

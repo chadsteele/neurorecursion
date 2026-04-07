@@ -69,12 +69,12 @@
 									}
 									class="condition-checkbox"
 								/>
-								<label
-									for={`condition-${condition.id}`}
+								<a
+									href={`#${condition.id}`}
 									class="condition-label"
 								>
 									{condition.name}
-								</label>
+								</a>
 							</div>
 						{/if}
 					{/each}
@@ -95,12 +95,12 @@
 										}
 										class="condition-checkbox"
 									/>
-									<label
-										for={`condition-${condition.id}`}
+									<a
+										href={`#${condition.id}`}
 										class="condition-label"
 									>
 										{condition.name}
-									</label>
+									</a>
 								</div>
 							{/if}
 						{/each}
@@ -224,5 +224,6 @@
 		cursor: pointer;
 		flex: 1;
 		font-size: 0.95rem;
+		text-decoration: none;
 	}
 </style>
