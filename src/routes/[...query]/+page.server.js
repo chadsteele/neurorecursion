@@ -5,7 +5,7 @@ import Conditions from "$lib/Conditions.js"
 // The page is prerendered, and Netlify's JavaScript handles form interception at runtime
 export const prerender = true
 
-export async function load({params}) {
+export function load({params}) {
 	// Get the query path segments
 	const queryArray = params.query
 	const query = Array.isArray(queryArray) ? queryArray.join("/") : queryArray
@@ -41,7 +41,14 @@ export async function load({params}) {
 		}
 	}
 
+	// Set page title and meta tags via returned data
 	return {
 		matchedCondition,
+		title:
+			matchedCondition?.name ||
+			"Sign up for remote clinical trials.  FREE!",
+		description:
+			matchedCondition?.description ||
+			"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity.",
 	}
 }

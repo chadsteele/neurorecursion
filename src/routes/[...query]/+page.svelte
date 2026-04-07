@@ -138,13 +138,9 @@
 </script>
 
 <svelte:head>
-	{#if data?.matchedCondition}
-		<meta property="og:title" content={data.matchedCondition.name} />
-		<meta
-			property="og:description"
-			content={data.matchedCondition.description}
-		/>
-	{/if}
+	<title>{data.title}</title>
+	<meta property="og:title" content={data.title} />
+	<meta property="og:description" content={data.description} />
 </svelte:head>
 
 <Parallax background="/backgrounds/children.jpg">
