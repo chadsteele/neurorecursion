@@ -160,7 +160,7 @@
 	/>
 </svelte:head>
 
-<Parallax background="/backgrounds/children.jpg">
+<Parallax background="/backgrounds/children.png">
 	<div id="about"></div>
 	<Intro class="paper container" />
 	<References class="paper container" />
@@ -211,7 +211,7 @@
 {/each}
 
 <div id="partners"></div>
-<Parallax background="/backgrounds/kids-blowing-bubbles.webp">
+<Parallax background="/backgrounds/kids-blowing-bubbles.png">
 	<Partners class="paper container" />
 </Parallax>
 

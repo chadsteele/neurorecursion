@@ -11,7 +11,7 @@ Our technique targets and rewires this cascade through creative reprogramming of
 		ngo_url: "https://www.nami.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7388863/",
-		background_image: "/backgrounds/depressed.jpg",
+		background_image: "/backgrounds/depressed.png",
 	},
 	{
 		id: "developmental-trauma-childhood-trauma",
@@ -38,7 +38,7 @@ Our technique works with the nervous systems of both partners to recode the thre
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10938872/",
-		background_image: "/backgrounds/divorce.avif",
+		background_image: "/backgrounds/divorce.png",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -65,7 +65,7 @@ Our technique targets the anxiety-pain signaling loop through conscious reprogra
 		ngo_url: "https://americanmigrainefoundation.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6603250/",
-		background_image: "/backgrounds/migraine.jpg",
+		background_image: "/backgrounds/migraine.png",
 	},
 	{
 		id: "stuttering-childhood-onset-fluency-disorder",
@@ -92,7 +92,7 @@ Our technique recodes the amygdala's threat classification through targeted crea
 		ngo_url: "https://www.anxietycanada.com/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
-		background_image: "/backgrounds/spiderweb.jpg",
+		background_image: "/backgrounds/spiderweb.png",
 	},
 	{
 		id: "ophidiophobia-fear-snakes",
@@ -119,7 +119,7 @@ Our technique engages the intersection of vestibular and limbic signal processin
 		ngo_url: "https://adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4815873/",
-		background_image: "/backgrounds/heights.jpg",
+		background_image: "/backgrounds/heights.png",
 	},
 	{
 		id: "glossophobia-fear-public-speaking",
@@ -146,7 +146,7 @@ Our technique dismantles the agoraphobia trap through targeted recalibration of 
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2464606/",
-		background_image: "/backgrounds/crowd.avif",
+		background_image: "/backgrounds/crowd.png",
 	},
 	{
 		id: "aerophobia-fear-flying",
@@ -173,7 +173,7 @@ Our technique dissolves the learned dog-threat association through targeted limb
 		ngo_url: "https://adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
-		background_image: "/backgrounds/dogs.jpg",
+		background_image: "/backgrounds/dogs.png",
 	},
 	{
 		id: "trypanophobia-fear-needles",
@@ -201,7 +201,7 @@ Our technique recalibrates the confinement-threat association and interoceptive 
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573563/",
-		background_image: "/backgrounds/tunnel.jpg",
+		background_image: "/backgrounds/tunnel.png",
 	},
 	{
 		id: "astraphobia-fear-storms",
@@ -229,7 +229,7 @@ Our technique isn't about 'curing' autism or making you more neurotypical. It's 
 		ngo_url: "https://www.autismspeaks.org/",
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7398158/",
-		background_image: "/backgrounds/autism.jpg",
+		background_image: "/backgrounds/autism.png",
 	},
 	{
 		id: "adhd-attention-deficit-hyperactivity-disorder",
@@ -257,7 +257,7 @@ Our technique stabilizes the nervous system's stress response patterns through t
 		ngo_url: "https://www.bipolaruk.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5109926/",
-		background_image: "/backgrounds/bipolar.jpg",
+		background_image: "/backgrounds/bipolar.png",
 	},
 	{
 		id: "ied-rage-intermittent-explosive-disorder",
@@ -284,7 +284,7 @@ Our technique targets the anxiety infrastructure underlying addiction by recalib
 		ngo_url: "https://findtreatment.gov/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3667556/",
-		background_image: "/backgrounds/addiction.jpg",
+		background_image: "/backgrounds/addiction.png",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -310,7 +310,7 @@ Our technique restores parasympathetic nervous system activation and reduces chr
 		ngo_url: "https://www.epilepsy.com/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5533817/",
-		background_image: "/backgrounds/seizure.jpg",
+		background_image: "/backgrounds/seizure.png",
 	},
 
 	{
@@ -339,7 +339,7 @@ Our technique restores normal sensory gating by reducing threat-sensitivity and 
 		ngo_url: "https://www.sensoryhealth.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC12095537/",
-		background_image: "/backgrounds/spd.webp",
+		background_image: "/backgrounds/spd.png",
 	},
 	{
 		id: "misophonia",
@@ -365,7 +365,7 @@ The neurobiological mechanism involves a conditioned fear response where the amy
 Our technique shatters the selective mutism loop through targeted limbic reprogramming. We dissolve the social-threat perception and restore vocal freedom. The freezing response transforms and is replaced with genuine access to voice and authentic communication. This isn't gradual exposure or progressive talking. It's swift recalibration of the amygdala's social threat assessment. You access voice in social contexts at striking speed, moving from complete silence to authentic vocal power.`,
 		ngo_url: "https://www.selectivemutism.org/",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/26709680/",
-		background_image: "/backgrounds/mute.avif",
+		background_image: "/backgrounds/mute.png",
 	},
 
 	{
@@ -392,7 +392,7 @@ Our technique reduces math-related anxiety by recalibrating threat perception an
 		ngo_url: "https://ldaamerica.org/what-is-dyscalculia/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5987869/",
-		background_image: "/backgrounds/math.jpg",
+		background_image: "/backgrounds/math.png",
 	},
 	{
 		id: "dysgraphia",

@@ -149,7 +149,7 @@
 	}
 </script>
 
-<Parallax background="/backgrounds/children.jpg">
+<Parallax background="/backgrounds/children.png">
 	<section class="paper container">
 		<div class="header-flex">
 			<img
