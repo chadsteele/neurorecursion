@@ -111,7 +111,7 @@ Our technique targets the amygdala's threat detection architecture, recalibratin
 		id: "acrophobia-fear-heights",
 		path: "/height/acrophobia/fear/phobia",
 		name: "Acrophobia - Fear of Heights",
-		description: `Your inner ear is screaming safety warnings your conscious mind finds ridiculous—let's recalibrate that amplifier. Acrophobia, the fear of heights, is a specific phobia involving intense fear and panic when at elevation or looking down from a height. Unlike most other phobias, acrophobia has a strong physiological component as our vestibular system (which controls balance) naturally creates unease at heights as a survival mechanism. However, in individuals with acrophobia, this natural caution escalates into overwhelming panic, avoidance of bridges, tall buildings, and mountains, significantly restricting their activities and travel.
+		description: `Your inner ear is screaming safety warnings your conscious mind finds ridiculous. Let's recalibrate that amplifier. Acrophobia, the fear of heights, is a specific phobia involving intense fear and panic when at elevation or looking down from a height. Unlike most other phobias, acrophobia has a strong physiological component as our vestibular system (which controls balance) naturally creates unease at heights as a survival mechanism. However, in individuals with acrophobia, this natural caution escalates into overwhelming panic, avoidance of bridges, tall buildings, and mountains, significantly restricting their activities and travel.
 
 The neurobiological mechanism combines vestibular dysregulation with amygdala hyperreactivity. The vestibular system sends signals of imbalance and threat to the amygdala, which becomes hyper-responsive and triggers a panic response. Individuals often catastrophize about falling, losing control, or having a panic attack at height, creating a feedback loop where anxiety about the anxiety further amplifies the threat response. The brain enters a state of hypervigilance to falling-related cues.
 
@@ -119,13 +119,13 @@ Our technique engages the intersection of vestibular and limbic signal processin
 		ngo_url: "https://adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4815873/",
-			background_image: "/backgrounds/heights.jpg",
+		background_image: "/backgrounds/heights.jpg",
 	},
 	{
 		id: "glossophobia-fear-public-speaking",
 		path: "/speaking/glossophobia/fear/phobia",
 		name: "Glossophobia - Fear of Public Speaking",
-		description: `Your brain perceives an audience as a firing squad—it's time to reclassify what witnessing actually means. Glossophobia, the fear of public speaking, is one of the most common specific phobias and social anxieties in the general population. Individuals with glossophobia experience intense anxiety, physical symptoms like trembling and accelerated heart rate, and often engage in significant avoidance of public speaking situations. This phobia can substantially limit career advancement, educational opportunities, and social participation, as public speaking is ubiquitous in professional and academic life.
+		description: `Your brain perceives an audience as a firing squad. It's time to reclassify what witnessing actually means. Glossophobia, the fear of public speaking, is one of the most common specific phobias and social anxieties in the general population. Individuals with glossophobia experience intense anxiety, physical symptoms like trembling and accelerated heart rate, and often engage in significant avoidance of public speaking situations. This phobia can substantially limit career advancement, educational opportunities, and social participation, as public speaking is ubiquitous in professional and academic life.
 
 The neurobiological mechanism involves heightened amygdala reactivity to social evaluation threat combined with anterior insula activation related to bodily awareness. The prospect of being judged by an audience activates the limbic threat-detection system, triggering sympathetic nervous system activation that causes physical symptoms like trembling, sweating, and racing heart—symptoms that the individual then becomes hypervigilant to, creating a feedback loop of escalating anxiety. The social threat becomes compounded by interoceptive threat (fear of one's own anxiety symptoms).
 
@@ -138,7 +138,7 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 		id: "agoraphobia-social-phobia",
 		path: "/agoraphobia/social/phobia/crowds/open",
 		name: "Agoraphobia/Social Phobia - Fear of Open/Crowded Spaces",
-		description: `Your nervous system has decided the world is a trap—it's time to set it free. Agoraphobia is a panic/anxiety disorder characterized by intense fear and avoidance of situations from which escape might be difficult or embarrassing, particularly open spaces, crowds, public transportation, or being away from home. Severe agoraphobia can become completely disabling, with individuals becoming housebound and dependent on others for basic functioning. Social phobia often accompanies or overlaps with agoraphobia, with fear of negative social evaluation compounding the fear of being trapped in public spaces.
+		description: `Your nervous system has decided the world is a trap. It's time to set it free. Agoraphobia is a panic/anxiety disorder characterized by intense fear and avoidance of situations from which escape might be difficult or embarrassing, particularly open spaces, crowds, public transportation, or being away from home. Severe agoraphobia can become completely disabling, with individuals becoming housebound and dependent on others for basic functioning. Social phobia often accompanies or overlaps with agoraphobia, with fear of negative social evaluation compounding the fear of being trapped in public spaces.
 
 The neurobiological mechanism involves a heightened threat response to situations where the individual perceives limited escape options or potential judgment from others. The amygdala becomes sensitized to crowd-related cues, open spaces, and social presence, triggering panic attacks that feel bodily overwhelming and create catastrophic thoughts about losing control or having a medical emergency. The individual then begins avoiding situations that triggered panic, which reinforces the amygdala's belief that these situations are dangerous.
 
@@ -146,12 +146,13 @@ Our technique dismantles the agoraphobia trap through targeted recalibration of 
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2464606/",
+		background_image: "/backgrounds/crowd.avif",
 	},
 	{
 		id: "aerophobia-fear-flying",
 		path: "/flying/aerophobia/fear/phobia",
 		name: "Aerophobia - Fear of Flying",
-		description: `Your nervous system believes the cabin is a metal tube hurtling toward disaster—except you're not in a metal tube hurtling toward disaster. Aerophobia, the fear of flying, affects a substantial portion of the population and can range from mild anxiety to complete avoidance of air travel. Individuals with aerophobia experience intense anxiety before and during flights, often experiencing panic attacks, catastrophic thoughts about crashes, and significant avoidance that impacts travel, career opportunities, and vacation plans. For many, aerophobia severely restricts their life choices and leads to feelings of shame and limitation.
+		description: `Your nervous system believes the cabin is a metal tube hurtling toward disaster. Except you're not. Aerophobia, the fear of flying, affects a substantial portion of the population and can range from mild anxiety to complete avoidance of air travel. Individuals with aerophobia experience intense anxiety before and during flights, often experiencing panic attacks, catastrophic thoughts about crashes, and significant avoidance that impacts travel, career opportunities, and vacation plans. For many, aerophobia severely restricts their life choices and leads to feelings of shame and limitation.
 
 The neurobiological mechanism combines actual lack of control (the flight is controlled by the pilot) with vestibular dysregulation (the unusual sensations of flight confuse the balance system) and catastrophic thinking patterns. The amygdala perceives the combination of altitude, enclosed space, and loss of control as existential threat, triggering panic responses that feel overwhelming and uncontrollable. Hypervigilance to flight-related bodily sensations (turbulence, slight noises, pressure changes) further amplifies anxiety.
 
@@ -159,19 +160,6 @@ Our technique targets the convergence of fears through precise limbic reprogramm
 		ngo_url: "https://www.flyingwithfear.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
-	},
-	{
-		id: "trypanophobia-fear-needles",
-		path: "/needle/trypanophobia/fear/phobia",
-		name: "Trypanophobia - Fear of Needles/Injections",
-		description: `Your nervous system conflates a tiny puncture with mortal danger—and that's affecting your health. Trypanophobia, the fear of needles or injections, is a specific phobia that can have serious health consequences as it often leads individuals to avoid necessary medical procedures, vaccinations, and dental care. Individuals with trypanophobia experience intense anxiety, panic, fainting, or avoidance when facing needle-related medical interventions. This phobia not only impacts individual health outcomes but can also have public health implications when it prevents people from receiving vaccinations or routine preventive care.
-
-The neurobiological mechanism involves a heightened threat response to potential pain combined with a unique vasovagal response where seeing or anticipating needles triggers parasympathetic activation that causes fainting. Many individuals report that their fear intensifies when they observe the injection itself, creating a temporary loss of consciousness that paradoxically reinforces their fear of needles. The blood-injection-injury phobia category (of which trypanophobia is a part) uniquely involves this fainting response due to the specific way the amygdala of susceptible individuals processes injury threat.
-
-Our technique recalibrates the needle-threat association through targeted creative intervention. We dissolve the amygdala hijack and the vasovagal fainting mechanism simultaneously, replacing them with genuine resources and calm presence. Threat coding around needles transforms at the neurological level. This isn't gradual exposure or continued avoidance. It's swift recoding of injury threat perception. You access necessary medical procedures, vaccinations, and dental care with composed capability.`,
-		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8119524/",
 	},
 	{
 		id: "cynophobia-fear-dogs",
@@ -185,7 +173,22 @@ Our technique dissolves the learned dog-threat association through targeted limb
 		ngo_url: "https://adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+		background_image: "/backgrounds/dogs.jpg",
 	},
+	{
+		id: "trypanophobia-fear-needles",
+		path: "/needle/trypanophobia/fear/phobia",
+		name: "Trypanophobia - Fear of Needles/Injections",
+		description: `Your nervous system conflates a tiny puncture with mortal danger. That's affecting your health. Trypanophobia, the fear of needles or injections, is a specific phobia that can have serious health consequences as it often leads individuals to avoid necessary medical procedures, vaccinations, and dental care. Individuals with trypanophobia experience intense anxiety, panic, fainting, or avoidance when facing needle-related medical interventions. This phobia not only impacts individual health outcomes but can also have public health implications when it prevents people from receiving vaccinations or routine preventive care.
+
+The neurobiological mechanism involves a heightened threat response to potential pain combined with a unique vasovagal response where seeing or anticipating needles triggers parasympathetic activation that causes fainting. Many individuals report that their fear intensifies when they observe the injection itself, creating a temporary loss of consciousness that paradoxically reinforces their fear of needles. The blood-injection-injury phobia category (of which trypanophobia is a part) uniquely involves this fainting response due to the specific way the amygdala of susceptible individuals processes injury threat.
+
+Our technique recalibrates the needle-threat association through targeted creative intervention. We dissolve the amygdala hijack and the vasovagal fainting mechanism simultaneously, replacing them with genuine resources and calm presence. Threat coding around needles transforms at the neurological level. This isn't gradual exposure or continued avoidance. It's swift recoding of injury threat perception. You access necessary medical procedures, vaccinations, and dental care with composed capability.`,
+		ngo_url: "https://www.adaa.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8119524/",
+	},
+
 	{
 		id: "claustrophobia-fear-enclosed-spaces",
 		path: "/enclosed/claustrophobia/fear/phobia",
@@ -198,6 +201,7 @@ Our technique recalibrates the confinement-threat association and interoceptive 
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573563/",
+		background_image: "/backgrounds/tunnel.jpg",
 	},
 	{
 		id: "astraphobia-fear-storms",
@@ -231,7 +235,7 @@ Our technique isn't about 'curing' autism or making you more neurotypical. It's 
 		id: "adhd-attention-deficit-hyperactivity-disorder",
 		path: "/adhd/attention/deficit/hyperactivity",
 		name: "ADHD - Attention Deficit Hyperactivity Disorder",
-		description: `Your prefrontal cortex is shouting for attention—but anxiety is jamming the signal. Attention-Deficit/Hyperactivity Disorder (ADHD) is a neurodevelopmental condition affecting the brain's regulation of attention, impulse control, and executive functions like planning, organization, and task initiation. Individuals with ADHD often struggle with sustained attention, time management, and follow-through on tasks, which can significantly impact academic achievement, employment, and self-esteem. While ADHD has a strong neurobiological basis, it is frequently complicated by secondary anxiety and emotional dysregulation.
+		description: `Your prefrontal cortex is shouting for attention. Anxiety is jamming the signal. Attention-Deficit/Hyperactivity Disorder (ADHD) is a neurodevelopmental condition affecting the brain's regulation of attention, impulse control, and executive functions like planning, organization, and task initiation. Individuals with ADHD often struggle with sustained attention, time management, and follow-through on tasks, which can significantly impact academic achievement, employment, and self-esteem. While ADHD has a strong neurobiological basis, it is frequently complicated by secondary anxiety and emotional dysregulation.
 
 The contribution of anxiety to ADHD symptomatology is profound and often underrecognized—anxiety creates a 'noise' in the prefrontal cortex that exacerbates executive dysfunction. When the limbic system perceives tasks as threats or the individual is in a state of hypervigilance, executive function becomes severely compromised, leading to paralysis when trying to initiate or complete tasks. This creates a cruel paradox where anxiety about not accomplishing tasks further impairs the very executive function needed to accomplish them. Emotional dysregulation amplifies task avoidance, creating downward spirals of lost time and lost opportunity.
 
@@ -245,11 +249,11 @@ Our technique targets the anxiety infrastructure that compounds ADHD impairment.
 		id: "bpd-bipolar-disorder",
 		path: "/bipolar",
 		name: "BPD - Bipolar Disorder",
-		description: `Your mood system is a pendulum that's swinging too far—it's time to find the center. Bipolar Disorder is a mood disorder characterized by alternating episodes of depression and mania (or hypomania in Bipolar II), with periods of normal mood in between or varying states of mixed mood. During manic episodes, individuals experience decreased need for sleep, racing thoughts, increased goal-directed activity, and impaired judgment that can lead to risky behaviors and damaged relationships. During depressive episodes, individuals experience the full constellation of depressive symptoms described earlier, often with particularly severe suicidality.
+		description: `Your mood system is a pendulum that's swinging too far. It's time to find the center. Bipolar Disorder is a mood disorder characterized by alternating episodes of depression and mania (or hypomania in Bipolar II), with periods of normal mood in between or varying states of mixed mood. During manic episodes, individuals experience decreased need for sleep, racing thoughts, increased goal-directed activity, and impaired judgment that can lead to risky behaviors and damaged relationships. During depressive episodes, individuals experience the full constellation of depressive symptoms described earlier, often with particularly severe suicidality.
 
 The neurobiological underpinnings of Bipolar Disorder involve dysregulation of circadian rhythms, neurotransmitter systems, and the neural networks governing mood stability. Stress and anxiety act as primary destabilizers for these already-fragile systems, frequently acting as the catalyst for a shift into mania, a depressive crash, or a mixed-affective state where depression and mania coexist simultaneously. High stress periods often correlate with mood episode onset, suggesting that managing stress and anxiety may be crucial to mood stability. The amygdala's threat perception directly influences the balance between sympathetic arousal and parasympathetic calm.
 
-Our technique stabilizes the nervous system's stress response patterns through targeted recalibration of limbic reactivity. We restore rhythm to the circadian and neurotransmitter systems by reducing chronic anxiety and improving the brain's capacity to maintain equilibrium under stress. This isn't just medication adjustment or lifestyle counseling. It's targeted recoding of the threat-detection and mood-regulation systems. Many participants experience increased intervals between mood episodes, reduced severity of episodes, and newfound stability.
+Our technique stabilizes the nervous system's stress response patterns through targeted recalibration of limbic reactivity. We restore rhythm to the circadian and neurotransmitter systems by reducing chronic anxiety and improving the brain's capacity to maintain equilibrium under stress. This isn't just medication adjustment or lifestyle counseling. It's targeted recoding of the threat-detection and mood-regulation systems. Many participants experience increased intervals between mood episodes, reduced severity of episodes, and newfound stability.`,
 		ngo_url: "https://www.bipolaruk.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5109926/",
@@ -259,7 +263,7 @@ Our technique stabilizes the nervous system's stress response patterns through t
 		id: "ied-rage-intermittent-explosive-disorder",
 		path: "/rage/anger/ied",
 		name: "IED - Rage and Intermittent Explosive Disorder",
-		description: `Your nervous system is exploding because it never learned to breathe—and that ends today. Intermittent Explosive Disorder and rage-related conditions are characterized by recurrent, sudden episodes of intense anger and aggressive behavior that are disproportionate to any provocation or stressor. Individuals experience these episodes as overwhelming and uncontrollable, often followed by remorse and distress about their behavior, particularly when loved ones have been harmed during the outburst. These rage episodes can devastate relationships, limit employment, and lead to legal consequences.
+		description: `Your nervous system is exploding because it never learned to breathe. That ends today. Intermittent Explosive Disorder and rage-related conditions are characterized by recurrent, sudden episodes of intense anger and aggressive behavior that are disproportionate to any provocation or stressor. Individuals experience these episodes as overwhelming and uncontrollable, often followed by remorse and distress about their behavior, particularly when loved ones have been harmed during the outburst. These rage episodes can devastate relationships, limit employment, and lead to legal consequences.
 
 The neurobiological mechanism involves what researchers call a 'limbic hijack' where anxiety and high baseline stress trigger overwhelming amygdala activation that rapidly overwhelms the prefrontal cortex's ability to modulate response. This creates a self-reinforcing loop where the neurochemical 'rush' of anger and associated catecholamine release temporarily relieves the internal tension of chronic anxiety. The relief becomes reinforcing, leading to a cycle of compulsive rage outbursts where the individual becomes unconsciously driven to recreate that relief through anger. The nervous system has learned that rage is a more effective release mechanism than healthy self-regulation.
 
@@ -286,7 +290,7 @@ Our technique targets the anxiety infrastructure underlying addiction by recalib
 		id: "tics-tourette-syndrome-tic-disorders",
 		path: "/tics/tourette",
 		name: "Tics - Tourette Syndrome and Tic Disorders",
-		description: `Your nervous system is firing unscheduled signals—it's time to redirect the neurological traffic. Tourette Syndrome and other tic disorders are neurodevelopmental conditions characterized by sudden, repetitive, nonrhythmic motor movements or vocalizations (tics) that are often experienced as irresistible and difficult or impossible to control. Tics can range from mild and barely noticeable to severe and highly disabling, significantly impacting social functioning and self-image, particularly in adolescence. Many individuals with tic disorders experience secondary anxiety and depression related to the social stigma and functional impairment caused by their tics.
+		description: `Your nervous system is firing unscheduled signals. It's time to redirect the neurological traffic. Tourette Syndrome and other tic disorders are neurodevelopmental conditions characterized by sudden, repetitive, nonrhythmic motor movements or vocalizations (tics) that are often experienced as irresistible and difficult or impossible to control. Tics can range from mild and barely noticeable to severe and highly disabling, significantly impacting social functioning and self-image, particularly in adolescence. Many individuals with tic disorders experience secondary anxiety and depression related to the social stigma and functional impairment caused by their tics.
 
 The basal ganglia, a set of brain structures crucial for voluntary motor control and habit formation, plays a central role in tic expression and the anxiety-tic relationship. Anxiety triggers the basal ganglia and limbic system, causing a failure in inhibitory control that increases the frequency and severity of involuntary motor and vocal tics. Interestingly, anxiety about tics themselves becomes a key factor that worsens tics—stress about being watched or judged often intensifies tic expression, creating a feedback loop where anxiety amplifies the very symptoms individuals wish to control. The amygdala's hyperactivity disrupts the smooth regulation of the basal ganglia.
 
@@ -298,7 +302,7 @@ Our technique targets the intersection of vestibular and limbic signal processin
 		id: "epilepsy-seizure-disorders",
 		path: "/epilepsy/seizure",
 		name: "Epilepsy and Seizure Disorders",
-		description: `Your nervous system's electrical cables are misfiring under stress—it's time to restore reliable current flow. Epilepsy is a neurological disorder characterized by a predisposition to recurrent seizures, which are sudden, uncontrolled electrical discharges in the brain leading to physical convulsions, altered consciousness, or other distinctive experiences. Individuals with epilepsy live with the constant threat of unpredictable seizures that can be dangerous, embarrassing, and severely restrict daily activities like driving, swimming, or employment. Beyond the seizures themselves, many individuals develop anxiety disorders about when the next seizure will occur, creating a vicious cycle.
+		description: `Your nervous system's electrical cables are misfiring under stress. It's time to restore reliable current flow. Epilepsy is a neurological disorder characterized by a predisposition to recurrent seizures, which are sudden, uncontrolled electrical discharges in the brain leading to physical convulsions, altered consciousness, or other distinctive experiences. Individuals with epilepsy live with the constant threat of unpredictable seizures that can be dangerous, embarrassing, and severely restrict daily activities like driving, swimming, or employment. Beyond the seizures themselves, many individuals develop anxiety disorders about when the next seizure will occur, creating a vicious cycle.
 
 The connection between stress, anxiety, and seizure threshold is well-established in both clinical observation and neuroscience research. Stress-induced cortisol release elevates neuronal excitability, effectively lowering the amount of electrical activity needed to trigger a seizure. Additionally, anxiety-related hyperventilation changes blood chemistry in ways that increase brain electrical instability, further lowering seizure threshold. During periods of high stress or anxiety, individuals with epilepsy often experience increased seizure frequency, suggesting that anxiety management is not just psychological support but functional seizure management. The amygdala's threat alarm directly influences seizure vulnerability.
 
@@ -313,7 +317,7 @@ Our technique restores parasympathetic nervous system activation and reduces chr
 		id: "ocd-obsessive-compulsive-disorder",
 		path: "/ocd/obsessive/compulsive",
 		name: "OCD - Obsessive-Compulsive Disorder",
-		description: `Your brain is stuck in a loop, treating intrusive thoughts as actual threats—it's time to break the circuit. Obsessive-Compulsive Disorder is characterized by persistent intrusive thoughts, images, or urges (obsessions) that cause significant anxiety, followed by repetitive behaviors or mental acts (compulsions) performed to neutralize the anxiety or prevent a feared outcome. OCD can involve almost any theme—contamination, harm, aggression, sexual content—and the compulsions can range from hand-washing and checking to mental rituals like counting or reassurance-seeking. Individuals with OCD often recognize the irrationality of their thoughts yet feel unable to stop the compulsive cycles that consume hours of their day.
+		description: `Your brain is stuck in a loop, treating intrusive thoughts as actual threats. It's time to break the circuit. Obsessive-Compulsive Disorder is characterized by persistent intrusive thoughts, images, or urges (obsessions) that cause significant anxiety, followed by repetitive behaviors or mental acts (compulsions) performed to neutralize the anxiety or prevent a feared outcome. OCD can involve almost any theme—contamination, harm, aggression, sexual content—and the compulsions can range from hand-washing and checking to mental rituals like counting or reassurance-seeking. Individuals with OCD often recognize the irrationality of their thoughts yet feel unable to stop the compulsive cycles that consume hours of their day.
 
 The neurobiological loop in OCD involves a circuit between the orbitofrontal cortex (involved in error detection and value assignment) and the amygdala (processing threat and fear). This loop creates a cycle where anxiety drives the intense need for compulsions to neutralize perceived threats or manage intrusive thoughts. The compulsion provides temporary relief, negatively reinforcing the obsessive-compulsive pattern and making it progressively more entrenched. Over time, the brain becomes increasingly sensitized to potential threats, leading to expansion of obsessive themes and proliferation of compulsive rituals. The amygdala misclassifies intrusive thoughts as life-threatening.
 
@@ -327,7 +331,7 @@ Our technique breaks the obsessive-compulsive circuit through targeted recalibra
 		id: "spd-sensory-processing-disorder",
 		path: "/spd/sensory/processing",
 		name: "SPD - Sensory Processing Disorder",
-		description: `Your sensory system's volume dial got stuck on full blast—it's time to restore the dynamic range. Sensory Processing Disorder is characterized by difficulties in detecting, interpreting, or responding appropriately to sensory information from the body or environment, leading to difficulty functioning in daily life. Individuals with SPD may be hypersensitive to stimuli like touch, sound, or light and experience them as painful or overwhelming, or may be hyposensitive and fail to register sensory input. This can result in hyperactivity seeking stimulation, social withdrawal, poor motor coordination, or emotional dysregulation that significantly restricts daily functioning and social participation.
+		description: `Your sensory system's volume dial got stuck on full blast. It's time to restore the dynamic range. Sensory Processing Disorder is characterized by difficulties in detecting, interpreting, or responding appropriately to sensory information from the body or environment, leading to difficulty functioning in daily life. Individuals with SPD may be hypersensitive to stimuli like touch, sound, or light and experience them as painful or overwhelming, or may be hyposensitive and fail to register sensory input. This can result in hyperactivity seeking stimulation, social withdrawal, poor motor coordination, or emotional dysregulation that significantly restricts daily functioning and social participation.
 
 Anxiety interacts with sensory processing in ways that significantly amplify hypersensitivity symptoms—the amygdala, when in a threat-detection state, lowers the threshold for what sensory input is perceived as aversive or dangerous. Anxiety places the brain in a state of hyper-vigilance, lowering the sensitivity threshold for sensory input and causing the limbic system to interpret neutral stimuli as physically painful. A gentle touch may feel irritating, routine sounds may seem intolerable, or ordinary visual environments may feel overwhelming when anxiety has heightened the salience of sensory information. The sensory gates malfunction under threat conditions.
 
@@ -354,7 +358,7 @@ Our technique dissolves the pathological auditory-limbic connection through targ
 		id: "selective-mutism",
 		path: "/mutism/selective/silence",
 		name: "Selective Mutism",
-		description: `Your voice is locked in your throat by a false threat signal—it's time to find the off switch. Selective Mutism is an anxiety disorder in which individuals, typically children, are unable to speak in specific social situations despite being able to speak normally in other contexts, such as at home. This is not a choice or willful defiance, but rather an involuntary freezing response where the individual feels physically unable to produce speech despite desperately wanting to communicate. Selective mutism severely impacts academic performance, social relationships, and can lead to significant secondary anxiety and depression if not addressed.
+		description: `Your voice is locked in your throat by a false threat signal. It's time to find the off switch. Selective Mutism is an anxiety disorder in which individuals, typically children, are unable to speak in specific social situations despite being able to speak normally in other contexts, such as at home. This is not a choice or willful defiance, but rather an involuntary freezing response where the individual feels physically unable to produce speech despite desperately wanting to communicate. Selective mutism severely impacts academic performance, social relationships, and can lead to significant secondary anxiety and depression if not addressed.
 
 The neurobiological mechanism involves a conditioned fear response where the amygdala perceives social interaction, particularly speaking to authority figures or in front of peers, as a life-threatening danger. The amygdala's threat assessment triggers a freezing response that physically prevents the vocal cords from operating in specific settings. This freezing response represents an ancient survival mechanism where immobility and silence were adaptive responses to predation, but which becomes maladaptive when triggered by social situations. The voice is literally held hostage.
 
@@ -368,7 +372,7 @@ Our technique shatters the selective mutism loop through targeted limbic reprogr
 		id: "dcd-dyspraxia-developmental-coordination-disorder",
 		path: "/dyspraxia/motor/coordination",
 		name: "DCD - Dyspraxia and Developmental Coordination Disorder",
-		description: `Your body knows what to do—your nervous system is just broadcasting too much static to let it happen. Developmental Coordination Disorder (DCD), also known as dyspraxia, is a neurodevelopmental condition affecting the motor planning and coordination pathways, leading to physical clumsiness, difficulty with complex movement sequences, and impaired athletic ability. Individuals with DCD may struggle with seemingly simple tasks like tying shoes, catching a ball, or handwriting, while having normal intelligence and understanding of what they need to do. This disconnect between intention and motor execution is frustrating and often leads to social shame, bullying, and secondary anxiety.
+		description: `Your body knows what to do. Your nervous system is just broadcasting too much static to let it happen. Developmental Coordination Disorder (DCD), also known as dyspraxia, is a neurodevelopmental condition affecting the motor planning and coordination pathways, leading to physical clumsiness, difficulty with complex movement sequences, and impaired athletic ability. Individuals with DCD may struggle with seemingly simple tasks like tying shoes, catching a ball, or handwriting, while having normal intelligence and understanding of what they need to do. This disconnect between intention and motor execution is frustrating and often leads to social shame, bullying, and secondary anxiety.
 
 The cerebellum and basal ganglia work together to create the fluid, coordinated movements we take for granted—they must perfectly time the contraction of hundreds of muscles with incredible precision. Anxiety disrupts the motor planning pathways between the cerebellum and cortex, causing increased physical clumsiness and difficulty with complex sequence movements. When anxiety is present, these motor coordination systems become even more dysregulated, leading to increased tension, tremors, and further deterioration of movement quality. The motor coordination circuitry becomes jammed by limbic noise.
 
@@ -380,7 +384,7 @@ Our technique restores smooth motor planning by reducing anxiety and targeting t
 		id: "dyscalculia",
 		path: "/dyscalculia/math/numbers",
 		name: "Dyscalculia",
-		description: `Your brain processes numbers just fine—when anxiety isn't hijacking your parietal cortex. Dyscalculia is a specific learning disability affecting the ability to understand numbers and learn math facts and skills, despite normal intelligence and adequate instruction. Individuals with dyscalculia struggle with number sense, basic arithmetic operations, and mathematical reasoning, which can severely limit career opportunities and lead to pervasive shame about their cognitive abilities. Importantly, dyscalculia is not a result of insufficient effort or poor instruction, but reflects underlying differences in how the brain processes numerical information.
+		description: `Your brain processes numbers just fine. When anxiety isn't hijacking your parietal cortex, that changes. Dyscalculia is a specific learning disability affecting the ability to understand numbers and learn math facts and skills, despite normal intelligence and adequate instruction. Individuals with dyscalculia struggle with number sense, basic arithmetic operations, and mathematical reasoning, which can severely limit career opportunities and lead to pervasive shame about their cognitive abilities. Importantly, dyscalculia is not a result of insufficient effort or poor instruction, but reflects underlying differences in how the brain processes numerical information.
 
 Math-related anxiety is endemic in dyscalculia and plays a significant amplifying role in academic difficulties. Math-related anxiety activates the amygdala while suppressing activity in the parietal lobes where numerical processing occurs, literally blocking the brain's ability to process numerical information at the moment it's needed most. When students with dyscalculia encounter math, anxiety surges, their brain's numerical processing capacity is suppressed, they struggle further, and anxiety escalates in a feedback loop of avoidance and failure. Anxiety creates a direct cognitive block.
 
