@@ -5,6 +5,15 @@ import Conditions from "$lib/Conditions.js"
 // The page is prerendered, and Netlify's JavaScript handles form interception at runtime
 export const prerender = true
 
+// Generate prerender entries for all condition paths and keywords
+export function entries() {
+	return Conditions.map((condition) => {
+		// Extract path segments: "/depression/suicidal" -> "depression/suicidal"
+		const path = condition.path.slice(1) // Remove leading slash
+		return {query: path}
+	})
+}
+
 export function load({params}) {
 	// Get the query path segments
 	const queryArray = params.query
@@ -41,14 +50,5 @@ export function load({params}) {
 		}
 	}
 
-	// Set page title and meta tags via returned data
-	return {
-		matchedCondition,
-		title:
-			matchedCondition?.name ||
-			"Sign up for remote clinical trials.  FREE!",
-		description:
-			matchedCondition?.description ||
-			"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity.",
-	}
+	return {matchedCondition}
 }

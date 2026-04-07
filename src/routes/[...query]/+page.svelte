@@ -138,9 +138,20 @@
 </script>
 
 <svelte:head>
-	<title>{data.title}</title>
-	<meta property="og:title" content={data.title} />
-	<meta property="og:description" content={data.description} />
+	<title>
+		{data.matchedCondition?.name ||
+			"Sign up for remote clinical trials.  FREE!"}
+	</title>
+	<meta
+		property="og:title"
+		content={data.matchedCondition?.name ||
+			"Sign up for remote clinical trials.  FREE!"}
+	/>
+	<meta
+		property="og:description"
+		content={data.matchedCondition?.description ||
+			"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity."}
+	/>
 </svelte:head>
 
 <Parallax background="/backgrounds/children.jpg">
