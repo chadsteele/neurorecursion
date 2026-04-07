@@ -1,8 +1,13 @@
 <script>
+	import {onMount} from "svelte"
+
 	let {background, children} = $props()
 
+	let container
+	let isLoaded = $state(false)
+
 	const bgValue = $derived(
-		background
+		isLoaded && background
 			? background.startsWith("url") ||
 				background.startsWith("http") ||
 				background.includes(".")
@@ -10,10 +15,38 @@
 				: background
 			: null,
 	)
+
+	onMount(() => {
+		if (!background || !container) return
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						isLoaded = true
+						observer.unobserve(container)
+					}
+				})
+			},
+			{
+				rootMargin: "200px",
+			},
+		)
+
+		observer.observe(container)
+
+		return () => {
+			observer.disconnect()
+		}
+	})
 </script>
 
 {#if background}
-	<div class="parallax-container" style="--background: {bgValue};">
+	<div
+		bind:this={container}
+		class="parallax-container"
+		style="--background: {bgValue};"
+	>
 		<div class="parallax-content">
 			{@render children?.()}
 		</div>
