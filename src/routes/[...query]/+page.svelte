@@ -10,7 +10,11 @@
 	import Featured from "$lib/Featured.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import Conditions, {getCondition} from "$lib/Conditions.js"
+	import Conditions, {
+		getCondition,
+		Categories,
+		ConditionsMap,
+	} from "$lib/Conditions.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 
 	let formData = $state({
@@ -177,8 +181,17 @@
 <SignUp {formData} />
 
 <div id="trials"></div>
-{#each Conditions as condition (condition.name)}
-	<ConditionCard {condition} {formData} />
+{#each Categories as category (category.category_name)}
+	<div class="category-section">
+		<h1>{category.category_name}</h1>
+	</div>
+
+	{#each category.ids as conditionId (conditionId)}
+		{@const condition = ConditionsMap[conditionId]}
+		{#if condition}
+			<ConditionCard {condition} {formData} />
+		{/if}
+	{/each}
 {/each}
 
 <div id="partners"></div>
@@ -187,4 +200,16 @@
 </Parallax>
 
 <style>
+	:global(.category-section) {
+		position: sticky;
+		top: 60px;
+		z-index: 10;
+		background-color: black;
+		text-align: center;
+	}
+
+	:global(.category-section h1) {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 </style>

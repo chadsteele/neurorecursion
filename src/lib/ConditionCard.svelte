@@ -8,11 +8,17 @@
 <Parallax background={condition.background_image}>
 	<section class="paper container">
 		<h3>{condition.name}</h3>
-		<p>
-			{condition?.description?.trim() || ""}
-		</p>
+		<div>
+			{@html condition?.description
+				?.trim()
+				.split("\n\n")
+				.map((para) => `<p>${para.trim().replace(/\n/g, " ")}</p>`)
+				.filter((p) => p !== "<p></p>")
+				.join("")}
+		</div>
 
 		<p>This could be your breakthrough! Sign up now.</p>
+
 		<div class="condition-links">
 			<label class="toggle-slider">
 				<input
@@ -55,6 +61,20 @@
 	p {
 		color: #d0d0d0;
 		line-height: 1.6;
+	}
+
+	div p {
+		color: #d0d0d0;
+		line-height: 1.6;
+		margin: 1rem 0;
+	}
+
+	div p:first-child {
+		margin-top: 0;
+	}
+
+	div p:last-child {
+		margin-bottom: 0;
 	}
 
 	.condition-links {
