@@ -108,8 +108,9 @@
 	}
 
 	async function handleFormSubmit(event) {
+		event.preventDefault()
+
 		if (!validateBeforeSubmit()) {
-			event.preventDefault()
 			return
 		}
 
@@ -128,13 +129,10 @@
 			})
 
 			if (response.ok) {
-				// Show success and redirect after delay
-				alert(
-					"Thank you for your interest! We'll review your application soon.",
-				)
+				// Redirect after successful submission
 				setTimeout(() => {
 					window.location.href = "/success?redirectTo=/"
-				}, 1000)
+				}, 500)
 			} else {
 				alert(
 					"There was an error submitting the form. Please try again.",
@@ -211,7 +209,7 @@
 		<form
 			method="POST"
 			netlify-honeypot="bot-field"
-			data-netlify="true"
+			netlify
 			onsubmit={handleFormSubmit}
 		>
 			<!-- Hidden field for Netlify Forms -->

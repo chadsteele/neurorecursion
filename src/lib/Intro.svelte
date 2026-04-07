@@ -68,8 +68,9 @@
 	</p>
 	<p class="button-container">
 		<button
+			type="button"
 			class="submit-btn"
-			on:click={() => {
+			onclick={() => {
 				window.location.hash = "signup"
 			}}>Sign up</button
 		>

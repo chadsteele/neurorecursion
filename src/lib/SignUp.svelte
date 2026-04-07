@@ -99,8 +99,9 @@
 	}
 
 	async function handleFormSubmit(event) {
+		event.preventDefault()
+
 		if (!validateBeforeSubmit()) {
-			event.preventDefault()
 			return
 		}
 
@@ -128,11 +129,10 @@
 			})
 
 			if (response.ok) {
-				// Show success and redirect after delay
-				alert("Thank you! We'll be in touch soon.")
+				// Redirect after successful submission
 				setTimeout(() => {
 					window.location.href = "/success?redirectTo=/consent"
-				}, 1000)
+				}, 500)
 			} else {
 				alert(
 					"There was an error submitting the form. Please try again.",
@@ -180,7 +180,7 @@
 		name="signup"
 		method="POST"
 		netlify-honeypot="bot-field"
-		data-netlify="true"
+		netlify
 		onsubmit={handleFormSubmit}
 	>
 		<!-- Hidden field for Netlify Forms -->

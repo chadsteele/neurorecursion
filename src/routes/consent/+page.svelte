@@ -126,11 +126,10 @@
 			})
 
 			if (response.ok) {
-				// Show success and redirect after delay
-				alert("Thank you! Your consent has been recorded.")
+				// Redirect after successful submission
 				setTimeout(() => {
 					window.location.href = "/success?redirectTo=/"
-				}, 1000)
+				}, 500)
 			} else {
 				alert(
 					"There was an error submitting the form. Please try again.",
@@ -161,7 +160,7 @@
 		name="consent"
 		method="POST"
 		netlify-honeypot="bot-field"
-		data-netlify="true"
+		netlify
 		onsubmit={handleSubmit}
 		novalidate
 	>
