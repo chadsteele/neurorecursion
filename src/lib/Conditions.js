@@ -365,6 +365,32 @@ Our technique stabilizes the nervous system's stress response patterns through t
 		background_image: "/backgrounds/bipolar.png",
 	},
 	{
+		id: "gun-addiction-weapons-obsession",
+		path: "/gun-addiction/weapons/firearms/compulsive",
+		name: "Gun Addiction and Weapons Obsession",
+		description: `Your nervous system learned that weapons represent power and control over threat. But that's a transaction with catastrophe. Gun addiction and compulsive weapons collection represent behavioral addiction to firearms and weapons acquisition, characterized by compulsive purchasing, obsessive focus on weapons capabilities, and escalating investment in firearms despite financial or relational consequences. Individuals with gun addiction often experience anxiety about vulnerability without weapons present, fear-based threat prediction, and a sense that accumulated weapons provide safety and control. However, research shows that gun access correlates with increased risk of harm to self, intimate partners, and children—the opposite of the safety promised by the nervous system's threat narrative.
+
+The neurobiological mechanism involves a hijacking of the threat-response system where weapons become encoded as the solution to amygdala-driven threat perception. Anxiety drives the belief that weapons = safety, creating a compulsive acquisition pattern. The reward system becomes activated by weapons-acquisition as a way to manage existential threat-anxiety. Paradoxically, the presence of weapons amplifies threat-perception through increased responsibility-anxiety and hypervigilance. The amygdala becomes primed to detect threats that weapons must defend against, creating an escalating cycle of fear and acquisition. The nervous system essentially trades one threat (existential anxiety) for another (access to lethal means during moments of dysregulation).
+
+Our technique recalibrates the threat-response system and restores genuine safety perception independent of weapons through targeted limbic intervention. We dissolve the false equivalence between weapons-access and actual safety. Your nervous system regains capacity to experience genuine security through nervous system regulation rather than external weapons. This isn't gun control advocacy or judgment. It's recoding of how your nervous system encodes threat and safety. You experience reduced anxiety-driven acquisition urges and restored sense of security.`,
+		ngo_url: "https://www.gunviolencearchive.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5993560/",
+	},
+	{
+		id: "homicidal-ideation-violent-urges",
+		path: "/homicidal-ideation/violent-thoughts/harm-urges",
+		name: "Homicidal Ideation and Violent Urges",
+		description: `Your amygdala is broadcasting violent solutions to threats that don't require violence. It's time to restore proportionate response capacity. Homicidal ideation refers to persistent, intrusive thoughts about harming or killing others, ranging from passive fantasies to active planning. Individuals experiencing homicidal ideation are often deeply distressed by their violent thoughts, which conflict with their values and desired identity. Homicidal ideation can emerge in psychiatric conditions (psychosis, severe personality disorders), in response to trauma or injustice, or in response to intense anger and threat-perception. When combined with impulsivity, access to weapons, or substance intoxication, homicidal ideation becomes a genuine public health risk. The individual is often trapped between despair about their violent thoughts and genuine danger of acting on them.
+
+The neurobiological mechanism involves amygdala hyperactivity in response to perceived threat or injustice, combined with prefrontal cortex dysregulation that normally inhibits aggressive impulses. The anterior cingulate cortex becomes activated in error-detection mode, amplifying perception of threat or moral wrongdoing. The orbitofrontal cortex, which assesses threat-response proportionality, becomes dysregulated, leading to violent-response as seemingly proportionate to the perceived threat or injustice. In some cases, dopamine dysregulation creates reward-seeking through violent fantasy. The nervous system becomes trapped in a state where violent solutions seem necessary and justified.
+
+Our technique recalibrates threat-response proportionality and restores prefrontal inhibition through targeted limbic intervention. We reduce amygdala-driven threat perception and restore accurate assessment of response options. Violent ideation recedes as the nervous system regains capacity for proportionate, non-violent responses to threat or injustice. This isn't judgment about the content of thoughts or coercion toward non-violence. It's recoding of how your nervous system generates response options to threat. You experience freedom from intrusive violent ideation and genuine security in non-violent capacity.`,
+		ngo_url: "https://www.nami.org/",
+		scientific_reference:
+			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5373505/",
+	},
+	{
 		id: "ied-rage-intermittent-explosive-disorder",
 		path: "/rage/anger/ied",
 		name: "IED - Rage and Intermittent Explosive Disorder",
@@ -782,5 +808,122 @@ export function getCondition(input) {
 	// Only return a match if score is meaningful (not just random low matches)
 	return bestScore > 0 ? bestCondition : null
 }
+
+export const Categories = [
+	{
+		category_name: "Anxiety & Generalized Worry",
+		ids: [
+			"health-anxiety-hypochondriasis",
+			"performance-anxiety-evaluation-fear",
+			"social-media-anxiety-disorder",
+			"agoraphobia-social-phobia",
+			"ai-anxiety-technophobia-fear-ai",
+		],
+	},
+	{
+		category_name: "Specific Phobias",
+		ids: [
+			"arachnophobia-fear-spiders",
+			"claustrophobia-fear-enclosed-spaces",
+			"acrophobia-fear-heights",
+			"ophidiophobia-fear-snakes",
+			"trypanophobia-fear-needles",
+			"astraphobia-fear-storms",
+			"aerophobia-fear-flying",
+			"cynophobia-fear-dogs",
+		],
+	},
+	{
+		category_name: "Mood Disorders",
+		ids: [
+			"depressed-suicidal-major-depressive-disorder",
+			"bpd-bipolar-disorder",
+			"burnout-exhaustion-depersonalization",
+		],
+	},
+	{
+		category_name: "Neurodevelopmental",
+		ids: [
+			"adhd-attention-deficit-hyperactivity-disorder",
+			"asd-autism-aspergers-autistic-spectrum-disorder",
+			"spd-sensory-processing-disorder",
+			"dyscalculia",
+			"dcd-dyspraxia-developmental-coordination-disorder",
+			"misophonia",
+		],
+	},
+	{
+		category_name: "Behavioral Addictions",
+		ids: [
+			"screen-addiction",
+			"porn-addiction-sexual-compulsivity",
+			"addiction-substance-abuse-disorders",
+		],
+	},
+	{
+		category_name: "Neurological & Physical",
+		ids: [
+			"migraines",
+			"chronic-pain-psychosomatic",
+			"epilepsy-seizure-disorders",
+			"tics-tourette-syndrome-tic-disorders",
+			"insomnia-sleep-hyperarousal",
+		],
+	},
+	{
+		category_name: "Performance & Self-Perception",
+		ids: [
+			"imposter-syndrome",
+			"perfectionism",
+			"test-anxiety",
+			"body-dysmorphia",
+		],
+	},
+	{
+		category_name: "Obsessive-Compulsive Spectrum",
+		ids: [
+			"ocd-obsessive-compulsive-disorder",
+			"eating-disorders-anorexia-bulimia-binge",
+			"trichotillomania-hair-pulling",
+		],
+	},
+	{
+		category_name: "Attachment & Relational",
+		ids: [
+			"loneliness-social-disconnection",
+			"anxious-avoidant-attachment-relational-patterns",
+			"rejection-sensitivity",
+			"divorce-relational-trauma-family-systems-stress",
+			"sexual-dysfunction-performance-anxiety-impotence",
+			"fear-of-intimacy-commitment-fear",
+		],
+	},
+	{
+		category_name: "Communication Disorders",
+		ids: [
+			"stuttering-childhood-onset-fluency-disorder",
+			"glossophobia-fear-public-speaking",
+			"selective-mutism",
+			"dysgraphia",
+		],
+	},
+	{
+		category_name: "Trauma & Crisis",
+		ids: [
+			"developmental-trauma-childhood-trauma",
+			"ptsd-post-traumatic-stress-disorder",
+			"cult-recovery-religious-trauma-damnation-fear",
+		],
+	},
+	{
+		category_name: "Power and Control",
+		ids: [
+			"ied-rage-intermittent-explosive-disorder",
+			"gun-addiction-weapons-obsession",
+			"homicidal-ideation-violent-urges",
+			"paranoia-scelerephobia-fear-strangers-criminals",
+		],
+	},
+]
 
 export default Conditions
