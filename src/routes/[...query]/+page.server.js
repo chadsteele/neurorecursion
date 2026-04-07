@@ -1,6 +1,6 @@
 import Conditions from "$lib/Conditions.js"
 
-export const prerender = true
+export const prerender = "auto"
 
 // Generate prerender entries for all condition paths and keywords
 export function entries() {

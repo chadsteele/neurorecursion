@@ -21,64 +21,84 @@ const CONDITIONS = [
 		name: "PTSD - Post-Traumatic Stress Disorder",
 	},
 	{
+		id: "migraine-headache",
+		path: "/migraine/headache",
+		name: "Migraine - Chronic Headache",
+	},
+	{
+		id: "stutter-fluency-stammer",
+		path: "/stutter/fluency/stammer",
+		name: "Stutter - Speech Fluency",
+	},
+	{
+		id: "asd-autism-spectrum",
+		path: "/asd/autism/aspergers/spectrum",
+		name: "ASD - Autism Spectrum Disorder",
+	},
+	{
+		id: "adhd-attention-deficit",
+		path: "/adhd/attention/deficit/hyperactivity",
+		name: "ADHD - Attention Deficit Hyperactivity Disorder",
+	},
+	{
+		id: "bipolar-mood-disorder",
+		path: "/bipolar",
+		name: "Bipolar - Mood Disorder",
+	},
+	{
+		id: "rage-anger-ied",
+		path: "/rage/anger/ied",
+		name: "Rage - Intermittent Explosive Disorder",
+	},
+	{
+		id: "addiction-substance-abuse",
+		path: "/addiction/substance/abuse",
+		name: "Addiction - Substance Abuse",
+	},
+	{
+		id: "tics-tourette",
+		path: "/tics/tourette",
+		name: "Tics - Tourette Syndrome",
+	},
+	{
+		id: "epilepsy-seizure",
+		path: "/epilepsy/seizure",
+		name: "Epilepsy - Seizure Disorder",
+	},
+	{
 		id: "ocd-obsessive-compulsive",
 		path: "/ocd/obsessive/compulsive",
 		name: "OCD - Obsessive-Compulsive Disorder",
 	},
 	{
-		id: "anxiety-social-panic",
-		path: "/anxiety/social/panic",
-		name: "Anxiety - Social and Panic Disorders",
+		id: "spd-sensory-processing",
+		path: "/spd/sensory/processing",
+		name: "SPD - Sensory Processing Disorder",
 	},
 	{
-		id: "adhd-attention-deficit",
-		path: "/adhd/attention/deficit",
-		name: "ADHD - Attention Deficit Hyperactivity Disorder",
+		id: "misophonia-selective-sound",
+		path: "/misophonia/selective/sound/sensitivity",
+		name: "Misophonia - Selective Sound Sensitivity",
 	},
 	{
-		id: "bipolar-mood-disorder",
-		path: "/bipolar/mood/disorder",
-		name: "Bipolar - Mood Disorder",
-	},
-	{
-		id: "schizophrenia-psychosis",
-		path: "/schizophrenia/psychosis",
-		name: "Schizophrenia - Psychosis",
-	},
-	{
-		id: "eating-disorder-anorexia-bulimia",
-		path: "/eating/disorder/anorexia",
-		name: "Eating Disorder - Anorexia & Bulimia",
-	},
-	{
-		id: "substance-abuse-addiction",
-		path: "/substance/abuse/addiction",
-		name: "Substance Abuse - Addiction",
-	},
-	{
-		id: "insomnia-sleep-disorder",
-		path: "/insomnia/sleep/disorder",
-		name: "Insomnia - Sleep Disorder",
-	},
-	{
-		id: "chronic-pain-somatic",
-		path: "/pain/chronic/somatic",
-		name: "Chronic Pain - Somatic Symptom",
-	},
-	{
-		id: "autism-spectrum-disorder",
-		path: "/autism/spectrum",
-		name: "Autism - Spectrum Disorder",
-	},
-	{
-		id: "selective-mutism-silence",
+		id: "mutism-selective-silence",
 		path: "/mutism/selective/silence",
 		name: "Selective Mutism - Communication Disorder",
 	},
 	{
-		id: "autism-adhd-neurodiversity",
-		path: "/neurodiversity",
-		name: "Neurodiversity - Autism & ADHD",
+		id: "dyspraxia-motor-coordination",
+		path: "/dyspraxia/motor/coordination",
+		name: "Dyspraxia - Motor Coordination Disorder",
+	},
+	{
+		id: "dyscalculia-math-numbers",
+		path: "/dyscalculia/math/numbers",
+		name: "Dyscalculia - Math Learning Disorder",
+	},
+	{
+		id: "dysgraphia-writing-handwriting",
+		path: "/dysgraphia/writing/handwriting",
+		name: "Dysgraphia - Writing Disorder",
 	},
 ]
 
