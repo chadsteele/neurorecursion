@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "22.12.0"
 
+# Edge function to rewrite og tags dynamically
+[[edge_functions]]
+  path = "/*"
+  function = "rewrite-og-tags"
+
 # Redirects for single page app - only apply to GET requests
 # POST requests to Netlify Forms are excluded to allow form capture
 [[redirects]]
