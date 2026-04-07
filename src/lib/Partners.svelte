@@ -129,7 +129,6 @@
 </script>
 
 <section {...props}>
-	<h2>Neuro Recursion Resources and Partners</h2>
 	<p>
 		The Neuro Recursion Institute supports the world's leading
 		non-governmental organizations dedicated to neurodivergent advocacy,

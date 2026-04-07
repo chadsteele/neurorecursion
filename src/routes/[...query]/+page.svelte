@@ -194,6 +194,9 @@
 	{/each}
 {/each}
 
+<div class="category-section">
+	<h1>Neuro Recursion Resources and Partners</h1>
+</div>
 <div id="partners"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
 	<Partners class="paper container" />
