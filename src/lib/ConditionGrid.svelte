@@ -57,6 +57,9 @@
 					class="category-conditions"
 					transition:slide={{duration: 300}}
 				>
+					<a href={`#${category.ids[0]}`} class="read-more"
+						>🔍 Learn</a
+					>
 					{#each category.ids as conditionId (conditionId)}
 						{@const condition = ConditionsMap[conditionId]}
 						{#if condition}
@@ -78,9 +81,6 @@
 							</div>
 						{/if}
 					{/each}
-					<a href={`#${category.ids[0]}`} class="read-more"
-						>🔍 read more</a
-					>
 				</div>
 			{:else}
 				{@const checkedIds = getCheckedConditions(category.ids)}
