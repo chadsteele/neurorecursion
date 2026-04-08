@@ -3,7 +3,7 @@
 
 	let {background, children} = $props()
 
-	let container
+	let container = $state()
 	let isLoaded = $state(false)
 
 	const bgValue = $derived(

@@ -78,8 +78,7 @@ Our technique reprograms the attachment circuitry by recalibrating the amygdala'
 The neurobiological mechanism involves dysregulation of the social brain systems. The amygdala becomes hyperactive to social threat while the ventral vagal complex—which enables safe social engagement—becomes suppressed. Individuals with chronic loneliness show heightened activation to potential social threats and reduced capacity to experience social reward and connection. Anxiety in social contexts drives withdrawal behaviors, which then confirm the prediction that connection isn't safe. The brain enters a state of social threat hypervigilance while simultaneously craving connection—creating internal conflict that drives isolated coping. The nervous system becomes trapped in a state where presence with others feels dangerous despite desperate longing for connection.
 
 Our technique recalibrates social threat perception and restores social reward capacity through targeted limbic recalibration. We dissolve the amygdala hijack in response to social presence and restore ventral vagal engagement. Your nervous system regains capacity for genuine connection and authentic presence with others. This isn't skills training or social forcing. It's recoding of how your nervous system detects threat in social contexts. You experience restored capacity for belonging, authentic connection, and the vital health and wellbeing that emerges from genuine relationship.`,
-		ngo_url:
-			"https://www.aarp.org/relationships/friends-family/info-2018/loneliness.html",
+		ngo_url: "https://www.campaigntoendloneliness.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8209555/",
 		background_image: "/backgrounds/depressed.png",
@@ -219,7 +218,7 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 The neurobiological mechanism involves a systematic bias in threat-detection where the amygdala hypervigilantly monitors for evidence of inadequacy while minimizing evidence of competence. The prefrontal cortex becomes hijacked by catastrophic narratives about exposure and public failure. When accomplishments occur, the brain's reward system becomes suppressed—the amygdala treats success as danger (it increases visibility and exposure risk). This creates a perverse incentive structure where the nervous system paradoxically learns to fear success and competence-visibility. The neural networks encoding self-worth become dysregulated.
 
 Our technique recalibrates the threat-detection bias and restores accurate self-assessment through targeted limbic recalibration. We dissolve the hypervigilance to exposure threat and restore amygdala regulation when processing genuine accomplishments. You experience restored confidence in genuine competence, reduced anxiety about being 'found out,' and authentic pride in accomplishments. This isn't affirmation or confidence building. It's recoding of how your nervous system detects threat in success and visibility. You access genuine self-assurance based on accurate neural processing of your actual capabilities.`,
-		ngo_url: "https://www.apa.org/science/about/psa/imposter-syndrome",
+		ngo_url: "https://impostorsyndrome.com/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC9684747/",
 		background_image: "/backgrounds/imposter.png",
@@ -432,7 +431,7 @@ Our technique breaks this reinforcement cycle by providing more effective ways t
 The neurobiological mechanism involves chronic activation of the stress response system that eventually leads to depletion of neurotransmitters (serotonin, dopamine, norepinephrine, cortisol dysregulation) and exhaustion of the hypothalamic-pituitary-adrenal axis. Prolonged threat-state consumes neural resources devoted to repair, memory consolidation, and meaning-making. Depersonalization emerges as a protective dissociation when the nervous system can no longer sustain emotional engagement. The prefrontal cortex becomes progressively compromised, reducing executive capacity and emotional regulation. The brain enters a state of 'learned shutdown' where further effort is perceived as dangerous. The default mode network becomes dysregulated, leading to loss of meaning and purpose.
 
 Our technique recalibrates the nervous system from chronic threat-state through targeted limbic recalibration and restoration of meaning-systems. We restore the capacity to downregulate threat-perception and re-engage the parasympathetic nervous system. Your nervous system regains capacity for genuine rest, renewed energy, and restored sense of purpose. This isn't vacation or work-life balance advice. It's recoding of how your nervous system responds to occupational stress. You experience restoration of vitality, genuine emotional connection, and renewed capability.`,
-		ngo_url: "https://www.headspace.com/articles/burnout",
+
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7249520/",
 		background_image: "",
@@ -765,6 +764,7 @@ Our technique restores a relaxed neuromuscular state and recalibrates working me
 The neurobiological mechanism involves amygdala hyperactivity and reduced prefrontal regulation where the threat-detection system remains persistently active without external threat trigger. The anterior cingulate cortex generates excessive error-detection and worry-rumination that keeps the anxiety system activated in a feedback loop. The insula becomes hyperactive in interoceptive threat-detection, meaning internal bodily sensations become misinterpreted as danger signals. The default mode network becomes overactive in catastrophic future-prediction and "what-if" scenarios. The nervous system learned that worry is protective (by predicting all possible dangers) and now uses worry as a false safety strategy that actually perpetuates anxiety.
 
 Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
+		ngo_url: "https://www.adaa.org/",
 		background_image: "",
 	},
 	{
@@ -776,6 +776,7 @@ Our technique recalibrates the threat-detection system and reduces amygdala hype
 The neurobiological mechanism involves an overactive amygdala that perceives time's passage and mortality awareness as existential threat. The insular cortex becomes hyperactive in processing bodily sensations related to aging and the passage of time. When the amygdala detects thoughts about time, aging, or death, it triggers a threat response that becomes associated with temporal awareness itself. The anterior cingulate cortex generates persistent rumination about mortality, and the prefrontal cortex fails to regulate this catastrophic thinking. Paradoxically, hypervigilance to time's passage actually intensifies the subjective experience of time urgency and threatens peace with the present moment.
 
 Our technique recalibrates the amygdala's threat perception around time and mortality through targeted limbic intervention. We dissolve the existential threat association with temporal awareness and restore presence and acceptance of mortality. Your nervous system ceases to treat time's passage as danger. You experience peace in the present moment, healthy perspective on aging, and freedom from mortality obsession.`,
+		ngo_url: "https://www.adaa.org/",
 	},
 	{
 		id: "thanatophobia-death-anxiety",
@@ -786,6 +787,7 @@ Our technique recalibrates the amygdala's threat perception around time and mort
 The neurobiological mechanism involves an amygdala that has been conditioned to perceive death awareness as immediate and personal threat. The orbitofrontal cortex fails to accurately assess actual death probability—treating death as equally likely whether one is healthy or ill, young or old. Mortality reminders (sirens, aging parents, news reports) trigger an amygdala hijack that floods the system with panic neurochemicals. The anterior cingulate cortex generates obsessive death rumination that reinforces amygdala sensitivity. Ironically, the hypervigilance to death becomes an obsessive mental habit that consumes quality of life in the present.
 
 Our technique recalibrates death perception and dissolves the morbid obsession pattern through targeted limbic intervention. We restore accurate probability assessment and emotional proportionality around mortality. Your nervous system ceases to treat death awareness as immediate threat. You experience acceptance of mortality, freedom from intrusive death thoughts, and restored capacity to engage fully in life.`,
+		ngo_url: "https://www.adaa.org/",
 	},
 	{
 		id: "moral-injury-values-violation",
@@ -796,6 +798,7 @@ Our technique recalibrates death perception and dissolves the morbid obsession p
 The neurobiological mechanism involves the medial prefrontal cortex—which maintains identity and values—encoding the value-violating action or inaction as a core identity threat. The amygdala becomes conditioned to respond to reminders of the moral violation with intense shame and not-self states. The ventromedial prefrontal cortex fails to integrate the violation into a coherent identity, leaving it in a fragmented, shame-laden state. Rumination about the moral violation becomes encoded as a core feature of identity, and the nervous system perpetually re-experiences the shame of the value violation. The wound is to one's sense of self as moral.
 
 Our technique integrates the moral violation into a coherent, compassionate identity narrative through targeted limbic and identity work. We dissolve the shame-encoding and restore wholeness of self. Your nervous system ceases to treat the moral violation as defining your identity. You experience integrated self-understanding, restored capacity for self-compassion, and renewed sense of meaning and values.`,
+		ngo_url: "https://www.nami.org/",
 		background_image: "/backgrounds/moral-injury.png",
 	},
 	{
@@ -807,6 +810,7 @@ Our technique integrates the moral violation into a coherent, compassionate iden
 The neurobiological mechanism involves classical conditioning where a neutral stimulus became associated with threat through single-exposure or vicarious learning. The amygdala now automatically detects that specific stimulus and triggers a threat response before conscious awareness engages. The stimulus-threat association becomes so entrenched that despite cortical knowledge that the object is safe, the amygdala continues firing, generating the characteristic experience of irrational but overwhelming fear. Avoidance negatively reinforces the fear by preventing amygdala extinction through habituation.
 
 Our technique dissolves the specific stimulus-threat association through targeted amygdala recalibration. We break the conditioned fear response and restore accurate threat assessment of the specific stimulus. Your nervous system ceases to respond with fear when encountering the phobic object. You experience rapid freedom from the specific phobia and restored capacity to engage with previously avoided situations.`,
+		ngo_url: "https://www.adaa.org/",
 	},
 	{
 		id: "seasonal-affective-disorder-sad",
@@ -817,6 +821,7 @@ Our technique dissolves the specific stimulus-threat association through targete
 The neurobiological mechanism involves dysregulation of circadian rhythms caused by reduced light exposure during winter months. Lower light levels suppress melatonin regulation and serotonin production, leading to depressed mood and fatigue. The suprachiasmatic nucleus fails to maintain robust circadian signaling, disrupting sleep-wake cycles and dopamine-driven motivation. The prefrontal cortex becomes increasingly hypofunctional as serotonin declines, reducing capacity for effortful engagement and mood regulation. Additionally, the amygdala may become sensitized to seasonal darkness as a threat signal, triggering depressive shutdown as a false protective response.
 
 Our technique recalibrates circadian rhythm sensitivity to seasonal light changes through targeted limbic intervention. We restore robust dopamine and serotonin signaling independent of seasonal darkness. Your nervous system ceases to treat winter darkness as threat or signal for depressive shutdown. You experience consistent mood and motivation year-round without seasonal variation.`,
+		ngo_url: "https://www.adaa.org/",
 	},
 	{
 		id: "perinatal-depression-paternal-postpartum-depression",
@@ -827,6 +832,7 @@ Our technique recalibrates circadian rhythm sensitivity to seasonal light change
 The neurobiological mechanism involves massive hormonal shifts—particularly sharp drops in estrogen and progesterone post-delivery—that dysregulate neurotransmitter systems including serotonin, dopamine, and GABA. The hippocampus becomes hypofunctional due to cortisol elevation from birth stress, impairing memory and learning of infant cues. Sleep deprivation from newborn care further dysregulates limbic systems and impairs prefrontal function. The amygdala may become sensitized to infant distress sounds as threat, creating anxiety and avoidance rather than bonding. Socially-conditioned expectations of instant maternal bonding create additional shame when depression prevents affective engagement.
 
 Our technique recalibrates the nervous system's response to perinatal hormonal and sleep shifts through targeted limbic and endocrine intervention. We restore monoamine signaling and hippocampal function independent of hormonal status. Your nervous system regains capacity for bonding, pleasure, and engagement with your baby and life. You experience freedom from perinatal/postpartum depression and access to genuine maternal (or paternal) connection.`,
+		ngo_url: "https://www.postpartumsupport.org/",
 		background_image: "/backgrounds/postpartum.png",
 	},
 	{
@@ -838,6 +844,7 @@ Our technique recalibrates the nervous system's response to perinatal hormonal a
 The neurobiological mechanism involves the dramatic decline in estrogen during menopause, which serves as a neuromodulator supporting serotonin and dopamine systems. As estrogen drops, serotonin and dopamine become dysregulated, leading to depression and anhedonia. The noradrenergic system becomes hyperactive as compensatory response, creating anxiety and sleep disruption. The hippocampus becomes more vulnerable to stress-induced atrophy during menopause, impairing memory and emotional regulation. Additionally, hot flashes, night sweats, and sleep deprivation from these symptoms further dysregulate the nervous system. The amygdala may become sensitized to menopause-related bodily sensations as threat.
 
 Our technique recalibrates monoamine systems and limbic sensitivity to menopausal hormonal and physical changes through targeted intervention. We restore neurochemical balance independent of estrogen levels and recalibrate threat-sensitivity to menopause-related sensations. Your nervous system regains capacity for mood stability, motivation, and engagement. You experience freedom from menopausal depression and restored quality of life during and after menopause.`,
+		ngo_url: "https://www.menopause.org/",
 	},
 	{
 		id: "other-mood-disorders",
@@ -848,6 +855,7 @@ Our technique recalibrates monoamine systems and limbic sensitivity to menopausa
 The neurobiological mechanisms vary across mood disorder types but generally involve dysregulation of monoamine systems (serotonin, dopamine, norepinephrine), hyperactivity or hypoactivity in the amygdala and prefrontal cortex, disruption of circadian rhythm regulation, and abnormalities in HPA axis stress response. Chronic stress, trauma, substance use, sleep disruption, or other factors dysregulate these systems and create persistent mood dysfunction. The nervous system becomes stuck in patterns of mood generation that persist regardless of external circumstances.
 
 Our technique identifies the specific dysregulation pattern and restores balanced mood regulation through targeted limbic intervention. We dissolve the driving mechanisms behind disordered mood states and restore healthy mood cycling or sustained stable affect. Your nervous system regains capacity for emotional resilience and appropriate mood response to circumstances. You experience freedom from mood disorder patterns and restored capacity for psychological wellbeing.`,
+		ngo_url: "https://www.nami.org/",
 		background_image: "/backgrounds/badmood.png",
 	},
 	{
@@ -891,6 +899,7 @@ Our technique recalibrates the dopamine reward system and dissolves the distress
 The neurobiological mechanism involves dysregulation of the mesolimbic reward pathway where highly palatable foods trigger excessive dopamine release, creating supernormal reward signals that exceed natural food reward. The prefrontal cortex loses regulatory capacity and cannot inhibit eating urges despite health goals. The amygdala becomes sensitized to emotional distress as a cue for eating. The insula loses interoceptive awareness of true hunger and satiety signals, becoming dysregulated by emotional states instead. Opioid pathways become dysregulated, creating craving for food as primary comfort mechanism. The cycle perpetuates as food provides temporary emotional relief before shame and physical discomfort drive further eating.
 
 Our technique recalibrates the food reward system and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the emotional-eating link and restore prefrontal regulation. Your nervous system ceases using food as primary emotional management and accesses genuine distress-tolerance alternatives. You experience restored capacity for balanced eating, appropriate appetite regulation, and emotional resilience.`,
+		ngo_url: "https://www.nationaleatingdisorders.org/",
 	},
 	{
 		id: "other-addictions",
@@ -901,6 +910,7 @@ Our technique recalibrates the food reward system and restores genuine interocep
 The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where the addictive stimulus triggers supernormal dopamine release. The ventromedial prefrontal cortex loses regulatory capacity to inhibit the addictive behavior. The amygdala becomes conditioned to emotional distress (anxiety, boredom, sadness) as a cue to engage the addictive behavior for relief. The anterior cingulate cortex generates compulsive approach toward the addictive target. Regardless of specific addiction, all involve the same core dysregulation: excessive dopamine reward signal combined with loss of executive inhibition and emotional-behavior coupling.
 
 Our technique recalibrates the dopamine reward system and restores executive capacity through targeted limbic intervention. We dissolve the distress-addiction link and restore genuine distress tolerance. Your nervous system ceases pursuing the addictive behavior and accesses genuine satisfaction and emotional regulation alternatives. You experience freedom from addiction and restored capacity for meaningful engagement with life.`,
+		ngo_url: "https://www.samhsa.gov/",
 	},
 	{
 		id: "anxiety-related-gastrointestinal-issues",
@@ -911,6 +921,7 @@ Our technique recalibrates the dopamine reward system and restores executive cap
 The neurobiological mechanism involves bidirectional communication between the amygdala/prefrontal cortex and the enteric nervous system via the vagus nerve. When the amygdala perceives threat, it triggers parasympathetic shutdown of digestion, causing nausea, constipation, or a stress-response diarrhea. The enteric nervous system becomes sensitized to anxiety cues and misinterprets normal GI activity as threat when anxiety is present. Anxiety-related HPA axis activation releases cortisol which disrupts gut microbiota, GI motility, and intestinal permeability. The insular cortex becomes hyperactive in perceiving GI sensations, amplifying interoceptive awareness of normal gut function into perceived threat.
 
 Our technique recalibrates the gut-brain axis and reduces amygdala's threat perception of gut sensations through targeted limbic intervention. We restore normal vagal tone and GI function independent of anxiety state. Your gut regains capacity for normal digestion and motility. This isn't probiotics or dietary changes. It's recalibration of how the amygdala perceives GI function. You experience improved digestive function and freedom from anxiety-related GI symptoms.`,
+		ngo_url: "https://www.aboutibs.org/",
 	},
 	{
 		id: "anxiety-health-conditions",
@@ -921,6 +932,7 @@ Our technique recalibrates the gut-brain axis and reduces amygdala's threat perc
 The neurobiological mechanism involves the amygdala becoming hypersensitized to symptom-related threat perception. Normal symptoms of the health condition (blood sugar variation, occasional chest sensation, fatigue from disease) trigger amygdala activation as if they signal acute threat. The insular cortex becomes hyperactive in interoceptive awareness, amplifying normal physiological signals into perceived threats. The prefrontal cortex fails to appropriately contextualize existing health condition symptoms, leading to catastrophic prognosis predictions. Compulsive health-checking and seeking reassurance temporarily reduces anxiety but negatively reinforces the threat perception.
 
 Our technique recalibrates the amygdala's threat perception of health condition symptoms through targeted limbic intervention. We restore proportional threat assessment where health condition awareness remains without catastrophic anxiety. Your nervous system distinguishes between normal disease symptoms and actual acute threat. You experience acceptance of your health condition and freedom from anxiety-amplified suffering. This isn't denial of the health condition. It's recalibration of anxiety's role in responding to it.`,
+		ngo_url: "https://www.nami.org/",
 		background_image: "/backgrounds/wheelchair.png",
 	},
 	{
@@ -932,6 +944,7 @@ Our technique recalibrates the amygdala's threat perception of health condition 
 The neurobiological mechanisms vary across specific neurological conditions but generally involve atypical function in motor cortex, cerebellum, basal ganglia, sensory cortices, or other brain regions that generate symptoms specific to the affected system. Anxiety often co-occurs or develops as the secondary consequence when neurological symptoms create functional difficulty or social stigma. The amygdala may become sensitized to symptom-related threat or social threat, amplifying the subjective distress beyond the neurological basis alone.
 
 Our technique addresses both the neurological symptom generation and secondary anxiety through targeted neural intervention. We enhance compensatory neural pathway function and reduce threat-sensitivity to symptom experience. Your brain regains maximum functional capacity given the neurological condition present. You experience improved functional capacity and reduced anxiety about neurological symptoms.`,
+		ngo_url: "https://www.aan.com/",
 	},
 	{
 		id: "self-esteem-identity-issues",
@@ -942,6 +955,7 @@ Our technique addresses both the neurological symptom generation and secondary a
 The neurobiological mechanism involves the medial prefrontal cortex—which encodes self-representation and identity—incorporating threat-based or shame-based encoding of self-worth. The amygdala becomes hypersensitive to threat to reputation, status, or competence, treating any criticism or failure as profound identity threat. The anterior cingulate cortex generates persistent self-critical rumination that reinforces negative self-encoding. The default mode network becomes overactive in internally-focused self-evaluation, especially when threat-activated. Social threat becomes encoded as self-threat, and the self-representation becomes fundamentally distorted toward inadequacy.
 
 Our technique recalibrates the self-representation in the medial prefrontal cortex and reduces amygdala's sensitivity to status/competence threat through targeted identity and limbic intervention. We restore accurate self-perception free from threat-distortion. Your nervous system encodes self-worth based on authentic capability and intrinsic value. You experience stable healthy self-esteem and clarified authentic identity.`,
+		ngo_url: "https://www.nami.org/",
 	},
 	{
 		id: "other-performance-issues",
@@ -952,6 +966,7 @@ Our technique recalibrates the self-representation in the medial prefrontal cort
 The neurobiological mechanism involves the amygdala perceiving performance contexts as social threat where evaluation and judgment threaten status and worth. The prefrontal cortex becomes suppressed as amygdala activation increases, leading to working memory shutdown and access to learned skills becomes blocked. Stress neurochemicals (adrenaline, cortisol) increase in a way that impairs executive function and fine motor control despite enhancing gross motor activation. The anterior cingulate cortex may generate error-detection hyperactivity, making the nervous system hypercritical of performance in real-time, creating performance disruption through internal commentary.
 
 Our technique recalibrates the amygdala's threat perception of performance contexts through targeted limbic intervention. We restore executive function and skill access when performance stakes are present. Your nervous system ceases treating performance as social threat and maintains prefrontal regulation. You experience genuine performance capability when stakes are present and freedom to execute skill at full capacity.`,
+		ngo_url: "https://www.adaa.org/",
 	},
 	{
 		id: "cutting-self-harm",
@@ -962,6 +977,7 @@ Our technique recalibrates the amygdala's threat perception of performance conte
 The neurobiological mechanism involves dysregulation of pain processing and emotion regulation pathways. When emotional distress becomes intolerable, physical pain signal activates the brain's endogenous opioid system, providing temporary dopamine-based relief and emotional numbness. The amygdala's threat-perception drives emotional distress that becomes unbearable within the current distress-tolerance capacity. The anterior insula loses accurate interoceptive awareness, preventing accurate sensing of emotional state and creating dissociative disconnection. Self-harm provides the bridge that generates physical sensation when emotional sensation becomes unbearable. The pattern becomes self-reinforcing as it successfully provides temporary regulation.
 
 Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
+		ngo_url: "https://www.nami.org/",
 	},
 	{
 		id: "hoarding-disorder",
@@ -1037,6 +1053,7 @@ Our technique facilitates neural plasticity and language pathway reorganization 
 The neurobiological mechanisms vary across communication issues but often involve coordination problems between language production and motor execution systems (stuttering), auditory processing difficulties (listening), social-emotional processing differences (conversational attunement), or attention/executive deficits that affect real-time communication management. Anxiety often develops secondarily where individuals become hyperaware of communication difficulties, leading to avoidance of communication, which further impairs practice-based improvement.
 
 Our technique recalibrates the specific communication system disruption through targeted neural intervention. We improve neural coordination in affected communication systems and reduce secondary anxiety that compounds difficulty. Your communication becomes more fluid, accurate, and socially effective. This isn't speech therapy or communication coaching. It's targeted recalibration of the neural systems generating communication difficulty. You experience improved communication effectiveness and restored confidence in social and professional communication.`,
+		ngo_url: "https://www.asha.org/",
 	},
 	{
 		id: "trauma-drama-etc",
@@ -1047,6 +1064,7 @@ Our technique recalibrates the specific communication system disruption through 
 The neurobiological mechanism involves amygdala sensitization and conditioning to trauma-related cues, where the nervous system continues responding as if threat persists long after actual danger has passed. The hippocampus becomes dysregulated, preventing proper time-stamping and integration of trauma memories, leaving them fragmented and intrusive. The prefrontal cortex loses regulatory capacity over the amygdala during trauma-reminder exposure. The ventromedial prefrontal cortex fails to maintain accurate threat assessment, leading to generalization where anything resembling trauma context becomes a threat trigger. The nervous system becomes locked in a protective hypervigilance that was once adaptive but now becomes constraining.
 
 Our technique systematically desensitizes trauma encoding and restores accurate threat-assessment through targeted limbic intervention. We process trauma memories and diminish their emotional charge and salience. Your nervous system regains capacity to distinguish past threat from present safety. You experience freedom from intrusive trauma memories and chronic threat-detection, restored capacity for trust and genuine engagement with life.`,
+		ngo_url: "https://www.nctsn.org/",
 	},
 	{
 		id: "power-control-issues",
@@ -1057,6 +1075,7 @@ Our technique systematically desensitizes trauma encoding and restores accurate 
 The neurobiological mechanism often involves early experiences where the environment felt chaotic or threatening and control-seeking became the adaptive protective strategy. The amygdala became sensitized to perceived loss-of-control as existential threat. The ventromedial prefrontal cortex encodes control-seeking as a safety strategy. The empathy-processing systems may become downregulated when others' autonomy threatens felt sense of control. In cases of aggression-driven dominance, the orbitofrontal cortex becomes hyperactive in dominance-assessment and amygdala becomes reactive to perceived challenge. The nervous system learned that power resolves threat, though actual threat stems from vulnerability-intolerance rather than external danger.
 
 Our technique recalibrates threat-perception around loss of control and restores capacity to tolerate appropriate vulnerability through targeted limbic intervention. We reduce amygdala reactivity to control-loss and increase tolerance for uncontrollable systems. Your nervous system regains capacity for genuine connection where autonomy need not threaten your sense of safety. You experience freedom from control-compulsion and restored capacity for healthy relationships and collaborative rather than dominance-based relating.`,
+		ngo_url: "https://www.aamft.org/",
 	},
 	{
 		id: "rape-sexual-assault",
@@ -1067,6 +1086,7 @@ Our technique recalibrates threat-perception around loss of control and restores
 The neurobiological mechanism involves amygdala sensitization to assault-related trauma cues (locations, smells, physical sensations, interpersonal closeness) where exposure to trauma reminders triggers full threat-response as if assault is currently occurring. The hippocampus becomes dysregulated, fragmenting trauma memories so they remain intrusive and unprocessed. The anterior cingulate cortex generates persistent error-checking and threat-scanning. Dissociation occurs as a protective response where consciousness disconnects from body sensation during intimacy or vulnerability. The insula loses accurate interoceptive awareness, making the body feel unsafe or unowned. The medial prefrontal cortex encodes the assault as self-defining, creating shame and identity damage. Sexual arousal becomes associated with danger rather than pleasure.
 
 Our technique systematically processes the trauma encoding and restores felt safety in the body through targeted trauma-specific limbic intervention. We desensitize trauma triggers and restore accurate threat-assessment. Your nervous system regains capacity to distinguish assault threat from current safety. You experience reclaimed body ownership, restored capacity for intimacy and pleasure, freedom from intrusive trauma memories, and integration of the assault as something that happened to you rather than something that defines who you are.`,
+		ngo_url: "https://rainn.org/",
 		background_image: "",
 	},
 	{
@@ -1089,6 +1109,7 @@ Our technique recalibrates the amygdala's threat-assessment and dissolves the tr
 The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where sexual behavior triggers supernormal dopamine release that exceeds natural sexual pleasure. The prefrontal cortex loses regulatory capacity, unable to inhibit sexual urges despite intellectual awareness of negative consequences. The amygdala becomes sensitized to emotional distress, anxiety, boredom, or loneliness as triggers for sexual behavior-seeking. The ventromedial prefrontal cortex fails to accurately weighing short-term sexual reward against long-term relationship and health consequences. Sexual behavior becomes the neurochemical solution to psychological distress, creating a self-perpetuating cycle where sexual relief is temporary, shame-rebound distress escalates need for more sexual engagement, and compulsion intensifies. Intimacy becomes secondary to sexual compulsion.
 
 Our technique recalibrates the dopamine reward system and restores executive inhibition through targeted limbic intervention. We dissolve the distress-sexual-behavior link and restore genuine capacity for intimate sexuality. Your nervous system ceases using sexual compulsion as primary distress-regulation and accesses genuine emotional management alternatives. You experience freedom from sexual compulsion, restored capacity for authentic intimate sexuality with genuine partners, and integrated sexual expression.`,
+		ngo_url: "https://www.samhsa.gov/",
 		background_image: "/backgrounds/sex-addiction.png",
 	},
 ]

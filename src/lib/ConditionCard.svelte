@@ -34,15 +34,18 @@
 			</label>
 			<a type="button" class="signup-btn" href="#signup"> ✅ Sign up! </a>
 
+			{#if condition.ngo_url}
+				<a
+					href={condition.ngo_url}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					❤️ Support
+				</a>
+			{/if}
 			<a
-				href={condition.ngo_url}
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				❤️ Support
-			</a>
-			<a
-				href={`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
+				href={condition.scientific_reference ||
+					`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -65,17 +68,11 @@
 		line-height: 1.6;
 	}
 
-	div p {
-		color: #d0d0d0;
-		line-height: 1.6;
-		margin: 1rem 0;
-	}
-
-	div p:first-child {
+	p:first-child {
 		margin-top: 0;
 	}
 
-	div p:last-child {
+	p:last-child {
 		margin-bottom: 0;
 	}
 
