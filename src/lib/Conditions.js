@@ -222,7 +222,7 @@ Our technique recalibrates the threat-detection bias and restores accurate self-
 		ngo_url: "https://www.apa.org/science/about/psa/imposter-syndrome",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC9684747/",
-		background_image: "/backgrounds/imposter.jpeg",
+		background_image: "/backgrounds/imposter.png",
 	},
 	{
 		id: "performance-anxiety-evaluation-fear",
@@ -264,7 +264,7 @@ Our technique targets the convergence of fears through precise limbic reprogramm
 		ngo_url: "https://www.flyingwithfear.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
-		background_image: "/backgrounds/flying.jpeg",
+		background_image: "/backgrounds/flying.png",
 	},
 	{
 		id: "rejection-sensitivity",
@@ -827,7 +827,7 @@ Our technique recalibrates circadian rhythm sensitivity to seasonal light change
 The neurobiological mechanism involves massive hormonal shifts—particularly sharp drops in estrogen and progesterone post-delivery—that dysregulate neurotransmitter systems including serotonin, dopamine, and GABA. The hippocampus becomes hypofunctional due to cortisol elevation from birth stress, impairing memory and learning of infant cues. Sleep deprivation from newborn care further dysregulates limbic systems and impairs prefrontal function. The amygdala may become sensitized to infant distress sounds as threat, creating anxiety and avoidance rather than bonding. Socially-conditioned expectations of instant maternal bonding create additional shame when depression prevents affective engagement.
 
 Our technique recalibrates the nervous system's response to perinatal hormonal and sleep shifts through targeted limbic and endocrine intervention. We restore monoamine signaling and hippocampal function independent of hormonal status. Your nervous system regains capacity for bonding, pleasure, and engagement with your baby and life. You experience freedom from perinatal/postpartum depression and access to genuine maternal (or paternal) connection.`,
-		background_image: "/backgrounds/postpartum.jpg",
+		background_image: "/backgrounds/postpartum.png",
 	},
 	{
 		id: "menopausal-depression",
@@ -848,7 +848,7 @@ Our technique recalibrates monoamine systems and limbic sensitivity to menopausa
 The neurobiological mechanisms vary across mood disorder types but generally involve dysregulation of monoamine systems (serotonin, dopamine, norepinephrine), hyperactivity or hypoactivity in the amygdala and prefrontal cortex, disruption of circadian rhythm regulation, and abnormalities in HPA axis stress response. Chronic stress, trauma, substance use, sleep disruption, or other factors dysregulate these systems and create persistent mood dysfunction. The nervous system becomes stuck in patterns of mood generation that persist regardless of external circumstances.
 
 Our technique identifies the specific dysregulation pattern and restores balanced mood regulation through targeted limbic intervention. We dissolve the driving mechanisms behind disordered mood states and restore healthy mood cycling or sustained stable affect. Your nervous system regains capacity for emotional resilience and appropriate mood response to circumstances. You experience freedom from mood disorder patterns and restored capacity for psychological wellbeing.`,
-		background_image: "/backgrounds/badmood.jpg",
+		background_image: "/backgrounds/badmood.png",
 	},
 	{
 		id: "dyslexia-reading-disorder",
@@ -869,7 +869,7 @@ Our technique optimizes the visual-phonological integration pathways and reduces
 The neurobiological mechanisms vary across specific neurodevelopmental conditions but generally involve atypical neural development during critical periods—whether through genetic factors, prenatal influences, birth complications, or early environmental factors that alter typical neural pathway development. This results in brain systems that process information differently, often requiring more effort in affected domains despite average or above-average overall capability. Anxiety often co-occurs or develops secondarily as individuals encounter repeated difficulty in affected domains, creating additional functional challenges.
 
 Our technique identifies and recalibrates the specific neural pathway differences through targeted neurodevelopmental intervention. We enhance the efficiency of atypical neural pathways and reduce secondary anxiety that compounds functional difficulty. Your brain's atypical wiring becomes an asset rather than a limitation, processing efficiently through its unique pathways. You experience functional improvements in affected domains and restored confidence in your capabilities.`,
-		background_image: "/backgrounds/neural.jpg",
+		background_image: "/backgrounds/neural.png",
 	},
 	{
 		id: "gambling-addiction",
@@ -880,7 +880,7 @@ Our technique identifies and recalibrates the specific neural pathway difference
 The neurobiological mechanism involves profound dysregulation of the mesolimbic dopamine pathway, where gambling-related cues trigger dopamine release that reinforces compulsive seeking despite negative outcomes. The prefrontal cortex loses regulatory capacity, failing to inhibit gambling urges despite intellectual awareness of consequences. The amygdala becomes sensitized to emotional distress (anxiety, depression, boredom) as a trigger for gambling urges. Gambling provides temporary dopamine elevation and relief from distress but leads to guilt, shame, and greater distress, increasing the need to gamble again. The cycle becomes self-perpetuating as only gambling provides relief from the distress gambling creates.
 
 Our technique recalibrates the dopamine reward system and dissolves the distress-gambling link through targeted limbic intervention. We restore executive capacity and genuine distress tolerance. Your nervous system ceases to pursue gambling as relief and accesses genuine anxiety-regulation alternatives. You experience freedom from gambling compulsion and restored financial and emotional stability.`,
-		background_image: "/backgrounds/gambler.avif",
+		background_image: "/backgrounds/gambler.png",
 	},
 	{
 		id: "food-addiction",
@@ -921,7 +921,7 @@ Our technique recalibrates the gut-brain axis and reduces amygdala's threat perc
 The neurobiological mechanism involves the amygdala becoming hypersensitized to symptom-related threat perception. Normal symptoms of the health condition (blood sugar variation, occasional chest sensation, fatigue from disease) trigger amygdala activation as if they signal acute threat. The insular cortex becomes hyperactive in interoceptive awareness, amplifying normal physiological signals into perceived threats. The prefrontal cortex fails to appropriately contextualize existing health condition symptoms, leading to catastrophic prognosis predictions. Compulsive health-checking and seeking reassurance temporarily reduces anxiety but negatively reinforces the threat perception.
 
 Our technique recalibrates the amygdala's threat perception of health condition symptoms through targeted limbic intervention. We restore proportional threat assessment where health condition awareness remains without catastrophic anxiety. Your nervous system distinguishes between normal disease symptoms and actual acute threat. You experience acceptance of your health condition and freedom from anxiety-amplified suffering. This isn't denial of the health condition. It's recalibration of anxiety's role in responding to it.`,
-		background_image: "/backgrounds/wheelchair.avif",
+		background_image: "/backgrounds/wheelchair.png",
 	},
 	{
 		id: "other-neurological-issues",
@@ -972,7 +972,7 @@ Our technique builds genuine distress tolerance and restores emotional regulatio
 The neurobiological mechanism involves amygdala hyperreactivity to the idea of discarding items, where letting go of possessions triggers existential loss threat disproportionate to the item's actual value. The ventromedial prefrontal cortex becomes hyperactive in attribution of too-much-meaning to objects, and loss-aversion becomes pathologically overamplified compared to normal loss-aversion. The dorsolateral prefrontal cortex loses capacity to override these threat and loss-aversion signals through rational decision-making. Items become imbued with emotional significance or hypothetical future utility that prevents discarding. The pattern becomes self-reinforcing as acquisition provides temporary dopamine relief from anxiety, then accumulated items generate anxiety about disposal.
 
 Our technique recalibrates item-meaning attribution and loss-aversion through targeted limbic intervention. We restore appropriate decision-making capacity and realistic meaning assignment to possessions. Your nervous system ceases extracting excessive emotional significance from objects. You experience freedom to make discard decisions and restored capacity to maintain functional living spaces.`,
-		background_image: "/backgrounds/stuff.jpg",
+		background_image: "/backgrounds/stuff.png",
 	},
 	{
 		id: "other-ocd-spectrum",
@@ -983,7 +983,7 @@ Our technique recalibrates item-meaning attribution and loss-aversion through ta
 The neurobiological mechanism involves orbitofrontal cortex hyperactivity in error-detection that generates false threat-signals in response to normal thoughts or situations. The anterior cingulate cortex generates persistent error-checking and uncertainty. The amygdala becomes sensitized to obsession-related triggers, and compulsions provide temporary amygdala downregulation through sense-of-control or ritual completion. The cycle becomes self-perpetuating: obsessive thought generates threat-signal, compulsion provides temporary relief, uncertainty returns because compulsion never proves safety, compulsion must repeat. The neural circuitry becomes stuck in a threat-detection loop that treats uncertainty as requiring behavioral management.
 
 Our technique breaks the obsession-compulsion cycle by recalibrating the error-detection system and reducing amygdala threat-sensitivity through targeted limbic intervention. We restore accurate threat-assessment where obsessions no longer trigger compulsions. Your nervous system ceases generating false threat-signals and regains capacity to tolerate uncertainty. You experience freedom from obsessions and compulsions with dramatically reduced distress.`,
-		background_image: "/backgrounds/ocd.jpg",
+		background_image: "/backgrounds/ocd.png",
 	},
 	{
 		id: "relationship-jealousy-insecurity",
@@ -994,7 +994,7 @@ Our technique breaks the obsession-compulsion cycle by recalibrating the error-d
 The neurobiological mechanism involves insecure attachment patterns where the amygdala became conditioned to perceive partner separation or attention to others as abandonment threat. The ventromedial prefrontal cortex fails to maintain secure attachment representations during separation, leaving the amygdala persistently threat-activated when partner is unavailable or interacting with others. The insular cortex becomes hyperactive in monitoring social signals from the partner, interpreting neutral behavior as infidelity evidence. The anterior cingulate cortex generates persistent rumination about partner betrayal or abandonment. This hijacks the attachment system where security requires constant reassurance rather than secure base confidence.
 
 Our technique recalibrates attachment security and amygdala threat-perception of partner separation through targeted limbic intervention. We restore secure base confidence where partner autonomy can be tolerated without triggering abandonment anxiety. Your nervous system ceases treating partner's other relationships as personal threat. You experience secure attachment, reduced jealousy and monitoring, and restored relationship quality.`,
-		background_image: "/backgrounds/jealousy.jpg",
+		background_image: "/backgrounds/jealousy.png",
 	},
 	{
 		id: "codependency-relational-enmeshment",
@@ -1015,7 +1015,7 @@ Our technique restores self-other boundaries and personal autonomy through targe
 The neurobiological mechanism involves the ventromedial prefrontal cortex encoding relational expectations and secure base representations based on early attachment experiences. When early caregivers were inconsistently available, rejecting, or overwhelming, the amygdala became hyperactive to abandonment or engulfment threat during adult closeness. The mirror neuron systems may become dysregulated, affecting capacity for emotional resonance and empathetic attunement. Insecure attachment patterns activate in adult relationships, triggering protective responses (distancing, pursuing, shutting down) that recreate the early relational pattern. The attachment system uses these patterns as safety strategies despite their actual relationship-damaging effects.
 
 Our technique recalibrates the attachment security representations through targeted limbic and relational intervention. We dissolve the early attachment trauma pattern and restore capacity for secure adult attachment. Your nervous system regains capacity for genuine closeness with maintained autonomy and healthy dependence. You experience secure attachment patterns and restored capacity for fulfilling intimate relationships.`,
-		background_image: "/backgrounds/attached.jpg",
+		background_image: "/backgrounds/attached.png",
 	},
 	{
 		id: "aphasia-language-disorder",
@@ -1026,7 +1026,7 @@ Our technique recalibrates the attachment security representations through targe
 The neurobiological mechanism involves damage or disruption to language-dominant brain regions typically in the left hemisphere, including Broca's area (language production), Wernicke's area (language comprehension), and connecting pathways. The specific language difficulties depend on the lesion location: Broca's aphasia involves speech production difficulty while comprehension remains; Wernicke's aphasia involves comprehension difficulty while speech production continues but becomes nonsensical. The remaining intact brain regions may gradually compensate through neuroplasticity, though recovery depends on damage extent and time since injury. Anxiety about communication often compounds language difficulty.
 
 Our technique facilitates neural plasticity and language pathway reorganization through targeted language and limbic intervention. We engage compensatory neural pathways and reduce anxiety about communication. Your language access improves as the brain reorganizes function around the damage. This isn't speech therapy in the traditional sense. It's targeted facilitation of neural adaptation and language recovery. You can experience rapid language recovery and restored communication capacity, but individual results may vary depending on the lesion location.`,
-		background_image: "/backgrounds/aphasia.jpg",
+		background_image: "/backgrounds/aphasia.png",
 	},
 	{
 		id: "other-communication-issues",
@@ -1078,7 +1078,7 @@ Our technique systematically processes the trauma encoding and restores felt saf
 The neurobiological mechanism involves amygdala sensitization to the abuser as the primary source of both threat and relief. In high-stress environments with intermittent reinforcement (cycles of abuse followed by sporadic kindness), the nervous system learns that the abuser is simultaneously both threat and safety. The ventromedial prefrontal cortex becomes dysregulated in threat-assessment, failing to accurately encode the abuser as persistent danger. The oxytocin bonding system becomes hijacked, generating attachment-related activation in response to the abuser rather than protective distance. The dorsolateral prefrontal cortex loses capacity for objective threat-assessment under the emotional pull of trauma-bonding chemistry. The nervous system becomes neurochemically addicted to the relief-after-threat cycle.
 
 Our technique recalibrates the amygdala's threat-assessment and dissolves the trauma-bonding attachment through targeted limbic intervention. We restore accurate danger perception and sever the false therapeutic bond. Your nervous system regains capacity to recognize abusive patterns and activate protective rather than bonding responses toward abusers. You experience freedom from trauma bond, restored capacity to leave dangerous situations, and healthy attachment to safe people.`,
-		background_image: "/backgrounds/chains.webp",
+		background_image: "/backgrounds/chains.png",
 	},
 	{
 		id: "sex-addiction",
@@ -1089,7 +1089,7 @@ Our technique recalibrates the amygdala's threat-assessment and dissolves the tr
 The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where sexual behavior triggers supernormal dopamine release that exceeds natural sexual pleasure. The prefrontal cortex loses regulatory capacity, unable to inhibit sexual urges despite intellectual awareness of negative consequences. The amygdala becomes sensitized to emotional distress, anxiety, boredom, or loneliness as triggers for sexual behavior-seeking. The ventromedial prefrontal cortex fails to accurately weighing short-term sexual reward against long-term relationship and health consequences. Sexual behavior becomes the neurochemical solution to psychological distress, creating a self-perpetuating cycle where sexual relief is temporary, shame-rebound distress escalates need for more sexual engagement, and compulsion intensifies. Intimacy becomes secondary to sexual compulsion.
 
 Our technique recalibrates the dopamine reward system and restores executive inhibition through targeted limbic intervention. We dissolve the distress-sexual-behavior link and restore genuine capacity for intimate sexuality. Your nervous system ceases using sexual compulsion as primary distress-regulation and accesses genuine emotional management alternatives. You experience freedom from sexual compulsion, restored capacity for authentic intimate sexuality with genuine partners, and integrated sexual expression.`,
-		background_image: "/backgrounds/sex-addiction.jpg",
+		background_image: "/backgrounds/sex-addiction.png",
 	},
 ]
 
