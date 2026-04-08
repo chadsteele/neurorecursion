@@ -1,18 +1,25 @@
 <script>
 	import {browser} from "$app/environment"
+	import {searchOpen} from "$lib/stores.js"
 
 	let isMenuOpen = $state(false)
 	let scrolling = $state(false)
 	let User = $state(null)
+	let Search = $state(null)
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
 			User = module.User
+			Search = module.Search
 		})
 	}
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen
+	}
+
+	function toggleSearch() {
+		searchOpen.update((value) => !value)
 	}
 
 	function handleScroll() {
@@ -58,8 +65,18 @@
 			<a href="/careers" class="nav-link">Join us</a>
 		</div>
 
-		<!-- Right: User Avatar & Menu Toggle -->
+		<!-- Right: Search & User Avatar -->
 		<div class="nav-right">
+			<button
+				class="search-btn"
+				onclick={toggleSearch}
+				aria-label="Toggle search"
+				title="Search"
+			>
+				{#if Search}
+					<Search size={24} strokeWidth={1.5} />
+				{/if}
+			</button>
 			<a
 				class="user-avatar"
 				href="/#signup"
@@ -220,6 +237,30 @@
 	}
 
 	/* Keep img styles for fallback */
+
+	.search-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+	.search-btn:hover {
+		transform: scale(1.1);
+	}
+
+	:global(.search-btn svg) {
+		stroke: #4a9fd8;
+		transition: all 0.3s ease;
+	}
+
+	.search-btn:hover :global(svg) {
+		filter: drop-shadow(0 0 8px rgba(74, 159, 216, 0.4));
+	}
 
 	.menu-toggle {
 		display: none;

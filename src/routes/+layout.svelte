@@ -3,11 +3,13 @@
 	import {onMount} from "svelte"
 	import "../app.css"
 	import Navbar from "$lib/Navbar.svelte"
+	import SearchBar from "$lib/SearchBar.svelte"
 
 	let {children} = $props()
 </script>
 
 <Navbar />
+<SearchBar />
 
 {@render children()}
 
