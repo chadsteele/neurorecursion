@@ -25,6 +25,7 @@ Our technique targets these ancient survival blueprints through creative reprogr
 		ngo_url: "https://www.nctsn.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
+		background_image: "",
 	},
 	{
 		id: "cult-recovery-religious-trauma-damnation-fear",
@@ -66,6 +67,7 @@ Our technique reprograms the attachment circuitry by recalibrating the amygdala'
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+		background_image: "",
 	},
 	{
 		id: "loneliness-social-disconnection",
@@ -122,6 +124,7 @@ Our technique recalibrates the amygdala's interpretation of bodily signals and r
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6313631/",
+		background_image: "",
 	},
 	{
 		id: "chronic-pain-psychosomatic",
@@ -135,6 +138,7 @@ Our technique recalibrates the pain-amplification circuitry by reducing threat p
 		ngo_url: "https://www.iasp-pain.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5563555/",
+		background_image: "",
 	},
 	{
 		id: "stuttering-childhood-onset-fluency-disorder",
@@ -148,6 +152,7 @@ Our research demonstrates that by breaking the hardened anxiety-stutter loop, in
 		ngo_url: "https://www.stutteringhelp.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8608149/",
+		background_image: "",
 	},
 	{
 		id: "arachnophobia-fear-spiders",
@@ -175,6 +180,7 @@ Our technique targets the amygdala's threat detection architecture, recalibratin
 		ngo_url: "https://www.iocdf.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3136004/",
+		background_image: "",
 	},
 	{
 		id: "acrophobia-fear-heights",
@@ -216,6 +222,7 @@ Our technique recalibrates the threat-detection bias and restores accurate self-
 		ngo_url: "https://www.apa.org/science/about/psa/imposter-syndrome",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC9684747/",
+		background_image: "/backgrounds/imposter.jpeg",
 	},
 	{
 		id: "performance-anxiety-evaluation-fear",
@@ -229,6 +236,7 @@ Our technique recalibrates the social-evaluation threat response through targete
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+		background_image: "",
 	},
 	{
 		id: "agoraphobia-social-phobia",
@@ -256,6 +264,7 @@ Our technique targets the convergence of fears through precise limbic reprogramm
 		ngo_url: "https://www.flyingwithfear.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
+		background_image: "/backgrounds/flying.jpeg",
 	},
 	{
 		id: "rejection-sensitivity",
@@ -269,6 +278,7 @@ Our technique recalibrates the rejection-threat response by resetting the amygda
 		ngo_url: "https://chadd.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
+		background_image: "",
 	},
 	{
 		id: "cynophobia-fear-dogs",
@@ -296,6 +306,7 @@ Our technique recalibrates the needle-threat association through targeted creati
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8119524/",
+		background_image: "",
 	},
 
 	{
@@ -324,6 +335,7 @@ Our technique recalibrates the storm threat association through targeted creativ
 		ngo_url: "https://www.adaa.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573564/",
+		background_image: "",
 	},
 
 	{
@@ -352,6 +364,7 @@ Our technique targets the anxiety infrastructure that compounds ADHD impairment.
 		ngo_url: "https://chadd.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
+		background_image: "",
 	},
 
 	{
@@ -394,6 +407,7 @@ Our technique recalibrates threat-response proportionality and restores prefront
 		ngo_url: "https://www.nami.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5373505/",
+		background_image: "",
 	},
 	{
 		id: "ied-rage-intermittent-explosive-disorder",
@@ -407,6 +421,7 @@ Our technique breaks this reinforcement cycle by providing more effective ways t
 		ngo_url: "https://www.apa.org/topics/anger",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2871162/",
+		background_image: "",
 	},
 	{
 		id: "burnout-exhaustion-depersonalization",
@@ -420,11 +435,12 @@ Our technique recalibrates the nervous system from chronic threat-state through 
 		ngo_url: "https://www.headspace.com/articles/burnout",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7249520/",
+		background_image: "",
 	},
 	{
-		id: "addiction-substance-abuse-disorders",
+		id: "alcohol-substance-abuse",
 		path: "/addiction/substance/abuse",
-		name: "Addiction and Substance Abuse Disorders",
+		name: "Alcohol and Substance Abuse Disorders",
 		description: `Your brain learned that the substance was the answer to an impossible question your nervous system kept asking. Substance Use Disorder is a chronic brain condition characterized by compulsive engagement in drug or alcohol use despite significant negative consequences, including health problems, damaged relationships, employment loss, and legal issues. Addiction hijacks the brain's reward, motivation, and decision-making systems, making it extremely difficult for individuals to stop using substances even when they want to and understand the harm caused. Recovery from addiction is a long-term process requiring comprehensive support, as the brain has become fundamentally rewired around substance use.
 
 Anxiety plays a critical role in the initiation and maintenance of substance addiction—many individuals with anxiety disorder initially turn to substances as a form of self-medication to reduce their overwhelming internal distress. Anxiety creates a state of physiological 'dis-ease' that drives the limbic system to seek immediate relief through dopamine-reward pathways, frequently triggering cravings and relapse. Over time, avoidance of withdrawal symptoms, environmental triggers, and anxiety about not having access to the substance becomes a powerful maintenance factor for continued use. The substance becomes wired into the threat-avoidance system.
@@ -447,6 +463,7 @@ Our technique recalibrates the reward system and restores executive capacity thr
 		ngo_url: "https://www.addictioncenter.com/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6323631/",
+		background_image: "",
 	},
 	{
 		id: "porn-addiction-sexual-compulsivity",
@@ -460,6 +477,7 @@ Our technique recalibrates the sexual reward system and dissolves shame-based re
 		ngo_url: "https://www.samhsa.gov/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6418607/",
+		background_image: "",
 	},
 	{
 		id: "sexual-dysfunction-performance-anxiety-impotence",
@@ -541,6 +559,7 @@ The basal ganglia, a set of brain structures crucial for voluntary motor control
 Our technique targets the intersection of vestibular and limbic signal processing through targeted creative reprogramming. We stabilize vestibular function while simultaneously recalibrating the amygdala's threat assessment for heights. The automatic fear cascade transforms into genuine confidence and presence. This isn't gradual exposure or forced habituation. It's swift recoding of the threat signature and vestibular integration. You access bridges, buildings, and mountains with the courage that heights inspire.`,
 		ngo_url: "https://tourette.org/",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/40585552/",
+		background_image: "",
 	},
 	{
 		id: "epilepsy-seizure-disorders",
@@ -582,6 +601,7 @@ Our technique breaks the obsessive-compulsive circuit through targeted recalibra
 		ngo_url: "https://iocdf.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105517/",
+		background_image: "",
 	},
 	{
 		id: "trichotillomania-hair-pulling",
@@ -595,6 +615,7 @@ Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous s
 		ngo_url: "https://www.bfrb.org/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7142407/",
+		background_image: "",
 	},
 	{
 		id: "body-dysmorphia",
@@ -650,6 +671,7 @@ Our technique dissolves the pathological auditory-limbic connection through targ
 		ngo_url: "https://misophonia-hub.org/",
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5321671/",
+		background_image: "",
 	},
 	{
 		id: "selective-mutism",
@@ -676,6 +698,7 @@ The cerebellum and basal ganglia work together to create the fluid, coordinated 
 Our technique restores smooth motor planning by reducing anxiety and targeting the cerebellum-cortex communication pathways through targeted recalibration. We diminish the neurological noise that jams coordination. Movements become fluid and automatic as planning and execution synchronize. This isn't physical therapy or practice. It's targeted recalibration of how the nervous system communicates movement instruction. You report that as anxiety decreases, physical movements become more fluid, athletic performance improves, and handwriting becomes readable.`,
 		ngo_url: "https://dyspraxiausa.org/",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/29159933/",
+		background_image: "",
 	},
 	{
 		id: "dyscalculia",
@@ -717,6 +740,7 @@ Our technique recalibrates the threat-perception in response to imperfection and
 		ngo_url: "https://www.apa.org/science/about/psa/perfectionism",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5603083/",
+		background_image: "",
 	},
 	{
 		id: "dysgraphia",
@@ -730,6 +754,342 @@ Our technique restores a relaxed neuromuscular state and recalibrates working me
 		ngo_url: "https://www.dysgraphia.life/",
 		scientific_reference:
 			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4805091/",
+		background_image: "",
+	},
+	{
+		id: "generalized-anxiety-disorder",
+		path: "/generalized/anxiety",
+		name: "Generalized Anxiety Disorder",
+		description: `Your nervous system learned to perpetually scan for danger and now produces anxious predictions and worry about everyday life situations. Threat-detection became chronic. Generalized Anxiety Disorder (GAD) is characterized by persistent, excessive worry about multiple everyday life domains (work, health, relationships, finances, future) that occurs more days than not for at least six months, causing significant distress and functional impairment. Individuals with GAD experience constant low-level anxiety background radiation, difficulty controlling worry, and often develop secondary physical symptoms (tension, fatigue, sleep disruption) from chronic activation.
+
+The neurobiological mechanism involves amygdala hyperactivity and reduced prefrontal regulation where the threat-detection system remains persistently active without external threat trigger. The anterior cingulate cortex generates excessive error-detection and worry-rumination that keeps the anxiety system activated in a feedback loop. The insula becomes hyperactive in interoceptive threat-detection, meaning internal bodily sensations become misinterpreted as danger signals. The default mode network becomes overactive in catastrophic future-prediction and "what-if" scenarios. The nervous system learned that worry is protective (by predicting all possible dangers) and now uses worry as a false safety strategy that actually perpetuates anxiety.
+
+Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
+		background_image: "",
+	},
+	{
+		id: "chronophobia-fear-time-future",
+		path: "/chronophobia/fear/time",
+		name: "Chronophobia - Fear of Time/Future",
+		description: `Time feels like a threat. Your nervous system learned that the future is dangerous and mortality is imminent. Chronophobia is characterized by an irrational fear of time passing, the aging process, death, or the future. Individuals with chronophobia experience intense anxiety when thinking about aging, time's passage, or inevitable death, leading to obsessive time-checking, difficulty functioning in the present, and pervasive dread about mortality. This often co-occurs with health anxiety and perfectionism, as individuals try to "race against time" to accomplish everything before death.
+
+The neurobiological mechanism involves an overactive amygdala that perceives time's passage and mortality awareness as existential threat. The insular cortex becomes hyperactive in processing bodily sensations related to aging and the passage of time. When the amygdala detects thoughts about time, aging, or death, it triggers a threat response that becomes associated with temporal awareness itself. The anterior cingulate cortex generates persistent rumination about mortality, and the prefrontal cortex fails to regulate this catastrophic thinking. Paradoxically, hypervigilance to time's passage actually intensifies the subjective experience of time urgency and threatens peace with the present moment.
+
+Our technique recalibrates the amygdala's threat perception around time and mortality through targeted limbic intervention. We dissolve the existential threat association with temporal awareness and restore presence and acceptance of mortality. Your nervous system ceases to treat time's passage as danger. You experience peace in the present moment, healthy perspective on aging, and freedom from mortality obsession.`,
+	},
+	{
+		id: "thanatophobia-death-anxiety",
+		path: "/thanatophobia/death/anxiety",
+		name: "Thanatophobia - Death Anxiety",
+		description: `Death feels imminent and unpredictable. Your nervous system learned that death is a present danger rather than a distant eventual reality. Thanatophobia is an abnormal fear of death or dying, characterized by persistent, intrusive thoughts about one's death or others' deaths, intense anxiety when death is contemplated, and often panic attacks triggered by mortality reminders. Individuals with thanatophobia may engage in excessive health-checking, avoidance of situations associated with death, or complete preoccupation with staying alive, leading to severe functional impairment.
+
+The neurobiological mechanism involves an amygdala that has been conditioned to perceive death awareness as immediate and personal threat. The orbitofrontal cortex fails to accurately assess actual death probability—treating death as equally likely whether one is healthy or ill, young or old. Mortality reminders (sirens, aging parents, news reports) trigger an amygdala hijack that floods the system with panic neurochemicals. The anterior cingulate cortex generates obsessive death rumination that reinforces amygdala sensitivity. Ironically, the hypervigilance to death becomes an obsessive mental habit that consumes quality of life in the present.
+
+Our technique recalibrates death perception and dissolves the morbid obsession pattern through targeted limbic intervention. We restore accurate probability assessment and emotional proportionality around mortality. Your nervous system ceases to treat death awareness as immediate threat. You experience acceptance of mortality, freedom from intrusive death thoughts, and restored capacity to engage fully in life.`,
+	},
+	{
+		id: "moral-injury-values-violation",
+		path: "/moral-injury/values/violation",
+		name: "Moral Injury - Values Violation",
+		description: `You acted or witnessed actions that betrayed your core values. Your nervous system now encodes that betrayal as self-threat and shame. Moral injury is a profound psychological response to perpetrating, witnessing, or failing to prevent violations of one's deeply held moral beliefs and values. Unlike trauma (which involves threat to survival), moral injury involves threat to one's identity and sense of self as a good person. Individuals with moral injury experience persistent guilt, shame, rage at self or others, loss of meaning, and difficulty trusting themselves or the world.
+
+The neurobiological mechanism involves the medial prefrontal cortex—which maintains identity and values—encoding the value-violating action or inaction as a core identity threat. The amygdala becomes conditioned to respond to reminders of the moral violation with intense shame and not-self states. The ventromedial prefrontal cortex fails to integrate the violation into a coherent identity, leaving it in a fragmented, shame-laden state. Rumination about the moral violation becomes encoded as a core feature of identity, and the nervous system perpetually re-experiences the shame of the value violation. The wound is to one's sense of self as moral.
+
+Our technique integrates the moral violation into a coherent, compassionate identity narrative through targeted limbic and identity work. We dissolve the shame-encoding and restore wholeness of self. Your nervous system ceases to treat the moral violation as defining your identity. You experience integrated self-understanding, restored capacity for self-compassion, and renewed sense of meaning and values.`,
+		background_image: "/backgrounds/moral-injury.png",
+	},
+	{
+		id: "other-fears-phobias",
+		path: "/other-fears-phobias",
+		name: "Other Fears & Phobias",
+		description: `Specific objects or situations trigger your amygdala as if they were survival dangers. Your threat-detection system learned a false positives. Phobias are intense, irrational fears of specific objects or situations that pose little actual danger but trigger severe anxiety and avoidance behaviors. Whether it's clouds, holes, snow, tears, bananas, or countless other specific stimuli, phobias cause individuals to arrange their lives around avoidance and experience significant functional impairment despite intellectually knowing the fear is irrational.
+
+The neurobiological mechanism involves classical conditioning where a neutral stimulus became associated with threat through single-exposure or vicarious learning. The amygdala now automatically detects that specific stimulus and triggers a threat response before conscious awareness engages. The stimulus-threat association becomes so entrenched that despite cortical knowledge that the object is safe, the amygdala continues firing, generating the characteristic experience of irrational but overwhelming fear. Avoidance negatively reinforces the fear by preventing amygdala extinction through habituation.
+
+Our technique dissolves the specific stimulus-threat association through targeted amygdala recalibration. We break the conditioned fear response and restore accurate threat assessment of the specific stimulus. Your nervous system ceases to respond with fear when encountering the phobic object. You experience rapid freedom from the specific phobia and restored capacity to engage with previously avoided situations.`,
+	},
+	{
+		id: "seasonal-affective-disorder-sad",
+		path: "/seasonal-affective-disorder",
+		name: "Seasonal Affective Disorder (SAD)",
+		description: `Winter darkness triggers your nervous system into a depressive shutdown that feels involuntary because it is—until recalibration. Seasonal Affective Disorder is a type of depression triggered by seasonal changes, typically beginning in fall or early winter and remitting in spring or summer. Individuals with SAD experience depressed mood, loss of interest in activities, increased sleep, appetite changes, and profound fatigue during specific seasons, often causing occupational and social dysfunction during winter months which then resolves when seasons change.
+
+The neurobiological mechanism involves dysregulation of circadian rhythms caused by reduced light exposure during winter months. Lower light levels suppress melatonin regulation and serotonin production, leading to depressed mood and fatigue. The suprachiasmatic nucleus fails to maintain robust circadian signaling, disrupting sleep-wake cycles and dopamine-driven motivation. The prefrontal cortex becomes increasingly hypofunctional as serotonin declines, reducing capacity for effortful engagement and mood regulation. Additionally, the amygdala may become sensitized to seasonal darkness as a threat signal, triggering depressive shutdown as a false protective response.
+
+Our technique recalibrates circadian rhythm sensitivity to seasonal light changes through targeted limbic intervention. We restore robust dopamine and serotonin signaling independent of seasonal darkness. Your nervous system ceases to treat winter darkness as threat or signal for depressive shutdown. You experience consistent mood and motivation year-round without seasonal variation.`,
+	},
+	{
+		id: "perinatal-depression-paternal-postpartum-depression",
+		path: "/perinatal-depression",
+		name: "Perinatal & Postpartum Depression",
+		description: `Pregnancy and birth triggered a nervous system crash. The neurobiological upheaval of perinatal/postpartum transition created depressive shutdown. Perinatal and postpartum depression encompasses depression during pregnancy (perinatal) or following childbirth (postpartum), characterized by depressed mood, loss of interest in the baby, guilt, worthlessness, thoughts of harm, and severe functional impairment. This differs from "baby blues" in intensity and duration, and without treatment causes profound suffering during what should be bonding and attachment periods.
+
+The neurobiological mechanism involves massive hormonal shifts—particularly sharp drops in estrogen and progesterone post-delivery—that dysregulate neurotransmitter systems including serotonin, dopamine, and GABA. The hippocampus becomes hypofunctional due to cortisol elevation from birth stress, impairing memory and learning of infant cues. Sleep deprivation from newborn care further dysregulates limbic systems and impairs prefrontal function. The amygdala may become sensitized to infant distress sounds as threat, creating anxiety and avoidance rather than bonding. Socially-conditioned expectations of instant maternal bonding create additional shame when depression prevents affective engagement.
+
+Our technique recalibrates the nervous system's response to perinatal hormonal and sleep shifts through targeted limbic and endocrine intervention. We restore monoamine signaling and hippocampal function independent of hormonal status. Your nervous system regains capacity for bonding, pleasure, and engagement with your baby and life. You experience freedom from perinatal/postpartum depression and access to genuine maternal (or paternal) connection.`,
+		background_image: "/backgrounds/postpartum.jpg",
+	},
+	{
+		id: "menopausal-depression",
+		path: "/menopausal-depression",
+		name: "Menopausal Depression",
+		description: `Your nervous system crashed when estrogen declined. Menopause altered the neurochemical foundation that monoamine systems depend on. Menopausal depression is depression triggered or exacerbated during the menopausal transition or postmenopausal period, characterized by depressed mood, loss of interest, fatigue, cognitive changes, and often co-occurring anxiety and sleep disruption. This occurs specifically during hormonal transition and may represent an individual's first depressive episode or reactivation of previous depression.
+
+The neurobiological mechanism involves the dramatic decline in estrogen during menopause, which serves as a neuromodulator supporting serotonin and dopamine systems. As estrogen drops, serotonin and dopamine become dysregulated, leading to depression and anhedonia. The noradrenergic system becomes hyperactive as compensatory response, creating anxiety and sleep disruption. The hippocampus becomes more vulnerable to stress-induced atrophy during menopause, impairing memory and emotional regulation. Additionally, hot flashes, night sweats, and sleep deprivation from these symptoms further dysregulate the nervous system. The amygdala may become sensitized to menopause-related bodily sensations as threat.
+
+Our technique recalibrates monoamine systems and limbic sensitivity to menopausal hormonal and physical changes through targeted intervention. We restore neurochemical balance independent of estrogen levels and recalibrate threat-sensitivity to menopause-related sensations. Your nervous system regains capacity for mood stability, motivation, and engagement. You experience freedom from menopausal depression and restored quality of life during and after menopause.`,
+	},
+	{
+		id: "other-mood-disorders",
+		path: "/other-mood-disorders",
+		name: "Other Mood Disorders",
+		description: `Your mood system became dysregulated and now generates states that interfere with your life. Whether cyclical, reactive, mixed, or persistent, nervous system dysregulation created a mood problem. Mood disorders encompass diverse conditions affecting emotional regulation, including dysthymia (persistent low mood), cyclothymia (cycling mood states), mixed mood states, and other patterns that significantly impair functioning and wellbeing. Individuals experience either persistently depressed mood or mood cycling that disrupts relationships, work, sleep, and overall quality of life.
+
+The neurobiological mechanisms vary across mood disorder types but generally involve dysregulation of monoamine systems (serotonin, dopamine, norepinephrine), hyperactivity or hypoactivity in the amygdala and prefrontal cortex, disruption of circadian rhythm regulation, and abnormalities in HPA axis stress response. Chronic stress, trauma, substance use, sleep disruption, or other factors dysregulate these systems and create persistent mood dysfunction. The nervous system becomes stuck in patterns of mood generation that persist regardless of external circumstances.
+
+Our technique identifies the specific dysregulation pattern and restores balanced mood regulation through targeted limbic intervention. We dissolve the driving mechanisms behind disordered mood states and restore healthy mood cycling or sustained stable affect. Your nervous system regains capacity for emotional resilience and appropriate mood response to circumstances. You experience freedom from mood disorder patterns and restored capacity for psychological wellbeing.`,
+		background_image: "/backgrounds/badmood.jpg",
+	},
+	{
+		id: "dyslexia-reading-disorder",
+		path: "/dyslexia/reading/disorder",
+		name: "Dyslexia - Reading Disorder",
+		description: `Your brain processes written language through atypical pathways that make reading laborious and error-prone. The phonological and orthographic pathways are not optimally integrated. Dyslexia is a specific learning disability affecting the ability to read, characterized by difficulty with decoding, word recognition, reading fluency, and/or spelling despite normal intelligence and adequate instruction. Individuals with dyslexia often read slowly and laboriously, make reading errors, avoid reading tasks, and experience profound academic stress. Undiagnosed dyslexia often leads to shame about intelligence despite having average or above-average cognitive abilities.
+
+The neurobiological mechanism involves atypical connectivity between the visual cortex (recognizing written forms) and the phonological processing centers (Wernicke's area, left temporo-parietal region). The brain's typical pathway from visual letter recognition to phonological mapping becomes less efficient, requiring increased effort and cognitive resources to decode written words. Reading requires slow, effortful sounding-out rather than automatic recognition. Additionally, anxiety about reading performance activates the amygdala, further impairing the already-difficult decoding process by consuming working memory and increasing reading errors in a stress-performance feedback loop.
+
+Our technique optimizes the visual-phonological integration pathways and reduces reading-related anxiety through targeted limbic and visual processing intervention. We enhance the neural coordination between visual recognition and phonological access. Your reading becomes more fluent and automatic as the visual-phonological pathways synchronize. This isn't reading tutoring or more practice. It's recalibration of how the brain integrates visual letter forms with sound. You experience faster reading speed, improved accuracy, and restored willingness to engage with written material.`,
+	},
+	{
+		id: "other-neurodevelopmental-issues",
+		path: "/other-neurodevelopmental",
+		name: "Other Neurodevelopmental Issues",
+		description: `Your nervous system developed with atypical wiring patterns that create functional challenges across multiple domains. Whether coordination, attention, social processing, or motor planning, the developing brain took a different path. Neurodevelopmental issues encompass diverse conditions including various learning disabilities, motor coordination difficulties, speech/language disorders, and social-communication differences that emerge during development and cause significant functional or educational impairment despite adequate environmental support and opportunity.
+
+The neurobiological mechanisms vary across specific neurodevelopmental conditions but generally involve atypical neural development during critical periods—whether through genetic factors, prenatal influences, birth complications, or early environmental factors that alter typical neural pathway development. This results in brain systems that process information differently, often requiring more effort in affected domains despite average or above-average overall capability. Anxiety often co-occurs or develops secondarily as individuals encounter repeated difficulty in affected domains, creating additional functional challenges.
+
+Our technique identifies and recalibrates the specific neural pathway differences through targeted neurodevelopmental intervention. We enhance the efficiency of atypical neural pathways and reduce secondary anxiety that compounds functional difficulty. Your brain's atypical wiring becomes an asset rather than a limitation, processing efficiently through its unique pathways. You experience functional improvements in affected domains and restored confidence in your capabilities.`,
+		background_image: "/backgrounds/neural.jpg",
+	},
+	{
+		id: "gambling-addiction",
+		path: "/gambling-addiction",
+		name: "Gambling Addiction",
+		description: `Your dopamine system learned that gambling provides the highest reward and now pursues it compulsively despite catastrophic consequences. Gambling became self-medication for impossible internal states. Gambling disorder is characterized by persistent, compulsive gambling despite significant negative consequences, loss of control over gambling, and escalating amounts of money and risk-taking. Individuals with gambling addiction experience massive financial losses, relationship destruction, occupational impairment, legal consequences, and yet feel unable to stop despite desperately wanting to. Gambling provides temporary relief from anxiety or depression before rebound distress follows.
+
+The neurobiological mechanism involves profound dysregulation of the mesolimbic dopamine pathway, where gambling-related cues trigger dopamine release that reinforces compulsive seeking despite negative outcomes. The prefrontal cortex loses regulatory capacity, failing to inhibit gambling urges despite intellectual awareness of consequences. The amygdala becomes sensitized to emotional distress (anxiety, depression, boredom) as a trigger for gambling urges. Gambling provides temporary dopamine elevation and relief from distress but leads to guilt, shame, and greater distress, increasing the need to gamble again. The cycle becomes self-perpetuating as only gambling provides relief from the distress gambling creates.
+
+Our technique recalibrates the dopamine reward system and dissolves the distress-gambling link through targeted limbic intervention. We restore executive capacity and genuine distress tolerance. Your nervous system ceases to pursue gambling as relief and accesses genuine anxiety-regulation alternatives. You experience freedom from gambling compulsion and restored financial and emotional stability.`,
+		background_image: "/backgrounds/gambler.avif",
+	},
+	{
+		id: "food-addiction",
+		path: "/food-addiction",
+		name: "Food Addiction",
+		description: `Food became your primary coping mechanism for internal distress. Hyperpalatable foods hijacked your reward system. Food addiction involves compulsive eating of highly palatable foods (high sugar, fat, salt) despite negative health consequences, loss of control over eating, and using food as primary emotional regulation mechanism. Individuals with food addiction experience weight gain, health complications, shame, social isolation, and repeated failed dieting attempts. The addiction cycle involves eating for emotional relief, temporary dopamine elevation, guilt and shame, and escalating hunger for repeated relief.
+
+The neurobiological mechanism involves dysregulation of the mesolimbic reward pathway where highly palatable foods trigger excessive dopamine release, creating supernormal reward signals that exceed natural food reward. The prefrontal cortex loses regulatory capacity and cannot inhibit eating urges despite health goals. The amygdala becomes sensitized to emotional distress as a cue for eating. The insula loses interoceptive awareness of true hunger and satiety signals, becoming dysregulated by emotional states instead. Opioid pathways become dysregulated, creating craving for food as primary comfort mechanism. The cycle perpetuates as food provides temporary emotional relief before shame and physical discomfort drive further eating.
+
+Our technique recalibrates the food reward system and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the emotional-eating link and restore prefrontal regulation. Your nervous system ceases using food as primary emotional management and accesses genuine distress-tolerance alternatives. You experience restored capacity for balanced eating, appropriate appetite regulation, and emotional resilience.`,
+	},
+	{
+		id: "other-addictions",
+		path: "/other-addictions",
+		name: "Other Addictions",
+		description: `Your reward system learned to pursue a substance or behavior compulsively despite catastrophic consequences. Addiction patterns vary but the underlying mechanism is consistent: dopamine dysregulation and loss of inhibitory control. Other addictions beyond the primary patterns include shopping addiction, exercise addiction, work addiction, relationship addiction, and diverse compulsive behaviors that individuals pursue despite knowing they cause harm. Each addiction provides temporary dopamine elevation and escape from distress, followed by shame and escalating distress that drives continued pursuit.
+
+The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where the addictive stimulus triggers supernormal dopamine release. The ventromedial prefrontal cortex loses regulatory capacity to inhibit the addictive behavior. The amygdala becomes conditioned to emotional distress (anxiety, boredom, sadness) as a cue to engage the addictive behavior for relief. The anterior cingulate cortex generates compulsive approach toward the addictive target. Regardless of specific addiction, all involve the same core dysregulation: excessive dopamine reward signal combined with loss of executive inhibition and emotional-behavior coupling.
+
+Our technique recalibrates the dopamine reward system and restores executive capacity through targeted limbic intervention. We dissolve the distress-addiction link and restore genuine distress tolerance. Your nervous system ceases pursuing the addictive behavior and accesses genuine satisfaction and emotional regulation alternatives. You experience freedom from addiction and restored capacity for meaningful engagement with life.`,
+	},
+	{
+		id: "anxiety-related-gastrointestinal-issues",
+		path: "/anxiety-related-gastrointestinal",
+		name: "Anxiety-Related Gastrointestinal Issues",
+		description: `Your gut became an early-warning system for threat that triggers digestive shutdown. The gut-brain axis wired anxiety to become gut dysregulation. Anxiety-related gastrointestinal issues include irritable bowel syndrome (IBS), functional dyspepsia, nausea, constipation, diarrhea, and gut pain that occur or dramatically worsen during anxiety or stress. The gut becomes the primary symptom location where anxiety manifests, causing significant digestive dysfunction and often leading to avoidance of eating or public situations for fear of GI symptoms. This creates a feedback loop where GI symptoms trigger anxiety about GI symptoms.
+
+The neurobiological mechanism involves bidirectional communication between the amygdala/prefrontal cortex and the enteric nervous system via the vagus nerve. When the amygdala perceives threat, it triggers parasympathetic shutdown of digestion, causing nausea, constipation, or a stress-response diarrhea. The enteric nervous system becomes sensitized to anxiety cues and misinterprets normal GI activity as threat when anxiety is present. Anxiety-related HPA axis activation releases cortisol which disrupts gut microbiota, GI motility, and intestinal permeability. The insular cortex becomes hyperactive in perceiving GI sensations, amplifying interoceptive awareness of normal gut function into perceived threat.
+
+Our technique recalibrates the gut-brain axis and reduces amygdala's threat perception of gut sensations through targeted limbic intervention. We restore normal vagal tone and GI function independent of anxiety state. Your gut regains capacity for normal digestion and motility. This isn't probiotics or dietary changes. It's recalibration of how the amygdala perceives GI function. You experience improved digestive function and freedom from anxiety-related GI symptoms.`,
+	},
+	{
+		id: "anxiety-health-conditions",
+		path: "/anxiety-health-conditions",
+		name: "Anxiety About Physical Health Conditions",
+		description: `You have a genuine health condition and your nervous system transformed normal symptoms into perceived life-threat. Health anxiety amplifies the meaning of real physiological signals. Anxiety about real health conditions occurs when individuals with actual medical conditions (diabetes, asthma, heart conditions, autoimmune disease, chronic pain) develop excessive anxiety about their condition that exceeds what the condition itself warrants. The anxiety about the health condition becomes a bigger problem than the health condition itself, leading to health-checking compulsions, excessive medical seeking, functional avoidance, and catastrophic thinking about prognosis.
+
+The neurobiological mechanism involves the amygdala becoming hypersensitized to symptom-related threat perception. Normal symptoms of the health condition (blood sugar variation, occasional chest sensation, fatigue from disease) trigger amygdala activation as if they signal acute threat. The insular cortex becomes hyperactive in interoceptive awareness, amplifying normal physiological signals into perceived threats. The prefrontal cortex fails to appropriately contextualize existing health condition symptoms, leading to catastrophic prognosis predictions. Compulsive health-checking and seeking reassurance temporarily reduces anxiety but negatively reinforces the threat perception.
+
+Our technique recalibrates the amygdala's threat perception of health condition symptoms through targeted limbic intervention. We restore proportional threat assessment where health condition awareness remains without catastrophic anxiety. Your nervous system distinguishes between normal disease symptoms and actual acute threat. You experience acceptance of your health condition and freedom from anxiety-amplified suffering. This isn't denial of the health condition. It's recalibration of anxiety's role in responding to it.`,
+		background_image: "/backgrounds/wheelchair.avif",
+	},
+	{
+		id: "other-neurological-issues",
+		path: "/other-neurological-issues",
+		name: "Other Neurological Issues",
+		description: `Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. Other neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that significantly impact functioning despite normal overall development or health status.
+
+The neurobiological mechanisms vary across specific neurological conditions but generally involve atypical function in motor cortex, cerebellum, basal ganglia, sensory cortices, or other brain regions that generate symptoms specific to the affected system. Anxiety often co-occurs or develops as the secondary consequence when neurological symptoms create functional difficulty or social stigma. The amygdala may become sensitized to symptom-related threat or social threat, amplifying the subjective distress beyond the neurological basis alone.
+
+Our technique addresses both the neurological symptom generation and secondary anxiety through targeted neural intervention. We enhance compensatory neural pathway function and reduce threat-sensitivity to symptom experience. Your brain regains maximum functional capacity given the neurological condition present. You experience improved functional capacity and reduced anxiety about neurological symptoms.`,
+	},
+	{
+		id: "self-esteem-identity-issues",
+		path: "/self-esteem-identity",
+		name: "Self-Esteem & Identity Issues",
+		description: `Your self-perception became distorted by false threat assessments about your worth. The neural encoding of self became corrupted. Self-esteem and identity issues involve chronic negative self-perception, feelings of unworthiness or inadequacy, persistent self-criticism, difficulty claiming personal accomplishments, and core identity confusion about who "I really am." Individuals with self-esteem issues often feel fundamentally flawed despite evidence of competence or positive qualities, leading to perfectionism, social withdrawal, underachievement, or compensatory overachievement driven by proving worth.
+
+The neurobiological mechanism involves the medial prefrontal cortex—which encodes self-representation and identity—incorporating threat-based or shame-based encoding of self-worth. The amygdala becomes hypersensitive to threat to reputation, status, or competence, treating any criticism or failure as profound identity threat. The anterior cingulate cortex generates persistent self-critical rumination that reinforces negative self-encoding. The default mode network becomes overactive in internally-focused self-evaluation, especially when threat-activated. Social threat becomes encoded as self-threat, and the self-representation becomes fundamentally distorted toward inadequacy.
+
+Our technique recalibrates the self-representation in the medial prefrontal cortex and reduces amygdala's sensitivity to status/competence threat through targeted identity and limbic intervention. We restore accurate self-perception free from threat-distortion. Your nervous system encodes self-worth based on authentic capability and intrinsic value. You experience stable healthy self-esteem and clarified authentic identity.`,
+	},
+	{
+		id: "other-performance-issues",
+		path: "/other-performance-issues",
+		name: "Other Performance Issues",
+		description: `You know what to do, but when it matters, your nervous system hijacks your capability. Performance becomes blocked by threat-detection about the performance itself. Performance issues encompass situations where individuals can execute skills in low-stakes contexts but experience dysfunction when performance has perceived consequences (evaluation, competition, stakes, audience, time pressure). Whether academic, athletic, artistic, professional, or social performance, the nervous system perceives the performance context as threat and triggers the freezing, hyperarousal, or cognitive disruption that prevents effective performance.
+
+The neurobiological mechanism involves the amygdala perceiving performance contexts as social threat where evaluation and judgment threaten status and worth. The prefrontal cortex becomes suppressed as amygdala activation increases, leading to working memory shutdown and access to learned skills becomes blocked. Stress neurochemicals (adrenaline, cortisol) increase in a way that impairs executive function and fine motor control despite enhancing gross motor activation. The anterior cingulate cortex may generate error-detection hyperactivity, making the nervous system hypercritical of performance in real-time, creating performance disruption through internal commentary.
+
+Our technique recalibrates the amygdala's threat perception of performance contexts through targeted limbic intervention. We restore executive function and skill access when performance stakes are present. Your nervous system ceases treating performance as social threat and maintains prefrontal regulation. You experience genuine performance capability when stakes are present and freedom to execute skill at full capacity.`,
+	},
+	{
+		id: "cutting-self-harm",
+		path: "/cutting-self-harm",
+		name: "Cutting & Self-Harm",
+		description: `Your nervous system learned that physical pain provides relief from psychological distress. Self-injury became your primary emotion regulation system. Cutting and self-harm behaviors involve intentional injury to the body (cutting, burning, picking, hitting) as primary mechanism for emotional regulation, dissociation management, or self-punishment. Individuals who self-injure typically experience intense emotional pain, dissociation, or emotional numbness and find that physical pain provides temporary relief or reconnection. The cycle becomes entrenched where emotional distress triggers self-injury, temporary relief follows, then guilt and shame drive escalated need to self-injure again.
+
+The neurobiological mechanism involves dysregulation of pain processing and emotion regulation pathways. When emotional distress becomes intolerable, physical pain signal activates the brain's endogenous opioid system, providing temporary dopamine-based relief and emotional numbness. The amygdala's threat-perception drives emotional distress that becomes unbearable within the current distress-tolerance capacity. The anterior insula loses accurate interoceptive awareness, preventing accurate sensing of emotional state and creating dissociative disconnection. Self-harm provides the bridge that generates physical sensation when emotional sensation becomes unbearable. The pattern becomes self-reinforcing as it successfully provides temporary regulation.
+
+Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
+	},
+	{
+		id: "hoarding-disorder",
+		path: "/hoarding-disorder",
+		name: "Hoarding Disorder",
+		description: `Your brain learned that acquiring and keeping possessions reduces anxiety. The neural circuits for decision-making and emotional regulation became hoarding-focused. Hoarding disorder is characterized by excessive accumulation of possessions, difficulty discarding items (regardless of actual value), and significant distress or functional impairment caused by cluttered living spaces. Individuals with hoarding disorder experience decision paralysis when facing item disposal, intense anxiety at the thought of discarding items, and strong attachment to objects that exceeds their functional value. Living spaces become unsafe, unsanitary, or unusable.
+
+The neurobiological mechanism involves amygdala hyperreactivity to the idea of discarding items, where letting go of possessions triggers existential loss threat disproportionate to the item's actual value. The ventromedial prefrontal cortex becomes hyperactive in attribution of too-much-meaning to objects, and loss-aversion becomes pathologically overamplified compared to normal loss-aversion. The dorsolateral prefrontal cortex loses capacity to override these threat and loss-aversion signals through rational decision-making. Items become imbued with emotional significance or hypothetical future utility that prevents discarding. The pattern becomes self-reinforcing as acquisition provides temporary dopamine relief from anxiety, then accumulated items generate anxiety about disposal.
+
+Our technique recalibrates item-meaning attribution and loss-aversion through targeted limbic intervention. We restore appropriate decision-making capacity and realistic meaning assignment to possessions. Your nervous system ceases extracting excessive emotional significance from objects. You experience freedom to make discard decisions and restored capacity to maintain functional living spaces.`,
+		background_image: "/backgrounds/stuff.jpg",
+	},
+	{
+		id: "other-ocd-spectrum",
+		path: "/other-ocd-spectrum",
+		name: "Other OCD-Spectrum Issues",
+		description: `Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. Other OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant distress and functional impairment. The distinguishing feature is that the compulsions provide only temporary relief before obsessions resurface, creating cycles of increasing distress.
+
+The neurobiological mechanism involves orbitofrontal cortex hyperactivity in error-detection that generates false threat-signals in response to normal thoughts or situations. The anterior cingulate cortex generates persistent error-checking and uncertainty. The amygdala becomes sensitized to obsession-related triggers, and compulsions provide temporary amygdala downregulation through sense-of-control or ritual completion. The cycle becomes self-perpetuating: obsessive thought generates threat-signal, compulsion provides temporary relief, uncertainty returns because compulsion never proves safety, compulsion must repeat. The neural circuitry becomes stuck in a threat-detection loop that treats uncertainty as requiring behavioral management.
+
+Our technique breaks the obsession-compulsion cycle by recalibrating the error-detection system and reducing amygdala threat-sensitivity through targeted limbic intervention. We restore accurate threat-assessment where obsessions no longer trigger compulsions. Your nervous system ceases generating false threat-signals and regains capacity to tolerate uncertainty. You experience freedom from obsessions and compulsions with dramatically reduced distress.`,
+		background_image: "/backgrounds/ocd.jpg",
+	},
+	{
+		id: "relationship-jealousy-insecurity",
+		path: "/relationship-jealousy",
+		name: "Relationship Jealousy & Insecurity",
+		description: `Your partner's fidelity or commitment feels perpetually in doubt and your nervous system treats their other relationships as threats to your survival. Attachment became security-focused through hypervigilance. Relationship jealousy and insecurity involve persistent fear of abandonment, excessive monitoring of partner's whereabouts/communication, intense distress at partner's interactions with others, and behavioral or cognitive attempts to prevent infidelity or abandonment. Jealousy and insecurity often damage the relationship itself through their destructive impact on trust and autonomy despite stemming from fear of relationship loss.
+
+The neurobiological mechanism involves insecure attachment patterns where the amygdala became conditioned to perceive partner separation or attention to others as abandonment threat. The ventromedial prefrontal cortex fails to maintain secure attachment representations during separation, leaving the amygdala persistently threat-activated when partner is unavailable or interacting with others. The insular cortex becomes hyperactive in monitoring social signals from the partner, interpreting neutral behavior as infidelity evidence. The anterior cingulate cortex generates persistent rumination about partner betrayal or abandonment. This hijacks the attachment system where security requires constant reassurance rather than secure base confidence.
+
+Our technique recalibrates attachment security and amygdala threat-perception of partner separation through targeted limbic intervention. We restore secure base confidence where partner autonomy can be tolerated without triggering abandonment anxiety. Your nervous system ceases treating partner's other relationships as personal threat. You experience secure attachment, reduced jealousy and monitoring, and restored relationship quality.`,
+		background_image: "/backgrounds/jealousy.jpg",
+	},
+	{
+		id: "codependency-relational-enmeshment",
+		path: "/codependency",
+		name: "Codependency & Relational Enmeshment",
+		description: `Your sense of self became fused with other people's emotional states and you learned that your worth depends on meeting others' needs. Boundaries dissolved in service of perceived safety. Codependency involves loss of self in relationships, excessive caretaking or emotional responsiveness to others, difficulty setting boundaries, and personal needs subordination to maintaining relationships. Individuals with codependency typically manage others' emotions, abandon their own interests and preferences, and experience persistent anxiety when unable to control their partner's emotional state or maintain relational harmony.
+
+The neurobiological mechanism involves overactive mirror neuron systems where others' emotions become neurally mirrored in the self, creating emotional fusion rather than empathetic connection. The medial prefrontal cortex fails to maintain clear self-other boundaries and instead activates for both self and intimate other similarly. The anterior insula loses accurate interoceptive awareness of personal needs and emotions, replaced by hyper-focus on others' emotional states. The amygdala becomes conditioned to others' emotional distress as personal threat requiring immediate management. Abandonment anxiety or rejection sensitivity drives compulsive relational caregiving where maintaining connection takes priority over self-care. The attachment system became addictive rather than secure.
+
+Our technique restores self-other boundaries and personal autonomy through targeted limbic and identity intervention. We recalibrate interoceptive awareness of personal needs and reduce amygdala's reactivity to others' emotional states. Your nervous system restores clear sense of self separate from others. You experience healthy interdependence with maintained self-integrity, ability to set boundaries, and reduced compulsive caregiving.`,
+	},
+	{
+		id: "other-attachment-issues",
+		path: "/other-attachment-issues",
+		name: "Other Attachment Issues",
+		description: `Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. Other attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficulties, emotional distance, pursuit-withdrawal cycles, or paradoxical distance-seeking in intimate relationships.
+
+The neurobiological mechanism involves the ventromedial prefrontal cortex encoding relational expectations and secure base representations based on early attachment experiences. When early caregivers were inconsistently available, rejecting, or overwhelming, the amygdala became hyperactive to abandonment or engulfment threat during adult closeness. The mirror neuron systems may become dysregulated, affecting capacity for emotional resonance and empathetic attunement. Insecure attachment patterns activate in adult relationships, triggering protective responses (distancing, pursuing, shutting down) that recreate the early relational pattern. The attachment system uses these patterns as safety strategies despite their actual relationship-damaging effects.
+
+Our technique recalibrates the attachment security representations through targeted limbic and relational intervention. We dissolve the early attachment trauma pattern and restore capacity for secure adult attachment. Your nervous system regains capacity for genuine closeness with maintained autonomy and healthy dependence. You experience secure attachment patterns and restored capacity for fulfilling intimate relationships.`,
+		background_image: "/backgrounds/attached.jpg",
+	},
+	{
+		id: "aphasia-language-disorder",
+		path: "/aphasia",
+		name: "Aphasia - Language Disorder",
+		description: `Your language system became disrupted and now words don't flow as they used to. Language access became blocked or slowed. Aphasia is an acquired language disorder typically resulting from stroke, brain injury, or neurological disease, characterized by difficulty with language production (expressive aphasia), language comprehension (receptive aphasia), or both. Individuals with aphasia may experience word-finding difficulty, trouble understanding speech, reading/writing problems, or complete language loss depending on the brain regions affected. Aphasia creates profound communication challenges, social isolation, and often depression secondary to language loss.
+
+The neurobiological mechanism involves damage or disruption to language-dominant brain regions typically in the left hemisphere, including Broca's area (language production), Wernicke's area (language comprehension), and connecting pathways. The specific language difficulties depend on the lesion location: Broca's aphasia involves speech production difficulty while comprehension remains; Wernicke's aphasia involves comprehension difficulty while speech production continues but becomes nonsensical. The remaining intact brain regions may gradually compensate through neuroplasticity, though recovery depends on damage extent and time since injury. Anxiety about communication often compounds language difficulty.
+
+Our technique facilitates neural plasticity and language pathway reorganization through targeted language and limbic intervention. We engage compensatory neural pathways and reduce anxiety about communication. Your language access improves as the brain reorganizes function around the damage. This isn't speech therapy in the traditional sense. It's targeted facilitation of neural adaptation and language recovery. You can experience rapid language recovery and restored communication capacity, but individual results may vary depending on the lesion location.`,
+		background_image: "/backgrounds/aphasia.jpg",
+	},
+	{
+		id: "other-communication-issues",
+		path: "/other-communication-issues",
+		name: "Other Communication Issues",
+		description: `Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. Other communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant social and occupational difficulties despite potentially intact underlying cognitive or language capability.
+
+The neurobiological mechanisms vary across communication issues but often involve coordination problems between language production and motor execution systems (stuttering), auditory processing difficulties (listening), social-emotional processing differences (conversational attunement), or attention/executive deficits that affect real-time communication management. Anxiety often develops secondarily where individuals become hyperaware of communication difficulties, leading to avoidance of communication, which further impairs practice-based improvement.
+
+Our technique recalibrates the specific communication system disruption through targeted neural intervention. We improve neural coordination in affected communication systems and reduce secondary anxiety that compounds difficulty. Your communication becomes more fluid, accurate, and socially effective. This isn't speech therapy or communication coaching. It's targeted recalibration of the neural systems generating communication difficulty. You experience improved communication effectiveness and restored confidence in social and professional communication.`,
+	},
+	{
+		id: "trauma-drama-etc",
+		path: "/trauma-drama",
+		name: "Trauma, Drama & Related",
+		description: `Life experiences imprinted your nervous system with threat patterns that now generate chronic survival responses. Whether psychological trauma, relational trauma, complex trauma, or recurrent destructive patterns, your nervous system learned the world is dangerous. Trauma, drama, and related patterns encompass psychological outcomes from negative life experiences including PTSD, complex PTSD, trauma-related anxiety, recurrent harmful relationship patterns, crisis-prone lifestyle, and chronic survival-state activation. Individuals often unconsciously recreate traumatic patterns or remain stuck in threat-detection despite current safety.
+
+The neurobiological mechanism involves amygdala sensitization and conditioning to trauma-related cues, where the nervous system continues responding as if threat persists long after actual danger has passed. The hippocampus becomes dysregulated, preventing proper time-stamping and integration of trauma memories, leaving them fragmented and intrusive. The prefrontal cortex loses regulatory capacity over the amygdala during trauma-reminder exposure. The ventromedial prefrontal cortex fails to maintain accurate threat assessment, leading to generalization where anything resembling trauma context becomes a threat trigger. The nervous system becomes locked in a protective hypervigilance that was once adaptive but now becomes constraining.
+
+Our technique systematically desensitizes trauma encoding and restores accurate threat-assessment through targeted limbic intervention. We process trauma memories and diminish their emotional charge and salience. Your nervous system regains capacity to distinguish past threat from present safety. You experience freedom from intrusive trauma memories and chronic threat-detection, restored capacity for trust and genuine engagement with life.`,
+	},
+	{
+		id: "power-control-issues",
+		path: "/power-control-issues",
+		name: "Power & Control Issues",
+		description: `Your nervous system learned that maintaining control is necessary for survival. Power and dominance or compulsive control-seeking became how your nervous system manages threat. Power and control issues involve patterns of seeking control over others or situations, difficulty with loss of control, aggressive dominance-assertion, vulnerability-intolerance, and relational patterns where control becomes more important than connection. These create significant relationship damage and often restrict personal freedom through the exhausting effort to maintain control of uncontrollable systems.
+
+The neurobiological mechanism often involves early experiences where the environment felt chaotic or threatening and control-seeking became the adaptive protective strategy. The amygdala became sensitized to perceived loss-of-control as existential threat. The ventromedial prefrontal cortex encodes control-seeking as a safety strategy. The empathy-processing systems may become downregulated when others' autonomy threatens felt sense of control. In cases of aggression-driven dominance, the orbitofrontal cortex becomes hyperactive in dominance-assessment and amygdala becomes reactive to perceived challenge. The nervous system learned that power resolves threat, though actual threat stems from vulnerability-intolerance rather than external danger.
+
+Our technique recalibrates threat-perception around loss of control and restores capacity to tolerate appropriate vulnerability through targeted limbic intervention. We reduce amygdala reactivity to control-loss and increase tolerance for uncontrollable systems. Your nervous system regains capacity for genuine connection where autonomy need not threaten your sense of safety. You experience freedom from control-compulsion and restored capacity for healthy relationships and collaborative rather than dominance-based relating.`,
+	},
+	{
+		id: "rape-sexual-assault",
+		path: "/rape-sexual-assault",
+		name: "Rape & Sexual Assault",
+		description: `Your body was violated and your nervous system learned that intimacy, vulnerability, or specific triggers equal survival danger. Sexual assault became encoded as core threat. Rape and sexual assault survivors experience profound psychological consequences including PTSD, complex trauma, hypervigilance, dissociation, shame, difficulty with trust and intimacy, intrusive memories, and often suicidal ideation. The assault violated bodily autonomy and safety, and the nervous system remains in protective shutdown anticipating recurrence. Many survivors struggle with sexuality, intimacy, and recovery despite desperately wanting to reclaim their lives and bodies.
+
+The neurobiological mechanism involves amygdala sensitization to assault-related trauma cues (locations, smells, physical sensations, interpersonal closeness) where exposure to trauma reminders triggers full threat-response as if assault is currently occurring. The hippocampus becomes dysregulated, fragmenting trauma memories so they remain intrusive and unprocessed. The anterior cingulate cortex generates persistent error-checking and threat-scanning. Dissociation occurs as a protective response where consciousness disconnects from body sensation during intimacy or vulnerability. The insula loses accurate interoceptive awareness, making the body feel unsafe or unowned. The medial prefrontal cortex encodes the assault as self-defining, creating shame and identity damage. Sexual arousal becomes associated with danger rather than pleasure.
+
+Our technique systematically processes the trauma encoding and restores felt safety in the body through targeted trauma-specific limbic intervention. We desensitize trauma triggers and restore accurate threat-assessment. Your nervous system regains capacity to distinguish assault threat from current safety. You experience reclaimed body ownership, restored capacity for intimacy and pleasure, freedom from intrusive trauma memories, and integration of the assault as something that happened to you rather than something that defines who you are.`,
+		background_image: "",
+	},
+	{
+		id: "stockholm-syndrome-trauma-bonding",
+		path: "/stockholm-syndrome",
+		name: "Stockholm Syndrome - Trauma & Bonding",
+		description: `Your nervous system bonded with an abuser because isolation and intermittent reinforcement hijacked your attachment system. Trauma bonding created the emotional glue that prevents escape. Stockholm Syndrome and trauma bonding involve the paradoxical experience of feeling love, loyalty, or protective feelings toward an abuser or captor despite ongoing abuse, threat, or captivity. Individuals in trauma bonds continue seeking contact with abusers, defend abusers against outside intervention, experience intense anxiety when separated from abuser, and often struggle to leave despite consciously recognizing abuse. The bond feels involuntary and stronger than rational understanding of danger.
+
+The neurobiological mechanism involves amygdala sensitization to the abuser as the primary source of both threat and relief. In high-stress environments with intermittent reinforcement (cycles of abuse followed by sporadic kindness), the nervous system learns that the abuser is simultaneously both threat and safety. The ventromedial prefrontal cortex becomes dysregulated in threat-assessment, failing to accurately encode the abuser as persistent danger. The oxytocin bonding system becomes hijacked, generating attachment-related activation in response to the abuser rather than protective distance. The dorsolateral prefrontal cortex loses capacity for objective threat-assessment under the emotional pull of trauma-bonding chemistry. The nervous system becomes neurochemically addicted to the relief-after-threat cycle.
+
+Our technique recalibrates the amygdala's threat-assessment and dissolves the trauma-bonding attachment through targeted limbic intervention. We restore accurate danger perception and sever the false therapeutic bond. Your nervous system regains capacity to recognize abusive patterns and activate protective rather than bonding responses toward abusers. You experience freedom from trauma bond, restored capacity to leave dangerous situations, and healthy attachment to safe people.`,
+		background_image: "/backgrounds/chains.webp",
+	},
+	{
+		id: "sex-addiction",
+		path: "/sex-addiction",
+		name: "Sex Addiction",
+		description: `Your nervous system learned that sexual behavior is the primary mechanism for managing impossible internal states. Compulsive sexuality became your escape system. Sex addiction involves compulsive sexual behavior, masturbation compulsion, seeking multiple partners, risky sexual behavior, or sexual preoccupation that continues despite negative consequences including relationship damage, occupational impairment, risk of disease transmission, legal problems, and profound shame. Individuals with sex addiction experience loss of control over sexual behavior, escalation of sexual activity to achieve the same neurochemical effect, and temporary relief from anxiety or depression through sexual engagement before guilt and shame drive compulsion again.
+
+The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where sexual behavior triggers supernormal dopamine release that exceeds natural sexual pleasure. The prefrontal cortex loses regulatory capacity, unable to inhibit sexual urges despite intellectual awareness of negative consequences. The amygdala becomes sensitized to emotional distress, anxiety, boredom, or loneliness as triggers for sexual behavior-seeking. The ventromedial prefrontal cortex fails to accurately weighing short-term sexual reward against long-term relationship and health consequences. Sexual behavior becomes the neurochemical solution to psychological distress, creating a self-perpetuating cycle where sexual relief is temporary, shame-rebound distress escalates need for more sexual engagement, and compulsion intensifies. Intimacy becomes secondary to sexual compulsion.
+
+Our technique recalibrates the dopamine reward system and restores executive inhibition through targeted limbic intervention. We dissolve the distress-sexual-behavior link and restore genuine capacity for intimate sexuality. Your nervous system ceases using sexual compulsion as primary distress-regulation and accesses genuine emotional management alternatives. You experience freedom from sexual compulsion, restored capacity for authentic intimate sexuality with genuine partners, and integrated sexual expression.`,
+		background_image: "/backgrounds/sex-addiction.jpg",
 	},
 ]
 

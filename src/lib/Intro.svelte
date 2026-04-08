@@ -5,12 +5,17 @@
 <div id="about"></div>
 <section {...props}>
 	<h1>Join our clinical trials</h1>
-	<p>
+	<div>
 		<img
 			src="/logo.png"
 			alt="Neuro Recursion Institute"
 			class="float-logo"
 		/>
+		<p>
+			<strong
+				>This could be your breakthrough! Bonus! It's fast and Free!</strong
+			>
+		</p>
 		The Neuro Recursion Institute (<strong>NRI</strong>) studies the
 		neurological feedback loops that drive chronic anxiety and motor urgency
 		in neurodivergent populations. At the core of many neurodivergent
@@ -23,7 +28,7 @@
 		providing patients with a neurological "off-ramp" that de-escalates the
 		recursive activity before it manifests as a physical tic, seizure, or a
 		panic response.
-	</p>
+	</div>
 
 	<p>
 		Research indicates that neurodivergence often involves a distinct

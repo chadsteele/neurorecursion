@@ -1,12 +1,13 @@
 export const Categories = [
 	{
-		category_name: "Stress, Anxiety & Generalized Worry",
+		category_name: "Stress, Anxiety &  Worry",
 		ids: [
 			"social-media-anxiety-disorder",
 			"health-anxiety-hypochondriasis",
 			"agoraphobia-social-phobia",
 			"performance-anxiety-evaluation-fear",
 			"ai-anxiety-technophobia-fear-ai",
+			"generalized-anxiety-disorder",
 		],
 	},
 	{
@@ -19,7 +20,11 @@ export const Categories = [
 			"claustrophobia-fear-enclosed-spaces",
 			"trypanophobia-fear-needles",
 			"acrophobia-fear-heights",
+			"thanatophobia-death-anxiety",
 			"aerophobia-fear-flying",
+			"chronophobia-fear-time-future",
+			"moral-injury-values-violation",
+			"other-fears-phobias",
 		],
 	},
 	{
@@ -28,6 +33,10 @@ export const Categories = [
 			"depressed-suicidal-major-depressive-disorder",
 			"burnout-exhaustion-depersonalization",
 			"bpd-bipolar-disorder",
+			"seasonal-affective-disorder-sad",
+			"perinatal-depression-paternal-postpartum-depression",
+			"menopausal-depression",
+			"other-mood-disorders",
 		],
 	},
 	{
@@ -37,16 +46,22 @@ export const Categories = [
 			"asd-autism-aspergers-autistic-spectrum-disorder",
 			"dcd-dyspraxia-developmental-coordination-disorder",
 			"spd-sensory-processing-disorder",
-			"misophonia",
+			"dyslexia-reading-disorder",
 			"dyscalculia",
+			"misophonia",
+			"other-neurodevelopmental-issues",
 		],
 	},
 	{
 		category_name: "Addictions",
 		ids: [
 			"screen-addiction",
-			"addiction-substance-abuse-disorders",
+			"alcohol-substance-abuse",
 			"porn-addiction-sexual-compulsivity",
+			"gambling-addiction",
+			"food-addiction",
+			"sex-addiction",
+			"other-addictions",
 		],
 	},
 	{
@@ -57,15 +72,20 @@ export const Categories = [
 			"epilepsy-seizure-disorders",
 			"tics-tourette-syndrome-tic-disorders",
 			"insomnia-sleep-hyperarousal",
+			"anxiety-related-gastrointestinal-issues",
+			"anxiety-health-conditions",
+			"other-neurological-issues",
 		],
 	},
 	{
 		category_name: "Performance & Self-Perception",
 		ids: [
-			"imposter-syndrome",
 			"test-anxiety",
 			"perfectionism",
 			"body-dysmorphia",
+			"self-esteem-identity-issues",
+			"imposter-syndrome",
+			"other-performance-issues",
 		],
 	},
 	{
@@ -74,18 +94,23 @@ export const Categories = [
 			"ocd-obsessive-compulsive-disorder",
 			"eating-disorders-anorexia-bulimia-binge",
 			"trichotillomania-hair-pulling",
+			"hoarding-disorder",
+			"cutting-self-harm",
+			"other-ocd-spectrum",
 		],
 	},
 	{
 		category_name: "Attachment & Relational",
 		ids: [
 			"divorce-relational-trauma-family-systems-stress",
-
 			"anxious-avoidant-attachment-relational-patterns",
 			"loneliness-social-disconnection",
 			"rejection-sensitivity",
 			"fear-of-intimacy-commitment-fear",
 			"sexual-dysfunction-performance-anxiety-impotence",
+			"relationship-jealousy-insecurity",
+			"codependency-relational-enmeshment",
+			"other-attachment-issues",
 		],
 	},
 	{
@@ -95,14 +120,19 @@ export const Categories = [
 			"stuttering-childhood-onset-fluency-disorder",
 			"selective-mutism",
 			"dysgraphia",
+			"aphasia-language-disorder",
+			"other-communication-issues",
 		],
 	},
 	{
 		category_name: "Trauma & Crisis",
 		ids: [
 			"ptsd-post-traumatic-stress-disorder",
+			"rape-sexual-assault",
+			"stockholm-syndrome-trauma-bonding",
 			"developmental-trauma-childhood-trauma",
 			"cult-recovery-religious-trauma-damnation-fear",
+			"trauma-drama-etc",
 		],
 	},
 	{
@@ -112,6 +142,7 @@ export const Categories = [
 			"gun-addiction-weapons-obsession",
 			"homicidal-ideation-violent-urges",
 			"paranoia-scelerephobia-fear-strangers-criminals",
+			"power-control-issues",
 		],
 	},
 ]
