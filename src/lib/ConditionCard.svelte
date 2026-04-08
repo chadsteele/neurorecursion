@@ -27,7 +27,9 @@
 				/>
 				<span class="slider"></span>
 				<span class="toggle-label">
-					{formData.conditions[condition.name] ? "me!" : "nope"}
+					{formData.conditions[condition.name]
+						? "Yes, maybe?"
+						: "No, not me!"}
 				</span>
 			</label>
 			<a type="button" class="signup-btn" href="#signup"> ✅ Sign up! </a>
