@@ -335,7 +335,7 @@
 		margin-bottom: 2rem;
 	}
 
-	@media (max-width: 599px) {
+	@media (max-width: 799px) {
 		.header-flex {
 			flex-direction: column;
 			align-items: center;

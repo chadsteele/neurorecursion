@@ -121,18 +121,6 @@
 		let urlUpdateTimeout
 		const observer = new IntersectionObserver(
 			(entries) => {
-				console.log("Observer fired with", entries.length, "entries")
-				entries.forEach((entry) => {
-					console.log(
-						"Entry:",
-						entry.target.getAttribute("path"),
-						"isIntersecting:",
-						entry.isIntersecting,
-						"top:",
-						entry.boundingClientRect.top,
-					)
-				})
-
 				// Find the topmost element that is intersecting
 				const visibleEntries = entries.filter(
 					(entry) => entry.isIntersecting,
@@ -148,22 +136,11 @@
 					})
 
 					const path = topmost.target.getAttribute("path")
-					console.log("Topmost path:", path)
 					if (path) {
 						clearTimeout(urlUpdateTimeout)
 						urlUpdateTimeout = setTimeout(() => {
-							console.log(
-								"Updating URL to:",
-								path,
-								"current:",
-								window.location.pathname,
-							)
 							if (window.location.pathname !== path) {
 								window.history.replaceState({}, "", path)
-								console.log(
-									"URL updated to:",
-									window.location.pathname,
-								)
 							}
 						}, 100)
 					}
@@ -178,13 +155,7 @@
 		// Function to observe all path elements
 		const observePathElements = () => {
 			const pathElements = document.querySelectorAll("[path]")
-			console.log(
-				"Found",
-				pathElements.length,
-				"elements with path attribute",
-			)
 			pathElements.forEach((el) => {
-				console.log("Observing:", el.getAttribute("path"), el)
 				observer.observe(el)
 			})
 		}
@@ -202,18 +173,10 @@
 							node.hasAttribute &&
 							node.hasAttribute("path")
 						) {
-							console.log(
-								"New path element detected:",
-								node.getAttribute("path"),
-							)
 							observer.observe(node)
 						} else if (node.nodeType === 1) {
 							// Check children of added nodes
 							node.querySelectorAll("[path]").forEach((el) => {
-								console.log(
-									"New path element in children:",
-									el.getAttribute("path"),
-								)
 								observer.observe(el)
 							})
 						}
@@ -281,14 +244,39 @@
 <style>
 	:global(.category-section) {
 		position: sticky;
-		top: 60px;
+		top: 70px;
 		z-index: 10;
 		background-color: black;
 		text-align: center;
 	}
 
+	@media (max-width: 768px) {
+		:global(.category-section) {
+			top: 60px;
+		}
+	}
+
 	:global(.category-section h1) {
 		max-width: 1200px;
 		margin: 0 auto;
+		font-size: 2rem;
+	}
+
+	@media (max-width: 1024px) {
+		:global(.category-section h1) {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		:global(.category-section h1) {
+			font-size: 1.125rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		:global(.category-section h1) {
+			font-size: 1rem;
+		}
 	}
 </style>

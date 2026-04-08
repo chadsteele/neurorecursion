@@ -69,15 +69,18 @@
 									}
 									class="condition-checkbox"
 								/>
-								<a
-									href={`#${condition.id}`}
+								<label
+									for={`condition-${condition.id}`}
 									class="condition-label"
 								>
 									{condition.name}
-								</a>
+								</label>
 							</div>
 						{/if}
 					{/each}
+					<a href={`#${category.ids[0]}`} class="read-more"
+						>🔍 read more</a
+					>
 				</div>
 			{:else}
 				{@const checkedIds = getCheckedConditions(category.ids)}
@@ -95,12 +98,9 @@
 										}
 										class="condition-checkbox"
 									/>
-									<a
-										href={`#${condition.id}`}
-										class="condition-label"
-									>
+									<label for={`condition-${condition.id}`}>
 										{condition.name}
-									</a>
+									</label>
 								</div>
 							{/if}
 						{/each}
@@ -225,5 +225,26 @@
 		flex: 1;
 		font-size: 0.95rem;
 		text-decoration: none;
+	}
+
+	.read-more {
+		display: inline-block;
+		margin-top: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		color: #4a9fd8;
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 500;
+		transition: all 0.2s ease;
+		border-radius: 3px;
+	}
+
+	.read-more:hover {
+		color: #5aafed;
+		background: rgba(74, 159, 216, 0.15);
+	}
+
+	.read-more:active {
+		transform: scale(0.98);
 	}
 </style>

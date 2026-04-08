@@ -52,7 +52,7 @@
 		<!-- Center: Navigation Links -->
 		<div class="nav-links" class:open={isMenuOpen}>
 			<a href="/#about" class="nav-link">About</a>
-			<a href="/#trials" class="nav-link">Trials</a>
+			<a href="/#trials" class="nav-link">Clinical Trials</a>
 			<a href="/#partners" class="nav-link">Partners</a>
 			<a href="/#signup" class="nav-link">Sign Up</a>
 			<a href="/careers" class="nav-link">Join us</a>

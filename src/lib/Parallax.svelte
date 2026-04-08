@@ -72,7 +72,7 @@
 		position: relative;
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
-		min-height: 50vh;
+		min-height: 100vh;
 	}
 
 	@keyframes bgFadeIn {
@@ -102,7 +102,7 @@
 
 	.parallax-content {
 		position: relative;
-		padding: 3em;
+		padding: 1rem;
 		z-index: 1;
 	}
 </style>
