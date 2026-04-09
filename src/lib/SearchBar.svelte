@@ -16,6 +16,7 @@
 	let ChevronRight = $state(null)
 	let mainContent = $state(null)
 	let markInstance = $state(null)
+	let localQuery = $state("")
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
@@ -29,6 +30,8 @@
 		// Load search query and index from localStorage
 		const savedQuery = localStorage.getItem("searchQuery") || ""
 		const savedIndex = parseInt(localStorage.getItem("searchIndex") || "-1")
+
+		localQuery = savedQuery
 		searchQuery.set(savedQuery)
 		currentMatchIndex.set(savedIndex)
 
@@ -51,43 +54,23 @@
 		}
 	})
 
-	function closeSearch() {
-		// Save current index before closing
-		if ($currentMatchIndex >= 0) {
-			localStorage.setItem("searchIndex", $currentMatchIndex.toString())
-		}
-		if (markInstance) {
-			markInstance.unmark()
-		}
-		currentMatchIndex.set(-1)
-		totalMatches.set(0)
-		searchOpen.set(false)
-		// Keep searchQuery for next time - don't clear it
-	}
-
+	// Get match groups from current DOM marks
 	function getMatchGroups() {
-		// Group marks into match instances
-		// Marks that are close together (same match) are in the same group
 		const allMarks = Array.from(mainContent?.querySelectorAll("mark") || [])
-		// Filter to only leaf marks (marks not containing other marks)
-		const markElements = allMarks.filter(
-			(mark) => !mark.querySelector("mark"),
-		)
-		if (markElements.length === 0) return []
+		const leafMarks = allMarks.filter((mark) => !mark.querySelector("mark"))
+
+		if (leafMarks.length === 0) return []
 
 		const groups = []
 		let currentGroup = []
 		let lastMarkEnd = null
 
-		markElements.forEach((mark, idx) => {
+		leafMarks.forEach((mark) => {
 			const markStart = mark.offsetTop
-
-			// If mark is on a different line or far from last, start new group
 			if (lastMarkEnd !== null && markStart > lastMarkEnd) {
 				groups.push(currentGroup)
 				currentGroup = []
 			}
-
 			currentGroup.push(mark)
 			lastMarkEnd = markStart
 		})
@@ -99,76 +82,41 @@
 		return groups
 	}
 
-	function highlightMatchGroup(groupIdx) {
-		const groups = getMatchGroups()
-		if (groups.length === 0) return
+	// Perform search: mark DOM and update counts
+	function performSearch(query) {
+		if (!mainContent || !markInstance) return
 
-		// Remove highlight from all marks
-		mainContent?.querySelectorAll("mark").forEach((mark) => {
-			mark.classList.remove("search-highlight-current")
-		})
+		// Clear old marks
+		markInstance.unmark()
 
-		// Highlight marks in the current group
-		const currentGroup = groups[groupIdx]
-		if (currentGroup) {
-			currentGroup.forEach((mark) => {
-				mark.classList.add("search-highlight-current")
-				// Scroll first mark into view
-				if (mark === currentGroup[0]) {
-					requestAnimationFrame(() => {
-						mark.scrollIntoView({
-							behavior: "smooth",
-							block: "center",
-						})
-					})
-				}
-			})
-		}
-	}
-
-	// Reactive: when query changes, search and mark results
-	$effect(() => {
-		const query = $searchQuery
-
-		// Lazy-initialize mainContent and markInstance if not already done
-		if (!mainContent) {
-			mainContent = document.querySelector(".main-content")
-		}
-
-		if (mainContent && !markInstance) {
-			markInstance = new Mark(mainContent)
-		}
-
-		if (!query || !markInstance || !mainContent) {
-			markInstance?.unmark()
-			currentMatchIndex.set(-1)
+		if (!query.trim()) {
 			totalMatches.set(0)
+			currentMatchIndex.set(-1)
 			return
 		}
 
+		// Parse query
+		const words = query
+			.trim()
+			.split(/\s+/)
+			.filter((w) => w.length > 0)
+		if (words.length === 0) {
+			totalMatches.set(0)
+			currentMatchIndex.set(-1)
+			return
+		}
+
+		// Helper to check if text contains all words
+		const hasAllWords = (text) => {
+			const lowerText = text.toLowerCase()
+			return words.every((word) => lowerText.includes(word.toLowerCase()))
+		}
+
+		// Mark with filter
 		try {
-			markInstance.unmark()
-
-			// Get all words from query
-			const words = query
-				.trim()
-				.split(/\s+/)
-				.filter((w) => w.length > 0)
-			if (words.length === 0) return
-
-			// Helper to check if element contains all words
-			const hasAllWords = (text) => {
-				const lowerText = text.toLowerCase()
-				return words.every((word) =>
-					lowerText.includes(word.toLowerCase()),
-				)
-			}
-
-			// Mark with filter: only mark words if their parent contains all search words
 			markInstance.mark(words, {
 				separateWordSearch: true,
 				filter: function (node, term, totalCounter, counter) {
-					// Get closest element with meaningful text content
 					let parent = node.parentElement
 					while (
 						parent &&
@@ -177,173 +125,46 @@
 					) {
 						parent = parent.parentElement
 					}
-					// Only mark if parent contains ALL search words
 					return parent ? hasAllWords(parent.textContent) : false
 				},
 			})
-
-			// Count unique match instances by grouping marks
-			const markElements = Array.from(
-				mainContent.querySelectorAll("mark"),
-			)
-			// Filter out marks that are parents of other marks (nested marks)
-			// Only count leaf marks (marks containing actual text)
-			const leafMarks = markElements.filter(
-				(mark) => !mark.querySelector("mark"),
-			)
-
-			const wordCount = words.length
-			const markCount = leafMarks.length
-
-			// Count actual match groups, not calculated counts
-			// This ensures navigation matches what the user sees
-			let matchGroups = []
-			if (markCount > 0) {
-				let currentGroup = []
-				let lastMarkEnd = null
-				leafMarks.forEach((mark) => {
-					const markStart = mark.offsetTop
-					// If mark is on a different line, start new group
-					if (lastMarkEnd !== null && markStart > lastMarkEnd) {
-						matchGroups.push(currentGroup)
-						currentGroup = []
-					}
-					currentGroup.push(mark)
-					lastMarkEnd = markStart
-				})
-				if (currentGroup.length > 0) {
-					matchGroups.push(currentGroup)
-				}
-			}
-
-			const count = matchGroups.length
-
-			// Debug logging
-			if (import.meta.env.DEV) {
-				console.log(
-					`[Search] Query: "${query}", Words: ${wordCount}, Total Marks: ${markElements.length}, Leaf Marks: ${markCount}, Groups: ${count}`,
-				)
-			}
-
-			totalMatches.set(count)
-
-			if (count > 0) {
-				currentMatchIndex.set(0)
-				// Highlight after DOM has updated with marks
-				requestAnimationFrame(() => {
-					highlightMatchGroup(0)
-				})
-			} else {
-				currentMatchIndex.set(-1)
-			}
 		} catch (e) {
-			// Silently handle mark.js errors
+			// mark.js error
 		}
-	})
 
-	// Separate effect: when match index changes, update highlighting
-	$effect(() => {
-		const idx = $currentMatchIndex
-		if (idx >= 0) {
-			highlightMatchGroup(idx)
-		} else {
-			mainContent?.querySelectorAll("mark").forEach((mark) => {
-				mark.classList.remove("search-highlight-current")
-			})
+		// Count match groups
+		const groups = getMatchGroups()
+		const count = groups.length
+
+		totalMatches.set(count)
+
+		// Set index to 0 if we have matches and index is invalid
+		if (
+			count > 0 &&
+			($currentMatchIndex < 0 || $currentMatchIndex >= count)
+		) {
+			currentMatchIndex.set(0)
 		}
-	})
+	}
 
-	// Persist search query to localStorage whenever it changes
-	$effect(() => {
-		localStorage.setItem("searchQuery", $searchQuery)
-	})
-
-	// Re-mark when search is reopened
-	$effect(() => {
-		if ($searchOpen && $searchQuery && mainContent && markInstance) {
-			try {
-				const words = $searchQuery
-					.trim()
-					.split(/\s+/)
-					.filter((w) => w.length > 0)
-				if (words.length === 0) return
-
-				const hasAllWords = (text) => {
-					const lowerText = text.toLowerCase()
-					return words.every((word) =>
-						lowerText.includes(word.toLowerCase()),
-					)
-				}
-
-				markInstance.mark(words, {
-					separateWordSearch: true,
-					filter: function (node, term, totalCounter, counter) {
-						let parent = node.parentElement
-						while (
-							parent &&
-							parent !== mainContent &&
-							!parent.textContent
-						) {
-							parent = parent.parentElement
-						}
-						return parent ? hasAllWords(parent.textContent) : false
-					},
-				})
-				const allMarks = Array.from(
-					mainContent.querySelectorAll("mark"),
-				)
-				// Filter to only leaf marks (marks not containing other marks)
-				const leafMarks = allMarks.filter(
-					(mark) => !mark.querySelector("mark"),
-				)
-
-				// Count actual match groups by positioning
-				let matchGroups = []
-				if (leafMarks.length > 0) {
-					let currentGroup = []
-					let lastMarkEnd = null
-					leafMarks.forEach((mark) => {
-						const markStart = mark.offsetTop
-						if (lastMarkEnd !== null && markStart > lastMarkEnd) {
-							matchGroups.push(currentGroup)
-							currentGroup = []
-						}
-						currentGroup.push(mark)
-						lastMarkEnd = markStart
-					})
-					if (currentGroup.length > 0) {
-						matchGroups.push(currentGroup)
-					}
-				}
-
-				const wordCount = words.length
-				const count = matchGroups.length
-
-				// Debug logging
-				if (import.meta.env.DEV) {
-					console.log(
-						`[Search Re-mark] Query: "${$searchQuery}", Words: ${wordCount}, Leaf Marks: ${leafMarks.length}, Groups: ${count}`,
-					)
-				}
-
-				totalMatches.set(count)
-				if (count > 0) {
-					// Don't set index or highlight when reopening search
-					// Only navigate to matches when user clicks < or >
-					currentMatchIndex.set(-1)
-				}
-			} catch (e) {
-				// Silently handle mark.js errors
-			}
+	function closeSearch() {
+		if (markInstance) {
+			markInstance.unmark()
 		}
-	})
+		currentMatchIndex.set(-1)
+		totalMatches.set(0)
+		searchOpen.set(false)
+		// Keep localQuery for next time - don't clear it
+	}
+
+	function handleInputChange(e) {
+		localQuery = e.currentTarget.value
+		searchQuery.set(localQuery)
+		localStorage.setItem("searchQuery", localQuery)
+		performSearch(localQuery)
+	}
 
 	function handlePrevious() {
-		// Lazy-initialize if needed
-		if (!mainContent) {
-			mainContent = document.querySelector(".main-content")
-		}
-
 		const groups = getMatchGroups()
 		if (groups.length === 0) return
 
@@ -352,14 +173,10 @@
 			newIdx = groups.length - 1
 		}
 		currentMatchIndex.set(newIdx)
+		localStorage.setItem("searchIndex", newIdx.toString())
 	}
 
 	function handleNext() {
-		// Lazy-initialize if needed
-		if (!mainContent) {
-			mainContent = document.querySelector(".main-content")
-		}
-
 		const groups = getMatchGroups()
 		if (groups.length === 0) return
 
@@ -368,14 +185,53 @@
 			newIdx = 0
 		}
 		currentMatchIndex.set(newIdx)
+		localStorage.setItem("searchIndex", newIdx.toString())
 	}
+
+	// When index changes, highlight that match and scroll
+	$effect(() => {
+		const idx = $currentMatchIndex
+
+		// Use requestAnimationFrame to ensure DOM marks are laid out
+		requestAnimationFrame(() => {
+			// Get fresh groups after layout is stable
+			const groups = getMatchGroups()
+
+			// Remove all highlights
+			mainContent?.querySelectorAll("mark").forEach((mark) => {
+				mark.classList.remove("search-highlight-current")
+			})
+
+			// Apply highlight to new index
+			if (idx >= 0 && groups.length > 0 && idx < groups.length) {
+				const group = groups[idx]
+				group.forEach((mark) => {
+					mark.classList.add("search-highlight-current")
+				})
+				// Scroll first mark into view
+				if (group[0]) {
+					group[0].scrollIntoView({
+						behavior: "smooth",
+						block: "center",
+					})
+				}
+			}
+		})
+	})
+
+	// When search opens, recalculate marks
+	$effect(() => {
+		if ($searchOpen && localQuery) {
+			performSearch(localQuery)
+		}
+	})
 </script>
 
 {#if $searchOpen}
 	<div class="search-bar" transition:slide>
 		<button
 			class="search-icon-btn"
-			onclick={closeSearch}
+			onclick={() => closeSearch()}
 			aria-label="Close search"
 			title="Close"
 		>
@@ -387,7 +243,8 @@
 		<input
 			type="text"
 			placeholder="Search conditions..."
-			bind:value={$searchQuery}
+			value={localQuery}
+			oninput={handleInputChange}
 			class="search-input"
 		/>
 
@@ -402,7 +259,7 @@
 			onclick={handlePrevious}
 			aria-label="Previous result"
 			title="Previous"
-			disabled={!$searchQuery.trim()}
+			disabled={!localQuery.trim() || $currentMatchIndex <= 2}
 		>
 			{#if ChevronLeft}
 				<ChevronLeft size={18} strokeWidth={2} />
@@ -414,7 +271,7 @@
 			onclick={handleNext}
 			aria-label="Next result"
 			title="Next"
-			disabled={!$searchQuery.trim()}
+			disabled={!localQuery.trim() || $totalMatches <= 1}
 		>
 			{#if ChevronRight}
 				<ChevronRight size={18} strokeWidth={2} />
