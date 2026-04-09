@@ -140,7 +140,6 @@
 	}
 </script>
 
-<div id="signup"></div>
 <section class="paper container">
 	<h2>Sign Up</h2>
 	<p>This could be your breakthrough!</p>

@@ -215,14 +215,16 @@
 </svelte:head>
 
 <Parallax background="/backgrounds/children.png">
-	<div id="about"></div>
+	<div id="about" path="/about"></div>
 	<Intro class="paper container" />
+	<div id="references" path="/references"></div>
 	<References class="paper container" />
 </Parallax>
 
+<div id="signup" path="/signup"></div>
 <SignUp {formData} />
 
-<div id="trials"></div>
+<div id="trials" path="/clinical-trials"></div>
 {#each Categories as category (category.category_name)}
 	<div class="category-section">
 		<h1>{category.category_name}</h1>
@@ -239,7 +241,7 @@
 <div class="category-section">
 	<h1>Neuro Recursion Resources and Partners</h1>
 </div>
-<div id="partners"></div>
+<div id="partners" path="/partners"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
 	<Partners class="paper container" />
 </Parallax>
