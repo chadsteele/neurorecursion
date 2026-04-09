@@ -196,7 +196,15 @@
 		localQuery = e.currentTarget.value
 		searchQuery.set(localQuery)
 		localStorage.setItem("searchQuery", localQuery)
-		// Just update the input value - search only happens on < or > clicks
+
+		// Clear old marks whenever query changes
+		if (markInstance) {
+			markInstance.unmark()
+		}
+
+		// Reset counts - search only happens on < or > clicks
+		totalMatches.set(0)
+		currentMatchIndex.set(-1)
 	}
 
 	function handlePrevious() {
@@ -336,7 +344,7 @@
 			onclick={handlePrevious}
 			aria-label="Previous result"
 			title="Previous"
-			disabled={!localQuery.trim() || $currentMatchIndex <= 2}
+			disabled={!localQuery.trim() || $totalMatches === 0}
 		>
 			{#if ChevronLeft}
 				<ChevronLeft size={18} strokeWidth={2} />
@@ -348,7 +356,7 @@
 			onclick={handleNext}
 			aria-label="Next result"
 			title="Next"
-			disabled={!localQuery.trim() || $totalMatches <= 1}
+			disabled={!localQuery.trim() || $totalMatches === 0}
 		>
 			{#if ChevronRight}
 				<ChevronRight size={18} strokeWidth={2} />
