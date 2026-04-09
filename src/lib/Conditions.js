@@ -409,7 +409,7 @@ Our technique recalibrates the nervous system from chronic threat-state through 
 	},
 	{
 		id: "alcohol-substance-abuse",
-		path: "/addiction/substance/abuse",
+		path: "/alcohol/substance/abuse",
 		name: "Alcohol and Substance Abuse Disorders",
 		description: `Your brain learned that the substance was the answer to an impossible question your nervous system kept asking. Substance Use Disorder is a chronic brain condition characterized by compulsive engagement in drug or alcohol use despite significant negative consequences, including health problems, damaged relationships, employment loss, and legal issues. Addiction hijacks the brain's reward, motivation, and decision-making systems, making it extremely difficult for individuals to stop using substances even when they want to and understand the harm caused. Recovery from addiction is a long-term process requiring comprehensive support, as the brain has become fundamentally rewired around substance use.
 
