@@ -12,6 +12,24 @@
 		expanded[categoryName] = !expanded[categoryName]
 	}
 
+	function expandAll() {
+		Categories.forEach((category) => {
+			expanded[category.category_name] = true
+		})
+	}
+
+	function collapseAll() {
+		Categories.forEach((category) => {
+			expanded[category.category_name] = false
+		})
+	}
+
+	function areAllExpanded() {
+		return Categories.every(
+			(category) => expanded[category.category_name] === true,
+		)
+	}
+
 	function hasBranchContent(categoryIds) {
 		return categoryIds.some((conditionId) => {
 			const condition = ConditionsMap[conditionId]
@@ -33,6 +51,16 @@
 </script>
 
 <div class="condition-grid">
+	<div class="grid-header">
+		<button
+			type="button"
+			class="expand-all-btn"
+			onclick={() => (areAllExpanded() ? collapseAll() : expandAll())}
+		>
+			{areAllExpanded() ? "Collapse All" : "Expand All"}
+		</button>
+	</div>
+
 	{#each Categories as category (category.category_name)}
 		{@const hasContent = hasBranchContent(category.ids)}
 		<div class="category-branch" class:has-content={hasContent}>
@@ -116,6 +144,34 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1rem;
+	}
+
+	.grid-header {
+		grid-column: 1 / -1;
+		display: flex;
+		justify-content: flex-start;
+		margin-bottom: 0.5rem;
+	}
+
+	.expand-all-btn {
+		padding: 0.5rem 1rem;
+		background: rgba(74, 159, 216, 0.2);
+		border: 1px solid rgba(74, 159, 216, 0.4);
+		border-radius: 4px;
+		color: #a0d8ff;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-size: 0.95rem;
+	}
+
+	.expand-all-btn:hover {
+		background: rgba(74, 159, 216, 0.3);
+		border-color: rgba(74, 159, 216, 0.6);
+	}
+
+	.expand-all-btn:active {
+		transform: scale(0.98);
 	}
 
 	@media (max-width: 1024px) {

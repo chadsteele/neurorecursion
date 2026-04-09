@@ -234,6 +234,18 @@
 			</div>
 		</div>
 
+		<div class="conditions-section">
+			<h3>Conditions & Interests</h3>
+
+			<p>
+				Select all that apply. It will help us assign a mentor that
+				specializes in your needs and will determine which research
+				protocols are best suited to your profile. If you have a
+				condition that is not listed, specify it in your message.
+			</p>
+			<ConditionGrid {formData} />
+		</div>
+
 		<div class="form-group">
 			<label for="message">Message (Optional)</label>
 			<div class="input-wrapper">
@@ -252,17 +264,6 @@
 					</div>
 				{/if}
 			</div>
-		</div>
-
-		<div class="conditions-section">
-			<h3>Conditions & Interests</h3>
-			<p>
-				Select all that apply. It will help us assign a mentor that
-				specializes in your needs and will determine which research
-				protocols are best suited to your profile. If you have a
-				condition that is not listed, specify it in your message.
-			</p>
-			<ConditionGrid {formData} />
 		</div>
 
 		<button type="submit" class="submit-button">Submit</button>
