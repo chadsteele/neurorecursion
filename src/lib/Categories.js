@@ -1,6 +1,7 @@
 export const Categories = [
 	{
 		category_name: "Stress, Anxiety &  Worry",
+		path: "/stress/anxiety/worry",
 		ids: [
 			"social-media-anxiety-disorder",
 			"health-anxiety-hypochondriasis",
@@ -12,6 +13,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Fears & Phobias",
+		path: "/fears/phobias",
 		ids: [
 			"cynophobia-fear-dogs",
 			"astraphobia-fear-storms",
@@ -29,6 +31,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Mood Disorders",
+		path: "/mood/disorders",
 		ids: [
 			"depressed-suicidal-major-depressive-disorder",
 			"burnout-exhaustion-depersonalization",
@@ -41,6 +44,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Neurodevelopmental",
+		path: "/neurodevelopmental",
 		ids: [
 			"adhd-attention-deficit-hyperactivity-disorder",
 			"asd-autism-aspergers-autistic-spectrum-disorder",
@@ -54,6 +58,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Addictions",
+		path: "/addictions",
 		ids: [
 			"screen-addiction",
 			"alcohol-substance-abuse",
@@ -66,6 +71,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Neurological & Physical",
+		path: "/neurological/physical",
 		ids: [
 			"migraines",
 			"chronic-pain-psychosomatic",
@@ -79,6 +85,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Performance & Self-Perception",
+		path: "/performance/self/perception",
 		ids: [
 			"test-anxiety",
 			"perfectionism",
@@ -90,6 +97,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Obsessive-Compulsive Spectrum",
+		path: "/obsessive/compulsive/spectrum",
 		ids: [
 			"ocd-obsessive-compulsive-disorder",
 			"eating-disorders-anorexia-bulimia-binge",
@@ -101,6 +109,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Attachment & Relational",
+		path: "/attachment/relational",
 		ids: [
 			"divorce-relational-trauma-family-systems-stress",
 			"anxious-avoidant-attachment-relational-patterns",
@@ -115,6 +124,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Communication Disorders",
+		path: "/communication/disorders",
 		ids: [
 			"glossophobia-fear-public-speaking",
 			"stuttering-childhood-onset-fluency-disorder",
@@ -126,6 +136,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Trauma & Crisis",
+		path: "/trauma/crisis",
 		ids: [
 			"ptsd-post-traumatic-stress-disorder",
 			"rape-sexual-assault",
@@ -137,6 +148,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Power & Control",
+		path: "/power/control",
 		ids: [
 			"ied-rage-intermittent-explosive-disorder",
 			"gun-addiction-weapons-obsession",

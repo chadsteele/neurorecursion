@@ -14,6 +14,11 @@
 	import {Categories} from "$lib/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 
+	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
+	function formatName(name) {
+		return name.replace(/-/g, "\u2011") // U+2011 is non-breaking hyphen
+	}
+
 	let formData = $state({
 		name: "",
 		email: "",
@@ -210,8 +215,38 @@
 <SignUp {formData} />
 
 <div id="trials" path="/clinical-trials"></div>
+<div class="category-section">
+	<h1>Clinical Trials</h1>
+</div>
+<Parallax background="/backgrounds/kids-grass.png">
+	<section class="paper container">
+		<p>
+			We are currently enrolling for the following remote clinical trials.
+			Find your condition below and sign up to see if you qualify!
+		</p>
+		<p>
+			These conditions were chosen based on scientific evidence of
+			neuroplasticity and patient interest, and we are adding more all the
+			time. Don't see your condition? Sign up anyway. Also, the
+			descriptions are brief summaries of complex conditions - your
+			experience will differ and may be less severe than described. Also,
+			you may have multiple conditions, so don't hesitate to sign up for
+			more than one.
+		</p>
+		<p><strong>This could be your breakthrough! Don't hesitate.</strong></p>
+
+		<div class="categories-grid">
+			{#each Categories as category}
+				<a href={category.path} class="category-link"
+					>{formatName(category.category_name)}</a
+				>
+			{/each}
+		</div>
+	</section>
+</Parallax>
+
 {#each Categories as category (category.category_name)}
-	<div class="category-section">
+	<div class="category-section" path={category.path}>
 		<h1>{category.category_name}</h1>
 	</div>
 
@@ -267,6 +302,57 @@
 	@media (max-width: 480px) {
 		:global(.category-section h1) {
 			font-size: 1rem;
+		}
+	}
+
+	.categories-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		margin: 2rem 0;
+	}
+
+	.category-link {
+		display: block;
+		padding: 1rem 1.5rem;
+		background: linear-gradient(135deg, #1e5a96 0%, #0f3a5f 100%);
+		border: 1px solid #2a7cb1;
+		border-radius: 8px;
+		color: #fff;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+
+	.category-link:hover {
+		background: linear-gradient(135deg, #2a7cb1 0%, #1a5a8f 100%);
+		border-color: #3a9fd1;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 16px rgba(30, 90, 150, 0.3);
+	}
+
+	@media (max-width: 768px) {
+		.categories-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+		}
+
+		.category-link {
+			padding: 0.75rem 1rem;
+			font-size: 0.95rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.categories-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0.75rem;
+		}
+
+		.category-link {
+			padding: 0.625rem 0.75rem;
+			font-size: 0.85rem;
 		}
 	}
 </style>
