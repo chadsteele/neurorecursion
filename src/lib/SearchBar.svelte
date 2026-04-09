@@ -8,7 +8,7 @@
 	import {onMount} from "svelte"
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
-	import {replaceState} from "$app/navigation"
+	import {goto} from "$app/navigation"
 	import {slide} from "svelte/transition"
 	import Mark from "mark.js"
 
@@ -50,6 +50,7 @@
 
 		// If URL has search terms, open the search box and perform search
 		if (query) {
+			searchStartPath = $page.url.pathname
 			searchOpen.set(true)
 			// Perform search immediately (effect will also handle it)
 			setTimeout(() => {
@@ -59,14 +60,29 @@
 	})
 
 	let previousPath = $state($page.url.pathname)
+	let searchStartPath = $state($page.url.pathname)
 
 	// Close search when navigating to a different page
 	$effect(() => {
 		const currentPath = $page.url.pathname
 		if (currentPath !== previousPath) {
+			console.log(
+				"[SearchBar] Path changed from",
+				previousPath,
+				"to",
+				currentPath,
+			)
 			previousPath = currentPath
 			if ($searchOpen) {
+				console.log("  -> Search was open, closing it")
 				closeSearch()
+			} else {
+				// Update search start path when navigating (for next time search opens)
+				searchStartPath = currentPath
+				console.log(
+					"  -> Updated searchStartPath for next search:",
+					searchStartPath,
+				)
 			}
 		}
 	})
@@ -84,7 +100,7 @@
 				const newUrl = newSearch
 					? `${window.location.pathname}?${newSearch}`
 					: window.location.pathname
-				replaceState(newUrl)
+				goto(newUrl, {replaceState: true})
 			}
 		}
 	})
@@ -208,6 +224,14 @@
 	}
 
 	function handlePrevious() {
+		console.log("[SearchBar] Previous clicked")
+		console.log("  searchStartPath:", searchStartPath)
+		console.log(
+			"  current window.location.pathname:",
+			window.location.pathname,
+		)
+		console.log("  current $page.url.pathname:", $page.url.pathname)
+
 		// Perform search first if not done yet
 		if (!mainContent?.querySelector("mark")) {
 			performSearch(localQuery)
@@ -223,7 +247,7 @@
 		currentMatchIndex.set(newIdx)
 		localStorage.setItem("searchIndex", newIdx.toString())
 
-		// Update URL with search terms and index
+		// Update URL with search terms and index, preserving the path where search started
 		const urlParams = new URLSearchParams(window.location.search)
 		if (localQuery.trim()) {
 			urlParams.set("q", localQuery)
@@ -235,12 +259,21 @@
 
 		const newSearch = urlParams.toString()
 		const newUrl = newSearch
-			? `${window.location.pathname}?${newSearch}`
-			: window.location.pathname
-		replaceState(newUrl)
+			? `${searchStartPath}?${newSearch}`
+			: searchStartPath
+		console.log("  newUrl being set:", newUrl)
+		goto(newUrl, {replaceState: true})
 	}
 
 	function handleNext() {
+		console.log("[SearchBar] Next clicked")
+		console.log("  searchStartPath:", searchStartPath)
+		console.log(
+			"  current window.location.pathname:",
+			window.location.pathname,
+		)
+		console.log("  current $page.url.pathname:", $page.url.pathname)
+
 		// Perform search first if not done yet
 		if (!mainContent?.querySelector("mark")) {
 			performSearch(localQuery)
@@ -256,7 +289,7 @@
 		currentMatchIndex.set(newIdx)
 		localStorage.setItem("searchIndex", newIdx.toString())
 
-		// Update URL with search terms and index
+		// Update URL with search terms and index, preserving the path where search started
 		const urlParams = new URLSearchParams(window.location.search)
 		if (localQuery.trim()) {
 			urlParams.set("q", localQuery)
@@ -268,9 +301,10 @@
 
 		const newSearch = urlParams.toString()
 		const newUrl = newSearch
-			? `${window.location.pathname}?${newSearch}`
-			: window.location.pathname
-		replaceState(newUrl)
+			? `${searchStartPath}?${newSearch}`
+			: searchStartPath
+		console.log("  newUrl being set:", newUrl)
+		goto(newUrl, {replaceState: true})
 	}
 
 	// When index changes, highlight that match and scroll
@@ -302,6 +336,24 @@
 				}
 			}
 		})
+	})
+
+	// Track when search first opens to capture starting path
+	let wasSearchOpen = $state(false)
+
+	$effect(() => {
+		// Capture path only on initial search open
+		if ($searchOpen && !wasSearchOpen) {
+			searchStartPath = $page.url.pathname
+			wasSearchOpen = true
+			console.log(
+				"[SearchBar] Search opened, captured searchStartPath:",
+				searchStartPath,
+			)
+		} else if (!$searchOpen && wasSearchOpen) {
+			wasSearchOpen = false
+			console.log("[SearchBar] Search closed")
+		}
 	})
 
 	// When search opens, recalculate marks

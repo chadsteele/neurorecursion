@@ -61,8 +61,14 @@
 
 	// Routing logic based on [...query] parameter
 	$effect(() => {
+		console.log("[Routing] Effect triggered")
+		console.log("  $page.url:", $page.url.toString())
+		console.log("  $page.url.search:", $page.url.search)
+		console.log("  $page.params.query:", $page.params.query)
+
 		// PRIORITY 0: If search terms are in querystring, ignore routing
-		if (window.location.search.includes("q=")) {
+		if ($page.url.search.includes("q=")) {
+			console.log("  -> SKIPPING: Search active, ignoring routing")
 			return
 		}
 
@@ -74,10 +80,12 @@
 
 		// If no query path, stay at home
 		if (!queryPath || typeof queryPath !== "string") {
+			console.log("  -> No query path, staying at home")
 			return
 		}
 
 		const pathToFind = `/${queryPath}`
+		console.log("  pathToFind:", pathToFind)
 
 		// PRIORITY 1: Try to find element with path=[query]
 		let targetElement = null
@@ -86,6 +94,7 @@
 			const elPath = el.getAttribute("path")
 			if (elPath && elPath.toLowerCase() === pathToFind.toLowerCase()) {
 				targetElement = el
+				console.log("  -> Found via [path] attribute")
 				break
 			}
 		}
@@ -93,6 +102,9 @@
 		// PRIORITY 2: If not found, try to find element with id=[query]
 		if (!targetElement) {
 			targetElement = document.getElementById(queryPath)
+			if (targetElement) {
+				console.log("  -> Found via id attribute")
+			}
 		}
 
 		// PRIORITY 3: If not found, use getCondition to find best matched condition
@@ -100,19 +112,27 @@
 			const matchedCondition = getCondition(queryPath)
 			if (matchedCondition) {
 				targetElement = document.getElementById(matchedCondition.id)
+				console.log("  -> Found via getCondition:", matchedCondition.id)
 			}
 		}
 
 		// If target element found, scroll to it
 		if (targetElement) {
+			console.log("  -> Scrolling to target element")
+			const scrollTop =
+				targetElement.getBoundingClientRect().top + window.scrollY
+			console.log("  -> Scroll position:", scrollTop)
 			setTimeout(() => {
 				targetElement.scrollIntoView({
 					behavior: "smooth",
 					block: "start",
 				})
 			}, 100)
+		} else {
+			console.log(
+				"  -> No target element found, staying at current position",
+			)
 		}
-		// Otherwise, just stay at home/top (no error thrown)
 	})
 </script>
 
