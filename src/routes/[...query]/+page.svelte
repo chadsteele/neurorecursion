@@ -1,6 +1,7 @@
 <script>
 	import {onMount} from "svelte"
 	import {page} from "$app/stores"
+	import {replaceState} from "$app/navigation"
 	import Intro from "$lib/Intro.svelte"
 	import Partners from "$lib/Partners.svelte"
 	import References from "$lib/References.svelte"
@@ -140,7 +141,7 @@
 						clearTimeout(urlUpdateTimeout)
 						urlUpdateTimeout = setTimeout(() => {
 							if (window.location.pathname !== path) {
-								window.history.replaceState({}, "", path)
+								replaceState(path)
 							}
 						}, 100)
 					}
