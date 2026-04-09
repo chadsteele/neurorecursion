@@ -141,7 +141,9 @@
 						clearTimeout(urlUpdateTimeout)
 						urlUpdateTimeout = setTimeout(() => {
 							if (window.location.pathname !== path) {
-								replaceState(path)
+								// Preserve query string when updating pathname
+								// Use window.location.search to get the actual current URL params
+								replaceState(path + window.location.search)
 							}
 						}, 100)
 					}

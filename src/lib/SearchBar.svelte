@@ -8,6 +8,7 @@
 	import {onMount} from "svelte"
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
+	import {replaceState} from "$app/navigation"
 	import {slide} from "svelte/transition"
 	import Mark from "mark.js"
 
@@ -27,17 +28,29 @@
 	}
 
 	onMount(() => {
-		// Load search query and index from localStorage
-		const savedQuery = localStorage.getItem("searchQuery") || ""
-		const savedIndex = parseInt(localStorage.getItem("searchIndex") || "-1")
-
-		localQuery = savedQuery
-		searchQuery.set(savedQuery)
-		currentMatchIndex.set(savedIndex)
-
 		mainContent = document.querySelector(".main-content")
 		if (mainContent) {
 			markInstance = new Mark(mainContent)
+		}
+
+		// Check URL params for search terms
+		const urlParams = new URLSearchParams($page.url.search)
+		const urlQuery = urlParams.get("q") || ""
+		const urlIndex = parseInt(urlParams.get("i") || "-1")
+
+		// Use URL params if available, otherwise fall back to localStorage
+		const query = urlQuery || localStorage.getItem("searchQuery") || ""
+		const index = urlQuery
+			? urlIndex
+			: parseInt(localStorage.getItem("searchIndex") || "-1")
+
+		localQuery = query
+		searchQuery.set(query)
+		currentMatchIndex.set(index)
+
+		// If URL has search terms, open the search box
+		if (query) {
+			searchOpen.set(true)
 		}
 	})
 
@@ -154,13 +167,45 @@
 		currentMatchIndex.set(-1)
 		totalMatches.set(0)
 		searchOpen.set(false)
-		// Keep localQuery for next time - don't clear it
+
+		// Update URL with search terms and index
+		const urlParams = new URLSearchParams(window.location.search)
+		if (localQuery) {
+			urlParams.set("q", localQuery)
+			if ($currentMatchIndex >= 0) {
+				urlParams.set("i", $currentMatchIndex.toString())
+			} else {
+				urlParams.delete("i")
+			}
+		} else {
+			urlParams.delete("q")
+			urlParams.delete("i")
+		}
+
+		const newSearch = urlParams.toString()
+		const newUrl = newSearch
+			? `${window.location.pathname}?${newSearch}`
+			: window.location.pathname
+		replaceState(newUrl)
 	}
 
 	function handleInputChange(e) {
 		localQuery = e.currentTarget.value
 		searchQuery.set(localQuery)
 		localStorage.setItem("searchQuery", localQuery)
+
+		// Remove q param from URL if query is empty
+		if (!localQuery.trim()) {
+			const urlParams = new URLSearchParams(window.location.search)
+			urlParams.delete("q")
+			urlParams.delete("i")
+			const newSearch = urlParams.toString()
+			const newUrl = newSearch
+				? `${window.location.pathname}?${newSearch}`
+				: window.location.pathname
+			replaceState(newUrl)
+		}
+
 		performSearch(localQuery)
 	}
 
@@ -174,6 +219,16 @@
 		}
 		currentMatchIndex.set(newIdx)
 		localStorage.setItem("searchIndex", newIdx.toString())
+
+		// Update URL with new index
+		const urlParams = new URLSearchParams(window.location.search)
+		if (localQuery) {
+			urlParams.set("q", localQuery)
+			urlParams.set("i", newIdx.toString())
+			const newSearch = urlParams.toString()
+			const newUrl = `${window.location.pathname}?${newSearch}`
+			replaceState(newUrl)
+		}
 	}
 
 	function handleNext() {
@@ -186,6 +241,16 @@
 		}
 		currentMatchIndex.set(newIdx)
 		localStorage.setItem("searchIndex", newIdx.toString())
+
+		// Update URL with new index
+		const urlParams = new URLSearchParams(window.location.search)
+		if (localQuery) {
+			urlParams.set("q", localQuery)
+			urlParams.set("i", newIdx.toString())
+			const newSearch = urlParams.toString()
+			const newUrl = `${window.location.pathname}?${newSearch}`
+			replaceState(newUrl)
+		}
 	}
 
 	// When index changes, highlight that match and scroll
