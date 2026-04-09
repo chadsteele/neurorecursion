@@ -2,6 +2,7 @@
 	import {onMount} from "svelte"
 	import {page} from "$app/stores"
 	import {replaceState} from "$app/navigation"
+	import {browser} from "$app/environment"
 	import Intro from "$lib/Intro.svelte"
 	import Partners from "$lib/Partners.svelte"
 	import References from "$lib/References.svelte"
@@ -19,15 +20,49 @@
 		return name.replace(/-/g, "\u2011") // U+2011 is non-breaking hyphen
 	}
 
-	let formData = $state({
-		name: "",
-		email: "",
-		message: "",
-		conditions: {},
-	})
+	// Initialize formData with restored values from localStorage (only on browser)
+	let formData = $state(
+		browser
+			? {
+					name: "",
+					email: "",
+					message: localStorage.getItem("formMessage") || "",
+					conditions: (() => {
+						try {
+							const saved = localStorage.getItem("formConditions")
+							return saved ? JSON.parse(saved) : {}
+						} catch {
+							return {}
+						}
+					})(),
+				}
+			: {
+					name: "",
+					email: "",
+					message: "",
+					conditions: {},
+				},
+	)
 
 	// Track the last path we processed routing for (to ignore observer updates)
 	let lastProcessedPath = $state("")
+
+	// Save message to localStorage whenever it changes
+	$effect(() => {
+		if (typeof window !== "undefined") {
+			localStorage.setItem("formMessage", formData.message)
+		}
+	})
+
+	// Save condition selections to localStorage whenever they change
+	$effect(() => {
+		if (typeof window !== "undefined") {
+			localStorage.setItem(
+				"formConditions",
+				JSON.stringify(formData.conditions),
+			)
+		}
+	})
 
 	// Reactive effect to handle routing whenever the query changes
 	$effect(() => {
@@ -220,18 +255,20 @@
 </div>
 <Parallax background="/backgrounds/kids-grass.png">
 	<section class="paper container">
+		<h2>Enrolling now!</h2>
+		<p>Find your condition below and sign up to see if you qualify!</p>
 		<p>
-			We are currently enrolling for the following remote clinical trials.
-			Find your condition below and sign up to see if you qualify!
+			These conditions benefit from our technolgy that targets
+			neuroplasticity and replaces hardened limbic loops with new neural
+			pathways that increase your capacity for confidence, security, and
+			joy.
 		</p>
 		<p>
-			These conditions were chosen based on scientific evidence of
-			neuroplasticity and patient interest, and we are adding more all the
-			time. Don't see your condition? Sign up anyway. Also, the
-			descriptions are brief summaries of complex conditions - your
-			experience will differ and may be less severe than described. Also,
-			you may have multiple conditions, so don't hesitate to sign up for
-			more than one.
+			We are continuously adding more. Don't see your condition? Sign up
+			anyway. Also, the descriptions are brief summaries of complex
+			conditions - your experience will differ and may be less severe than
+			described. Also, you may have multiple conditions, so don't hesitate
+			to sign up for more than one.
 		</p>
 		<p><strong>This could be your breakthrough! Don't hesitate.</strong></p>
 
