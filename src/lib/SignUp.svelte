@@ -1,7 +1,9 @@
 <script>
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
+	import {getCondition} from "$lib/Conditions.js"
 
 	let {formData = {conditions: {}}} = $props()
+	let conditionSuggestion = $state("")
 
 	let errors = $state({
 		name: "",
@@ -77,6 +79,45 @@
 	function handleEmailBlur() {
 		touched.email = true
 		validateEmail()
+	}
+
+	function selectConditionsBySuggestion(input) {
+		conditionSuggestion = input
+
+		if (!input.trim()) {
+			return
+		}
+
+		// Split input by spaces, commas, or slashes
+		const words = input
+			.toLowerCase()
+			.split(/[\s,/_-]+/)
+			.filter((w) => w.length > 0)
+
+		// Limit selections to number of words (max)
+		const maxSelections = Math.min(words.length, words.length)
+		const selectedConditions = new Set()
+
+		// For each word, find the best matching condition
+		for (const word of words) {
+			if (selectedConditions.size >= maxSelections) break
+
+			const matchedCondition = getCondition(word)
+			if (matchedCondition) {
+				selectedConditions.add(matchedCondition.name)
+			}
+		}
+
+		// Update form with selected conditions
+		// Clear existing selections first
+		Object.keys(formData.conditions).forEach((key) => {
+			formData.conditions[key] = false
+		})
+
+		// Set the matched conditions
+		selectedConditions.forEach((conditionName) => {
+			formData.conditions[conditionName] = true
+		})
 	}
 
 	function validateBeforeSubmit() {
@@ -236,7 +277,19 @@
 
 		<div class="conditions-section">
 			<h3>Conditions & Interests</h3>
+			<p>
+				Describe your conditions and interests and we'll select the
+				specific conditions below that best match your description. You
+				can edit them manually too.
+			</p>
 
+			<input
+				type="text"
+				value={conditionSuggestion}
+				oninput={(e) => selectConditionsBySuggestion(e.currentTarget.value)}
+				placeholder="e.g. anxiety, autism, adhd, ptsd, ocd, etc."
+				class="suggestion-input"
+			/>
 			<p>
 				Select all that apply. It will help us assign a mentor that
 				specializes in your needs and will determine which research
@@ -348,6 +401,26 @@
 
 	.conditions-section {
 		margin-bottom: 1.5rem;
+	}
+
+	.suggestion-input {
+		width: 100%;
+		padding: 0.75rem;
+		background: #1a2447;
+		border: 2px solid #2b3a54;
+		color: #e0e0e0;
+		border-radius: 6px;
+		font-size: 1rem;
+		font-family: inherit;
+		transition: all 0.3s ease;
+		margin-bottom: 1rem;
+	}
+
+	.suggestion-input:focus {
+		outline: none;
+		border-color: #4a9fd8;
+		box-shadow: 0 0 0 3px rgba(74, 159, 216, 0.2);
+		background: #202844;
 	}
 
 	.submit-button {

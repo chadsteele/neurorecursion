@@ -137,7 +137,7 @@
 </Parallax>
 
 <div id="signup" path="/signup"></div>
-<SignUp {formData} />
+<SignUp bind:formData />
 
 <div id="trials" path="/clinical-trials"></div>
 <div class="category-section">
