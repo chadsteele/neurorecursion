@@ -33,8 +33,8 @@
 			markInstance = new Mark(mainContent)
 		}
 
-		// Check URL params for search terms
-		const urlParams = new URLSearchParams($page.url.search)
+		// Check URL params for search terms (use window.location for consistency)
+		const urlParams = new URLSearchParams(window.location.search)
 		const urlQuery = urlParams.get("q") || ""
 		const urlIndex = parseInt(urlParams.get("i") || "-1")
 
@@ -48,9 +48,13 @@
 		searchQuery.set(query)
 		currentMatchIndex.set(index)
 
-		// If URL has search terms, open the search box
+		// If URL has search terms, open the search box and perform search
 		if (query) {
 			searchOpen.set(true)
+			// Perform search immediately (effect will also handle it)
+			setTimeout(() => {
+				performSearch(query)
+			}, 0)
 		}
 	})
 
@@ -63,6 +67,24 @@
 			previousPath = currentPath
 			if ($searchOpen) {
 				closeSearch()
+			}
+		}
+	})
+
+	// Remove search parameters from URL whenever search closes (any way)
+	$effect(() => {
+		if (!$searchOpen) {
+			const urlParams = new URLSearchParams(window.location.search)
+			const hadSearchParams = urlParams.has("q") || urlParams.has("i")
+
+			if (hadSearchParams) {
+				urlParams.delete("q")
+				urlParams.delete("i")
+				const newSearch = urlParams.toString()
+				const newUrl = newSearch
+					? `${window.location.pathname}?${newSearch}`
+					: window.location.pathname
+				replaceState(newUrl)
 			}
 		}
 	})
@@ -167,16 +189,37 @@
 		currentMatchIndex.set(-1)
 		totalMatches.set(0)
 		searchOpen.set(false)
+		// The $effect on searchOpen will handle removing q and i params
+	}
+
+	function handleInputChange(e) {
+		localQuery = e.currentTarget.value
+		searchQuery.set(localQuery)
+		localStorage.setItem("searchQuery", localQuery)
+		// Just update the input value - search only happens on < or > clicks
+	}
+
+	function handlePrevious() {
+		// Perform search first if not done yet
+		if (!mainContent?.querySelector("mark")) {
+			performSearch(localQuery)
+		}
+
+		const groups = getMatchGroups()
+		if (groups.length === 0) return
+
+		let newIdx = $currentMatchIndex - 1
+		if (newIdx < 0) {
+			newIdx = groups.length - 1
+		}
+		currentMatchIndex.set(newIdx)
+		localStorage.setItem("searchIndex", newIdx.toString())
 
 		// Update URL with search terms and index
 		const urlParams = new URLSearchParams(window.location.search)
-		if (localQuery) {
+		if (localQuery.trim()) {
 			urlParams.set("q", localQuery)
-			if ($currentMatchIndex >= 0) {
-				urlParams.set("i", $currentMatchIndex.toString())
-			} else {
-				urlParams.delete("i")
-			}
+			urlParams.set("i", newIdx.toString())
 		} else {
 			urlParams.delete("q")
 			urlParams.delete("i")
@@ -189,49 +232,12 @@
 		replaceState(newUrl)
 	}
 
-	function handleInputChange(e) {
-		localQuery = e.currentTarget.value
-		searchQuery.set(localQuery)
-		localStorage.setItem("searchQuery", localQuery)
-
-		// Remove q param from URL if query is empty
-		if (!localQuery.trim()) {
-			const urlParams = new URLSearchParams(window.location.search)
-			urlParams.delete("q")
-			urlParams.delete("i")
-			const newSearch = urlParams.toString()
-			const newUrl = newSearch
-				? `${window.location.pathname}?${newSearch}`
-				: window.location.pathname
-			replaceState(newUrl)
-		}
-
-		performSearch(localQuery)
-	}
-
-	function handlePrevious() {
-		const groups = getMatchGroups()
-		if (groups.length === 0) return
-
-		let newIdx = $currentMatchIndex - 1
-		if (newIdx < 0) {
-			newIdx = groups.length - 1
-		}
-		currentMatchIndex.set(newIdx)
-		localStorage.setItem("searchIndex", newIdx.toString())
-
-		// Update URL with new index
-		const urlParams = new URLSearchParams(window.location.search)
-		if (localQuery) {
-			urlParams.set("q", localQuery)
-			urlParams.set("i", newIdx.toString())
-			const newSearch = urlParams.toString()
-			const newUrl = `${window.location.pathname}?${newSearch}`
-			replaceState(newUrl)
-		}
-	}
-
 	function handleNext() {
+		// Perform search first if not done yet
+		if (!mainContent?.querySelector("mark")) {
+			performSearch(localQuery)
+		}
+
 		const groups = getMatchGroups()
 		if (groups.length === 0) return
 
@@ -242,15 +248,21 @@
 		currentMatchIndex.set(newIdx)
 		localStorage.setItem("searchIndex", newIdx.toString())
 
-		// Update URL with new index
+		// Update URL with search terms and index
 		const urlParams = new URLSearchParams(window.location.search)
-		if (localQuery) {
+		if (localQuery.trim()) {
 			urlParams.set("q", localQuery)
 			urlParams.set("i", newIdx.toString())
-			const newSearch = urlParams.toString()
-			const newUrl = `${window.location.pathname}?${newSearch}`
-			replaceState(newUrl)
+		} else {
+			urlParams.delete("q")
+			urlParams.delete("i")
 		}
+
+		const newSearch = urlParams.toString()
+		const newUrl = newSearch
+			? `${window.location.pathname}?${newSearch}`
+			: window.location.pathname
+		replaceState(newUrl)
 	}
 
 	// When index changes, highlight that match and scroll

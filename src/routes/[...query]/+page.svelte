@@ -21,103 +21,88 @@
 		conditions: {},
 	})
 
-	onMount(() => {
-		// Get query parameter and navigate to that section if it exists
-		// With [...query] rest parameter, $page.params.query is an array
-		try {
-			const queryArray = $page.params.query
-			const query = Array.isArray(queryArray)
-				? queryArray.join("/")
-				: queryArray
+	// Track the last path we processed routing for (to ignore observer updates)
+	let lastProcessedPath = $state("")
 
-			if (query && typeof query === "string") {
-				// Skip if trying to navigate to svelte's internal elements
-				if (query.toLowerCase().includes("svelte-announcer")) {
-					// continue to observer setup
-				} else {
-					let targetElement = null
+	// Reactive effect to handle routing whenever the query changes
+	$effect(() => {
+		// PRIORITY 1: If search terms are in querystring, skip routing and let search handle it
+		if (window.location.search.includes("q=")) {
+			return
+		}
 
-					// First: try to find best matching condition using intelligent scoring
+		const queryArray = $page.params.query
+		const query = Array.isArray(queryArray)
+			? queryArray.join("/")
+			: queryArray
+
+		if (query && typeof query === "string") {
+			// Skip if trying to navigate to svelte's internal elements
+			if (query.toLowerCase().includes("svelte-announcer")) {
+				return
+			}
+
+			const pathToUse = `/${query}`
+
+			// Only process routing if the user intentionally changed the path
+			// (i.e., path parameter changed from the last time we processed it)
+			// This ignores observer updates that keep URL in sync with scroll position
+			if (pathToUse === lastProcessedPath) {
+				return
+			}
+
+			lastProcessedPath = pathToUse
+
+			try {
+				let targetElement = null
+
+				// PRIORITY 2: Try to find element with path=[query]
+				const pathElements = document.querySelectorAll("[path]")
+				for (const el of pathElements) {
+					const elPath = el.getAttribute("path")
+					if (
+						elPath &&
+						elPath.toLowerCase() === `/${query.toLowerCase()}`
+					) {
+						targetElement = el
+						break
+					}
+				}
+
+				// PRIORITY 3: If not found, try to find element with id=[query]
+				if (!targetElement) {
+					targetElement = document.getElementById(query)
+				}
+
+				// PRIORITY 4: If not found, use getCondition to find best matched condition
+				if (!targetElement) {
 					const matchedCondition = getCondition(query)
 					if (matchedCondition) {
-						// Look for the condition element by id
 						targetElement = document.getElementById(
 							matchedCondition.id,
 						)
 					}
-
-					// Fallback: if no condition matched, search DOM by word inclusion
-					if (!targetElement) {
-						const words = query
-							.toLowerCase()
-							.split(/[\s-_/]+/)
-							.filter(Boolean)
-
-						const allElements = document.querySelectorAll(
-							"[path],[id]:not(#svelte-announcer)",
-						)
-						const headings = document.querySelectorAll(
-							"h1, h2, h3, h4, h5, h6",
-						)
-
-						// Try each word in order, looking through IDs/paths, then headings
-						for (const word of words) {
-							if (targetElement) break
-
-							// Search in element IDs and paths
-							for (const el of allElements) {
-								// Skip elements inside forms
-								if (el.closest("form")) {
-									continue
-								}
-								const elPath = el.getAttribute("path")
-								if (
-									(el.id &&
-										el.id.toLowerCase().includes(word)) ||
-									(elPath &&
-										elPath.toLowerCase().includes(word))
-								) {
-									targetElement = el
-									break
-								}
-							}
-
-							// If not found, search in headings
-							if (!targetElement) {
-								for (const heading of headings) {
-									// Skip headings inside forms
-									if (heading.closest("form")) {
-										continue
-									}
-									if (
-										heading.textContent &&
-										heading.textContent
-											.toLowerCase()
-											.includes(word)
-									) {
-										targetElement = heading
-										break
-									}
-								}
-							}
-						}
-					}
-
-					// Scroll to the found element
-					if (targetElement) {
-						setTimeout(() => {
-							targetElement.scrollIntoView({
-								behavior: "smooth",
-								block: "start",
-							})
-						}, 100)
-					}
 				}
-			}
-		} catch (error) {
-			console.error("Error navigating to query:", error)
-		}
 
+				// Update URL pathname while preserving search params
+				replaceState(pathToUse + window.location.search)
+
+				// Scroll to the found element, or render at top if not found
+				if (targetElement) {
+					setTimeout(() => {
+						targetElement.scrollIntoView({
+							behavior: "smooth",
+							block: "start",
+						})
+					}, 100)
+				}
+			} catch (error) {
+				console.error("Error navigating to query:", error)
+			}
+		}
+	})
+
+	onMount(() => {
 		// Setup Intersection Observer to update URL as elements scroll into view
 		let urlUpdateTimeout
 		const observer = new IntersectionObserver(
