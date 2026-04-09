@@ -9,8 +9,7 @@ The neurobiological mechanism underlying depression involves a cascade initiated
 
 Our technique targets and rewires this cascade through creative reprogramming of the limbic system's reward architecture. We identify the limiting beliefs and amygdala hijacks that trigger the anxiety-depletion cycle, then replace them with new neural patterns of agency and vitality. This is not therapy or talk about your past. It is precision recalibration of the neurochemical systems that have been locked in shutdown mode. You access restored capacity for motivation, pleasure, and will often within sessions.`,
 		ngo_url: "https://www.nami.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7388863/",
+		scientific_reference: "",
 		background_image: "/backgrounds/depressed.png",
 	},
 	{
@@ -23,8 +22,7 @@ The neurobiological impact is profound: adverse early experiences lock the devel
 
 Our technique targets these ancient survival blueprints through creative reprogramming of the limbic system. We identify the limiting beliefs and dangerous assumptions your brain learned to keep you alive, then replace them with new neural patterns of safety and possibility. This is not reliving trauma or gradual desensitization. It is precision recoding of the threat-detection and trust systems. You access genuine safety and belonging through rewired nervous systems.`,
 		ngo_url: "https://www.nctsn.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -37,8 +35,7 @@ The neurobiological mechanism involves systematic amygdala conditioning where ex
 
 Our technique systematically deconditions the amygdala's association between autonomy, sexuality, questioning, and cosmic threat through targeted limbic intervention. We restore prefrontal regulation of fear-based religious programming and dismantle shame-based conditioning. Religious autonomy, authentic self-expression, and sexuality no longer trigger threat response. This isn't deprogramming or religious argument. It's recoding of how your nervous system processes spiritual concepts and threat. You access genuine spiritual freedom, restored autonomy, and authentic identity integration.`,
 		ngo_url: "https://www.releaseint.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7814751/",
+		scientific_reference: "",
 		background_image: "/backgrounds/cult.png",
 	},
 	{
@@ -51,8 +48,7 @@ The mechanism of relational trauma operates through a feedback loop of collectiv
 
 Our technique works with the nervous systems of both partners to recode the threat-detection loop that perpetuates conflict. Through creative reprogramming of limbic patterns, we interrupt the automatic reactivity and replace it with genuine empathy, understanding, and collaborative capacity. This is not couples therapy or communication training. It is precision recalibration of how your nervous system responds to your partner's presence and vulnerability. Relationships transform from conflict-locked loops to genuine connection and safety.`,
 		ngo_url: "https://www.aamft.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10938872/",
+		scientific_reference: "",
 		background_image: "/backgrounds/divorce.png",
 	},
 	{
@@ -65,8 +61,7 @@ The neurobiological mechanism involves early programming of the attachment syste
 
 Our technique reprograms the attachment circuitry by recalibrating the amygdala's perception of intimacy and relational threat. We restore ventral vagal tone—the neurological foundation for safe, connected relationships. Anxious clinging transforms into genuine confidence in connection; avoidant distance transforms into authentic intimacy capacity. This isn't relationship counseling or attachment education. It's recoding of early programming at the nervous system level. You access secure attachment capacity where both closeness and autonomy feel safe.`,
 		ngo_url: "https://www.aamft.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -79,8 +74,7 @@ The neurobiological mechanism involves dysregulation of the social brain systems
 
 Our technique recalibrates social threat perception and restores social reward capacity through targeted limbic recalibration. We dissolve the amygdala hijack in response to social presence and restore ventral vagal engagement. Your nervous system regains capacity for genuine connection and authentic presence with others. This isn't skills training or social forcing. It's recoding of how your nervous system detects threat in social contexts. You experience restored capacity for belonging, authentic connection, and the vital health and wellbeing that emerges from genuine relationship.`,
 		ngo_url: "https://www.campaigntoendloneliness.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8209555/",
+		scientific_reference: "",
 		background_image: "/backgrounds/depressed.png",
 	},
 	{
@@ -107,8 +101,7 @@ The connection between anxiety and migraines is mediated through multiple pathwa
 
 Our technique targets the anxiety-pain signaling loop through conscious reprogramming of the limbic system and nervous system's pain interpretation. We identify the specific amygdala hijacks and catastrophic beliefs that trigger migraine cascade, then rewire the threat response and pain sensitivity. This is not pain management or talking about stress. It is precision recalibration of how your nervous system interprets signal and generates response. Migraine frequency and intensity shift markedly.`,
 		ngo_url: "https://americanmigrainefoundation.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6603250/",
+		scientific_reference: "",
 		background_image: "/backgrounds/migraine.png",
 	},
 	{
@@ -121,8 +114,7 @@ The neurobiological mechanism involves amygdala hyperactivity in response to int
 
 Our technique recalibrates the amygdala's interpretation of bodily signals and restores the threat-extinction system through targeted limbic intervention. We reduce insula hypersensitivity and restore accurate threat-assessment in response to bodily sensations. Intrusive catastrophic health thoughts recede as the nervous system regains confidence in distinguishing serious disease from normal body function. This isn't reassurance-seeking or meditation. It's recoding of how your nervous system interprets interoceptive signals. You experience freedom from health preoccupation and restored trust in your body's signals.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6313631/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -135,8 +127,7 @@ The neurobiological mechanism involves central sensitization where the nervous s
 
 Our technique recalibrates the pain-amplification circuitry by reducing threat perception and restoring accurate pain signal processing through targeted limbic intervention. We dissolve the anxiety-pain feedback loop and restore gate-control mechanisms. Pain signals normalize as the nervous system exits threat-based amplification mode. This isn't pain management or distraction. It's recoding of how your nervous system generates and sustains pain signals. You experience genuine pain reduction as the amplification system recalibrates.`,
 		ngo_url: "https://www.iasp-pain.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5563555/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -149,8 +140,7 @@ The mechanism linking anxiety to stuttering operates through disruption of the p
 
 Our research demonstrates that by breaking the hardened anxiety-stutter loop, individuals experience transformative improvements in speech fluency, often without traditional speech therapy. We dissolve the anxiety coding and replace it with synaptic patterns of courage that liberate smooth speech production. Motor systems access fluency swiftly, with participants experiencing substantial shifts in their speaking capability, confidence, and willingness to communicate fully in social and professional contexts.`,
 		ngo_url: "https://www.stutteringhelp.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8608149/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -163,8 +153,7 @@ The neurobiological mechanism of arachnophobia involves an evolutionary predispo
 
 Our technique recodes the amygdala's threat classification through targeted creative intervention. We identify the specific fear beliefs and limiting assumptions about spiders, then use precise limbic recalibration to replace the threat file with a new classification: benign or even fascinating. This isn't desensitization, exposure therapy, or gradual accommodation. It's recoding of the threat signature at its source. Your nervous system shifts from panic-on-sight to curiosity-on-sight within the first session. Individuals access activities like hiking, gardening, and relaxation in previously-feared spaces. When your amygdala reclassifies correctly, your freedom expands.`,
 		ngo_url: "https://www.anxietycanada.com/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+		scientific_reference: "",
 		background_image: "/backgrounds/spiderweb.png",
 	},
 	{
@@ -177,8 +166,7 @@ The neurobiological basis of ophidiophobia exists at the intersection of evoluti
 
 Our technique targets the amygdala's threat detection architecture, recalibrating the sensitivity and classification of snake-related stimuli. We dissolve the amygdala hijack through precise limbic reprogramming, where the automatic fear cascade is interrupted and replaced with resources, curiosity, and calm. This isn't gradual exposure or cognitive reframing. It's swift recoding of the threat signature at the neurological level. Your nervous system learns to perceive snakes as non-threatening entities within a single session, often with lasting transformation. When your amygdala recalibrates, your freedom to explore expands substantially.`,
 		ngo_url: "https://www.iocdf.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3136004/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -191,8 +179,7 @@ The neurobiological mechanism combines vestibular dysregulation with amygdala hy
 
 Our technique engages the intersection of vestibular and limbic signal processing through targeted creative reprogramming. We stabilize vestibular function while simultaneously recalibrating the amygdala's threat assessment for heights. The automatic fear cascade transforms into genuine confidence and presence. This isn't gradual exposure or forced habituation. It's swift recoding of the threat signature and vestibular integration. Individuals access bridges, buildings, and mountains with the courage that heights can inspire, not the panic they once triggered.`,
 		ngo_url: "https://adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4815873/",
+		scientific_reference: "",
 		background_image: "/backgrounds/heights.png",
 	},
 	{
@@ -205,8 +192,7 @@ The neurobiological mechanism involves heightened amygdala reactivity to social 
 
 Our technique recodes the amygdala's threat coding for audiences through targeted creative intervention. We dissolve the social-evaluation threat hijack and replace it with genuine access to your authentic voice and message. Audiences transform from 'judges' to 'witnesses' in your mind's threat assessment. Physical anxiety symptoms evaporate as the threat signature recalibrates. This isn't confidence-building or gradual practice. It's swift recoding at the neurological level. Powerful public speaking competence emerges within sessions.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573572/",
+		scientific_reference: "",
 		background_image: "/backgrounds/tedtalk.png",
 	},
 	{
@@ -219,8 +205,7 @@ The neurobiological mechanism involves a systematic bias in threat-detection whe
 
 Our technique recalibrates the threat-detection bias and restores accurate self-assessment through targeted limbic recalibration. We dissolve the hypervigilance to exposure threat and restore amygdala regulation when processing genuine accomplishments. You experience restored confidence in genuine competence, reduced anxiety about being 'found out,' and authentic pride in accomplishments. This isn't affirmation or confidence building. It's recoding of how your nervous system detects threat in success and visibility. You access genuine self-assurance based on accurate neural processing of your actual capabilities.`,
 		ngo_url: "https://impostorsyndrome.com/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC9684747/",
+		scientific_reference: "",
 		background_image: "/backgrounds/imposter.png",
 	},
 	{
@@ -233,8 +218,7 @@ The neurobiological mechanism involves amygdala hyperactivity in response to eva
 
 Our technique recalibrates the social-evaluation threat response through targeted limbic intervention. We dissolve the automatic amygdala hijack in response to evaluation and restore executive function under performance pressure. Trembling, sweating, and racing thoughts subside as the threat signal resets. This isn't confidence building or gradual exposure. It's recoding of how your nervous system interprets social evaluation. You access genuine calm and cognitive clarity in performance situations, with your actual capabilities accessible regardless of observation or judgment.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -247,8 +231,7 @@ The neurobiological mechanism involves a heightened threat response to situation
 
 Our technique dismantles the agoraphobia trap through targeted recalibration of the escape-threat loop and social evaluation neural networks. We identify the specific beliefs and amygdala hijacks that created the prison, then restore genuine freedom and agency through creative reprogramming. Fear of crowds and open spaces transforms into confidence and mobility. This isn't exposure therapy or gradual reentry. It's swift recoding of the threat signature. You reclaim previously-avoided spaces, public transportation, and independence at striking speed.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2464606/",
+		scientific_reference: "",
 		background_image: "/backgrounds/crowd.png",
 	},
 	{
@@ -261,8 +244,7 @@ The neurobiological mechanism combines actual lack of control (the flight is con
 
 Our technique targets the convergence of fears through precise limbic reprogramming. We dissolve the catastrophic beliefs and amygdala threat associations one by one, replacing them with genuine confidence in safety and capability. Automatic panic to flying stimuli transforms into calm presence. This isn't graduated exposure or white-knuckle coping. It's swift recoding of all the threat signals that converge in air travel. You access safe, relaxed international travel at striking speed.`,
 		ngo_url: "https://www.flyingwithfear.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573571/",
+		scientific_reference: "",
 		background_image: "/backgrounds/flying.png",
 	},
 	{
@@ -275,8 +257,7 @@ The neurobiological mechanism involves amygdala hyperactivity combined with neur
 
 Our technique recalibrates the rejection-threat response by resetting the amygdala's sensitivity to social cues through targeted limbic intervention. We dissolve the existential threat-perception in response to rejection and restore accurate social interpretation. Emotional pain in response to minor slights recedes as the nervous system distinguishes between genuine abandonment and minor social friction. This isn't resilience building or reframing. It's recoding of how your nervous system encodes rejection as threat. You experience restored calm in social interactions and genuine resilience to the inevitable minor rejections of social life.`,
 		ngo_url: "https://chadd.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -289,8 +270,7 @@ The neurobiological mechanism often involves conditioning where a negative dog-r
 
 Our technique dissolves the learned dog-threat association through targeted limbic recalibration. We interrupt the automatic fear cascade and replace it with genuine curiosity and trust. The amygdala's threat classification of dogs transforms fundamentally. This isn't gradual systematic desensitization or forced exposure. It's swift reprogramming at the neurological level. You move from panic at the sound of barking to authentic pleasure in the company of dogs, accessing parks and social situations that seemed impossible before.`,
 		ngo_url: "https://adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573566/",
+		scientific_reference: "",
 		background_image: "/backgrounds/dogs.png",
 	},
 	{
@@ -303,8 +283,7 @@ The neurobiological mechanism involves a heightened threat response to potential
 
 Our technique recalibrates the needle-threat association through targeted creative intervention. We dissolve the amygdala hijack and the vasovagal fainting mechanism simultaneously, replacing them with genuine resources and calm presence. Threat coding around needles transforms at the neurological level. This isn't gradual exposure or continued avoidance. It's swift recoding of injury threat perception. You access necessary medical procedures, vaccinations, and dental care with composed capability.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC8119524/",
+		scientific_reference: "",
 		background_image: "",
 	},
 
@@ -318,8 +297,7 @@ The neurobiological mechanism combines threat responses to spatial confinement w
 
 Our technique recalibrates the confinement-threat association and interoceptive alarm through targeted creative intervention. We dissolve both the spatial threat perception and the body-focused anxiety hijack. Your nervous system learns that enclosed spaces are manageable. This isn't gradual progressive exposure forcing through discomfort. It's swift recoding of threat classification. You access elevators, aircraft, confined spaces, and new possibilities with composed confidence.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573563/",
+		scientific_reference: "",
 		background_image: "/backgrounds/tunnel.png",
 	},
 	{
@@ -332,8 +310,7 @@ The neurobiological mechanism involves both realistic threat perception and amyg
 
 Our technique recalibrates the storm threat association through targeted creative reprogramming. We dissolve the exaggerated amygdala response to thunder and lightning and replace it with resources, awe, and calm presence. Unpredictability that once triggered sustained panic becomes manageable. This isn't gradual habituation or forced exposure. It's swift recoding of threat classification. Your relationship with storms transforms fundamentally. Travel and outdoor recreation during storm seasons becomes accessible with newfound freedom.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5573564/",
+		scientific_reference: "",
 		background_image: "",
 	},
 
@@ -361,8 +338,7 @@ The contribution of anxiety to ADHD symptomatology is profound and often underre
 
 Our technique targets the anxiety infrastructure that compounds ADHD impairment. By reducing threat-sensitivity and reinstating executive capacity, you access striking improvements in focus, task completion, time management, and emotional regulation. This isn't cognitive training or behavioral management. It's targeted recalibration of the limbic hyperactivity that hijacks prefrontal function. Participants experience measurable improvements in academic and occupational functioning within weeks. Your executive function emerges when anxiety stops overriding it.`,
 		ngo_url: "https://chadd.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC11916498/",
+		scientific_reference: "",
 		background_image: "",
 	},
 
@@ -376,8 +352,7 @@ The neurobiological underpinnings of Bipolar Disorder involve dysregulation of c
 
 Our technique stabilizes the nervous system's stress response patterns through targeted recalibration of limbic reactivity. We restore rhythm to the circadian and neurotransmitter systems by reducing chronic anxiety and improving the brain's capacity to maintain equilibrium under stress. This isn't just medication adjustment or lifestyle counseling. It's targeted recoding of the threat-detection and mood-regulation systems. Many participants experience increased intervals between mood episodes, reduced severity of episodes, and newfound stability.`,
 		ngo_url: "https://www.bipolaruk.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5109926/",
+		scientific_reference: "",
 		background_image: "/backgrounds/bipolar.png",
 	},
 	{
@@ -390,8 +365,7 @@ The neurobiological mechanism involves a hijacking of the threat-response system
 
 Our technique recalibrates the threat-response system and restores genuine safety perception independent of weapons through targeted limbic intervention. We dissolve the false equivalence between weapons-access and actual safety. Your nervous system regains capacity to experience genuine security through nervous system regulation rather than external weapons. This isn't gun control advocacy or judgment. It's recoding of how your nervous system encodes threat and safety. You experience reduced anxiety-driven acquisition urges and restored sense of security.`,
 		ngo_url: "https://www.gunviolencearchive.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5993560/",
+		scientific_reference: "",
 		background_image: "/backgrounds/guns.png",
 	},
 	{
@@ -404,8 +378,7 @@ The neurobiological mechanism involves amygdala hyperactivity in response to per
 
 Our technique recalibrates threat-response proportionality and restores prefrontal inhibition through targeted limbic intervention. We reduce amygdala-driven threat perception and restore accurate assessment of response options. Violent ideation recedes as the nervous system regains capacity for proportionate, non-violent responses to threat or injustice. This isn't judgment about the content of thoughts or coercion toward non-violence. It's recoding of how your nervous system generates response options to threat. You experience freedom from intrusive violent ideation and genuine security in non-violent capacity.`,
 		ngo_url: "https://www.nami.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5373505/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -418,8 +391,7 @@ The neurobiological mechanism involves what researchers call a 'limbic hijack' w
 
 Our technique breaks this reinforcement cycle by providing more effective ways to downregulate the nervous system than the maladaptive pattern of rage. We reprogram the amygdala's threat detection and restore prefrontal regulation capacity. You access parasympathetic activation and calm presence instead of the rage cascade. This isn't anger management or talking about triggers. It's targeted recalibration of the nervous system's alarm and regulation systems. Rage episodes recede substantially, relationships heal, and you access genuine agency over your emotional responses.`,
 		ngo_url: "https://www.apa.org/topics/anger",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC2871162/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -432,8 +404,7 @@ The neurobiological mechanism involves chronic activation of the stress response
 
 Our technique recalibrates the nervous system from chronic threat-state through targeted limbic recalibration and restoration of meaning-systems. We restore the capacity to downregulate threat-perception and re-engage the parasympathetic nervous system. Your nervous system regains capacity for genuine rest, renewed energy, and restored sense of purpose. This isn't vacation or work-life balance advice. It's recoding of how your nervous system responds to occupational stress. You experience restoration of vitality, genuine emotional connection, and renewed capability.`,
 
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7249520/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -446,8 +417,7 @@ Anxiety plays a critical role in the initiation and maintenance of substance add
 
 Our technique targets the anxiety infrastructure underlying addiction by recalibrating the reward system and threat-detection network. We reprogram the amygdala's anxious alarm that was being 'solved' by substance use and restore the brain's genuine capacity for natural dopamine release and self-regulation. This isn't 12-step programs or behavioral conditioning. It's recoding of the neurological loop that made substances seem necessary. You access genuine recovery where cravings recede and the emotional need for substances dissolves.`,
 		ngo_url: "https://findtreatment.gov/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC3667556/",
+		scientific_reference: "",
 		background_image: "/backgrounds/addiction.png",
 	},
 	{
@@ -460,8 +430,7 @@ The neurobiological mechanism involves hijacking of the dopamine reward system b
 
 Our technique recalibrates the reward system and restores executive capacity through targeted limbic intervention. We dissolve the algorithmic hijacking and restore genuine dopamine sensitivity where natural rewards become accessible again. Compulsive screen use transforms into balanced, conscious technology engagement. This isn't screen time limiting or willpower training. It's recoding of how your nervous system processes digital rewards and manages FOMO-based anxiety. You access freedom and restored capacity for non-digital engagement and relationships.`,
 		ngo_url: "https://www.addictioncenter.com/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6323631/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -474,8 +443,7 @@ The neurobiological mechanism involves hijacking of the sexual reward system by 
 
 Our technique recalibrates the sexual reward system and dissolves shame-based reinforcement loops through targeted limbic intervention. We restore prefrontal regulation and sexual motivation toward genuine partners. Compulsive porn use transforms into balanced sexual expression in relationships. This isn't abstinence advocacy or willpower training. It's recoding of how your nervous system encodes sexual motivation and processes intimacy-related anxiety. You access restored sexual responsiveness to partners and genuine capacity for intimate connection.`,
 		ngo_url: "https://www.samhsa.gov/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6418607/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -488,8 +456,7 @@ The neurobiological mechanism involves performance anxiety hijacking the sympath
 
 Our technique recalibrates the amygdala's threat perception around sexual performance and restores parasympathetic activation through targeted limbic intervention. We dissolve the performance anxiety and restore authentic sexual presence. Erectile function, arousal capacity, and sexual motivation return as threat-detection resets. This isn't sexual technique training or gradual desensitization. It's recoding of how your nervous system processes sexual situations. You access genuine sexual confidence, restored function, and authentic intimate connection.`,
 		ngo_url: "https://www.aasect.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5829325/",
+		scientific_reference: "",
 	},
 	{
 		id: "fear-of-intimacy-commitment-fear",
@@ -501,8 +468,7 @@ The neurobiological mechanism involves an amygdala that learned through early at
 
 Our technique recalibrates the intimacy-threat association by restoring secure attachment capacity and ventral vagal tone through targeted limbic intervention. We dissolve the false threat perception around vulnerability and authentic connection. Your nervous system regains capacity for genuine intimacy, authentic vulnerability, and sustained commitment. This isn't therapy process or gradual exposure. It's recoding of the neural patterns that learned to fear closeness. You access restored capacity for genuine intimate partnership and authentic connection.`,
 		ngo_url: "https://www.aamft.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6325313/",
+		scientific_reference: "",
 		background_image: "/backgrounds/commitment.png",
 	},
 	{
@@ -515,8 +481,7 @@ The neurobiological mechanism involves uncertainty-based amygdala activation com
 
 Our technique recalibrates threat-perception in response to AI and technological change through targeted limbic intervention. We restore accurate threat-assessment: distinguishing between genuine risks requiring adequate attention and anxiety-amplified catastrophic projections. Your nervous system regains capacity to engage with new technologies without threat-hijacking. This isn't technology education or exposure therapy. It's recoding of how your nervous system processes uncertainty about AI and technological change. You experience genuine curiosity and adaptive concern without the anxiety-based avoidance and rumination.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC10527261/",
+		scientific_reference: "",
 		background_image: "/backgrounds/terminator.png",
 	},
 	{
@@ -529,8 +494,7 @@ The neurobiological mechanism involves amygdala hyperactivity in response to soc
 
 Our technique dissolves the social-evaluation threat perception specific to social media through targeted limbic recalibration. We interrupt the dopamine-driven compulsive checking and restore genuine social evaluation capacity grounded in real relationships rather than platform-based metrics. Your nervous system regains capacity to engage with social media without anxiety-driven compulsion or social comparison rumination. This isn't digital detox or social media limiting. It's recoding of how your nervous system processes social threat and reward in digital contexts. You experience freedom from platform-driven anxiety and restored capacity for genuine social connection.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6375637/",
+		scientific_reference: "",
 		background_image: "/backgrounds/social.png",
 	},
 	{
@@ -543,8 +507,7 @@ The neurobiological mechanism involves amygdala hyperactivity combined with fail
 
 Our technique recalibrates threat perception in social contexts and restores accurate threat-assessment through targeted limbic intervention. We dissolve the systematic bias toward threat interpretation and restore the amygdala's capacity to distinguish genuine danger from normal social situations. Paranoid ideation recedes as the nervous system regains accurate perception of others' intentions. This isn't cognitive therapy or social exposure. It's recoding of how your nervous system interprets social threat. You experience freedom from persecution beliefs and restored capacity for authentic social engagement.`,
 		ngo_url: "https://www.nami.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6021151/",
+		scientific_reference: "",
 		background_image: "/backgrounds/paranoid.png",
 	},
 	{
@@ -570,8 +533,7 @@ The connection between stress, anxiety, and seizure threshold is well-establishe
 
 Our technique restores parasympathetic nervous system activation and reduces chronic anxiety through targeted limbic recalibration. We lower the baseline threat-sensitivity that reduces seizure threshold, creating a neurophysiological environment less conducive to seizures. This isn't just stress management or relaxation counseling. It's targeted recalibration of the nervous system's electrical stability. You experience meaningful reductions in seizure frequency and increased predictability.`,
 		ngo_url: "https://www.epilepsy.com/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5533817/",
+		scientific_reference: "",
 		background_image: "/backgrounds/seizure.png",
 	},
 	{
@@ -584,8 +546,7 @@ The neurobiological mechanism involves failure of the parasympathetic nervous sy
 
 Our technique recalibrates night-time threat detection and restores parasympathetic activation through targeted limbic recalibration. We reduce sleep-related anxiety and reset the conditioned hyperarousal. Your nervous system regains capacity to shift into parasympathetic rest mode at night. This isn't sleep hygiene or stimulus control. It's recoding of how your nervous system manages threat-detection across the sleep-wake cycle. You experience restored capacity to sleep deeply, awakening refreshed.`,
 		ngo_url: "https://www.sleepfoundation.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6266436/",
+		scientific_reference: "",
 		background_image: "/backgrounds/insomnia.png",
 	},
 	{
@@ -598,8 +559,7 @@ The neurobiological loop in OCD involves a circuit between the orbitofrontal cor
 
 Our technique breaks the obsessive-compulsive circuit through targeted recalibration of the amygdala-orbitofrontal connection. We dissolve the threat response to intrusive thoughts and restore prefrontal regulation. Intrusive thoughts become less emotionally charged and the compulsive urges recede. This isn't exposure-response prevention or cognitive therapy. It's swift recoding of the threat-detection circuit. You observe obsessive thoughts without the urgent need to engage in compulsions. Daily distress and functioning improve substantially.`,
 		ngo_url: "https://iocdf.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105517/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -612,8 +572,7 @@ The neurobiological mechanism involves a hijacking of the natural repetitive-beh
 
 Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous system manages distress and providing genuine anxiety-reduction alternatives. We reprogram the habit loop and restore genuine anxiety-regulation capacity. Urges to engage in self-injurious behaviors recede as the nervous system accesses healthier soothing pathways. This isn't habit replacement or willpower. It's recoding of how your nervous system learned to use self-injury for emotion regulation. You experience freedom from the urge and restored tissue integrity.`,
 		ngo_url: "https://www.bfrb.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC7142407/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -626,8 +585,7 @@ The neurobiological mechanism involves dysfunction in how the visual cortex proc
 
 Our technique recalibrates appearance-threat perception and restores accurate self-perception through targeted limbic recalibration. We dissolve the amygdala's hyperactivity in response to perceived appearance flaws and restore visual integration. You experience restored accurate perception of your appearance without the threat-based anxiety amplification. Preoccupation recedes as your nervous system stops treating appearance as a genuine social threat. This isn't affirmation or self-esteem work. It's recoding of how your nervous system perceives and encodes appearance threat. You access freedom from appearance preoccupation and authentic social presence.`,
 		ngo_url: "https://www.adaa.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6105514/",
+		scientific_reference: "",
 		background_image: "/backgrounds/vanity.png",
 	},
 	{
@@ -640,8 +598,7 @@ The neurobiological mechanism involves amygdala hyperactivity combined with a lo
 
 Our technique recalibrates anxiety-management and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the amygdala hijack that drives restrictive/binge behaviors and restore accurate hunger/fullness signaling. Your nervous system regains capacity to use food for genuine nourishment rather than anxiety-regulation. This isn't nutrition education or cognitive-behavioral techniques. It's recoding of how your nervous system uses food and body control to manage threat and anxiety. You experience restored capacity for balanced eating, body trust, and genuine nourishment.`,
 		ngo_url: "https://www.nationaleatingdisorders.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6845995/",
+		scientific_reference: "",
 		background_image: "/backgrounds/eat.png",
 	},
 	{
@@ -654,8 +611,7 @@ Anxiety interacts with sensory processing in ways that significantly amplify hyp
 
 Our technique restores normal sensory gating by reducing threat-sensitivity and recalibrating the amygdala's threat response to sensory stimuli through targeted creative intervention. Hypersensitivity recedes substantially as your nervous system stops interpreting neutral sensory input as dangerous. This isn't occupational therapy or gradual habituation. It's targeted recoding of sensory threat perception. You experience striking improvements in sensory tolerance and comfort, engaging fully in social, occupational, and recreational activities.`,
 		ngo_url: "https://www.sensoryhealth.org/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC12095537/",
+		scientific_reference: "",
 		background_image: "/backgrounds/spd.png",
 	},
 	{
@@ -709,8 +665,7 @@ Math-related anxiety is endemic in dyscalculia and plays a significant amplifyin
 
 Our technique reduces math-related anxiety by recalibrating threat perception and restoring parietal lobe function through targeted creative intervention. We dissolve the anxiety-driven suppression of numerical processing circuits. Your brain regains access to its intact number sense and mathematical capability. This isn't tutoring or more math practice. It's targeted recalibration of the anxiety-amygdala-number processing loop. You experience that improvements in math anxiety translate directly into improvements in math performance, confidence, and willingness to engage.`,
 		ngo_url: "https://ldaamerica.org/what-is-dyscalculia/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5987869/",
+		scientific_reference: "",
 		background_image: "/backgrounds/math.png",
 	},
 	{
@@ -723,8 +678,7 @@ The neurobiological mechanism involves amygdala hijack triggered by evaluation t
 
 Our technique recalibrates the evaluation-threat perception in testing contexts through targeted limbic intervention. We dissolve the amygdala hijack during high-stakes academic performance and restore executive function and knowledge access. Your brain regains ability to access learned knowledge under test conditions. This isn't test-prep or anxiety management techniques. It's recoding of how your nervous system responds to academic evaluation threat. You experience genuine calm during testing with full access to knowledge and capability.`,
 		ngo_url: "https://www.apa.org/science/about/psa/test-anxiety",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC6605844/",
+		scientific_reference: "",
 		background_image: "/backgrounds/test.png",
 	},
 	{
@@ -737,8 +691,7 @@ The neurobiological mechanism involves amygdala-driven threat-perception in resp
 
 Our technique recalibrates the threat-perception in response to imperfection and reduces the amygdala's sensitivity to minor mistakes through targeted limbic intervention. We restore accurate threat/non-threat assessment where true excellence becomes achievable without perfectionism-based anxiety. Your nervous system distinguishes between genuine quality and perfectionist threat-magnification. This isn't self-compassion training or standards reduction. It's recoding of how your nervous system encodes mistakes and imperfection as threat. You access genuine excellence production without the perfectionism-based anxiety and paralysis.`,
 		ngo_url: "https://www.apa.org/science/about/psa/perfectionism",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC5603083/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
@@ -751,8 +704,7 @@ Anxiety significantly exacerbates dysgraphia through multiple mechanisms involvi
 
 Our technique restores a relaxed neuromuscular state and recalibrates working memory through targeted limbic recalibration. We reduce anxiety's grip on motor control and free cognitive resources for composition. Your hand becomes steady, writing speed increases, and thoughts flow onto paper. This isn't handwriting practice or more writing lessons. It's swift recalibration of anxiety's effects on fine motor and cognitive systems. As anxiety decreases, you can finally write without pain and your writing performance accurately reflects your knowledge and capability.`,
 		ngo_url: "https://www.dysgraphia.life/",
-		scientific_reference:
-			"https://pmc.ncbi.nlm.nih.gov/articles/PMC4805091/",
+		scientific_reference: "",
 		background_image: "",
 	},
 	{
