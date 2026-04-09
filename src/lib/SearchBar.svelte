@@ -7,6 +7,8 @@
 	} from "$lib/stores.js"
 	import {onMount} from "svelte"
 	import {browser} from "$app/environment"
+	import {page} from "$app/stores"
+	import {slide} from "svelte/transition"
 	import Mark from "mark.js"
 
 	let X = $state(null)
@@ -36,6 +38,19 @@
 		}
 	})
 
+	let previousPath = $state($page.url.pathname)
+
+	// Close search when navigating to a different page
+	$effect(() => {
+		const currentPath = $page.url.pathname
+		if (currentPath !== previousPath) {
+			previousPath = currentPath
+			if ($searchOpen) {
+				closeSearch()
+			}
+		}
+	})
+
 	function closeSearch() {
 		// Save current index before closing
 		if ($currentMatchIndex >= 0) {
@@ -50,19 +65,65 @@
 		// Keep searchQuery for next time - don't clear it
 	}
 
-	function updateCurrentMatchHighlight() {
-		const markElements = mainContent?.querySelectorAll("mark") || []
-		markElements.forEach((el, idx) => {
-			if (idx === $currentMatchIndex) {
-				el.classList.add("search-highlight-current")
-				// Use requestAnimationFrame to ensure DOM is updated before scrolling
-				requestAnimationFrame(() => {
-					el.scrollIntoView({behavior: "smooth", block: "center"})
-				})
-			} else {
-				el.classList.remove("search-highlight-current")
+	function getMatchGroups() {
+		// Group marks into match instances
+		// Marks that are close together (same match) are in the same group
+		const allMarks = Array.from(mainContent?.querySelectorAll("mark") || [])
+		// Filter to only leaf marks (marks not containing other marks)
+		const markElements = allMarks.filter(
+			(mark) => !mark.querySelector("mark"),
+		)
+		if (markElements.length === 0) return []
+
+		const groups = []
+		let currentGroup = []
+		let lastMarkEnd = null
+
+		markElements.forEach((mark, idx) => {
+			const markStart = mark.offsetTop
+
+			// If mark is on a different line or far from last, start new group
+			if (lastMarkEnd !== null && markStart > lastMarkEnd) {
+				groups.push(currentGroup)
+				currentGroup = []
 			}
+
+			currentGroup.push(mark)
+			lastMarkEnd = markStart
 		})
+
+		if (currentGroup.length > 0) {
+			groups.push(currentGroup)
+		}
+
+		return groups
+	}
+
+	function highlightMatchGroup(groupIdx) {
+		const groups = getMatchGroups()
+		if (groups.length === 0) return
+
+		// Remove highlight from all marks
+		mainContent?.querySelectorAll("mark").forEach((mark) => {
+			mark.classList.remove("search-highlight-current")
+		})
+
+		// Highlight marks in the current group
+		const currentGroup = groups[groupIdx]
+		if (currentGroup) {
+			currentGroup.forEach((mark) => {
+				mark.classList.add("search-highlight-current")
+				// Scroll first mark into view
+				if (mark === currentGroup[0]) {
+					requestAnimationFrame(() => {
+						mark.scrollIntoView({
+							behavior: "smooth",
+							block: "center",
+						})
+					})
+				}
+			})
+		}
 	}
 
 	// Reactive: when query changes, search and mark results
@@ -121,9 +182,48 @@
 				},
 			})
 
-			// Query the mark elements after marking
-			const markElements = mainContent.querySelectorAll("mark")
-			const count = markElements.length
+			// Count unique match instances by grouping marks
+			const markElements = Array.from(
+				mainContent.querySelectorAll("mark"),
+			)
+			// Filter out marks that are parents of other marks (nested marks)
+			// Only count leaf marks (marks containing actual text)
+			const leafMarks = markElements.filter(
+				(mark) => !mark.querySelector("mark"),
+			)
+
+			const wordCount = words.length
+			const markCount = leafMarks.length
+
+			// Count actual match groups, not calculated counts
+			// This ensures navigation matches what the user sees
+			let matchGroups = []
+			if (markCount > 0) {
+				let currentGroup = []
+				let lastMarkEnd = null
+				leafMarks.forEach((mark) => {
+					const markStart = mark.offsetTop
+					// If mark is on a different line, start new group
+					if (lastMarkEnd !== null && markStart > lastMarkEnd) {
+						matchGroups.push(currentGroup)
+						currentGroup = []
+					}
+					currentGroup.push(mark)
+					lastMarkEnd = markStart
+				})
+				if (currentGroup.length > 0) {
+					matchGroups.push(currentGroup)
+				}
+			}
+
+			const count = matchGroups.length
+
+			// Debug logging
+			if (import.meta.env.DEV) {
+				console.log(
+					`[Search] Query: "${query}", Words: ${wordCount}, Total Marks: ${markElements.length}, Leaf Marks: ${markCount}, Groups: ${count}`,
+				)
+			}
 
 			totalMatches.set(count)
 
@@ -131,7 +231,7 @@
 				currentMatchIndex.set(0)
 				// Highlight after DOM has updated with marks
 				requestAnimationFrame(() => {
-					updateCurrentMatchHighlight()
+					highlightMatchGroup(0)
 				})
 			} else {
 				currentMatchIndex.set(-1)
@@ -144,7 +244,13 @@
 	// Separate effect: when match index changes, update highlighting
 	$effect(() => {
 		const idx = $currentMatchIndex
-		updateCurrentMatchHighlight()
+		if (idx >= 0) {
+			highlightMatchGroup(idx)
+		} else {
+			mainContent?.querySelectorAll("mark").forEach((mark) => {
+				mark.classList.remove("search-highlight-current")
+			})
+		}
 	})
 
 	// Persist search query to localStorage whenever it changes
@@ -183,21 +289,48 @@
 						return parent ? hasAllWords(parent.textContent) : false
 					},
 				})
-				const markElements = mainContent.querySelectorAll("mark")
-				const count = markElements.length
+				const allMarks = Array.from(
+					mainContent.querySelectorAll("mark"),
+				)
+				// Filter to only leaf marks (marks not containing other marks)
+				const leafMarks = allMarks.filter(
+					(mark) => !mark.querySelector("mark"),
+				)
+
+				// Count actual match groups by positioning
+				let matchGroups = []
+				if (leafMarks.length > 0) {
+					let currentGroup = []
+					let lastMarkEnd = null
+					leafMarks.forEach((mark) => {
+						const markStart = mark.offsetTop
+						if (lastMarkEnd !== null && markStart > lastMarkEnd) {
+							matchGroups.push(currentGroup)
+							currentGroup = []
+						}
+						currentGroup.push(mark)
+						lastMarkEnd = markStart
+					})
+					if (currentGroup.length > 0) {
+						matchGroups.push(currentGroup)
+					}
+				}
+
+				const wordCount = words.length
+				const count = matchGroups.length
+
+				// Debug logging
+				if (import.meta.env.DEV) {
+					console.log(
+						`[Search Re-mark] Query: "${$searchQuery}", Words: ${wordCount}, Leaf Marks: ${leafMarks.length}, Groups: ${count}`,
+					)
+				}
+
 				totalMatches.set(count)
 				if (count > 0) {
-					// Read saved index from localStorage (read only when search opens)
-					const savedIndex = parseInt(
-						localStorage.getItem("searchIndex") || "0",
-					)
-					const validIndex =
-						savedIndex >= 0 && savedIndex < count ? savedIndex : 0
-					currentMatchIndex.set(validIndex)
-					// Highlight after DOM has updated with marks
-					requestAnimationFrame(() => {
-						updateCurrentMatchHighlight()
-					})
+					// Don't set index or highlight when reopening search
+					// Only navigate to matches when user clicks < or >
+					currentMatchIndex.set(-1)
 				}
 			} catch (e) {
 				// Silently handle mark.js errors
@@ -211,12 +344,12 @@
 			mainContent = document.querySelector(".main-content")
 		}
 
-		const markElements = mainContent?.querySelectorAll("mark") || []
-		if (markElements.length === 0) return
+		const groups = getMatchGroups()
+		if (groups.length === 0) return
 
 		let newIdx = $currentMatchIndex - 1
 		if (newIdx < 0) {
-			newIdx = markElements.length - 1
+			newIdx = groups.length - 1
 		}
 		currentMatchIndex.set(newIdx)
 	}
@@ -227,11 +360,11 @@
 			mainContent = document.querySelector(".main-content")
 		}
 
-		const markElements = mainContent?.querySelectorAll("mark") || []
-		if (markElements.length === 0) return
+		const groups = getMatchGroups()
+		if (groups.length === 0) return
 
 		let newIdx = $currentMatchIndex + 1
-		if (newIdx >= markElements.length) {
+		if (newIdx >= groups.length) {
 			newIdx = 0
 		}
 		currentMatchIndex.set(newIdx)
@@ -239,7 +372,7 @@
 </script>
 
 {#if $searchOpen}
-	<div class="search-bar">
+	<div class="search-bar" transition:slide>
 		<button
 			class="search-icon-btn"
 			onclick={closeSearch}
@@ -302,7 +435,6 @@
 		gap: 1rem;
 		padding: 0.75rem 2rem;
 		border-bottom: 1px solid #1e5a96;
-		animation: slideDown 0.3s ease;
 	}
 
 	@keyframes slideDown {
@@ -313,6 +445,17 @@
 		to {
 			transform: translateY(0);
 			opacity: 1;
+		}
+	}
+
+	@keyframes slideUp {
+		from {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		to {
+			transform: translateY(-100%);
+			opacity: 0;
 		}
 	}
 
