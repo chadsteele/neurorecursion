@@ -1,11 +1,19 @@
 <script>
-	import {searchOpen, searchQuery} from "$lib/stores.js"
+	import {
+		searchOpen,
+		searchQuery,
+		currentMatchIndex,
+		totalMatches,
+	} from "$lib/stores.js"
 	import {onMount} from "svelte"
 	import {browser} from "$app/environment"
+	import Mark from "mark.js"
 
 	let X = $state(null)
 	let ChevronLeft = $state(null)
 	let ChevronRight = $state(null)
+	let mainContent = $state(null)
+	let markInstance = $state(null)
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
@@ -15,17 +23,137 @@
 		})
 	}
 
+	onMount(() => {
+		// Load search query from localStorage
+		const savedQuery = localStorage.getItem("searchQuery") || ""
+		searchQuery.set(savedQuery)
+
+		mainContent = document.querySelector(".main-content")
+		if (mainContent) {
+			markInstance = new Mark(mainContent)
+		}
+	})
+
 	function closeSearch() {
+		if (markInstance) {
+			markInstance.unmark()
+		}
+		currentMatchIndex.set(-1)
+		totalMatches.set(0)
 		searchOpen.set(false)
-		searchQuery.set("")
+		// Keep searchQuery for next time - don't clear it
 	}
 
+	function updateCurrentMatchHighlight() {
+		const markElements = mainContent?.querySelectorAll("mark") || []
+		markElements.forEach((el, idx) => {
+			if (idx === $currentMatchIndex) {
+				el.classList.add("search-highlight-current")
+				// Scroll into view
+				el.scrollIntoView({behavior: "smooth", block: "center"})
+			} else {
+				el.classList.remove("search-highlight-current")
+			}
+		})
+	}
+
+	// Reactive: when query changes, search and mark results
+	$effect(() => {
+		const query = $searchQuery
+
+		// Lazy-initialize mainContent and markInstance if not already done
+		if (!mainContent) {
+			mainContent = document.querySelector(".main-content")
+		}
+
+		if (mainContent && !markInstance) {
+			markInstance = new Mark(mainContent)
+		}
+
+		if (!query || !markInstance || !mainContent) {
+			markInstance?.unmark()
+			currentMatchIndex.set(-1)
+			totalMatches.set(0)
+			return
+		}
+
+		try {
+			markInstance.unmark()
+			markInstance.mark(query)
+
+			// Query the mark elements after marking
+			const markElements = mainContent.querySelectorAll("mark")
+			const count = markElements.length
+
+			totalMatches.set(count)
+
+			if (count > 0) {
+				currentMatchIndex.set(0)
+			} else {
+				currentMatchIndex.set(-1)
+			}
+		} catch (e) {
+			// Silently handle mark.js errors
+		}
+	})
+
+	// Separate effect: when match index changes, update highlighting
+	$effect(() => {
+		updateCurrentMatchHighlight()
+	})
+
+	// Persist search query to localStorage whenever it changes
+	$effect(() => {
+		localStorage.setItem("searchQuery", $searchQuery)
+	})
+
+	// Re-mark when search is reopened
+	$effect(() => {
+		if ($searchOpen && $searchQuery && mainContent && markInstance) {
+			try {
+				markInstance.mark($searchQuery)
+				const markElements = mainContent.querySelectorAll("mark")
+				const count = markElements.length
+				totalMatches.set(count)
+				if (count > 0) {
+					currentMatchIndex.set(0)
+				}
+			} catch (e) {
+				// Silently handle mark.js errors
+			}
+		}
+	})
+
 	function handlePrevious() {
-		// Previous result logic
+		// Lazy-initialize if needed
+		if (!mainContent) {
+			mainContent = document.querySelector(".main-content")
+		}
+
+		const markElements = mainContent?.querySelectorAll("mark") || []
+		if (markElements.length === 0) return
+
+		let newIdx = $currentMatchIndex - 1
+		if (newIdx < 0) {
+			newIdx = markElements.length - 1
+		}
+		currentMatchIndex.set(newIdx)
 	}
 
 	function handleNext() {
-		// Next result logic
+		// Lazy-initialize if needed
+		if (!mainContent) {
+			mainContent = document.querySelector(".main-content")
+		}
+
+		const markElements = mainContent?.querySelectorAll("mark") || []
+		if (markElements.length === 0) return
+
+		let newIdx = $currentMatchIndex + 1
+		if (newIdx >= markElements.length) {
+			newIdx = 0
+		}
+		currentMatchIndex.set(newIdx)
 	}
 </script>
 
@@ -49,11 +177,18 @@
 			class="search-input"
 		/>
 
+		{#if $totalMatches > 0}
+			<span class="match-counter">
+				{$currentMatchIndex + 1} / {$totalMatches}
+			</span>
+		{/if}
+
 		<button
 			class="search-nav-btn"
 			onclick={handlePrevious}
 			aria-label="Previous result"
 			title="Previous"
+			disabled={!$searchQuery.trim()}
 		>
 			{#if ChevronLeft}
 				<ChevronLeft size={18} strokeWidth={2} />
@@ -65,6 +200,7 @@
 			onclick={handleNext}
 			aria-label="Next result"
 			title="Next"
+			disabled={!$searchQuery.trim()}
 		>
 			{#if ChevronRight}
 				<ChevronRight size={18} strokeWidth={2} />
@@ -143,6 +279,13 @@
 		color: rgba(160, 216, 255, 0.5);
 	}
 
+	.match-counter {
+		color: #a0d8ff;
+		font-size: 0.9rem;
+		min-width: 50px;
+		text-align: center;
+	}
+
 	.search-nav-btn {
 		background: none;
 		border: 1px solid #4a9fd8;
@@ -161,13 +304,18 @@
 		transition: all 0.3s ease;
 	}
 
-	.search-nav-btn:hover {
+	.search-nav-btn:hover:not(:disabled) {
 		background: rgba(74, 159, 216, 0.15);
 		transform: scale(1.05);
 	}
 
-	.search-nav-btn:hover :global(svg) {
+	.search-nav-btn:hover:not(:disabled) :global(svg) {
 		filter: drop-shadow(0 0 8px rgba(74, 159, 216, 0.3));
+	}
+
+	.search-nav-btn:disabled {
+		opacity: 0.3;
+		cursor: not-allowed;
 	}
 
 	@media (max-width: 768px) {
@@ -181,5 +329,26 @@
 			min-width: 150px;
 			font-size: 0.85rem;
 		}
+
+		.match-counter {
+			font-size: 0.8rem;
+			min-width: 40px;
+		}
+	}
+
+	:global(mark) {
+		background-color: rgba(30, 144, 255, 0.3);
+		border-radius: 2px;
+		padding: 0 2px;
+		color: inherit;
+	}
+
+	:global(.search-highlight-current) {
+		background-color: rgba(192, 192, 192, 0.7) !important;
+		color: #1a1a1a !important;
+		border-radius: 2px;
+		font-weight: 600;
+		padding: 0 2px !important;
+		box-shadow: 0 0 10px rgba(192, 192, 192, 0.8);
 	}
 </style>

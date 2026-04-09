@@ -11,7 +11,9 @@
 <Navbar />
 <SearchBar />
 
-{@render children()}
+<div class="main-content">
+	{@render children()}
+</div>
 
 <footer class="footer">
 	<p>
