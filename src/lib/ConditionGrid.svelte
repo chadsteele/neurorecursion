@@ -24,6 +24,17 @@
 		})
 	}
 
+	function clearAll() {
+		Categories.forEach((category) => {
+			category.ids.forEach((conditionId) => {
+				const condition = ConditionsMap[conditionId]
+				if (condition) {
+					formData.conditions[condition.name] = false
+				}
+			})
+		})
+	}
+
 	function areAllExpanded() {
 		return Categories.every(
 			(category) => expanded[category.category_name] === true,
@@ -58,6 +69,9 @@
 			onclick={() => (areAllExpanded() ? collapseAll() : expandAll())}
 		>
 			{areAllExpanded() ? "Collapse All" : "Expand All"}
+		</button>
+		<button type="button" class="clear-all-btn" onclick={clearAll}>
+			Clear All
 		</button>
 	</div>
 
@@ -171,6 +185,28 @@
 	}
 
 	.expand-all-btn:active {
+		transform: scale(0.98);
+	}
+
+	.clear-all-btn {
+		padding: 0.5rem 1rem;
+		background: rgba(216, 74, 74, 0.2);
+		border: 1px solid rgba(216, 74, 74, 0.4);
+		border-radius: 4px;
+		color: #ff9999;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-size: 0.95rem;
+		margin-left: 0.5rem;
+	}
+
+	.clear-all-btn:hover {
+		background: rgba(216, 74, 74, 0.3);
+		border-color: rgba(216, 74, 74, 0.6);
+	}
+
+	.clear-all-btn:active {
 		transform: scale(0.98);
 	}
 

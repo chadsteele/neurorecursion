@@ -4,6 +4,7 @@
 
 	let {formData = {conditions: {}}} = $props()
 	let conditionSuggestion = $state("")
+	let suggestionDebounceTimer = $state(null)
 
 	let errors = $state({
 		name: "",
@@ -84,40 +85,42 @@
 	function selectConditionsBySuggestion(input) {
 		conditionSuggestion = input
 
-		if (!input.trim()) {
-			return
+		// Clear any pending debounce timer
+		if (suggestionDebounceTimer) {
+			clearTimeout(suggestionDebounceTimer)
 		}
 
-		// Split input by spaces, commas, or slashes
-		const words = input
-			.toLowerCase()
-			.split(/[\s,/_-]+/)
-			.filter((w) => w.length > 0)
-
-		// Limit selections to number of words (max)
-		const maxSelections = Math.min(words.length, words.length)
-		const selectedConditions = new Set()
-
-		// For each word, find the best matching condition
-		for (const word of words) {
-			if (selectedConditions.size >= maxSelections) break
-
-			const matchedCondition = getCondition(word)
-			if (matchedCondition) {
-				selectedConditions.add(matchedCondition.name)
+		// Set a new debounce timer (1 second pause)
+		suggestionDebounceTimer = setTimeout(() => {
+			if (!input.trim()) {
+				return
 			}
-		}
 
-		// Update form with selected conditions
-		// Clear existing selections first
-		Object.keys(formData.conditions).forEach((key) => {
-			formData.conditions[key] = false
-		})
+			// Split input by spaces, commas, or slashes
+			const words = input
+				.toLowerCase()
+				.split(/[\s,/_-]+/)
+				.filter((w) => w.length > 0)
 
-		// Set the matched conditions
-		selectedConditions.forEach((conditionName) => {
-			formData.conditions[conditionName] = true
-		})
+			// Limit selections to number of words (max)
+			const maxSelections = Math.min(words.length, words.length)
+			const selectedConditions = new Set()
+
+			// For each word, find the best matching condition
+			for (const word of words) {
+				if (selectedConditions.size >= maxSelections) break
+
+				const matchedCondition = getCondition(word)
+				if (matchedCondition) {
+					selectedConditions.add(matchedCondition.name)
+				}
+			}
+
+			// Update form with selected conditions (only ADD new ones, don't clear existing)
+			selectedConditions.forEach((conditionName) => {
+				formData.conditions[conditionName] = true
+			})
+		}, 1000)
 	}
 
 	function validateBeforeSubmit() {
