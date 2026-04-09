@@ -1,8 +1,6 @@
 <script>
-	import {onMount} from "svelte"
-	import {page} from "$app/stores"
-	import {replaceState} from "$app/navigation"
 	import {browser} from "$app/environment"
+	import {page} from "$app/stores"
 	import Intro from "$lib/Intro.svelte"
 	import Partners from "$lib/Partners.svelte"
 	import References from "$lib/References.svelte"
@@ -44,9 +42,6 @@
 				},
 	)
 
-	// Track the last path we processed routing for (to ignore observer updates)
-	let lastProcessedPath = $state("")
-
 	// Save message to localStorage whenever it changes
 	$effect(() => {
 		if (typeof window !== "undefined") {
@@ -64,165 +59,60 @@
 		}
 	})
 
-	// Reactive effect to handle routing whenever the query changes
+	// Routing logic based on [...query] parameter
 	$effect(() => {
-		// PRIORITY 1: If search terms are in querystring, skip routing and let search handle it
+		// PRIORITY 0: If search terms are in querystring, ignore routing
 		if (window.location.search.includes("q=")) {
 			return
 		}
 
+		// Get the query path from [...query] parameter
 		const queryArray = $page.params.query
-		const query = Array.isArray(queryArray)
+		const queryPath = Array.isArray(queryArray)
 			? queryArray.join("/")
-			: queryArray
+			: queryArray || ""
 
-		if (query && typeof query === "string") {
-			// Skip if trying to navigate to svelte's internal elements
-			if (query.toLowerCase().includes("svelte-announcer")) {
-				return
-			}
-
-			const pathToUse = `/${query}`
-
-			// Only process routing if the user intentionally changed the path
-			// (i.e., path parameter changed from the last time we processed it)
-			// This ignores observer updates that keep URL in sync with scroll position
-			if (pathToUse === lastProcessedPath) {
-				return
-			}
-
-			lastProcessedPath = pathToUse
-
-			try {
-				let targetElement = null
-
-				// PRIORITY 2: Try to find element with path=[query]
-				const pathElements = document.querySelectorAll("[path]")
-				for (const el of pathElements) {
-					const elPath = el.getAttribute("path")
-					if (
-						elPath &&
-						elPath.toLowerCase() === `/${query.toLowerCase()}`
-					) {
-						targetElement = el
-						break
-					}
-				}
-
-				// PRIORITY 3: If not found, try to find element with id=[query]
-				if (!targetElement) {
-					targetElement = document.getElementById(query)
-				}
-
-				// PRIORITY 4: If not found, use getCondition to find best matched condition
-				if (!targetElement) {
-					const matchedCondition = getCondition(query)
-					if (matchedCondition) {
-						targetElement = document.getElementById(
-							matchedCondition.id,
-						)
-					}
-				}
-
-				// Update URL pathname while preserving search params
-				replaceState(pathToUse + window.location.search)
-
-				// Scroll to the found element, or render at top if not found
-				if (targetElement) {
-					setTimeout(() => {
-						targetElement.scrollIntoView({
-							behavior: "smooth",
-							block: "start",
-						})
-					}, 100)
-				}
-			} catch (error) {
-				console.error("Error navigating to query:", error)
-			}
-		}
-	})
-
-	onMount(() => {
-		// Setup Intersection Observer to update URL as elements scroll into view
-		let urlUpdateTimeout
-		const observer = new IntersectionObserver(
-			(entries) => {
-				// Find the topmost element that is intersecting
-				const visibleEntries = entries.filter(
-					(entry) => entry.isIntersecting,
-				)
-
-				if (visibleEntries.length > 0) {
-					// Sort by position in viewport - get the one closest to top
-					const topmost = visibleEntries.reduce((top, current) => {
-						return current.boundingClientRect.top <
-							top.boundingClientRect.top
-							? current
-							: top
-					})
-
-					const path = topmost.target.getAttribute("path")
-					if (path) {
-						clearTimeout(urlUpdateTimeout)
-						urlUpdateTimeout = setTimeout(() => {
-							if (window.location.pathname !== path) {
-								// Preserve query string when updating pathname
-								// Use window.location.search to get the actual current URL params
-								replaceState(path + window.location.search)
-							}
-						}, 100)
-					}
-				}
-			},
-			{
-				threshold: 0,
-				rootMargin: "0px 0px -80% 0px",
-			},
-		)
-
-		// Function to observe all path elements
-		const observePathElements = () => {
-			const pathElements = document.querySelectorAll("[path]")
-			pathElements.forEach((el) => {
-				observer.observe(el)
-			})
+		// If no query path, stay at home
+		if (!queryPath || typeof queryPath !== "string") {
+			return
 		}
 
-		// Initial observation after DOM is ready
-		setTimeout(observePathElements, 500)
+		const pathToFind = `/${queryPath}`
 
-		// Watch for new elements being added to the DOM
-		const mutationObserver = new MutationObserver((mutations) => {
-			mutations.forEach((mutation) => {
-				if (mutation.addedNodes.length) {
-					mutation.addedNodes.forEach((node) => {
-						if (
-							node.nodeType === 1 &&
-							node.hasAttribute &&
-							node.hasAttribute("path")
-						) {
-							observer.observe(node)
-						} else if (node.nodeType === 1) {
-							// Check children of added nodes
-							node.querySelectorAll("[path]").forEach((el) => {
-								observer.observe(el)
-							})
-						}
-					})
-				}
-			})
-		})
-
-		mutationObserver.observe(document.body, {
-			childList: true,
-			subtree: true,
-		})
-
-		return () => {
-			clearTimeout(urlUpdateTimeout)
-			observer.disconnect()
-			mutationObserver.disconnect()
+		// PRIORITY 1: Try to find element with path=[query]
+		let targetElement = null
+		const pathElements = document.querySelectorAll("[path]")
+		for (const el of pathElements) {
+			const elPath = el.getAttribute("path")
+			if (elPath && elPath.toLowerCase() === pathToFind.toLowerCase()) {
+				targetElement = el
+				break
+			}
 		}
+
+		// PRIORITY 2: If not found, try to find element with id=[query]
+		if (!targetElement) {
+			targetElement = document.getElementById(queryPath)
+		}
+
+		// PRIORITY 3: If not found, use getCondition to find best matched condition
+		if (!targetElement) {
+			const matchedCondition = getCondition(queryPath)
+			if (matchedCondition) {
+				targetElement = document.getElementById(matchedCondition.id)
+			}
+		}
+
+		// If target element found, scroll to it
+		if (targetElement) {
+			setTimeout(() => {
+				targetElement.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+				})
+			}, 100)
+		}
+		// Otherwise, just stay at home/top (no error thrown)
 	})
 </script>
 
