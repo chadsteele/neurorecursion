@@ -24,9 +24,11 @@
 	}
 
 	onMount(() => {
-		// Load search query from localStorage
+		// Load search query and index from localStorage
 		const savedQuery = localStorage.getItem("searchQuery") || ""
+		const savedIndex = parseInt(localStorage.getItem("searchIndex") || "-1")
 		searchQuery.set(savedQuery)
+		currentMatchIndex.set(savedIndex)
 
 		mainContent = document.querySelector(".main-content")
 		if (mainContent) {
@@ -35,6 +37,10 @@
 	})
 
 	function closeSearch() {
+		// Save current index before closing
+		if ($currentMatchIndex >= 0) {
+			localStorage.setItem("searchIndex", $currentMatchIndex.toString())
+		}
 		if (markInstance) {
 			markInstance.unmark()
 		}
@@ -49,8 +55,10 @@
 		markElements.forEach((el, idx) => {
 			if (idx === $currentMatchIndex) {
 				el.classList.add("search-highlight-current")
-				// Scroll into view
-				el.scrollIntoView({behavior: "smooth", block: "center"})
+				// Use requestAnimationFrame to ensure DOM is updated before scrolling
+				requestAnimationFrame(() => {
+					el.scrollIntoView({behavior: "smooth", block: "center"})
+				})
 			} else {
 				el.classList.remove("search-highlight-current")
 			}
@@ -79,7 +87,39 @@
 
 		try {
 			markInstance.unmark()
-			markInstance.mark(query)
+
+			// Get all words from query
+			const words = query
+				.trim()
+				.split(/\s+/)
+				.filter((w) => w.length > 0)
+			if (words.length === 0) return
+
+			// Helper to check if element contains all words
+			const hasAllWords = (text) => {
+				const lowerText = text.toLowerCase()
+				return words.every((word) =>
+					lowerText.includes(word.toLowerCase()),
+				)
+			}
+
+			// Mark with filter: only mark words if their parent contains all search words
+			markInstance.mark(words, {
+				separateWordSearch: true,
+				filter: function (node, term, totalCounter, counter) {
+					// Get closest element with meaningful text content
+					let parent = node.parentElement
+					while (
+						parent &&
+						parent !== mainContent &&
+						!parent.textContent
+					) {
+						parent = parent.parentElement
+					}
+					// Only mark if parent contains ALL search words
+					return parent ? hasAllWords(parent.textContent) : false
+				},
+			})
 
 			// Query the mark elements after marking
 			const markElements = mainContent.querySelectorAll("mark")
@@ -89,6 +129,10 @@
 
 			if (count > 0) {
 				currentMatchIndex.set(0)
+				// Highlight after DOM has updated with marks
+				requestAnimationFrame(() => {
+					updateCurrentMatchHighlight()
+				})
 			} else {
 				currentMatchIndex.set(-1)
 			}
@@ -99,6 +143,7 @@
 
 	// Separate effect: when match index changes, update highlighting
 	$effect(() => {
+		const idx = $currentMatchIndex
 		updateCurrentMatchHighlight()
 	})
 
@@ -111,12 +156,48 @@
 	$effect(() => {
 		if ($searchOpen && $searchQuery && mainContent && markInstance) {
 			try {
-				markInstance.mark($searchQuery)
+				const words = $searchQuery
+					.trim()
+					.split(/\s+/)
+					.filter((w) => w.length > 0)
+				if (words.length === 0) return
+
+				const hasAllWords = (text) => {
+					const lowerText = text.toLowerCase()
+					return words.every((word) =>
+						lowerText.includes(word.toLowerCase()),
+					)
+				}
+
+				markInstance.mark(words, {
+					separateWordSearch: true,
+					filter: function (node, term, totalCounter, counter) {
+						let parent = node.parentElement
+						while (
+							parent &&
+							parent !== mainContent &&
+							!parent.textContent
+						) {
+							parent = parent.parentElement
+						}
+						return parent ? hasAllWords(parent.textContent) : false
+					},
+				})
 				const markElements = mainContent.querySelectorAll("mark")
 				const count = markElements.length
 				totalMatches.set(count)
 				if (count > 0) {
-					currentMatchIndex.set(0)
+					// Read saved index from localStorage (read only when search opens)
+					const savedIndex = parseInt(
+						localStorage.getItem("searchIndex") || "0",
+					)
+					const validIndex =
+						savedIndex >= 0 && savedIndex < count ? savedIndex : 0
+					currentMatchIndex.set(validIndex)
+					// Highlight after DOM has updated with marks
+					requestAnimationFrame(() => {
+						updateCurrentMatchHighlight()
+					})
 				}
 			} catch (e) {
 				// Silently handle mark.js errors
