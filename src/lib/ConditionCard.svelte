@@ -1,7 +1,43 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
+	import {browser} from "$app/environment"
 
 	let {condition = {}, formData = {}} = $props()
+
+	function handleShare() {
+		const shareUrl = browser
+			? `${window.location.origin}${condition.path}`
+			: condition.path
+
+		// Check if Web Share API is available
+		if (navigator.share) {
+			navigator
+				.share({
+					title: condition.name,
+					text: `Learn more about ${condition.name}`,
+					url: shareUrl,
+				})
+				.catch((err) => {
+					// User cancelled or error occurred, copy to clipboard as fallback
+					copyToClipboard(shareUrl)
+				})
+		} else {
+			// Fallback: copy to clipboard
+			copyToClipboard(shareUrl)
+		}
+	}
+
+	function copyToClipboard(text) {
+		navigator.clipboard
+			.writeText(text)
+			.then(() => {
+				// Show brief feedback (optional)
+				alert("Link copied to clipboard!")
+			})
+			.catch((err) => {
+				console.error("Failed to copy to clipboard:", err)
+			})
+	}
 </script>
 
 <div id={condition.id} path={condition.path}></div>
@@ -51,6 +87,9 @@
 			>
 				🔬 Science
 			</a>
+			<button type="button" class="share-btn" onclick={handleShare}>
+				📤 Share
+			</button>
 		</div>
 	</section>
 </Parallax>
@@ -96,6 +135,26 @@
 
 	.condition-links a:hover {
 		background: #357ba8;
+	}
+
+	.share-btn {
+		padding: 0.5rem 1rem;
+		background: #4a9fd8;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		transition: background 0.3s ease;
+		font-size: 0.9rem;
+		cursor: pointer;
+		font-family: inherit;
+	}
+
+	.share-btn:hover {
+		background: #357ba8;
+	}
+
+	.share-btn:active {
+		transform: scale(0.98);
 	}
 
 	.toggle-slider {
