@@ -183,7 +183,7 @@
 
 				<div class="social-links">
 					<a
-						href="https://www.linkedin.com/company/neuro-recursion-institute"
+						href="https://www.linkedin.com/company/neurorecursion"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="social-link"
