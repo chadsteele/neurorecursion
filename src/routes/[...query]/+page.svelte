@@ -6,12 +6,16 @@
 	import References from "$lib/References.svelte"
 	import SignUp from "$lib/SignUp.svelte"
 	import Skeleton from "$lib/Skeleton.svelte"
-	import Featured from "$lib/Featured.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
 	import Conditions, {getCondition, ConditionsMap} from "$lib/Conditions.js"
 	import {Categories} from "$lib/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
+	import Pioneers, {
+		sorted as sortedPioneers,
+		PioneersMap,
+	} from "$lib/Pioneers.js"
+	import PioneerCard from "$lib/PioneerCard.svelte"
 
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
@@ -205,8 +209,46 @@
 	{/each}
 {/each}
 
+<div id="pioneers" path="/pioneers"></div>
 <div class="category-section">
-	<h1>Neuro Recursion Resources and Partners</h1>
+	<h1>Partners & Pioneers</h1>
+</div>
+
+<section class="paper container">
+	<p>
+		For decades, neuroscientists have puzzled over why our brains react to
+		perceived threats in ways that feel beyond conscious control. In the
+		1990s, Paul MacLean and later Daniel Goleman introduced the concept of "<strong
+			>amygdala hijacks</strong
+		>" - moments when emotion overwhelms reason. Their work showed that
+		trauma and anxiety stem from a <strong>limbic loop</strong>, a
+		self-reinforcing circuit where emotional memory hardens into fixed
+		neural patterns. For years, these patterns seemed unchangeable in
+		adults. But recent neuroplasticity research reveals something
+		remarkable: these hardened loops can be reopened, rewired, and healed.
+		This has transformed how we treat anxiety, PTSD, phobias, and other
+		neurological conditions.
+	</p>
+	<p>
+		Our research is built on the pioneering work of world-class scientists
+		whose discoveries have advanced our understanding of neuroplasticity,
+		limbic loops, and the therapeutic potential of targeting these pathways
+		to reduce neurological symptoms.
+	</p>
+	<p>
+		We are deeply grateful for their contributions to science and humanity.
+	</p>
+</section>
+
+{#each sortedPioneers as pioneerId (pioneerId)}
+	{@const pioneer = PioneersMap[pioneerId]}
+	{#if pioneer}
+		<PioneerCard {pioneer} />
+	{/if}
+{/each}
+
+<div class="category-section">
+	<h1>Supportive Communities</h1>
 </div>
 <div id="partners" path="/partners"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
@@ -300,6 +342,20 @@
 		.category-link {
 			padding: 0.625rem 0.75rem;
 			font-size: 0.85rem;
+		}
+	}
+
+	.pioneers-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 2rem;
+		margin: 2rem 0;
+	}
+
+	@media (max-width: 768px) {
+		.pioneers-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
 		}
 	}
 </style>
