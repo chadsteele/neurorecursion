@@ -1,6 +1,7 @@
 <script>
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
+	import {CheckCircle2} from "lucide-svelte"
 
 	let countdown = $state(5)
 
@@ -20,7 +21,10 @@
 
 <div class="success-container">
 	<div class="success-card">
-		<h1>✅ Thank You!</h1>
+		<div class="success-icon">
+			<CheckCircle2 size={48} strokeWidth={2} />
+		</div>
+		<h1>Thank You!</h1>
 		<p>Your form has been successfully submitted.</p>
 		<p>We've received your information and will review your application.</p>
 		<p>You'll hear from us soon with next steps.</p>
@@ -58,6 +62,14 @@
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 	}
 
+	.success-icon {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		animation: scaleIn 0.6s ease-in-out;
+		color: #4a9fd8;
+	}
+
 	h1 {
 		color: #4a9fd8;
 		font-size: 2.5rem;
@@ -92,6 +104,17 @@
 		to {
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+
+	@keyframes scaleIn {
+		from {
+			opacity: 0;
+			transform: scale(0.8);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
 		}
 	}
 </style>

@@ -1,6 +1,7 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
 	import {browser} from "$app/environment"
+	import {CheckCircle2, Heart, FlaskConical, Share2} from "lucide-svelte"
 
 	let {condition = {}, formData = {}} = $props()
 
@@ -68,7 +69,10 @@
 						: "No, not me!"}
 				</span>
 			</label>
-			<a type="button" class="signup-btn" href="#signup"> ✅ Sign up! </a>
+			<a type="button" class="signup-btn" href="#signup">
+				<CheckCircle2 size={18} strokeWidth={2} />
+				Sign up!
+			</a>
 
 			{#if condition.ngo_url}
 				<a
@@ -76,7 +80,8 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					❤️ Support
+					<Heart size={18} strokeWidth={2} />
+					Support
 				</a>
 			{/if}
 			<a
@@ -85,10 +90,12 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				🔬 Science
+				<FlaskConical size={18} strokeWidth={2} />
+				Science
 			</a>
 			<button type="button" class="share-btn" onclick={handleShare}>
-				📤 Share
+				<Share2 size={18} strokeWidth={2} />
+				Share
 			</button>
 		</div>
 	</section>
@@ -131,6 +138,9 @@
 		transition: background 0.3s ease;
 		font-size: 0.9rem;
 		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.condition-links a:hover {
@@ -147,6 +157,9 @@
 		font-size: 0.9rem;
 		cursor: pointer;
 		font-family: inherit;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.share-btn:hover {

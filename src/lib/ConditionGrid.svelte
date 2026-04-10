@@ -2,6 +2,7 @@
 	import {slide} from "svelte/transition"
 	import {Categories} from "$lib/Categories.js"
 	import {ConditionsMap} from "$lib/Conditions.js"
+	import {Search} from "lucide-svelte"
 
 	let {formData = {}} = $props()
 
@@ -99,9 +100,10 @@
 					class="category-conditions"
 					transition:slide={{duration: 300}}
 				>
-					<a href={`#${category.ids[0]}`} class="read-more"
-						>🔍 Learn</a
-					>
+					<a href={`#${category.ids[0]}`} class="read-more">
+						<Search size={16} strokeWidth={2} />
+						Learn
+					</a>
 					{#each category.ids as conditionId (conditionId)}
 						{@const condition = ConditionsMap[conditionId]}
 						{#if condition}
@@ -320,7 +322,9 @@
 	}
 
 	.read-more {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
 		margin-top: 0.5rem;
 		padding: 0.5rem 0.75rem;
 		color: #4a9fd8;
