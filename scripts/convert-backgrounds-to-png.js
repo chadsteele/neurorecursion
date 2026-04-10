@@ -8,26 +8,44 @@ import {fileURLToPath} from "url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const backgroundsDir = path.join(__dirname, "../static/backgrounds")
+const staticDir = path.join(__dirname, "../static")
 const srcDir = path.join(__dirname, "../src")
 
-// Get all image files and convert to PNG
-const files = fs.readdirSync(backgroundsDir)
-const imageFiles = files.filter(
-	(f) => /\.(jpg|jpeg|webp|avif)$/i.test(f) && f !== ".DS_Store",
-)
+// Get all image files recursively from all subdirectories in static/
+function getAllImageFiles(dir, relDir = "") {
+	const imageFiles = []
+	const entries = fs.readdirSync(dir)
 
-console.log(`Found ${imageFiles.length} image files to convert`)
+	entries.forEach((entry) => {
+		if (entry === ".DS_Store") return
+		const fullPath = path.join(dir, entry)
+		const relPath = relDir ? `${relDir}/${entry}` : entry
+		const stats = fs.statSync(fullPath)
+
+		if (stats.isDirectory()) {
+			// Recursively process subdirectories
+			imageFiles.push(...getAllImageFiles(fullPath, relPath))
+		} else if (/\.(jpg|jpeg|webp|avif)$/i.test(entry)) {
+			imageFiles.push({fullPath, relPath, fileName: entry})
+		}
+	})
+
+	return imageFiles
+}
+
+const allImageFiles = getAllImageFiles(staticDir)
+
+console.log(`Found ${allImageFiles.length} image files to convert`)
 
 // Image conversion mapping (for reference)
 const conversionMap = {}
 
-imageFiles.forEach((file) => {
-	const fullPath = path.join(backgroundsDir, file)
-	const newFileName = file.replace(/\.(jpg|jpeg|webp|avif)$/i, ".png")
-	const newPath = path.join(backgroundsDir, newFileName)
+allImageFiles.forEach(({fullPath, relPath, fileName}) => {
+	const newFileName = fileName.replace(/\.(jpg|jpeg|webp|avif)$/i, ".png")
+	const newPath = path.join(path.dirname(fullPath), newFileName)
+	const newRelPath = relPath.replace(/\.(jpg|jpeg|webp|avif)$/i, ".png")
 
-	console.log(`Converting: ${file} → ${newFileName}`)
+	console.log(`Converting: ${relPath} → ${newRelPath}`)
 
 	try {
 		// Use ImageMagick convert command
@@ -38,11 +56,11 @@ imageFiles.forEach((file) => {
 
 		// Delete original file
 		fs.unlinkSync(fullPath)
-		console.log(`✓ Converted and removed: ${file}`)
+		console.log(`✓ Converted and removed: ${fileName}`)
 
-		conversionMap[file] = newFileName
+		conversionMap[`/${relPath}`] = `/${newRelPath}`
 	} catch (err) {
-		console.error(`✗ Failed to convert ${file}:`, err.message)
+		console.error(`✗ Failed to convert ${relPath}:`, err.message)
 	}
 })
 
@@ -66,14 +84,11 @@ filesToUpdate.forEach((filePath) => {
 	let updated = false
 
 	// Replace all image references
-	Object.entries(conversionMap).forEach(([oldName, newName]) => {
-		const oldRef = `/backgrounds/${oldName}`
-		const newRef = `/backgrounds/${newName}`
-
+	Object.entries(conversionMap).forEach(([oldRef, newRef]) => {
 		if (content.includes(oldRef)) {
 			content = content.replaceAll(oldRef, newRef)
 			console.log(
-				`✓ Updated in ${path.basename(filePath)}: ${oldName} → ${newName}`,
+				`✓ Updated in ${path.basename(filePath)}: ${oldRef} → ${newRef}`,
 			)
 			updated = true
 		}

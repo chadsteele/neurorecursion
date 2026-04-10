@@ -123,7 +123,7 @@ Graybiel's mapping of the neural basis of stuck repetitive behaviors validates N
 		institution: "Stanford University",
 		department: "Biology",
 		img_url: "/pioneers/carla-shatz.webp",
-		background_url: "",
+		background_url: "/pioneers/stanford.jpg",
 		description: `Carla Shatz's discovery of activity-dependent competition in neural development reveals the cellular mechanism underlying NeuroRecursion's efficacy: synapses are continuously evaluated, strengthened or weakened based on patterns of neural activity. This principle extends far beyond development—it indicates that throughout life, the brain refines connections based on what it experiences.
 
 Shatz's work on critical periods demonstrates that heightened plasticity creates windows of enhanced malleability, a principle NeuroRecursion harnesses. By overwhelming the limbic system with millions of high-valence recursive comparisons, NeuroRecursion functionally creates an episode of heightened plasticity where threat circuits become susceptible to modification. The intense, saturation-level activity Shatz's research suggests will preferentially strengthen new associations over old ones.
@@ -202,7 +202,7 @@ Schuman's evidence that neurons possess exquisite molecular machinery for precis
 		institution: "ETH Zurich",
 		department: "Neuromorphic Engineering",
 		img_url: "/pioneers/giacomo.jpg",
-		background_url: "",
+		background_url: "/pioneers/zurich.jpg",
 		description: `Giacomo Indiveri's neuromorphic systems provide a computational model for understanding how the limbic system operates as a survival inference engine. His work showing that learning and adaptation can emerge from local circuits without centralized control mirrors the limbic system's decentralized threat-detection architecture—networks of amygdala, hippocampus, and related structures that process threat information through local comparisons rather than centralized reasoning.
 
 Indiveri's research reveals how analog neural circuits—like the limbic system—process continuous, weighted information streams to make rapid responses. This computational perspective illuminates why the limbic system can be so difficult to override with rational argument: it operates according to principles of local circuit computation that don't depend on centralized conscious control.
@@ -310,7 +310,7 @@ Li's evidence that emotional responses can be precisely targeted through underst
 		institution: "University of Melbourne",
 		department: "Neuroscience",
 		img_url: "/pioneers/Prof_Mary_Galea.jpg",
-		background_url: "",
+		background_url: "/pioneers/melbourne.avif",
 		description: `Mary Galea's research demonstrating that the adult brain retains remarkable capacity for reorganization in response to intensive experience directly validates NeuroRecursion's core assumption: that even deeply established trauma circuits can be restructured through sufficiently targeted, activity-dependent plasticity. Her work dispels the myth that adult brains are fixed, showing that organized, intensive engagement can induce measurable neural reorganization even in mature neural tissue.
 
 Galea's evidence that activity-dependent plasticity can be systematically engaged through targeted, high-intensity intervention mirrors NeuroRecursion's strategy precisely. Just as rehabilitation induces motor cortex reorganization through intensive, specific motor practice, NeuroRecursion induces limbic reorganization through intensive, specific emotional-threat practice—the recursive scenarios weighted with the five Fs of survival response.
@@ -338,7 +338,7 @@ Galea's demonstration that recovery is possible through mechanisms of activity-d
 		institution: "Harvard University",
 		department: "Psychology",
 		img_url: "/pioneers/wegner.jpg",
-		background_url: "",
+		background_url: "/pioneers/harvard-background.png",
 		description: `Daniel Wegner's "ironic process"  is the exponential mechanism that drives the subconscious through millions of recursive comparisons. His discovery that suppression paradoxically strengthens unwanted thoughts explains why traditional anxiety management—"don't think about the threat"—fails and why NeuroRecursion employs the opposite strategy: overwhelming engagement with the threat rather than avoidance.
 
 Wegner's insights into how direct mental control can backfire reveal the trap hardened limbic loops have created. The more a trauma survivor tries not to think about their trigger, the stronger the anxious preoccupation becomes. NeuroRecursion inverts this dynamic: instead of suppressing the threat memory, it employs the ironic process to force exhaustive engagement with the threat—saturation of the Bayesian inference engine with millions of high-valence scenarios that ultimately overwhelm the original traumatic association.
@@ -392,7 +392,7 @@ NeuroRecursion implements Friston's principle at clinical scale: by overwhelming
 		institution: "McGill University",
 		department: "Psychology",
 		img_url: "/pioneers/karim-nader.jpeg",
-		background_url: "",
+		background_url: "/pioneers/brainscan.avif",
 		description: `Karim Nader's discovery of memory reconsolidation provides the terminal mechanism for NeuroRecursion: his finding that traumatic memories become labile and modifiable during reactivation explains how the limbic system's hardened loops can be permanently restructured. NeuroRecursion does not simply suppress fear—it leverages Nader's reconsolidation window to fundamentally rewrite the original memory trace.
 
 Nader's work revealed that when a threat memory is reactivated, it enters a window of instability where it can be updated with new information before being reconsolidated. NeuroRecursion exploits this window by forcing the limbic system to reactivate the original trauma memory repeatedly while overwhelmingly exposing it to survival-relevant scenarios that contradict the original threat association.
@@ -420,7 +420,7 @@ Nader's elegant insight explains NeuroRecursion's specific structure: the prefro
 			"Swiss Centre for Affective Sciences, University of Geneva",
 		department: "Psychology and Neuroscience",
 		img_url: "/pioneers/Oliver_Hardt.jpg",
-		background_url: "",
+		background_url: "/pioneers/geneva.jpg",
 		description: `Olivier Hardt extended Nader's reconsolidation theory to show that emotional and fear memories—precisely what NeuroRecursion targets—are especially responsive to reconsolidation-based modification. His research demonstrates that even old, apparently stable trauma memories can be reactivated and updated if the right conditions create sufficient instability in the memory trace.
 
 Hardt's key insight is that emotionally charged memories are not more resistant to modification but rather more susceptible to it—the very intensity that makes them intrusive also makes them malleable during reconsolidation. NeuroRecursion leverages this: by reactivating the trauma memory in the context of overwhelming, wildly absurd threat scenarios, Hardt's research predicts the memory becomes highly destabilized and maximally responsive to updating.
@@ -475,15 +475,15 @@ export const sorted = [
 	"daniela-schiller",
 	"olivier-hardt",
 	"trevor-robbins",
-	"bo-li",
 	"daniel-goleman",
+	"bo-li",
 	"ann-graybiel",
 	"paul-maclean",
 	"carla-shatz",
 	"erin-schuman",
 	"mary-galea",
-	"gul-dolen",
 	"aditya-murthy",
+	"gul-dolen",
 	"yukiyasu-kamitani",
 	"giacomo-indiveri",
 ]
