@@ -1,5 +1,6 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
+	import Tag from "$lib/Tag.svelte"
 	import {browser} from "$app/environment"
 	import {Share2, ExternalLink} from "lucide-svelte"
 
@@ -94,7 +95,7 @@
 				<h4>Research Areas</h4>
 				<div class="tags">
 					{#each pioneer.researchAreas as area (area)}
-						<span class="tag">{area}</span>
+						<Tag label={area} />
 					{/each}
 				</div>
 			</div>
@@ -203,23 +204,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
-	}
-
-	.tag {
-		display: inline-block;
-		padding: 0.4rem 0.75rem;
-		background: rgba(74, 159, 216, 0.2);
-		border: 1px solid rgba(74, 159, 216, 0.4);
-		border-radius: 20px;
-		color: #a0d8ff;
-		font-size: 0.85rem;
-		font-weight: 500;
-		transition: all 0.2s ease;
-	}
-
-	.tag:hover {
-		background: rgba(74, 159, 216, 0.35);
-		border-color: rgba(74, 159, 216, 0.6);
 	}
 
 	.pioneer-actions {

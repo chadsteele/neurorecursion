@@ -362,6 +362,18 @@
 			performSearch(localQuery)
 		}
 	})
+
+	// Sync searchQuery store to localQuery when external components update it
+	$effect(() => {
+		const storeQuery = $searchQuery
+		if (storeQuery && storeQuery !== localQuery) {
+			localQuery = storeQuery
+			localStorage.setItem("searchQuery", storeQuery)
+			if ($searchOpen) {
+				performSearch(storeQuery)
+			}
+		}
+	})
 </script>
 
 {#if $searchOpen}
