@@ -250,7 +250,7 @@
 <div class="category-section">
 	<h1>Supportive Communities</h1>
 </div>
-<div id="partners" path="/partners"></div>
+<div id="support" path="/support"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
 	<Partners class="paper container" />
 </Parallax>

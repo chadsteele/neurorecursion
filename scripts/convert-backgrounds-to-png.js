@@ -11,54 +11,66 @@ const __dirname = path.dirname(__filename)
 const staticDir = path.join(__dirname, "../static")
 const srcDir = path.join(__dirname, "../src")
 
-// Get all image files recursively from all subdirectories in static/
-function getAllImageFiles(dir, relDir = "") {
-	const imageFiles = []
-	const entries = fs.readdirSync(dir)
+// Generic file discovery with pattern matching
+function getAllFiles(dir, extensions) {
+	const files = []
+	const extensionPatterns = Array.isArray(extensions)
+		? extensions
+		: [extensions]
+	const regex = new RegExp(`\\.(${extensionPatterns.join("|")})$`, "i")
+	const excludeDirs = /^(\.DS_Store|node_modules|\.git)$/
 
-	entries.forEach((entry) => {
-		if (entry === ".DS_Store") return
-		const fullPath = path.join(dir, entry)
-		const relPath = relDir ? `${relDir}/${entry}` : entry
-		const stats = fs.statSync(fullPath)
+	function scan(dirPath) {
+		try {
+			fs.readdirSync(dirPath).forEach((entry) => {
+				if (excludeDirs.test(entry)) return
+				const fullPath = path.join(dirPath, entry)
+				const stats = fs.statSync(fullPath)
 
-		if (stats.isDirectory()) {
-			// Recursively process subdirectories
-			imageFiles.push(...getAllImageFiles(fullPath, relPath))
-		} else if (/\.(jpg|jpeg|webp|avif)$/i.test(entry)) {
-			imageFiles.push({fullPath, relPath, fileName: entry})
+				if (stats.isDirectory()) {
+					scan(fullPath)
+				} else if (regex.test(entry)) {
+					files.push(fullPath)
+				}
+			})
+		} catch (err) {
+			console.error(`Error scanning ${dirPath}:`, err.message)
 		}
-	})
+	}
 
-	return imageFiles
+	scan(dir)
+	return files
 }
 
-const allImageFiles = getAllImageFiles(staticDir)
+// Get all image files and text files
+const allImageFiles = getAllFiles(staticDir, "jpg|jpeg|webp|avif").map(
+	(fullPath) => {
+		const relPath = path.relative(staticDir, fullPath)
+		return {fullPath, relPath, fileName: path.basename(fullPath)}
+	},
+)
 
 console.log(`Found ${allImageFiles.length} image files to convert`)
 
-// Image conversion mapping (for reference)
+// Image conversion mapping
 const conversionMap = {}
+let convertedCount = 0
 
 allImageFiles.forEach(({fullPath, relPath, fileName}) => {
 	const newFileName = fileName.replace(/\.(jpg|jpeg|webp|avif)$/i, ".png")
-	const newPath = path.join(path.dirname(fullPath), newFileName)
 	const newRelPath = relPath.replace(/\.(jpg|jpeg|webp|avif)$/i, ".png")
+	const newPath = path.join(path.dirname(fullPath), newFileName)
 
 	console.log(`Converting: ${relPath} → ${newRelPath}`)
 
 	try {
-		// Use ImageMagick convert command
-		// -resize 800x800> means resize to fit in 800x800 box, only if larger
 		execSync(`convert "${fullPath}" -resize 800x800\\> "${newPath}"`, {
 			stdio: "pipe",
 		})
-
-		// Delete original file
 		fs.unlinkSync(fullPath)
 		console.log(`✓ Converted and removed: ${fileName}`)
-
 		conversionMap[`/${relPath}`] = `/${newRelPath}`
+		convertedCount++
 	} catch (err) {
 		console.error(`✗ Failed to convert ${relPath}:`, err.message)
 	}
@@ -66,38 +78,30 @@ allImageFiles.forEach(({fullPath, relPath, fileName}) => {
 
 console.log("\n--- Updating code references ---\n")
 
-// Update references in codebase
-const filesToUpdate = [
-	path.join(srcDir, "lib/Conditions.js"),
-	path.join(srcDir, "routes/[[query]]/+page.svelte"),
-	path.join(srcDir, "routes/[...query]/+page.svelte"),
-	path.join(srcDir, "routes/careers/+page.svelte"),
-]
+const filesToUpdate = getAllFiles(srcDir, "js|svelte|ts|tsx|jsx|json")
 
 filesToUpdate.forEach((filePath) => {
-	if (!fs.existsSync(filePath)) {
-		console.log(`⊘ File not found: ${filePath}`)
-		return
-	}
+	if (!fs.existsSync(filePath)) return
 
 	let content = fs.readFileSync(filePath, "utf-8")
-	let updated = false
+	let hasChanges = false
 
-	// Replace all image references
 	Object.entries(conversionMap).forEach(([oldRef, newRef]) => {
 		if (content.includes(oldRef)) {
 			content = content.replaceAll(oldRef, newRef)
 			console.log(
 				`✓ Updated in ${path.basename(filePath)}: ${oldRef} → ${newRef}`,
 			)
-			updated = true
+			hasChanges = true
 		}
 	})
 
-	if (updated) {
+	if (hasChanges) {
 		fs.writeFileSync(filePath, content, "utf-8")
 	}
 })
 
-console.log("\n✓ All backgrounds converted to PNG (max 800px width)")
-console.log("✓ All code references updated")
+console.log(`\n✓ Converted ${convertedCount} images to PNG (max 800px)`)
+console.log(
+	`✓ Updated ${Object.keys(conversionMap).length} references in ${filesToUpdate.length} source files`,
+)

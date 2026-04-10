@@ -60,7 +60,8 @@
 		<div class="nav-links" class:open={isMenuOpen}>
 			<a href="/about" class="nav-link">About</a>
 			<a href="/clinical-trials" class="nav-link">Clinical Trials</a>
-			<a href="/partners" class="nav-link">Partners</a>
+			<a href="/pioneers" class="nav-link">Pioneers</a>
+			<a href="/support" class="nav-link">Support</a>
 			<a href="/signup" class="nav-link">Sign Up</a>
 			<a href="/careers" class="nav-link">Join us</a>
 		</div>
