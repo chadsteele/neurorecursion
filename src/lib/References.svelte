@@ -87,6 +87,39 @@
 				> - Institute of Medical Science; pioneering non-invasive neuromodulation
 				and brain-computer interface research
 			</li>
+			<li>
+				<strong
+					><a
+						href="https://www.iisc.ac.in"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Indian Institute of Science (IISc)</a
+					></strong
+				> (Bangalore, India) - Centre for Neuroscience; leading research
+				in computational neuroscience, neural plasticity, and brain circuit
+				dynamics
+			</li>
+			<li>
+				<strong
+					><a
+						href="https://www.tsinghua.edu.cn"
+						target="_blank"
+						rel="noopener noreferrer">Tsinghua University</a
+					></strong
+				> (China) - School of Life Sciences and McGovern Institute for Brain
+				Research; advanced research in neural circuits, brain imaging, and
+				neuroplasticity
+			</li>
+			<li>
+				<strong
+					><a
+						href="https://www.unimelb.edu.au"
+						target="_blank"
+						rel="noopener noreferrer">University of Melbourne</a
+					></strong
+				> (Australia) - Department of Anatomy and Neuroscience; pioneering
+				research in brain plasticity, neuroinflammation, and neurorehabilitation
+			</li>
 		</ul>
 	</div>
 </section>
