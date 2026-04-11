@@ -39,6 +39,33 @@ export async function load({params}) {
 		return `https://neurorecursion.com${imagePath}`
 	}
 
+	// Helper to get watermarked image URL via /api/image endpoint
+	const getWatermarkedImageUrl = (imagePath) => {
+		// If no image path provided, use ogfamily.png as fallback (without watermark)
+		const pathToUse = imagePath || "/ogfamily.png"
+
+		// Don't watermark ogfamily.png
+		if (pathToUse === "/ogfamily.png") {
+			return getAbsoluteImageUrl(pathToUse)
+		}
+
+		const absolutePath = getAbsoluteImageUrl(pathToUse)
+		// Encode the image URL for the query parameter
+		const encodedUrl = encodeURIComponent(absolutePath)
+		return `https://neurorecursion.com/api/image?url=${encodedUrl}&watermark=true`
+	}
+
+	// If no path in URL, return default with ogfamily.png
+	if (!queryPath) {
+		return {
+			ogTitle: "Sign up for remote clinical trials. FREE!",
+			ogDescription:
+				"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity.",
+			ogImage: getAbsoluteImageUrl("/ogfamily.png"),
+			ogUrl: "https://neurorecursion.com",
+		}
+	}
+
 	// Try to find matching condition by path
 	const condition = Conditions.find(
 		(c) => c.path.toLowerCase() === pathToFind.toLowerCase(),
@@ -47,7 +74,7 @@ export async function load({params}) {
 		return {
 			ogTitle: condition.name,
 			ogDescription: condition.description,
-			ogImage: getAbsoluteImageUrl(condition.background_image),
+			ogImage: getWatermarkedImageUrl(condition.background_image),
 			ogUrl: `https://neurorecursion.com${condition.path}`,
 		}
 	}
@@ -61,19 +88,19 @@ export async function load({params}) {
 		return {
 			ogTitle: pioneer.name,
 			ogDescription: description,
-			ogImage: getAbsoluteImageUrl(
+			ogImage: getWatermarkedImageUrl(
 				pioneer.img_url || pioneer.background_url || "",
 			),
 			ogUrl: `https://neurorecursion.com${pioneer.path}`,
 		}
 	}
 
-	// Default values
+	// Default values (no matching condition or pioneer found)
 	return {
 		ogTitle: "Sign up for remote clinical trials. FREE!",
 		ogDescription:
 			"Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity.",
-		ogImage: "",
+		ogImage: getWatermarkedImageUrl(""),
 		ogUrl: "https://neurorecursion.com",
 	}
 }
