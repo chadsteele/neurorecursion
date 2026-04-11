@@ -3,16 +3,12 @@ import fs from "fs/promises"
 import path from "path"
 import {fileURLToPath} from "url"
 import {dirname} from "path"
+import {log} from "console"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-async function processImage(
-	imageBuffer,
-	width = 1080,
-	height = 566,
-	watermarkText = null,
-) {
+async function processImage(imageBuffer, width = 1080, height = 566) {
 	try {
 		// Get image metadata
 		const metadata = await sharp(imageBuffer).metadata()
@@ -34,7 +30,6 @@ async function processImage(
 		}
 
 		// Crop and resize
-		let composites = []
 		const croppedImage = await sharp(imageBuffer)
 			.extract({
 				left: Math.round(cropX),
@@ -46,52 +41,51 @@ async function processImage(
 			.png()
 			.toBuffer()
 
-		// If watermark requested, add it
-		if (watermarkText) {
-			const brainSize = 100
-			const margin = 3
-			const composites = []
+		// Add logo to lower left corner
+		const logoSize = Math.round(width * 0.22) // 22% of image width (doubled)
+		const margin = 0
+		const logoPath = path.join(process.cwd(), "static/logo.blue.png")
 
-			try {
-				// Load and add brain SVG logo
-				const brainPath = path.join(process.cwd(), "static/brain.svg")
-				const brainSvgStr = await fs.readFile(brainPath, "utf8")
+		// Get logo metadata to preserve aspect ratio
+		const logoMetadata = await sharp(logoPath).metadata()
+		const logoAspect = logoMetadata.width / logoMetadata.height
 
-				// Clean SVG content
-				const cleanedSvg = brainSvgStr
-					.replace(/<\?xml[^?]*\?>/, "")
-					.replace(/<svg[^>]*>/, "")
-					.replace(/<\/svg>/, "")
-
-				// Wrap SVG with proper dimensions
-				const wrappedSvg = `<svg width="${brainSize}" height="${brainSize}" viewBox="0 0 497 491" xmlns="http://www.w3.org/2000/svg">${cleanedSvg}</svg>`
-
-				const brainBuffer = await sharp(Buffer.from(wrappedSvg))
-					.resize(brainSize, brainSize, {fit: "cover"})
-					.png()
-					.toBuffer()
-
-				// Add brain to lower left corner
-				composites.push({
-					input: brainBuffer,
-					left: margin,
-					top: height - brainSize - margin,
-				})
-			} catch (err) {
-				console.warn("Brain SVG error:", err.message)
-			}
-
-			// Apply all composites to the image
-			const finalBuffer = await sharp(croppedImage)
-				.composite(composites)
-				.png()
-				.toBuffer()
-
-			return finalBuffer
+		// Calculate actual logo dimensions after fit: "contain"
+		let logoDisplayWidth, logoDisplayHeight
+		if (logoAspect > 1) {
+			// Logo is wider than tall
+			logoDisplayWidth = logoSize
+			logoDisplayHeight = Math.round(logoSize / logoAspect)
+		} else {
+			// Logo is taller than wide
+			logoDisplayWidth = Math.round(logoSize * logoAspect)
+			logoDisplayHeight = logoSize
 		}
 
-		// Return cropped image without watermark
-		return croppedImage
+		const logoBuffer = await sharp(logoPath)
+			.resize(logoDisplayWidth, logoDisplayHeight, {
+				fit: "contain",
+				background: {r: 0, g: 0, b: 0, alpha: 0},
+			})
+			.png()
+			.toBuffer()
+
+		// Calculate position for logo
+		const logoLeft = margin
+		const logoTop = height - logoDisplayHeight - margin
+
+		const finalBuffer = await sharp(croppedImage)
+			.composite([
+				{
+					input: logoBuffer,
+					left: logoLeft,
+					top: logoTop,
+				},
+			])
+			.png()
+			.toBuffer()
+
+		return finalBuffer
 	} catch (err) {
 		console.error("Process image error:", err)
 		throw err
@@ -103,7 +97,6 @@ export async function GET({url}) {
 		const imageUrl = url.searchParams.get("url")
 		const width = parseInt(url.searchParams.get("width") || "1080")
 		const height = parseInt(url.searchParams.get("height") || "566")
-		const watermark = url.searchParams.get("watermark")
 
 		if (!imageUrl) {
 			return new Response(
@@ -134,13 +127,8 @@ export async function GET({url}) {
 			imageBuffer = await fs.readFile(filePath)
 		}
 
-		// Process image with optional watermark
-		const finalBuffer = await processImage(
-			imageBuffer,
-			width,
-			height,
-			watermark,
-		)
+		// Process image with logo
+		const finalBuffer = await processImage(imageBuffer, width, height)
 
 		return new Response(finalBuffer, {
 			headers: {
