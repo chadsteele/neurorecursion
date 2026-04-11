@@ -101,6 +101,13 @@ export async function GET({url}) {
 		const width = parseInt(url.searchParams.get("width") || "1080")
 		const height = parseInt(url.searchParams.get("height") || "566")
 
+		console.log("Image API called with:", {
+			imageUrl,
+			width,
+			height,
+			fullUrl: url.toString(),
+		})
+
 		if (!imageUrl) {
 			return new Response(
 				JSON.stringify({error: "url parameter required"}),
@@ -132,6 +139,11 @@ export async function GET({url}) {
 				"../../../../static",
 				cleanImageUrl,
 			)
+			console.log("Loading local file:", {
+				imageUrl,
+				cleanImageUrl,
+				filePath,
+			})
 			imageBuffer = await fs.readFile(filePath)
 		}
 
@@ -142,9 +154,15 @@ export async function GET({url}) {
 			headers: {
 				"Content-Type": "image/png",
 				"Cache-Control":
+					"no-cache, no-store, must-revalidate, max-age=0, private",
+				"CDN-Cache-Control":
 					"no-cache, no-store, must-revalidate, max-age=0",
 				Pragma: "no-cache",
 				Expires: "0",
+				Age: "0",
+				Vary: "url",
+				"X-Content-Type-Options": "nosniff",
+				ETag: `"${Date.now()}-${Math.random()}"`,
 			},
 		})
 	} catch (err) {
