@@ -23,6 +23,7 @@
 			width: "1080",
 			height: "566",
 			watermark: "NeuroRecursion.com",
+			t: Date.now(), // Cache-busting timestamp
 		})
 		return `/api/image?${params.toString()}`
 	}

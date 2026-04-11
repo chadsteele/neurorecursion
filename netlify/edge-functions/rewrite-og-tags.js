@@ -157,6 +157,7 @@ export default async (request, context) => {
 		pathname === "/consent" ||
 		pathname === "/success" ||
 		pathname.startsWith("/static/") ||
+		pathname.startsWith("/api/") ||
 		pathname.startsWith("/images/") ||
 		pathname.endsWith(".js") ||
 		pathname.endsWith(".css")
