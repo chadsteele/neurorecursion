@@ -126,7 +126,12 @@ export async function GET({url}) {
 			imageBuffer = Buffer.from(await response.arrayBuffer())
 		} else {
 			// Local file path
-			const filePath = path.join(process.cwd(), "static", imageUrl)
+			const cleanImageUrl = imageUrl.replace(/^\//, "")
+			const filePath = path.join(
+				__dirname,
+				"../../../../static",
+				cleanImageUrl,
+			)
 			imageBuffer = await fs.readFile(filePath)
 		}
 
@@ -136,7 +141,10 @@ export async function GET({url}) {
 		return new Response(finalBuffer, {
 			headers: {
 				"Content-Type": "image/png",
-				"Cache-Control": "public, max-age=60",
+				"Cache-Control":
+					"no-cache, no-store, must-revalidate, max-age=0",
+				Pragma: "no-cache",
+				Expires: "0",
 			},
 		})
 	} catch (err) {
