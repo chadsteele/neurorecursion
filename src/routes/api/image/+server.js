@@ -46,7 +46,7 @@ async function processImage(imageBuffer, width = 1080, height = 566) {
 		const margin = 0
 		const logoPath = path.join(
 			__dirname,
-			"../../../../static/logo.blue.png",
+			"../../../../static/logo.blue.shadows.png",
 		)
 
 		// Get logo metadata to preserve aspect ratio
