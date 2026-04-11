@@ -123,8 +123,13 @@ async function applyWatermark(imageBuffer) {
 
 export async function GET({params, url}) {
 	try {
-		const imagePath = params.path
+		let imagePath = params.path
 		const watermark = url.searchParams.get("watermark") === "true"
+
+		// Handle array of path segments (from [...path])
+		if (Array.isArray(imagePath)) {
+			imagePath = imagePath.join("/")
+		}
 
 		if (!imagePath) {
 			return new Response(JSON.stringify({error: "path required"}), {
@@ -133,9 +138,11 @@ export async function GET({params, url}) {
 			})
 		}
 
-		// Load local file from static directory
-		const projectRoot = path.resolve(__dirname, "../../../../../")
-		const filePath = path.join(projectRoot, "static", imagePath)
+		// Remove trailing slash if present
+		imagePath = imagePath.replace(/\/$/, "")
+
+		// Load local file from static directory - use process.cwd() for reliability
+		const filePath = path.join(process.cwd(), "static", imagePath)
 		const imageBuffer = await fs.readFile(filePath)
 
 		// Apply watermark if requested
