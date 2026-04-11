@@ -84,28 +84,41 @@ async function processImage(
 				console.warn("Brain SVG error:", err.message)
 			}
 
-			const textSvg = `<svg width="${textWidth}" height="${textHeight}" xmlns="http://www.w3.org/2000/svg">
-				<defs>
-					<filter id="shadow">
-						<feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-						<feOffset dx="2" dy="2" result="offsetblur"/>
-						<feComponentTransfer in="offsetblur">
-							<feFuncA type="linear" slope="0.5"/>
-						</feComponentTransfer>
-						<feMerge>
-							<feMergeNode in="offsetblur"/>
-							<feMergeNode in="SourceGraphic"/>
-						</feMerge>
-					</filter>
-				</defs>
-				<text x="5" y="48" font-size="${fontSize}" font-family="Arial, sans-serif" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
-			</svg>`
+			// Create text SVG using Liberation Sans - available on both local and Netlify Ubuntu
+			const textSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${Math.ceil(textWidth)}" height="${Math.ceil(textHeight)}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer in="offsetblur">
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <text x="5" y="${fontSize}" font-size="${fontSize}px" font-family="Liberation Sans" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
+</svg>`
 
-			const textBuffer = await sharp(Buffer.from(textSvg))
-				.resize(textWidth, textHeight, {fit: "contain"})
-				.png()
-				.toBuffer()
+			let textBuffer
+			try {
+				textBuffer = await sharp(Buffer.from(textSvg), {density: 150})
+					.resize(textWidth, textHeight, {
+						fit: "contain",
+						background: {r: 0, g: 0, b: 0, alpha: 0},
+					})
+					.png()
+					.toBuffer()
+			} catch (err) {
+				console.error("SVG text rendering failed:", err.message)
+				throw err // Let this error propagate so we can debug
+			}
 
+			// Only add text buffer if rendering succeeded
 			composites.push({
 				input: textBuffer,
 				left: Math.round(brainSize),

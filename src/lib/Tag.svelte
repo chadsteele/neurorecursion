@@ -12,9 +12,9 @@
 	}
 </script>
 
-<span class="tag" onclick={handleTagClick}>
+<button type="button" class="tag" onclick={handleTagClick}>
 	{label}
-</span>
+</button>
 
 <style>
 	.tag {
@@ -38,5 +38,10 @@
 
 	.tag:active {
 		transform: scale(0.98);
+	}
+
+	.tag:focus-visible {
+		outline: 2px solid rgba(74, 159, 216, 0.8);
+		outline-offset: 2px;
 	}
 </style>

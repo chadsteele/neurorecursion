@@ -239,12 +239,14 @@
 	</p>
 </section>
 
-{#each sortedPioneers as pioneerId (pioneerId)}
-	{@const pioneer = PioneersMap[pioneerId]}
-	{#if pioneer}
-		<PioneerCard {pioneer} />
-	{/if}
-{/each}
+<div class="pioneers-grid">
+	{#each sortedPioneers as pioneerId (pioneerId)}
+		{@const pioneer = PioneersMap[pioneerId]}
+		{#if pioneer}
+			<PioneerCard {pioneer} />
+		{/if}
+	{/each}
+</div>
 
 <div class="category-section">
 	<h1>Supportive Communities</h1>

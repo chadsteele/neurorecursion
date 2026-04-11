@@ -214,7 +214,6 @@
 							<label
 								for={`consent-${agreement.id}`}
 								class="agreement-title"
-								onclick={(e) => e.stopPropagation()}
 							>
 								{agreement.title}
 							</label>

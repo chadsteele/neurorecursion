@@ -175,11 +175,11 @@
 		font-size: 0.95rem;
 	}
 
-	.description div p {
+	:global(.description div p) {
 		margin-bottom: 1rem;
 	}
 
-	.description div p:last-child {
+	:global(.description div p:last-child) {
 		margin-bottom: 0;
 	}
 
