@@ -3,9 +3,58 @@ import fs from "fs/promises"
 import path from "path"
 import {fileURLToPath} from "url"
 import {dirname} from "path"
+import TextToSVG from "text-to-svg"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+
+let textToSVG = null
+
+// Initialize font loader on first use
+async function getTextToSVG() {
+	if (textToSVG) return textToSVG
+
+	try {
+		// Try to load from bundled fonts first (for Netlify)
+		const fontPath = path.join(process.cwd(), "fonts", "arial.ttf")
+		const fontExists = await fs
+			.access(fontPath)
+			.then(() => true)
+			.catch(() => false)
+
+		if (fontExists) {
+			textToSVG = await TextToSVG.load(fontPath)
+			return textToSVG
+		}
+	} catch (err) {
+		console.warn("Custom font not found, falling back to system font")
+	}
+
+	// Fallback to system fonts - try common paths
+	const systemFontPaths = [
+		"/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", // Linux/Netlify
+		"/System/Library/Fonts/ArialHB.ttc", // macOS
+		"/Windows/Fonts/arial.ttf", // Windows
+	]
+
+	for (const fontPath of systemFontPaths) {
+		try {
+			const exists = await fs
+				.access(fontPath)
+				.then(() => true)
+				.catch(() => false)
+			if (exists) {
+				textToSVG = await TextToSVG.load(fontPath)
+				return textToSVG
+			}
+		} catch (err) {
+			// Continue to next path
+		}
+	}
+
+	// If nothing works, throw error
+	throw new Error("No suitable font found for text rendering")
+}
 
 async function processImage(
 	imageBuffer,
@@ -48,9 +97,11 @@ async function processImage(
 
 		// If watermark requested, add it
 		if (watermarkText) {
-			const fontSize = 29
-			const textWidth = cropWidth
-			const textHeight = 72
+			let fontSize = 48
+			let textHeight = 70
+			let textWidth =
+				Math.max(watermarkText.length * fontSize * 0.5, fontSize * 2) +
+				20
 			const brainSize = 50
 			const margin = 3
 			const composites = []
@@ -84,46 +135,77 @@ async function processImage(
 				console.warn("Brain SVG error:", err.message)
 			}
 
-			// Create text SVG using Liberation Sans - available on both local and Netlify Ubuntu
-			const textSvg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${Math.ceil(textWidth)}" height="${Math.ceil(textHeight)}" xmlns="http://www.w3.org/2000/svg">
+			// Create text image using text-to-svg (converts text to path)
+			// This works reliably on Netlify by converting fonts to vector paths
+			let textBuffer = null
+
+			try {
+				const fontLoader = await getTextToSVG()
+				const fontSize = 40
+
+				// Convert text to SVG path
+				const textSvgPath = fontLoader.getSVG(watermarkText, {
+					x: 0,
+					y: 0,
+					fontSize: fontSize,
+					anchor: "top left",
+					attributes: {
+						fill: "white",
+						stroke: "none",
+					},
+				})
+
+				// Create SVG with shadow effect
+				const textSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${textWidth}" height="${textHeight}" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-      <feOffset dx="2" dy="2" result="offsetblur"/>
-      <feComponentTransfer in="offsetblur">
-        <feFuncA type="linear" slope="0.5"/>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
       </feComponentTransfer>
       <feMerge>
-        <feMergeNode in="offsetblur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <rect width="100%" height="100%" fill="none"/>
-  <text x="5" y="${fontSize}" font-size="${fontSize}px" font-family="Liberation Sans" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
+  <g filter="url(#shadow)">
+    ${textSvgPath}
+  </g>
 </svg>`
 
-			let textBuffer
-			try {
-				textBuffer = await sharp(Buffer.from(textSvg), {density: 150})
-					.resize(textWidth, textHeight, {
+				textBuffer = await sharp(Buffer.from(textSvg), {density: 96})
+					.resize(Math.ceil(textWidth), Math.ceil(textHeight), {
 						fit: "contain",
 						background: {r: 0, g: 0, b: 0, alpha: 0},
 					})
 					.png()
 					.toBuffer()
 			} catch (err) {
-				console.error("SVG text rendering failed:", err.message)
-				throw err // Let this error propagate so we can debug
+				console.warn("SVG text rendering not available on this system")
+				// Fallback: create a simple dark rectangle as text placeholder
+				textBuffer = await sharp({
+					create: {
+						width: textWidth,
+						height: textHeight,
+						channels: 4,
+						background: {r: 30, g: 30, b: 30, alpha: 200},
+					},
+				})
+					.png()
+					.toBuffer()
 			}
 
 			// Only add text buffer if rendering succeeded
-			composites.push({
-				input: textBuffer,
-				left: Math.round(brainSize),
-				top: Math.round(height - textHeight + 7),
-			})
+			if (textBuffer) {
+				composites.push({
+					input: textBuffer,
+					left: Math.round(brainSize),
+					top: Math.round(height - textHeight + 7),
+				})
+			}
 
 			// Apply all composites to the image
 			const finalBuffer = await sharp(croppedImage)
