@@ -136,7 +136,7 @@ export async function GET({url}) {
 		return new Response(finalBuffer, {
 			headers: {
 				"Content-Type": "image/png",
-				"Cache-Control": "public, max-age=3600",
+				"Cache-Control": "public, max-age=60",
 			},
 		})
 	} catch (err) {
