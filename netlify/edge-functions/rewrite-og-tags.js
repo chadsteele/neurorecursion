@@ -1,155 +1,81 @@
-// Minimal conditions data for og tag matching
+// Import shared metadata for both conditions and pioneers
+import {
+	CONDITIONS_METADATA,
+	PIONEERS_METADATA,
+} from "../../src/data/conditions-metadata.js"
+
+// Map of condition IDs to their names (extracted from Conditions.js)
+const CONDITIONS_NAMES = {
+	"depressed-suicidal-major-depressive-disorder":
+		"Depressed, Suicidal and/or Major Depressive Disorder",
+	"developmental-trauma-childhood-trauma":
+		"Developmental Trauma (Childhood Trauma)",
+	"divorce-relational-trauma-family-systems-stress":
+		"Divorce? - Relational Trauma and Family Systems Stress",
+	"ptsd-post-traumatic-stress-disorder":
+		"PTSD - Post-Traumatic Stress Disorder",
+	"migraine-headache": "Migraine - Chronic Headache",
+	"stutter-fluency-stammer": "Stutter - Speech Fluency",
+	"arachnophobia-fear-spiders": "Arachnophobia - Fear of Spiders",
+	"ophidiophobia-fear-snakes": "Ophidiophobia - Fear of Snakes",
+	"acrophobia-fear-heights": "Acrophobia - Fear of Heights",
+	"glossophobia-fear-public-speaking":
+		"Glossophobia - Fear of Public Speaking",
+	"agoraphobia-social-phobia": "Agoraphobia/Social Phobia",
+	"aerophobia-fear-flying": "Aerophobia - Fear of Flying",
+	"trypanophobia-fear-needles": "Trypanophobia - Fear of Needles",
+	"cynophobia-fear-dogs": "Cynophobia - Fear of Dogs",
+	"claustrophobia-fear-enclosed-spaces":
+		"Claustrophobia - Fear of Enclosed Spaces",
+	"astraphobia-fear-storms": "Astraphobia - Fear of Storms",
+	"asd-autism-spectrum": "ASD - Autism Spectrum Disorder",
+	"adhd-attention-deficit": "ADHD - Attention Deficit Hyperactivity Disorder",
+	"bipolar-mood-disorder": "Bipolar - Mood Disorder",
+	"rage-anger-ied": "Rage - Intermittent Explosive Disorder",
+	"addiction-substance-abuse": "Addiction - Substance Abuse",
+	"tics-tourette": "Tics - Tourette Syndrome",
+	"epilepsy-seizure": "Epilepsy - Seizure Disorder",
+	"ocd-obsessive-compulsive": "OCD - Obsessive-Compulsive Disorder",
+	"spd-sensory-processing-disorder": "SPD - Sensory Processing Disorder",
+	"misophonia-selective-sound": "Misophonia - Selective Sound Sensitivity",
+	"mutism-selective-silence": "Selective Mutism - Communication Disorder",
+	"dyspraxia-motor-coordination": "Dyspraxia - Motor Coordination Disorder",
+	"dyscalculia-math-numbers": "Dyscalculia - Math Learning Disorder",
+	"dysgraphia-writing-handwriting": "Dysgraphia - Writing Disorder",
+}
+
+// Map of pioneer IDs to their names (extracted from Pioneers.js)
+const PIONEERS_NAMES = {
+	"paul-maclean": "Paul MacLean",
+	"daniel-goleman": "Daniel Goleman",
+	"gul-dolen": "Gül Dölen",
+	"ann-graybiel": "Ann Graybiel",
+	"carla-shatz": "Carla Shatz",
+	"trevor-robbins": "Trevor Robbins",
+	"erin-schuman": "Erin Schuman",
+	"giacomo-indiveri": "Giacomo Indiveri",
+	"yukiyasu-kamitani": "Yukiyasu Kamitani",
+	"aditya-murthy": "Aditya Murthy",
+	"bo-li": "Bo Li",
+	"mary-galea": "Mary Galea",
+	"daniel-wegner": "Daniel M. Wegner",
+	"karl-friston": "Karl Friston",
+	"karim-nader": "Karim Nader",
+	"olivier-hardt": "Olivier Hardt",
+	"daniela-schiller": "Daniela Schiller",
+}
+
+// Combine all routes: conditions and pioneers
+// This ensures paths and background images stay in sync
 const CONDITIONS = [
-	{
-		id: "depressed-suicidal-major-depressive-disorder",
-		path: "/depression/suicidal",
-		name: "Depressed, Suicidal and/or Major Depressive Disorder",
-	},
-	{
-		id: "developmental-trauma-childhood-trauma",
-		path: "/trauma",
-		name: "Developmental Trauma (Childhood Trauma)",
-	},
-	{
-		id: "divorce-relational-trauma-family-systems-stress",
-		path: "/divorce/love/family/relationships",
-		name: "Divorce? - Relational Trauma and Family Systems Stress",
-	},
-	{
-		id: "ptsd-post-traumatic-stress-disorder",
-		path: "/ptsd/post/traumatic",
-		name: "PTSD - Post-Traumatic Stress Disorder",
-	},
-	{
-		id: "migraine-headache",
-		path: "/migraine/headache",
-		name: "Migraine - Chronic Headache",
-	},
-	{
-		id: "stutter-fluency-stammer",
-		path: "/stutter/fluency/stammer",
-		name: "Stutter - Speech Fluency",
-	},
-	{
-		id: "arachnophobia-fear-spiders",
-		path: "/spider/arachnophobia/fear/phobia",
-		name: "Arachnophobia - Fear of Spiders",
-	},
-	{
-		id: "ophidiophobia-fear-snakes",
-		path: "/snake/ophidiophobia/fear/phobia",
-		name: "Ophidiophobia - Fear of Snakes",
-	},
-	{
-		id: "acrophobia-fear-heights",
-		path: "/height/acrophobia/fear/phobia",
-		name: "Acrophobia - Fear of Heights",
-	},
-	{
-		id: "glossophobia-fear-public-speaking",
-		path: "/speaking/glossophobia/fear/phobia",
-		name: "Glossophobia - Fear of Public Speaking",
-	},
-	{
-		id: "agoraphobia-social-phobia",
-		path: "/agoraphobia/social/phobia/crowds/open",
-		name: "Agoraphobia/Social Phobia",
-	},
-	{
-		id: "aerophobia-fear-flying",
-		path: "/flying/aerophobia/fear/phobia",
-		name: "Aerophobia - Fear of Flying",
-	},
-	{
-		id: "trypanophobia-fear-needles",
-		path: "/needle/trypanophobia/fear/phobia",
-		name: "Trypanophobia - Fear of Needles",
-	},
-	{
-		id: "cynophobia-fear-dogs",
-		path: "/dog/cynophobia/fear/phobia",
-		name: "Cynophobia - Fear of Dogs",
-	},
-	{
-		id: "claustrophobia-fear-enclosed-spaces",
-		path: "/enclosed/claustrophobia/fear/phobia",
-		name: "Claustrophobia - Fear of Enclosed Spaces",
-	},
-	{
-		id: "astraphobia-fear-storms",
-		path: "/storm/astraphobia/fear/phobia",
-		name: "Astraphobia - Fear of Storms",
-	},
-	{
-		id: "asd-autism-spectrum",
-		path: "/asd/autism/aspergers/spectrum",
-		name: "ASD - Autism Spectrum Disorder",
-	},
-	{
-		id: "adhd-attention-deficit",
-		path: "/adhd/attention/deficit/hyperactivity",
-		name: "ADHD - Attention Deficit Hyperactivity Disorder",
-	},
-	{
-		id: "bipolar-mood-disorder",
-		path: "/bipolar",
-		name: "Bipolar - Mood Disorder",
-	},
-	{
-		id: "rage-anger-ied",
-		path: "/rage/anger/ied",
-		name: "Rage - Intermittent Explosive Disorder",
-	},
-	{
-		id: "addiction-substance-abuse",
-		path: "/addiction/substance/abuse",
-		name: "Addiction - Substance Abuse",
-	},
-	{
-		id: "tics-tourette",
-		path: "/tics/tourette",
-		name: "Tics - Tourette Syndrome",
-	},
-	{
-		id: "epilepsy-seizure",
-		path: "/epilepsy/seizure",
-		name: "Epilepsy - Seizure Disorder",
-	},
-	{
-		id: "ocd-obsessive-compulsive",
-		path: "/ocd/obsessive/compulsive",
-		name: "OCD - Obsessive-Compulsive Disorder",
-	},
-	{
-		id: "spd-sensory-processing",
-		path: "/spd/sensory/processing",
-		name: "SPD - Sensory Processing Disorder",
-	},
-	{
-		id: "misophonia-selective-sound",
-		path: "/misophonia/selective/sound/sensitivity",
-		name: "Misophonia - Selective Sound Sensitivity",
-	},
-	{
-		id: "mutism-selective-silence",
-		path: "/mutism/selective/silence",
-		name: "Selective Mutism - Communication Disorder",
-	},
-	{
-		id: "dyspraxia-motor-coordination",
-		path: "/dyspraxia/motor/coordination",
-		name: "Dyspraxia - Motor Coordination Disorder",
-	},
-	{
-		id: "dyscalculia-math-numbers",
-		path: "/dyscalculia/math/numbers",
-		name: "Dyscalculia - Math Learning Disorder",
-	},
-	{
-		id: "dysgraphia-writing-handwriting",
-		path: "/dysgraphia/writing/handwriting",
-		name: "Dysgraphia - Writing Disorder",
-	},
+	...CONDITIONS_METADATA.map((meta) => ({
+		...meta,
+		name: CONDITIONS_NAMES[meta.id] || "",
+	})),
+	...PIONEERS_METADATA.map((meta) => ({
+		...meta,
+		name: PIONEERS_NAMES[meta.id] || "",
+	})),
 ]
 
 /**
@@ -285,6 +211,15 @@ export default async (request, context) => {
 		html = html.replace(
 			/<meta\s+property="og:description"[^>]*>/i,
 			`<meta property="og:description" content="A comprehensive research program addressing ${matchedCondition.name.toLowerCase()}" />`,
+		)
+
+		// Replace og:image - use watermarked image from API if background image exists
+		const ogImageUrl = matchedCondition.background_image
+			? `https://neurorecursion.com/api/image?url=https://neurorecursion.com${matchedCondition.background_image}&width=1200&height=630&watermark=true`
+			: "https://neurorecursion.com/ogfamily.png"
+		html = html.replace(
+			/<meta\s+property="og:image"[^>]*>/i,
+			`<meta property="og:image" content="${ogImageUrl}" />`,
 		)
 
 		// Create new response with modified headers
