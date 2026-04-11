@@ -17,7 +17,7 @@
 {#if showShareModal}
 	<ShareModal
 		title={pioneer.name}
-		description={`${pioneer.title} at ${pioneer.institution}`}
+		description={`${pioneer.title} at ${pioneer.institution}\n${pioneer.description}`}
 		imageUrl={pioneer.img_url || pioneer.background_url || ""}
 		url={typeof window !== "undefined"
 			? `${window.location.origin}${pioneer.path}`

@@ -1,4 +1,6 @@
 <script>
+	import {imageUrlToBase64} from "./Watermark.js"
+
 	let {
 		title = "",
 		description = "",
@@ -6,6 +8,11 @@
 		url = "",
 		onClose = () => {},
 	} = $props()
+
+	// Convert \n to <br/> tags for HTML rendering
+	function formatDescription(text) {
+		return text.replace(/\n/g, "<br/>")
+	}
 
 	let copied = $state(false)
 	let copyTimeout
@@ -20,180 +27,6 @@
 			})
 		}
 	})
-
-	async function imageUrlToBase64(imageUrlParam) {
-		if (!imageUrlParam) return ""
-		try {
-			// Handle relative URLs
-			const absoluteUrl = imageUrlParam.startsWith("http")
-				? imageUrlParam
-				: `${typeof window !== "undefined" ? window.location.origin : ""}${imageUrlParam}`
-
-			// Load main image
-			const img = new Image()
-			img.crossOrigin = "anonymous"
-
-			return new Promise((resolve, reject) => {
-				img.onload = async () => {
-					try {
-						// Crop image to 1080x566 pixels (centered)
-						const targetWidth = 1080
-						const targetHeight = 566
-						const imgAspect = img.width / img.height
-						const targetAspect = targetWidth / targetHeight
-
-						let cropWidth, cropHeight, cropX, cropY
-
-						if (imgAspect > targetAspect) {
-							// Image is wider - crop width
-							cropHeight = img.height
-							cropWidth = img.height * targetAspect
-							cropX = (img.width - cropWidth) / 2
-							cropY = 0
-						} else {
-							// Image is taller - crop height
-							cropWidth = img.width
-							cropHeight = img.width / targetAspect
-							cropX = 0
-							cropY = (img.height - cropHeight) / 2
-						}
-
-						// Create canvas with target dimensions
-						const canvas = document.createElement("canvas")
-						canvas.width = targetWidth
-						canvas.height = targetHeight
-						const ctx = canvas.getContext("2d")
-
-						// Draw cropped and scaled image
-						ctx.drawImage(
-							img,
-							cropX,
-							cropY,
-							cropWidth,
-							cropHeight,
-							0,
-							0,
-							targetWidth,
-							targetHeight,
-						)
-
-						// Load brain SVG for watermark
-						const brainSvg = new Image()
-						brainSvg.crossOrigin = "anonymous"
-
-						const drawAndFinalize = () => {
-							const text = "NeuroRecursion.com"
-							const textWidth = targetWidth * 0.33
-							const fontSize = Math.floor(textWidth / 6)
-							const padding = 3
-							const textY = targetHeight - padding
-
-							// Calculate brain size and position
-							const brainHeight = fontSize * 1.2
-							const brainWidth =
-								(brainSvg.width / brainSvg.height) * brainHeight
-							const brainX = padding
-							const brainY = targetHeight - padding - brainHeight
-
-							// Draw brain SVG
-							ctx.drawImage(
-								brainSvg,
-								brainX,
-								brainY,
-								brainWidth,
-								brainHeight,
-							)
-
-							// Text position to right of brain
-							const textX = brainX + brainWidth + padding
-
-							ctx.font = `bold ${fontSize}px Arial, sans-serif`
-							ctx.textBaseline = "bottom"
-							ctx.textAlign = "left"
-
-							// Draw black shadow
-							ctx.fillStyle = "rgba(0, 0, 0, 0.7)"
-							ctx.shadowColor = "rgba(0, 0, 0, 0.7)"
-							ctx.shadowBlur = 3
-							ctx.shadowOffsetX = 1
-							ctx.shadowOffsetY = 1
-							ctx.fillText(text, textX, textY)
-
-							// Draw white text
-							ctx.fillStyle = "white"
-							ctx.shadowColor = "transparent"
-							ctx.fillText(text, textX, textY)
-
-							// Convert canvas to base64
-							canvas.toBlob((blob) => {
-								const reader = new FileReader()
-								reader.onloadend = () => resolve(reader.result)
-								reader.readAsDataURL(blob)
-							}, "image/png")
-						}
-
-						const drawTextOnly = () => {
-							const text = "NeuroRecursion.com"
-							const textWidth = targetWidth * 0.33
-							const fontSize = Math.floor(textWidth / 6)
-							const padding = 3
-							const textX = padding
-							const textY = targetHeight - padding
-
-							ctx.font = `bold ${fontSize}px Arial, sans-serif`
-							ctx.textBaseline = "bottom"
-							ctx.textAlign = "left"
-
-							// Draw black shadow
-							ctx.fillStyle = "rgba(0, 0, 0, 0.7)"
-							ctx.shadowColor = "rgba(0, 0, 0, 0.7)"
-							ctx.shadowBlur = 3
-							ctx.shadowOffsetX = 1
-							ctx.shadowOffsetY = 1
-							ctx.fillText(text, textX, textY)
-
-							// Draw white text
-							ctx.fillStyle = "white"
-							ctx.shadowColor = "transparent"
-							ctx.fillText(text, textX, textY)
-
-							// Convert canvas to base64
-							canvas.toBlob((blob) => {
-								const reader = new FileReader()
-								reader.onloadend = () => resolve(reader.result)
-								reader.readAsDataURL(blob)
-							}, "image/png")
-						}
-
-						brainSvg.onload = drawAndFinalize
-						brainSvg.onerror = () => {
-							console.warn(
-								"Brain SVG not found, drawing text only",
-							)
-							drawTextOnly()
-						}
-
-						const brainUrl =
-							typeof window !== "undefined"
-								? `${window.location.origin}/brain.svg`
-								: "/brain.svg"
-						brainSvg.src = brainUrl
-					} catch (err) {
-						console.error("Error processing image:", err)
-						reject(err)
-					}
-				}
-				img.onerror = () => {
-					console.error("Failed to load image:", absoluteUrl)
-					reject(new Error(`Failed to load image: ${absoluteUrl}`))
-				}
-				img.src = absoluteUrl
-			})
-		} catch (err) {
-			console.error("Failed to convert image to base64:", err)
-			return ""
-		}
-	}
 
 	async function copyToClipboard() {
 		copying = true
@@ -214,13 +47,14 @@
 			const urlHtml = url
 				? `<p style="margin: 0; font-size: 12px; color: #0a66c2;"><a href="${url}" style="color: #0a66c2; text-decoration: none;">${url}</a></p>`
 				: ""
+			const formattedDescription = formatDescription(description)
 
 			const htmlContent = `
 <div style="font-family: Arial, sans-serif; max-width: 500px; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
 	${imageHtml}
 	<div style="padding: 16px; background: #f0f2f5;">
 		<h2 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600; color: #1c1e21;">${title}</h2>
-		<p style="margin: 0 0 8px 0; font-size: 14px; color: #65676b; line-height: 1.4;">${description}</p>
+		<p style="margin: 0 0 8px 0; font-size: 14px; color: #65676b; line-height: 1.4;">${formattedDescription}</p>
 		${urlHtml}
 	</div>
 </div>
@@ -302,7 +136,9 @@
 
 			<div class="share-text">
 				<h2 class="share-title">{title}</h2>
-				<p class="share-description">{description}</p>
+				<p class="share-description">
+					{@html formatDescription(description)}
+				</p>
 				{#if url}
 					<p class="share-url">{url}</p>
 				{/if}

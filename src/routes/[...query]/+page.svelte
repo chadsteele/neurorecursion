@@ -17,6 +17,8 @@
 	} from "$lib/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 
+	let {data} = $props()
+
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
 		return name.replace(/-/g, "\u2011") // U+2011 is non-breaking hyphen
@@ -141,16 +143,13 @@
 </script>
 
 <svelte:head>
-	<title>Sign up for remote clinical trials. FREE!</title>
-	<meta property="og:url" content="https://neurorecursion.com" />
-	<meta
-		property="og:title"
-		content="Sign up for remote clinical trials. FREE!"
-	/>
-	<meta
-		property="og:description"
-		content="Neuro Recursion Institute - Join our clinical research on neurological symptom modulation through targeted neuroplasticity."
-	/>
+	<title>{data.ogTitle}</title>
+	<meta property="og:url" content={data.ogUrl} />
+	<meta property="og:title" content={data.ogTitle} />
+	<meta property="og:description" content={data.ogDescription} />
+	{#if data.ogImage}
+		<meta property="og:image" content={data.ogImage} />
+	{/if}
 </svelte:head>
 
 <Parallax background="/backgrounds/children.png">
