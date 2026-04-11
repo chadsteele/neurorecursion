@@ -48,15 +48,7 @@
 		searchQuery.set(query)
 		currentMatchIndex.set(index)
 
-		// If URL has search terms, open the search box and perform search
-		if (query) {
-			searchStartPath = $page.url.pathname
-			searchOpen.set(true)
-			// Perform search immediately (effect will also handle it)
-			setTimeout(() => {
-				performSearch(query)
-			}, 0)
-		}
+		// Note: Search only opens when user clicks the button, never automatically
 	})
 
 	let previousPath = $state($page.url.pathname)

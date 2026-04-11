@@ -57,10 +57,7 @@ async function processImage(
 
 			try {
 				// Load and add brain SVG to upper left
-				const brainPath = path.join(
-					__dirname,
-					"../../../../static/brain.svg",
-				)
+				const brainPath = path.join(process.cwd(), "static/brain.svg")
 				const brainSvgStr = await fs.readFile(brainPath, "utf8")
 
 				// Clean SVG content
