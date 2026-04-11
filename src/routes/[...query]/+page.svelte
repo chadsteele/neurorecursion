@@ -348,14 +348,13 @@
 
 	.pioneers-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: 1fr;
 		gap: 2rem;
 		margin: 2rem 0;
 	}
 
 	@media (max-width: 768px) {
 		.pioneers-grid {
-			grid-template-columns: 1fr;
 			gap: 1.5rem;
 		}
 	}
