@@ -42,9 +42,12 @@ async function processImage(imageBuffer, width = 1080, height = 566) {
 			.toBuffer()
 
 		// Add logo to lower left corner
-		const logoSize = Math.round(width * 0.22) // 22% of image width (doubled)
+		const logoSize = Math.round(width * 0.4) // 22% of image width (doubled)
 		const margin = 0
-		const logoPath = path.join(process.cwd(), "static/logo.blue.png")
+		const logoPath = path.join(
+			__dirname,
+			"../../../../static/logo.blue.png",
+		)
 
 		// Get logo metadata to preserve aspect ratio
 		const logoMetadata = await sharp(logoPath).metadata()

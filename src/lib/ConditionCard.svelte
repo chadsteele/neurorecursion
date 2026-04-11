@@ -18,7 +18,7 @@
 	<ShareModal
 		title={condition.name}
 		description={condition.description}
-		imageUrl={condition.background_image}
+		imageUrl={condition.background_image || undefined}
 		url={typeof window !== "undefined"
 			? `${window.location.origin}${condition.path}`
 			: condition.path}
