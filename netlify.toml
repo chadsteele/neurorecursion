@@ -5,9 +5,9 @@
 [build.environment]
   NODE_VERSION = "22.12.0"
 
-# Sharp and text-to-svg binary dependencies for image processing
+# Sharp binary dependency for image processing
 [functions]
-  external_node_modules = ["sharp", "text-to-svg"]
+  external_node_modules = ["sharp"]
   included_files = ["fonts/**"]
 
 # Edge function to rewrite og tags dynamically
