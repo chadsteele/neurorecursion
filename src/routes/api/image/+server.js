@@ -48,37 +48,72 @@ async function processImage(
 
 		// If watermark requested, add it
 		if (watermarkText) {
-			const fontSize = 24
-			const textWidth = Math.round(width * 0.25)
-			const textSvg = `<svg width="${textWidth}" height="60" xmlns="http://www.w3.org/2000/svg">
+			const fontSize = 29
+			const textWidth = cropWidth
+			const textHeight = 72
+			const brainSize = 50
+			const margin = 3
+			const composites = []
+
+			try {
+				// Load and add brain SVG to upper left
+				const brainPath = path.join(
+					__dirname,
+					"../../../../static/brain.svg",
+				)
+				const brainSvgStr = await fs.readFile(brainPath, "utf8")
+
+				// Clean SVG content
+				const cleanedSvg = brainSvgStr
+					.replace(/<\?xml[^?]*\?>/, "")
+					.replace(/<svg[^>]*>/, "")
+					.replace(/<\/svg>/, "")
+
+				// Wrap SVG with proper dimensions
+				const wrappedSvg = `<svg width="${brainSize}" height="${brainSize}" viewBox="0 0 497 491" xmlns="http://www.w3.org/2000/svg">${cleanedSvg}</svg>`
+
+				const brainBuffer = await sharp(Buffer.from(wrappedSvg))
+					.resize(brainSize, brainSize, {fit: "cover"})
+					.png()
+					.toBuffer()
+
+				// Add brain to upper left corner
+				composites.push({
+					input: brainBuffer,
+					left: margin,
+					top: height - brainSize - margin,
+				})
+			} catch (err) {
+				console.warn("Brain SVG error:", err.message)
+			}
+
+			const textSvg = `<svg width="${textWidth}" height="${textHeight}" xmlns="http://www.w3.org/2000/svg">
 				<defs>
 					<filter id="shadow">
 						<feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
 						<feOffset dx="2" dy="2" result="offsetblur"/>
-						<feComponentTransfer>
+						<feComponentTransfer in="offsetblur">
 							<feFuncA type="linear" slope="0.5"/>
 						</feComponentTransfer>
 						<feMerge>
-							<feMergeNode/>
+							<feMergeNode in="offsetblur"/>
 							<feMergeNode in="SourceGraphic"/>
 						</feMerge>
 					</filter>
 				</defs>
-				<text x="${textWidth / 2}" y="40" text-anchor="middle" font-size="${fontSize}" font-family="Arial, sans-serif" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
+				<text x="5" y="48" font-size="${fontSize}" font-family="Arial, sans-serif" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
 			</svg>`
 
 			const textBuffer = await sharp(Buffer.from(textSvg))
-				.resize(textWidth, 60, {fit: "contain"})
+				.resize(textWidth, textHeight, {fit: "contain"})
 				.png()
 				.toBuffer()
 
-			const composites = [
-				{
-					input: textBuffer,
-					left: 5,
-					top: height - 65,
-				},
-			]
+			composites.push({
+				input: textBuffer,
+				left: Math.round(brainSize),
+				top: Math.round(height - textHeight + 7),
+			})
 
 			// Apply all composites to the image
 			const finalBuffer = await sharp(croppedImage)
