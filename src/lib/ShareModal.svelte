@@ -1,6 +1,4 @@
 <script>
-	import {imageUrlToBase64} from "./Watermark.js"
-
 	let {
 		title = "",
 		description = "",
@@ -17,13 +15,39 @@
 	let copied = $state(false)
 	let copyTimeout
 	let copying = $state(false)
-	let previewImageBase64 = $state("")
+	let previewImageUrl = $state("")
+
+	async function getWatermarkedImageUrl(baseImageUrl) {
+		const params = new URLSearchParams({
+			url: baseImageUrl,
+			width: "1080",
+			height: "566",
+			watermark: "NeuroRecursion.com",
+		})
+		return `/api/image?${params.toString()}`
+	}
+
+	async function getWatermarkedImageBase64(baseImageUrl) {
+		try {
+			const apiUrl = await getWatermarkedImageUrl(baseImageUrl)
+			const response = await fetch(apiUrl)
+			const blob = await response.blob()
+			const reader = new FileReader()
+			return new Promise((resolve) => {
+				reader.onloadend = () => resolve(reader.result)
+				reader.readAsDataURL(blob)
+			})
+		} catch (err) {
+			console.error("Failed to get watermarked image:", err)
+			return ""
+		}
+	}
 
 	$effect.pre(() => {
 		// Watch imageUrl changes and reload preview with watermark
 		if (imageUrl) {
-			imageUrlToBase64(imageUrl).then((base64) => {
-				previewImageBase64 = base64
+			getWatermarkedImageUrl(imageUrl).then((url) => {
+				previewImageUrl = url
 			})
 		}
 	})
@@ -38,7 +62,7 @@
 			// Convert image to base64 on-demand (only when copying)
 			let imageBase64 = ""
 			if (imageUrl) {
-				imageBase64 = await imageUrlToBase64(imageUrl)
+				imageBase64 = await getWatermarkedImageBase64(imageUrl)
 			}
 
 			const imageHtml = imageBase64
@@ -129,7 +153,7 @@
 		<!-- Preview Card -->
 		<div class="share-card">
 			<img
-				src={previewImageBase64 || imageUrl}
+				src={previewImageUrl || imageUrl}
 				alt={title}
 				class="share-image"
 			/>

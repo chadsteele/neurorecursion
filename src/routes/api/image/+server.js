@@ -1,20 +1,23 @@
 import sharp from "sharp"
-import {createCanvas, loadImage} from "canvas"
 import fs from "fs/promises"
 import path from "path"
 import {fileURLToPath} from "url"
+import {dirname} from "path"
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = dirname(__filename)
 
-async function applyWatermark(imageBuffer) {
+async function processImage(
+	imageBuffer,
+	width = 1080,
+	height = 566,
+	watermarkText = null,
+) {
 	try {
 		// Get image metadata
 		const metadata = await sharp(imageBuffer).metadata()
-		const targetWidth = 1080
-		const targetHeight = 566
 		const imgAspect = metadata.width / metadata.height
-		const targetAspect = targetWidth / targetHeight
+		const targetAspect = width / height
 
 		let cropWidth, cropHeight, cropX, cropY
 
@@ -31,92 +34,65 @@ async function applyWatermark(imageBuffer) {
 		}
 
 		// Crop and resize
-		let processedImage = sharp(imageBuffer)
+		let composites = []
+		const croppedImage = await sharp(imageBuffer)
 			.extract({
 				left: Math.round(cropX),
 				top: Math.round(cropY),
 				width: Math.round(cropWidth),
 				height: Math.round(cropHeight),
 			})
-			.resize(targetWidth, targetHeight, {fit: "fill"})
+			.resize(width, height, {fit: "fill"})
+			.png()
+			.toBuffer()
 
-		const imageData = await processedImage.png().toBuffer()
+		// If watermark requested, add it
+		if (watermarkText) {
+			const fontSize = 24
+			const textWidth = Math.round(width * 0.25)
+			const textSvg = `<svg width="${textWidth}" height="60" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<filter id="shadow">
+						<feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+						<feOffset dx="2" dy="2" result="offsetblur"/>
+						<feComponentTransfer>
+							<feFuncA type="linear" slope="0.5"/>
+						</feComponentTransfer>
+						<feMerge>
+							<feMergeNode/>
+							<feMergeNode in="SourceGraphic"/>
+						</feMerge>
+					</filter>
+				</defs>
+				<text x="${textWidth / 2}" y="40" text-anchor="middle" font-size="${fontSize}" font-family="Arial, sans-serif" font-weight="bold" fill="white" filter="url(#shadow)">${watermarkText}</text>
+			</svg>`
 
-		// Load image onto canvas for watermarking
-		const canvas = createCanvas(targetWidth, targetHeight)
-		const ctx = canvas.getContext("2d")
+			const textBuffer = await sharp(Buffer.from(textSvg))
+				.resize(textWidth, 60, {fit: "contain"})
+				.png()
+				.toBuffer()
 
-		const img = await loadImage(imageData)
-		ctx.drawImage(img, 0, 0, targetWidth, targetHeight)
+			const composites = [
+				{
+					input: textBuffer,
+					left: 5,
+					top: height - 65,
+				},
+			]
 
-		// Try to load brain SVG
-		let brainImage = null
-		try {
-			const projectRoot = path.resolve(__dirname, "../../../../")
-			const brainPath = path.join(projectRoot, "static", "brain.svg")
-			const brainBuffer = await fs.readFile(brainPath)
-			brainImage = await loadImage(brainBuffer)
-		} catch (err) {
-			console.warn("Brain SVG not found on server:", err.message)
+			// Apply all composites to the image
+			const finalBuffer = await sharp(croppedImage)
+				.composite(composites)
+				.png()
+				.toBuffer()
+
+			return finalBuffer
 		}
 
-		const text = "NeuroRecursion.com"
-		const textWidth = targetWidth * 0.33
-		const fontSize = Math.floor(textWidth / 6)
-		const padding = 3
-		const textY = targetHeight - padding
-
-		if (brainImage) {
-			// Draw brain SVG
-			const brainHeight = fontSize * 1.2
-			const brainWidth =
-				(brainImage.width / brainImage.height) * brainHeight
-			const brainX = padding
-			const brainY = targetHeight - padding - brainHeight
-
-			ctx.drawImage(brainImage, brainX, brainY, brainWidth, brainHeight)
-
-			// Text position to right of brain
-			const textX = brainX + brainWidth + padding
-
-			ctx.font = `bold ${fontSize}px Arial, sans-serif`
-			ctx.textBaseline = "bottom"
-			ctx.textAlign = "left"
-
-			// Draw black shadow
-			ctx.fillStyle = "rgba(0, 0, 0, 0.7)"
-			ctx.shadowColor = "rgba(0, 0, 0, 0.7)"
-			ctx.shadowBlur = 3
-			ctx.shadowOffsetX = 1
-			ctx.shadowOffsetY = 1
-			ctx.fillText(text, textX, textY)
-
-			// Draw white text
-			ctx.fillStyle = "white"
-			ctx.shadowColor = "transparent"
-			ctx.fillText(text, textX, textY)
-		} else {
-			// Text only
-			const textX = padding
-			ctx.font = `bold ${fontSize}px Arial, sans-serif`
-			ctx.textBaseline = "bottom"
-			ctx.textAlign = "left"
-
-			ctx.fillStyle = "rgba(0, 0, 0, 0.7)"
-			ctx.shadowColor = "rgba(0, 0, 0, 0.7)"
-			ctx.shadowBlur = 3
-			ctx.shadowOffsetX = 1
-			ctx.shadowOffsetY = 1
-			ctx.fillText(text, textX, textY)
-
-			ctx.fillStyle = "white"
-			ctx.shadowColor = "transparent"
-			ctx.fillText(text, textX, textY)
-		}
-
-		return canvas.toBuffer("image/png")
+		// Return cropped image without watermark
+		return croppedImage
 	} catch (err) {
-		console.error("Watermark error:", err)
+		console.error("Process image error:", err)
 		throw err
 	}
 }
@@ -124,7 +100,9 @@ async function applyWatermark(imageBuffer) {
 export async function GET({url}) {
 	try {
 		const imageUrl = url.searchParams.get("url")
-		const watermark = url.searchParams.get("watermark") === "true"
+		const width = parseInt(url.searchParams.get("width") || "1080")
+		const height = parseInt(url.searchParams.get("height") || "566")
+		const watermark = url.searchParams.get("watermark")
 
 		if (!imageUrl) {
 			return new Response(
@@ -151,16 +129,17 @@ export async function GET({url}) {
 			imageBuffer = Buffer.from(await response.arrayBuffer())
 		} else {
 			// Local file path
-			const projectRoot = path.resolve(__dirname, "../../../../")
-			const filePath = path.join(projectRoot, "static", imageUrl)
+			const filePath = path.join(process.cwd(), "static", imageUrl)
 			imageBuffer = await fs.readFile(filePath)
 		}
 
-		// Apply watermark if requested
-		let finalBuffer = imageBuffer
-		if (watermark) {
-			finalBuffer = await applyWatermark(imageBuffer)
-		}
+		// Process image with optional watermark
+		const finalBuffer = await processImage(
+			imageBuffer,
+			width,
+			height,
+			watermark,
+		)
 
 		return new Response(finalBuffer, {
 			headers: {
