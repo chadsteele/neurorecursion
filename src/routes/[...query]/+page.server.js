@@ -49,10 +49,8 @@ export async function load({params}) {
 			return getAbsoluteImageUrl(pathToUse)
 		}
 
-		const absolutePath = getAbsoluteImageUrl(pathToUse)
-		// Encode the image URL for the query parameter
-		const encodedUrl = encodeURIComponent(absolutePath)
-		return `https://neurorecursion.com/api/image?url=${encodedUrl}&watermark=true`
+		// Use path-based endpoint for watermarked images
+		return `https://neurorecursion.com/api/image${pathToUse}?watermark=true`
 	}
 
 	// If no path in URL, return default with ogfamily.png
