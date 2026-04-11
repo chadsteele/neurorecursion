@@ -1,44 +1,31 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
+	import ShareModal from "$lib/ShareModal.svelte"
 	import Tag from "$lib/Tag.svelte"
-	import {browser} from "$app/environment"
 	import {Share2, ExternalLink} from "lucide-svelte"
 
 	let {pioneer = {}} = $props()
+	let showShareModal = $state(false)
 
 	function handleShare() {
-		const shareUrl = browser
-			? `${window.location.origin}${pioneer.path}`
-			: pioneer.path
-
-		if (navigator.share) {
-			navigator
-				.share({
-					title: pioneer.name,
-					text: `Meet ${pioneer.name}, ${pioneer.title}`,
-					url: shareUrl,
-				})
-				.catch((err) => {
-					copyToClipboard(shareUrl)
-				})
-		} else {
-			copyToClipboard(shareUrl)
-		}
-	}
-
-	function copyToClipboard(text) {
-		navigator.clipboard
-			.writeText(text)
-			.then(() => {
-				alert("Link copied to clipboard!")
-			})
-			.catch((err) => {
-				console.error("Failed to copy to clipboard:", err)
-			})
+		showShareModal = true
 	}
 </script>
 
 <div id={pioneer.id} path={pioneer.path}></div>
+
+{#if showShareModal}
+	<ShareModal
+		title={pioneer.name}
+		description={`${pioneer.title} at ${pioneer.institution}`}
+		imageUrl={pioneer.img_url || pioneer.background_url || ""}
+		url={typeof window !== "undefined"
+			? `${window.location.origin}${pioneer.path}`
+			: pioneer.path}
+		onClose={() => (showShareModal = false)}
+	/>
+{/if}
+
 <Parallax background={pioneer.background_url || ""}>
 	<section class="paper container">
 		<div class="pioneer-header">

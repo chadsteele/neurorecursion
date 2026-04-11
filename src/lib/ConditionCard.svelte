@@ -1,47 +1,31 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
+	import ShareModal from "$lib/ShareModal.svelte"
 	import {browser} from "$app/environment"
 	import {CheckCircle2, Heart, FlaskConical, Share2} from "lucide-svelte"
 
 	let {condition = {}, formData = {}} = $props()
+	let showShareModal = $state(false)
 
 	function handleShare() {
-		const shareUrl = browser
-			? `${window.location.origin}${condition.path}`
-			: condition.path
-
-		// Check if Web Share API is available
-		if (navigator.share) {
-			navigator
-				.share({
-					title: condition.name,
-					text: `Learn more about ${condition.name}`,
-					url: shareUrl,
-				})
-				.catch((err) => {
-					// User cancelled or error occurred, copy to clipboard as fallback
-					copyToClipboard(shareUrl)
-				})
-		} else {
-			// Fallback: copy to clipboard
-			copyToClipboard(shareUrl)
-		}
-	}
-
-	function copyToClipboard(text) {
-		navigator.clipboard
-			.writeText(text)
-			.then(() => {
-				// Show brief feedback (optional)
-				alert("Link copied to clipboard!")
-			})
-			.catch((err) => {
-				console.error("Failed to copy to clipboard:", err)
-			})
+		showShareModal = true
 	}
 </script>
 
 <div id={condition.id} path={condition.path}></div>
+
+{#if showShareModal}
+	<ShareModal
+		title={condition.name}
+		description={condition.description}
+		imageUrl={condition.background_image}
+		url={typeof window !== "undefined"
+			? `${window.location.origin}${condition.path}`
+			: condition.path}
+		onClose={() => (showShareModal = false)}
+	/>
+{/if}
+
 <Parallax background={condition.background_image}>
 	<section class="paper container">
 		<h3>{condition.name}</h3>
