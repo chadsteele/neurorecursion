@@ -289,7 +289,8 @@
 			<input
 				type="text"
 				value={conditionSuggestion}
-				oninput={(e) => selectConditionsBySuggestion(e.currentTarget.value)}
+				oninput={(e) =>
+					selectConditionsBySuggestion(e.currentTarget.value)}
 				placeholder="e.g. anxiety, autism, adhd, ptsd, ocd, etc."
 				class="suggestion-input"
 			/>
