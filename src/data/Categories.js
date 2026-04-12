@@ -3,11 +3,12 @@ export const Categories = [
 		category_name: "Anxiety, Panic & Phobias",
 		path: "/anxiety/panic/phobias",
 		ids: [
+			"generalized-anxiety-disorder",
+			"general-fears-phobias",
 			"social-media-anxiety-disorder",
 			"health-anxiety-hypochondriasis",
 			"agoraphobia-social-phobia",
 			"panic-disorder-agoraphobia-fear",
-			"generalized-anxiety-disorder",
 
 			"cynophobia-fear-dogs",
 			"astraphobia-fear-storms",
@@ -22,7 +23,6 @@ export const Categories = [
 
 			"moral-injury-values-violation",
 			"stage-fright-performance-anxiety-live-audience",
-			"general-fears-phobias",
 		],
 	},
 	{
@@ -45,17 +45,19 @@ export const Categories = [
 		category_name: "Addictions & Compulsive Behaviors",
 		path: "/addictions/compulsive",
 		ids: [
+			"ocd-obsessive-compulsive-disorder",
 			"teen-screen-addiction-digital-escapism",
 			"alcohol-substance-abuse",
 			"teen-substance-abuse-addiction",
 			"gambling-addiction",
 			"food-addiction",
 			"food-phobia-arfid",
-			"ocd-obsessive-compulsive-disorder",
+
 			"teen-body-image-disordered-eating",
+			"cutting-self-harm",
 			"trichotillomania-hair-pulling",
 			"hoarding-disorder",
-			"cutting-self-harm",
+
 			"general-addictions",
 			"general-ocd-spectrum",
 		],
@@ -87,8 +89,9 @@ export const Categories = [
 			"porn-addiction-sexual-compulsivity",
 			"sex-addiction",
 			"sexual-dysfunction-performance-anxiety-impotence",
-			"sexual-dysfunction-intimacy-avoidance",
+
 			"fear-of-intimacy-commitment-fear",
+			"sexual-dysfunction-intimacy-avoidance",
 			"body-dysmorphia",
 			"performance-anxiety-evaluation-fear",
 			"depressed-suicidal-major-depressive-disorder",

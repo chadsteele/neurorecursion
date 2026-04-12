@@ -566,7 +566,7 @@ The neurobiological loop in OCD involves a circuit between the orbitofrontal cor
 Our technique breaks the obsessive-compulsive circuit through targeted recalibration of the amygdala-orbitofrontal connection. We dissolve the threat response to intrusive thoughts and restore prefrontal regulation. Intrusive thoughts become less emotionally charged and the compulsive urges recede. This isn't exposure-response prevention or cognitive therapy. It's swift recoding of the threat-detection circuit. You observe obsessive thoughts without the urgent need to engage in compulsions. Daily distress and functioning improve substantially.`,
 		ngo_url: "https://iocdf.org/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/ocdmm.jpeg",
 	},
 	{
 		id: "trichotillomania-hair-pulling",
@@ -725,7 +725,7 @@ The neurobiological mechanism involves amygdala hyperactivity and reduced prefro
 
 Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
 		ngo_url: "https://www.adaa.org/",
-		background_image: "",
+		background_image: "/backgrounds/anxiety.jpg",
 	},
 	{
 		id: "chronophobia-fear-time-future",
@@ -927,6 +927,7 @@ The neurobiological mechanism involves dysregulation of pain processing and emot
 
 Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
 		ngo_url: "https://www.nami.org/",
+		background_image: "/backgrounds/self-harm.jpg",
 	},
 	{
 		id: "hoarding-disorder",
@@ -1447,7 +1448,7 @@ The neurobiological mechanism involves amygdala hyperactivity and fear-condition
 Our technique recalibrates the amygdala's threat-classification of the feared foods and helps the insula modulate its dysregulated sensory-response. We carefully work with the person's fear hierarchy, gradually reintroducing feared foods in ways that allow the nervous system to update its threat-assessment. We separate genuine safety concerns (an actual choking risk) from irrational threat-perception. We dissolve the conditioned fear-response through targeted limbic work rather than through exposure alone. You experience expanded food acceptance and dietary diversity, reduced anxiety around mealtimes and social eating, improved nutrition and health, and freedom from the social isolation that ARFID often creates.`,
 		ngo_url: "https://www.nationaleatingdisorders.org/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/picky-eater.jpg",
 	},
 	{
 		id: "narcissistic-personality-disorder-pride",
@@ -1629,7 +1630,7 @@ The neurobiological mechanism involves multiple overlapping systems dysregulatio
 Our technique addresses the multiple biological vulnerabilities of late-life depression by supporting neuroplasticity despite age-related decline, recalibrating the HPA axis through stress-reduction and cortisol-management, activating dopamine pathways through meaningful engagement and social connection, and addressing existential aspects of aging through meaning-making rather than denial. We help the person integrate losses while discovering renewed purpose. Medical optimization (medication review, treatment of underlying conditions) combines with limbic recalibration. You experience improved mood and energy, restored interest in activities and relationships, reduced existential despair, improved sense of meaning and purpose in the later chapters of life, and prevention of the isolation that worsens geriatric depression.`,
 		ngo_url: "https://www.nia.nih.gov/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/fall-leaves.png",
 	},
 	{
 		id: "identity-loss-aging-life-stage",
