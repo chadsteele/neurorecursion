@@ -106,6 +106,9 @@ export async function GET({url}) {
 			width,
 			height,
 			fullUrl: url.toString(),
+			__dirname: __dirname,
+			__filename: __filename,
+			process_cwd: process.cwd(),
 		})
 
 		if (!imageUrl) {
@@ -134,28 +137,36 @@ export async function GET({url}) {
 		} else {
 			// Local file path
 			const cleanImageUrl = imageUrl.replace(/^\//, "")
-			// On Netlify, __dirname is the function directory, so we need to go up fewer levels
-			// Try multiple possible paths for compatibility between local dev and Netlify
-			let filePath = path.join(
-				__dirname,
-				"../../../../static",
-				cleanImageUrl,
-			)
 
-			try {
-				await fs.access(filePath)
-			} catch {
-				// Fallback: try just "static/" relative to __dirname
-				filePath = path.join(__dirname, "static", cleanImageUrl)
+			// Try different path strategies for local dev vs Netlify
+			const pathsToTry = [
+				// Netlify production: static/ is bundled at function root
+				path.join(__dirname, "static", cleanImageUrl),
+				// Local development: relative path from routes/api/image
+				path.join(__dirname, "../../../../static", cleanImageUrl),
+				// Alternative: try absolute from cwd (shouldn't work but just in case)
+				path.join(process.cwd(), "static", cleanImageUrl),
+			]
+
+			let lastError = null
+
+			for (const tryPath of pathsToTry) {
+				try {
+					console.log(`Attempting to load: ${tryPath}`)
+					imageBuffer = await fs.readFile(tryPath)
+					console.log(`✓ Successfully loaded from: ${tryPath}`)
+					break
+				} catch (err) {
+					lastError = err
+					console.log(`✗ Failed: ${tryPath} - ${err.message}`)
+				}
 			}
 
-			console.log("Loading local file:", {
-				imageUrl,
-				cleanImageUrl,
-				filePath,
-				__dirname,
-			})
-			imageBuffer = await fs.readFile(filePath)
+			if (!imageBuffer) {
+				throw new Error(
+					`Could not find image at any path. Last error: ${lastError?.message}. Tried: ${pathsToTry.join(", ")}`,
+				)
+			}
 		}
 
 		// Process image with logo
