@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(__dirname, "..")
 
 // Paths to source files
-const conditionsPath = path.join(rootDir, "src/lib/Conditions.js")
+const conditionsPath = path.join(rootDir, "src/data/Conditions.js")
 const pioneersPath = path.join(rootDir, "src/lib/Pioneers.js")
 const outputPath = path.join(rootDir, "src/data/conditions-metadata.js")
 

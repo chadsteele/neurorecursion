@@ -1,6 +1,6 @@
 <script>
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
-	import {getCondition} from "$lib/Conditions.js"
+	import {getCondition} from "$data/Conditions.js"
 
 	let {formData = {conditions: {}}} = $props()
 	let conditionSuggestion = $state("")

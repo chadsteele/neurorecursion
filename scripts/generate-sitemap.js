@@ -17,13 +17,13 @@ const sitemapPath = path.join(staticDir, "sitemap.xml")
 
 // Import conditions and pioneers data
 const conditionsModule = await import(
-	path.join(projectRoot, "src/lib/Conditions.js")
+	path.join(projectRoot, "src/data/Conditions.js")
 )
 const pioneersModule = await import(
 	path.join(projectRoot, "src/lib/Pioneers.js")
 )
 const categoriesModule = await import(
-	path.join(projectRoot, "src/lib/Categories.js")
+	path.join(projectRoot, "src/data/Categories.js")
 )
 
 const Conditions = conditionsModule.default

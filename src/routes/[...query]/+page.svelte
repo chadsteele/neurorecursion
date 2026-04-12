@@ -8,8 +8,8 @@
 	import Skeleton from "$lib/Skeleton.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import Conditions, {getCondition, ConditionsMap} from "$lib/Conditions.js"
-	import {Categories} from "$lib/Categories.js"
+	import Conditions, {getCondition, ConditionsMap} from "$data/Conditions.js"
+	import {Categories} from "$data/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 	import Pioneers, {
 		sorted as sortedPioneers,

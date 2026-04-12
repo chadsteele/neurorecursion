@@ -1,4 +1,4 @@
-import Conditions from "$lib/Conditions.js"
+import Conditions from "$data/Conditions.js"
 import Pioneers from "$lib/Pioneers.js"
 
 export const prerender = "auto"

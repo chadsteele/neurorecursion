@@ -1,7 +1,7 @@
 <script>
 	import {slide} from "svelte/transition"
-	import {Categories} from "$lib/Categories.js"
-	import {ConditionsMap} from "$lib/Conditions.js"
+	import {Categories} from "$data/Categories.js"
+	import {ConditionsMap} from "$data/Conditions.js"
 	import {Search} from "lucide-svelte"
 
 	let {formData = {}} = $props()

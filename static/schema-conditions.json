@@ -698,13 +698,13 @@
   "general-fears-phobias": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Fears & Phobias",
+    "name": "General Fears & Phobias",
     "description": "Specific objects or situations trigger your amygdala as if they were survival dangers. Your threat-detection system learned a false positives. Phobias are intense, irrational fears of specific objects or situations that pose little actual danger but trigger severe anxiety and avoidance behaviors. Whether it's clouds, holes, snow, tears, bananas, or countless other specific stimuli, phobias cause individuals to arrange their lives around avoidance and experience significant functional impairment ",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-fears-phobias",
     "identifier": "general-fears-phobias",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Fears & Phobias"
+      "name": "General Fears & Phobias"
     }
   },
   "seasonal-affective-disorder-sad": {
@@ -746,13 +746,13 @@
   "general-mood-disorders": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Mood Disorders",
+    "name": "General Mood Disorders",
     "description": "Your mood system became dysregulated and now generates states that interfere with your life. Whether cyclical, reactive, mixed, or persistent, nervous system dysregulation created a mood problem. Mood disorders encompass diverse conditions affecting emotional regulation, including dysthymia (persistent low mood), cyclothymia (cycling mood states), mixed mood states, and other patterns that significantly impair functioning and wellbeing. Individuals experience either persistently depressed mood o",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-mood-disorders",
     "identifier": "general-mood-disorders",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Mood Disorders"
+      "name": "General Mood Disorders"
     }
   },
   "dyslexia-reading-disorder": {
@@ -770,13 +770,13 @@
   "general-neurodevelopmental-issues": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Neurodevelopmental Issues",
+    "name": "General Neurodevelopmental Issues",
     "description": "Your nervous system developed with atypical wiring patterns that create functional challenges across multiple domains. Whether coordination, attention, social processing, or motor planning, the developing brain took a different path. Neurodevelopmental issues encompass diverse conditions including various learning disabilities, motor coordination difficulties, speech/language disorders, and social-communication differences that emerge during development and cause significant functional or educat",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-neurodevelopmental",
     "identifier": "general-neurodevelopmental-issues",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Neurodevelopmental Issues"
+      "name": "General Neurodevelopmental Issues"
     }
   },
   "gambling-addiction": {
@@ -806,13 +806,13 @@
   "general-addictions": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Addictions",
+    "name": "General Addictions",
     "description": "Your reward system learned to pursue a substance or behavior compulsively despite catastrophic consequences. Addiction patterns vary but the underlying mechanism is consistent: dopamine dysregulation and loss of inhibitory control. Other addictions beyond the primary patterns include shopping addiction, exercise addiction, work addiction, relationship addiction, and diverse compulsive behaviors that individuals pursue despite knowing they cause harm. Each addiction provides temporary dopamine el",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-addictions",
     "identifier": "general-addictions",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Addictions"
+      "name": "General Addictions"
     }
   },
   "anxiety-related-gastrointestinal-issues": {
@@ -842,13 +842,13 @@
   "general-neurological-issues": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Neurological Issues",
-    "description": "Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. Other neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that signific",
+    "name": "General Neurological Issues",
+    "description": "Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. General neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that signif",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-neurological-issues",
     "identifier": "general-neurological-issues",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Neurological Issues"
+      "name": "General Neurological Issues"
     }
   },
   "self-esteem-identity-issues": {
@@ -866,13 +866,13 @@
   "general-performance-issues": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Performance Issues",
+    "name": "General Performance Issues",
     "description": "You know what to do, but when it matters, your nervous system hijacks your capability. Performance becomes blocked by threat-detection about the performance itself. Performance issues encompass situations where individuals can execute skills in low-stakes contexts but experience dysfunction when performance has perceived consequences (evaluation, competition, stakes, audience, time pressure). Whether academic, athletic, artistic, professional, or social performance, the nervous system perceives ",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-performance-issues",
     "identifier": "general-performance-issues",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Performance Issues"
+      "name": "General Performance Issues"
     }
   },
   "cutting-self-harm": {
@@ -902,13 +902,13 @@
   "general-ocd-spectrum": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other OCD-Spectrum Issues",
-    "description": "Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. Other OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant dis",
+    "name": "General OCD-Spectrum Issues",
+    "description": "Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. General OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant d",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-ocd-spectrum",
     "identifier": "general-ocd-spectrum",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other OCD-Spectrum Issues"
+      "name": "General OCD-Spectrum Issues"
     }
   },
   "relationship-jealousy-insecurity": {
@@ -938,13 +938,13 @@
   "general-attachment-issues": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Attachment Issues",
-    "description": "Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. Other attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficultie",
+    "name": "General Attachment Issues",
+    "description": "Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. General attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficult",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-attachment-issues",
     "identifier": "general-attachment-issues",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Attachment Issues"
+      "name": "General Attachment Issues"
     }
   },
   "aphasia-language-disorder": {
@@ -962,13 +962,13 @@
   "general-communication-issues": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Other Communication Issues",
-    "description": "Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. Other communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant so",
+    "name": "General Communication Issues",
+    "description": "Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. General communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant ",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/general-communication-issues",
     "identifier": "general-communication-issues",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Other Communication Issues"
+      "name": "General Communication Issues"
     }
   },
   "trauma-drama-etc": {

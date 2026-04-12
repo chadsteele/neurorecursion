@@ -16,7 +16,7 @@ const staticDir = path.join(projectRoot, "static")
 
 // Import data
 const conditionsModule = await import(
-	path.join(projectRoot, "src/lib/Conditions.js")
+	path.join(projectRoot, "src/data/Conditions.js")
 )
 const pioneersModule = await import(
 	path.join(projectRoot, "src/lib/Pioneers.js")
