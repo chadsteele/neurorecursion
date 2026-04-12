@@ -756,7 +756,7 @@ Our technique integrates the moral violation into a coherent, compassionate iden
 	{
 		id: "general-fears-phobias",
 		path: "/remote-clinical-trial/free/general-fears-phobias",
-		name: "Other Fears & Phobias",
+		name: "General Fears & Phobias",
 		description: `Specific objects or situations trigger your amygdala as if they were survival dangers. Your threat-detection system learned a false positives. Phobias are intense, irrational fears of specific objects or situations that pose little actual danger but trigger severe anxiety and avoidance behaviors. Whether it's clouds, holes, snow, tears, bananas, or countless other specific stimuli, phobias cause individuals to arrange their lives around avoidance and experience significant functional impairment despite intellectually knowing the fear is irrational.
 
 The neurobiological mechanism involves classical conditioning where a neutral stimulus became associated with threat through single-exposure or vicarious learning. The amygdala now automatically detects that specific stimulus and triggers a threat response before conscious awareness engages. The stimulus-threat association becomes so entrenched that despite cortical knowledge that the object is safe, the amygdala continues firing, generating the characteristic experience of irrational but overwhelming fear. Avoidance negatively reinforces the fear by preventing amygdala extinction through habituation.
@@ -801,7 +801,7 @@ Our technique recalibrates monoamine systems and limbic sensitivity to menopausa
 	{
 		id: "general-mood-disorders",
 		path: "/remote-clinical-trial/free/general-mood-disorders",
-		name: "Other Mood Disorders",
+		name: "General Mood Disorders",
 		description: `Your mood system became dysregulated and now generates states that interfere with your life. Whether cyclical, reactive, mixed, or persistent, nervous system dysregulation created a mood problem. Mood disorders encompass diverse conditions affecting emotional regulation, including dysthymia (persistent low mood), cyclothymia (cycling mood states), mixed mood states, and other patterns that significantly impair functioning and wellbeing. Individuals experience either persistently depressed mood or mood cycling that disrupts relationships, work, sleep, and overall quality of life.
 
 The neurobiological mechanisms vary across mood disorder types but generally involve dysregulation of monoamine systems (serotonin, dopamine, norepinephrine), hyperactivity or hypoactivity in the amygdala and prefrontal cortex, disruption of circadian rhythm regulation, and abnormalities in HPA axis stress response. Chronic stress, trauma, substance use, sleep disruption, or other factors dysregulate these systems and create persistent mood dysfunction. The nervous system becomes stuck in patterns of mood generation that persist regardless of external circumstances.
@@ -823,7 +823,7 @@ Our technique optimizes the visual-phonological integration pathways and reduces
 	{
 		id: "general-neurodevelopmental-issues",
 		path: "/remote-clinical-trial/free/general-neurodevelopmental",
-		name: "Other Neurodevelopmental Issues",
+		name: "General Neurodevelopmental Issues",
 		description: `Your nervous system developed with atypical wiring patterns that create functional challenges across multiple domains. Whether coordination, attention, social processing, or motor planning, the developing brain took a different path. Neurodevelopmental issues encompass diverse conditions including various learning disabilities, motor coordination difficulties, speech/language disorders, and social-communication differences that emerge during development and cause significant functional or educational impairment despite adequate environmental support and opportunity.
 
 The neurobiological mechanisms vary across specific neurodevelopmental conditions but generally involve atypical neural development during critical periods—whether through genetic factors, prenatal influences, birth complications, or early environmental factors that alter typical neural pathway development. This results in brain systems that process information differently, often requiring more effort in affected domains despite average or above-average overall capability. Anxiety often co-occurs or develops secondarily as individuals encounter repeated difficulty in affected domains, creating additional functional challenges.
@@ -856,7 +856,7 @@ Our technique recalibrates the food reward system and restores genuine interocep
 	{
 		id: "general-addictions",
 		path: "/remote-clinical-trial/free/general-addictions",
-		name: "Other Addictions",
+		name: "General Addictions",
 		description: `Your reward system learned to pursue a substance or behavior compulsively despite catastrophic consequences. Addiction patterns vary but the underlying mechanism is consistent: dopamine dysregulation and loss of inhibitory control. Other addictions beyond the primary patterns include shopping addiction, exercise addiction, work addiction, relationship addiction, and diverse compulsive behaviors that individuals pursue despite knowing they cause harm. Each addiction provides temporary dopamine elevation and escape from distress, followed by shame and escalating distress that drives continued pursuit.
 
 The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where the addictive stimulus triggers supernormal dopamine release. The ventromedial prefrontal cortex loses regulatory capacity to inhibit the addictive behavior. The amygdala becomes conditioned to emotional distress (anxiety, boredom, sadness) as a cue to engage the addictive behavior for relief. The anterior cingulate cortex generates compulsive approach toward the addictive target. Regardless of specific addiction, all involve the same core dysregulation: excessive dopamine reward signal combined with loss of executive inhibition and emotional-behavior coupling.
@@ -890,8 +890,8 @@ Our technique recalibrates the amygdala's threat perception of health condition 
 	{
 		id: "general-neurological-issues",
 		path: "/remote-clinical-trial/free/general-neurological-issues",
-		name: "Other Neurological Issues",
-		description: `Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. Other neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that significantly impact functioning despite normal overall development or health status.
+		name: "General Neurological Issues",
+		description: `Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. General neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that significantly impact functioning despite normal overall development or health status.
 
 The neurobiological mechanisms vary across specific neurological conditions but generally involve atypical function in motor cortex, cerebellum, basal ganglia, sensory cortices, or other brain regions that generate symptoms specific to the affected system. Anxiety often co-occurs or develops as the secondary consequence when neurological symptoms create functional difficulty or social stigma. The amygdala may become sensitized to symptom-related threat or social threat, amplifying the subjective distress beyond the neurological basis alone.
 
@@ -912,7 +912,7 @@ Our technique recalibrates the self-representation in the medial prefrontal cort
 	{
 		id: "general-performance-issues",
 		path: "/remote-clinical-trial/free/general-performance-issues",
-		name: "Other Performance Issues",
+		name: "General Performance Issues",
 		description: `You know what to do, but when it matters, your nervous system hijacks your capability. Performance becomes blocked by threat-detection about the performance itself. Performance issues encompass situations where individuals can execute skills in low-stakes contexts but experience dysfunction when performance has perceived consequences (evaluation, competition, stakes, audience, time pressure). Whether academic, athletic, artistic, professional, or social performance, the nervous system perceives the performance context as threat and triggers the freezing, hyperarousal, or cognitive disruption that prevents effective performance.
 
 The neurobiological mechanism involves the amygdala perceiving performance contexts as social threat where evaluation and judgment threaten status and worth. The prefrontal cortex becomes suppressed as amygdala activation increases, leading to working memory shutdown and access to learned skills becomes blocked. Stress neurochemicals (adrenaline, cortisol) increase in a way that impairs executive function and fine motor control despite enhancing gross motor activation. The anterior cingulate cortex may generate error-detection hyperactivity, making the nervous system hypercritical of performance in real-time, creating performance disruption through internal commentary.
@@ -945,8 +945,8 @@ Our technique recalibrates item-meaning attribution and loss-aversion through ta
 	{
 		id: "general-ocd-spectrum",
 		path: "/remote-clinical-trial/free/general-ocd-spectrum",
-		name: "Other OCD-Spectrum Issues",
-		description: `Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. Other OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant distress and functional impairment. The distinguishing feature is that the compulsions provide only temporary relief before obsessions resurface, creating cycles of increasing distress.
+		name: "General OCD-Spectrum Issues",
+		description: `Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. General OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant distress and functional impairment. The distinguishing feature is that the compulsions provide only temporary relief before obsessions resurface, creating cycles of increasing distress.
 
 The neurobiological mechanism involves orbitofrontal cortex hyperactivity in error-detection that generates false threat-signals in response to normal thoughts or situations. The anterior cingulate cortex generates persistent error-checking and uncertainty. The amygdala becomes sensitized to obsession-related triggers, and compulsions provide temporary amygdala downregulation through sense-of-control or ritual completion. The cycle becomes self-perpetuating: obsessive thought generates threat-signal, compulsion provides temporary relief, uncertainty returns because compulsion never proves safety, compulsion must repeat. The neural circuitry becomes stuck in a threat-detection loop that treats uncertainty as requiring behavioral management.
 
@@ -977,8 +977,8 @@ Our technique restores self-other boundaries and personal autonomy through targe
 	{
 		id: "general-attachment-issues",
 		path: "/remote-clinical-trial/free/general-attachment-issues",
-		name: "Other Attachment Issues",
-		description: `Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. Other attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficulties, emotional distance, pursuit-withdrawal cycles, or paradoxical distance-seeking in intimate relationships.
+		name: "General Attachment Issues",
+		description: `Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. General attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficulties, emotional distance, pursuit-withdrawal cycles, or paradoxical distance-seeking in intimate relationships.
 
 The neurobiological mechanism involves the ventromedial prefrontal cortex encoding relational expectations and secure base representations based on early attachment experiences. When early caregivers were inconsistently available, rejecting, or overwhelming, the amygdala became hyperactive to abandonment or engulfment threat during adult closeness. The mirror neuron systems may become dysregulated, affecting capacity for emotional resonance and empathetic attunement. Insecure attachment patterns activate in adult relationships, triggering protective responses (distancing, pursuing, shutting down) that recreate the early relational pattern. The attachment system uses these patterns as safety strategies despite their actual relationship-damaging effects.
 
@@ -999,8 +999,8 @@ Our technique facilitates neural plasticity and language pathway reorganization 
 	{
 		id: "general-communication-issues",
 		path: "/remote-clinical-trial/free/general-communication-issues",
-		name: "Other Communication Issues",
-		description: `Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. Other communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant social and occupational difficulties despite potentially intact underlying cognitive or language capability.
+		name: "General Communication Issues",
+		description: `Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. General communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant social and occupational difficulties despite potentially intact underlying cognitive or language capability.
 
 The neurobiological mechanisms vary across communication issues but often involve coordination problems between language production and motor execution systems (stuttering), auditory processing difficulties (listening), social-emotional processing differences (conversational attunement), or attention/executive deficits that affect real-time communication management. Anxiety often develops secondarily where individuals become hyperaware of communication difficulties, leading to avoidance of communication, which further impairs practice-based improvement.
 
