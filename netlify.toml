@@ -8,7 +8,7 @@
 # Sharp binary dependency for image processing
 [functions]
   external_node_modules = ["sharp"]
-  included_files = ["fonts/**"]
+  included_files = ["static/**", "fonts/**"]
 
 # Edge function to rewrite og tags dynamically
 [[edge_functions]]
