@@ -1,0 +1,1034 @@
+{
+  "depressed-suicidal-major-depressive-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Depressed, Suicidal and/or Major Depressive Disorder",
+    "description": "Depression is not a deficit of willpower. It is a hijacked reward system screaming for recalibration. Major Depressive Disorder (MDD) is a serious mental health condition characterized by persistent feelings of hopelessness, loss of interest in activities, and a pervasive sense of emptiness affecting functioning across all life domains. Individuals with MDD often experience changes in sleep, appetite, and energy levels, along with difficulty concentrating and making decisions. These symptoms can",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/depression/suicidal",
+    "identifier": "depressed-suicidal-major-depressive-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Depressed, Suicidal and/or Major Depressive Disorder"
+    }
+  },
+  "developmental-trauma-childhood-trauma": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Developmental Trauma (Childhood Trauma)",
+    "description": "The brain that survived cannot become the brain that thrives without a radical recalibration of survival coding. Developmental trauma (also known as Complex PTSD or Childhood Trauma) occurs when a child experiences repeated or prolonged adversity such as neglect, abuse, or violence during critical periods of brain development. Unlike single-incident trauma, developmental trauma shapes the fundamental architecture of the brain before the prefrontal cortex fully matures. Children exposed to these ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/trauma",
+    "identifier": "developmental-trauma-childhood-trauma",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Developmental Trauma (Childhood Trauma)"
+    }
+  },
+  "cult-recovery-religious-trauma-damnation-fear": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Cult Recovery and Religious Trauma - Fear of Damnation",
+    "description": "Your nervous system was programmed to fear cosmic punishment. Recovery requires recoding the existential threat system. Cult recovery and religious trauma encompass psychological injury sustained through involvement in high-control groups or religious systems that use shame, fear of damnation, thought control, and spiritual manipulation to maintain obedience. Individuals recovering from cult involvement or fundamentalist religious trauma experience profound anxiety about divine punishment or dam",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/cult-recovery/religious-trauma/damnation/recovery",
+    "identifier": "cult-recovery-religious-trauma-damnation-fear",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Cult Recovery and Religious Trauma - Fear of Damnation"
+    }
+  },
+  "divorce-relational-trauma-family-systems-stress": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Divorce? - Relational Trauma and Family Systems Stress",
+    "description": "Relationships don't fail because love dies. They fail because the nervous systems learned to perceive each other as threat. Relational trauma and family systems stress represent a unique category of psychological injury that occurs within intimate relationships and family units where there is chronic conflict, invalidation, or breakdown of the attachment bond. Whether triggered by ongoing marital discord, divorce proceedings, or long-term family instability, these experiences create continuous p",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/divorce/love/family/relationships",
+    "identifier": "divorce-relational-trauma-family-systems-stress",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Divorce? - Relational Trauma and Family Systems Stress"
+    }
+  },
+  "anxious-avoidant-attachment-relational-patterns": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Anxious and Avoidant Attachment Patterns",
+    "description": "Your nervous system learned to approach relationships as either threats to escape or threats to cling to. Authentic connection restores secure integration. Attachment patterns are learned relational strategies established in early caregiving relationships and then generalized to all intimate connections. Anxiously attached individuals experience persistent fear of abandonment, seeking excessive reassurance and becoming hyper-responsive to partner availability. Avoidantly attached individuals exp",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/attachment/anxious/avoidant/relational-patterns",
+    "identifier": "anxious-avoidant-attachment-relational-patterns",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Anxious and Avoidant Attachment Patterns"
+    }
+  },
+  "loneliness-social-disconnection": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Loneliness and Social Disconnection",
+    "description": "Your nervous system learned that being around others activated threat. So it chose isolation. But isolation compounds the threat perception. Loneliness is a state of perceived social disconnection and dissatisfaction with social relationships—crucially different from solitude, which is restorative. Individuals with chronic loneliness experience persistent feelings of not belonging, rejection by groups or individuals, difficulty forming or maintaining relationships, and a sense of being fundament",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/loneliness/isolation/social-disconnection",
+    "identifier": "loneliness-social-disconnection",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Loneliness and Social Disconnection"
+    }
+  },
+  "ptsd-post-traumatic-stress-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "PTSD - Post-Traumatic Stress Disorder",
+    "description": "Your amygdala is running an outdated threat-detection protocol. It's time to install the current version. Post-Traumatic Stress Disorder develops following exposure to a traumatic event involving actual or threatened death, serious injury, or violence, resulting in intrusive memories, avoidance behaviors, and persistent alterations in mood and cognition. PTSD sufferers often experience flashbacks that feel as vivid and real as the original trauma, causing them to re-experience the event with ful",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/ptsd/post/traumatic",
+    "identifier": "ptsd-post-traumatic-stress-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "PTSD - Post-Traumatic Stress Disorder"
+    }
+  },
+  "migraines": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Migraines",
+    "description": "Migraines are a conversation between anxiety and your nervous system's pain-signaling center. And you can change the conversation. Migraines are a common neurological condition characterized by intense, debilitating headaches often accompanied by sensory disturbances, nausea, and heightened sensitivity to light and sound. Those affected by migraines experience not only the physical pain of the migraine attacks but also the anxiety and anticipation of future attacks, which can significantly limit",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/migraine/headache",
+    "identifier": "migraines",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Migraines"
+    }
+  },
+  "health-anxiety-hypochondriasis": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Health Anxiety and Hypochondriasis",
+    "description": "Your nervous system misinterprets neutral bodily signals as life-threatening disease. It's time to recalibrate the sensitivity. Health anxiety is characterized by preoccupation with having or acquiring serious illness despite medical reassurance, hypervigilance to bodily sensations, excessive health-seeking behaviors or avoidance of medical care, and significant distress and functional impairment. Individuals with health anxiety experience persistent catastrophic interpretations of normal bodily",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/health-anxiety/hypochondria/health-preoccupation",
+    "identifier": "health-anxiety-hypochondriasis",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Health Anxiety and Hypochondriasis"
+    }
+  },
+  "chronic-pain-psychosomatic": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Chronic Pain - Psychosomatic and Nervous System Amplification",
+    "description": "Your nervous system has trapped pain signals in an amplification loop. It's time to restore accurate pain signaling. Chronic pain that persists beyond reasonable healing timelines often involves nervous system amplification where the central nervous system produces pain signals that persist despite tissue healing, creating pain without ongoing injury. This creates a devastating trap: the nervous system remains in threat-based pain signaling, producing real pain that reinforces the perception of ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/chronic-pain/psychosomatic/pain-amplification",
+    "identifier": "chronic-pain-psychosomatic",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Chronic Pain - Psychosomatic and Nervous System Amplification"
+    }
+  },
+  "stuttering-childhood-onset-fluency-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Stuttering and Childhood-Onset Fluency Disorder",
+    "description": "Stuttering is a speech fluency disorder characterized by involuntary disruptions in the flow of speech, including repetitions of sounds or syllables, prolongations of sounds, or complete blocks where speech temporarily ceases. Far more than a simple speech impediment, stuttering often becomes deeply intertwined with anxiety and social fear, particularly during periods like adolescence when peer communication becomes central to social identity. The condition can significantly impact academic perf",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/stutter/fluency/stammer",
+    "identifier": "stuttering-childhood-onset-fluency-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Stuttering and Childhood-Onset Fluency Disorder"
+    }
+  },
+  "arachnophobia-fear-spiders": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Arachnophobia - Fear of Spiders",
+    "description": "Your amygdala has misclassified spiders as predators. Let's correct the file. Arachnophobia is one of the most common specific phobias affecting a significant portion of the population. Despite the fact that most spiders are harmless to humans, individuals with arachnophobia experience intense panic, avoidance, and significant distress when encountering a spider or even a picture of one. This phobia can severely limit activities outdoors, in basements, or in other spaces where spiders may be pre",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/spider/arachnophobia/fear/phobia",
+    "identifier": "arachnophobia-fear-spiders",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Arachnophobia - Fear of Spiders"
+    }
+  },
+  "ophidiophobia-fear-snakes": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Ophidiophobia - Fear of Snakes",
+    "description": "Your evolutionary threat detection system has been running on a hair trigger. It's time to attenuate the alarm. Ophidiophobia is a deeply rooted primal fear affecting many individuals, often triggered by an inborn predisposition combined with learned responses. Those affected experience panic, hypervigilance, and avoidance behaviors that can severely limit activities like hiking, camping, travel to certain regions, or even simple yard maintenance. The fear often persists despite intellectually k",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/snake/ophidiophobia/fear/phobia",
+    "identifier": "ophidiophobia-fear-snakes",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Ophidiophobia - Fear of Snakes"
+    }
+  },
+  "acrophobia-fear-heights": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Acrophobia - Fear of Heights",
+    "description": "Your inner ear is screaming safety warnings your conscious mind finds ridiculous. Let's recalibrate that amplifier. Acrophobia, the fear of heights, is a specific phobia involving intense fear and panic when at elevation or looking down from a height. Unlike most other phobias, acrophobia has a strong physiological component as our vestibular system (which controls balance) naturally creates unease at heights as a survival mechanism. However, in individuals with acrophobia, this natural caution ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/height/acrophobia/fear/phobia",
+    "identifier": "acrophobia-fear-heights",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Acrophobia - Fear of Heights"
+    }
+  },
+  "glossophobia-fear-public-speaking": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Glossophobia - Fear of Public Speaking",
+    "description": "Your brain perceives an audience as a firing squad. It's time to reclassify what witnessing actually means. Glossophobia, the fear of public speaking, is one of the most common specific phobias and social anxieties in the general population. Individuals with glossophobia experience intense anxiety, physical symptoms like trembling and accelerated heart rate, and often engage in significant avoidance of public speaking situations. This phobia can substantially limit career advancement, educationa",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/speaking/glossophobia/fear/phobia",
+    "identifier": "glossophobia-fear-public-speaking",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Glossophobia - Fear of Public Speaking"
+    }
+  },
+  "imposter-syndrome": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Imposter Syndrome",
+    "description": "Your nervous system adopted a false belief: that your success is fraudulent and exposure is inevitable. It's time to restore accurate self-assessment. Imposter syndrome is characterized by persistent self-doubt, feelings of fraudulence despite objective evidence of competence and accomplishment, and anxiety that one will be 'exposed' as inadequate. Individuals with imposter syndrome attribute success to external factors (luck, timing, others' help) while internalizing failure as confirmation of ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/imposter/syndrome/fraud/inadequacy",
+    "identifier": "imposter-syndrome",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Imposter Syndrome"
+    }
+  },
+  "performance-anxiety-evaluation-fear": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Performance Anxiety - Generalized Evaluation Anxiety",
+    "description": "Your amygdala perceives being watched or judged as social death. It's time to recalibrate that threat signal. Performance anxiety, beyond specific contexts like public speaking, is a pervasive anxiety about being evaluated, judged, or observed in any situation where performance or competence will be assessed. Individuals with generalized performance anxiety experience trembling, sweating, racing thoughts, and panic whenever their actions, knowledge, or abilities might be scrutinized—during meeti",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/performance-anxiety/evaluation/judgment/social-threat",
+    "identifier": "performance-anxiety-evaluation-fear",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Performance Anxiety - Generalized Evaluation Anxiety"
+    }
+  },
+  "agoraphobia-social-phobia": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Agoraphobia/Social Phobia - Fear of Open/Crowded Spaces",
+    "description": "Your nervous system has decided the world is a trap. It's time to set it free. Agoraphobia is a panic/anxiety disorder characterized by intense fear and avoidance of situations from which escape might be difficult or embarrassing, particularly open spaces, crowds, public transportation, or being away from home. Severe agoraphobia can become completely disabling, with individuals becoming housebound and dependent on others for basic functioning. Social phobia often accompanies or overlaps with ag",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/agoraphobia/social/phobia/crowds/open",
+    "identifier": "agoraphobia-social-phobia",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Agoraphobia/Social Phobia - Fear of Open/Crowded Spaces"
+    }
+  },
+  "aerophobia-fear-flying": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Aerophobia - Fear of Flying",
+    "description": "Your nervous system believes the cabin is a metal tube hurtling toward disaster. Except you're not. Aerophobia, the fear of flying, affects a substantial portion of the population and can range from mild anxiety to complete avoidance of air travel. Individuals with aerophobia experience intense anxiety before and during flights, often experiencing panic attacks, catastrophic thoughts about crashes, and significant avoidance that impacts travel, career opportunities, and vacation plans. For many,",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/flying/aerophobia/fear/phobia",
+    "identifier": "aerophobia-fear-flying",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Aerophobia - Fear of Flying"
+    }
+  },
+  "rejection-sensitivity": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Rejection Sensitivity Dysphoria",
+    "description": "Your amygdala treats subtle signs of rejection as social death threats. It's time to recalibrate that alarm. Rejection sensitivity dysphoria (RSD) is characterized by excessive emotional pain in response to perceived rejection, criticism, or abandonment, leading to hypervigilance to social cues indicating potential rejection. Individuals with RSD experience intense shame, rage, or despair in response to minor slights, perceived criticism, or situations where they might be excluded or judged. Thi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/rejection-sensitivity/rejection-dysphoria/social-pain",
+    "identifier": "rejection-sensitivity",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Rejection Sensitivity Dysphoria"
+    }
+  },
+  "cynophobia-fear-dogs": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Cynophobia - Fear of Dogs",
+    "description": "Your amygdala filed a threat report on dogs years ago. It's time to consciously revise that file. Cynophobia, the fear of dogs, is a specific phobia affecting individuals who have experienced prior negative dog-related experiences or have learned fear responses through observation or instruction. Individuals with cynophobia experience intense anxiety in the presence of dogs or even at the sound of barking, and often engage in significant avoidance of parks, neighborhoods, and social situations w",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/dog/cynophobia/fear/phobia",
+    "identifier": "cynophobia-fear-dogs",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Cynophobia - Fear of Dogs"
+    }
+  },
+  "trypanophobia-fear-needles": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Trypanophobia - Fear of Needles/Injections",
+    "description": "Your nervous system conflates a tiny puncture with mortal danger. That's affecting your health. Trypanophobia, the fear of needles or injections, is a specific phobia that can have serious health consequences as it often leads individuals to avoid necessary medical procedures, vaccinations, and dental care. Individuals with trypanophobia experience intense anxiety, panic, fainting, or avoidance when facing needle-related medical interventions. This phobia not only impacts individual health outco",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/needle/trypanophobia/fear/phobia",
+    "identifier": "trypanophobia-fear-needles",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Trypanophobia - Fear of Needles/Injections"
+    }
+  },
+  "claustrophobia-fear-enclosed-spaces": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Claustrophobia - Fear of Enclosed Spaces",
+    "description": "Your nervous system learned that confined spaces meant danger. Lucid transformation teaches it the difference between then and now. Claustrophobia, the fear of enclosed spaces, is a specific phobia characterized by intense anxiety when in small, confined spaces such as elevators, small bathrooms, closets, or confined areas without clear exits. Individuals with claustrophobia often experience panic attacks in these situations and engage in significant avoidance that can substantially restrict the",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/enclosed/claustrophobia/fear/phobia",
+    "identifier": "claustrophobia-fear-enclosed-spaces",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Claustrophobia - Fear of Enclosed Spaces"
+    }
+  },
+  "astraphobia-fear-storms": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Astraphobia - Fear of Storms/Thunder/Lightning",
+    "description": "Your amygdala treats storms as threats the way it was programmed to. Conscious recalibration rewrites that program. Astraphobia, the fear of storms, thunder, and lightning, is a specific phobia characterized by intense anxiety and panic during thunderstorms or when storms are forecast. Individuals with astraphobia often experience hypervigilance to weather forecasts, avoidance of outdoor activities during stormy seasons, and significant distress when storms occur. This phobia can restrict travel",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/storm/astraphobia/fear/phobia",
+    "identifier": "astraphobia-fear-storms",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Astraphobia - Fear of Storms/Thunder/Lightning"
+    }
+  },
+  "asd-autism-aspergers-autistic-spectrum-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "ASD - Autism, Asperger's and Autistic Spectrum Disorder",
+    "description": "Your nervous system processes information in its own way. Comfort comes from understanding and honoring that, not fighting it. Autism Spectrum Disorder (ASD) is a neurodevelopmental condition characterized by differences in social communication, repetitive behaviors or interests, and sensory processing. Individuals on the autism spectrum experience the world in distinct ways, with strengths in areas like pattern recognition, attention to detail, and focused interest, alongside challenges in area",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/asd/autism/aspergers/spectrum",
+    "identifier": "asd-autism-aspergers-autistic-spectrum-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "ASD - Autism, Asperger's and Autistic Spectrum Disorder"
+    }
+  },
+  "adhd-attention-deficit-hyperactivity-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "ADHD - Attention Deficit Hyperactivity Disorder",
+    "description": "Your prefrontal cortex is shouting for attention. Anxiety is jamming the signal. Attention-Deficit/Hyperactivity Disorder (ADHD) is a neurodevelopmental condition affecting the brain's regulation of attention, impulse control, and executive functions like planning, organization, and task initiation. Individuals with ADHD often struggle with sustained attention, time management, and follow-through on tasks, which can significantly impact academic achievement, employment, and self-esteem. While AD",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adhd/attention/deficit/hyperactivity",
+    "identifier": "adhd-attention-deficit-hyperactivity-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "ADHD - Attention Deficit Hyperactivity Disorder"
+    }
+  },
+  "bpd-bipolar-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "BPD - Bipolar Disorder",
+    "description": "Your mood system is a pendulum that's swinging too far. It's time to find the center. Bipolar Disorder is a mood disorder characterized by alternating episodes of depression and mania (or hypomania in Bipolar II), with periods of normal mood in between or varying states of mixed mood. During manic episodes, individuals experience decreased need for sleep, racing thoughts, increased goal-directed activity, and impaired judgment that can lead to risky behaviors and damaged relationships. During de",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/bipolar",
+    "identifier": "bpd-bipolar-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "BPD - Bipolar Disorder"
+    }
+  },
+  "gun-addiction-weapons-obsession": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Gun Addiction and Weapons Obsession",
+    "description": "Your nervous system learned that weapons represent power and control over threat. But that's a transaction with catastrophe. Gun addiction and compulsive weapons collection represent behavioral addiction to firearms and weapons acquisition, characterized by compulsive purchasing, obsessive focus on weapons capabilities, and escalating investment in firearms despite financial or relational consequences. Individuals with gun addiction often experience anxiety about vulnerability without weapons pr",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/gun-addiction/weapons/firearms/compulsive",
+    "identifier": "gun-addiction-weapons-obsession",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Gun Addiction and Weapons Obsession"
+    }
+  },
+  "homicidal-ideation-violent-urges": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Homicidal Ideation and Violent Urges",
+    "description": "Your amygdala is broadcasting violent solutions to threats that don't require violence. It's time to restore proportionate response capacity. Homicidal ideation refers to persistent, intrusive thoughts about harming or killing others, ranging from passive fantasies to active planning. Individuals experiencing homicidal ideation are often deeply distressed by their violent thoughts, which conflict with their values and desired identity. Homicidal ideation can emerge in psychiatric conditions (psy",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/homicidal-ideation/violent-thoughts/harm-urges",
+    "identifier": "homicidal-ideation-violent-urges",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Homicidal Ideation and Violent Urges"
+    }
+  },
+  "ied-rage-intermittent-explosive-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "IED - Rage and Intermittent Explosive Disorder",
+    "description": "Your nervous system is exploding because it never learned to breathe. That ends today. Intermittent Explosive Disorder and rage-related conditions are characterized by recurrent, sudden episodes of intense anger and aggressive behavior that are disproportionate to any provocation or stressor. Individuals experience these episodes as overwhelming and uncontrollable, often followed by remorse and distress about their behavior, particularly when loved ones have been harmed during the outburst. Thes",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/rage/anger/ied",
+    "identifier": "ied-rage-intermittent-explosive-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "IED - Rage and Intermittent Explosive Disorder"
+    }
+  },
+  "burnout-exhaustion-depersonalization": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Burnout - Chronic Exhaustion and Depersonalization",
+    "description": "Your nervous system has been running in overdrive for so long that it lost the ability to shift gears. Burnout isn't laziness—it's a nervous system trapped in a state of chronic threat perception. Burnout is a state of emotional, physical, and mental exhaustion caused by prolonged exposure to stressors in work or caregiving contexts, characterized by emotional exhaustion, depersonalization (emotional distance, cynicism, reduced empathy), and reduced sense of accomplishment. Individuals with burn",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/burnout/exhaustion/depersonalization/work-stress",
+    "identifier": "burnout-exhaustion-depersonalization",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Burnout - Chronic Exhaustion and Depersonalization"
+    }
+  },
+  "alcohol-substance-abuse": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Alcohol and Substance Abuse Disorders",
+    "description": "Your brain learned that the substance was the answer to an impossible question your nervous system kept asking. Substance Use Disorder is a chronic brain condition characterized by compulsive engagement in drug or alcohol use despite significant negative consequences, including health problems, damaged relationships, employment loss, and legal issues. Addiction hijacks the brain's reward, motivation, and decision-making systems, making it extremely difficult for individuals to stop using substan",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/alcohol/substance/abuse",
+    "identifier": "alcohol-substance-abuse",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Alcohol and Substance Abuse Disorders"
+    }
+  },
+  "screen-addiction": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Screen Addiction and Digital Compulsivity",
+    "description": "Your dopamine pathways learned that the screen is the most rewarding place on earth. It's time to restore balance. Screen addiction (behavioral addiction to digital devices, social media, gaming, or internet) is characterized by compulsive use of screens despite negative consequences, loss of control over usage, tolerance (requiring increasing amounts of use), and withdrawal symptoms when access is restricted. Individuals with screen addiction experience damaged relationships, academic and work ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/screen-addiction/technology/compulsive-use",
+    "identifier": "screen-addiction",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Screen Addiction and Digital Compulsivity"
+    }
+  },
+  "porn-addiction-sexual-compulsivity": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Porn Addiction and Compulsive Sexual Behaviors",
+    "description": "Your nervous system became wired for a supernormal stimulus that surpasses natural sexual engagement in reward intensity. It's time to restore natural sexual motivation. Porn addiction and compulsive sexual behaviors are characterized by compulsive engagement in explicit sexual content or sexual activities despite negative consequences, loss of control, escalation (requiring increasingly extreme content), and functional impairment in relationships and other life domains. Individuals with sexual ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/porn-addiction/sexual-compulsivity/compulsive-use",
+    "identifier": "porn-addiction-sexual-compulsivity",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Porn Addiction and Compulsive Sexual Behaviors"
+    }
+  },
+  "sexual-dysfunction-performance-anxiety-impotence": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Sexual Dysfunction - Impotence and Performance Anxiety",
+    "description": "Your nervous system learned that sexual performance is high-stakes threat assessment. It's time to restore authentic sexual presence. Sexual dysfunction encompasses erectile dysfunction (ED), premature ejaculation, anorgasmia, low libido and other sexual performance difficulties that significantly impact intimate relationships and self-esteem. Individuals with sexual dysfunction experience anxiety about sexual performance, shame about their bodies or abilities, avoidance of intimacy, and relatio",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/sexual-dysfunction/impotence/performance-anxiety/ed",
+    "identifier": "sexual-dysfunction-performance-anxiety-impotence",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Sexual Dysfunction - Impotence and Performance Anxiety"
+    }
+  },
+  "fear-of-intimacy-commitment-fear": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Fear of Intimacy and Commitment",
+    "description": "Your nervous system treats genuine closeness as existential threat. It's time to restore the capacity for authentic connection. Fear of intimacy is characterized by avoidance of emotional closeness, difficulty with vulnerability and self-disclosure, retreat when relationships deepen, and pervasive discomfort with being fully known by another person. Individuals with fear of intimacy often experience a paradox: they desperately want connection yet feel compelled to create distance or sabotage rel",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/fear-intimacy/commitment/closeness-phobia",
+    "identifier": "fear-of-intimacy-commitment-fear",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Fear of Intimacy and Commitment"
+    }
+  },
+  "ai-anxiety-technophobia-fear-ai": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "AI Anxiety and Technophobia - Fear of Artificial Intelligence",
+    "description": "Your nervous system perceives AI and technological change as existential threat. It's time to recalibrate threat-assessment in an age of technological transformation. AI anxiety is a form of specific anxiety about artificial intelligence, autonomous systems, technological automation, or technological disruption characterized by fear of AI replacing human capability, loss of employment/relevance, loss of control to machines, or existential risk from superintelligence. Individuals with AI anxiety ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/ai-anxiety/technophobia/fear-artificial-intelligence",
+    "identifier": "ai-anxiety-technophobia-fear-ai",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "AI Anxiety and Technophobia - Fear of Artificial Intelligence"
+    }
+  },
+  "social-media-anxiety-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Social Media Anxiety Disorder",
+    "description": "Your nervous system treats social media platforms as high-stakes social evaluation environments where judgment is constant. It's time to recalibrate social threat perception. Social media anxiety disorder is a specific manifestation of anxiety related to social media use, characterized by fear of missing out (FOMO), anxiety about negative social judgment on platforms, compulsive social comparison, and anxiety-driven social media checking and posting behaviors. Individuals with social media anxie",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/social-media-anxiety/fomo/comparison/digital-judgment",
+    "identifier": "social-media-anxiety-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Social Media Anxiety Disorder"
+    }
+  },
+  "paranoia-scelerephobia-fear-strangers-criminals": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Paranoia and Scelerephobia - Fear of Strangers and Crime",
+    "description": "Your amygdala declared the world full of criminals and threats hidden in every stranger. It's time to restore accurate threat assessment. Paranoia is characterized by persistent, unjustified suspicion of others' intentions, belief that people are plotting against you, hypervigilance to threat signs, and often magical thinking about persecution. Scelerephobia (fear of criminals and crime) involves intense dread of being victimized by crime, avoidance of normal situations due to exaggerated crime ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/paranoia/fear-strangers/crime-threat/persecution",
+    "identifier": "paranoia-scelerephobia-fear-strangers-criminals",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Paranoia and Scelerephobia - Fear of Strangers and Crime"
+    }
+  },
+  "tics-tourette-syndrome-tic-disorders": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Tics - Tourette Syndrome and Tic Disorders",
+    "description": "Your nervous system is firing unscheduled signals. It's time to redirect the neurological traffic. Tourette Syndrome and other tic disorders are neurodevelopmental conditions characterized by sudden, repetitive, nonrhythmic motor movements or vocalizations (tics) that are often experienced as irresistible and difficult or impossible to control. Tics can range from mild and barely noticeable to severe and highly disabling, significantly impacting social functioning and self-image, particularly in",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/tics/tourette",
+    "identifier": "tics-tourette-syndrome-tic-disorders",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Tics - Tourette Syndrome and Tic Disorders"
+    }
+  },
+  "epilepsy-seizure-disorders": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Epilepsy and Seizure Disorders",
+    "description": "Your nervous system's electrical cables are misfiring under stress. It's time to restore reliable current flow. Epilepsy is a neurological disorder characterized by a predisposition to recurrent seizures, which are sudden, uncontrolled electrical discharges in the brain leading to physical convulsions, altered consciousness, or other distinctive experiences. Individuals with epilepsy live with the constant threat of unpredictable seizures that can be dangerous, embarrassing, and severely restric",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/epilepsy/seizure",
+    "identifier": "epilepsy-seizure-disorders",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Epilepsy and Seizure Disorders"
+    }
+  },
+  "insomnia-sleep-hyperarousal": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Insomnia and Sleep Hyperarousal",
+    "description": "Your nervous system learned to stay on alert at night when it should be resting. Sleep is where the threat-detection system downregulates. Insomnia is characterized by persistent difficulty initiating or maintaining sleep despite adequate opportunity, leading to daytime impairment. Insomnia is often perpetuated by sleep-related anxiety (anxiety about not sleeping), hyperarousal where the nervous system stays in alert/threat-detection mode throughout the night, racing thoughts about day stressors",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/insomnia/sleep/hyperarousal/wakefulness",
+    "identifier": "insomnia-sleep-hyperarousal",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Insomnia and Sleep Hyperarousal"
+    }
+  },
+  "ocd-obsessive-compulsive-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "OCD - Obsessive-Compulsive Disorder",
+    "description": "Your brain is stuck in a loop, treating intrusive thoughts as actual threats. It's time to break the circuit. Obsessive-Compulsive Disorder is characterized by persistent intrusive thoughts, images, or urges (obsessions) that cause significant anxiety, followed by repetitive behaviors or mental acts (compulsions) performed to neutralize the anxiety or prevent a feared outcome. OCD can involve almost any theme: contamination, harm, aggression, sexual content. The compulsions can range from hand-w",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/ocd/obsessive/compulsive",
+    "identifier": "ocd-obsessive-compulsive-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "OCD - Obsessive-Compulsive Disorder"
+    }
+  },
+  "trichotillomania-hair-pulling": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Trichotillomania and Body-Focused Repetitive Behaviors",
+    "description": "Your nervous system learned to use hair-pulling or skin-picking to self-soothe an anxious threat state. The calming is temporary but the damage is real. Trichotillomania (hair-pulling disorder) and related body-focused repetitive behaviors (BFRBs) like skin-picking, nail-biting, and lip-chewing are characterized by repetitive self-injurious behavior that provides temporary emotional regulation and anxiety relief but results in visible tissue damage, social shame, and significant functional and h",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/trichotillomania/hair-pulling/body-focused-repetitive",
+    "identifier": "trichotillomania-hair-pulling",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Trichotillomania and Body-Focused Repetitive Behaviors"
+    }
+  },
+  "body-dysmorphia": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Body Dysmorphia - Distorted Self-Image and Appearance Preoccupation",
+    "description": "Your nervous system created a distorted map of your appearance and treats it as threat to social acceptability. It's time to restore accurate self-perception. Body dysmorphic disorder (BDD) is characterized by preoccupation with perceived defects in physical appearance that are not observable or appear trivial to others, leading to repetitive behaviors (mirror checking, excessive grooming, skin-picking, reassurance-seeking) and significant distress and functional impairment. Individuals with BDD",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/body-dysmorphia/body-image/appearance-preoccupation",
+    "identifier": "body-dysmorphia",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Body Dysmorphia - Distorted Self-Image and Appearance Preoccupation"
+    }
+  },
+  "eating-disorders-anorexia-bulimia-binge": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Eating Disorders - Anorexia, Bulimia, and Binge Eating",
+    "description": "Food became both control and threat, and your nervous system uses it to manage impossible internal states. It's time to restore genuine nourishment and regulation. Eating disorders (anorexia nervosa, bulimia nervosa, binge eating disorder, and other specified feeding/eating disorder) are serious psychiatric conditions characterized by disturbances in eating behaviors and related thoughts and emotions, leading to significant medical consequences, malnutrition, mortality risk, and severe psycholog",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/eating-disorders/anorexia/bulimia/binge-eating",
+    "identifier": "eating-disorders-anorexia-bulimia-binge",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Eating Disorders - Anorexia, Bulimia, and Binge Eating"
+    }
+  },
+  "spd-sensory-processing-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "SPD - Sensory Processing Disorder",
+    "description": "Your sensory system's volume dial got stuck on full blast. It's time to restore the dynamic range. Sensory Processing Disorder is characterized by difficulties in detecting, interpreting, or responding appropriately to sensory information from the body or environment, leading to difficulty functioning in daily life. Individuals with SPD may be hypersensitive to stimuli like touch, sound, or light and experience them as painful or overwhelming, or may be hyposensitive and fail to register sensory",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/spd/sensory/processing",
+    "identifier": "spd-sensory-processing-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "SPD - Sensory Processing Disorder"
+    }
+  },
+  "misophonia": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Misophonia",
+    "description": "Certain sounds trigger your amygdala's threat response as if they were survival dangers. Conscious transformation teaches your nervous system the difference. Misophonia, sometimes called 'Selective Sound Sensitivity Syndrome,' is a condition in which certain specific sounds (often called 'trigger sounds') provoke an intense, immediate emotional and physiological response ranging from intense disgust and anxiety to rage. Common trigger sounds include chewing, slurping, sniffling, or repetitive ta",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/misophonia/selective/sound/sensitivity",
+    "identifier": "misophonia",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Misophonia"
+    }
+  },
+  "selective-mutism": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Selective Mutism",
+    "description": "Your voice is locked in your throat by a false threat signal. It's time to find the off switch. Selective Mutism is an anxiety disorder in which individuals, typically children, are unable to speak in specific social situations despite being able to speak normally in other contexts, such as at home. This is not a choice or willful defiance, but rather an involuntary freezing response where the individual feels physically unable to produce speech despite desperately wanting to communicate. Select",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/mutism/selective/silence",
+    "identifier": "selective-mutism",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Selective Mutism"
+    }
+  },
+  "dcd-dyspraxia-developmental-coordination-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "DCD - Dyspraxia and Developmental Coordination Disorder",
+    "description": "Your body knows what to do. Your nervous system is just broadcasting too much static to let it happen. Developmental Coordination Disorder (DCD), also known as dyspraxia, is a neurodevelopmental condition affecting the motor planning and coordination pathways, leading to physical clumsiness, difficulty with complex movement sequences, and impaired athletic ability. Individuals with DCD may struggle with seemingly simple tasks like tying shoes, catching a ball, or handwriting, while having normal",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/dyspraxia/motor/coordination",
+    "identifier": "dcd-dyspraxia-developmental-coordination-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "DCD - Dyspraxia and Developmental Coordination Disorder"
+    }
+  },
+  "dyscalculia": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Dyscalculia",
+    "description": "Your brain processes numbers just fine. When anxiety isn't hijacking your parietal cortex, that changes. Dyscalculia is a specific learning disability affecting the ability to understand numbers and learn math facts and skills, despite normal intelligence and adequate instruction. Individuals with dyscalculia struggle with number sense, basic arithmetic operations, and mathematical reasoning, which can severely limit career opportunities and lead to pervasive shame about their cognitive abilitie",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/dyscalculia/math/numbers",
+    "identifier": "dyscalculia",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Dyscalculia"
+    }
+  },
+  "test-anxiety": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Test Anxiety",
+    "description": "High-stakes performance paralyzes your nervous system despite knowing the material. Your brain learned that tests equal threat. Test anxiety is a specific performance anxiety manifesting during high-stakes academic testing where despite adequate preparation and knowledge, individuals experience debilitating anxiety that blocks access to knowledge and interferes with performance. Individuals with test anxiety experience racing thoughts, 'brain freeze,' physical panic symptoms, catastrophic predic",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/test-anxiety/academic-performance/exam-anxiety",
+    "identifier": "test-anxiety",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Test Anxiety"
+    }
+  },
+  "perfectionism": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Perfectionism - Impossible Standards and Self-Imposed Threat",
+    "description": "Your nervous system adopted an impossible standard and now treats anything short of perfection as threat. It's time to recalibrate what 'good enough' actually is. Perfectionism is characterized by setting impossibly high standards, persistent self-criticism for minor imperfections, and anxiety about making mistakes or being less than excellent in any endeavor. Individuals with perfectionism experience chronic stress, procrastination (avoiding tasks where perfectionism makes completion impossible",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/perfectionism/impossible-standards/self-imposed-threat",
+    "identifier": "perfectionism",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Perfectionism - Impossible Standards and Self-Imposed Threat"
+    }
+  },
+  "dysgraphia": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Dysgraphia",
+    "description": "Your hand could write beautifully if anxiety's stranglehold grip didn't paralyze your fine motor control. Dysgraphia is a specific learning disability affecting the ability to write, characterized by illegible handwriting, spelling difficulties, and problems with written expression despite normal intelligence and adequate instruction. Individuals with dysgraphia often write slowly, laboriously, and painfully, with poor letter formation and spatial organization on the page. The struggle to write ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/dysgraphia/writing/handwriting",
+    "identifier": "dysgraphia",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Dysgraphia"
+    }
+  },
+  "generalized-anxiety-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Generalized Anxiety Disorder",
+    "description": "Your nervous system learned to perpetually scan for danger and now produces anxious predictions and worry about everyday life situations. Threat-detection became chronic. Generalized Anxiety Disorder (GAD) is characterized by persistent, excessive worry about multiple everyday life domains (work, health, relationships, finances, future) that occurs more days than not for at least six months, causing significant distress and functional impairment. Individuals with GAD experience constant low-leve",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/generalized/anxiety",
+    "identifier": "generalized-anxiety-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Generalized Anxiety Disorder"
+    }
+  },
+  "chronophobia-fear-time-future": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Chronophobia - Fear of Time/Future",
+    "description": "Time feels like a threat. Your nervous system learned that the future is dangerous and mortality is imminent. Chronophobia is characterized by an irrational fear of time passing, the aging process, death, or the future. Individuals with chronophobia experience intense anxiety when thinking about aging, time's passage, or inevitable death, leading to obsessive time-checking, difficulty functioning in the present, and pervasive dread about mortality. This often co-occurs with health anxiety and pe",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/chronophobia/fear/time",
+    "identifier": "chronophobia-fear-time-future",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Chronophobia - Fear of Time/Future"
+    }
+  },
+  "thanatophobia-death-anxiety": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Thanatophobia - Death Anxiety",
+    "description": "Death feels imminent and unpredictable. Your nervous system learned that death is a present danger rather than a distant eventual reality. Thanatophobia is an abnormal fear of death or dying, characterized by persistent, intrusive thoughts about one's death or others' deaths, intense anxiety when death is contemplated, and often panic attacks triggered by mortality reminders. Individuals with thanatophobia may engage in excessive health-checking, avoidance of situations associated with death, or",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/thanatophobia/death/anxiety",
+    "identifier": "thanatophobia-death-anxiety",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Thanatophobia - Death Anxiety"
+    }
+  },
+  "moral-injury-values-violation": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Moral Injury - Values Violation",
+    "description": "You acted or witnessed actions that betrayed your core values. Your nervous system now encodes that betrayal as self-threat and shame. Moral injury is a profound psychological response to perpetrating, witnessing, or failing to prevent violations of one's deeply held moral beliefs and values. Unlike trauma (which involves threat to survival), moral injury involves threat to one's identity and sense of self as a good person. Individuals with moral injury experience persistent guilt, shame, rage a",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/moral-injury/values/violation",
+    "identifier": "moral-injury-values-violation",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Moral Injury - Values Violation"
+    }
+  },
+  "other-fears-phobias": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Fears & Phobias",
+    "description": "Specific objects or situations trigger your amygdala as if they were survival dangers. Your threat-detection system learned a false positives. Phobias are intense, irrational fears of specific objects or situations that pose little actual danger but trigger severe anxiety and avoidance behaviors. Whether it's clouds, holes, snow, tears, bananas, or countless other specific stimuli, phobias cause individuals to arrange their lives around avoidance and experience significant functional impairment ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-fears-phobias",
+    "identifier": "other-fears-phobias",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Fears & Phobias"
+    }
+  },
+  "seasonal-affective-disorder-sad": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Seasonal Affective Disorder (SAD)",
+    "description": "Winter darkness triggers your nervous system into a depressive shutdown that feels involuntary because it is—until recalibration. Seasonal Affective Disorder is a type of depression triggered by seasonal changes, typically beginning in fall or early winter and remitting in spring or summer. Individuals with SAD experience depressed mood, loss of interest in activities, increased sleep, appetite changes, and profound fatigue during specific seasons, often causing occupational and social dysfuncti",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/seasonal-affective-disorder",
+    "identifier": "seasonal-affective-disorder-sad",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Seasonal Affective Disorder (SAD)"
+    }
+  },
+  "perinatal-depression-paternal-postpartum-depression": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Perinatal & Postpartum Depression",
+    "description": "Pregnancy and birth triggered a nervous system crash. The neurobiological upheaval of perinatal/postpartum transition created depressive shutdown. Perinatal and postpartum depression encompasses depression during pregnancy (perinatal) or following childbirth (postpartum), characterized by depressed mood, loss of interest in the baby, guilt, worthlessness, thoughts of harm, and severe functional impairment. This differs from \"baby blues\" in intensity and duration, and without treatment causes pro",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/perinatal-depression",
+    "identifier": "perinatal-depression-paternal-postpartum-depression",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Perinatal & Postpartum Depression"
+    }
+  },
+  "menopausal-depression": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Menopausal Depression",
+    "description": "Your nervous system crashed when estrogen declined. Menopause altered the neurochemical foundation that monoamine systems depend on. Menopausal depression is depression triggered or exacerbated during the menopausal transition or postmenopausal period, characterized by depressed mood, loss of interest, fatigue, cognitive changes, and often co-occurring anxiety and sleep disruption. This occurs specifically during hormonal transition and may represent an individual's first depressive episode or r",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/menopausal-depression",
+    "identifier": "menopausal-depression",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Menopausal Depression"
+    }
+  },
+  "other-mood-disorders": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Mood Disorders",
+    "description": "Your mood system became dysregulated and now generates states that interfere with your life. Whether cyclical, reactive, mixed, or persistent, nervous system dysregulation created a mood problem. Mood disorders encompass diverse conditions affecting emotional regulation, including dysthymia (persistent low mood), cyclothymia (cycling mood states), mixed mood states, and other patterns that significantly impair functioning and wellbeing. Individuals experience either persistently depressed mood o",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-mood-disorders",
+    "identifier": "other-mood-disorders",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Mood Disorders"
+    }
+  },
+  "dyslexia-reading-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Dyslexia - Reading Disorder",
+    "description": "Your brain processes written language through atypical pathways that make reading laborious and error-prone. The phonological and orthographic pathways are not optimally integrated. Dyslexia is a specific learning disability affecting the ability to read, characterized by difficulty with decoding, word recognition, reading fluency, and/or spelling despite normal intelligence and adequate instruction. Individuals with dyslexia often read slowly and laboriously, make reading errors, avoid reading ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/dyslexia/reading/disorder",
+    "identifier": "dyslexia-reading-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Dyslexia - Reading Disorder"
+    }
+  },
+  "other-neurodevelopmental-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Neurodevelopmental Issues",
+    "description": "Your nervous system developed with atypical wiring patterns that create functional challenges across multiple domains. Whether coordination, attention, social processing, or motor planning, the developing brain took a different path. Neurodevelopmental issues encompass diverse conditions including various learning disabilities, motor coordination difficulties, speech/language disorders, and social-communication differences that emerge during development and cause significant functional or educat",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-neurodevelopmental",
+    "identifier": "other-neurodevelopmental-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Neurodevelopmental Issues"
+    }
+  },
+  "gambling-addiction": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Gambling Addiction",
+    "description": "Your dopamine system learned that gambling provides the highest reward and now pursues it compulsively despite catastrophic consequences. Gambling became self-medication for impossible internal states. Gambling disorder is characterized by persistent, compulsive gambling despite significant negative consequences, loss of control over gambling, and escalating amounts of money and risk-taking. Individuals with gambling addiction experience massive financial losses, relationship destruction, occupa",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/gambling-addiction",
+    "identifier": "gambling-addiction",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Gambling Addiction"
+    }
+  },
+  "food-addiction": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Food Addiction",
+    "description": "Food became your primary coping mechanism for internal distress. Hyperpalatable foods hijacked your reward system. Food addiction involves compulsive eating of highly palatable foods (high sugar, fat, salt) despite negative health consequences, loss of control over eating, and using food as primary emotional regulation mechanism. Individuals with food addiction experience weight gain, health complications, shame, social isolation, and repeated failed dieting attempts. The addiction cycle involve",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/food-addiction",
+    "identifier": "food-addiction",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Food Addiction"
+    }
+  },
+  "other-addictions": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Addictions",
+    "description": "Your reward system learned to pursue a substance or behavior compulsively despite catastrophic consequences. Addiction patterns vary but the underlying mechanism is consistent: dopamine dysregulation and loss of inhibitory control. Other addictions beyond the primary patterns include shopping addiction, exercise addiction, work addiction, relationship addiction, and diverse compulsive behaviors that individuals pursue despite knowing they cause harm. Each addiction provides temporary dopamine el",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-addictions",
+    "identifier": "other-addictions",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Addictions"
+    }
+  },
+  "anxiety-related-gastrointestinal-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Anxiety-Related Gastrointestinal Issues",
+    "description": "Your gut became an early-warning system for threat that triggers digestive shutdown. The gut-brain axis wired anxiety to become gut dysregulation. Anxiety-related gastrointestinal issues include irritable bowel syndrome (IBS), functional dyspepsia, nausea, constipation, diarrhea, and gut pain that occur or dramatically worsen during anxiety or stress. The gut becomes the primary symptom location where anxiety manifests, causing significant digestive dysfunction and often leading to avoidance of ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/anxiety-related-gastrointestinal",
+    "identifier": "anxiety-related-gastrointestinal-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Anxiety-Related Gastrointestinal Issues"
+    }
+  },
+  "anxiety-health-conditions": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Anxiety About Physical Health Conditions",
+    "description": "You have a genuine health condition and your nervous system transformed normal symptoms into perceived life-threat. Health anxiety amplifies the meaning of real physiological signals. Anxiety about real health conditions occurs when individuals with actual medical conditions (diabetes, asthma, heart conditions, autoimmune disease, chronic pain) develop excessive anxiety about their condition that exceeds what the condition itself warrants. The anxiety about the health condition becomes a bigger ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/anxiety-health-conditions",
+    "identifier": "anxiety-health-conditions",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Anxiety About Physical Health Conditions"
+    }
+  },
+  "other-neurological-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Neurological Issues",
+    "description": "Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. Other neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that signific",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-neurological-issues",
+    "identifier": "other-neurological-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Neurological Issues"
+    }
+  },
+  "self-esteem-identity-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Self-Esteem & Identity Issues",
+    "description": "Your self-perception became distorted by false threat assessments about your worth. The neural encoding of self became corrupted. Self-esteem and identity issues involve chronic negative self-perception, feelings of unworthiness or inadequacy, persistent self-criticism, difficulty claiming personal accomplishments, and core identity confusion about who \"I really am.\" Individuals with self-esteem issues often feel fundamentally flawed despite evidence of competence or positive qualities, leading ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/self-esteem-identity",
+    "identifier": "self-esteem-identity-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Self-Esteem & Identity Issues"
+    }
+  },
+  "other-performance-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Performance Issues",
+    "description": "You know what to do, but when it matters, your nervous system hijacks your capability. Performance becomes blocked by threat-detection about the performance itself. Performance issues encompass situations where individuals can execute skills in low-stakes contexts but experience dysfunction when performance has perceived consequences (evaluation, competition, stakes, audience, time pressure). Whether academic, athletic, artistic, professional, or social performance, the nervous system perceives ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-performance-issues",
+    "identifier": "other-performance-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Performance Issues"
+    }
+  },
+  "cutting-self-harm": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Cutting & Self-Harm",
+    "description": "Your nervous system learned that physical pain provides relief from psychological distress. Self-injury became your primary emotion regulation system. Cutting and self-harm behaviors involve intentional injury to the body (cutting, burning, picking, hitting) as primary mechanism for emotional regulation, dissociation management, or self-punishment. Individuals who self-injure typically experience intense emotional pain, dissociation, or emotional numbness and find that physical pain provides tem",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/cutting-self-harm",
+    "identifier": "cutting-self-harm",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Cutting & Self-Harm"
+    }
+  },
+  "hoarding-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Hoarding Disorder",
+    "description": "Your brain learned that acquiring and keeping possessions reduces anxiety. The neural circuits for decision-making and emotional regulation became hoarding-focused. Hoarding disorder is characterized by excessive accumulation of possessions, difficulty discarding items (regardless of actual value), and significant distress or functional impairment caused by cluttered living spaces. Individuals with hoarding disorder experience decision paralysis when facing item disposal, intense anxiety at the ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/hoarding-disorder",
+    "identifier": "hoarding-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Hoarding Disorder"
+    }
+  },
+  "other-ocd-spectrum": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other OCD-Spectrum Issues",
+    "description": "Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. Other OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant dis",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-ocd-spectrum",
+    "identifier": "other-ocd-spectrum",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other OCD-Spectrum Issues"
+    }
+  },
+  "relationship-jealousy-insecurity": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Relationship Jealousy & Insecurity",
+    "description": "Your partner's fidelity or commitment feels perpetually in doubt and your nervous system treats their other relationships as threats to your survival. Attachment became security-focused through hypervigilance. Relationship jealousy and insecurity involve persistent fear of abandonment, excessive monitoring of partner's whereabouts/communication, intense distress at partner's interactions with others, and behavioral or cognitive attempts to prevent infidelity or abandonment. Jealousy and insecuri",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/relationship-jealousy",
+    "identifier": "relationship-jealousy-insecurity",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Relationship Jealousy & Insecurity"
+    }
+  },
+  "codependency-relational-enmeshment": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Codependency & Relational Enmeshment",
+    "description": "Your sense of self became fused with other people's emotional states and you learned that your worth depends on meeting others' needs. Boundaries dissolved in service of perceived safety. Codependency involves loss of self in relationships, excessive caretaking or emotional responsiveness to others, difficulty setting boundaries, and personal needs subordination to maintaining relationships. Individuals with codependency typically manage others' emotions, abandon their own interests and preferen",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/codependency",
+    "identifier": "codependency-relational-enmeshment",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Codependency & Relational Enmeshment"
+    }
+  },
+  "other-attachment-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Attachment Issues",
+    "description": "Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. Other attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficultie",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-attachment-issues",
+    "identifier": "other-attachment-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Attachment Issues"
+    }
+  },
+  "aphasia-language-disorder": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Aphasia - Language Disorder",
+    "description": "Your language system became disrupted and now words don't flow as they used to. Language access became blocked or slowed. Aphasia is an acquired language disorder typically resulting from stroke, brain injury, or neurological disease, characterized by difficulty with language production (expressive aphasia), language comprehension (receptive aphasia), or both. Individuals with aphasia may experience word-finding difficulty, trouble understanding speech, reading/writing problems, or complete lang",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/aphasia",
+    "identifier": "aphasia-language-disorder",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Aphasia - Language Disorder"
+    }
+  },
+  "other-communication-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Other Communication Issues",
+    "description": "Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. Other communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant so",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/other-communication-issues",
+    "identifier": "other-communication-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Other Communication Issues"
+    }
+  },
+  "trauma-drama-etc": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Trauma, Drama & Related",
+    "description": "Life experiences imprinted your nervous system with threat patterns that now generate chronic survival responses. Whether psychological trauma, relational trauma, complex trauma, or recurrent destructive patterns, your nervous system learned the world is dangerous. Trauma, drama, and related patterns encompass psychological outcomes from negative life experiences including PTSD, complex PTSD, trauma-related anxiety, recurrent harmful relationship patterns, crisis-prone lifestyle, and chronic sur",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/trauma-drama",
+    "identifier": "trauma-drama-etc",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Trauma, Drama & Related"
+    }
+  },
+  "power-control-issues": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Power & Control Issues",
+    "description": "Your nervous system learned that maintaining control is necessary for survival. Power and dominance or compulsive control-seeking became how your nervous system manages threat. Power and control issues involve patterns of seeking control over others or situations, difficulty with loss of control, aggressive dominance-assertion, vulnerability-intolerance, and relational patterns where control becomes more important than connection. These create significant relationship damage and often restrict p",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/power-control-issues",
+    "identifier": "power-control-issues",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Power & Control Issues"
+    }
+  },
+  "rape-sexual-assault": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Rape & Sexual Assault",
+    "description": "Your body was violated and your nervous system learned that intimacy, vulnerability, or specific triggers equal survival danger. Sexual assault became encoded as core threat. Rape and sexual assault survivors experience profound psychological consequences including PTSD, complex trauma, hypervigilance, dissociation, shame, difficulty with trust and intimacy, intrusive memories, and often suicidal ideation. The assault violated bodily autonomy and safety, and the nervous system remains in protect",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/rape-sexual-assault",
+    "identifier": "rape-sexual-assault",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Rape & Sexual Assault"
+    }
+  },
+  "stockholm-syndrome-trauma-bonding": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Stockholm Syndrome - Trauma & Bonding",
+    "description": "Your nervous system bonded with an abuser because isolation and intermittent reinforcement hijacked your attachment system. Trauma bonding created the emotional glue that prevents escape. Stockholm Syndrome and trauma bonding involve the paradoxical experience of feeling love, loyalty, or protective feelings toward an abuser or captor despite ongoing abuse, threat, or captivity. Individuals in trauma bonds continue seeking contact with abusers, defend abusers against outside intervention, experi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/stockholm-syndrome",
+    "identifier": "stockholm-syndrome-trauma-bonding",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Stockholm Syndrome - Trauma & Bonding"
+    }
+  },
+  "sex-addiction": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Sex Addiction",
+    "description": "Your nervous system learned that sexual behavior is the primary mechanism for managing impossible internal states. Compulsive sexuality became your escape system. Sex addiction involves compulsive sexual behavior, masturbation compulsion, seeking multiple partners, risky sexual behavior, or sexual preoccupation that continues despite negative consequences including relationship damage, occupational impairment, risk of disease transmission, legal problems, and profound shame. Individuals with sex",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/sex-addiction",
+    "identifier": "sex-addiction",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Sex Addiction"
+    }
+  }
+}

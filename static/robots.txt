@@ -1,3 +1,19 @@
-# allow crawling everything by default
+# SEO robots configuration for Neuro Recursion Institute
+# Allow all crawling by default
+
 User-agent: *
-Disallow:
+Disallow: /api/
+Allow: /
+
+# Sitemaps for search engines
+Sitemap: https://neurorecursion.com/sitemap.xml
+
+# Crawl-delay and request-rate (give servers breathing room)
+Crawl-delay: 1
+
+# Specific bot optimizations
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
