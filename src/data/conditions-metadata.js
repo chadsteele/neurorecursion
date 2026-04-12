@@ -174,6 +174,11 @@ export const CONDITIONS_METADATA = [
   "background_image": ""
  },
  {
+  "id": "sexual-dysfunction-performance-anxiety-impotence",
+  "path": "/remote-clinical-trial/free/sexual-dysfunction/impotence/performance-anxiety/ed",
+  "background_image": ""
+ },
+ {
   "id": "fear-of-intimacy-commitment-fear",
   "path": "/remote-clinical-trial/free/fear-intimacy/commitment/closeness-phobia",
   "background_image": "/backgrounds/commitment.png"
@@ -274,9 +279,29 @@ export const CONDITIONS_METADATA = [
   "background_image": ""
  },
  {
+  "id": "chronophobia-fear-time-future",
+  "path": "/remote-clinical-trial/free/chronophobia/fear/time",
+  "background_image": ""
+ },
+ {
+  "id": "thanatophobia-death-anxiety",
+  "path": "/remote-clinical-trial/free/thanatophobia/death/anxiety",
+  "background_image": ""
+ },
+ {
   "id": "moral-injury-values-violation",
   "path": "/remote-clinical-trial/free/moral-injury/values/violation",
   "background_image": "/backgrounds/moral-injury.png"
+ },
+ {
+  "id": "general-fears-phobias",
+  "path": "/remote-clinical-trial/free/general-fears-phobias",
+  "background_image": ""
+ },
+ {
+  "id": "seasonal-affective-disorder-sad",
+  "path": "/remote-clinical-trial/free/seasonal-affective-disorder",
+  "background_image": ""
  },
  {
   "id": "perinatal-depression-paternal-postpartum-depression",
@@ -284,13 +309,23 @@ export const CONDITIONS_METADATA = [
   "background_image": "/backgrounds/postpartum.png"
  },
  {
-  "id": "other-mood-disorders",
-  "path": "/remote-clinical-trial/free/other-mood-disorders",
+  "id": "menopausal-depression",
+  "path": "/remote-clinical-trial/free/menopausal-depression",
+  "background_image": ""
+ },
+ {
+  "id": "general-mood-disorders",
+  "path": "/remote-clinical-trial/free/general-mood-disorders",
   "background_image": "/backgrounds/badmood.png"
  },
  {
-  "id": "other-neurodevelopmental-issues",
-  "path": "/remote-clinical-trial/free/other-neurodevelopmental",
+  "id": "dyslexia-reading-disorder",
+  "path": "/remote-clinical-trial/free/dyslexia/reading/disorder",
+  "background_image": ""
+ },
+ {
+  "id": "general-neurodevelopmental-issues",
+  "path": "/remote-clinical-trial/free/general-neurodevelopmental",
   "background_image": "/backgrounds/neural.png"
  },
  {
@@ -299,9 +334,44 @@ export const CONDITIONS_METADATA = [
   "background_image": "/backgrounds/gambler.png"
  },
  {
+  "id": "food-addiction",
+  "path": "/remote-clinical-trial/free/food-addiction",
+  "background_image": ""
+ },
+ {
+  "id": "general-addictions",
+  "path": "/remote-clinical-trial/free/general-addictions",
+  "background_image": ""
+ },
+ {
+  "id": "anxiety-related-gastrointestinal-issues",
+  "path": "/remote-clinical-trial/free/anxiety-related-gastrointestinal",
+  "background_image": ""
+ },
+ {
   "id": "anxiety-health-conditions",
   "path": "/remote-clinical-trial/free/anxiety-health-conditions",
   "background_image": "/backgrounds/wheelchair.png"
+ },
+ {
+  "id": "general-neurological-issues",
+  "path": "/remote-clinical-trial/free/general-neurological-issues",
+  "background_image": ""
+ },
+ {
+  "id": "self-esteem-identity-issues",
+  "path": "/remote-clinical-trial/free/self-esteem-identity",
+  "background_image": ""
+ },
+ {
+  "id": "general-performance-issues",
+  "path": "/remote-clinical-trial/free/general-performance-issues",
+  "background_image": ""
+ },
+ {
+  "id": "cutting-self-harm",
+  "path": "/remote-clinical-trial/free/cutting-self-harm",
+  "background_image": ""
  },
  {
   "id": "hoarding-disorder",
@@ -309,8 +379,8 @@ export const CONDITIONS_METADATA = [
   "background_image": "/backgrounds/stuff.png"
  },
  {
-  "id": "other-ocd-spectrum",
-  "path": "/remote-clinical-trial/free/other-ocd-spectrum",
+  "id": "general-ocd-spectrum",
+  "path": "/remote-clinical-trial/free/general-ocd-spectrum",
   "background_image": "/backgrounds/ocd.png"
  },
  {
@@ -319,14 +389,34 @@ export const CONDITIONS_METADATA = [
   "background_image": "/backgrounds/jealousy.png"
  },
  {
-  "id": "other-attachment-issues",
-  "path": "/remote-clinical-trial/free/other-attachment-issues",
+  "id": "codependency-relational-enmeshment",
+  "path": "/remote-clinical-trial/free/codependency",
+  "background_image": ""
+ },
+ {
+  "id": "general-attachment-issues",
+  "path": "/remote-clinical-trial/free/general-attachment-issues",
   "background_image": "/backgrounds/attached.png"
  },
  {
   "id": "aphasia-language-disorder",
   "path": "/remote-clinical-trial/free/aphasia",
   "background_image": "/backgrounds/aphasia.png"
+ },
+ {
+  "id": "general-communication-issues",
+  "path": "/remote-clinical-trial/free/general-communication-issues",
+  "background_image": ""
+ },
+ {
+  "id": "trauma-drama-etc",
+  "path": "/remote-clinical-trial/free/trauma-drama",
+  "background_image": ""
+ },
+ {
+  "id": "power-control-issues",
+  "path": "/remote-clinical-trial/free/power-control-issues",
+  "background_image": ""
  },
  {
   "id": "rape-sexual-assault",

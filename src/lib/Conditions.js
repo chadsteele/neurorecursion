@@ -754,8 +754,8 @@ Our technique integrates the moral violation into a coherent, compassionate iden
 		background_image: "/backgrounds/moral-injury.png",
 	},
 	{
-		id: "other-fears-phobias",
-		path: "/remote-clinical-trial/free/other-fears-phobias",
+		id: "general-fears-phobias",
+		path: "/remote-clinical-trial/free/general-fears-phobias",
 		name: "Other Fears & Phobias",
 		description: `Specific objects or situations trigger your amygdala as if they were survival dangers. Your threat-detection system learned a false positives. Phobias are intense, irrational fears of specific objects or situations that pose little actual danger but trigger severe anxiety and avoidance behaviors. Whether it's clouds, holes, snow, tears, bananas, or countless other specific stimuli, phobias cause individuals to arrange their lives around avoidance and experience significant functional impairment despite intellectually knowing the fear is irrational.
 
@@ -799,8 +799,8 @@ Our technique recalibrates monoamine systems and limbic sensitivity to menopausa
 		ngo_url: "https://www.menopause.org/",
 	},
 	{
-		id: "other-mood-disorders",
-		path: "/remote-clinical-trial/free/other-mood-disorders",
+		id: "general-mood-disorders",
+		path: "/remote-clinical-trial/free/general-mood-disorders",
 		name: "Other Mood Disorders",
 		description: `Your mood system became dysregulated and now generates states that interfere with your life. Whether cyclical, reactive, mixed, or persistent, nervous system dysregulation created a mood problem. Mood disorders encompass diverse conditions affecting emotional regulation, including dysthymia (persistent low mood), cyclothymia (cycling mood states), mixed mood states, and other patterns that significantly impair functioning and wellbeing. Individuals experience either persistently depressed mood or mood cycling that disrupts relationships, work, sleep, and overall quality of life.
 
@@ -821,8 +821,8 @@ The neurobiological mechanism involves atypical connectivity between the visual 
 Our technique optimizes the visual-phonological integration pathways and reduces reading-related anxiety through targeted limbic and visual processing intervention. We enhance the neural coordination between visual recognition and phonological access. Your reading becomes more fluent and automatic as the visual-phonological pathways synchronize. This isn't reading tutoring or more practice. It's recalibration of how the brain integrates visual letter forms with sound. You experience faster reading speed, improved accuracy, and restored willingness to engage with written material.`,
 	},
 	{
-		id: "other-neurodevelopmental-issues",
-		path: "/remote-clinical-trial/free/other-neurodevelopmental",
+		id: "general-neurodevelopmental-issues",
+		path: "/remote-clinical-trial/free/general-neurodevelopmental",
 		name: "Other Neurodevelopmental Issues",
 		description: `Your nervous system developed with atypical wiring patterns that create functional challenges across multiple domains. Whether coordination, attention, social processing, or motor planning, the developing brain took a different path. Neurodevelopmental issues encompass diverse conditions including various learning disabilities, motor coordination difficulties, speech/language disorders, and social-communication differences that emerge during development and cause significant functional or educational impairment despite adequate environmental support and opportunity.
 
@@ -854,8 +854,8 @@ Our technique recalibrates the food reward system and restores genuine interocep
 		ngo_url: "https://www.nationaleatingdisorders.org/",
 	},
 	{
-		id: "other-addictions",
-		path: "/remote-clinical-trial/free/other-addictions",
+		id: "general-addictions",
+		path: "/remote-clinical-trial/free/general-addictions",
 		name: "Other Addictions",
 		description: `Your reward system learned to pursue a substance or behavior compulsively despite catastrophic consequences. Addiction patterns vary but the underlying mechanism is consistent: dopamine dysregulation and loss of inhibitory control. Other addictions beyond the primary patterns include shopping addiction, exercise addiction, work addiction, relationship addiction, and diverse compulsive behaviors that individuals pursue despite knowing they cause harm. Each addiction provides temporary dopamine elevation and escape from distress, followed by shame and escalating distress that drives continued pursuit.
 
@@ -888,8 +888,8 @@ Our technique recalibrates the amygdala's threat perception of health condition 
 		background_image: "/backgrounds/wheelchair.png",
 	},
 	{
-		id: "other-neurological-issues",
-		path: "/remote-clinical-trial/free/other-neurological-issues",
+		id: "general-neurological-issues",
+		path: "/remote-clinical-trial/free/general-neurological-issues",
 		name: "Other Neurological Issues",
 		description: `Your nervous system contains wiring patterns that create functional challenges across perception, sensation, or movement control. Whether from developmental differences, acquired injury, metabolic disruption, or neurodegenerative processes, the brain or nervous system generates symptoms that impair quality of life. Other neurological issues encompass diverse conditions including various movement disorders, sensory processing variations, headache syndromes, and neurological symptoms that significantly impact functioning despite normal overall development or health status.
 
@@ -910,8 +910,8 @@ Our technique recalibrates the self-representation in the medial prefrontal cort
 		ngo_url: "https://www.nami.org/",
 	},
 	{
-		id: "other-performance-issues",
-		path: "/remote-clinical-trial/free/other-performance-issues",
+		id: "general-performance-issues",
+		path: "/remote-clinical-trial/free/general-performance-issues",
 		name: "Other Performance Issues",
 		description: `You know what to do, but when it matters, your nervous system hijacks your capability. Performance becomes blocked by threat-detection about the performance itself. Performance issues encompass situations where individuals can execute skills in low-stakes contexts but experience dysfunction when performance has perceived consequences (evaluation, competition, stakes, audience, time pressure). Whether academic, athletic, artistic, professional, or social performance, the nervous system perceives the performance context as threat and triggers the freezing, hyperarousal, or cognitive disruption that prevents effective performance.
 
@@ -943,8 +943,8 @@ Our technique recalibrates item-meaning attribution and loss-aversion through ta
 		background_image: "/backgrounds/stuff.png",
 	},
 	{
-		id: "other-ocd-spectrum",
-		path: "/remote-clinical-trial/free/other-ocd-spectrum",
+		id: "general-ocd-spectrum",
+		path: "/remote-clinical-trial/free/general-ocd-spectrum",
 		name: "Other OCD-Spectrum Issues",
 		description: `Intrusive thoughts or impulses hijacked your nervous system and now your brain treats them as genuine threats requiring compulsive responding. OCD spectrum patterns share the core mechanism of threat-misdetection and compulsion-based regulation. Other OCD-spectrum issues include diverse obsessions (about harm, sexuality, identity, morality, contamination, perfection) and related compulsions (checking, seeking reassurance, avoidance, mental rituals, ordering, arranging) that cause significant distress and functional impairment. The distinguishing feature is that the compulsions provide only temporary relief before obsessions resurface, creating cycles of increasing distress.
 
@@ -975,8 +975,8 @@ The neurobiological mechanism involves overactive mirror neuron systems where ot
 Our technique restores self-other boundaries and personal autonomy through targeted limbic and identity intervention. We recalibrate interoceptive awareness of personal needs and reduce amygdala's reactivity to others' emotional states. Your nervous system restores clear sense of self separate from others. You experience healthy interdependence with maintained self-integrity, ability to set boundaries, and reduced compulsive caregiving.`,
 	},
 	{
-		id: "other-attachment-issues",
-		path: "/remote-clinical-trial/free/other-attachment-issues",
+		id: "general-attachment-issues",
+		path: "/remote-clinical-trial/free/general-attachment-issues",
 		name: "Other Attachment Issues",
 		description: `Your earliest relationships wired your nervous system to expect particular relational patterns that now limit your capacity for secure connection. Attachment become the template for all relationships. Other attachment issues encompass diverse insecure attachment patterns that developed from early relational experiences and now create dysfunction in adult relationships. Whether avoidant, ambivalent, fearful, or disorganized patterns, insecure attachment creates persistent relationship difficulties, emotional distance, pursuit-withdrawal cycles, or paradoxical distance-seeking in intimate relationships.
 
@@ -997,8 +997,8 @@ Our technique facilitates neural plasticity and language pathway reorganization 
 		background_image: "/backgrounds/aphasia.png",
 	},
 	{
-		id: "other-communication-issues",
-		path: "/remote-clinical-trial/free/other-communication-issues",
+		id: "general-communication-issues",
+		path: "/remote-clinical-trial/free/general-communication-issues",
 		name: "Other Communication Issues",
 		description: `Your nervous system struggles with the complex coordination required for clear communication. Whether timing, word selection, or social-emotional attunement, authentic communication became difficult. Other communication issues encompass diverse difficulties with verbal or nonverbal communication including stuttering, unclear speech intelligibility, difficulty with conversational flow, poor listening skills, or lack of attunement to communication partner's perspective. These create significant social and occupational difficulties despite potentially intact underlying cognitive or language capability.
 

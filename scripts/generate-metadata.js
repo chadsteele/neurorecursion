@@ -19,58 +19,52 @@ const outputPath = path.join(rootDir, "src/data/conditions-metadata.js")
 
 /**
  * Extract id, path, and background_image from Conditions.js
+ * Uses direct module import for maximum accuracy
  */
-function extractConditions() {
-	const content = fs.readFileSync(conditionsPath, "utf-8")
+async function extractConditions() {
+	try {
+		const conditionsModule = await import(`file://${conditionsPath}`)
+		const conditions = conditionsModule.default || []
 
-	const conditions = []
+		if (!Array.isArray(conditions)) {
+			throw new Error("Conditions.js default export is not an array")
+		}
 
-	// Match each condition object: { id: "...", path: "...", background_image: "..." }
-	const objRegex =
-		/\{\s*id:\s*"([^"]+)"[^}]*?path:\s*"([^"]+)"[^}]*?background_image:\s*"([^"]*)"[^}]*?\}/g
-
-	let match
-	while ((match = objRegex.exec(content)) !== null) {
-		conditions.push({
-			id: match[1],
-			path: match[2],
-			background_image: match[3],
-		})
+		// Extract only id, path, background_image from each condition
+		return conditions.map((condition) => ({
+			id: condition.id,
+			path: condition.path,
+			background_image: condition.background_image || "",
+		}))
+	} catch (error) {
+		console.error("Failed to import Conditions.js:", error.message)
+		throw error
 	}
-
-	if (conditions.length === 0) {
-		throw new Error("Could not extract conditions from Conditions.js")
-	}
-
-	return conditions
 }
 
 /**
- * Extract id, path, and background_url from Pioneers.js
+ * Extract id, path, and background_image from Pioneers.js
+ * Uses direct module import for maximum accuracy
  */
-function extractPioneers() {
-	const content = fs.readFileSync(pioneersPath, "utf-8")
+async function extractPioneers() {
+	try {
+		const pioneersModule = await import(`file://${pioneersPath}`)
+		const pioneers = pioneersModule.default || []
 
-	const pioneers = []
+		if (!Array.isArray(pioneers)) {
+			throw new Error("Pioneers.js default export is not an array")
+		}
 
-	// Match each pioneer object: { id: "...", path: "...", background_url: "..." }
-	const objRegex =
-		/\{\s*id:\s*"([^"]+)"[^}]*?path:\s*"([^"]+)"[^}]*?background_url:\s*"([^"]*)"/g
-
-	let match
-	while ((match = objRegex.exec(content)) !== null) {
-		pioneers.push({
-			id: match[1],
-			path: match[2],
-			background_image: match[3], // Convert background_url to background_image
-		})
+		// Extract only id, path, background_url (renamed to background_image) from each pioneer
+		return pioneers.map((pioneer) => ({
+			id: pioneer.id,
+			path: pioneer.path,
+			background_image: pioneer.background_url || "",
+		}))
+	} catch (error) {
+		console.error("Failed to import Pioneers.js:", error.message)
+		throw error
 	}
-
-	if (pioneers.length === 0) {
-		throw new Error("Could not extract pioneers from Pioneers.js")
-	}
-
-	return pioneers
 }
 
 /**
@@ -93,15 +87,15 @@ function generateMetadataFile(conditions, pioneers) {
 /**
  * Main function
  */
-function main() {
+async function main() {
 	try {
 		console.log("📊 Generating metadata...")
 		console.log(`  Reading ${path.relative(rootDir, conditionsPath)}`)
-		const conditions = extractConditions()
+		const conditions = await extractConditions()
 		console.log(`  ✓ Extracted ${conditions.length} conditions`)
 
 		console.log(`  Reading ${path.relative(rootDir, pioneersPath)}`)
-		const pioneers = extractPioneers()
+		const pioneers = await extractPioneers()
 		console.log(`  ✓ Extracted ${pioneers.length} pioneers`)
 
 		const content = generateMetadataFile(conditions, pioneers)

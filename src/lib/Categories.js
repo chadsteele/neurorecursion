@@ -26,7 +26,7 @@ export const Categories = [
 			"aerophobia-fear-flying",
 			"chronophobia-fear-time-future",
 			"moral-injury-values-violation",
-			"other-fears-phobias",
+			"general-fears-phobias",
 		],
 	},
 	{
@@ -39,7 +39,7 @@ export const Categories = [
 			"seasonal-affective-disorder-sad",
 			"perinatal-depression-paternal-postpartum-depression",
 			"menopausal-depression",
-			"other-mood-disorders",
+			"general-mood-disorders",
 		],
 	},
 	{
@@ -53,7 +53,7 @@ export const Categories = [
 			"dyslexia-reading-disorder",
 			"dyscalculia",
 			"misophonia",
-			"other-neurodevelopmental-issues",
+			"general-neurodevelopmental-issues",
 		],
 	},
 	{
@@ -66,7 +66,7 @@ export const Categories = [
 			"gambling-addiction",
 			"food-addiction",
 			"sex-addiction",
-			"other-addictions",
+			"general-addictions",
 		],
 	},
 	{
@@ -80,7 +80,7 @@ export const Categories = [
 			"insomnia-sleep-hyperarousal",
 			"anxiety-related-gastrointestinal-issues",
 			"anxiety-health-conditions",
-			"other-neurological-issues",
+			"general-neurological-issues",
 		],
 	},
 	{
@@ -92,7 +92,7 @@ export const Categories = [
 			"body-dysmorphia",
 			"self-esteem-identity-issues",
 			"imposter-syndrome",
-			"other-performance-issues",
+			"general-performance-issues",
 		],
 	},
 	{
@@ -104,7 +104,7 @@ export const Categories = [
 			"trichotillomania-hair-pulling",
 			"hoarding-disorder",
 			"cutting-self-harm",
-			"other-ocd-spectrum",
+			"general-ocd-spectrum",
 		],
 	},
 	{
@@ -119,7 +119,7 @@ export const Categories = [
 			"sexual-dysfunction-performance-anxiety-impotence",
 			"relationship-jealousy-insecurity",
 			"codependency-relational-enmeshment",
-			"other-attachment-issues",
+			"general-attachment-issues",
 		],
 	},
 	{
@@ -131,7 +131,7 @@ export const Categories = [
 			"selective-mutism",
 			"dysgraphia",
 			"aphasia-language-disorder",
-			"other-communication-issues",
+			"general-communication-issues",
 		],
 	},
 	{
