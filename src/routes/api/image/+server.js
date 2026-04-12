@@ -44,10 +44,29 @@ async function processImage(imageBuffer, width = 1080, height = 566) {
 		// Add logo to lower left corner
 		const logoSize = Math.round(width * 0.4) // 22% of image width (doubled)
 		const margin = 0
-		const logoPath = path.join(
-			__dirname,
-			"../../../../static/logo.blue.shadows.png",
-		)
+
+		// Resolve logo path - try multiple locations for compatibility
+		const logoPaths = [
+			// Netlify production: /var/task/static/
+			path.join(process.cwd(), "static/logo.blue.shadows.png"),
+			// Fallback: __dirname relative
+			path.join(__dirname, "../../../../static/logo.blue.shadows.png"),
+		]
+
+		let logoPath = null
+		for (const tryPath of logoPaths) {
+			try {
+				await fs.access(tryPath)
+				logoPath = tryPath
+				break
+			} catch (err) {
+				// Try next path
+			}
+		}
+
+		if (!logoPath) {
+			throw new Error(`Logo not found. Tried: ${logoPaths.join(", ")}`)
+		}
 
 		// Get logo metadata to preserve aspect ratio
 		const logoMetadata = await sharp(logoPath).metadata()
