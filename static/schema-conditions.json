@@ -1030,5 +1030,353 @@
       "@type": "Thing",
       "name": "Sex Addiction"
     }
+  },
+  "homophobia-transphobia-sexual-orientation-gender-identity-prejudice": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Homophobia, Transphobia, Sexual Orientation & Gender Identity Prejudice",
+    "description": "Your nervous system learned to perceive sexual orientation and gender diversity as threat requiring elimination or conversion. The amygdala hijack around sexuality and gender has become neurologically entrenched. Homophobia, transphobia, and sexual orientation/gender identity prejudice represent fear-based cognitive and behavioral patterns where the nervous system has categorized LGBTQ+ identities as sources of threat, moral violation, or existential danger requiring correction, rejection, or el",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity",
+    "identifier": "homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Homophobia, Transphobia, Sexual Orientation & Gender Identity Prejudice"
+    }
+  },
+  "racism-xenophobia-ethnic-racial-prejudice": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Racism, Xenophobia, Ethnic & Racial Prejudice",
+    "description": "Your amygdala learned to perceive racial and ethnic otherness as tribal threat. The in-group bias system has gone haywire into violent tribal defense. Racism, xenophobia, and ethnic prejudice represent neurologically-encoded threat responses where populations of different racial, ethnic, or national origin have become coded as sources of danger, moral contamination, or existential threat to group survival. Individuals with activated prejudicial neural patterns experience automatic fear and suspi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/racism/xenophobia/ethnic-prejudice",
+    "identifier": "racism-xenophobia-ethnic-racial-prejudice",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Racism, Xenophobia, Ethnic & Racial Prejudice"
+    }
+  },
+  "misogyny-gender-based-violence-fear-of-women": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Misogyny, Gender-Based Violence & Fear of Women",
+    "description": "Your nervous system learned that female power, sexuality, and autonomy represent threat requiring control, diminishment, or elimination. The amygdala has been conditioned to perceive women as dangerous through socialization, trauma, or failed intimate bonds. Misogyny, gender-based violence, and the fear of female power represent psychological patterns where the nervous system codes female autonomy, sexuality, and authority as sources of existential threat requiring control, submission, humiliati",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/misogyny/gender-based-violence/fear-of-women",
+    "identifier": "misogyny-gender-based-violence-fear-of-women",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Misogyny, Gender-Based Violence & Fear of Women"
+    }
+  },
+  "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Tribalism, Groupthink & In-Group/Out-Group Bias (Us vs Them Syndrome)",
+    "description": "Your nervous system learned that group survival depends on unquestioning loyalty and viewing all outsiders as threat or competition. The amygdala has become hyperactive to any deviation from in-group consensus or any out-group contact. Tribalism, groupthink, and in-group/out-group bias represent neurologically-driven patterns where the brain becomes locked in zero-sum thinking (their gain is our loss) and loses capacity for independent thought, nuanced evaluation, or recognition of out-group hum",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/tribalism/groupthink/ingroup-outgroup-bias",
+    "identifier": "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Tribalism, Groupthink & In-Group/Out-Group Bias (Us vs Them Syndrome)"
+    }
+  },
+  "maternal-wound-maternal-attachment-trauma-mother-complex": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Maternal Wound - Maternal Attachment Trauma & Mother Complex",
+    "description": "Your core template for receiving love was written by your mother, and that template is still running your intimate relationships. The maternal attachment wound is the foundational neural architecture that shapes adult capacity for closeness, trust, and emotional safety. Maternal attachment wounds occur when a child's earliest caregiver (typically mother) is unavailable, rejecting, inconsistent, enmeshed, or abandoning during critical periods of emotional development. The child develops specific ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/maternal-wound/mother-complex/maternal-attachment",
+    "identifier": "maternal-wound-maternal-attachment-trauma-mother-complex",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Maternal Wound - Maternal Attachment Trauma & Mother Complex"
+    }
+  },
+  "paternal-wound-paternal-attachment-trauma-father-complex": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Paternal Wound - Paternal Attachment Trauma & Father Complex",
+    "description": "Your father's presence or absence became your template for trust, safety, and whether the world is fundamentally secure. The paternal attachment wound shapes your capacity to access protection, guidance, and authentic masculine presence. Paternal attachment wounds occur when a child's father figure is emotionally unavailable, critical, abusive, absent (physically or emotionally), inconsistent, or fails to provide protection and safe-haven presence. In male children, paternal wounds create deep i",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/paternal-wound/father-complex/paternal-attachment",
+    "identifier": "paternal-wound-paternal-attachment-trauma-father-complex",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Paternal Wound - Paternal Attachment Trauma & Father Complex"
+    }
+  },
+  "parenting-stress-anxiety-inadequacy-parental-overwhelm": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Parenting Stress, Anxiety & Inadequacy - Parental Overwhelm",
+    "description": "You are responsible for another human's survival, development, and wellbeing—and your nervous system knows it could fail at any moment. Parenting stress, anxiety, and feelings of inadequacy arise when a parent's nervous system becomes locked in a state of hypervigilance where the amygdala is constantly scanning for all the ways a child could be harmed, neglected, or disappointed. Parents experience intrusive thoughts (\"What if I'm damaging the child?\"), chronic tension and irritability, inabilit",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/parenting-stress/parental-anxiety/parental-inadequacy",
+    "identifier": "parenting-stress-anxiety-inadequacy-parental-overwhelm",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Parenting Stress, Anxiety & Inadequacy - Parental Overwhelm"
+    }
+  },
+  "stepfamily-blended-family-adjustment-family-integration-stress": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Step-Family & Blended Family Integration Stress - Family System Transition",
+    "description": "Blended families require an entire nervous system recalibration: new parental authorities to bond with or resist, sibling-like relationships with instant strangeness, territory and belonging boundaries that are undefined, loyalty conflicts (loving the step-parent feels like betrayal of the biological parent), and the grief of the original family structure. Step-family and blended family adjustment issues occur when children and adults lack a clear belonging-template for the new family system. Ch",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/stepfamily/blended-family/family-integration",
+    "identifier": "stepfamily-blended-family-adjustment-family-integration-stress",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Step-Family & Blended Family Integration Stress - Family System Transition"
+    }
+  },
+  "coparenting-conflict-parental-disagreement-custody-conflict": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Co-Parenting Conflict - Parental Disagreement & Custody Warfare",
+    "description": "Your child watches both parents and your nervous systems are locked in a battle for control, loyalty, and vindication. Co-parenting conflict occurs when separated, divorced, or never-married parents have dramatically different parenting values, parenting styles, or emotional capacity, and lack the capacity to subordinate their adult conflict to the child's developmental needs. Parents weaponize parenting decisions (screentime, nutrition, discipline, education choices) as proxy battles for the or",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/coparenting/parental-conflict/custody-disputes",
+    "identifier": "coparenting-conflict-parental-disagreement-custody-conflict",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Co-Parenting Conflict - Parental Disagreement & Custody Warfare"
+    }
+  },
+  "custody-visitation-anxiety-parental-separation-transition-distress": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Custody & Visitation Anxiety - Parental Separation & Transition Distress",
+    "description": "The clock is counting down to the moment your child leaves your home, and the amygdala interprets that as a catastrophic separation event every single time. Custody and visitation anxiety occurs when a parent with the non-primary custody schedule experiences intense separation distress, fear of missing significant moments in the child's development, fear that the other parent will supplant their role in the child's life, anxiety during transition exchanges, or difficulty disengaging emotionally ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/custody-anxiety/visitation-distress/parental-transitions",
+    "identifier": "custody-visitation-anxiety-parental-separation-transition-distress",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Custody & Visitation Anxiety - Parental Separation & Transition Distress"
+    }
+  },
+  "adolescent-identity-development-self-discovery": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Identity Development & Self-Discovery - Teen Identity Confusion",
+    "description": "Your adolescent nervous system is literally reconstructing itself, and the person you were yesterday no longer exists. Adolescent identity development issues occur when a teen navigates the profound neurobiological and social transformation of identifying who they are—separate from their parents, distinct in their beliefs and preferences, and differentiated in their social roles. Identity confusion manifests as frantic searching across social groups, ideologies, and values; terror of being \"nobo",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-identity/self-discovery/identity-formation",
+    "identifier": "adolescent-identity-development-self-discovery",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Identity Development & Self-Discovery - Teen Identity Confusion"
+    }
+  },
+  "adolescent-angst-oppositional-defiance": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Angst & Oppositional Defiance - Teen Autonomy Rebellion",
+    "description": "Your adolescent cannot tolerate a single parental directive without experiencing it as an existential threat to their emerging autonomy. Adolescent angst and oppositional defiance occur when a teen's nervous system is hyperresponsive to perceived control, authority, and limitation—not because they disagree with the rule, but because parental authority itself feels like suffocation. The oppositional response is neurologically automatic: whenever an adult asserts authority, the amygdala triggers a",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-angst/oppositional-defiance/autonomy-conflict",
+    "identifier": "adolescent-angst-oppositional-defiance",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Angst & Oppositional Defiance - Teen Autonomy Rebellion"
+    }
+  },
+  "adolescent-sexual-identity-exploration-social-dysphoria": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Sexual Identity Exploration & Social Dysphoria - Teen Gender/Sexual Confusion",
+    "description": "Your adolescent's nervous system is screaming that something is mismatched between their internal sense of self and the body/sexuality society assigned them. Adolescent sexual identity exploration and social dysphoria arise when a teen questions their sexual orientation, gender identity, or both, and experiences distress about the mismatch between internal identity and external presentation/expectations. This is distinct from simply exploring sexuality—dysphoria involves mental suffering, social",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/sexual-identity/gender-dysphoria/social-dysphoria",
+    "identifier": "adolescent-sexual-identity-exploration-social-dysphoria",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Sexual Identity Exploration & Social Dysphoria - Teen Gender/Sexual Confusion"
+    }
+  },
+  "teen-emo-subculture-emotional-expression": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Emo Subculture & Emotional Expression - Alternative Identity Adoption",
+    "description": "Your adolescent found a tribe that finally allows their intense emotions to be normal instead of pathological. Teen emo subculture and emotional expression issues occur when an adolescent adopts an alternative identity and aesthetic (emo, goth, punk, etc.) as both a genuine expression of their emotional intensity and, simultaneously, a defensive identity-container that keeps vulnerability controlled and emotions performative. The emo subculture offers permission for emotional depth and intensity",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/emo-subculture/alternative-identity/emotional-expression",
+    "identifier": "teen-emo-subculture-emotional-expression",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Emo Subculture & Emotional Expression - Alternative Identity Adoption"
+    }
+  },
+  "teen-perfectionism-academic-pressure": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Perfectionism & Academic Pressure - Adolescent Achievement Anxiety",
+    "description": "Your adolescent's nervous system has merged their entire identity with their GPA, test scores, and achievement ranking. Teen perfectionism and academic pressure occur when a teenager experiences intense anxiety about academic performance not as motivation toward genuine learning, but as existential threat-response where any performance below perfection codes as personal failure AND loss of parental love AND social devaluation. The perfectionist adolescent becomes locked in a loop where academic ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety",
+    "identifier": "teen-perfectionism-academic-pressure",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Perfectionism & Academic Pressure - Adolescent Achievement Anxiety"
+    }
+  },
+  "adolescent-victim-identity-learned-helplessness": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Victim Identity & Learned Helplessness - Teen Powerlessness",
+    "description": "Your adolescent's nervous system has locked into the conclusion that nothing they do matters, that all outcomes are determined by external forces, and that effort is pointless. Adolescent victim identity and learned helplessness occur when a teen experiences repeated situations where their actions have no impact on outcomes, and this generates a generalized belief that they are powerless, that the world is hostile and uncontrollable, and that victimhood is their core identity. The learnt helples",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/victim-identity/learned-helplessness/powerlessness",
+    "identifier": "adolescent-victim-identity-learned-helplessness",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Victim Identity & Learned Helplessness - Teen Powerlessness"
+    }
+  },
+  "teen-risk-taking-maladaptive-coping": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Risk-Taking & Maladaptive Coping Mechanisms - Adolescent Distress Intolerance",
+    "description": "Your adolescent's nervous system has developed a single solution for emotional pain: make it stop immediately through dangerous action. Teen risk-taking and maladaptive coping occur when an adolescent lacks capacity to tolerate emotional distress and instead uses high-risk behaviors (reckless driving, extreme sports, thrill-seeking, dangerous peer activities) as the primary mechanism to regulate emotion. The risk-taking generates adrenaline and dopamine that temporarily override the distress—but",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-risk-taking/maladaptive-coping/distress-tolerance",
+    "identifier": "teen-risk-taking-maladaptive-coping",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Risk-Taking & Maladaptive Coping Mechanisms - Adolescent Distress Intolerance"
+    }
+  },
+  "teen-substance-abuse-addiction": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Substance Abuse & Addiction - Adolescent Chemical Dependence",
+    "description": "Your adolescent's developing prefrontal cortex discovered that chemicals can solve the unsolvable adolescent nervous system dysregulation—social anxiety, family pain, identity confusion, academic pressure, all evaporates with a single substance. Teen substance abuse and addiction occur when an adolescent's still-developing nervous system becomes chemically dependent before it ever develops genuine emotional regulation capacity. The adolescent may begin substance use as recreation or stress-relie",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-substance-abuse/adolescent-addiction/substance-dependence",
+    "identifier": "teen-substance-abuse-addiction",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Substance Abuse & Addiction - Adolescent Chemical Dependence"
+    }
+  },
+  "teen-gang-involvement-tribalism": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Gang Involvement & Tribalism - Adolescent Group Belonging",
+    "description": "Your adolescent found a family that finally cares, finally provides status and protection, finally makes them feel powerful—and that family is actively escalating toward violence. Teen gang involvement and tribalism occur when an adolescent with a fundamental belonging-wound finds that the gang meets the need: the gang provides clear identity (\"You are a member\"), clear purpose (\"You protect your territory and brothers\"), clear status hierarchy (you work up), and fierce loyalty structure. Howeve",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-gang/tribal-belonging/gang-identity",
+    "identifier": "teen-gang-involvement-tribalism",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Gang Involvement & Tribalism - Adolescent Group Belonging"
+    }
+  },
+  "teen-screen-addiction-digital-escapism": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Screen Addiction & Digital Escapism - Adolescent Internet Dependence",
+    "description": "Your adolescent discovered a parallel universe where they are more attractive, more skilled, more powerful, and never have to experience failure or rejection in the way their real body requires. Teen screen addiction and digital escapism occur when an adolescent becomes neurologically dependent on digital stimulation as the primary escape from the intensity and dysregulation of adolescent experience. Screen time provides: endless dopamine-hits from social validation (likes, comments, followers),",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-screen-addiction/digital-escapism/internet-dependence",
+    "identifier": "teen-screen-addiction-digital-escapism",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Screen Addiction & Digital Escapism - Adolescent Internet Dependence"
+    }
+  },
+  "adolescent-impulsivity-reckless-risk-taking": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Impulsivity & Reckless Risk-Taking - Teen Executive Dysfunction",
+    "description": "Your adolescent's amygdala is screaming \"DO THIS NOW\" and their prefrontal cortex doesn't have enough neural real-estate yet to say \"Wait, let's think about consequences.\" Adolescent impulsivity and reckless risk-taking occur when the developing prefrontal cortex cannot provide adequate inhibitory control over the amygdala's impulse-drive and the nucleus accumbens' immediate reward-seeking. The impulsive adolescent acts before thinking, doesn't evaluate consequences, can't delay gratification, a",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-impulsivity/reckless-risk/executive-dysfunction",
+    "identifier": "adolescent-impulsivity-reckless-risk-taking",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Impulsivity & Reckless Risk-Taking - Teen Executive Dysfunction"
+    }
+  },
+  "teen-bullying-aggressive-defense": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Bullying & Aggressive Defense Mechanisms - Adolescent Peer Aggression",
+    "description": "Your adolescent is using aggression, dominance, and social cruelty as the primary way to manage a terrified, shame-filled nervous system. Teen bullying and aggressive defense occur when an adolescent (whether as perpetrator or in reactive aggression) uses social cruelty, physical aggression, or dominance-establishment as the default response to threat, rejection, powerlessness, or shame. The bullying adolescent may be working compulsively to establish and defend status-position in the peer hiera",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-bullying/aggressive-defense/peer-aggression",
+    "identifier": "teen-bullying-aggressive-defense",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Bullying & Aggressive Defense Mechanisms - Adolescent Peer Aggression"
+    }
+  },
+  "teen-crisis-survival-behaviors": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Crisis & Survival Behaviors - Adolescent Acute Distress Response",
+    "description": "Your adolescent is in neurological emergency—their nervous system has concluded that the current situation is unsustainable and survival-action is required immediately. Teen crisis and survival behaviors occur when an adolescent in acute psychological distress engages in urgent action to escape the crisis: runaway attempts, suicide attempts, aggressive crisis-seeking (calling police on themselves), suicidal communication, substance overdose, cutting escalation, or other dramatic crisis-intervent",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-crisis/survival-behaviors/acute-distress",
+    "identifier": "teen-crisis-survival-behaviors",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Crisis & Survival Behaviors - Adolescent Acute Distress Response"
+    }
+  },
+  "teen-runaway-elopement": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Runaway Behavior & Elopement - Adolescent Escape Response",
+    "description": "Your adolescent's nervous system determined that being in the current environment (home, placement, family) is worse than the unknown danger of running away. Teen runaway behavior and elopement occur when an adolescent abandons their home or placement as the only solution to an unsustainable situation. Runaways are typically not impulsive—they represent a deliberate calculation that the dangers of the current environment exceed the dangers of the unknown. The teen may run due to family abuse/tra",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-runaway/elopement/escape-behavior",
+    "identifier": "teen-runaway-elopement",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Runaway Behavior & Elopement - Adolescent Escape Response"
+    }
+  },
+  "teen-suicidal-ideation-self-harm": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Suicidal Ideation & Self-Harm - Adolescent Self-Injury & Suicide Risk",
+    "description": "Your adolescent has concluded that the world would be better without them, and their nervous system is actively generating action-plans to disappear. Teen suicidal ideation and self-harm occur when an adolescent experiences such profound psychological pain that death appears preferable to continued living, and self-harm (cutting, scratching, burning, etc.) becomes the mechanism to temporarily manage that pain. Suicidal adolescents are not attempting to \"get attention\"—they're experiencing genuin",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-suicide/self-harm/suicidal-intent",
+    "identifier": "teen-suicidal-ideation-self-harm",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Suicidal Ideation & Self-Harm - Adolescent Self-Injury & Suicide Risk"
+    }
+  },
+  "adolescent-abandonment-trauma-hypervigilance": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Abandonment Trauma & Hyper-Vigilance - Teen Rejection Sensitivity",
+    "description": "Your adolescent is desperately scanning for signs of rejection, reading minute social cues as abandonment-signals, and living in constant fear that the people they care about will leave. Adolescent abandonment trauma and hyper-vigilance occur when a teen has experienced parental abandonment, parental death, family dissolution, or earlier childhood neglect, and the adolescent's nervous system remains locked in abandonment-detection mode. The amygdala becomes hypersensitive to any sign of rejectio",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-abandonment/trauma-hypervigilance/rejection-sensitivity",
+    "identifier": "adolescent-abandonment-trauma-hypervigilance",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Abandonment Trauma & Hyper-Vigilance - Teen Rejection Sensitivity"
+    }
+  },
+  "teen-foster-family-integration-reactive-attachment": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Foster Family Integration & Reactive Attachment - Adolescent Placement Disruption",
+    "description": "Your adolescent has learned that families are temporary, caregivers leave, and bonding leads to loss. Teen foster family integration and reactive attachment issues occur when an adolescent in foster care or other out-of-home placements has experienced multiple family losses and cannot trust that the current placement will be permanent. The reactive attachment involves: difficulty accepting care from new caregivers, testing behaviors designed to provoke rejection (confirming the belief that they'",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/foster-family/reactive-attachment/family-integration",
+    "identifier": "teen-foster-family-integration-reactive-attachment",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Foster Family Integration & Reactive Attachment - Adolescent Placement Disruption"
+    }
+  },
+  "adolescent-social-mimicry-identity-diffusion": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adolescent Social Mimicry & Identity Diffusion - Teen Identity Instability",
+    "description": "Your adolescent is a different person in every social context, and internally feels completely fragmented with no coherent sense of authentic self. Adolescent social mimicry and identity diffusion occur when a teen becomes excessively skilled at reading social contexts and performing the identity that each context requires, but never develops an internal sense of who they authentically are. The mimicry may be adaptive survival (learned in families where identity-authenticity was unsafe), may be ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/social-mimicry/identity-diffusion/authentic-self",
+    "identifier": "adolescent-social-mimicry-identity-diffusion",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adolescent Social Mimicry & Identity Diffusion - Teen Identity Instability"
+    }
+  },
+  "teen-body-image-disordered-eating": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Teen Body Image & Disordered Eating - Adolescent Eating Disorder Spectrum",
+    "description": "Your adolescent's developing body has become the enemy—it represents everything they hate about themselves, everything they fear others judge, and the primary mechanism they can control in an uncontrollable life. Teen body image disturbance and disordered eating occur when an adolescent develops significant dissatisfaction with their changing body and engages in restrictive eating, binge-eating, excessive exercise, compulsive body-checking, or other compensatory behaviors. The disordered eating ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder",
+    "identifier": "teen-body-image-disordered-eating",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Teen Body Image & Disordered Eating - Adolescent Eating Disorder Spectrum"
+    }
   }
 }

@@ -432,6 +432,151 @@ export const CONDITIONS_METADATA = [
   "id": "sex-addiction",
   "path": "/remote-clinical-trial/free/sex-addiction",
   "background_image": "/backgrounds/sex-addiction.png"
+ },
+ {
+  "id": "homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
+  "path": "/remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity",
+  "background_image": ""
+ },
+ {
+  "id": "racism-xenophobia-ethnic-racial-prejudice",
+  "path": "/remote-clinical-trial/free/racism/xenophobia/ethnic-prejudice",
+  "background_image": ""
+ },
+ {
+  "id": "misogyny-gender-based-violence-fear-of-women",
+  "path": "/remote-clinical-trial/free/misogyny/gender-based-violence/fear-of-women",
+  "background_image": ""
+ },
+ {
+  "id": "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
+  "path": "/remote-clinical-trial/free/tribalism/groupthink/ingroup-outgroup-bias",
+  "background_image": ""
+ },
+ {
+  "id": "maternal-wound-maternal-attachment-trauma-mother-complex",
+  "path": "/remote-clinical-trial/free/maternal-wound/mother-complex/maternal-attachment",
+  "background_image": ""
+ },
+ {
+  "id": "paternal-wound-paternal-attachment-trauma-father-complex",
+  "path": "/remote-clinical-trial/free/paternal-wound/father-complex/paternal-attachment",
+  "background_image": ""
+ },
+ {
+  "id": "parenting-stress-anxiety-inadequacy-parental-overwhelm",
+  "path": "/remote-clinical-trial/free/parenting-stress/parental-anxiety/parental-inadequacy",
+  "background_image": ""
+ },
+ {
+  "id": "stepfamily-blended-family-adjustment-family-integration-stress",
+  "path": "/remote-clinical-trial/free/stepfamily/blended-family/family-integration",
+  "background_image": ""
+ },
+ {
+  "id": "coparenting-conflict-parental-disagreement-custody-conflict",
+  "path": "/remote-clinical-trial/free/coparenting/parental-conflict/custody-disputes",
+  "background_image": ""
+ },
+ {
+  "id": "custody-visitation-anxiety-parental-separation-transition-distress",
+  "path": "/remote-clinical-trial/free/custody-anxiety/visitation-distress/parental-transitions",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-identity-development-self-discovery",
+  "path": "/remote-clinical-trial/free/adolescent-identity/self-discovery/identity-formation",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-angst-oppositional-defiance",
+  "path": "/remote-clinical-trial/free/adolescent-angst/oppositional-defiance/autonomy-conflict",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-sexual-identity-exploration-social-dysphoria",
+  "path": "/remote-clinical-trial/free/sexual-identity/gender-dysphoria/social-dysphoria",
+  "background_image": ""
+ },
+ {
+  "id": "teen-emo-subculture-emotional-expression",
+  "path": "/remote-clinical-trial/free/emo-subculture/alternative-identity/emotional-expression",
+  "background_image": ""
+ },
+ {
+  "id": "teen-perfectionism-academic-pressure",
+  "path": "/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-victim-identity-learned-helplessness",
+  "path": "/remote-clinical-trial/free/victim-identity/learned-helplessness/powerlessness",
+  "background_image": ""
+ },
+ {
+  "id": "teen-risk-taking-maladaptive-coping",
+  "path": "/remote-clinical-trial/free/teen-risk-taking/maladaptive-coping/distress-tolerance",
+  "background_image": ""
+ },
+ {
+  "id": "teen-substance-abuse-addiction",
+  "path": "/remote-clinical-trial/free/teen-substance-abuse/adolescent-addiction/substance-dependence",
+  "background_image": ""
+ },
+ {
+  "id": "teen-gang-involvement-tribalism",
+  "path": "/remote-clinical-trial/free/teen-gang/tribal-belonging/gang-identity",
+  "background_image": ""
+ },
+ {
+  "id": "teen-screen-addiction-digital-escapism",
+  "path": "/remote-clinical-trial/free/teen-screen-addiction/digital-escapism/internet-dependence",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-impulsivity-reckless-risk-taking",
+  "path": "/remote-clinical-trial/free/adolescent-impulsivity/reckless-risk/executive-dysfunction",
+  "background_image": ""
+ },
+ {
+  "id": "teen-bullying-aggressive-defense",
+  "path": "/remote-clinical-trial/free/teen-bullying/aggressive-defense/peer-aggression",
+  "background_image": ""
+ },
+ {
+  "id": "teen-crisis-survival-behaviors",
+  "path": "/remote-clinical-trial/free/teen-crisis/survival-behaviors/acute-distress",
+  "background_image": ""
+ },
+ {
+  "id": "teen-runaway-elopement",
+  "path": "/remote-clinical-trial/free/teen-runaway/elopement/escape-behavior",
+  "background_image": ""
+ },
+ {
+  "id": "teen-suicidal-ideation-self-harm",
+  "path": "/remote-clinical-trial/free/teen-suicide/self-harm/suicidal-intent",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-abandonment-trauma-hypervigilance",
+  "path": "/remote-clinical-trial/free/adolescent-abandonment/trauma-hypervigilance/rejection-sensitivity",
+  "background_image": ""
+ },
+ {
+  "id": "teen-foster-family-integration-reactive-attachment",
+  "path": "/remote-clinical-trial/free/foster-family/reactive-attachment/family-integration",
+  "background_image": ""
+ },
+ {
+  "id": "adolescent-social-mimicry-identity-diffusion",
+  "path": "/remote-clinical-trial/free/social-mimicry/identity-diffusion/authentic-self",
+  "background_image": ""
+ },
+ {
+  "id": "teen-body-image-disordered-eating",
+  "path": "/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder",
+  "background_image": ""
  }
 ]
 
