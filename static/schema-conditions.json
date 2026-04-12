@@ -795,7 +795,7 @@
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
     "name": "Food Addiction",
-    "description": "Food became your primary coping mechanism for internal distress. Hyperpalatable foods hijacked your reward system. Food addiction involves compulsive eating of highly palatable foods (high sugar, fat, salt) despite negative health consequences, loss of control over eating, and using food as primary emotional regulation mechanism. Individuals with food addiction experience weight gain, health complications, shame, social isolation, and repeated failed dieting attempts. The addiction cycle involve",
+    "description": "Food became your primary coping mechanism for internal distress. Hyperpalatable foods hijacked your reward system. Food addiction involves compulsive eating of highly palatable foods (high sugar, fat, salt) despite negative health consequences, loss of control over eating, and using food as primary emotional regulation mechanism. Individuals with food addiction experience progressive obesity, metabolic dysregulation, health complications (cardiovascular disease, type 2 diabetes, sleep apnea, joi",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/food-addiction",
     "identifier": "food-addiction",
     "mainEntity": {
@@ -1365,6 +1365,234 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "Teen Body Image & Disordered Eating - Adolescent Eating Disorder Spectrum"
+    }
+  },
+  "food-phobia-arfid": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Food Phobia & ARFID - Phobic Avoidance of Specific Foods",
+    "description": "Your nervous system learned that certain foods are dangerous, and your brain has locked this assessment into permanent threat-status. Food phobia and Avoidant/Restrictive Food Intake Disorder (ARFID) involve intense fear and avoidance of specific foods based on sensory characteristics (texture, taste, appearance, smell), fear of aversive consequences (choking, vomiting, contamination), or learned negative associations. Unlike eating disorders (where restriction serves anxiety/control management)",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/food-phobia/arfid/avoidant-restriction",
+    "identifier": "food-phobia-arfid",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Food Phobia & ARFID - Phobic Avoidance of Specific Foods"
+    }
+  },
+  "narcissistic-personality-disorder-pride": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Narcissistic Personality Disorder - Pathological Pride & Grandiosity",
+    "description": "Your nervous system learned that you are special, exceptional, and above the normal rules that bind ordinary people. Narcissism is your survival strategy. Narcissistic Personality Disorder (NPD) is characterized by a pervasive pattern of grandiosity (in fantasy or behavior), a deep need for excessive admiration and attention, and a profound lack of empathy for others' experiences and needs. Individuals with NPD experience inflated self-importance, require constant attention and validation, becom",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/narcissism/personality/pride",
+    "identifier": "narcissistic-personality-disorder-pride",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Narcissistic Personality Disorder - Pathological Pride & Grandiosity"
+    }
+  },
+  "borderline-personality-disorder-envy": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Borderline Personality Disorder - Chronic Envy & Unstable Self",
+    "description": "Your nervous system became convinced that you are fundamentally unworthy while simultaneously tortured by the conviction that others possess what you desperately lack. Borderline Personality Disorder (BPD) is characterized by a pervasive pattern of unstable and intense interpersonal relationships, unstable self-image, impulsive and self-harming behaviors, intense fear of abandonment, affective instability, and chronic feelings of emptiness. Individuals with BPD experience agonizing social compar",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/borderline/personality/envy",
+    "identifier": "borderline-personality-disorder-envy",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Borderline Personality Disorder - Chronic Envy & Unstable Self"
+    }
+  },
+  "major-depressive-disorder-sloth": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Major Depressive Disorder - Avolition & Depressive Apathy (Sloth)",
+    "description": "Your nervous system learned that effort is futile and the future holds nothing worth pursuing. Depression isn't sadness—it's the neurological shutdown where motivation ceases and the world becomes colorless and empty. Major Depressive Disorder (MDD) is characterized by persistent low mood, loss of interest or pleasure in activities (anhedonia), significant appetite or weight changes, sleep disturbance, fatigue and loss of energy, feelings of worthlessness or guilt, difficulty concentrating, and ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/depression/major-depressive/anhedonia",
+    "identifier": "major-depressive-disorder-sloth",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Major Depressive Disorder - Avolition & Depressive Apathy (Sloth)"
+    }
+  },
+  "avoidant-personality-disorder-cowardice": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Avoidant Personality Disorder - Cowardice & Social Withdrawal",
+    "description": "Your nervous system learned that social exposure is unbearable danger and that withdrawing is the only way to survive the crushing fear of rejection. Avoidant Personality Disorder (AVPD) is characterized by a pervasive pattern of social inhibition, feelings of inadequacy, and extreme hypersensitivity to negative evaluation or rejection. Individuals with AVPD avoid social interaction, career advancement, intimate relationships, and activities outside their comfort zone not because they lack \"cour",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/avoidant/cowardice/social-inhibition",
+    "identifier": "avoidant-personality-disorder-cowardice",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Avoidant Personality Disorder - Cowardice & Social Withdrawal"
+    }
+  },
+  "panic-disorder-agoraphobia-fear": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Panic Disorder & Agoraphobia - Catastrophic Fear Response",
+    "description": "Your nervous system learned that normal sensations are harbingers of catastrophe and that certain places are traps where catastrophe will unfold inescapably. Panic disorder is characterized by unexpected, recurrent panic attacks (sudden, intense periods of fear or discomfort with physical symptoms like chest pain, shortness of breath, dizziness, or fear of dying) followed by persistent worry about having more attacks, and often agoraphobia (avoidance of situations or places where escape might be",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/panic/agoraphobia/fear-escape",
+    "identifier": "panic-disorder-agoraphobia-fear",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Panic Disorder & Agoraphobia - Catastrophic Fear Response"
+    }
+  },
+  "antisocial-personality-disorder-deception": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Antisocial Personality Disorder - Pathological Deception & Manipulation",
+    "description": "Your nervous system learned early that predatory dominance is the path to survival and that other people are tools to be used without regard for their wellbeing. Antisocial Personality Disorder (ASPD) is characterized by a pervasive pattern of violation of others' rights that begins in childhood and includes deceitfulness (pathological lying, conning others for personal gain), impulsivity or poor planning, irritability or aggression, reckless disregard for safety of self or others, consistent ir",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/antisocial/deception/manipulation",
+    "identifier": "antisocial-personality-disorder-deception",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Antisocial Personality Disorder - Pathological Deception & Manipulation"
+    }
+  },
+  "histrionic-personality-disorder-attention-seeking": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Histrionic Personality Disorder - Attention-Seeking & Dramatic Performance",
+    "description": "Your nervous system learned that your survival depends on being the center of attention and that dramatic emotional expression and strategic vulnerability are the tools that guarantee others will remain focused on you. Histrionic Personality Disorder (HPD) is characterized by a pervasive pattern of excessive emotionality and attention-seeking, including discomfort when not the center of attention, provocative or sexualized behavior, rapidly shifting and shallow emotions, theatrical or exaggerate",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/histrionic/attention/dramatic-behavior",
+    "identifier": "histrionic-personality-disorder-attention-seeking",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Histrionic Personality Disorder - Attention-Seeking & Dramatic Performance"
+    }
+  },
+  "factitious-disorder-munchausen": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Factitious Disorder - Medical Deception & Munchausen Syndrome",
+    "description": "Your nervous system learned that the only way to guarantee caring attention from others is through cultivating an identity as sick or vulnerable, and that fabricating or inducing illness is a rational strategy to secure the medical care, attention, and validation that you desperately need. Factitious Disorder (formerly known as Munchausen syndrome) is characterized by falsification of medical or psychological signs and symptoms, either by producing or exaggerating illness in oneself (Factitious ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/factitious/munchausen/medical-deception",
+    "identifier": "factitious-disorder-munchausen",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Factitious Disorder - Medical Deception & Munchausen Syndrome"
+    }
+  },
+  "complicated-grief-disorder-loss": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Complicated Grief Disorder - Persistent Bereavement",
+    "description": "Your nervous system learned that the death of your loved one is an event that should not have happened, and that your survival depends on refusing to accept their absence. Complicated Grief Disorder (also called Persistent Complex Bereavement Disorder) is a condition where grief responses become stuck, preventing the natural progression toward acceptance and meaning-making. Rather than gradually integrating loss and moving forward, the person remains hyperactivated in acute grief, with intense y",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/grief/loss/complicated-bereavement",
+    "identifier": "complicated-grief-disorder-loss",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Complicated Grief Disorder - Persistent Bereavement"
+    }
+  },
+  "anticipatory-grief-facing-loss": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Anticipatory Grief - Fear of Impending Loss",
+    "description": "Your nervous system is locked in existential rehearsal: practicing the death that has not yet occurred, unable to fully be present to the person who is still alive, terrified of the loss that is coming. Anticipatory Grief occurs when a person faces the imminent loss of a loved one who is terminally ill or declining (from illness, dementia, aging), and the neurological system becomes hyperactivated in pre-loss processing. The person oscillates between moments of connection with the living person ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/anticipatory-grief/loss/terminal-illness",
+    "identifier": "anticipatory-grief-facing-loss",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Anticipatory Grief - Fear of Impending Loss"
+    }
+  },
+  "adult-children-of-alcoholics-family-trauma": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Adult Children of Alcoholics - Intergenerational Trauma Pattern",
+    "description": "Your nervous system learned early that one parent's addiction meant you could never truly rely on consistent care, and that you had to become hyper-responsible to manage the chaos and dysfunction. Adult Children of Alcoholics (ACA) describes individuals who grew up in homes where at least one parent had an active or unmanaged addiction, and who experienced the chronic psychological consequences: unpredictability, emotional neglect despite physical presence, parentification (having to parent the ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/family-of-addicts/adult-children/inherited-patterns",
+    "identifier": "adult-children-of-alcoholics-family-trauma",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Adult Children of Alcoholics - Intergenerational Trauma Pattern"
+    }
+  },
+  "betrayal-trauma-infidelity": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Betrayal Trauma - Infidelity & Relational Violation",
+    "description": "Your nervous system learned that the person you trusted absolutely has done the one thing that proves you cannot trust anyone, and that your safety in intimate connection is now fundamentally compromised. Betrayal Trauma from infidelity or relational violation is a form of complex trauma where someone experiences profound rupture of their foundational attachment relationship. Unlike external trauma (assault, accident), betrayal trauma comes from the person whose presence should mean safety. The ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/relational-betrayal/infidelity/trust-rupture",
+    "identifier": "betrayal-trauma-infidelity",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Betrayal Trauma - Infidelity & Relational Violation"
+    }
+  },
+  "rescuer-syndrome-caretaker-compulsion": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Rescuer Syndrome - Caretaker Compulsion & Loss of Boundaries",
+    "description": "Your nervous system learned that your value comes from fixing, managing, and caring for others, and that your survival depends on making sure other people are okay. Rescuer Syndrome (the Rescuer role in Karpman's Drama Triangle) is a pattern where the person becomes compulsively focused on helping, supporting, fixing, and caretaking others to the point that their own needs are chronically unmet. The rescuer feels validated when needed and becomes anxious when others don't need their help. They o",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/drama-triangle/rescuer/karpman-role",
+    "identifier": "rescuer-syndrome-caretaker-compulsion",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Rescuer Syndrome - Caretaker Compulsion & Loss of Boundaries"
+    }
+  },
+  "geriatric-depression-aging-loss": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Geriatric Depression - Late-Life Mood Dysregulation",
+    "description": "Your nervous system is processing the cumulative losses of aging—loss of function, loss of independence, loss of friends and peers, loss of identity as a productive person—and the depression is your body's way of adapting to a future it did not plan for. Geriatric Depression or Late-Life Depression occurs primarily in older adults (typically 65+) and is characterized by persistent depressed mood, loss of interest in activities, changes in appetite and sleep, fatigue, difficulty concentrating, fe",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/aging/geriatric/late-life-depression",
+    "identifier": "geriatric-depression-aging-loss",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Geriatric Depression - Late-Life Mood Dysregulation"
+    }
+  },
+  "identity-loss-aging-life-stage": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Identity Loss in Aging - Loss of Life Role & Purpose",
+    "description": "Your nervous system learned that your identity was your work, your productivity, your role as provider or caregiver or professional, and now that these roles have been removed by retirement or life circumstance, you don't know who you are anymore. Identity Loss in Aging is an existential and developmental challenge where older adults experience profound confusion about self when the roles and functions that defined them are no longer available. This may be triggered by retirement, loss of work i",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/aging/identity/meaning-loss",
+    "identifier": "identity-loss-aging-life-stage",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Identity Loss in Aging - Loss of Life Role & Purpose"
+    }
+  },
+  "sexual-dysfunction-intimacy-avoidance": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Sexual Dysfunction & Intimacy Avoidance - Embodied Relational Healing",
+    "description": "Your nervous system learned through trauma, shame, or relational patterns that sexual intimacy is dangerous, shameful, or impossible, and your body has learned to shut down in response to sexual situations. Sexual Dysfunction and Intimacy Avoidance encompasses a range of conditions: difficulty with desire, arousal, or orgasm in sexual situations; pain with intercourse; erectile dysfunction; compulsive sexual behavior that lacks genuine intimacy; or avoidance of sexual contact altogether. These s",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/sexual-health/dysfunction/intimacy-connection",
+    "identifier": "sexual-dysfunction-intimacy-avoidance",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Sexual Dysfunction & Intimacy Avoidance - Embodied Relational Healing"
+    }
+  },
+  "persecutor-role-aggressive-control": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Persecutor Role - Aggressive Control & Domination Pattern",
+    "description": "Your nervous system learned that the only way to maintain safety and control is through aggression, dominance, intimidation, and coercion, and that other people are threats that must be controlled or crushed. The Persecutor role in Karpman's Drama Triangle is characterized by someone who uses aggression, criticism, blame, control, intimidation, or violence to dominate others and maintain power. Unlike the narcissist's need for admiration or the antisocial person's lack of empathy, the persecutor",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/drama-triangle/persecutor/karpman-aggression",
+    "identifier": "persecutor-role-aggressive-control",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Persecutor Role - Aggressive Control & Domination Pattern"
+    }
+  },
+  "isolation-loneliness-aging": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Isolation & Loneliness in Aging - Neurobiological Survival Threat",
+    "description": "Your nervous system is experiencing social disconnection as a genuine survival threat, and your body is mounting a stress-response to the absence of relational safety. Isolation and Loneliness in Aging (particularly in adults 65+) is a chronic state of social disconnection that has profound neurobiological consequences. Many older adults experience loss of spouse, geographical distance from family, death of peer-group friends, reduced mobility limiting social activity, and cultural devaluation t",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/aging/isolation/social-disconnection",
+    "identifier": "isolation-loneliness-aging",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Isolation & Loneliness in Aging - Neurobiological Survival Threat"
     }
   }
 }

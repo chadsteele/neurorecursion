@@ -572,6 +572,101 @@ export const CONDITIONS_METADATA = [
   "id": "teen-body-image-disordered-eating",
   "path": "/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder",
   "background_image": ""
+ },
+ {
+  "id": "food-phobia-arfid",
+  "path": "/remote-clinical-trial/free/food-phobia/arfid/avoidant-restriction",
+  "background_image": ""
+ },
+ {
+  "id": "narcissistic-personality-disorder-pride",
+  "path": "/remote-clinical-trial/free/narcissism/personality/pride",
+  "background_image": ""
+ },
+ {
+  "id": "borderline-personality-disorder-envy",
+  "path": "/remote-clinical-trial/free/borderline/personality/envy",
+  "background_image": ""
+ },
+ {
+  "id": "major-depressive-disorder-sloth",
+  "path": "/remote-clinical-trial/free/depression/major-depressive/anhedonia",
+  "background_image": ""
+ },
+ {
+  "id": "avoidant-personality-disorder-cowardice",
+  "path": "/remote-clinical-trial/free/avoidant/cowardice/social-inhibition",
+  "background_image": ""
+ },
+ {
+  "id": "panic-disorder-agoraphobia-fear",
+  "path": "/remote-clinical-trial/free/panic/agoraphobia/fear-escape",
+  "background_image": ""
+ },
+ {
+  "id": "antisocial-personality-disorder-deception",
+  "path": "/remote-clinical-trial/free/antisocial/deception/manipulation",
+  "background_image": ""
+ },
+ {
+  "id": "histrionic-personality-disorder-attention-seeking",
+  "path": "/remote-clinical-trial/free/histrionic/attention/dramatic-behavior",
+  "background_image": ""
+ },
+ {
+  "id": "factitious-disorder-munchausen",
+  "path": "/remote-clinical-trial/free/factitious/munchausen/medical-deception",
+  "background_image": ""
+ },
+ {
+  "id": "complicated-grief-disorder-loss",
+  "path": "/remote-clinical-trial/free/grief/loss/complicated-bereavement",
+  "background_image": ""
+ },
+ {
+  "id": "anticipatory-grief-facing-loss",
+  "path": "/remote-clinical-trial/free/anticipatory-grief/loss/terminal-illness",
+  "background_image": ""
+ },
+ {
+  "id": "adult-children-of-alcoholics-family-trauma",
+  "path": "/remote-clinical-trial/free/family-of-addicts/adult-children/inherited-patterns",
+  "background_image": ""
+ },
+ {
+  "id": "betrayal-trauma-infidelity",
+  "path": "/remote-clinical-trial/free/relational-betrayal/infidelity/trust-rupture",
+  "background_image": ""
+ },
+ {
+  "id": "rescuer-syndrome-caretaker-compulsion",
+  "path": "/remote-clinical-trial/free/drama-triangle/rescuer/karpman-role",
+  "background_image": ""
+ },
+ {
+  "id": "geriatric-depression-aging-loss",
+  "path": "/remote-clinical-trial/free/aging/geriatric/late-life-depression",
+  "background_image": ""
+ },
+ {
+  "id": "identity-loss-aging-life-stage",
+  "path": "/remote-clinical-trial/free/aging/identity/meaning-loss",
+  "background_image": ""
+ },
+ {
+  "id": "sexual-dysfunction-intimacy-avoidance",
+  "path": "/remote-clinical-trial/free/sexual-health/dysfunction/intimacy-connection",
+  "background_image": ""
+ },
+ {
+  "id": "persecutor-role-aggressive-control",
+  "path": "/remote-clinical-trial/free/drama-triangle/persecutor/karpman-aggression",
+  "background_image": ""
+ },
+ {
+  "id": "isolation-loneliness-aging",
+  "path": "/remote-clinical-trial/free/aging/isolation/social-disconnection",
+  "background_image": ""
  }
 ]
 
