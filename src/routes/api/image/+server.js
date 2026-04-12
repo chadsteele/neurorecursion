@@ -1,12 +1,6 @@
 import sharp from "sharp"
 import fs from "fs/promises"
-import path from "path"
-import {fileURLToPath} from "url"
-import {dirname} from "path"
-import {log} from "console"
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+import {resolveStaticFile} from "$lib/server/file-resolver.js"
 
 async function processImage(imageBuffer, width = 1080, height = 566) {
 	try {
@@ -42,31 +36,11 @@ async function processImage(imageBuffer, width = 1080, height = 566) {
 			.toBuffer()
 
 		// Add logo to lower left corner
-		const logoSize = Math.round(width * 0.4) // 22% of image width (doubled)
+		const logoSize = Math.round(width * 0.4)
 		const margin = 0
 
-		// Resolve logo path - try multiple locations for compatibility
-		const logoPaths = [
-			// Netlify production: /var/task/static/
-			path.join(process.cwd(), "static/logo.blue.shadows.png"),
-			// Fallback: __dirname relative
-			path.join(__dirname, "../../../../static/logo.blue.shadows.png"),
-		]
-
-		let logoPath = null
-		for (const tryPath of logoPaths) {
-			try {
-				await fs.access(tryPath)
-				logoPath = tryPath
-				break
-			} catch (err) {
-				// Try next path
-			}
-		}
-
-		if (!logoPath) {
-			throw new Error(`Logo not found. Tried: ${logoPaths.join(", ")}`)
-		}
+		// Resolve logo path using centralized utility (handles Netlify/local dev)
+		const logoPath = await resolveStaticFile("logo.blue.shadows.png")
 
 		// Get logo metadata to preserve aspect ratio
 		const logoMetadata = await sharp(logoPath).metadata()
@@ -120,15 +94,7 @@ export async function GET({url}) {
 		const width = parseInt(url.searchParams.get("width") || "1080")
 		const height = parseInt(url.searchParams.get("height") || "566")
 
-		console.log("Image API called with:", {
-			imageUrl,
-			width,
-			height,
-			fullUrl: url.toString(),
-			__dirname: __dirname,
-			__filename: __filename,
-			process_cwd: process.cwd(),
-		})
+		console.log("Image API called", {imageUrl, width, height})
 
 		if (!imageUrl) {
 			return new Response(
@@ -154,36 +120,15 @@ export async function GET({url}) {
 			}
 			imageBuffer = Buffer.from(await response.arrayBuffer())
 		} else {
-			// Local file path
+			// Local file path - use centralized resolver (handles Netlify + local dev)
 			const cleanImageUrl = imageUrl.replace(/^\//, "")
-
-			// Try different path strategies for local dev vs Netlify
-			const pathsToTry = [
-				// Netlify production: static/ is bundled at function root
-				path.join(__dirname, "static", cleanImageUrl),
-				// Local development: relative path from routes/api/image
-				path.join(__dirname, "../../../../static", cleanImageUrl),
-				// Alternative: try absolute from cwd (shouldn't work but just in case)
-				path.join(process.cwd(), "static", cleanImageUrl),
-			]
-
-			let lastError = null
-
-			for (const tryPath of pathsToTry) {
-				try {
-					console.log(`Attempting to load: ${tryPath}`)
-					imageBuffer = await fs.readFile(tryPath)
-					console.log(`✓ Successfully loaded from: ${tryPath}`)
-					break
-				} catch (err) {
-					lastError = err
-					console.log(`✗ Failed: ${tryPath} - ${err.message}`)
-				}
-			}
-
-			if (!imageBuffer) {
+			try {
+				imageBuffer = await resolveStaticFile(cleanImageUrl).then((p) =>
+					fs.readFile(p),
+				)
+			} catch (err) {
 				throw new Error(
-					`Could not find image at any path. Last error: ${lastError?.message}. Tried: ${pathsToTry.join(", ")}`,
+					`Could not load static image: ${cleanImageUrl}. ${err.message}`,
 				)
 			}
 		}
