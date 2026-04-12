@@ -431,12 +431,7 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/anxiety-related-gastrointestinal</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/anxiety-health-conditions</loc>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/anxiety-somatization/physical-symptoms/health-anxiety</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>

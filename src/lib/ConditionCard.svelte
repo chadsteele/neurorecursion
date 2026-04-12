@@ -29,7 +29,7 @@
 <Parallax background={condition.background_image}>
 	<section class="paper container">
 		<h3>{condition.name}</h3>
-		<div>
+		<div class="condition-description">
 			{@html condition?.description
 				?.trim()
 				.split("\n\n")
@@ -86,6 +86,28 @@
 </Parallax>
 
 <style>
+	:global(.condition-description a) {
+		color: #a0d8ff !important;
+		text-decoration: none !important;
+		/* background: rgba(74, 159, 216, 0.15) !important; */
+		padding: 0.2rem 0.4rem !important;
+		border-radius: 3px !important;
+		transition: all 0.2s ease !important;
+		border-bottom: 1px solid rgba(74, 159, 216, 0.4) !important;
+		cursor: pointer !important;
+	}
+
+	:global(.condition-description a:hover) {
+		color: white !important;
+		background: rgba(74, 159, 216, 0.35) !important;
+		border-bottom-color: #4a9fd8 !important;
+		transform: translateY(-1px) !important;
+	}
+
+	:global(.condition-description a:active) {
+		transform: translateY(0) !important;
+	}
+
 	h3 {
 		color: #4a9fd8;
 		font-size: 1.5rem;

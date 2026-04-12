@@ -344,13 +344,8 @@ export const CONDITIONS_METADATA = [
   "background_image": ""
  },
  {
-  "id": "anxiety-related-gastrointestinal-issues",
-  "path": "/remote-clinical-trial/free/anxiety-related-gastrointestinal",
-  "background_image": ""
- },
- {
-  "id": "anxiety-health-conditions",
-  "path": "/remote-clinical-trial/free/anxiety-health-conditions",
+  "id": "anxiety-somatization-physical-symptoms-health-anxiety",
+  "path": "/remote-clinical-trial/free/anxiety-somatization/physical-symptoms/health-anxiety",
   "background_image": "/backgrounds/wheelchair.png"
  },
  {

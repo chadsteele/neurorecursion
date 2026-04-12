@@ -815,28 +815,16 @@
       "name": "General Addictions"
     }
   },
-  "anxiety-related-gastrointestinal-issues": {
+  "anxiety-somatization-physical-symptoms-health-anxiety": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Anxiety-Related Gastrointestinal Issues",
-    "description": "Your gut became an early-warning system for threat that triggers digestive shutdown. The gut-brain axis wired anxiety to become gut dysregulation. Anxiety-related gastrointestinal issues include irritable bowel syndrome (IBS), functional dyspepsia, nausea, constipation, diarrhea, and gut pain that occur or dramatically worsen during anxiety or stress. The gut becomes the primary symptom location where anxiety manifests, causing significant digestive dysfunction and often leading to avoidance of ",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/anxiety-related-gastrointestinal",
-    "identifier": "anxiety-related-gastrointestinal-issues",
+    "name": "Anxiety Somatization & Health Anxiety - Anxiety Manifesting in Physical Symptoms",
+    "description": "Your nervous system learned that the primary location for expressing terror is your body. Anxiety doesn't stay in your mind—it floods into your gut, your heart, your head, creating physical symptoms that feel more real than the underlying anxiety. Anxiety somatization and health anxiety occur when anxiety manifests primarily through physical symptoms rather than cognitive/emotional symptoms. This includes anxiety-triggered gastrointestinal issues (IBS, functional dyspepsia, nausea, constipation,",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/anxiety-somatization/physical-symptoms/health-anxiety",
+    "identifier": "anxiety-somatization-physical-symptoms-health-anxiety",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Anxiety-Related Gastrointestinal Issues"
-    }
-  },
-  "anxiety-health-conditions": {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    "name": "Anxiety About Physical Health Conditions",
-    "description": "You have a genuine health condition and your nervous system transformed normal symptoms into perceived life-threat. Health anxiety amplifies the meaning of real physiological signals. Anxiety about real health conditions occurs when individuals with actual medical conditions (diabetes, asthma, heart conditions, autoimmune disease, chronic pain) develop excessive anxiety about their condition that exceeds what the condition itself warrants. The anxiety about the health condition becomes a bigger ",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/anxiety-health-conditions",
-    "identifier": "anxiety-health-conditions",
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Anxiety About Physical Health Conditions"
+      "name": "Anxiety Somatization & Health Anxiety - Anxiety Manifesting in Physical Symptoms"
     }
   },
   "general-neurological-issues": {
