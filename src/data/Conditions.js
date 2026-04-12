@@ -697,7 +697,7 @@ The neurobiological mechanism involves amygdala-driven threat-perception in resp
 
 Our technique recalibrates the threat-perception in response to imperfection and reduces the amygdala's sensitivity to minor mistakes through targeted limbic intervention. We restore accurate threat/non-threat assessment where true excellence becomes achievable without perfectionism-based anxiety. Your nervous system distinguishes between genuine quality and perfectionist threat-magnification. This isn't self-compassion training or standards reduction. It's recoding of how your nervous system encodes mistakes and imperfection as threat. You access genuine excellence production without the perfectionism-based anxiety and paralysis.
 
-Related condition: For adolescent perfectionism manifesting specifically in academic contexts, see <a href="/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety">Teen Perfectionism & Academic Pressure</a>.`,
+`,
 		ngo_url: "https://www.apa.org/science/about/psa/perfectionism",
 		scientific_reference: "",
 		background_image: "",
@@ -1251,19 +1251,7 @@ Our technique supports the genuine aspects of emotional expression while buildin
 		scientific_reference: "",
 		background_image: "",
 	},
-	{
-		id: "teen-perfectionism-academic-pressure",
-		path: "/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety",
-		name: "Teen Perfectionism & Academic Pressure - Adolescent Achievement Anxiety",
-		description: `Your adolescent's nervous system has merged their entire identity with their GPA, test scores, and achievement ranking. Teen perfectionism and academic pressure occur when a teenager experiences intense anxiety about academic performance not as motivation toward genuine learning, but as existential threat-response where any performance below perfection codes as personal failure AND loss of parental love AND social devaluation. The perfectionist adolescent becomes locked in a loop where academic anxiety prevents genuine learning, where mistakes generate disproportionate shame, where rest feels impossible (rest feels like failure), and where the original love of learning has been replaced by fear-driven performance. The teen may experience panic attacks before tests, dissociate during exams, engage in self-harm over grades, or develop complete academic shutdown despite being highly capable.
 
-The neurobiological mechanism: the anterior cingulate cortex (performance monitoring and error detection) becomes hyperactive—every mistake is neurologically encoded as catastrophic. The amygdala's fear-circuits become activated in direct proportion to performance-stakes. The ventromed ial prefrontal cortex encodes academic failure as equivalent to social death and parental abandonment. The dorsolateral prefrontal cortex becomes unable to distinguish between realistic performance-goals and punitive perfectionism. Cortisol and other stress hormones remain chronically elevated. The nucleus accumbens becomes dopamine-depleted because genuine learning-reward has been replaced by anxiety-reduction as the only dopamine source. The insula becomes hyperresponsive to bodily sensations of anxiety, amplifying the stress-response.
-
-Our technique recalibrates the amygdala's threat-response to academic performance, separating achievement-anxiety from survival-anxiety. We rebuild the prefrontal cortex's capacity to set realistic, self-compassionate goals. The ventromedial prefrontal cortex learns that mistakes are normal and that parental love is not performance-contingent. The dorsolateral prefrontal cortex recodes effort and growth as the value-source rather than flawless outcomes. The nucleus accumbens regains capacity to find dopamine-reward in genuine learning and skill-development rather than only in anxiety-avoidance. The adolescent experiences decreased anxiety, restored capacity for genuine learning, healthier achievement-motivation, and integration of academic identity with other aspects of self.`,
-		ngo_url: "https://www.apa.org/",
-		scientific_reference: "",
-		background_image: "",
-	},
 	{
 		id: "adolescent-victim-identity-learned-helplessness",
 		path: "/remote-clinical-trial/free/victim-identity/learned-helplessness/powerlessness",

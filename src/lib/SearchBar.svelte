@@ -139,10 +139,7 @@
 		}
 
 		// Parse query
-		const words = query
-			.trim()
-			.split(/\s+/)
-			.filter((w) => w.length > 0)
+		const words = query.split(/\s+/).filter((w) => w.length > 0)
 		if (words.length === 0) {
 			totalMatches.set(0)
 			currentMatchIndex.set(-1)
