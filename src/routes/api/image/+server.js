@@ -134,15 +134,26 @@ export async function GET({url}) {
 		} else {
 			// Local file path
 			const cleanImageUrl = imageUrl.replace(/^\//, "")
-			const filePath = path.join(
+			// On Netlify, __dirname is the function directory, so we need to go up fewer levels
+			// Try multiple possible paths for compatibility between local dev and Netlify
+			let filePath = path.join(
 				__dirname,
 				"../../../../static",
 				cleanImageUrl,
 			)
+
+			try {
+				await fs.access(filePath)
+			} catch {
+				// Fallback: try just "static/" relative to __dirname
+				filePath = path.join(__dirname, "static", cleanImageUrl)
+			}
+
 			console.log("Loading local file:", {
 				imageUrl,
 				cleanImageUrl,
 				filePath,
+				__dirname,
 			})
 			imageBuffer = await fs.readFile(filePath)
 		}
