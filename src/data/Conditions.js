@@ -468,6 +468,10 @@ The neurobiological mechanism involves performance anxiety hijacking the sympath
 Our technique recalibrates the amygdala's threat perception around sexual performance and restores parasympathetic activation through targeted limbic intervention. We dissolve the performance anxiety and restore authentic sexual presence. Erectile function, arousal capacity, and sexual motivation return as threat-detection resets. This isn't sexual technique training or gradual desensitization. It's recoding of how your nervous system processes sexual situations. You access genuine sexual confidence, restored function, and authentic intimate connection.`,
 		ngo_url: "https://www.aasect.org/",
 		scientific_reference: "",
+		background_image:
+			"/backgrounds/sexual-dysfunction-performance-anxiety-impotence.png",
+		background_image:
+			"/backgrounds/sexual-dysfunction-performance-anxiety-impotence.png",
 	},
 	{
 		id: "fear-of-intimacy-commitment-fear",
@@ -744,6 +748,7 @@ The neurobiological mechanism involves an overactive amygdala that perceives tim
 
 Our technique recalibrates the amygdala's threat perception around time and mortality through targeted limbic intervention. We dissolve the existential threat association with temporal awareness and restore presence and acceptance of mortality. Your nervous system ceases to treat time's passage as danger. You experience peace in the present moment, healthy perspective on aging, and freedom from mortality obsession.`,
 		ngo_url: "https://www.adaa.org/",
+		background_image: "/backgrounds/chronophobia-fear-time-future.png",
 	},
 	{
 		id: "thanatophobia-death-anxiety",
@@ -755,6 +760,7 @@ The neurobiological mechanism involves an amygdala that has been conditioned to 
 
 Our technique recalibrates death perception and dissolves the morbid obsession pattern through targeted limbic intervention. We restore accurate probability assessment and emotional proportionality around mortality. Your nervous system ceases to treat death awareness as immediate threat. You experience acceptance of mortality, freedom from intrusive death thoughts, and restored capacity to engage fully in life.`,
 		ngo_url: "https://www.adaa.org/",
+		background_image: "/backgrounds/thanatophobia-death-anxiety.png",
 	},
 	{
 		id: "moral-injury-values-violation",
@@ -778,6 +784,7 @@ The neurobiological mechanism involves classical conditioning where a neutral st
 
 Our technique dissolves the specific stimulus-threat association through targeted amygdala recalibration. We break the conditioned fear response and restore accurate threat assessment of the specific stimulus. Your nervous system ceases to respond with fear when encountering the phobic object. You experience rapid freedom from the specific phobia and restored capacity to engage with previously avoided situations.`,
 		ngo_url: "https://www.adaa.org/",
+		background_image: "/backgrounds/general-fears-phobias.png",
 	},
 	{
 		id: "seasonal-affective-disorder-sad",
@@ -789,6 +796,7 @@ The neurobiological mechanism involves dysregulation of circadian rhythms caused
 
 Our technique recalibrates circadian rhythm sensitivity to seasonal light changes through targeted limbic intervention. We restore robust dopamine and serotonin signaling independent of seasonal darkness. Your nervous system ceases to treat winter darkness as threat or signal for depressive shutdown. You experience consistent mood and motivation year-round without seasonal variation.`,
 		ngo_url: "https://www.adaa.org/",
+		background_image: "/backgrounds/seasonal-affective-disorder-sad.png",
 	},
 	{
 		id: "perinatal-depression-paternal-postpartum-depression",
@@ -812,6 +820,7 @@ The neurobiological mechanism involves the dramatic decline in estrogen during m
 
 Our technique recalibrates monoamine systems and limbic sensitivity to menopausal hormonal and physical changes through targeted intervention. We restore neurochemical balance independent of estrogen levels and recalibrate threat-sensitivity to menopause-related sensations. Your nervous system regains capacity for mood stability, motivation, and engagement. You experience freedom from menopausal depression and restored quality of life during and after menopause.`,
 		ngo_url: "https://www.menopause.org/",
+		background_image: "/backgrounds/menopausal-depression.png",
 	},
 	{
 		id: "general-mood-disorders",
@@ -834,6 +843,7 @@ Our technique identifies the specific dysregulation pattern and restores balance
 The neurobiological mechanism involves atypical connectivity between the visual cortex (recognizing written forms) and the phonological processing centers (Wernicke's area, left temporo-parietal region). The brain's typical pathway from visual letter recognition to phonological mapping becomes less efficient, requiring increased effort and cognitive resources to decode written words. Reading requires slow, effortful sounding-out rather than automatic recognition. Additionally, anxiety about reading performance activates the amygdala, further impairing the already-difficult decoding process by consuming working memory and increasing reading errors in a stress-performance feedback loop.
 
 Our technique optimizes the visual-phonological integration pathways and reduces reading-related anxiety through targeted limbic and visual processing intervention. We enhance the neural coordination between visual recognition and phonological access. Your reading becomes more fluent and automatic as the visual-phonological pathways synchronize. This isn't reading tutoring or more practice. It's recalibration of how the brain integrates visual letter forms with sound. You experience faster reading speed, improved accuracy, and restored willingness to engage with written material.`,
+		background_image: "/backgrounds/dyslexia-reading-disorder.png",
 	},
 	{
 		id: "general-neurodevelopmental-issues",
@@ -844,7 +854,7 @@ Our technique optimizes the visual-phonological integration pathways and reduces
 The neurobiological mechanisms vary across specific neurodevelopmental conditions but generally involve atypical neural development during critical periods—whether through genetic factors, prenatal influences, birth complications, or early environmental factors that alter typical neural pathway development. This results in brain systems that process information differently, often requiring more effort in affected domains despite average or above-average overall capability. Anxiety often co-occurs or develops secondarily as individuals encounter repeated difficulty in affected domains, creating additional functional challenges.
 
 Our technique identifies and recalibrates the specific neural pathway differences through targeted neurodevelopmental intervention. We enhance the efficiency of atypical neural pathways and reduce secondary anxiety that compounds functional difficulty. Your brain's atypical wiring becomes an asset rather than a limitation, processing efficiently through its unique pathways. You experience functional improvements in affected domains and restored confidence in your capabilities.`,
-		background_image: "/backgrounds/neural.png",
+		background_image: "/backgrounds/general-neurodevelopmental-issues.png",
 	},
 	{
 		id: "gambling-addiction",
@@ -867,6 +877,7 @@ The neurobiological mechanism involves dysregulation of the mesolimbic reward pa
 
 Our technique recalibrates the food reward system and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the emotional-eating link and restore prefrontal regulation. Your nervous system ceases using food as primary emotional management and accesses genuine distress-tolerance alternatives. You experience restored capacity for balanced eating, appropriate appetite regulation, and emotional resilience.`,
 		ngo_url: "https://www.nationaleatingdisorders.org/",
+		background_image: "/backgrounds/food-addiction.png",
 	},
 	{
 		id: "general-addictions",
@@ -878,6 +889,7 @@ The neurobiological mechanism involves dysregulation of the mesolimbic dopamine 
 
 Our technique recalibrates the dopamine reward system and restores executive capacity through targeted limbic intervention. We dissolve the distress-addiction link and restore genuine distress tolerance. Your nervous system ceases pursuing the addictive behavior and accesses genuine satisfaction and emotional regulation alternatives. You experience freedom from addiction and restored capacity for meaningful engagement with life.`,
 		ngo_url: "https://www.samhsa.gov/",
+		background_image: "/backgrounds/general-addictions.png",
 	},
 	{
 		id: "anxiety-somatization-physical-symptoms-health-anxiety",
@@ -901,6 +913,7 @@ The neurobiological mechanisms vary across specific neurological conditions but 
 
 Our technique addresses both the neurological symptom generation and secondary anxiety through targeted neural intervention. We enhance compensatory neural pathway function and reduce threat-sensitivity to symptom experience. Your brain regains maximum functional capacity given the neurological condition present. You experience improved functional capacity and reduced anxiety about neurological symptoms.`,
 		ngo_url: "https://www.aan.com/",
+		background_image: "/backgrounds/general-neurological-issues.png",
 	},
 	{
 		id: "self-esteem-identity-issues",
@@ -912,6 +925,7 @@ The neurobiological mechanism involves the medial prefrontal cortex—which enco
 
 Our technique recalibrates the self-representation in the medial prefrontal cortex and reduces amygdala's sensitivity to status/competence threat through targeted identity and limbic intervention. We restore accurate self-perception free from threat-distortion. Your nervous system encodes self-worth based on authentic capability and intrinsic value. You experience stable healthy self-esteem and clarified authentic identity.`,
 		ngo_url: "https://www.nami.org/",
+		background_image: "/backgrounds/self-esteem-identity-issues.png",
 	},
 	{
 		id: "general-performance-issues",
@@ -923,6 +937,7 @@ The neurobiological mechanism involves the amygdala perceiving performance conte
 
 Our technique recalibrates the amygdala's threat perception of performance contexts through targeted limbic intervention. We restore executive function and skill access when performance stakes are present. Your nervous system ceases treating performance as social threat and maintains prefrontal regulation. You experience genuine performance capability when stakes are present and freedom to execute skill at full capacity.`,
 		ngo_url: "https://www.adaa.org/",
+		background_image: "/backgrounds/general-performance-issues.png",
 	},
 	{
 		id: "cutting-self-harm",
@@ -978,6 +993,7 @@ Our technique recalibrates attachment security and amygdala threat-perception of
 The neurobiological mechanism involves overactive mirror neuron systems where others' emotions become neurally mirrored in the self, creating emotional fusion rather than empathetic connection. The medial prefrontal cortex fails to maintain clear self-other boundaries and instead activates for both self and intimate other similarly. The anterior insula loses accurate interoceptive awareness of personal needs and emotions, replaced by hyper-focus on others' emotional states. The amygdala becomes conditioned to others' emotional distress as personal threat requiring immediate management. Abandonment anxiety or rejection sensitivity drives compulsive relational caregiving where maintaining connection takes priority over self-care. The attachment system became addictive rather than secure.
 
 Our technique restores self-other boundaries and personal autonomy through targeted limbic and identity intervention. We recalibrate interoceptive awareness of personal needs and reduce amygdala's reactivity to others' emotional states. Your nervous system restores clear sense of self separate from others. You experience healthy interdependence with maintained self-integrity, ability to set boundaries, and reduced compulsive caregiving.`,
+		background_image: "/backgrounds/codependency-relational-enmeshment.png",
 	},
 	{
 		id: "general-attachment-issues",
@@ -988,7 +1004,7 @@ Our technique restores self-other boundaries and personal autonomy through targe
 The neurobiological mechanism involves the ventromedial prefrontal cortex encoding relational expectations and secure base representations based on early attachment experiences. When early caregivers were inconsistently available, rejecting, or overwhelming, the amygdala became hyperactive to abandonment or engulfment threat during adult closeness. The mirror neuron systems may become dysregulated, affecting capacity for emotional resonance and empathetic attunement. Insecure attachment patterns activate in adult relationships, triggering protective responses (distancing, pursuing, shutting down) that recreate the early relational pattern. The attachment system uses these patterns as safety strategies despite their actual relationship-damaging effects.
 
 Our technique recalibrates the attachment security representations through targeted limbic and relational intervention. We dissolve the early attachment trauma pattern and restore capacity for secure adult attachment. Your nervous system regains capacity for genuine closeness with maintained autonomy and healthy dependence. You experience secure attachment patterns and restored capacity for fulfilling intimate relationships.`,
-		background_image: "/backgrounds/attached.png",
+		background_image: "/backgrounds/general-attachment-issues.png",
 	},
 	{
 		id: "aphasia-language-disorder",
@@ -1011,6 +1027,7 @@ The neurobiological mechanisms vary across communication issues but often involv
 
 Our technique recalibrates the specific communication system disruption through targeted neural intervention. We improve neural coordination in affected communication systems and reduce secondary anxiety that compounds difficulty. Your communication becomes more fluid, accurate, and socially effective. This isn't speech therapy or communication coaching. It's targeted recalibration of the neural systems generating communication difficulty. You experience improved communication effectiveness and restored confidence in social and professional communication.`,
 		ngo_url: "https://www.asha.org/",
+		background_image: "/backgrounds/general-communication-issues.png",
 	},
 	{
 		id: "trauma-drama-etc",
@@ -1034,6 +1051,7 @@ The neurobiological mechanism often involves early experiences where the environ
 
 Our technique recalibrates threat-perception around loss of control and restores capacity to tolerate appropriate vulnerability through targeted limbic intervention. We reduce amygdala reactivity to control-loss and increase tolerance for uncontrollable systems. Your nervous system regains capacity for genuine connection where autonomy need not threaten your sense of safety. You experience freedom from control-compulsion and restored capacity for healthy relationships and collaborative rather than dominance-based relating.`,
 		ngo_url: "https://www.aamft.org/",
+		background_image: "/backgrounds/power-control-issues.png",
 	},
 	{
 		id: "rape-sexual-assault",
