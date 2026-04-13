@@ -75,7 +75,7 @@ The neurobiological mechanism involves dysregulation of the social brain systems
 Our technique recalibrates social threat perception and restores social reward capacity through targeted limbic recalibration. We dissolve the amygdala hijack in response to social presence and restore ventral vagal engagement. Your nervous system regains capacity for genuine connection and authentic presence with others. This isn't skills training or social forcing. It's recoding of how your nervous system detects threat in social contexts. You experience restored capacity for belonging, authentic connection, and the vital health and wellbeing that emerges from genuine relationship.`,
 		ngo_url: "https://www.campaigntoendloneliness.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/alone.jpg",
+		background_image: "/backgrounds/alone.png",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -405,7 +405,7 @@ The neurobiological mechanism involves chronic activation of the stress response
 Our technique recalibrates the nervous system from chronic threat-state through targeted limbic recalibration and restoration of meaning-systems. We restore the capacity to downregulate threat-perception and re-engage the parasympathetic nervous system. Your nervous system regains capacity for genuine rest, renewed energy, and restored sense of purpose. This isn't vacation or work-life balance advice. It's recoding of how your nervous system responds to occupational stress. You experience restoration of vitality, genuine emotional connection, and renewed capability.`,
 
 		scientific_reference: "",
-		background_image: "/backgrounds/burnout.jpg",
+		background_image: "/backgrounds/burnout.png",
 	},
 	{
 		id: "alcohol-substance-abuse",
@@ -566,7 +566,7 @@ The neurobiological loop in OCD involves a circuit between the orbitofrontal cor
 Our technique breaks the obsessive-compulsive circuit through targeted recalibration of the amygdala-orbitofrontal connection. We dissolve the threat response to intrusive thoughts and restore prefrontal regulation. Intrusive thoughts become less emotionally charged and the compulsive urges recede. This isn't exposure-response prevention or cognitive therapy. It's swift recoding of the threat-detection circuit. You observe obsessive thoughts without the urgent need to engage in compulsions. Daily distress and functioning improve substantially.`,
 		ngo_url: "https://iocdf.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/ocdmm.jpeg",
+		background_image: "/backgrounds/ocdmm.png",
 	},
 	{
 		id: "trichotillomania-hair-pulling",
@@ -725,7 +725,7 @@ The neurobiological mechanism involves amygdala hyperactivity and reduced prefro
 
 Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
 		ngo_url: "https://www.adaa.org/",
-		background_image: "/backgrounds/anxiety.jpg",
+		background_image: "/backgrounds/anxiety.png",
 	},
 	{
 		id: "chronophobia-fear-time-future",
@@ -927,7 +927,7 @@ The neurobiological mechanism involves dysregulation of pain processing and emot
 
 Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
 		ngo_url: "https://www.nami.org/",
-		background_image: "/backgrounds/self-harm.jpg",
+		background_image: "/backgrounds/self-harm.png",
 	},
 	{
 		id: "hoarding-disorder",
@@ -1015,7 +1015,7 @@ The neurobiological mechanism involves amygdala sensitization and conditioning t
 
 Our technique systematically desensitizes trauma encoding and restores accurate threat-assessment through targeted limbic intervention. We process trauma memories and diminish their emotional charge and salience. Your nervous system regains capacity to distinguish past threat from present safety. You experience freedom from intrusive trauma memories and chronic threat-detection, restored capacity for trust and genuine engagement with life.`,
 		ngo_url: "https://www.nctsn.org/",
-		background_image: "/backgrounds/drama.jpg",
+		background_image: "/backgrounds/drama.png",
 	},
 	{
 		id: "power-control-issues",
@@ -1089,7 +1089,7 @@ The neurobiological mechanism involves ancient evolutionary in-group bias system
 Our technique targets the amygdala's threat-coding of racial and ethnic diversity and rebuilds the in-group/out-group balance through precision limbic recalibration. We dissolve fear-based threat associations and replace them with neural patterns of shared humanity and mutual benefit. The automatic prejud­icial threat response dissolves when the amygdala's racial/ethnic threat-coding is rewired. You access restored capacity for racial justice, authentic respect for cultural diversity, genuine security that doesn't require othering, and freedom from the exhausting cognitive burden of prejudicial vigilance.`,
 		ngo_url: "https://www.adl.org/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/racism.png",
 	},
 	{
 		id: "misogyny-gender-based-violence-fear-of-women",
@@ -1104,7 +1104,7 @@ Our technique recalibrates the amygdala's threat-coding of female power through 
 Related condition: For adolescent misogyny and gender-based violence patterns, this condition shares neurobiological mechanisms with <a href="/remote-clinical-trial/free/teen-bullying/aggressive-defense/peer-aggression">Teen Bullying & Aggressive Defense</a>.`,
 		ngo_url: "https://www.vawnet.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/pinkhats.jpg",
+		background_image: "/backgrounds/pinkhats.png",
 	},
 	{
 		id: "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
@@ -1156,7 +1156,7 @@ The neurobiological mechanism: parenting engages the anterior insula (social pai
 Our technique recalibrates the amygdala's threat-coding around parenting responsibility and restores the prefrontal cortex's capacity to evaluate realistic parenting adequacy. We dissolve the linkage between a child's normal distress and the parent's experience of personal failure. Your nervous system learns that you can be a good-enough parent without being perfect, that your child's emotions are separate from your worth, and that parenting challenges are normal, not proof of incompetence. The anterior insula recodes your child's needs as solvable problems rather than existential threats to your identity. You access the genuine joy and presence available in parenting, manage challenges with calm capability rather than reactive panic, and develop intrinsic confidence in your parental adequacy.`,
 		ngo_url: "https://www.zerotothree.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/happyfamily.webp",
+		background_image: "/backgrounds/happyfamily.png",
 	},
 	{
 		id: "stepfamily-blended-family-adjustment-family-integration-stress",
@@ -1169,7 +1169,7 @@ The neurobiological mechanism: the amygdala becomes dysregulated by the presence
 Our technique stabilizes the amygdala's response to family restructuring by creating clear neural maps of belonging, role clarity, and revised family identity. We dissolve loyalty conflicts by helping each family member understand that bonding with a step-parent is addition, not replacement. The child's ventromedial prefrontal cortex learns that the blended family structure is safe and trustworthy despite being different. Each family member's role becomes clear in the nervous system—what authority each person holds, what intimacy each relationship involves, and how the new family creates coherent values. The amygdala recodes the step-sibling and step-parent presences as part of the safe family, not as intruders or threats. Family members experience reduced conflict, clearer communication, and the capacity to build genuine affection across blended family boundaries.`,
 		ngo_url: "https://www.stepfamilies.info/",
 		scientific_reference: "",
-		background_image: "/backgrounds/bradybunch.jpg",
+		background_image: "/backgrounds/bradybunch.png",
 	},
 	{
 		id: "coparenting-conflict-parental-disagreement-custody-conflict",
@@ -1184,7 +1184,7 @@ Our technique begins by recalibrating each parent's amygdala response to the co-
 Related condition: Children in co-parenting conflict often experience <a href="/remote-clinical-trial/free/adolescent-abandonment/trauma-hypervigilance/rejection-sensitivity">Adolescent Abandonment Trauma & Hyper-Vigilance</a> as they develop, with hypervigilance to signs of rejection from either parent.`,
 		ngo_url: "https://www.coparently.com/",
 		scientific_reference: "",
-		background_image: "/backgrounds/custody.jpg",
+		background_image: "/backgrounds/custody.png",
 	},
 	{
 		id: "custody-visitation-anxiety-parental-separation-transition-distress",
@@ -1212,7 +1212,7 @@ The neurobiological mechanism: the prefrontal cortex undergoes pruning and myeli
 Our technique stabilizes the medial prefrontal cortex during its reconstruction by anchoring the adolescent to their authentic values rather than reactive social performance. We help the teen separate identity-exploration from identity-desperation. The ventromedial prefrontal cortex learns to generate intrinsic self-worth independent of social approval, while the nucleus accumbens recalibrates to find reward in authentic self-expression rather than peer validation-seeking. The amygdala ceases treating identity-differentiation as social threat. The adolescent experiences genuine self-discovery rooted in values alignment rather than frantic persona-cycling, and the capacity to maintain authentic identity even when it differentiates from peer groups.`,
 		ngo_url: "https://www.apa.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/genderballoons.jpg",
+		background_image: "/backgrounds/genderballoons.png",
 	},
 	{
 		id: "adolescent-angst-oppositional-defiance",
@@ -1251,7 +1251,7 @@ The neurobiological mechanism: the anterior insula (emotional awareness) becomes
 Our technique supports the genuine aspects of emotional expression while building intrinsic emotional regulation independent of subcultural performance. We help the adolescent distinguish between authentic emotional intensity (valid and worth preserving) and defensive emotional performance (limiting and unsustainable). The ventromedial prefrontal cortex develops genuine emotion-regulation skills. The teen experiences the capacity to express authentic emotional depth in multiple contexts (not just within the subculture), to integrate emotional intensity with other identity aspects, and to make identity-choices from authentic preference rather than defensive subcultural dependence.`,
 		ngo_url: "https://www.apa.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/emo.avif",
+		background_image: "/backgrounds/emo.png",
 	},
 
 	{
@@ -1278,7 +1278,7 @@ The neurobiological mechanism involves both dysregulated emotion-processing syst
 Our technique addresses both underlying mechanisms: rebuilding distress-tolerance so the adolescent's nervous system can process emotional experience without generating existential panic, while simultaneously building inhibitory capacity and external structure that supports the still-developing prefrontal systems. The insula learns to process emotional experience without generating existential panic. The ventromedial prefrontal cortex develops capacity to hold emotional experience without demanding immediate escape AND learns to weight short-term impulse-reward against long-term consequences more effectively. We teach vagal regulation skills and explicit decision-making strategies that activate the parasympathetic nervous system as alternatives to adrenaline-seeking. The nucleus accumbens gradually recalibrates to find dopamine-reward in genuine emotion regulation, healthy goal-pursuit, and social connection rather than only in risk-taking. The dorsolateral prefrontal cortex develops functional inhibitory capacity through practice, and we support environmental structure that reduces the need for impulse-inhibition while development is ongoing. The anterior cingulate cortex develops emotion-acceptance capacity and genuine conflict-monitoring. Parents/caregivers learn to provide structure, limits, and consequences that support the developing executive system. The adolescent experiences increased distress-tolerance, decreased catastrophic impulsive choices, improved real-world outcomes, capacity to process difficult emotions without dangerous coping, safer mechanisms for emotion-regulation, and freedom from the escalating danger-spiral.`,
 		ngo_url: "https://www.samhsa.gov/",
 		scientific_reference: "",
-		background_image: "/backgrounds/drunkdriving.webp",
+		background_image: "/backgrounds/drunkdriving.png",
 	},
 	{
 		id: "teen-substance-abuse-addiction",
@@ -1304,7 +1304,7 @@ The neurobiological mechanism: the adolescent brain's need for belonging and sta
 Our technique begins by acknowledging that the gang met a real need (belonging, status, protection) and that exiting requires developing these needs through non-violent channels. We help the adolescent disconnect amygdala-synchronization with the group through trauma processing of gang-violence exposure. The ventromedial prefrontal cortex develops intrinsic self-worth not dependent on gang-status. The nucleus accumbens learns to find dopamine-reward in school achievement, healthy relationships, genuine mentorship, and other status-pathways. The prefrontal cortex regains capacity for independent threat-evaluation and exit-planning. The adolescent develops capacity to exit gang involvement, access mentorship and legitimate opportunity, rebuild relationships outside gang, and develop identity that doesn't depend on violence or criminal participation.`,
 		ngo_url: "https://www.ceasefirenow.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/gang.webp",
+		background_image: "/backgrounds/gang.png",
 	},
 	{
 		id: "teen-screen-addiction-digital-escapism",
@@ -1330,7 +1330,7 @@ The neurobiological mechanism: the amygdala has become sensitized to threat and 
 Our technique decouples shame-activation from aggression-response and addresses the underlying terror/shame that the aggression protects. We help the adolescent's orbitalfrontal cortex distinguish between genuine status-threat and perceived status-threat, and develop alternative status-pathways that don't depend on aggression. The amygdala becomes less reactive to status-challenge situations. The ventromedial prefrontal cortex develops new values around genuine peer connection rather than fear-based dominance. The anterior insula recalibrates to detect genuine threat vs. social discomfort. The adolescent develops capacity for authentic peer relationships based on reciprocal respect rather than fear and dominance, decreased aggression and bullying, and integration of shame experiences rather than projection onto others.`,
 		ngo_url: "https://www.apa.org/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/meangirls.png",
 	},
 	{
 		id: "teen-crisis-survival-behaviors",
@@ -1356,7 +1356,7 @@ The neurobiological mechanism: family/placement generates chronic fear or reject
 Our technique begins with meeting the adolescent's actual need (safety from the threat they're running from) rather than simply forcing return to the dangerous environment. If family is genuinely abusive/rejecting, real alternative safety is required. If placement is failing, effective re-placement is needed. We help the amygdala's threat-assessment become accurate about which environments are genuinely dangerous vs. which are merely containing/limiting. The ventromedial prefrontal cortex develops genuine problem-solving that doesn't require running. The oxytocin system has opportunity to potentially rebuild bonding with safer caregivers. The adolescent experiences genuine safety in the environment, restoration of family connections (if safe), or stable alternative placement, and decreasing need for escape-behavior because the current environment no longer feels survival-threatening.`,
 		ngo_url: "https://www.nfyi.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/homelessteen.jpg",
+		background_image: "/backgrounds/homelessteen.png",
 	},
 	{
 		id: "teen-suicidal-ideation-self-harm",
@@ -1436,7 +1436,7 @@ The neurobiological mechanism involves amygdala hyperactivity and fear-condition
 Our technique recalibrates the amygdala's threat-classification of the feared foods and helps the insula modulate its dysregulated sensory-response. We carefully work with the person's fear hierarchy, gradually reintroducing feared foods in ways that allow the nervous system to update its threat-assessment. We separate genuine safety concerns (an actual choking risk) from irrational threat-perception. We dissolve the conditioned fear-response through targeted limbic work rather than through exposure alone. You experience expanded food acceptance and dietary diversity, reduced anxiety around mealtimes and social eating, improved nutrition and health, and freedom from the social isolation that ARFID often creates.`,
 		ngo_url: "https://www.nationaleatingdisorders.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/picky-eater.jpg",
+		background_image: "/backgrounds/picky-eater.png",
 	},
 	{
 		id: "narcissistic-personality-disorder-pride",
@@ -1514,7 +1514,7 @@ The neurobiological mechanism involves profound dysregulation of the empathy and
 Our technique begins by activating the dormant neural circuits for empathic resonance and guilt-generation through intensive limbic intervention and experiential exposure to the genuine consequences of harm-causing. We rebuild the ventromedial prefrontal cortex's valuation of others' wellbeing through confrontation with the reality of harm caused and the human cost of exploitation. We recalibrate the orbitofrontal cortex's reward-sensitivity away from dominance-seeking toward reciprocal relationship. We activate genuine consequence-awareness in the amygdala's threat-detection. This work requires genuine motivation to change—without internal motivation, the person's sophisticated manipulation skills and lack of remorse make therapeutic change unlikely. When change occurs, you experience awakening of genuine empathic concern for others' suffering, reduced impulsive exploitation as alternative reward-pathways activate, capacity for authentic reciprocal relationships beyond manipulation, and integration of conscience where others' suffering becomes genuinely important.`,
 		ngo_url: "https://www.apa.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/lying.avif",
+		background_image: "/backgrounds/lying.png",
 	},
 	{
 		id: "histrionic-personality-disorder-attention-seeking",
@@ -1527,7 +1527,7 @@ The neurobiological mechanism involves dysregulation of the reward system specif
 Our technique recalibrates the nucleus accumbens's hyperactive attention-reward dependence and helps the person find dopamine-satisfaction in authentic connection rather than attention-capture. We stabilize the medial prefrontal cortex's unstable self-concept and build identity rooted in genuine values and preferences rather than relational performance. We help the insula learn to tolerate emotional experience without requiring dramatic expression for processing. We recalibrate the anterior cingulate's hypersensitivity to being ignored. We address the underlying terror of invisibility or irrelevance that drives the attention-seeking. You experience more stable sense of self across contexts, reduced dependency on external attention and approval, capacity for authentic relationships not driven by attention-maintenance, emotional expression that communicates genuine feeling rather than performing for effect, and the relief of being seen and valued for your actual self rather than your dramatic presentation.`,
 		ngo_url: "https://www.psychologytoday.com/",
 		scientific_reference: "",
-		background_image: "",
+		background_image: "/backgrounds/selfie.png",
 	},
 	{
 		id: "factitious-disorder-munchausen",
@@ -1592,7 +1592,7 @@ The neurobiological mechanism involves simultaneous activation of threat-circuit
 Our technique helps the nervous system process the betrayal as past trauma rather than continuing threat, separates the person's betrayal from the client's self-worth, and carefully works within the couple's attachment system to rebuild trust if repair is the goal. We recalibrate the amygdala's hyper-association between the partner and threat. We help the ventromedial prefrontal cortex integrate new information about the partner and relationship rather than remaining locked in the binary of "safe" or "threat." We resolve the anterior insula's shame and self-blame narratives. We support the nucleus accumbens's rewiring so attachment to the partner can potentially feel safe again (if repair occurs) or the person can fully disengage if the relationship is ending. You experience resolution of trauma symptoms related to the betrayal event, capacity to process the violation without it consuming your identity, and either genuine repair of the relationship on a more honest foundation or the clarity and closure to move forward separately.`,
 		ngo_url: "https://www.aamft.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/cheating.webp",
+		background_image: "/backgrounds/cheating.png",
 	},
 	{
 		id: "rescuer-syndrome-caretaker-compulsion",
@@ -1605,7 +1605,7 @@ The neurobiological mechanism involves dysregulation of empathy-and-helping circ
 Our technique recalibrates the nucleus accumbens's helplessness-compulsion and helps the person find dopamine-reward in balance and self-care rather than in rescue-cycles. We reprogram the ventromedial prefrontal cortex's identity from "helper" to "whole person with value independent of usefulness." We modulate the anterior insula's hyper-responsiveness to others' distress so the person can be empathic without being compelled to fix. We activate the dorsolateral prefrontal cortex's capacity for healthy boundaries and help the word "no" feel safe and ethical. We address the early attachment wound that made worthiness conditional on caretaking. You experience freedom from compulsive helping, recovery of your own needs and desires, capacity for reciprocal relationships where both people give and receive, relief from resentment-cycles, and restoration of identity beyond caretaker role.`,
 		ngo_url: "https://www.coda.org/",
 		scientific_reference: "",
-		background_image: "/backgrounds/superman.jpeg",
+		background_image: "/backgrounds/superman.png",
 	},
 	{
 		id: "geriatric-depression-aging-loss",
@@ -1631,7 +1631,7 @@ The neurobiological mechanism involves the medial prefrontal cortex's self-conce
 Our technique helps the medial and ventromedial prefrontal cortex rebuild identity that encompasses continuity from the old life while being constructed from new foundations. We help the default mode network transition from rumination and role-loss grief to exploration of authentic interests and values. We support the nucleus accumbens in discovering new sources of reward and engagement in this life phase. We help the person genuinely integrate aging as a positive life stage rather than experiencing it as diminishment. We facilitate the psychological work of elder self-definition that includes wisdom, relationships, legacy, personal growth, and contribution in new forms. You experience clarity about who you are beyond your former roles, renewed sense of purpose and meaning in this life chapter, engagement in activities that feel authentically valuable rather than role-based, and integration of aging as a positive developmental stage with its own richness.`,
 		ngo_url: "https://www.apa.org/aging",
 		scientific_reference: "",
-		background_image: "/backgrounds/happyretirement.avif",
+		background_image: "/backgrounds/happyretirement.png",
 	},
 	{
 		id: "sexual-dysfunction-intimacy-avoidance",

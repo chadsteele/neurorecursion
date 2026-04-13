@@ -194,9 +194,8 @@ export const Categories = [
 			"narcissistic-personality-disorder-pride",
 			"antisocial-personality-disorder-deception",
 			"pathological-lying-factitious-identity",
-			"borderline-personality-disorder-envy",
-
 			"histrionic-personality-disorder-attention-seeking",
+			"borderline-personality-disorder-envy",
 		],
 	},
 	{
