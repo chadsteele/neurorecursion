@@ -20,6 +20,7 @@ export const Categories = [
 			"thanatophobia-death-anxiety",
 			"aerophobia-fear-flying",
 			"chronophobia-fear-time-future",
+			"chrometophobia-fear-money",
 
 			"moral-injury-values-violation",
 			"stage-fright-performance-anxiety-live-audience",
@@ -38,6 +39,7 @@ export const Categories = [
 			"self-esteem-identity-issues",
 			"general-mood-disorders",
 			"general-performance-issues",
+			"affluenza-wealth-integration-identity-loss",
 		],
 	},
 
@@ -53,7 +55,6 @@ export const Categories = [
 			"food-addiction",
 			"food-phobia-arfid",
 
-			"teen-body-image-disordered-eating",
 			"cutting-self-harm",
 			"trichotillomania-hair-pulling",
 			"hoarding-disorder",
@@ -79,6 +80,7 @@ export const Categories = [
 			"paternal-wound-paternal-attachment-trauma-father-complex",
 			"rescuer-syndrome-caretaker-compulsion",
 			"homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
+			"financial-infidelity-hidden-transactions",
 		],
 	},
 	{
@@ -162,12 +164,13 @@ export const Categories = [
 			"insomnia-sleep-hyperarousal",
 			"factitious-disorder-munchausen",
 			"anxiety-somatization-physical-symptoms-health-anxiety",
-
+			"adhd-attention-deficit-hyperactivity-disorder",
+			"asd-autism-aspergers-autistic-spectrum-disorder",
 			"general-neurological-issues",
 		],
 	},
 	{
-		category_name: "Career, Future & Workplace",
+		category_name: "Career, Future & Prosperity",
 		path: "/careers/workplace",
 		ids: [
 			"burnout-exhaustion-depersonalization",
@@ -177,8 +180,10 @@ export const Categories = [
 			"glossophobia-fear-public-speaking",
 			"chronic-procrastination-failure-to-launch-incompletions",
 			"ai-anxiety-technophobia-fear-ai",
-			"adhd-attention-deficit-hyperactivity-disorder",
-			"asd-autism-aspergers-autistic-spectrum-disorder",
+
+			"scarcity-mindset-resource-poverty",
+			"money-dysmorphia-financial-distortion",
+			"money-scripts-unconscious-beliefs",
 		],
 	},
 
@@ -196,6 +201,7 @@ export const Categories = [
 			"pathological-lying-factitious-identity",
 			"histrionic-personality-disorder-attention-seeking",
 			"borderline-personality-disorder-envy",
+			"financial-flashpoint-trauma",
 		],
 	},
 	{

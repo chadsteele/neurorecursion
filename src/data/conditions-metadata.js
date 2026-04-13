@@ -569,11 +569,6 @@ export const CONDITIONS_METADATA = [
   "background_image": ""
  },
  {
-  "id": "teen-body-image-disordered-eating",
-  "path": "/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder",
-  "background_image": ""
- },
- {
   "id": "food-phobia-arfid",
   "path": "/remote-clinical-trial/free/food-phobia/arfid/avoidant-restriction",
   "background_image": ""
