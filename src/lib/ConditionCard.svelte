@@ -1,5 +1,6 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
+	import LazyParallaxImage from "$lib/LazyParallaxImage.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import {browser} from "$app/environment"
 	import {CheckCircle2, Heart, FlaskConical, Share2} from "lucide-svelte"
@@ -28,10 +29,9 @@
 
 <Parallax background={condition.background_image} {blur}>
 	<section class="paper container">
-		<img
+		<LazyParallaxImage
 			src={condition.background_image}
 			alt={condition.name}
-			class="condition-image"
 		/>
 
 		<h3>{condition.name}</h3>
