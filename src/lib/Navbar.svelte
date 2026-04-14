@@ -19,6 +19,10 @@
 		isMenuOpen = !isMenuOpen
 	}
 
+	function closeMenu() {
+		isMenuOpen = false
+	}
+
 	function toggleSearch() {
 		searchOpen.update((value) => !value)
 	}
@@ -46,12 +50,15 @@
 
 		<!-- Center: Navigation Links -->
 		<div class="nav-links" class:open={isMenuOpen}>
-			<a href="/about" class="nav-link">About</a>
-			<a href="/clinical-trials" class="nav-link">Clinical Trials</a>
-			<a href="/pioneers" class="nav-link">Pioneers</a>
-			<a href="/support" class="nav-link">Support</a>
-			<a href="/signup" class="nav-link">Sign Up</a>
-			<a href="/careers" class="nav-link">Join us</a>
+			<a href="/about" class="nav-link" onclick={closeMenu}>About</a>
+			<a href="/clinical-trials" class="nav-link" onclick={closeMenu}
+				>Clinical Trials</a
+			>
+			<a href="/pioneers" class="nav-link" onclick={closeMenu}>Pioneers</a
+			>
+			<a href="/support" class="nav-link" onclick={closeMenu}>Support</a>
+			<a href="/signup" class="nav-link" onclick={closeMenu}>Sign Up</a>
+			<a href="/careers" class="nav-link" onclick={closeMenu}>Join us</a>
 		</div>
 
 		<!-- Right: Search & User Avatar -->
@@ -115,7 +122,7 @@
 	.nav-link {
 		color: #a0d8ff;
 		text-decoration: none;
-		font-size: 0.95rem;
+		font-size: clamp(0.75rem, 2vw, 1.1rem);
 		font-weight: 500;
 		transition: all 0.3s ease;
 		position: relative;
@@ -158,8 +165,8 @@
 	}
 
 	:global(.user-avatar svg) {
-		width: 40px;
-		height: 40px;
+		width: clamp(28px, 8vw, 40px);
+		height: clamp(28px, 8vw, 40px);
 		stroke: #4a9fd8;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -176,7 +183,7 @@
 		background: none;
 		border: none;
 		cursor: pointer;
-		padding: 0.5rem;
+		padding: clamp(0.25rem, 1.5vw, 0.5rem);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -188,6 +195,8 @@
 	}
 
 	:global(.search-btn svg) {
+		width: clamp(20px, 5vw, 24px);
+		height: clamp(20px, 5vw, 24px);
 		stroke: #4a9fd8;
 		transition: all 0.3s ease;
 	}
@@ -207,8 +216,8 @@
 	}
 
 	.menu-toggle span {
-		width: 25px;
-		height: 2px;
+		width: clamp(20px, 5vw, 25px);
+		height: clamp(1px, 0.5vw, 2px);
 		background: #4a9fd8;
 		border-radius: 2px;
 		transition: all 0.3s ease;
@@ -253,7 +262,7 @@
 
 		.nav-link {
 			width: 100%;
-			padding: 1rem 2rem;
+			padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
 			border-bottom: 1px solid #1a2447;
 		}
 

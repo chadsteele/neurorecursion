@@ -80,10 +80,10 @@ section > form {
 	background: #4a9fd8;
 	color: white;
 	border: none;
-	padding: 0.875rem 2rem;
+	padding: clamp(0.5rem, 2vw, 1.2rem) clamp(1rem, 3vw, 2rem);
 	border-radius: 4px;
 	cursor: pointer;
-	font-size: 0.95rem;
+	font-size: clamp(0.8rem, 2.5vw, 1.1rem);
 	font-weight: 600;
 	box-shadow:
 		0 2px 4px rgba(0, 0, 0, 0.2),
@@ -100,6 +100,60 @@ section > form {
 }
 
 .submit-btn:active {
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.2),
+		0 2px 4px rgba(74, 159, 216, 0.15);
+	transform: translateY(0);
+}
+
+/* Global Button Pattern */
+button,
+.btn,
+.submit-btn,
+.share-btn,
+.signup-btn,
+.condition-links a,
+a[class*="btn"] {
+	background: #4a9fd8;
+	color: white;
+	border: none;
+	padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(0.75rem, 2.5vw, 1.25rem);
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: clamp(0.75rem, 2.2vw, 1rem);
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: clamp(0.25rem, 1vw, 0.5rem);
+	box-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.2),
+		0 4px 8px rgba(74, 159, 216, 0.15);
+	transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+}
+
+button:hover,
+.btn:hover,
+.submit-btn:hover,
+.share-btn:hover,
+.signup-btn:hover,
+.condition-links a:hover,
+a[class*="btn"]:hover {
+	background: #357ba8;
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.25),
+		0 8px 16px rgba(74, 159, 216, 0.25);
+	transform: translateY(-1px);
+}
+
+button:active,
+.btn:active,
+.submit-btn:active,
+.share-btn:active,
+.signup-btn:active,
+.condition-links a:active,
+a[class*="btn"]:active {
 	box-shadow:
 		0 1px 3px rgba(0, 0, 0, 0.2),
 		0 2px 4px rgba(74, 159, 216, 0.15);

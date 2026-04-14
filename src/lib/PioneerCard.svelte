@@ -195,33 +195,10 @@
 
 	.pioneer-actions {
 		display: flex;
-		gap: 1rem;
+		gap: clamp(0.5rem, 2vw, 1rem);
 		margin-top: 2rem;
 		padding-top: 1.5rem;
 		border-top: 1px solid rgba(74, 159, 216, 0.2);
-	}
-
-	.share-btn {
-		padding: 0.5rem 1rem;
-		background: #4a9fd8;
-		color: white;
-		border: none;
-		border-radius: 4px;
-		transition: background 0.3s ease;
-		font-size: 0.9rem;
-		cursor: pointer;
-		font-family: inherit;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.share-btn:hover {
-		background: #357ba8;
-	}
-
-	.share-btn:active {
-		transform: scale(0.98);
 	}
 
 	@media (max-width: 768px) {

@@ -136,50 +136,20 @@
 
 	.condition-links {
 		display: flex;
-		gap: 1rem;
+		gap: clamp(0.5rem, 2vw, 1rem);
 		margin-top: 1.5rem;
 		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
 
 	.condition-links a {
-		padding: 0.5rem 1rem;
-		background: #4a9fd8;
-		color: white;
 		text-decoration: none;
-		border-radius: 4px;
-		transition: background 0.3s ease;
-		font-size: 0.9rem;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
 	}
 
-	.condition-links a:hover {
-		background: #357ba8;
-	}
-
-	.share-btn {
-		padding: 0.5rem 1rem;
-		background: #4a9fd8;
-		color: white;
-		border: none;
-		border-radius: 4px;
-		transition: background 0.3s ease;
-		font-size: 0.9rem;
-		cursor: pointer;
-		font-family: inherit;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.share-btn:hover {
-		background: #357ba8;
-	}
-
-	.share-btn:active {
-		transform: scale(0.98);
+	@media (max-width: 768px) {
+		.condition-links {
+			justify-content: flex-end;
+		}
 	}
 
 	.toggle-slider {
@@ -228,7 +198,7 @@
 	.toggle-label {
 		margin-left: 0.5rem;
 		font-weight: 600;
-		font-size: 0.85rem;
+		font-size: clamp(0.7rem, 2vw, 0.95rem);
 		color: #a0d8ff;
 		min-width: 35px;
 	}
