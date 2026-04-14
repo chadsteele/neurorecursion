@@ -3,7 +3,7 @@
 	import {page} from "$app/stores"
 
 	let countdown = $state(5)
-	let CheckCircleIcon = null
+	let CheckCircleIcon = $state(null)
 
 	$effect(() => {
 		import("lucide-svelte").then((module) => {
@@ -29,11 +29,7 @@
 	<div class="success-card">
 		<div class="success-icon">
 			{#if CheckCircleIcon}
-				<svelte:component
-					this={CheckCircleIcon}
-					size={48}
-					strokeWidth={2}
-				/>
+				<CheckCircleIcon size={48} strokeWidth={2} />
 			{/if}
 		</div>
 		<h1>Thank You!</h1>

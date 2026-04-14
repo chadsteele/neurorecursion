@@ -4,7 +4,7 @@
 	import {ConditionsMap} from "$data/Conditions.js"
 
 	let {formData = {}} = $props()
-	let SearchIcon = null
+	let SearchIcon = $state(null)
 
 	$effect(() => {
 		import("lucide-svelte").then((module) => {
@@ -108,11 +108,7 @@
 				>
 					<a href={`#${category.ids[0]}`} class="read-more">
 						{#if SearchIcon}
-							<svelte:component
-								this={SearchIcon}
-								size={16}
-								strokeWidth={2}
-							/>
+							<SearchIcon size={16} strokeWidth={2} />
 						{/if}
 						Learn
 					</a>

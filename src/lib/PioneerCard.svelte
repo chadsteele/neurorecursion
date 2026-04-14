@@ -5,8 +5,8 @@
 
 	let {pioneer = {}} = $props()
 	let showShareModal = $state(false)
-	let Share2Icon = null
-	let PlayIcon = null
+	let Share2Icon = $state(null)
+	let PlayIcon = $state(null)
 
 	$effect(() => {
 		import("lucide-svelte").then((module) => {
@@ -99,11 +99,7 @@
 		<div class="pioneer-actions">
 			<button type="button" class="share-btn" onclick={handleShare}>
 				{#if Share2Icon}
-					<svelte:component
-						this={Share2Icon}
-						size={18}
-						strokeWidth={2}
-					/>
+					<Share2Icon size={18} strokeWidth={2} />
 				{/if}
 				Share
 			</button>
@@ -114,11 +110,7 @@
 				rel="noopener noreferrer"
 			>
 				{#if PlayIcon}
-					<svelte:component
-						this={PlayIcon}
-						size={18}
-						strokeWidth={2}
-					/>
+					<PlayIcon size={18} strokeWidth={2} />
 				{/if}
 				Watch
 			</a>
