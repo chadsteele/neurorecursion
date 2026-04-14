@@ -227,12 +227,4 @@
 		color: #a0d8ff;
 		min-width: 35px;
 	}
-
-	.condition-image {
-		width: 100%;
-		height: 20vh;
-		object-fit: cover;
-		display: block;
-		margin: 0 auto 1.5rem;
-	}
 </style>

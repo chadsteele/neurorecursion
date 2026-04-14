@@ -15,7 +15,7 @@ const rootDir = path.join(__dirname, "..")
 // Paths to source files
 const conditionsPath = path.join(rootDir, "src/data/Conditions.js")
 const pioneersPath = path.join(rootDir, "src/data/Pioneers.js")
-const outputPath = path.join(rootDir, "src/data/conditions-metadata.js")
+const outputPath = path.join(rootDir, "src/lib/server/conditions-metadata.js")
 
 /**
  * Extract id, path, and background_image from Conditions.js
@@ -102,6 +102,15 @@ async function main() {
 
 		console.log(`  Writing ${path.relative(rootDir, outputPath)}`)
 		fs.writeFileSync(outputPath, content, "utf-8")
+
+		// Clean up old location if it exists
+		const oldPath = path.join(rootDir, "src/data/conditions-metadata.js")
+		if (fs.existsSync(oldPath)) {
+			fs.unlinkSync(oldPath)
+			console.log(
+				`  ✓ Removed old metadata from ${path.relative(rootDir, oldPath)}`,
+			)
+		}
 
 		console.log(
 			`✅ Metadata generated successfully (${conditions.length} conditions + ${pioneers.length} pioneers)`,

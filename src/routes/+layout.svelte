@@ -63,17 +63,6 @@
 		margin-top: 0.5rem;
 	}
 
-	.footer-content p:last-child a {
-		color: #4a9fd8;
-		text-decoration: none;
-		transition: color 0.3s ease;
-	}
-
-	.footer-content p:last-child a:hover {
-		color: #6bb3e0;
-		text-decoration: underline;
-	}
-
 	@media (max-width: 900px) {
 		.footer-content {
 			gap: 0.5rem;

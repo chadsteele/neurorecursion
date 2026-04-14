@@ -13,7 +13,7 @@ import {fileURLToPath} from "url"
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(__dirname, "..")
 
-const metadataPath = path.join(rootDir, "src/data/conditions-metadata.js")
+const metadataPath = path.join(rootDir, "src/lib/server/conditions-metadata.js")
 const edgeFunctionPath = path.join(
 	rootDir,
 	"netlify/edge-functions/rewrite-og-tags.js",
@@ -72,16 +72,12 @@ ${pioneersExport}
 
 `
 
-		// Insert embedded metadata after the imports, before the CONDITIONS_METADATA declaration
-		const insertPoint = edgeFunctionContent.indexOf(
-			"let CONDITIONS_METADATA = []",
+		// Replace the let declarations with the embedded metadata
+		// This removes: "let CONDITIONS_METADATA = []" and "let PIONEERS_METADATA = []"
+		edgeFunctionContent = edgeFunctionContent.replace(
+			/let CONDITIONS_METADATA = \[\]\s*let PIONEERS_METADATA = \[\]/,
+			embeddedBlock,
 		)
-		if (insertPoint !== -1) {
-			edgeFunctionContent =
-				edgeFunctionContent.substring(0, insertPoint) +
-				embeddedBlock +
-				edgeFunctionContent.substring(insertPoint)
-		}
 
 		// Write the updated edge function
 		fs.writeFileSync(edgeFunctionPath, edgeFunctionContent, "utf-8")

@@ -51,7 +51,7 @@
 	bind:this={imageElement}
 	class="lazy-parallax-image"
 	style={shouldLoad ? `background-image: url('${src}');` : ""}
-/>
+></div>
 
 <style>
 	@keyframes kenBurns {

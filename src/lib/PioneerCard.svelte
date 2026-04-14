@@ -2,10 +2,18 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import Tag from "$lib/Tag.svelte"
-	import {Share2, ExternalLink, Play} from "lucide-svelte"
 
 	let {pioneer = {}} = $props()
 	let showShareModal = $state(false)
+	let Share2Icon = null
+	let PlayIcon = null
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			Share2Icon = module.Share2
+			PlayIcon = module.Play
+		})
+	})
 
 	function handleShare() {
 		showShareModal = true
@@ -90,7 +98,13 @@
 
 		<div class="pioneer-actions">
 			<button type="button" class="share-btn" onclick={handleShare}>
-				<Share2 size={18} strokeWidth={2} />
+				{#if Share2Icon}
+					<svelte:component
+						this={Share2Icon}
+						size={18}
+						strokeWidth={2}
+					/>
+				{/if}
 				Share
 			</button>
 			<a
@@ -99,7 +113,13 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Play size={18} strokeWidth={2} />
+				{#if PlayIcon}
+					<svelte:component
+						this={PlayIcon}
+						size={18}
+						strokeWidth={2}
+					/>
+				{/if}
 				Watch
 			</a>
 		</div>

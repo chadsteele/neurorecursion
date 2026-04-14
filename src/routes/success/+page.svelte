@@ -1,9 +1,15 @@
 <script>
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
-	import {CheckCircle2} from "lucide-svelte"
 
 	let countdown = $state(5)
+	let CheckCircleIcon = null
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			CheckCircleIcon = module.CheckCircle2
+		})
+	})
 
 	$effect(() => {
 		const interval = setInterval(() => {
@@ -22,7 +28,13 @@
 <div class="success-container">
 	<div class="success-card">
 		<div class="success-icon">
-			<CheckCircle2 size={48} strokeWidth={2} />
+			{#if CheckCircleIcon}
+				<svelte:component
+					this={CheckCircleIcon}
+					size={48}
+					strokeWidth={2}
+				/>
+			{/if}
 		</div>
 		<h1>Thank You!</h1>
 		<p>Your form has been successfully submitted.</p>

@@ -2,9 +2,15 @@
 	import {slide} from "svelte/transition"
 	import {Categories} from "$data/Categories.js"
 	import {ConditionsMap} from "$data/Conditions.js"
-	import {Search} from "lucide-svelte"
 
 	let {formData = {}} = $props()
+	let SearchIcon = null
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			SearchIcon = module.Search
+		})
+	})
 
 	// Local state for tracking which categories are expanded
 	let expanded = $state({})
@@ -101,7 +107,13 @@
 					transition:slide={{duration: 300}}
 				>
 					<a href={`#${category.ids[0]}`} class="read-more">
-						<Search size={16} strokeWidth={2} />
+						{#if SearchIcon}
+							<svelte:component
+								this={SearchIcon}
+								size={16}
+								strokeWidth={2}
+							/>
+						{/if}
 						Learn
 					</a>
 					{#each category.ids as conditionId (conditionId)}
