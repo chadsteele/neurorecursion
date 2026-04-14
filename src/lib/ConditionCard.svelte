@@ -66,7 +66,7 @@
 						: "No, not me!"}
 				</span>
 			</label>
-			<a type="button" class="signup-btn" href="#signup">
+			<a type="button" class="signup-btn" href="/signup">
 				<CheckCircle2 size={18} strokeWidth={2} />
 				Sign up!
 			</a>
