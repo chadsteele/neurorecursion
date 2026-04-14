@@ -1,7 +1,11 @@
 <script>
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 
-	let {formData = {conditions: {}}, getCondition = null, ConditionsMap = {}} = $props()
+	let {
+		formData = {conditions: {}},
+		getCondition = null,
+		ConditionsMap = {},
+	} = $props()
 	let conditionSuggestion = $state("")
 	let suggestionDebounceTimer = $state(null)
 
