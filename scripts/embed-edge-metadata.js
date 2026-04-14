@@ -42,8 +42,8 @@ async function embedMetadata() {
 			)
 		}
 
-		const conditionsExport = `const CONDITIONS_METADATA = ${conditionsMatch[1]}`
-		const pioneersExport = `const PIONEERS_METADATA = ${pioneersMatch[1]}`
+		const conditionsExport = `let CONDITIONS_METADATA = ${conditionsMatch[1]}`
+		const pioneersExport = `let PIONEERS_METADATA = ${pioneersMatch[1]}`
 
 		// Read the edge function
 		let edgeFunctionContent = fs.readFileSync(edgeFunctionPath, "utf-8")

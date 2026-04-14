@@ -4,7 +4,7 @@
 // Initialize metadata arrays (populated by embed-edge-metadata.js at build time)
 // EMBEDDED_METADATA_START
 // Auto-generated: Metadata embedded at build time
-const CONDITIONS_METADATA = [
+let CONDITIONS_METADATA = [
 	{
 		id: "depressed-suicidal-major-depressive-disorder",
 		path: "/remote-clinical-trial/free/depression/suicidal",
@@ -738,7 +738,7 @@ const CONDITIONS_METADATA = [
 	},
 ]
 
-const PIONEERS_METADATA = [
+let PIONEERS_METADATA = [
 	{
 		id: "paul-maclean",
 		path: "/pioneers/paul-maclean",
