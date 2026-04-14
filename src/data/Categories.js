@@ -186,6 +186,7 @@ export const Categories = [
 			"chronic-procrastination-failure-to-launch-incompletions",
 			"ai-anxiety-technophobia-fear-ai",
 
+			"general-financial-anxiety-cynicism",
 			"scarcity-mindset-resource-poverty",
 			"money-dysmorphia-financial-distortion",
 			"money-scripts-unconscious-beliefs",

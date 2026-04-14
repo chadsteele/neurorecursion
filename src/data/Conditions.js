@@ -1825,6 +1825,19 @@ Our technique involves dual-layer recalibration: (1) traumatic encoding resoluti
 		scientific_reference: "",
 		background_image: "/backgrounds/financial-flashpoint-trauma.png",
 	},
+	{
+		id: "general-financial-anxiety-cynicism",
+		path: "/remote-clinical-trial/free/financial-anxiety/money-worry/cynicism",
+		name: "General Financial Anxiety & Cynicism",
+		description: `Your nervous system learned that money represents fundamental threat—scarcity, powerlessness, or existential insecurity—and now generates chronic anxiety and cynical beliefs about financial systems, fairness, and your own financial capacity. General financial anxiety is characterized by persistent, pervasive worry about money, financial decisions, and financial security regardless of objective financial status. The person may experience chronic money-worry despite adequate or abundant resources (generalizing past scarcity to present reality), feel trapped by perceived unfair financial systems, develop cynical beliefs that "the game is rigged" or "financial success is impossible for me," and experience decision-paralysis about financial matters due to fear of catastrophic mistakes. This differs from specific phobias (chrometophobia) or trauma responses (financial flashpoint trauma)—it is chronic background anxiety that colors all financial perception.
+
+The neurobiological mechanism involves dysregulation of threat-assessment systems applied to financial domain, combined with attentional bias toward financial threat-information and learned helplessness from past scarcity. The amygdala remains subclinically active to financial stimuli even in safe financial conditions, producing persistent low-grade anxiety. The anterior cingulate cortex (threat monitoring) generates excessive focus on potential financial problems or mistakes. The ventromedial prefrontal cortex has encoded beliefs about financial unfairness or impossibility based on past experience (family scarcity, poverty, financial instability) and fails to update those beliefs based on current objective evidence. The dorsolateral prefrontal cortex's executive function becomes suppressed under financial anxiety, producing money-related procrastination and decision avoidance. The insula generates persistent bodily sensations of financial threat—tension, dread, or dysphoria when handling money or reviewing finances. The anterior insula may encode cynical interpretations of financial information ("the system is rigged," "I'm incapable")—essentially a learned cynicism that becomes self-perpetuating.
+
+Our technique recalibrates the threat-assessment systems specifically for financial stimuli, dissolving the amygdala's threat-encoding of money and financial decisions. We reprogram the ventromedial prefrontal cortex's beliefs about financial fairness and personal capacity, replacing cynicism with realistic appraisal. We restore the dorsolateral prefrontal cortex's executive function so financial decisions become possible. We recalibrate the anterior insula's cynical interpretations and replace them with discernment (genuine danger vs. normal financial uncertainty). We eliminate the attentional bias toward financial threat-information. You experience profound reduction in chronic money-worry, restoration of financial decision-making capacity, elimination of money-related decision paralysis, replacement of cynicism with realistic financial assessment, ability to engage with finances without anhedonia or dread, and a nervous system that differentiates actual financial threat from normal financial uncertainty.`,
+		ngo_url: "https://www.apa.org/",
+		scientific_reference: "",
+		background_image: "/backgrounds/general-financial-anxiety-cynicism.png",
+	},
 ]
 
 /**
