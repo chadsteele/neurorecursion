@@ -102,6 +102,23 @@ async function main() {
 
 		console.log(`  Writing ${path.relative(rootDir, outputPath)}`)
 		fs.writeFileSync(outputPath, content, "utf-8")
+
+		// Also copy to netlify/edge-functions directory for edge function access
+		const netlifyEdgePath = path.join(
+			rootDir,
+			"netlify/edge-functions/conditions-metadata.js",
+		)
+		try {
+			fs.writeFileSync(netlifyEdgePath, content, "utf-8")
+			console.log(
+				`  ✓ Copied to ${path.relative(rootDir, netlifyEdgePath)} for edge function`,
+			)
+		} catch (netlifyError) {
+			console.warn(
+				`  ⚠ Could not copy to netlify directory: ${netlifyError.message}`,
+			)
+		}
+
 		console.log(
 			`✅ Metadata generated successfully (${conditions.length} conditions + ${pioneers.length} pioneers)`,
 		)
