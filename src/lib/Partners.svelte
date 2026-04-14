@@ -28,7 +28,7 @@
 		},
 		{
 			href: "https://iocdf.org/",
-			imageSrc: "/partners/international-ocd-foundation.webp",
+			imageSrc: "/partners/international-ocd-foundation.png",
 			imageAlt: "International OCD Foundation Logo",
 			name: "International OCD Foundation (IOCDF)",
 			description:
@@ -52,7 +52,7 @@
 		},
 		{
 			href: "https://westutter.org/",
-			imageSrc: "/partners/westutter.avif",
+			imageSrc: "/partners/westutter.png",
 			imageAlt: "National Stuttering Association Logo",
 			name: "National Stuttering Association (NSA)",
 			description:
@@ -68,7 +68,7 @@
 		},
 		{
 			href: "https://wfad.se/",
-			imageSrc: "/partners/WFAD_logo.jpg",
+			imageSrc: "/partners/WFAD_logo.png",
 			imageAlt: "World Federation Against Drugs Logo",
 			name: "World Federation Against Drugs (WFAD)",
 			description:
@@ -109,7 +109,7 @@
 
 		{
 			href: "https://www.pdasociety.org.uk/",
-			imageSrc: "/partners/pda.avif",
+			imageSrc: "/partners/pda.png",
 			imageAlt: "PDA Society Logo",
 			name: "PDA Society",
 			description:
