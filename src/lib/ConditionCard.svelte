@@ -101,7 +101,7 @@
 			</a>
 			<a
 				class="share-btn"
-				href={`https://www.youtube.com/results?search_query=${encodeURIComponent(condition.name)}`}
+				href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
