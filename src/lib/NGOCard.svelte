@@ -1,5 +1,7 @@
 <script>
 	let {id, path, href, imageSrc, imageAlt, name, description} = $props()
+	let isVisible = $state(false)
+	let cardElement
 
 	function handleCardClick(event) {
 		if (href) {
@@ -12,10 +14,36 @@
 			handleCardClick(event)
 		}
 	}
+
+	$effect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						isVisible = true
+						observer.unobserve(entry.target)
+					}
+				})
+			},
+			{
+				threshold: 0.9,
+			},
+		)
+
+		if (cardElement) {
+			observer.observe(cardElement)
+		}
+
+		return () => {
+			observer.disconnect()
+		}
+	})
 </script>
 
 <div
+	bind:this={cardElement}
 	class="ngo-card"
+	class:visible={isVisible}
 	data-href={href}
 	role="button"
 	tabindex="0"
@@ -39,6 +67,23 @@
 		transition: all 0.3s ease;
 		cursor: pointer;
 		user-select: none;
+		opacity: 0;
+		transform: translateY(40px);
+	}
+
+	.ngo-card.visible {
+		animation: slideUpFadeIn 0.6s ease-out forwards;
+	}
+
+	@keyframes slideUpFadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(100px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.ngo-card:hover {

@@ -11,6 +11,9 @@
 		non-governmental organizations dedicated to neurodivergent advocacy,
 		clinical research, and systemic support.
 	</p>
+	<p>
+		<a href="/signup">Contact us</a> to suggest a partnership or collaboration.
+	</p>
 
 	<div class="ngo-container">
 		{#each ngos as ngo (ngo.href)}
@@ -20,6 +23,17 @@
 </section>
 
 <style>
+	section p a {
+		color: #4a9fd8;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	section p a:hover {
+		color: #6bb3e0;
+		text-decoration: underline;
+	}
+
 	.ngo-container {
 		column-count: 3;
 		column-gap: 1.5rem;
