@@ -8,9 +8,8 @@
 		Heart,
 		FlaskConical,
 		Share2,
-		MapIcon,
-		PinIcon,
 		MapPin,
+		Play,
 	} from "lucide-svelte"
 
 	let {condition = {}, formData = {}, blur = 10} = $props()
@@ -99,6 +98,15 @@
 			>
 				<FlaskConical size={18} strokeWidth={2} />
 				Science
+			</a>
+			<a
+				class="share-btn"
+				href={`https://www.youtube.com/results?search_query=${encodeURIComponent(condition.name)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Play size={18} strokeWidth={2} />
+				Watch
 			</a>
 			<button type="button" class="share-btn" onclick={handleShare}>
 				<Share2 size={18} strokeWidth={2} />

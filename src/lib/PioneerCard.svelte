@@ -2,7 +2,7 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import Tag from "$lib/Tag.svelte"
-	import {Share2, ExternalLink} from "lucide-svelte"
+	import {Share2, ExternalLink, Play} from "lucide-svelte"
 
 	let {pioneer = {}} = $props()
 	let showShareModal = $state(false)
@@ -93,6 +93,15 @@
 				<Share2 size={18} strokeWidth={2} />
 				Share
 			</button>
+			<a
+				class="share-btn"
+				href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Play size={18} strokeWidth={2} />
+				Watch
+			</a>
 		</div>
 	</section>
 </Parallax>
