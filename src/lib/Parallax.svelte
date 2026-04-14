@@ -5,9 +5,10 @@
 
 	let container = $state()
 	let isLoaded = $state(false)
+	let showBackground = $state(true)
 
 	const bgValue = $derived(
-		isLoaded && background
+		isLoaded && background && showBackground
 			? background.startsWith("url") ||
 				background.startsWith("http") ||
 				background.includes(".")
@@ -17,6 +18,12 @@
 	)
 
 	onMount(() => {
+		// Don't load background images on devices < 600px wide
+		if (window.innerWidth < 600) {
+			showBackground = false
+			return
+		}
+
 		if (!background || !container) return
 
 		const observer = new IntersectionObserver(
@@ -98,6 +105,13 @@
 			bgFadeIn 0.8s ease-in-out;
 		filter: blur(var(--blur)) grayscale(0.35) brightness(0.8);
 		z-index: 0;
+	}
+
+	/* Hide background image on devices < 600px */
+	@media (max-width: 599px) {
+		.parallax-container::before {
+			display: none;
+		}
 	}
 
 	.parallax-content {
