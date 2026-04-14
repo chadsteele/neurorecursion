@@ -1,8 +1,57 @@
 <script>
 	let {src = ""} = $props()
+	let isScrolling = $state(false)
+	let shouldLoad = $state(false)
+	let imageElement
+	let scrollTimeout
+
+	function handleScroll() {
+		isScrolling = true
+
+		clearTimeout(scrollTimeout)
+		scrollTimeout = setTimeout(() => {
+			isScrolling = false
+			checkIfShouldLoad()
+		}, 500)
+	}
+
+	function checkIfShouldLoad() {
+		if (!isScrolling && imageElement) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							shouldLoad = true
+							observer.unobserve(imageElement)
+						}
+					})
+				},
+				{threshold: 0.1},
+			)
+
+			observer.observe(imageElement)
+		}
+	}
+
+	$effect(() => {
+		window.addEventListener("scroll", handleScroll)
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll)
+			clearTimeout(scrollTimeout)
+		}
+	})
+
+	$effect(() => {
+		checkIfShouldLoad()
+	})
 </script>
 
-<div class="lazy-parallax-image" style="background-image: url('{src}');" />
+<div
+	bind:this={imageElement}
+	class="lazy-parallax-image"
+	style={shouldLoad ? `background-image: url('${src}');` : ""}
+/>
 
 <style>
 	@keyframes kenBurns {

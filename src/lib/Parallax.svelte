@@ -6,6 +6,8 @@
 	let container = $state()
 	let isLoaded = $state(false)
 	let showBackground = $state(true)
+	let isScrolling = $state(false)
+	let scrollTimeout
 
 	const bgValue = $derived(
 		isLoaded && background && showBackground
@@ -17,33 +19,64 @@
 			: null,
 	)
 
+	function handleScroll() {
+		isScrolling = true
+
+		clearTimeout(scrollTimeout)
+		scrollTimeout = setTimeout(() => {
+			isScrolling = false
+			checkIfShouldLoad()
+		}, 500)
+	}
+
+	function checkIfShouldLoad() {
+		if (!isScrolling && !isLoaded && background && container) {
+			if (window.innerWidth < 600) {
+				return
+			}
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							isLoaded = true
+							observer.unobserve(container)
+						}
+					})
+				},
+				{
+					rootMargin: "200px",
+				},
+			)
+
+			observer.observe(container)
+		}
+	}
+
 	onMount(() => {
 		// Don't load background images on devices < 600px wide
-		if (window.innerWidth < 600) {
-			showBackground = false
-			return
+		const updateShowBackground = () => {
+			showBackground = window.innerWidth >= 600
 		}
 
-		if (!background || !container) return
+		updateShowBackground()
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						isLoaded = true
-						observer.unobserve(container)
-					}
-				})
-			},
-			{
-				rootMargin: "200px",
-			},
-		)
+		if (window.innerWidth < 600) {
+			window.addEventListener("resize", updateShowBackground)
+			return () => {
+				window.removeEventListener("resize", updateShowBackground)
+				clearTimeout(scrollTimeout)
+			}
+		}
 
-		observer.observe(container)
+		window.addEventListener("scroll", handleScroll)
+		window.addEventListener("resize", updateShowBackground)
+		checkIfShouldLoad()
 
 		return () => {
-			observer.disconnect()
+			window.removeEventListener("scroll", handleScroll)
+			window.removeEventListener("resize", updateShowBackground)
+			clearTimeout(scrollTimeout)
 		}
 	})
 </script>
