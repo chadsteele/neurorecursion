@@ -568,6 +568,26 @@ const mentalHealthOrganizations = [
 		description:
 			"Resources and support for understanding and overcoming impostor syndrome.",
 	},
+	{
+		id: "nami",
+		path: "/ngo/nami",
+		href: "https://www.nami.org/",
+		imageSrc: "/partners/nami.png",
+		imageAlt: "NAMI Logo",
+		name: "NAMI (National Alliance on Mental Illness)",
+		description:
+			"A grassroots mental health organization providing advocacy, education, support, and public awareness for those living with mental illness.",
+	},
+	{
+		id: "postpartum-support-international",
+		path: "/ngo/postpartum-support-international",
+		href: "https://www.postpartum.net/",
+		imageSrc: "/partners/postpartum.png",
+		imageAlt: "Postpartum Support International Logo",
+		name: "Postpartum Support International (PSI)",
+		description:
+			"A global organization providing support for women experiencing perinatal mood and anxiety disorders.",
+	},
 ]
 
 // TRAUMA, VIOLENCE & CRISIS INTERVENTION
@@ -653,6 +673,16 @@ const traumaViolenceOrganizations = [
 			"A global nonprofit organization working to prevent violence and trauma with evidence-based strategies.",
 	},
 	{
+		id: "gun-violence-archive",
+		path: "/ngo/gun-violence-archive",
+		href: "https://www.gunviolencearchive.org/",
+		imageSrc: "/partners/gunviolencearchive.png",
+		imageAlt: "Gun Violence Archive Logo",
+		name: "Gun Violence Archive",
+		description:
+			"A research organization documenting gun violence incidents and providing accessible data on the human impact of gun violence.",
+	},
+	{
 		id: "one-love-foundation",
 		path: "/ngo/one-love-foundation",
 		href: "https://www.joinonelove.org/",
@@ -695,6 +725,26 @@ const healthcareOrganizations = [
 		name: "AASECT (American Association of Sexuality Educators, Counselors and Therapists)",
 		description:
 			"A global organization advancing sexual health education and professional training.",
+	},
+	{
+		id: "aamft",
+		path: "/ngo/aamft",
+		href: "https://www.aamft.org/",
+		imageSrc: "/partners/aamft.png",
+		imageAlt: "AAMFT Logo",
+		name: "AAMFT (American Association for Marriage and Family Therapy)",
+		description:
+			"The professional organization for marriage and family therapists advancing treatment and research.",
+	},
+	{
+		id: "aan",
+		path: "/ngo/aan",
+		href: "https://www.aan.com/",
+		imageSrc: "/partners/aan.png",
+		imageAlt: "American Academy of Neurology Logo",
+		name: "American Academy of Neurology (AAN)",
+		description:
+			"The world's largest professional association of neurologists and neuroscience professionals advancing neurological care and research.",
 	},
 	{
 		id: "menopause",

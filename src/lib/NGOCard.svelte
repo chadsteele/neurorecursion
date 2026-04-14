@@ -97,6 +97,7 @@
 		margin-bottom: 1rem;
 		max-width: 150px;
 		height: auto;
+		border-radius: 8px;
 	}
 
 	.ngo-card h3 {
