@@ -8,7 +8,7 @@
 		"rename-images": "node scripts/RenameImages.js",
 		"resize-images": "node scripts/ResizeImages.js",
 		"images": "npm run rename-images && npm run resize-images",
-		"prebuild": "npm run images && node scripts/generate-metadata.js && node scripts/generate-sitemap.js && node scripts/generate-schemas.js",
+		"prebuild": " node scripts/generate-metadata.js && node scripts/generate-sitemap.js && node scripts/generate-schemas.js",
 		"build": " vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
