@@ -21,21 +21,25 @@
 
 <style>
 	.ngo-container {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 1.5rem;
+		column-count: 3;
+		column-gap: 1.5rem;
 		padding: 0;
+	}
+
+	:global(.ngo-container > *) {
+		margin-bottom: 1rem;
+		break-inside: avoid;
+	}
+
+	@media (max-width: 1200px) {
+		.ngo-container {
+			column-count: 2;
+		}
 	}
 
 	@media (max-width: 799px) {
 		.ngo-container {
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		}
-	}
-
-	@media (max-width: 400px) {
-		.ngo-container {
-			grid-template-columns: 1fr;
+			column-count: 1;
 		}
 	}
 </style>

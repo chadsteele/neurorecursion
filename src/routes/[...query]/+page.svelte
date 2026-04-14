@@ -16,6 +16,7 @@
 		PioneersMap,
 	} from "$lib/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
+	import Disclaimer from "$lib/Disclaimer.svelte"
 
 	let {data} = $props()
 

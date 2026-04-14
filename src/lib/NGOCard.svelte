@@ -1,5 +1,5 @@
 <script>
-	let {href, imageSrc, imageAlt, name, description} = $props()
+	let {id, path, href, imageSrc, imageAlt, name, description} = $props()
 
 	function handleCardClick(event) {
 		if (href) {
@@ -22,6 +22,7 @@
 	onclick={handleCardClick}
 	onkeydown={handleCardKeydown}
 >
+	<div {id} {path}></div>
 	<img src={imageSrc} alt={imageAlt} />
 	<h3>{name}</h3>
 	<p>{@html description}</p>

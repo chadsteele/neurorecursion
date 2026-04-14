@@ -4,6 +4,7 @@
 	import "../app.css"
 	import Navbar from "$lib/Navbar.svelte"
 	import SearchBar from "$lib/SearchBar.svelte"
+	import Disclaimer from "$lib/Disclaimer.svelte"
 
 	let {children} = $props()
 </script>
@@ -16,12 +17,21 @@
 </div>
 
 <footer class="footer">
-	<p>
-		&copy; {new Date().getFullYear()} Neuro Recursion Institute. All rights reserved.
-	</p>
-	<p style="font-size: 0.9rem; margin-top: 0.5rem;">
-		2120 University Ave, Berkeley, CA 94704, United States
-	</p>
+	<div class="footer-content">
+		<p>
+			&copy; {new Date().getFullYear()} Neuro Recursion Institute.
+		</p>
+		<p>All rights reserved.</p>
+		<p>Patents Pending Worldwide.</p>
+		<p>2120 University Ave, Berkeley, CA 94704, United States</p>
+		<div style="flex-basis: 100%;">
+			<Disclaimer />
+		</div>
+		<!-- <p>
+			<a href="https://hire.chadsteele.com">Made with ❤️ by Chad Steele</a
+			>
+		</p> -->
+	</div>
 </footer>
 
 <style>
@@ -31,5 +41,48 @@
 		color: #707070;
 		border-top: 1px solid #1e5a96;
 		margin-top: 4rem;
+	}
+
+	.footer-content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer-content p {
+		margin: 0;
+		flex-shrink: 0;
+		white-space: nowrap;
+	}
+
+	.footer-content p:last-child {
+		flex-basis: 100%;
+		white-space: normal;
+		margin-top: 0.5rem;
+	}
+
+	.footer-content p:last-child a {
+		color: #4a9fd8;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer-content p:last-child a:hover {
+		color: #6bb3e0;
+		text-decoration: underline;
+	}
+
+	@media (max-width: 900px) {
+		.footer-content {
+			gap: 0.5rem;
+			font-size: 0.95rem;
+		}
+
+		.footer-content p {
+			flex-basis: 100%;
+			white-space: normal;
+		}
 	}
 </style>
