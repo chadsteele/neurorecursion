@@ -112,8 +112,11 @@ export async function GET({url}) {
 			// Base64 data URL
 			const base64Data = imageUrl.split(",")[1]
 			imageBuffer = Buffer.from(base64Data, "base64")
-		} else if (imageUrl.startsWith("http")) {
-			// HTTP/HTTPS URL
+		} else if (
+			imageUrl.startsWith("http://") ||
+			imageUrl.startsWith("https://")
+		) {
+			// HTTP/HTTPS URL - fetch it
 			const response = await fetch(imageUrl)
 			if (!response.ok) {
 				throw new Error(`Failed to fetch image: ${response.statusText}`)

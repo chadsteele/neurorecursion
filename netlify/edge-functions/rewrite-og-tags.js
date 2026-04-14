@@ -261,8 +261,10 @@ export default async (request, context) => {
 		)
 
 		// Replace og:image - use watermarked image from API if background image exists
+		// Pass only the path to the API endpoint (e.g., "/backgrounds/condition.png")
+		// The API will resolve it as a local static file
 		const ogImageUrl = matchedCondition.background_image
-			? `https://neurorecursion.com/api/image?url=https://neurorecursion.com${matchedCondition.background_image}&width=1200&height=630&watermark=true`
+			? `https://neurorecursion.com/api/image?url=${encodeURIComponent(matchedCondition.background_image)}&width=1200&height=630&watermark=true`
 			: "https://neurorecursion.com/ogfamily.png"
 		html = html.replace(
 			/<meta\s+property="og:image"[^>]*>/i,
