@@ -1,9 +1,8 @@
 <script>
 	import {slide} from "svelte/transition"
 	import {Categories} from "$data/Categories.js"
-	import {ConditionsMap} from "$data/Conditions.js"
 
-	let {formData = {}} = $props()
+	let {formData = {}, ConditionsMap = {}} = $props()
 	let SearchIcon = $state(null)
 
 	$effect(() => {

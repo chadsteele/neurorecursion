@@ -8,17 +8,41 @@
 	import Skeleton from "$lib/Skeleton.svelte"
 	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import Conditions, {getCondition, ConditionsMap} from "$data/Conditions.js"
 	import {Categories} from "$data/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
-	import Pioneers, {
-		sorted as sortedPioneers,
-		PioneersMap,
-	} from "$data/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
 
 	let {data} = $props()
+
+	// Lazy-loaded data
+	let Conditions = $state([])
+	let ConditionsMap = $state({})
+	let getCondition = $state(null)
+	let Pioneers = $state([])
+	let sortedPioneers = $state([])
+	let PioneersMap = $state({})
+	let isLoadingData = $state(true)
+
+	// Load data on client side
+	$effect(() => {
+		if (browser && isLoadingData) {
+			Promise.all([
+				import("$data/Conditions.js"),
+				import("$data/Pioneers.js"),
+			]).then(([conditionsModule, pioneersModule]) => {
+				Conditions = conditionsModule.default
+				ConditionsMap = conditionsModule.ConditionsMap
+				getCondition = conditionsModule.getCondition
+
+				Pioneers = pioneersModule.default
+				sortedPioneers = pioneersModule.sorted
+				PioneersMap = pioneersModule.PioneersMap
+
+				isLoadingData = false
+			})
+		}
+	})
 
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
@@ -161,7 +185,7 @@
 </Parallax>
 
 <div id="signup" path="/signup"></div>
-<SignUp bind:formData />
+<SignUp bind:formData {getCondition} {ConditionsMap} />
 
 <div id="trials" path="/clinical-trials"></div>
 <div class="category-section">
@@ -196,18 +220,20 @@
 	</section>
 </Parallax>
 
-{#each Categories as category (category.category_name)}
-	<div class="category-section" path={category.path}>
-		<h1>{category.category_name}</h1>
-	</div>
+{#if !isLoadingData}
+	{#each Categories as category (category.category_name)}
+		<div class="category-section" path={category.path}>
+			<h1>{category.category_name}</h1>
+		</div>
 
-	{#each category.ids as conditionId (conditionId)}
-		{@const condition = ConditionsMap[conditionId]}
-		{#if condition}
-			<ConditionCard {condition} {formData} />
-		{/if}
+		{#each category.ids as conditionId (conditionId)}
+			{@const condition = ConditionsMap[conditionId]}
+			{#if condition}
+				<ConditionCard {condition} {formData} />
+			{/if}
+		{/each}
 	{/each}
-{/each}
+{/if}
 
 <div id="pioneers" path="/pioneers"></div>
 <div class="category-section">
@@ -240,14 +266,16 @@
 	</p>
 </section>
 
-<div class="pioneers-grid">
-	{#each sortedPioneers as pioneerId (pioneerId)}
-		{@const pioneer = PioneersMap[pioneerId]}
-		{#if pioneer}
-			<PioneerCard {pioneer} />
-		{/if}
-	{/each}
-</div>
+{#if !isLoadingData}
+	<div class="pioneers-grid">
+		{#each sortedPioneers as pioneerId (pioneerId)}
+			{@const pioneer = PioneersMap[pioneerId]}
+			{#if pioneer}
+				<PioneerCard {pioneer} />
+			{/if}
+		{/each}
+	</div>
+{/if}
 
 <div class="category-section">
 	<h1>Supportive Communities</h1>

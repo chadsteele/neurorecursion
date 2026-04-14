@@ -1,8 +1,7 @@
 <script>
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
-	import {getCondition} from "$data/Conditions.js"
 
-	let {formData = {conditions: {}}} = $props()
+	let {formData = {conditions: {}}, getCondition = null, ConditionsMap = {}} = $props()
 	let conditionSuggestion = $state("")
 	let suggestionDebounceTimer = $state(null)
 
@@ -300,7 +299,7 @@
 				protocols are best suited to your profile. If you have a
 				condition that is not listed, specify it in your message.
 			</p>
-			<ConditionGrid {formData} />
+			<ConditionGrid {formData} {ConditionsMap} />
 		</div>
 
 		<div class="form-group">
