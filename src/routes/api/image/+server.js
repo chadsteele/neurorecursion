@@ -139,13 +139,9 @@ export async function GET({url}) {
 		return new Response(finalBuffer, {
 			headers: {
 				"Content-Type": "image/png",
-				"Cache-Control":
-					"no-cache, no-store, must-revalidate, max-age=0, private",
-				"CDN-Cache-Control":
-					"no-cache, no-store, must-revalidate, max-age=0",
-				Pragma: "no-cache",
-				Expires: "0",
-				Age: "0",
+				// Allow public caching for OG image generation, but vary by URL
+				"Cache-Control": "public, max-age=86400",
+				"CDN-Cache-Control": "public, max-age=86400",
 				Vary: "url",
 				"X-Content-Type-Options": "nosniff",
 				ETag: `"${Date.now()}-${Math.random()}"`,
