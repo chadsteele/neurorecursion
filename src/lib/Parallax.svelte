@@ -1,7 +1,7 @@
 <script>
 	import {onMount} from "svelte"
 
-	let {background, children} = $props()
+	let {background, children, blur = 1.5} = $props()
 
 	let container = $state()
 	let isLoaded = $state(false)
@@ -45,7 +45,7 @@
 	<div
 		bind:this={container}
 		class="parallax-container"
-		style="--background: {bgValue};"
+		style="--background: {bgValue}; --blur: {blur}px;"
 	>
 		<div class="parallax-content">
 			{@render children?.()}
@@ -96,7 +96,7 @@
 		animation:
 			kenBurns 60s ease-in-out infinite,
 			bgFadeIn 0.8s ease-in-out;
-		filter: blur(1.5px) grayscale(0.35) brightness(0.8);
+		filter: blur(var(--blur)) grayscale(0.35) brightness(0.8);
 		z-index: 0;
 	}
 

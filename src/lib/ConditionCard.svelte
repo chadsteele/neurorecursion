@@ -4,7 +4,7 @@
 	import {browser} from "$app/environment"
 	import {CheckCircle2, Heart, FlaskConical, Share2} from "lucide-svelte"
 
-	let {condition = {}, formData = {}} = $props()
+	let {condition = {}, formData = {}, blur = 10} = $props()
 	let showShareModal = $state(false)
 
 	function handleShare() {
@@ -26,8 +26,14 @@
 	/>
 {/if}
 
-<Parallax background={condition.background_image}>
+<Parallax background={condition.background_image} {blur}>
 	<section class="paper container">
+		<img
+			src={condition.background_image}
+			alt={condition.name}
+			class="condition-image"
+		/>
+
 		<h3>{condition.name}</h3>
 		<div class="condition-description">
 			{@html condition?.description
@@ -225,5 +231,13 @@
 		font-size: 0.85rem;
 		color: #a0d8ff;
 		min-width: 35px;
+	}
+
+	.condition-image {
+		width: 100%;
+		height: 20vh;
+		object-fit: cover;
+		display: block;
+		margin: 0 auto 1.5rem;
 	}
 </style>
