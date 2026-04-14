@@ -42,8 +42,8 @@ async function embedMetadata() {
 			)
 		}
 
-		const conditionsExport = `export const CONDITIONS_METADATA = ${conditionsMatch[1]}`
-		const pioneersExport = `export const PIONEERS_METADATA = ${pioneersMatch[1]}`
+		const conditionsExport = `const CONDITIONS_METADATA = ${conditionsMatch[1]}`
+		const pioneersExport = `const PIONEERS_METADATA = ${pioneersMatch[1]}`
 
 		// Read the edge function
 		let edgeFunctionContent = fs.readFileSync(edgeFunctionPath, "utf-8")
@@ -76,7 +76,7 @@ ${pioneersExport}
 		// This removes: "let CONDITIONS_METADATA = []" and "let PIONEERS_METADATA = []"
 		edgeFunctionContent = edgeFunctionContent.replace(
 			/let CONDITIONS_METADATA = \[\]\s*let PIONEERS_METADATA = \[\]/,
-			embeddedBlock,
+			embeddedBlock.trim(),
 		)
 
 		// Write the updated edge function
