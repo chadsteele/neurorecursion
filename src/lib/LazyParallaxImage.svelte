@@ -20,7 +20,7 @@
 		width: 100%;
 		height: 20vh;
 		border-radius: 12px;
-		background-size: contain;
+		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 		animation: kenBurns 8s ease-in-out infinite alternate;
