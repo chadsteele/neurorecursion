@@ -3,7 +3,15 @@
 	import LazyParallaxImage from "$lib/LazyParallaxImage.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import {browser} from "$app/environment"
-	import {CheckCircle2, Heart, FlaskConical, Share2} from "lucide-svelte"
+	import {
+		CheckCircle2,
+		Heart,
+		FlaskConical,
+		Share2,
+		MapIcon,
+		PinIcon,
+		MapPin,
+	} from "lucide-svelte"
 
 	let {condition = {}, formData = {}, blur = 10} = $props()
 	let showShareModal = $state(false)
@@ -74,6 +82,15 @@
 					Support
 				</a>
 			{/if}
+
+			<a
+				href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<MapPin size={18} strokeWidth={2} />
+				Help near you
+			</a>
 			<a
 				href={condition.scientific_reference ||
 					`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
