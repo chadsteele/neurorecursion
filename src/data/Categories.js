@@ -4,12 +4,12 @@ export const Categories = [
 		path: "/anxiety/panic/phobias",
 		ids: [
 			"generalized-anxiety-disorder",
-			"general-fears-phobias",
 			"social-media-anxiety-disorder",
 			"health-anxiety-hypochondriasis",
 			"agoraphobia-social-phobia",
 			"panic-disorder-agoraphobia-fear",
 
+			"general-fears-phobias",
 			"cynophobia-fear-dogs",
 			"astraphobia-fear-storms",
 			"arachnophobia-fear-spiders",
@@ -30,15 +30,16 @@ export const Categories = [
 		category_name: "Mood & Perception Disorders",
 		path: "/mood/self",
 		ids: [
+			"general-mood-disorders",
 			"major-depressive-disorder-sloth",
 			"bpd-bipolar-disorder",
 			"seasonal-affective-disorder-sad",
 			"perinatal-depression-paternal-postpartum-depression",
 			"menopausal-depression",
 			"geriatric-depression-aging-loss",
-			"self-esteem-identity-issues",
-			"general-mood-disorders",
+
 			"general-performance-issues",
+			"self-esteem-identity-issues",
 			"affluenza-wealth-integration-identity-loss",
 		],
 	},
@@ -47,20 +48,20 @@ export const Categories = [
 		category_name: "Addictions & Compulsive Behaviors",
 		path: "/addictions/compulsive",
 		ids: [
-			"ocd-obsessive-compulsive-disorder",
+			"general-addictions",
 			"teen-screen-addiction-digital-escapism",
 			"alcohol-substance-abuse",
 			"teen-substance-abuse-addiction",
 			"gambling-addiction",
 			"food-addiction",
-			"food-phobia-arfid",
+
+			"general-ocd-spectrum",
+			"ocd-obsessive-compulsive-disorder",
+			"hoarding-disorder",
 
 			"cutting-self-harm",
 			"trichotillomania-hair-pulling",
-			"hoarding-disorder",
-
-			"general-addictions",
-			"general-ocd-spectrum",
+			"food-phobia-arfid",
 		],
 	},
 	{
@@ -89,12 +90,13 @@ export const Categories = [
 		ids: [
 			"porn-addiction-sexual-compulsivity",
 			"sex-addiction",
-			"sexual-dysfunction-performance-anxiety-impotence",
 
+			"sexual-dysfunction-performance-anxiety-impotence",
 			"fear-of-intimacy-commitment-fear",
 			"sexual-dysfunction-intimacy-avoidance",
 			"body-dysmorphia",
 			"performance-anxiety-evaluation-fear",
+
 			"depressed-suicidal-major-depressive-disorder",
 			"adolescent-sexual-identity-exploration-social-dysphoria",
 			"cult-recovery-religious-trauma-damnation-fear",
@@ -107,18 +109,20 @@ export const Categories = [
 		category_name: "Family, Parenting, Grief & Aging",
 		path: "/relationships/family",
 		ids: [
+			"general-attachment-issues",
+			"anxious-avoidant-attachment-relational-patterns",
+			"adolescent-abandonment-trauma-hypervigilance",
+
 			"divorce-relational-trauma-family-systems-stress",
 			"adult-children-of-alcoholics-family-trauma",
 			"parenting-stress-anxiety-inadequacy-parental-overwhelm",
-			"coparenting-conflict-parental-disagreement-custody-conflict",
-			"custody-visitation-anxiety-parental-separation-transition-distress",
+			"coparenting-custody-conflict-separation-anxiety",
 			"stepfamily-blended-family-adjustment-family-integration-stress",
-
 			"teen-foster-family-integration-reactive-attachment",
 			"teen-runaway-elopement",
 
 			"empty-nest-syndrome-marital-disconnection",
-			"general-attachment-issues",
+
 			"complicated-grief-disorder-loss",
 			"identity-loss-aging-life-stage",
 			"anticipatory-grief-facing-loss",
@@ -131,13 +135,14 @@ export const Categories = [
 			"teen-suicidal-ideation-self-harm",
 			"adolescent-identity-development-self-discovery",
 			"adolescent-angst-oppositional-defiance",
-			"teen-emo-subculture-emotional-expression",
 			"adolescent-victim-identity-learned-helplessness",
 			"adolescent-risk-impulsivity-executive-dysfunction",
+			"adolescent-sexual-identity-exploration-social-dysphoria",
+			"adolescent-social-mimicry-identity-diffusion",
+
+			"teen-emo-subculture-emotional-expression",
 			"teen-crisis-survival-behaviors",
 			"teen-gang-involvement-tribalism",
-
-			"adolescent-social-mimicry-identity-diffusion",
 		],
 	},
 
@@ -145,18 +150,21 @@ export const Categories = [
 		category_name: "Neurological Health",
 		path: "/neurodevelopmental/learning",
 		ids: [
+			"general-neurodevelopmental-issues",
+			"adhd-attention-deficit-hyperactivity-disorder",
+			"asd-autism-aspergers-autistic-spectrum-disorder",
 			"dcd-dyspraxia-developmental-coordination-disorder",
 			"spd-sensory-processing-disorder",
 			"dyslexia-reading-disorder",
 			"dyscalculia",
-			"misophonia",
 
-			"selective-mutism",
-			"dysgraphia",
+			"general-communication-issues",
 			"aphasia-language-disorder",
 			"stuttering-childhood-onset-fluency-disorder",
-			"general-neurodevelopmental-issues",
-			"general-communication-issues",
+			"selective-mutism",
+			"dysgraphia",
+
+			"general-neurological-issues",
 			"migraines",
 			"chronic-pain-psychosomatic",
 			"epilepsy-seizure-disorders",
@@ -164,9 +172,7 @@ export const Categories = [
 			"insomnia-sleep-hyperarousal",
 			"factitious-disorder-munchausen",
 			"anxiety-somatization-physical-symptoms-health-anxiety",
-			"adhd-attention-deficit-hyperactivity-disorder",
-			"asd-autism-aspergers-autistic-spectrum-disorder",
-			"general-neurological-issues",
+			"misophonia",
 		],
 	},
 	{
@@ -176,7 +182,6 @@ export const Categories = [
 			"burnout-exhaustion-depersonalization",
 			"perfectionism",
 			"test-anxiety",
-			"screen-addiction",
 			"glossophobia-fear-public-speaking",
 			"chronic-procrastination-failure-to-launch-incompletions",
 			"ai-anxiety-technophobia-fear-ai",
@@ -184,6 +189,8 @@ export const Categories = [
 			"scarcity-mindset-resource-poverty",
 			"money-dysmorphia-financial-distortion",
 			"money-scripts-unconscious-beliefs",
+
+			"screen-addiction",
 		],
 	},
 
@@ -193,28 +200,29 @@ export const Categories = [
 		ids: [
 			"rape-sexual-assault",
 			"ptsd-post-traumatic-stress-disorder",
-
 			"developmental-trauma-childhood-trauma",
+			"financial-flashpoint-trauma",
 			"trauma-drama-etc",
+
 			"narcissistic-personality-disorder-pride",
 			"antisocial-personality-disorder-deception",
 			"pathological-lying-factitious-identity",
 			"histrionic-personality-disorder-attention-seeking",
+			"avoidant-personality-disorder-cowardice",
 			"borderline-personality-disorder-envy",
-			"financial-flashpoint-trauma",
 		],
 	},
 	{
 		category_name: "Power, Aggression & Control",
 		path: "/power/aggression",
 		ids: [
+			"power-control-issues",
 			"ied-rage-intermittent-explosive-disorder",
 			"gun-addiction-weapons-obsession",
 			"homicidal-ideation-violent-urges",
 			"paranoia-scelerephobia-fear-strangers-criminals",
 			"persecutor-role-aggressive-control",
 			"teen-bullying-aggressive-defense",
-			"power-control-issues",
 			"racism-xenophobia-ethnic-racial-prejudice",
 			"tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
 		],
