@@ -16,7 +16,7 @@
 	}
 
 	function checkIfShouldLoad() {
-		if (!isScrolling && imageElement) {
+		if (!isScrolling && !shouldLoad && imageElement) {
 			const observer = new IntersectionObserver(
 				(entries) => {
 					entries.forEach((entry) => {

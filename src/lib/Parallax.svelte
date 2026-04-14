@@ -9,15 +9,17 @@
 	let isScrolling = $state(false)
 	let scrollTimeout
 
-	const bgValue = $derived(
-		isLoaded && background && showBackground
-			? background.startsWith("url") ||
-				background.startsWith("http") ||
-				background.includes(".")
-				? `url('${background}')`
-				: background
-			: null,
-	)
+	const bgValue = $derived.by(() => {
+		if (!isLoaded || !background || !showBackground) return null
+		if (
+			background.startsWith("url") ||
+			background.startsWith("http") ||
+			background.includes(".")
+		) {
+			return `url('${background}')`
+		}
+		return background
+	})
 
 	function handleScroll() {
 		isScrolling = true
