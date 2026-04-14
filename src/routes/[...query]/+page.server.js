@@ -1,5 +1,5 @@
 import Conditions from "$data/Conditions.js"
-import Pioneers from "$lib/Pioneers.js"
+import Pioneers from "$data/Pioneers.js"
 
 export const prerender = "auto"
 

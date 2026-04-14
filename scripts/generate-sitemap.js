@@ -20,7 +20,7 @@ const conditionsModule = await import(
 	path.join(projectRoot, "src/data/Conditions.js")
 )
 const pioneersModule = await import(
-	path.join(projectRoot, "src/lib/Pioneers.js")
+	path.join(projectRoot, "src/data/Pioneers.js")
 )
 const categoriesModule = await import(
 	path.join(projectRoot, "src/data/Categories.js")

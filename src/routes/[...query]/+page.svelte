@@ -14,7 +14,7 @@
 	import Pioneers, {
 		sorted as sortedPioneers,
 		PioneersMap,
-	} from "$lib/Pioneers.js"
+	} from "$data/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
 

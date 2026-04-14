@@ -14,7 +14,7 @@ const rootDir = path.join(__dirname, "..")
 
 // Paths to source files
 const conditionsPath = path.join(rootDir, "src/data/Conditions.js")
-const pioneersPath = path.join(rootDir, "src/lib/Pioneers.js")
+const pioneersPath = path.join(rootDir, "src/data/Pioneers.js")
 const outputPath = path.join(rootDir, "src/data/conditions-metadata.js")
 
 /**
