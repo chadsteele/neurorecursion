@@ -31,22 +31,37 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/neurodevelopmental/learning</loc>
-    <priority>1</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://neurorecursion.com/addictions/compulsive</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/physical/neurological</loc>
+    <loc>https://neurorecursion.com/couples</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/sexual-health/dysfunction</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://neurorecursion.com/relationships/family</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/adolescent/development</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/neurodevelopmental/learning</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/careers/workplace</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -57,16 +72,6 @@
   </url>
   <url>
     <loc>https://neurorecursion.com/power/aggression</loc>
-    <priority>1</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/life/transitions</loc>
-    <priority>1</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/adolescent/development</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -536,12 +541,7 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/coparenting/parental-conflict/custody-disputes</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/custody-anxiety/visitation-distress/parental-transitions</loc>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/coparenting-custody-conflict/family-separation-anxiety</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -566,17 +566,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/victim-identity/learned-helplessness/powerlessness</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/teen-risk-taking/maladaptive-coping/distress-tolerance</loc>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/adolescent-risk/impulsivity/executive-dysfunction</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -592,11 +587,6 @@
   </url>
   <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/teen-screen-addiction/digital-escapism/internet-dependence</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/adolescent-impulsivity/reckless-risk/executive-dysfunction</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -632,11 +622,6 @@
   </url>
   <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/social-mimicry/identity-diffusion/authentic-self</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -731,7 +716,62 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/remote-clinical-trial/free/aging/isolation/social-disconnection</loc>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/pathological-lying/factitious-identity/chronic-deception</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/empty-nest/marital-crisis/identity-loss</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/stage-fright/live-performance/audience-anxiety</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/procrastination/avoidance/executive-dysfunction</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/scarcity/poverty-mindset/survival-fixation</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/money-dysmorphia/financial-distortion/wealth-misperception</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/money-scripts/unconscious-beliefs/financial-programming</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/affluenza/sudden-wealth/identity-crisis</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/financial-infidelity/hidden-debt/relational-deception</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/financial-trauma/bankruptcy/loss-displacement</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/financial-anxiety/money-worry/cynicism</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>

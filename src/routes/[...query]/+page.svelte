@@ -2,7 +2,7 @@
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import Intro from "$lib/Intro.svelte"
-	import Partners from "$lib/Partners.svelte"
+	import Orgs from "$lib/Orgs.svelte"
 	import References from "$lib/References.svelte"
 	import SignUp from "$lib/SignUp.svelte"
 	import Skeleton from "$lib/Skeleton.svelte"
@@ -253,7 +253,7 @@
 </div>
 <div id="support" path="/support"></div>
 <Parallax background="/backgrounds/kids-blowing-bubbles.png">
-	<Partners class="paper container" />
+	<Orgs class="paper container" />
 </Parallax>
 
 <style>

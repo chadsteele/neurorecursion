@@ -1115,28 +1115,16 @@
       "name": "Step-Family & Blended Family Integration Stress - Family System Transition"
     }
   },
-  "coparenting-conflict-parental-disagreement-custody-conflict": {
+  "coparenting-custody-conflict-separation-anxiety": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Co-Parenting Conflict - Parental Disagreement & Custody Warfare",
-    "description": "Your child watches both parents and your nervous systems are locked in a battle for control, loyalty, and vindication. Co-parenting conflict occurs when separated, divorced, or never-married parents have dramatically different parenting values, parenting styles, or emotional capacity, and lack the capacity to subordinate their adult conflict to the child's developmental needs. Parents weaponize parenting decisions (screentime, nutrition, discipline, education choices) as proxy battles for the or",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/coparenting/parental-conflict/custody-disputes",
-    "identifier": "coparenting-conflict-parental-disagreement-custody-conflict",
+    "name": "Co-Parenting & Custody Conflict - Family Separation Anxiety",
+    "description": "Your nervous system is caught in a family system torn apart by parental conflict, custody disputes, and separation distress. This affects both parents managing co-parenting disagreement and the non-custodial parent's separation anxiety from their child. Co-parenting conflict occurs when separated, divorced, or never-married parents have dramatically different parenting values, styles, or emotional capacity, and lack the capacity to subordinate their adult conflict to the child's developmental ne",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/coparenting-custody-conflict/family-separation-anxiety",
+    "identifier": "coparenting-custody-conflict-separation-anxiety",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Co-Parenting Conflict - Parental Disagreement & Custody Warfare"
-    }
-  },
-  "custody-visitation-anxiety-parental-separation-transition-distress": {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    "name": "Custody & Visitation Anxiety - Parental Separation & Transition Distress",
-    "description": "The clock is counting down to the moment your child leaves your home, and the amygdala interprets that as a catastrophic separation event every single time. Custody and visitation anxiety occurs when a parent with the non-primary custody schedule experiences intense separation distress, fear of missing significant moments in the child's development, fear that the other parent will supplant their role in the child's life, anxiety during transition exchanges, or difficulty disengaging emotionally ",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/custody-anxiety/visitation-distress/parental-transitions",
-    "identifier": "custody-visitation-anxiety-parental-separation-transition-distress",
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Custody & Visitation Anxiety - Parental Separation & Transition Distress"
+      "name": "Co-Parenting & Custody Conflict - Family Separation Anxiety"
     }
   },
   "adolescent-identity-development-self-discovery": {
@@ -1187,18 +1175,6 @@
       "name": "Teen Emo Subculture & Emotional Expression - Alternative Identity Adoption"
     }
   },
-  "teen-perfectionism-academic-pressure": {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    "name": "Teen Perfectionism & Academic Pressure - Adolescent Achievement Anxiety",
-    "description": "Your adolescent's nervous system has merged their entire identity with their GPA, test scores, and achievement ranking. Teen perfectionism and academic pressure occur when a teenager experiences intense anxiety about academic performance not as motivation toward genuine learning, but as existential threat-response where any performance below perfection codes as personal failure AND loss of parental love AND social devaluation. The perfectionist adolescent becomes locked in a loop where academic ",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-perfectionism/academic-pressure/achievement-anxiety",
-    "identifier": "teen-perfectionism-academic-pressure",
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Teen Perfectionism & Academic Pressure - Adolescent Achievement Anxiety"
-    }
-  },
   "adolescent-victim-identity-learned-helplessness": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
@@ -1211,16 +1187,16 @@
       "name": "Adolescent Victim Identity & Learned Helplessness - Teen Powerlessness"
     }
   },
-  "teen-risk-taking-maladaptive-coping": {
+  "adolescent-risk-impulsivity-executive-dysfunction": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Teen Risk-Taking & Maladaptive Coping Mechanisms - Adolescent Distress Intolerance",
-    "description": "Your adolescent's nervous system has developed a single solution for emotional pain: make it stop immediately through dangerous action. Teen risk-taking and maladaptive coping occur when an adolescent lacks capacity to tolerate emotional distress and instead uses high-risk behaviors (reckless driving, extreme sports, thrill-seeking, dangerous peer activities) as the primary mechanism to regulate emotion. The risk-taking generates adrenaline and dopamine that temporarily override the distress—but",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-risk-taking/maladaptive-coping/distress-tolerance",
-    "identifier": "teen-risk-taking-maladaptive-coping",
+    "name": "Adolescent Risk-Taking, Impulsivity & Executive Dysfunction - Reckless Behavior & Distress-Driven Impulse Control",
+    "description": "Your adolescent's nervous system either uses risky behavior to manage unbearable emotional distress OR lacks the executive capacity to inhibit dangerous impulses—or both. Adolescent risk-taking and impulsivity span two neurobiological mechanisms that frequently co-occur: (1) distress intolerance where the adolescent deliberately seeks adrenaline-surge to override emotional pain, and (2) executive immaturity where the developing prefrontal cortex cannot inhibit amygdala-driven impulses in real-ti",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-risk/impulsivity/executive-dysfunction",
+    "identifier": "adolescent-risk-impulsivity-executive-dysfunction",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Teen Risk-Taking & Maladaptive Coping Mechanisms - Adolescent Distress Intolerance"
+      "name": "Adolescent Risk-Taking, Impulsivity & Executive Dysfunction - Reckless Behavior & Distress-Driven Impulse Control"
     }
   },
   "teen-substance-abuse-addiction": {
@@ -1257,18 +1233,6 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "Teen Screen Addiction & Digital Escapism - Adolescent Internet Dependence"
-    }
-  },
-  "adolescent-impulsivity-reckless-risk-taking": {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    "name": "Adolescent Impulsivity & Reckless Risk-Taking - Teen Executive Dysfunction",
-    "description": "Your adolescent's amygdala is screaming \"DO THIS NOW\" and their prefrontal cortex doesn't have enough neural real-estate yet to say \"Wait, let's think about consequences.\" Adolescent impulsivity and reckless risk-taking occur when the developing prefrontal cortex cannot provide adequate inhibitory control over the amygdala's impulse-drive and the nucleus accumbens' immediate reward-seeking. The impulsive adolescent acts before thinking, doesn't evaluate consequences, can't delay gratification, a",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/adolescent-impulsivity/reckless-risk/executive-dysfunction",
-    "identifier": "adolescent-impulsivity-reckless-risk-taking",
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Adolescent Impulsivity & Reckless Risk-Taking - Teen Executive Dysfunction"
     }
   },
   "teen-bullying-aggressive-defense": {
@@ -1353,18 +1317,6 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "Adolescent Social Mimicry & Identity Diffusion - Teen Identity Instability"
-    }
-  },
-  "teen-body-image-disordered-eating": {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    "name": "Teen Body Image & Disordered Eating - Adolescent Eating Disorder Spectrum",
-    "description": "Your adolescent's developing body has become the enemy—it represents everything they hate about themselves, everything they fear others judge, and the primary mechanism they can control in an uncontrollable life. Teen body image disturbance and disordered eating occur when an adolescent develops significant dissatisfaction with their changing body and engages in restrictive eating, binge-eating, excessive exercise, compulsive body-checking, or other compensatory behaviors. The disordered eating ",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/teen-body-image/disordered-eating/eating-disorder",
-    "identifier": "teen-body-image-disordered-eating",
-    "mainEntity": {
-      "@type": "Thing",
-      "name": "Teen Body Image & Disordered Eating - Adolescent Eating Disorder Spectrum"
     }
   },
   "food-phobia-arfid": {
@@ -1583,16 +1535,148 @@
       "name": "Persecutor Role - Aggressive Control & Domination Pattern"
     }
   },
-  "isolation-loneliness-aging": {
+  "pathological-lying-factitious-identity": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Isolation & Loneliness in Aging - Neurobiological Survival Threat",
-    "description": "Your nervous system is experiencing social disconnection as a genuine survival threat, and your body is mounting a stress-response to the absence of relational safety. Isolation and Loneliness in Aging (particularly in adults 65+) is a chronic state of social disconnection that has profound neurobiological consequences. Many older adults experience loss of spouse, geographical distance from family, death of peer-group friends, reduced mobility limiting social activity, and cultural devaluation t",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/aging/isolation/social-disconnection",
-    "identifier": "isolation-loneliness-aging",
+    "name": "Pathological & Compulsive Lying - Factitious Identity, Pseudologia Fantastica & Habitual Deception",
+    "description": "Your nervous system has organized itself around deception as the primary survival mechanism, whether through automatic, compulsive lie-generation or through constructing and living within an elaborate false identity. Pathological and compulsive lying encompass a spectrum of deceptive patterns: (1) Compulsive lying (pseudologia fantastica), where your brain automatically generates frequent, elaborate lies without clear external motivation, often about mundane details as well as significant events",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/pathological-lying/factitious-identity/chronic-deception",
+    "identifier": "pathological-lying-factitious-identity",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Isolation & Loneliness in Aging - Neurobiological Survival Threat"
+      "name": "Pathological & Compulsive Lying - Factitious Identity, Pseudologia Fantastica & Habitual Deception"
+    }
+  },
+  "empty-nest-syndrome-marital-disconnection": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Empty Nest Syndrome - Marital Disconnection & Identity Loss After Parenting Role Ends",
+    "description": "Your nervous system organized your identity and your marriage around the central role of parenting, and now that role is gone, you face a crisis of purpose, identity, and relational connection with your partner. Empty nest syndrome in the context of marriage is characterized by profound disorientation when children leave home—the individual experiences the loss of a primary life role, identity, and source of daily purpose. More critically for marriages, many couples realize that the shared proje",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/empty-nest/marital-crisis/identity-loss",
+    "identifier": "empty-nest-syndrome-marital-disconnection",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Empty Nest Syndrome - Marital Disconnection & Identity Loss After Parenting Role Ends"
+    }
+  },
+  "stage-fright-performance-anxiety-live-audience": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Stage Fright - Live Performance Anxiety & Audience-Triggered Freeze Response",
+    "description": "Your nervous system perceives an audience watching you perform as an acute existential threat—your body floods with fight/flight/freeze activation, your voice trembles, your limbs become rigid, and you lose access to the abilities you have in private. Stage fright is a specific manifestation of performance anxiety characterized by acute sympathetic nervous system activation triggered specifically by the presence of a live audience or the knowledge that you're being watched during performance. Un",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/stage-fright/live-performance/audience-anxiety",
+    "identifier": "stage-fright-performance-anxiety-live-audience",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Stage Fright - Live Performance Anxiety & Audience-Triggered Freeze Response"
+    }
+  },
+  "chronic-procrastination-failure-to-launch-incompletions": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Chronic Procrastination, Failure to Launch & Incompletions - Executive Dysfunction & Aversion-Based Avoidance",
+    "description": "Your nervous system has learned that starting, sustaining focus on, or completing important tasks generates intolerable dysphoria—shame, anxiety, self-doubt—so it reflexively triggers avoidance even when the task is crucial for your life trajectory. Chronic procrastination and failure to launch encompasses a pervasive pattern of task initiation failure, sustained focus collapse, or inability to cross the finish line on important projects—despite the individual often being highly capable and inte",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/procrastination/avoidance/executive-dysfunction",
+    "identifier": "chronic-procrastination-failure-to-launch-incompletions",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Chronic Procrastination, Failure to Launch & Incompletions - Executive Dysfunction & Aversion-Based Avoidance"
+    }
+  },
+  "chrometophobia-fear-money": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Chrometophobia - Extreme Fear of Money & Financial Anxiety",
+    "description": "Your nervous system perceives money itself as a threat—handling cash, making financial decisions, or even thinking about finances triggers acute anxiety and avoidance. Chrometophobia is an extreme, irrational fear of money characterized by intense anxiety about mismanaging funds, the physical handling of cash, paying bills, or any financial transaction. Unlike healthy financial caution, chrometophobia involves a phobic response where the person's amygdala has encoded money-related activity as ex",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety",
+    "identifier": "chrometophobia-fear-money",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Chrometophobia - Extreme Fear of Money & Financial Anxiety"
+    }
+  },
+  "scarcity-mindset-resource-poverty": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Scarcity Mindset - Chronic Resource Poverty & Survival-Mode Fixation",
+    "description": "Your nervous system remains locked in a survival-mode algorithm designed for genuine deprivation, and now that algorithm runs continuously even when resources are available. Scarcity mindset is a psychological state resulting from perceived or actual lack of resources (time, money, food, safety) that creates a tunnel-vision effect where an individual focuses entirely on immediate needs and survival, at the expense of long-term planning and well-being. The person in scarcity mindset experiences i",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/scarcity/poverty-mindset/survival-fixation",
+    "identifier": "scarcity-mindset-resource-poverty",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Scarcity Mindset - Chronic Resource Poverty & Survival-Mode Fixation"
+    }
+  },
+  "money-dysmorphia-financial-distortion": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Money Dysmorphia - Distorted Financial Self-Perception & Wealth Misalignment",
+    "description": "Your mirror for financial reality is broken—you see yourself as desperately poor while sitting on savings, or you spend lavishly while drowning in debt, unable to reconcile the gap between your financial reality and your internal felt sense of your wealth. Money dysmorphia occurs when an individual has a fundamentally distorted perception of their actual financial standing, creating persistent misalignment between objective financial reality and internal felt experience of wealth or poverty. Thi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/money-dysmorphia/financial-distortion/wealth-misperception",
+    "identifier": "money-dysmorphia-financial-distortion",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Money Dysmorphia - Distorted Financial Self-Perception & Wealth Misalignment"
+    }
+  },
+  "money-scripts-unconscious-beliefs": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Money Scripts - Unconscious Beliefs & Inherited Financial Programming",
+    "description": "Your financial behaviors are being driven by invisible scripts inherited from your family's relationship with money—scripts you never consciously chose. Money scripts are deeply ingrained, largely unconscious beliefs about money that were developed in childhood through observation, messaging, and experience. Common scripts include: (1) Money Avoidance—belief that money is evil or morally problematic, that you don't deserve wealth, or that discussing money is taboo; (2) Money Worship—belief that ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/money-scripts/unconscious-beliefs/financial-programming",
+    "identifier": "money-scripts-unconscious-beliefs",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Money Scripts - Unconscious Beliefs & Inherited Financial Programming"
+    }
+  },
+  "affluenza-wealth-integration-identity-loss": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Affluenza & Wealth Integration Gap - Sudden Wealth, Identity Loss & Loss of Purpose",
+    "description": "Your nervous system spent 40 years organized around one primary mission—survival, accumulation, achievement—and now that the mission is complete, you face an existential void. Affluenza (informal term, though the underlying condition is real) and the wealth integration gap occurs when an individual achieves total financial security or experiences sudden significant wealth increase, and paradoxically experiences a crisis of purpose, motivation, and identity. The person may have achieved financial",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/affluenza/sudden-wealth/identity-crisis",
+    "identifier": "affluenza-wealth-integration-identity-loss",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Affluenza & Wealth Integration Gap - Sudden Wealth, Identity Loss & Loss of Purpose"
+    }
+  },
+  "financial-infidelity-hidden-transactions": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Financial Infidelity - Hidden Financial Transactions, Debt & Secret Money",
+    "description": "Your nervous system learned that hiding financial truth from your partner ensures your autonomy and safety, or that your partner cannot be trusted with honesty about money, or that your financial inadequacy is so shameful it must be concealed at all costs. Financial infidelity involves hiding financial transactions, debt, income, accounts, or financial decisions from a partner—a form of relational deception and betrayal that strikes at the foundation of relationship trust and partnership. The pe",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/financial-infidelity/hidden-debt/relational-deception",
+    "identifier": "financial-infidelity-hidden-transactions",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Financial Infidelity - Hidden Financial Transactions, Debt & Secret Money"
+    }
+  },
+  "financial-flashpoint-trauma": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Financial Flashpoint Trauma - Catastrophic Financial Events & Lasting Financial PTSD",
+    "description": "Your nervous system was traumatized by a financial catastrophe—bankruptcy, business collapse, sudden job loss, foreclosure, homelessness—and now your amygdala is locked in hypervigilance about financial security that no amount of current stability can quiet. A financial flashpoint is a traumatic financial event such as bankruptcy, sudden job loss, loss of a home, business failure, or sudden displacement that creates a lasting psychological scar and establishes trauma-level encoding of financial ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/financial-trauma/bankruptcy/loss-displacement",
+    "identifier": "financial-flashpoint-trauma",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Financial Flashpoint Trauma - Catastrophic Financial Events & Lasting Financial PTSD"
+    }
+  },
+  "general-financial-anxiety-cynicism": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "General Financial Anxiety & Cynicism",
+    "description": "Your nervous system learned that money represents fundamental threat—scarcity, powerlessness, or existential insecurity—and now generates chronic anxiety and cynical beliefs about financial systems, fairness, and your own financial capacity. General financial anxiety is characterized by persistent, pervasive worry about money, financial decisions, and financial security regardless of objective financial status. The person may experience chronic money-worry despite adequate or abundant resources ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/financial-anxiety/money-worry/cynicism",
+    "identifier": "general-financial-anxiety-cynicism",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "General Financial Anxiety & Cynicism"
     }
   }
 }

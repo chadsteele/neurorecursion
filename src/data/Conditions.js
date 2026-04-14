@@ -35,7 +35,7 @@ Our technique targets these ancient survival blueprints through creative reprogr
 The neurobiological mechanism involves systematic amygdala conditioning where existential fear responses became paired with specific religious concepts, creating a state where thinking certain thoughts or experiencing certain desires (sexuality, questioning, independence) triggers existential threat experience of cosmic punishment. The insula becomes hyperactive to shame and sin-related thoughts. The prefrontal cortex loses capacity to evaluate religious teachings rationally, as the limbic system overrides logical processing with fear-based imperatives. The moral decision-making networks become hijacked by learned fear associations. The nervous system remains trapped in a state where autonomy and authentic self-expression trigger fear of divine punishment.
 
 Our technique systematically deconditions the amygdala's association between autonomy, sexuality, questioning, and cosmic threat through targeted limbic intervention. We restore prefrontal regulation of fear-based religious programming and dismantle shame-based conditioning. Religious autonomy, authentic self-expression, and sexuality no longer trigger threat response. This isn't deprogramming or religious argument. It's recoding of how your nervous system processes spiritual concepts and threat. You access genuine spiritual freedom, restored autonomy, and authentic identity integration.`,
-		ngo_url: "https://www.releaseint.org/",
+		ngo_url: "https://internationalculticstudies.org",
 		scientific_reference: "",
 		background_image: "/backgrounds/cult.png",
 	},
@@ -88,8 +88,7 @@ The neurobiological mechanism of PTSD involves a failure of the brain's threat-e
 
 Our technique recodes the threat-detection and memory-processing systems through creative limbic recalibration. We identify the triggering belief patterns and amygdala hijacks that maintain the traumatic loop, then replace them with updated threat-assessment protocols. This is not talk therapy, EMDR, or reliving the trauma. It is precision recoding of how your brain processes the memory and threat signal. Flashbacks recede, triggers lose their charge, and you access genuine presence and safety.`,
 		ngo_url: "https://www.ptsd.va.gov/",
-		scientific_reference:
-			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181836/",
+		scientific_reference: "",
 		background_image: "/backgrounds/war.png",
 	},
 	{
@@ -246,7 +245,7 @@ Our technique dismantles the agoraphobia trap through targeted recalibration of 
 The neurobiological mechanism combines actual lack of control (the flight is controlled by the pilot) with vestibular dysregulation (the unusual sensations of flight confuse the balance system) and catastrophic thinking patterns. The amygdala perceives the combination of altitude, enclosed space, and loss of control as existential threat, triggering panic responses that feel overwhelming and uncontrollable. Hypervigilance to flight-related bodily sensations (turbulence, slight noises, pressure changes) further amplifies anxiety.
 
 Our technique targets the convergence of fears through precise limbic reprogramming. We dissolve the catastrophic beliefs and amygdala threat associations one by one, replacing them with genuine confidence in safety and capability. Automatic panic to flying stimuli transforms into calm presence. This isn't graduated exposure or white-knuckle coping. It's swift recoding of all the threat signals that converge in air travel. You access safe, relaxed international travel at striking speed.`,
-		ngo_url: "https://www.flyingwithfear.org/",
+		ngo_url: "https://www.fearofflying.com/",
 		scientific_reference: "",
 		background_image: "/backgrounds/flying.png",
 	},
@@ -1414,7 +1413,7 @@ Our technique addresses the actual abandonment trauma and helps the amygdala rec
 The neurobiological mechanism: reactive attachment develops from repeated experience of inconsistent caregiving, neglect, or separation during critical bonding windows. The oxytocin system becomes dysregulated—bonding impulses are mixed with fear-of-abandonment. The amygdala maintains residual threat-response to caregiver-closeness (previous closeness = previous abandonment). The insula becomes hyperresponsive to signs of caregiver disconnection. The ventromedial prefrontal cortex has never encoded reliable caregiver-safety. The nucleus accumbens has not learned to find dopamine-reward in caregiver-connection. Testing behaviors are neurologically automatic—designed to activate the amygdala's anticipated abandonment.
 
 Our technique helps foster families understand that testing-behaviors are not malice but nervous-system checking ("Is this caregiver going to leave? Let me test."). We provide psychoeducation about reactive attachment and skill-building for caregivers. We support the oxytocin system's slow rebuilding through consistency, safety, and non-rejection-response to testing. The amygdala gradually recodes consistent caregiver-presence as safe rather than dangerous. The ventromedial prefrontal cortex rebuilds relational safety-template. The adolescent gradually develops secure attachment capacity with the current placement and experiences decreased testing behaviors, restored capacity for genuine relationship, decreased fear of abandonment, and potential for genuine family integration and permanency.`,
-		ngo_url: "https://www.fostercaretoyouth.org/",
+		ngo_url: "https://www.sos-childrensvillages.org/",
 		scientific_reference: "",
 		background_image:
 			"/backgrounds/teen-foster-family-integration-reactive-attachment.png",
