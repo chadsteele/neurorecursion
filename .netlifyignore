@@ -1,3 +1,6 @@
-# Exclude large pre-generated OG images - they are generated dynamically on-demand
-ogimages/
+# Exclude large pre-generated OG images from deploy
+# They are hosted separately on the asset site
+.svelte-kit/netlify/ogimages/
+.svelte-kit/netlify/ogfamily.png
+
 
