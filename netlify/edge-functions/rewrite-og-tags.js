@@ -24,7 +24,8 @@ export default async (request, context) => {
 	let ogTitle = "Sign up for remote clinical trials. FREE!"
 	let ogDescription =
 		"Neuro Recursion Institute - our clinical trial is fast, easy, no drugs, devices or hypnotherapy.  This could be your breakthrough. Join us and experience the future of mental health treatment today."
-	let ogImage = "https://neurorecursion-assets.netlify.app/ogfamily.png"
+	let ogImage =
+		"https://neurorecursion-assets.netlify.app/assets/ogfamily.png"
 	let ogUrl = url.href
 
 	// Helper function to convert kebab-case to Title Case
@@ -47,7 +48,7 @@ export default async (request, context) => {
 			const pioneerName = toTitleCase(pioneerId)
 			ogTitle = `${pioneerName} | Neuroscience Pioneer`
 			ogDescription = `Learn about ${pioneerName}'s groundbreaking contributions to neuroscience research and neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/pioneer-${pioneerId}.png`
+			ogImage = `https://neurorecursion-assets.netlify.app/assets/pioneers/pioneer-${pioneerId}.png`
 			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
@@ -66,7 +67,7 @@ export default async (request, context) => {
 
 			ogTitle = `${conditionName} (${variantName}) | Clinical Trial`
 			ogDescription = `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/${conditionId}.png`
+			ogImage = `https://neurorecursion-assets.netlify.app/assets/pioneers/${conditionId}.png`
 			console.log(`[edge] Condition: ${conditionName} - ${variantName}`)
 		}
 	}
