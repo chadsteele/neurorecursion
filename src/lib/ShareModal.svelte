@@ -14,56 +14,38 @@
 
 	let copied = $state(false)
 	let copyTimeout
-	let copying = $state(false)
-	let previewImageUrl = $state("")
 
-	async function getWatermarkedImageUrl(baseImageUrl) {
-		const params = new URLSearchParams({
-			url: baseImageUrl,
-			width: "1080",
-			height: "566",
-			watermark: "NeuroRecursion.com",
-			t: Date.now(), // Cache-busting timestamp
-		})
-		return `/api/image?${params.toString()}`
+	// Construct asset URL if needed
+	function getAssetImageUrl(imageUrl) {
+		if (!imageUrl) return ""
+		if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://"))
+			return imageUrl
+		// If it's just a filename, construct the full asset URL
+		return `https://neurorecursion-assets.netlify.app/assets/ogimages/${imageUrl}`
 	}
 
-	async function getWatermarkedImageBase64(baseImageUrl) {
-		try {
-			const apiUrl = await getWatermarkedImageUrl(baseImageUrl)
-			const response = await fetch(apiUrl)
-			const blob = await response.blob()
-			const reader = new FileReader()
-			return new Promise((resolve) => {
-				reader.onloadend = () => resolve(reader.result)
-				reader.readAsDataURL(blob)
-			})
-		} catch (err) {
-			console.error("Failed to get watermarked image:", err)
-			return ""
-		}
-	}
-
-	$effect.pre(() => {
-		// Watch imageUrl changes and reload preview with watermark
-		if (imageUrl) {
-			getWatermarkedImageUrl(imageUrl).then((url) => {
-				previewImageUrl = url
-			})
-		}
-	})
+	const assetImageUrl = getAssetImageUrl(imageUrl)
 
 	async function copyToClipboard() {
-		copying = true
 		try {
 			const plainText = url
 				? `${title}\n\n${description}\n\n${url}`
 				: `${title}\n\n${description}`
 
-			// Convert image to base64 on-demand (only when copying)
+			// Fetch image and convert to base64
 			let imageBase64 = ""
-			if (imageUrl) {
-				imageBase64 = await getWatermarkedImageBase64(imageUrl)
+			if (assetImageUrl) {
+				try {
+					const response = await fetch(assetImageUrl)
+					const blob = await response.blob()
+					const reader = new FileReader()
+					imageBase64 = await new Promise((resolve) => {
+						reader.onloadend = () => resolve(reader.result)
+						reader.readAsDataURL(blob)
+					})
+				} catch (err) {
+					console.error("Failed to fetch image:", err)
+				}
 			}
 
 			const imageHtml = imageBase64
@@ -117,8 +99,6 @@
 			} catch (fallbackErr) {
 				console.error("Fallback copy also failed:", fallbackErr)
 			}
-		} finally {
-			copying = false
 		}
 	}
 
@@ -153,11 +133,7 @@
 
 		<!-- Preview Card -->
 		<div class="share-card">
-			<img
-				src={previewImageUrl || imageUrl}
-				alt={title}
-				class="share-image"
-			/>
+			<img src={assetImageUrl || imageUrl} class="share-image" />
 
 			<div class="share-text">
 				<h2 class="share-title">{title}</h2>
@@ -182,10 +158,9 @@
 			<button
 				class="btn btn-copy"
 				onclick={copyToClipboard}
-				disabled={copying}
 				aria-label="Copy content to clipboard"
 			>
-				{copying ? "Copying..." : copied ? "✓ Copied!" : "Copy"}
+				{copied ? "✓ Copied!" : "Copy"}
 			</button>
 			<button
 				class="btn btn-close"
