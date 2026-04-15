@@ -167,16 +167,6 @@
 	})
 </script>
 
-<svelte:head>
-	<title>{data.ogTitle}</title>
-	<meta property="og:url" content={data.ogUrl} />
-	<meta property="og:title" content={data.ogTitle} />
-	<meta property="og:description" content={data.ogDescription} />
-	{#if data.ogImage}
-		<meta property="og:image" content={data.ogImage} />
-	{/if}
-</svelte:head>
-
 <Parallax background="/backgrounds/children.png">
 	<div id="about" path="/about"></div>
 	<Intro class="paper container" />
