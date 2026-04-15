@@ -39,13 +39,12 @@ export default async (request, context) => {
 		console.log(`[edge] Matched condition: ${condition.id}`)
 		ogTitle = condition.name
 		ogDescription = condition.description
-		// Generate watermarked image URL if condition has background
-		console.log(`[edge] background_image: ${condition.background_image}`)
+		// Use pre-generated static OG image served from /ogimages/
 		if (
 			condition.background_image &&
 			condition.background_image !== "/ogfamily.png"
 		) {
-			ogImage = `https://neurorecursion.com/api/image?url=${condition.background_image}`
+			ogImage = `https://neurorecursion.com/ogimages/${condition.id}.png`
 			console.log(`[edge] Setting ogImage to: ${ogImage}`)
 		} else {
 			console.log(
@@ -62,10 +61,9 @@ export default async (request, context) => {
 			console.log(`[edge] Matched pioneer: ${pioneer.id}`)
 			ogTitle = pioneer.name
 			ogDescription = `${pioneer.title} at ${pioneer.institution}\n${pioneer.description}`
+			// Use pre-generated static OG image
 			if (pioneer.img_url || pioneer.background_url) {
-				ogImage = `https://neurorecursion.com/api/image?url=${
-					pioneer.img_url || pioneer.background_url
-				}`
+				ogImage = `https://neurorecursion.com/ogimages/pioneer-${pioneer.id}.png`
 			}
 		}
 	}
