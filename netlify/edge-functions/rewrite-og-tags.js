@@ -40,11 +40,17 @@ export default async (request, context) => {
 		ogTitle = condition.name
 		ogDescription = condition.description
 		// Generate watermarked image URL if condition has background
+		console.log(`[edge] background_image: ${condition.background_image}`)
 		if (
 			condition.background_image &&
 			condition.background_image !== "/ogfamily.png"
 		) {
-			ogImage = `https://neurorecursion.com/api/image${condition.background_image}?watermark=true`
+			ogImage = `https://neurorecursion.com/api/image?url=https://neurorecursion.com${condition.background_image}`
+			console.log(`[edge] Setting ogImage to: ${ogImage}`)
+		} else {
+			console.log(
+				`[edge] Condition has no background_image or it's ogfamily.png`,
+			)
 		}
 	} else {
 		// Try to find matching pioneer
@@ -57,35 +63,51 @@ export default async (request, context) => {
 			ogTitle = pioneer.name
 			ogDescription = `${pioneer.title} at ${pioneer.institution}\n${pioneer.description}`
 			if (pioneer.img_url || pioneer.background_url) {
-				ogImage = `https://neurorecursion.com/api/image${
+				ogImage = `https://neurorecursion.com/api/image?url=https://neurorecursion.com${
 					pioneer.img_url || pioneer.background_url
-				}?watermark=true`
+				}`
 			}
 		}
 	}
 
 	// Replace og:url meta tag
+	const urlBefore = html.includes('property="og:url"')
 	html = html.replace(
 		/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i,
 		`<meta property="og:url" content="${ogUrl}" />`,
 	)
+	console.log(
+		`[edge] og:url replaced: ${urlBefore} -> ${html.includes(`content="${ogUrl}"`) && html.includes('property="og:url"')}`,
+	)
 
 	// Replace og:title meta tag
+	const titleBefore = html.includes('property="og:title"')
 	html = html.replace(
 		/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i,
 		`<meta property="og:title" content="${escapeHtml(ogTitle)}" />`,
 	)
+	console.log(`[edge] og:title replaced: ${titleBefore}`)
 
 	// Replace og:description meta tag
+	const descBefore = html.includes('property="og:description"')
 	html = html.replace(
 		/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i,
 		`<meta property="og:description" content="${escapeHtml(ogDescription)}" />`,
 	)
+	console.log(`[edge] og:description replaced: ${descBefore}`)
 
 	// Replace og:image meta tag
+	const imageBefore = html.includes('property="og:image"')
+	console.log(`[edge] Before og:image replace - ogImage value: ${ogImage}`)
 	html = html.replace(
 		/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
 		`<meta property="og:image" content="${ogImage}" />`,
+	)
+	const imageAfter =
+		html.includes(`content="${ogImage}"`) &&
+		html.includes('property="og:image"')
+	console.log(
+		`[edge] og:image replaced: ${imageBefore} -> ${imageAfter}, new value: ${ogImage}`,
 	)
 
 	console.log(`[edge] OG tags rewritten for: ${pathname}`)
