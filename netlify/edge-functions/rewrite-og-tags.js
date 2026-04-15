@@ -67,7 +67,7 @@ export default async (request, context) => {
 
 			ogTitle = `${conditionName} (${variantName}) | Clinical Trial`
 			ogDescription = `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://neurorecursion-assets.netlify.app/assets/pioneers/${conditionId}.png`
+			ogImage = `https://neurorecursion-assets.netlify.app/assets/ogimages/${conditionId}.png`
 			console.log(`[edge] Condition: ${conditionName} - ${variantName}`)
 		}
 	}
