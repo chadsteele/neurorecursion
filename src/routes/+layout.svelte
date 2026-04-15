@@ -1,6 +1,4 @@
 <script>
-	import {browser} from "$app/environment"
-	import {onMount} from "svelte"
 	import "../app.css"
 	import Navbar from "$lib/Navbar.svelte"
 	import SearchBar from "$lib/SearchBar.svelte"

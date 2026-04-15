@@ -5,8 +5,6 @@
 	import Orgs from "$lib/Orgs.svelte"
 	import References from "$lib/References.svelte"
 	import SignUp from "$lib/SignUp.svelte"
-	import Skeleton from "$lib/Skeleton.svelte"
-	import Alert from "$lib/Alert.svelte"
 	import Parallax from "$lib/Parallax.svelte"
 	import {Categories} from "$data/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
