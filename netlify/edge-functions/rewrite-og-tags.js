@@ -24,10 +24,10 @@ export default async (request, context) => {
 	let ogTitle = "Sign up for remote clinical trials. FREE!"
 	let ogDescription =
 		"Neuro Recursion Institute - our clinical trial is fast, easy, no drugs, devices or hypnotherapy.  This could be your breakthrough. Join us and experience the future of mental health treatment today."
-	let ogImage = "https://neurorecursion.com/ogfamily.png"
+	let ogImage = "https://neurorecursion-assets.netlify.app/ogfamily.png"
 	let ogUrl = url.href
 
-	// Map path to OG image ID
+	// Map path to condition-specific OG image on asset domain
 	// For conditions: path like "/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
 	// Maps to: "chrometophobia-fear-money"
 	// For pioneers: path like "/pioneers/daniel-goleman"
@@ -38,8 +38,8 @@ export default async (request, context) => {
 			.replace("/pioneers/", "")
 			.replace(/\/$/, "")
 		if (pioneerId) {
-			ogImage = `https://neurorecursion.com/ogimages/pioneer-${pioneerId}.png`
-			console.log(`[edge] Using pioneer image: ${ogImage}`)
+			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/pioneer-${pioneerId}.png`
+			console.log(`[edge] Using asset domain pioneer image: ${ogImage}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
 		// Extract condition ID from path
@@ -52,8 +52,8 @@ export default async (request, context) => {
 			// parts[2] = condition-name
 			// parts[3] = variant-name
 			const conditionId = `${parts[2]}-${parts[3]}`
-			ogImage = `https://neurorecursion.com/ogimages/${conditionId}.png`
-			console.log(`[edge] Using condition image: ${ogImage}`)
+			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/${conditionId}.png`
+			console.log(`[edge] Using asset domain condition image: ${ogImage}`)
 		}
 	}
 
