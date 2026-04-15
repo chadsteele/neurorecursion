@@ -1,6 +1,3 @@
-import Conditions from "../../src/data/Conditions.js"
-import Pioneers from "../../src/data/Pioneers.js"
-
 export default async (request, context) => {
 	// Get the response from the next handler (SvelteKit)
 	const response = await context.next()
@@ -30,41 +27,33 @@ export default async (request, context) => {
 	let ogImage = "https://neurorecursion.com/ogfamily.png"
 	let ogUrl = url.href
 
-	// Try to find matching condition
-	const condition = Conditions.find(
-		(c) => c.path.toLowerCase() === searchPath.toLowerCase(),
-	)
+	// Map path to OG image ID
+	// For conditions: path like "/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
+	// Maps to: "chrometophobia-fear-money"
+	// For pioneers: path like "/pioneers/daniel-goleman"
+	// Maps to: "pioneer-daniel-goleman"
 
-	if (condition) {
-		console.log(`[edge] Matched condition: ${condition.id}`)
-		ogTitle = condition.name
-		ogDescription = condition.description
-		// Use pre-generated static OG image served from /ogimages/
-		if (
-			condition.background_image &&
-			condition.background_image !== "/ogfamily.png"
-		) {
-			ogImage = `https://neurorecursion.com/ogimages/${condition.id}.png`
-			console.log(`[edge] Setting ogImage to: ${ogImage}`)
-		} else {
-			console.log(
-				`[edge] Condition has no background_image or it's ogfamily.png`,
-			)
+	if (searchPath.startsWith("/pioneers/")) {
+		const pioneerId = searchPath
+			.replace("/pioneers/", "")
+			.replace(/\/$/, "")
+		if (pioneerId) {
+			ogImage = `https://neurorecursion.com/ogimages/pioneer-${pioneerId}.png`
+			console.log(`[edge] Using pioneer image: ${ogImage}`)
 		}
-	} else {
-		// Try to find matching pioneer
-		const pioneer = Pioneers.find(
-			(p) => p.path.toLowerCase() === searchPath.toLowerCase(),
-		)
-
-		if (pioneer) {
-			console.log(`[edge] Matched pioneer: ${pioneer.id}`)
-			ogTitle = pioneer.name
-			ogDescription = `${pioneer.title} at ${pioneer.institution}\n${pioneer.description}`
-			// Use pre-generated static OG image
-			if (pioneer.img_url || pioneer.background_url) {
-				ogImage = `https://neurorecursion.com/ogimages/pioneer-${pioneer.id}.png`
-			}
+	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
+		// Extract condition ID from path
+		// Path format: /remote-clinical-trial/free/condition-name/variant-name/full-name
+		// We need the condition-name/variant-name part
+		const parts = searchPath.split("/").filter((p) => p)
+		if (parts.length >= 4) {
+			// parts[0] = "remote-clinical-trial"
+			// parts[1] = "free"
+			// parts[2] = condition-name
+			// parts[3] = variant-name
+			const conditionId = `${parts[2]}-${parts[3]}`
+			ogImage = `https://neurorecursion.com/ogimages/${conditionId}.png`
+			console.log(`[edge] Using condition image: ${ogImage}`)
 		}
 	}
 
