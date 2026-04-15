@@ -45,7 +45,7 @@ export default async (request, context) => {
 			condition.background_image &&
 			condition.background_image !== "/ogfamily.png"
 		) {
-			ogImage = `https://neurorecursion.com/api/image?url=https://neurorecursion.com${condition.background_image}`
+			ogImage = `https://neurorecursion.com/api/image?url=${condition.background_image}`
 			console.log(`[edge] Setting ogImage to: ${ogImage}`)
 		} else {
 			console.log(
@@ -63,7 +63,7 @@ export default async (request, context) => {
 			ogTitle = pioneer.name
 			ogDescription = `${pioneer.title} at ${pioneer.institution}\n${pioneer.description}`
 			if (pioneer.img_url || pioneer.background_url) {
-				ogImage = `https://neurorecursion.com/api/image?url=https://neurorecursion.com${
+				ogImage = `https://neurorecursion.com/api/image?url=${
 					pioneer.img_url || pioneer.background_url
 				}`
 			}
