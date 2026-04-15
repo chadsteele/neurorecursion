@@ -94,6 +94,13 @@
 		console.log("  $page.url:", $page.url.toString())
 		console.log("  $page.url.search:", $page.url.search)
 		console.log("  $page.params.query:", $page.params.query)
+		console.log("  isLoadingData:", isLoadingData)
+
+		// Wait for data to finish loading before attempting routing
+		if (isLoadingData) {
+			console.log("  -> SKIPPING: Data still loading")
+			return
+		}
 
 		// PRIORITY 0: If search terms are in querystring, ignore routing
 		if ($page.url.search.includes("q=")) {
@@ -137,7 +144,7 @@
 		}
 
 		// PRIORITY 3: If not found, use getCondition to find best matched condition
-		if (!targetElement) {
+		if (!targetElement && getCondition) {
 			const matchedCondition = getCondition(queryPath)
 			if (matchedCondition) {
 				targetElement = document.getElementById(matchedCondition.id)
