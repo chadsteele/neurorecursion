@@ -27,19 +27,28 @@ export default async (request, context) => {
 	let ogImage = "https://neurorecursion-assets.netlify.app/ogfamily.png"
 	let ogUrl = url.href
 
-	// Map path to condition-specific OG image on asset domain
+	// Helper function to convert kebab-case to Title Case
+	function toTitleCase(str) {
+		return str
+			.split("-")
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(" ")
+	}
+
+	// Map path to condition-specific OG tags on asset domain
 	// For conditions: path like "/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
-	// Maps to: "chrometophobia-fear-money"
 	// For pioneers: path like "/pioneers/daniel-goleman"
-	// Maps to: "pioneer-daniel-goleman"
 
 	if (searchPath.startsWith("/pioneers/")) {
 		const pioneerId = searchPath
 			.replace("/pioneers/", "")
 			.replace(/\/$/, "")
 		if (pioneerId) {
+			const pioneerName = toTitleCase(pioneerId)
+			ogTitle = `${pioneerName} | Neuroscience Pioneer`
+			ogDescription = `Learn about ${pioneerName}'s groundbreaking contributions to neuroscience research and neuroplasticity at Neuro Recursion Institute.`
 			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/pioneer-${pioneerId}.png`
-			console.log(`[edge] Using asset domain pioneer image: ${ogImage}`)
+			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
 		// Extract condition ID from path
@@ -51,9 +60,14 @@ export default async (request, context) => {
 			// parts[1] = "free"
 			// parts[2] = condition-name
 			// parts[3] = variant-name
+			const conditionName = toTitleCase(parts[2])
+			const variantName = toTitleCase(parts[3])
 			const conditionId = `${parts[2]}-${parts[3]}`
+
+			ogTitle = `${conditionName} (${variantName}) | Clinical Trial`
+			ogDescription = `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
 			ogImage = `https://neurorecursion-assets.netlify.app/ogimages/${conditionId}.png`
-			console.log(`[edge] Using asset domain condition image: ${ogImage}`)
+			console.log(`[edge] Condition: ${conditionName} - ${variantName}`)
 		}
 	}
 
