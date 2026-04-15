@@ -1,3 +1,5 @@
+import {PATH_TO_ID} from "./path-to-id.js"
+
 export default async (request, context) => {
 	// Get the response from the next handler (SvelteKit)
 	const response = await context.next()
@@ -37,7 +39,7 @@ export default async (request, context) => {
 	}
 
 	// Map path to condition-specific OG tags on asset domain
-	// For conditions: path like "/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
+	// For conditions: path like "/remote-clinical-trial/free/procrastination/avoidance/executive-dysfunction"
 	// For pioneers: path like "/pioneers/daniel-goleman"
 
 	if (searchPath.startsWith("/pioneers/")) {
@@ -52,23 +54,25 @@ export default async (request, context) => {
 			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
-		// Extract condition ID from path
-		// Path format: /remote-clinical-trial/free/condition-name/variant-name/full-name
-		// We need the condition-name/variant-name part
-		const parts = searchPath.split("/").filter((p) => p)
-		if (parts.length >= 4) {
-			// parts[0] = "remote-clinical-trial"
-			// parts[1] = "free"
-			// parts[2] = condition-name
-			// parts[3] = variant-name
-			const conditionName = toTitleCase(parts[2])
-			const variantName = toTitleCase(parts[3])
-			const conditionId = `${parts[2]}-${parts[3]}`
+		// Look up the condition ID from PATH_TO_ID mapping
+		const conditionId = PATH_TO_ID[searchPath]
 
-			ogTitle = `${conditionName} (${variantName}) | Clinical Trial`
-			ogDescription = `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://neurorecursion-assets.netlify.app/assets/ogimages/${conditionId}.png`
-			console.log(`[edge] Condition: ${conditionName} - ${variantName}`)
+		if (conditionId) {
+			// Extract first two path segments for title/description
+			const parts = searchPath.split("/").filter((p) => p)
+			if (parts.length >= 3) {
+				const conditionName = toTitleCase(parts[2])
+				const variantName = parts[3] ? toTitleCase(parts[3]) : ""
+
+				ogTitle = variantName
+					? `${conditionName} (${variantName}) | Clinical Trial`
+					: `${conditionName} | Clinical Trial`
+				ogDescription = variantName
+					? `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
+					: `Evidence-based treatment for ${conditionName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
+				ogImage = `https://neurorecursion-assets.netlify.app/assets/ogimages/${conditionId}.png`
+				console.log(`[edge] Condition: ${conditionId}`)
+			}
 		}
 	}
 
