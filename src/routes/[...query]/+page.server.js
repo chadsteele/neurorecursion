@@ -31,17 +31,7 @@ export function entries() {
 }
 
 export async function load({params}) {
-	// Return data from server (not bundled into client)
-	// Dynamic imports ensure data files are only loaded on server
-	// Only return serializable data - functions cannot be sent to client
-	const conditionsModule = await import("../../data/Conditions.js")
-	const pioneersModule = await import("../../data/Pioneers.js")
-
-	return {
-		conditions: conditionsModule.default,
-		conditionsMap: conditionsModule.ConditionsMap,
-		pioneers: pioneersModule.default,
-		sortedPioneers: pioneersModule.sorted,
-		pioneersMap: pioneersModule.PioneersMap,
-	}
+	// Return minimal data - avoid serializing large datasets through SvelteKit
+	// Data will be loaded client-side instead
+	return {}
 }

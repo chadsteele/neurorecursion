@@ -1,12 +1,12 @@
 <script>
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
+	import {onMount} from "svelte"
 	import Intro from "$lib/Intro.svelte"
 	import Orgs from "$lib/Orgs.svelte"
 	import References from "$lib/References.svelte"
 	import SignUp from "$lib/SignUp.svelte"
 	import Parallax from "$lib/Parallax.svelte"
-	import {Categories} from "$data/Categories.js"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
@@ -14,22 +14,30 @@
 	let {data} = $props()
 
 	// Lazy-loaded data
+	let Categories = $state([])
 	let Conditions = $state([])
 	let ConditionsMap = $state({})
 	let Pioneers = $state([])
 	let sortedPioneers = $state([])
 	let PioneersMap = $state({})
-	let isLoadingData = $state(false)
+	let isLoadingData = $state(true) // Start as true since data loads async
 
-	// Load data from server (passed via load function)
+	// Load all data client-side to avoid serializing large datasets
 	$effect(() => {
-		if (data?.conditions && data?.pioneers) {
-			Conditions = data.conditions || []
-			ConditionsMap = data.conditionsMap || {}
-			Pioneers = data.pioneers || []
-			sortedPioneers = data.sortedPioneers || []
-			PioneersMap = data.pioneersMap || {}
-			isLoadingData = false
+		if (browser && Conditions.length === 0) {
+			Promise.all([
+				import("$data/Conditions.js"),
+				import("$data/Pioneers.js"),
+				import("$data/Categories.js"),
+			]).then(([condMod, pioneerMod, catMod]) => {
+				Conditions = condMod.default || []
+				ConditionsMap = condMod.ConditionsMap || {}
+				Pioneers = pioneerMod.default || []
+				sortedPioneers = pioneerMod.sorted || []
+				PioneersMap = pioneerMod.PioneersMap || {}
+				Categories = catMod.Categories || []
+				isLoadingData = false
+			})
 		}
 	})
 
