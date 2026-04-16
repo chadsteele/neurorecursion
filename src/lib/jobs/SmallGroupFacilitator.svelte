@@ -4,7 +4,7 @@
 </script>
 
 <h1>Small Group Facilitator</h1>
-<div class="meta-info">Volunteer | 100% Remote/In-Person</div>
+<div class="meta-info">Part-Time | 100% Remote</div>
 
 <p>
 	Qualified to conduct small group sessions online or in person. This role

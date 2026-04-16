@@ -108,10 +108,29 @@
 	}
 
 	function handleFormSubmit(event) {
+		event.preventDefault()
+
 		if (!validateBeforeSubmit()) {
-			event.preventDefault()
+			return
 		}
-		// Allow form to submit naturally to Netlify
+
+		// Prepare form data for submission
+		const form = event.target
+		const formDataObj = new FormData(form)
+
+		try {
+			// Submit to Netlify Forms
+			fetch("/careers", {
+				method: "POST",
+				body: new URLSearchParams(formDataObj).toString(),
+			}).then((response) => {
+				// Redirect to custom success page
+				window.location.href = "/success?redirectTo=/careers"
+			})
+		} catch (error) {
+			console.error("Form submission error:", error)
+			alert("There was an error submitting the form. Please try again.")
+		}
 	}
 
 	function handleCancel() {
