@@ -10,7 +10,8 @@ The neurobiological mechanism underlying depression involves a cascade initiated
 Our technique targets and rewires this cascade through creative reprogramming of the limbic system's reward architecture. We identify the limiting beliefs and amygdala hijacks that trigger the anxiety-depletion cycle, then replace them with new neural patterns of agency and vitality. This is not therapy or talk about your past. It is precision recalibration of the neurochemical systems that have been locked in shutdown mode. You access restored capacity for motivation, pleasure, and will often within sessions.`,
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/depressed-suicidal-major-depressive-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/depressed-suicidal-major-depressive-disorder.png",
 	},
 	{
 		id: "developmental-trauma-childhood-trauma",
@@ -21,7 +22,7 @@ Our technique targets and rewires this cascade through creative reprogramming of
 The neurobiological impact is profound: adverse early experiences lock the developing brain into a state of limbic dominance where survival circuits override development of higher-order thinking. Chronic anxiety prevents the maturation of the prefrontal cortex and creates a permanent 'hyper-arousal' loop where the amygdala overreacts to neutral environmental cues as if they were life-threatening. The brain essentially becomes wired for threat-detection rather than growth and learning, making it difficult for individuals to feel safe even in secure environments.
 
 Our technique targets these ancient survival blueprints through creative reprogramming of the limbic system. We identify the limiting beliefs and dangerous assumptions your brain learned to keep you alive, then replace them with new neural patterns of safety and possibility. This is not reliving trauma or gradual desensitization. It is precision recoding of the threat-detection and trust systems. You access genuine safety and belonging through rewired nervous systems.`,
-		ngo_url: "/ngo/nctsn",
+		ngo_url: "/ngo/national-center-trauma-informed-care",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/developmental-trauma-childhood-trauma.png",
@@ -35,9 +36,10 @@ Our technique targets these ancient survival blueprints through creative reprogr
 The neurobiological mechanism involves systematic amygdala conditioning where existential fear responses became paired with specific religious concepts, creating a state where thinking certain thoughts or experiencing certain desires (sexuality, questioning, independence) triggers existential threat experience of cosmic punishment. The insula becomes hyperactive to shame and sin-related thoughts. The prefrontal cortex loses capacity to evaluate religious teachings rationally, as the limbic system overrides logical processing with fear-based imperatives. The moral decision-making networks become hijacked by learned fear associations. The nervous system remains trapped in a state where autonomy and authentic self-expression trigger fear of divine punishment.
 
 Our technique systematically deconditions the amygdala's association between autonomy, sexuality, questioning, and cosmic threat through targeted limbic intervention. We restore prefrontal regulation of fear-based religious programming and dismantle shame-based conditioning. Religious autonomy, authentic self-expression, and sexuality no longer trigger threat response. This isn't deprogramming or religious argument. It's recoding of how your nervous system processes spiritual concepts and threat. You access genuine spiritual freedom, restored autonomy, and authentic identity integration.`,
-		ngo_url: "/ngo/icsa",
+		ngo_url: "/ngo/international-cultic-studies-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/cult-recovery-religious-trauma-damnation-fear.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/cult-recovery-religious-trauma-damnation-fear.png",
 	},
 	{
 		id: "divorce-relational-trauma-family-systems-stress",
@@ -50,7 +52,8 @@ The mechanism of relational trauma operates through a feedback loop of collectiv
 Our technique works with the nervous systems of both partners to recode the threat-detection loop that perpetuates conflict. Through creative reprogramming of limbic patterns, we interrupt the automatic reactivity and replace it with genuine empathy, understanding, and collaborative capacity. This is not couples therapy or communication training. It is precision recalibration of how your nervous system responds to your partner's presence and vulnerability. Relationships transform from conflict-locked loops to genuine connection and safety.`,
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/divorce-relational-trauma-family-systems-stress.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/divorce-relational-trauma-family-systems-stress.png",
 	},
 	{
 		id: "anxious-avoidant-attachment-relational-patterns",
@@ -63,7 +66,8 @@ The neurobiological mechanism involves early programming of the attachment syste
 Our technique reprograms the attachment circuitry by recalibrating the amygdala's perception of intimacy and relational threat. We restore ventral vagal tone—the neurological foundation for safe, connected relationships. Anxious clinging transforms into genuine confidence in connection; avoidant distance transforms into authentic intimacy capacity. This isn't relationship counseling or attachment education. It's recoding of early programming at the nervous system level. You access secure attachment capacity where both closeness and autonomy feel safe.`,
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/anxious-avoidant-attachment-relational-patterns.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/anxious-avoidant-attachment-relational-patterns.png",
 	},
 	{
 		id: "loneliness-social-disconnection",
@@ -74,9 +78,10 @@ Our technique reprograms the attachment circuitry by recalibrating the amygdala'
 The neurobiological mechanism involves dysregulation of the social brain systems. The amygdala becomes hyperactive to social threat while the ventral vagal complex—which enables safe social engagement—becomes suppressed. Individuals with chronic loneliness show heightened activation to potential social threats and reduced capacity to experience social reward and connection. Anxiety in social contexts drives withdrawal behaviors, which then confirm the prediction that connection isn't safe. The brain enters a state of social threat hypervigilance while simultaneously craving connection—creating internal conflict that drives isolated coping. The nervous system becomes trapped in a state where presence with others feels dangerous despite desperate longing for connection.
 
 Our technique recalibrates social threat perception and restores social reward capacity through targeted limbic recalibration. We dissolve the amygdala hijack in response to social presence and restore ventral vagal engagement. Your nervous system regains capacity for genuine connection and authentic presence with others. This isn't skills training or social forcing. It's recoding of how your nervous system detects threat in social contexts. You experience restored capacity for belonging, authentic connection, and the vital health and wellbeing that emerges from genuine relationship.`,
-		ngo_url: "/ngo/campaign-to-end-loneliness",
+		ngo_url: "/ngo/campaign-end-loneliness",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/loneliness-social-disconnection.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/loneliness-social-disconnection.png",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -87,9 +92,10 @@ Our technique recalibrates social threat perception and restores social reward c
 The neurobiological mechanism of PTSD involves a failure of the brain's threat-extinction system where new, contradictory information fails to update stored trauma memories. Anxiety locks the limbic system into a chronic state of hyper-arousal where the amygdala becomes hyper-responsive to triggers, causing the prefrontal cortex to lose its ability to regulate 'false alarms.' This increases the frequency of flashbacks and dissociative episodes where individuals feel disconnected from their body or surroundings. The brain essentially becomes stuck in a state of perpetual danger even when objective safety is present.
 
 Our technique recodes the threat-detection and memory-processing systems through creative limbic recalibration. We identify the triggering belief patterns and amygdala hijacks that maintain the traumatic loop, then replace them with updated threat-assessment protocols. This is not talk therapy, EMDR, or reliving the trauma. It is precision recoding of how your brain processes the memory and threat signal. Flashbacks recede, triggers lose their charge, and you access genuine presence and safety.`,
-		ngo_url: "/ngo/ptsd",
+		ngo_url: "/ngo/national-center-ptsd",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/ptsd-post-traumatic-stress-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/ptsd-post-traumatic-stress-disorder.png",
 	},
 	{
 		id: "migraines",
@@ -102,7 +108,8 @@ The connection between anxiety and migraines is mediated through multiple pathwa
 Our technique targets the anxiety-pain signaling loop through conscious reprogramming of the limbic system and nervous system's pain interpretation. We identify the specific amygdala hijacks and catastrophic beliefs that trigger migraine cascade, then rewire the threat response and pain sensitivity. This is not pain management or talking about stress. It is precision recalibration of how your nervous system interprets signal and generates response. Migraine frequency and intensity shift markedly.`,
 		ngo_url: "/ngo/american-migraine-foundation",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/migraines.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/migraines.png",
 	},
 	{
 		id: "health-anxiety-hypochondriasis",
@@ -113,7 +120,7 @@ Our technique targets the anxiety-pain signaling loop through conscious reprogra
 The neurobiological mechanism involves amygdala hyperactivity in response to interoceptive (bodily) signals combined with a failure of the brain's threat-extinction system to learn from repeated negative test results. The insula—which processes internal bodily signals—becomes hypersensitive, amplifying awareness of normal physiological variations. When bodily signals enter consciousness, the amygdala rapidly interprets them as threat before conscious assessment occurs. The brain's threat-extinction system fails to update despite evidence of safety (normal medical tests), suggesting a specific malfunction in how the amygdala processes health-related reassurance.
 
 Our technique recalibrates the amygdala's interpretation of bodily signals and restores the threat-extinction system through targeted limbic intervention. We reduce insula hypersensitivity and restore accurate threat-assessment in response to bodily sensations. Intrusive catastrophic health thoughts recede as the nervous system regains confidence in distinguishing serious disease from normal body function. This isn't reassurance-seeking or meditation. It's recoding of how your nervous system interprets interoceptive signals. You experience freedom from health preoccupation and restored trust in your body's signals.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/health-anxiety-hypochondriasis.png",
@@ -127,7 +134,7 @@ Our technique recalibrates the amygdala's interpretation of bodily signals and r
 The neurobiological mechanism involves central sensitization where the nervous system's pain-processing circuits become hyperactive and misaligned. Gate-control mechanisms that normally filter pain signals malfunction, allowing minor sensations to be interpreted as significant pain. When anxiety or threat-perception is present, the amygdala activates descending pain amplification pathways that literally amplify pain signal intensity at the spinal cord level. The insula becomes hyperresponsive to pain signals, the anterior cingulate cortex catastrophizes pain meaning, and the prefrontal cortex loses regulatory capacity. The nervous system becomes trapped in a state of self-perpetuating pain amplification.
 
 Our technique recalibrates the pain-amplification circuitry by reducing threat perception and restoring accurate pain signal processing through targeted limbic intervention. We dissolve the anxiety-pain feedback loop and restore gate-control mechanisms. Pain signals normalize as the nervous system exits threat-based amplification mode. This isn't pain management or distraction. It's recoding of how your nervous system generates and sustains pain signals. You experience genuine pain reduction as the amplification system recalibrates.`,
-		ngo_url: "/ngo/iasp-pain",
+		ngo_url: "/ngo/international-association-study-pain",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/chronic-pain-psychosomatic.png",
@@ -157,7 +164,8 @@ The neurobiological mechanism of arachnophobia involves an evolutionary predispo
 Our technique recodes the amygdala's threat classification through targeted creative intervention. We identify the specific fear beliefs and limiting assumptions about spiders, then use precise limbic recalibration to replace the threat file with a new classification: benign or even fascinating. This isn't desensitization, exposure therapy, or gradual accommodation. It's recoding of the threat signature at its source. Your nervous system shifts from panic-on-sight to curiosity-on-sight within the first session. Individuals access activities like hiking, gardening, and relaxation in previously-feared spaces. When your amygdala reclassifies correctly, your freedom expands.`,
 		ngo_url: "/ngo/anxiety-canada",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/arachnophobia-fear-spiders.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/arachnophobia-fear-spiders.png",
 	},
 	{
 		id: "ophidiophobia-fear-snakes",
@@ -168,7 +176,7 @@ Our technique recodes the amygdala's threat classification through targeted crea
 The neurobiological basis of ophidiophobia exists at the intersection of evolutionary preparedness and conditioned learning. The amygdala contains rapid detection pathways optimized for predation threats including snakes, meaning humans are inherently biased to learn fear responses quickly when exposed to snakes. This evolutionary advantage becomes a liability when the amygdala's threat threshold becomes hypersensitized through trauma, vicarious learning, or even cultural messaging, creating a fast-acting automatic fear response that dominates conscious experience.
 
 Our technique targets the amygdala's threat detection architecture, recalibrating the sensitivity and classification of snake-related stimuli. We dissolve the amygdala hijack through precise limbic reprogramming, where the automatic fear cascade is interrupted and replaced with resources, curiosity, and calm. This isn't gradual exposure or cognitive reframing. It's swift recoding of the threat signature at the neurological level. Your nervous system learns to perceive snakes as non-threatening entities within a single session, often with lasting transformation. When your amygdala recalibrates, your freedom to explore expands substantially.`,
-		ngo_url: "/ngo/iocdf",
+		ngo_url: "/ngo/international-ocd-foundation",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/ophidiophobia-fear-snakes.png",
@@ -182,9 +190,10 @@ Our technique targets the amygdala's threat detection architecture, recalibratin
 The neurobiological mechanism combines vestibular dysregulation with amygdala hyperreactivity. The vestibular system sends signals of imbalance and threat to the amygdala, which becomes hyper-responsive and triggers a panic response. Individuals often catastrophize about falling, losing control, or having a panic attack at height, creating a feedback loop where anxiety about the anxiety further amplifies the threat response. The brain enters a state of hypervigilance to falling-related cues.
 
 Our technique engages the intersection of vestibular and limbic signal processing through targeted creative reprogramming. We stabilize vestibular function while simultaneously recalibrating the amygdala's threat assessment for heights. The automatic fear cascade transforms into genuine confidence and presence. This isn't gradual exposure or forced habituation. It's swift recoding of the threat signature and vestibular integration. Individuals access bridges, buildings, and mountains with the courage that heights can inspire, not the panic they once triggered.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/acrophobia-fear-heights.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/acrophobia-fear-heights.png",
 	},
 	{
 		id: "glossophobia-fear-public-speaking",
@@ -195,9 +204,10 @@ Our technique engages the intersection of vestibular and limbic signal processin
 The neurobiological mechanism involves heightened amygdala reactivity to social evaluation threat combined with anterior insula activation related to bodily awareness. The prospect of being judged by an audience activates the limbic threat-detection system, triggering sympathetic nervous system activation that causes physical symptoms like trembling, sweating, and racing heart—symptoms that the individual then becomes hypervigilant to, creating a feedback loop of escalating anxiety. The social threat becomes compounded by interoceptive threat (fear of one's own anxiety symptoms).
 
 Our technique recodes the amygdala's threat coding for audiences through targeted creative intervention. We dissolve the social-evaluation threat hijack and replace it with genuine access to your authentic voice and message. Audiences transform from 'judges' to 'witnesses' in your mind's threat assessment. Physical anxiety symptoms evaporate as the threat signature recalibrates. This isn't confidence-building or gradual practice. It's swift recoding at the neurological level. Powerful public speaking competence emerges within sessions.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/glossophobia-fear-public-speaking.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/glossophobia-fear-public-speaking.png",
 	},
 	{
 		id: "imposter-syndrome",
@@ -208,9 +218,10 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 The neurobiological mechanism involves a systematic bias in threat-detection where the amygdala hypervigilantly monitors for evidence of inadequacy while minimizing evidence of competence. The prefrontal cortex becomes hijacked by catastrophic narratives about exposure and public failure. When accomplishments occur, the brain's reward system becomes suppressed—the amygdala treats success as danger (it increases visibility and exposure risk). This creates a perverse incentive structure where the nervous system paradoxically learns to fear success and competence-visibility. The neural networks encoding self-worth become dysregulated.
 
 Our technique recalibrates the threat-detection bias and restores accurate self-assessment through targeted limbic recalibration. We dissolve the hypervigilance to exposure threat and restore amygdala regulation when processing genuine accomplishments. You experience restored confidence in genuine competence, reduced anxiety about being 'found out,' and authentic pride in accomplishments. This isn't affirmation or confidence building. It's recoding of how your nervous system detects threat in success and visibility. You access genuine self-assurance based on accurate neural processing of your actual capabilities.`,
-		ngo_url: "/ngo/impostor-syndrome",
+		ngo_url: "/ngo/impostor-syndrome-support",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/imposter-syndrome.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/imposter-syndrome.png",
 	},
 	{
 		id: "performance-anxiety-evaluation-fear",
@@ -221,7 +232,7 @@ Our technique recalibrates the threat-detection bias and restores accurate self-
 The neurobiological mechanism involves amygdala hyperactivity in response to evaluation-threat combined with prefrontal cortex suppression. When the nervous system perceives potential judgment, the amygdala interprets this as social threat to status and belonging. This triggers sympathetic activation (visible physical symptoms) and suppression of executive function (creating the paradoxical performance decrements that the individual fears). The insula becomes hyperactive, amplifying awareness of physical symptoms, which further amplifies anxiety in a feedback loop. Social evaluation literally activates the same threat response as physical danger.
 
 Our technique recalibrates the social-evaluation threat response through targeted limbic intervention. We dissolve the automatic amygdala hijack in response to evaluation and restore executive function under performance pressure. Trembling, sweating, and racing thoughts subside as the threat signal resets. This isn't confidence building or gradual exposure. It's recoding of how your nervous system interprets social evaluation. You access genuine calm and cognitive clarity in performance situations, with your actual capabilities accessible regardless of observation or judgment.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/performance-anxiety-evaluation-fear.png",
@@ -235,9 +246,10 @@ Our technique recalibrates the social-evaluation threat response through targete
 The neurobiological mechanism involves a heightened threat response to situations where the individual perceives limited escape options or potential judgment from others. The amygdala becomes sensitized to crowd-related cues, open spaces, and social presence, triggering panic attacks that feel bodily overwhelming and create catastrophic thoughts about losing control or having a medical emergency. The individual then begins avoiding situations that triggered panic, which reinforces the amygdala's belief that these situations are dangerous.
 
 Our technique dismantles the agoraphobia trap through targeted recalibration of the escape-threat loop and social evaluation neural networks. We identify the specific beliefs and amygdala hijacks that created the prison, then restore genuine freedom and agency through creative reprogramming. Fear of crowds and open spaces transforms into confidence and mobility. This isn't exposure therapy or gradual reentry. It's swift recoding of the threat signature. You reclaim previously-avoided spaces, public transportation, and independence at striking speed.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/agoraphobia-social-phobia.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/agoraphobia-social-phobia.png",
 	},
 	{
 		id: "aerophobia-fear-flying",
@@ -248,9 +260,10 @@ Our technique dismantles the agoraphobia trap through targeted recalibration of 
 The neurobiological mechanism combines actual lack of control (the flight is controlled by the pilot) with vestibular dysregulation (the unusual sensations of flight confuse the balance system) and catastrophic thinking patterns. The amygdala perceives the combination of altitude, enclosed space, and loss of control as existential threat, triggering panic responses that feel overwhelming and uncontrollable. Hypervigilance to flight-related bodily sensations (turbulence, slight noises, pressure changes) further amplifies anxiety.
 
 Our technique targets the convergence of fears through precise limbic reprogramming. We dissolve the catastrophic beliefs and amygdala threat associations one by one, replacing them with genuine confidence in safety and capability. Automatic panic to flying stimuli transforms into calm presence. This isn't graduated exposure or white-knuckle coping. It's swift recoding of all the threat signals that converge in air travel. You access safe, relaxed international travel at striking speed.`,
-		ngo_url: "/ngo/fear-of-flying",
+		ngo_url: "/ngo/fear-flying-help",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/aerophobia-fear-flying.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/aerophobia-fear-flying.png",
 	},
 	{
 		id: "rejection-sensitivity",
@@ -275,9 +288,10 @@ Our technique recalibrates the rejection-threat response by resetting the amygda
 The neurobiological mechanism often involves conditioning where a negative dog-related experience (being bitten, chased, or jumped on) becomes associated with threat in the amygdala. The dog's sudden movements, loud bark, or physical proximity can trigger an automatic threat response that the individual experiences as overwhelming fear. Unlike evolutionary fears like arachnophobia, cynophobia is typically learned, but once conditioned, the amygdala's threat response becomes equally automatic and difficult to override.
 
 Our technique dissolves the learned dog-threat association through targeted limbic recalibration. We interrupt the automatic fear cascade and replace it with genuine curiosity and trust. The amygdala's threat classification of dogs transforms fundamentally. This isn't gradual systematic desensitization or forced exposure. It's swift reprogramming at the neurological level. You move from panic at the sound of barking to authentic pleasure in the company of dogs, accessing parks and social situations that seemed impossible before.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/cynophobia-fear-dogs.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/cynophobia-fear-dogs.png",
 	},
 	{
 		id: "trypanophobia-fear-needles",
@@ -288,7 +302,7 @@ Our technique dissolves the learned dog-threat association through targeted limb
 The neurobiological mechanism involves a heightened threat response to potential pain combined with a unique vasovagal response where seeing or anticipating needles triggers parasympathetic activation that causes fainting. Many individuals report that their fear intensifies when they observe the injection itself, creating a temporary loss of consciousness that paradoxically reinforces their fear of needles. The blood-injection-injury phobia category (of which trypanophobia is a part) uniquely involves this fainting response due to the specific way the amygdala of susceptible individuals processes injury threat.
 
 Our technique recalibrates the needle-threat association through targeted creative intervention. We dissolve the amygdala hijack and the vasovagal fainting mechanism simultaneously, replacing them with genuine resources and calm presence. Threat coding around needles transforms at the neurological level. This isn't gradual exposure or continued avoidance. It's swift recoding of injury threat perception. You access necessary medical procedures, vaccinations, and dental care with composed capability.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/trypanophobia-fear-needles.png",
@@ -303,9 +317,10 @@ Our technique recalibrates the needle-threat association through targeted creati
 The neurobiological mechanism combines threat responses to spatial confinement with a heightened sensitivity to perceived loss of control and escape routes. The amygdala perceives enclosed spaces as threatening, triggering both anxious anticipation before entering and panic if actually confined. Hypervigilance to bodily sensations (breathing, chest tightness, temperature) combines with catastrophic thinking to create escalating anxiety. The sensation of walls closing in activates interoceptive threat detection alongside spatial threat detection.
 
 Our technique recalibrates the confinement-threat association and interoceptive alarm through targeted creative intervention. We dissolve both the spatial threat perception and the body-focused anxiety hijack. Your nervous system learns that enclosed spaces are manageable. This isn't gradual progressive exposure forcing through discomfort. It's swift recoding of threat classification. You access elevators, aircraft, confined spaces, and new possibilities with composed confidence.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/claustrophobia-fear-enclosed-spaces.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/claustrophobia-fear-enclosed-spaces.png",
 	},
 	{
 		id: "astraphobia-fear-storms",
@@ -316,7 +331,7 @@ Our technique recalibrates the confinement-threat association and interoceptive 
 The neurobiological mechanism involves both realistic threat perception and amygdala hyperreactivity to sudden, loud noises and visual stimuli. Thunder and lightning are inherently startling to the human nervous system due to their unpredictable, loud, and intense nature, but individuals with astraphobia show exaggerated amygdala responses that trigger panic far beyond the actual risk level. The unpredictability of storms compounds the threat response, as the individual cannot anticipate when the next sound or flash will occur, creating sustained anxiety throughout the storm.
 
 Our technique recalibrates the storm threat association through targeted creative reprogramming. We dissolve the exaggerated amygdala response to thunder and lightning and replace it with resources, awe, and calm presence. Unpredictability that once triggered sustained panic becomes manageable. This isn't gradual habituation or forced exposure. It's swift recoding of threat classification. Your relationship with storms transforms fundamentally. Travel and outdoor recreation during storm seasons becomes accessible with newfound freedom.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/astraphobia-fear-storms.png",
@@ -334,7 +349,8 @@ Our technique isn't about 'curing' autism or making you more neurotypical. It's 
 		ngo_url: "/ngo/autism-speaks",
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7398158/",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/asd-autism-aspergers-autistic-spectrum-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/asd-autism-aspergers-autistic-spectrum-disorder.png",
 	},
 	{
 		id: "adhd-attention-deficit-hyperactivity-disorder",
@@ -362,7 +378,8 @@ The neurobiological underpinnings of Bipolar Disorder involve dysregulation of c
 Our technique stabilizes the nervous system's stress response patterns through targeted recalibration of limbic reactivity. We restore rhythm to the circadian and neurotransmitter systems by reducing chronic anxiety and improving the brain's capacity to maintain equilibrium under stress. This isn't just medication adjustment or lifestyle counseling. It's targeted recoding of the threat-detection and mood-regulation systems. Many participants experience increased intervals between mood episodes, reduced severity of episodes, and newfound stability.`,
 		ngo_url: "/ngo/bipolar-uk",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/bpd-bipolar-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/bpd-bipolar-disorder.png",
 	},
 	{
 		id: "gun-addiction-weapons-obsession",
@@ -375,7 +392,8 @@ The neurobiological mechanism involves a hijacking of the threat-response system
 Our technique recalibrates the threat-response system and restores genuine safety perception independent of weapons through targeted limbic intervention. We dissolve the false equivalence between weapons-access and actual safety. Your nervous system regains capacity to experience genuine security through nervous system regulation rather than external weapons. This isn't gun control advocacy or judgment. It's recoding of how your nervous system encodes threat and safety. You experience reduced anxiety-driven acquisition urges and restored sense of security.`,
 		ngo_url: "/ngo/gun-violence-archive",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/gun-addiction-weapons-obsession.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/gun-addiction-weapons-obsession.png",
 	},
 	{
 		id: "homicidal-ideation-violent-urges",
@@ -400,7 +418,7 @@ Our technique recalibrates threat-response proportionality and restores prefront
 The neurobiological mechanism involves what researchers call a 'limbic hijack' where anxiety and high baseline stress trigger overwhelming amygdala activation that rapidly overwhelms the prefrontal cortex's ability to modulate response. This creates a self-reinforcing loop where the neurochemical 'rush' of anger and associated catecholamine release temporarily relieves the internal tension of chronic anxiety. The relief becomes reinforcing, leading to a cycle of compulsive rage outbursts where the individual becomes unconsciously driven to recreate that relief through anger. The nervous system has learned that rage is a more effective release mechanism than healthy self-regulation.
 
 Our technique breaks this reinforcement cycle by providing more effective ways to downregulate the nervous system than the maladaptive pattern of rage. We reprogram the amygdala's threat detection and restore prefrontal regulation capacity. You access parasympathetic activation and calm presence instead of the rage cascade. This isn't anger management or talking about triggers. It's targeted recalibration of the nervous system's alarm and regulation systems. Rage episodes recede substantially, relationships heal, and you access genuine agency over your emotional responses.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/ied-rage-intermittent-explosive-disorder.png",
@@ -416,7 +434,8 @@ The neurobiological mechanism involves chronic activation of the stress response
 Our technique recalibrates the nervous system from chronic threat-state through targeted limbic recalibration and restoration of meaning-systems. We restore the capacity to downregulate threat-perception and re-engage the parasympathetic nervous system. Your nervous system regains capacity for genuine rest, renewed energy, and restored sense of purpose. This isn't vacation or work-life balance advice. It's recoding of how your nervous system responds to occupational stress. You experience restoration of vitality, genuine emotional connection, and renewed capability.`,
 
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/burnout-exhaustion-depersonalization.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/burnout-exhaustion-depersonalization.png",
 	},
 	{
 		id: "alcohol-substance-abuse",
@@ -429,9 +448,10 @@ Anxiety plays a critical role in the initiation and maintenance of substance add
 Our technique targets the anxiety infrastructure underlying addiction by recalibrating the reward system and threat-detection network. We reprogram the amygdala's anxious alarm that was being 'solved' by substance use and restore the brain's genuine capacity for natural dopamine release and self-regulation. This isn't 12-step programs or behavioral conditioning. It's recoding of the neurological loop that made substances seem necessary. You access genuine recovery where cravings recede and the emotional need for substances dissolves.
 
 Related condition: For adolescent substance abuse during critical developmental windows with different treatment considerations, see <a href="/remote-clinical-trial/free/teen-substance-abuse/adolescent-addiction/substance-dependence">Teen Substance Abuse & Addiction</a>.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/alcohol-substance-abuse.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/alcohol-substance-abuse.png",
 	},
 	{
 		id: "screen-addiction",
@@ -444,7 +464,7 @@ The neurobiological mechanism involves hijacking of the dopamine reward system b
 Our technique recalibrates the reward system and restores executive capacity through targeted limbic intervention. We dissolve the algorithmic hijacking and restore genuine dopamine sensitivity where natural rewards become accessible again. Compulsive screen use transforms into balanced, conscious technology engagement. This isn't screen time limiting or willpower training. It's recoding of how your nervous system processes digital rewards and manages FOMO-based anxiety. You access freedom and restored capacity for non-digital engagement and relationships.
 
 Related condition: For adolescent-specific screen addiction during critical developmental windows, see <a href="/remote-clinical-trial/free/teen-screen-addiction/digital-escapism/internet-dependence">Teen Screen Addiction & Digital Escapism</a>.`,
-		ngo_url: "/ngo/addictioncenter",
+		ngo_url: "/ngo/addiction-center",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/screen-addiction.png",
@@ -460,7 +480,7 @@ The neurobiological mechanism involves hijacking of the sexual reward system by 
 Our technique recalibrates the sexual reward system and dissolves shame-based reinforcement loops through targeted limbic intervention. We restore prefrontal regulation and sexual motivation toward genuine partners. Compulsive porn use transforms into balanced sexual expression in relationships. This isn't abstinence advocacy or willpower training. It's recoding of how your nervous system encodes sexual motivation and processes intimacy-related anxiety. You access restored sexual responsiveness to partners and genuine capacity for intimate connection.
 
 Related condition: Porn addiction and compulsive sexual behavior are distinct from <a href="/remote-clinical-trial/free/sex-addiction">Sex Addiction</a>, though all three share dopamine dysregulation at the core.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/porn-addiction-sexual-compulsivity.png",
@@ -492,7 +512,8 @@ The neurobiological mechanism involves an amygdala that learned through early at
 Our technique recalibrates the intimacy-threat association by restoring secure attachment capacity and ventral vagal tone through targeted limbic intervention. We dissolve the false threat perception around vulnerability and authentic connection. Your nervous system regains capacity for genuine intimacy, authentic vulnerability, and sustained commitment. This isn't therapy process or gradual exposure. It's recoding of the neural patterns that learned to fear closeness. You access restored capacity for genuine intimate partnership and authentic connection.`,
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/fear-of-intimacy-commitment-fear.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/fear-of-intimacy-commitment-fear.png",
 	},
 	{
 		id: "ai-anxiety-technophobia-fear-ai",
@@ -503,9 +524,10 @@ Our technique recalibrates the intimacy-threat association by restoring secure a
 The neurobiological mechanism involves uncertainty-based amygdala activation combined with realistic concern about technological disruption. The amygdala becomes hyperreactive to information about AI advancements, job displacement reports, or AI capability expansions—interpreted as existential threat. The loss of control element triggers heightened amygdala activation: when humans cannot predict or control AI system behavior, the nervous system perceives this as threat. Media narratives about AI risk and job displacement amplify this perception. For individuals with preexisting anxiety or perfectionism, AI uncertainty becomes encoded as catastrophic threat. The nervous system remains in a state of vigilance to AI-related threat cues.
 
 Our technique recalibrates threat-perception in response to AI and technological change through targeted limbic intervention. We restore accurate threat-assessment: distinguishing between genuine risks requiring adequate attention and anxiety-amplified catastrophic projections. Your nervous system regains capacity to engage with new technologies without threat-hijacking. This isn't technology education or exposure therapy. It's recoding of how your nervous system processes uncertainty about AI and technological change. You experience genuine curiosity and adaptive concern without the anxiety-based avoidance and rumination.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/ai-anxiety-technophobia-fear-ai.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/ai-anxiety-technophobia-fear-ai.png",
 	},
 	{
 		id: "social-media-anxiety-disorder",
@@ -516,9 +538,10 @@ Our technique recalibrates threat-perception in response to AI and technological
 The neurobiological mechanism involves amygdala hyperactivity in response to social evaluation threat combined with dopamine-driven behavioral addiction. Social media platforms are specifically engineered to trigger dopamine-reward cycles (likes, comments, shares) that create compulsive checking behaviors. Simultaneously, the algorithmic curation shows content that triggers social comparison on the insula and amygdala threat-activation in response to perceived social exclusion (FOMO). The amygdala becomes conditioned to interpret lack of engagement as social rejection. Anxiety about posts or lack of engagement drives checking and posting cycles. The prefrontal cortex loses regulatory capacity as the amygdala and striatum (reward system) hijack decision-making.
 
 Our technique dissolves the social-evaluation threat perception specific to social media through targeted limbic recalibration. We interrupt the dopamine-driven compulsive checking and restore genuine social evaluation capacity grounded in real relationships rather than platform-based metrics. Your nervous system regains capacity to engage with social media without anxiety-driven compulsion or social comparison rumination. This isn't digital detox or social media limiting. It's recoding of how your nervous system processes social threat and reward in digital contexts. You experience freedom from platform-driven anxiety and restored capacity for genuine social connection.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/social-media-anxiety-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/social-media-anxiety-disorder.png",
 	},
 	{
 		id: "paranoia-scelerephobia-fear-strangers-criminals",
@@ -531,7 +554,8 @@ The neurobiological mechanism involves amygdala hyperactivity combined with fail
 Our technique recalibrates threat perception in social contexts and restores accurate threat-assessment through targeted limbic intervention. We dissolve the systematic bias toward threat interpretation and restore the amygdala's capacity to distinguish genuine danger from normal social situations. Paranoid ideation recedes as the nervous system regains accurate perception of others' intentions. This isn't cognitive therapy or social exposure. It's recoding of how your nervous system interprets social threat. You experience freedom from persecution beliefs and restored capacity for authentic social engagement.`,
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/paranoia-scelerephobia-fear-strangers-criminals.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/paranoia-scelerephobia-fear-strangers-criminals.png",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -542,7 +566,7 @@ Our technique recalibrates threat perception in social contexts and restores acc
 The basal ganglia, a set of brain structures crucial for voluntary motor control and habit formation, plays a central role in tic expression and the anxiety-tic relationship. Anxiety triggers the basal ganglia and limbic system, causing a failure in inhibitory control that increases the frequency and severity of involuntary motor and vocal tics. Interestingly, anxiety about tics themselves becomes a key factor that worsens tics—stress about being watched or judged often intensifies tic expression, creating a feedback loop where anxiety amplifies the very symptoms individuals wish to control. The amygdala's hyperactivity disrupts the smooth regulation of the basal ganglia.
 
 Our technique targets the intersection of vestibular and limbic signal processing through targeted creative reprogramming. We stabilize vestibular function while simultaneously recalibrating the amygdala's threat assessment for heights. The automatic fear cascade transforms into genuine confidence and presence. This isn't gradual exposure or forced habituation. It's swift recoding of the threat signature and vestibular integration. You access bridges, buildings, and mountains with the courage that heights inspire.`,
-		ngo_url: "/ngo/tourette-association",
+		ngo_url: "/ngo/tourette-association-america",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/40585552/",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/tics-tourette-syndrome-tic-disorders.png",
@@ -556,9 +580,10 @@ Our technique targets the intersection of vestibular and limbic signal processin
 The connection between stress, anxiety, and seizure threshold is well-established in both clinical observation and neuroscience research. Stress-induced cortisol release elevates neuronal excitability, effectively lowering the amount of electrical activity needed to trigger a seizure. Additionally, anxiety-related hyperventilation changes blood chemistry in ways that increase brain electrical instability, further lowering seizure threshold. During periods of high stress or anxiety, individuals with epilepsy often experience increased seizure frequency, suggesting that anxiety management is not just psychological support but functional seizure management. The amygdala's threat alarm directly influences seizure vulnerability.
 
 Our technique restores parasympathetic nervous system activation and reduces chronic anxiety through targeted limbic recalibration. We lower the baseline threat-sensitivity that reduces seizure threshold, creating a neurophysiological environment less conducive to seizures. This isn't just stress management or relaxation counseling. It's targeted recalibration of the nervous system's electrical stability. You experience meaningful reductions in seizure frequency and increased predictability.`,
-		ngo_url: "/ngo/epilepsy",
+		ngo_url: "/ngo/epilepsy-foundation",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/epilepsy-seizure-disorders.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/epilepsy-seizure-disorders.png",
 	},
 	{
 		id: "insomnia-sleep-hyperarousal",
@@ -569,9 +594,10 @@ Our technique restores parasympathetic nervous system activation and reduces chr
 The neurobiological mechanism involves failure of the parasympathetic nervous system to activate at night combined with amygdala hyperactivity that maintains threat-vigilance. The default mode network—which normally quiets during sleep—remains hyperactive. Hyperarousal involves elevated cortisol, norepinephrine, and other stress neurochemicals at night when they should be low. Worry-rumination activates prefrontal-limbic circuits, preventing the shift to sleep-mode. Sleep-related anxiety creates classical conditioning where the bed/bedroom becomes associated with threat-processing rather than rest. The nervous system becomes trapped in a state where threat-detection remains activated when nervous system resources should be devoted to repair and memory consolidation.
 
 Our technique recalibrates night-time threat detection and restores parasympathetic activation through targeted limbic recalibration. We reduce sleep-related anxiety and reset the conditioned hyperarousal. Your nervous system regains capacity to shift into parasympathetic rest mode at night. This isn't sleep hygiene or stimulus control. It's recoding of how your nervous system manages threat-detection across the sleep-wake cycle. You experience restored capacity to sleep deeply, awakening refreshed.`,
-		ngo_url: "/ngo/sleep-foundation",
+		ngo_url: "/ngo/national-sleep-foundation",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/insomnia-sleep-hyperarousal.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/insomnia-sleep-hyperarousal.png",
 	},
 	{
 		id: "ocd-obsessive-compulsive-disorder",
@@ -582,9 +608,10 @@ Our technique recalibrates night-time threat detection and restores parasympathe
 The neurobiological loop in OCD involves a circuit between the orbitofrontal cortex (involved in error detection and value assignment) and the amygdala (processing threat and fear). This loop creates a cycle where anxiety drives the intense need for compulsions to neutralize perceived threats or manage intrusive thoughts. The compulsion provides temporary relief, negatively reinforcing the obsessive-compulsive pattern and making it progressively more entrenched. Over time, the brain becomes increasingly sensitized to potential threats, leading to expansion of obsessive themes and proliferation of compulsive rituals. The amygdala misclassifies intrusive thoughts as life-threatening.
 
 Our technique breaks the obsessive-compulsive circuit through targeted recalibration of the amygdala-orbitofrontal connection. We dissolve the threat response to intrusive thoughts and restore prefrontal regulation. Intrusive thoughts become less emotionally charged and the compulsive urges recede. This isn't exposure-response prevention or cognitive therapy. It's swift recoding of the threat-detection circuit. You observe obsessive thoughts without the urgent need to engage in compulsions. Daily distress and functioning improve substantially.`,
-		ngo_url: "/ngo/iocdf",
+		ngo_url: "/ngo/international-ocd-foundation",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/ocd-obsessive-compulsive-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/ocd-obsessive-compulsive-disorder.png",
 	},
 	{
 		id: "trichotillomania-hair-pulling",
@@ -595,7 +622,7 @@ Our technique breaks the obsessive-compulsive circuit through targeted recalibra
 The neurobiological mechanism involves a hijacking of the natural repetitive-behavior system (which provides soothing through rhythmic stimulation) to manage anxiety. When anxiety or internal distress emerges, the nervous system learns that hair-pulling or skin-picking produces temporary neurotransmitter-based soothing through endogenous opioid release. This creates a self-medication cycle where anxiety drives the behavior, temporary relief reinforces it, then rebound anxiety and tissue damage follow. The orbitofrontal cortex (involved in habit-formation) becomes hyperactive, the anterior cingulate cortex signals error-detection that escalates anxiety, and the amygdala drives the urge to engage in the BFRB for anxiety relief.
 
 Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous system manages distress and providing genuine anxiety-reduction alternatives. We reprogram the habit loop and restore genuine anxiety-regulation capacity. Urges to engage in self-injurious behaviors recede as the nervous system accesses healthier soothing pathways. This isn't habit replacement or willpower. It's recoding of how your nervous system learned to use self-injury for emotion regulation. You experience freedom from the urge and restored tissue integrity.`,
-		ngo_url: "/ngo/bfrb",
+		ngo_url: "/ngo/tlc-foundation-body-focused-repetitive-behaviors",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/trichotillomania-hair-pulling.png",
@@ -609,9 +636,10 @@ Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous s
 The neurobiological mechanism involves dysfunction in how the visual cortex processes facial features combined with amygdala hyperactivity in response to perceived appearance threat. Brain imaging shows that individuals with BDD have atypical visual processing of faces—focusing on minute details rather than holistic appearance—creating a distorted mental representation. The amygdala treats perceived appearance defects as social threat that threatens belonging and status. Body-checking and reassurance-seeking provide temporary anxiety reduction but reinforce the perception that appearance is a genuine threat. The ventromedial prefrontal cortex fails to regulate the amygdala's threat interpretation of appearance-related stimuli.
 
 Our technique recalibrates appearance-threat perception and restores accurate self-perception through targeted limbic recalibration. We dissolve the amygdala's hyperactivity in response to perceived appearance flaws and restore visual integration. You experience restored accurate perception of your appearance without the threat-based anxiety amplification. Preoccupation recedes as your nervous system stops treating appearance as a genuine social threat. This isn't affirmation or self-esteem work. It's recoding of how your nervous system perceives and encodes appearance threat. You access freedom from appearance preoccupation and authentic social presence.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/body-dysmorphia.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/body-dysmorphia.png",
 	},
 	{
 		id: "eating-disorders-anorexia-bulimia-binge",
@@ -622,9 +650,10 @@ Our technique recalibrates appearance-threat perception and restores accurate se
 The neurobiological mechanism involves amygdala hyperactivity combined with a loss of interoceptive awareness (the ability to sense internal bodily states like hunger/fullness). The insula becomes dysregulated, preventing accurate registration of hunger and satiety signals. Anxiety or emotional distress becomes mis-interpreted as physical hunger or, conversely, blocked from accessing hunger signals entirely. The nervous system uses food control/restriction or binge episodes to downregulate anxiety/trauma through temporary neurochemical shifts. Perfectionism-driven restrictive eating activates reward pathways, creating a pleasurable sense of control that reinforces restriction. The orbitofrontal cortex becomes hyperactive in habit-formation around eating behaviors. The neural circuits encoding safety, nourishment, and self-care become corrupted.
 
 Our technique recalibrates anxiety-management and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the amygdala hijack that drives restrictive/binge behaviors and restore accurate hunger/fullness signaling. Your nervous system regains capacity to use food for genuine nourishment rather than anxiety-regulation. This isn't nutrition education or cognitive-behavioral techniques. It's recoding of how your nervous system uses food and body control to manage threat and anxiety. You experience restored capacity for balanced eating, body trust, and genuine nourishment.`,
-		ngo_url: "/ngo/national-eating-disorders",
+		ngo_url: "/ngo/national-eating-disorders-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/eating-disorders-anorexia-bulimia-binge.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/eating-disorders-anorexia-bulimia-binge.png",
 	},
 	{
 		id: "spd-sensory-processing-disorder",
@@ -635,9 +664,10 @@ Our technique recalibrates anxiety-management and restores genuine interoceptive
 Anxiety interacts with sensory processing in ways that significantly amplify hypersensitivity symptoms—the amygdala, when in a threat-detection state, lowers the threshold for what sensory input is perceived as aversive or dangerous. Anxiety places the brain in a state of hyper-vigilance, lowering the sensitivity threshold for sensory input and causing the limbic system to interpret neutral stimuli as physically painful. A gentle touch may feel irritating, routine sounds may seem intolerable, or ordinary visual environments may feel overwhelming when anxiety has heightened the salience of sensory information. The sensory gates malfunction under threat conditions.
 
 Our technique restores normal sensory gating by reducing threat-sensitivity and recalibrating the amygdala's threat response to sensory stimuli through targeted creative intervention. Hypersensitivity recedes substantially as your nervous system stops interpreting neutral sensory input as dangerous. This isn't occupational therapy or gradual habituation. It's targeted recoding of sensory threat perception. You experience striking improvements in sensory tolerance and comfort, engaging fully in social, occupational, and recreational activities.`,
-		ngo_url: "/ngo/star-institute",
+		ngo_url: "/ngo/star-institute-sensory-processing",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/spd-sensory-processing-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/spd-sensory-processing-disorder.png",
 	},
 	{
 		id: "misophonia",
@@ -663,9 +693,10 @@ Our technique dissolves the pathological auditory-limbic connection through targ
 The neurobiological mechanism involves a conditioned fear response where the amygdala perceives social interaction, particularly speaking to authority figures or in front of peers, as a life-threatening danger. The amygdala's threat assessment triggers a freezing response that physically prevents the vocal cords from operating in specific settings. This freezing response represents an ancient survival mechanism where immobility and silence were adaptive responses to predation, but which becomes maladaptive when triggered by social situations. The voice is literally held hostage.
 
 Our technique shatters the selective mutism loop through targeted limbic reprogramming. We dissolve the social-threat perception and restore vocal freedom. The freezing response transforms and is replaced with genuine access to voice and authentic communication. This isn't gradual exposure or progressive talking. It's swift recalibration of the amygdala's social threat assessment. You access voice in social contexts at striking speed, moving from complete silence to authentic vocal power.`,
-		ngo_url: "/ngo/selective-mutism",
+		ngo_url: "/ngo/selective-mutism-association",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/26709680/",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/selective-mutism.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/selective-mutism.png",
 	},
 
 	{
@@ -691,9 +722,10 @@ Our technique restores smooth motor planning by reducing anxiety and targeting t
 Math-related anxiety is endemic in dyscalculia and plays a significant amplifying role in academic difficulties. Math-related anxiety activates the amygdala while suppressing activity in the parietal lobes where numerical processing occurs, literally blocking the brain's ability to process numerical information at the moment it's needed most. When students with dyscalculia encounter math, anxiety surges, their brain's numerical processing capacity is suppressed, they struggle further, and anxiety escalates in a feedback loop of avoidance and failure. Anxiety creates a direct cognitive block.
 
 Our technique reduces math-related anxiety by recalibrating threat perception and restoring parietal lobe function through targeted creative intervention. We dissolve the anxiety-driven suppression of numerical processing circuits. Your brain regains access to its intact number sense and mathematical capability. This isn't tutoring or more math practice. It's targeted recalibration of the anxiety-amygdala-number processing loop. You experience that improvements in math anxiety translate directly into improvements in math performance, confidence, and willingness to engage.`,
-		ngo_url: "/ngo/lda-america",
+		ngo_url: "/ngo/learning-disabilities-association-america",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/dyscalculia.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/dyscalculia.png",
 	},
 	{
 		id: "test-anxiety",
@@ -704,9 +736,10 @@ Our technique reduces math-related anxiety by recalibrating threat perception an
 The neurobiological mechanism involves amygdala hijack triggered by evaluation threat that blocks access to knowledge stored in hippocampus and cortex. When the amygdala perceives high-stakes threat, prefrontal cortex suppression occurs, limiting working memory and executive function access. The stress neurochemical cascade further impairs prefrontal function. Performance decrements due to anxiety then become encoded as predictors that 'tests are dangerous situations where performance fails,' further conditioning amygdala reactivity to testing contexts. The nervous system learns to treat test-taking as a threat to status and competence, triggering protective mechanisms that ironically prevent successful performance.
 
 Our technique recalibrates the evaluation-threat perception in testing contexts through targeted limbic intervention. We dissolve the amygdala hijack during high-stakes academic performance and restore executive function and knowledge access. Your brain regains ability to access learned knowledge under test conditions. This isn't test-prep or anxiety management techniques. It's recoding of how your nervous system responds to academic evaluation threat. You experience genuine calm during testing with full access to knowledge and capability.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/test-anxiety.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/test-anxiety.png",
 	},
 	{
 		id: "perfectionism",
@@ -719,7 +752,7 @@ The neurobiological mechanism involves amygdala-driven threat-perception in resp
 Our technique recalibrates the threat-perception in response to imperfection and reduces the amygdala's sensitivity to minor mistakes through targeted limbic intervention. We restore accurate threat/non-threat assessment where true excellence becomes achievable without perfectionism-based anxiety. Your nervous system distinguishes between genuine quality and perfectionist threat-magnification. This isn't self-compassion training or standards reduction. It's recoding of how your nervous system encodes mistakes and imperfection as threat. You access genuine excellence production without the perfectionism-based anxiety and paralysis.
 
 `,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/perfectionism.png",
@@ -733,7 +766,7 @@ Our technique recalibrates the threat-perception in response to imperfection and
 Anxiety significantly exacerbates dysgraphia through multiple mechanisms involving fine motor control and cognitive load. Anxiety-induced sympathetic nervous system activation causes excessive grip tension and motor tremors, severely degrading the legibility and speed of physical writing. Additionally, anxiety consumes working memory capacity that could be devoted to organizing thoughts and translating them to written form, making writing even more effortful and slow. For students with dysgraphia, anxiety transforms an already-challenging task into something nearly impossible. The nervous system's fight-or-flight state became hardwired into writing.
 
 Our technique restores a relaxed neuromuscular state and recalibrates working memory through targeted limbic recalibration. We reduce anxiety's grip on motor control and free cognitive resources for composition. Your hand becomes steady, writing speed increases, and thoughts flow onto paper. This isn't handwriting practice or more writing lessons. It's swift recalibration of anxiety's effects on fine motor and cognitive systems. As anxiety decreases, you can finally write without pain and your writing performance accurately reflects your knowledge and capability.`,
-		ngo_url: "/ngo/dysgraphia",
+		ngo_url: "/ngo/dysgraphia-support",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/dysgraphia.png",
@@ -747,8 +780,9 @@ Our technique restores a relaxed neuromuscular state and recalibrates working me
 The neurobiological mechanism involves amygdala hyperactivity and reduced prefrontal regulation where the threat-detection system remains persistently active without external threat trigger. The anterior cingulate cortex generates excessive error-detection and worry-rumination that keeps the anxiety system activated in a feedback loop. The insula becomes hyperactive in interoceptive threat-detection, meaning internal bodily sensations become misinterpreted as danger signals. The default mode network becomes overactive in catastrophic future-prediction and "what-if" scenarios. The nervous system learned that worry is protective (by predicting all possible dangers) and now uses worry as a false safety strategy that actually perpetuates anxiety.
 
 Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
-		ngo_url: "/ngo/adaa",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/generalized-anxiety-disorder.png",
+		ngo_url: "/ngo/anxiety-depression-association-america",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/generalized-anxiety-disorder.png",
 	},
 	{
 		id: "chronophobia-fear-time-future",
@@ -759,7 +793,7 @@ Our technique recalibrates the threat-detection system and reduces amygdala hype
 The neurobiological mechanism involves an overactive amygdala that perceives time's passage and mortality awareness as existential threat. The insular cortex becomes hyperactive in processing bodily sensations related to aging and the passage of time. When the amygdala detects thoughts about time, aging, or death, it triggers a threat response that becomes associated with temporal awareness itself. The anterior cingulate cortex generates persistent rumination about mortality, and the prefrontal cortex fails to regulate this catastrophic thinking. Paradoxically, hypervigilance to time's passage actually intensifies the subjective experience of time urgency and threatens peace with the present moment.
 
 Our technique recalibrates the amygdala's threat perception around time and mortality through targeted limbic intervention. We dissolve the existential threat association with temporal awareness and restore presence and acceptance of mortality. Your nervous system ceases to treat time's passage as danger. You experience peace in the present moment, healthy perspective on aging, and freedom from mortality obsession.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/chronophobia-fear-time-future.png",
 	},
@@ -772,7 +806,7 @@ Our technique recalibrates the amygdala's threat perception around time and mort
 The neurobiological mechanism involves an amygdala that has been conditioned to perceive death awareness as immediate and personal threat. The orbitofrontal cortex fails to accurately assess actual death probability—treating death as equally likely whether one is healthy or ill, young or old. Mortality reminders (sirens, aging parents, news reports) trigger an amygdala hijack that floods the system with panic neurochemicals. The anterior cingulate cortex generates obsessive death rumination that reinforces amygdala sensitivity. Ironically, the hypervigilance to death becomes an obsessive mental habit that consumes quality of life in the present.
 
 Our technique recalibrates death perception and dissolves the morbid obsession pattern through targeted limbic intervention. We restore accurate probability assessment and emotional proportionality around mortality. Your nervous system ceases to treat death awareness as immediate threat. You experience acceptance of mortality, freedom from intrusive death thoughts, and restored capacity to engage fully in life.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/thanatophobia-death-anxiety.png",
 	},
@@ -786,7 +820,8 @@ The neurobiological mechanism involves the medial prefrontal cortex—which main
 
 Our technique integrates the moral violation into a coherent, compassionate identity narrative through targeted limbic and identity work. We dissolve the shame-encoding and restore wholeness of self. Your nervous system ceases to treat the moral violation as defining your identity. You experience integrated self-understanding, restored capacity for self-compassion, and renewed sense of meaning and values.`,
 		ngo_url: "/ngo/nami",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/moral-injury-values-violation.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/moral-injury-values-violation.png",
 	},
 	{
 		id: "general-fears-phobias",
@@ -797,7 +832,7 @@ Our technique integrates the moral violation into a coherent, compassionate iden
 The neurobiological mechanism involves classical conditioning where a neutral stimulus became associated with threat through single-exposure or vicarious learning. The amygdala now automatically detects that specific stimulus and triggers a threat response before conscious awareness engages. The stimulus-threat association becomes so entrenched that despite cortical knowledge that the object is safe, the amygdala continues firing, generating the characteristic experience of irrational but overwhelming fear. Avoidance negatively reinforces the fear by preventing amygdala extinction through habituation.
 
 Our technique dissolves the specific stimulus-threat association through targeted amygdala recalibration. We break the conditioned fear response and restore accurate threat assessment of the specific stimulus. Your nervous system ceases to respond with fear when encountering the phobic object. You experience rapid freedom from the specific phobia and restored capacity to engage with previously avoided situations.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-fears-phobias.png",
 	},
@@ -810,7 +845,7 @@ Our technique dissolves the specific stimulus-threat association through targete
 The neurobiological mechanism involves dysregulation of circadian rhythms caused by reduced light exposure during winter months. Lower light levels suppress melatonin regulation and serotonin production, leading to depressed mood and fatigue. The suprachiasmatic nucleus fails to maintain robust circadian signaling, disrupting sleep-wake cycles and dopamine-driven motivation. The prefrontal cortex becomes increasingly hypofunctional as serotonin declines, reducing capacity for effortful engagement and mood regulation. Additionally, the amygdala may become sensitized to seasonal darkness as a threat signal, triggering depressive shutdown as a false protective response.
 
 Our technique recalibrates circadian rhythm sensitivity to seasonal light changes through targeted limbic intervention. We restore robust dopamine and serotonin signaling independent of seasonal darkness. Your nervous system ceases to treat winter darkness as threat or signal for depressive shutdown. You experience consistent mood and motivation year-round without seasonal variation.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/seasonal-affective-disorder-sad.png",
 	},
@@ -824,7 +859,8 @@ The neurobiological mechanism involves massive hormonal shifts—particularly sh
 
 Our technique recalibrates the nervous system's response to perinatal hormonal and sleep shifts through targeted limbic and endocrine intervention. We restore monoamine signaling and hippocampal function independent of hormonal status. Your nervous system regains capacity for bonding, pleasure, and engagement with your baby and life. You experience freedom from perinatal/postpartum depression and access to genuine maternal (or paternal) connection.`,
 		ngo_url: "/ngo/postpartum-support-international",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/perinatal-depression-paternal-postpartum-depression.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/perinatal-depression-paternal-postpartum-depression.png",
 	},
 	{
 		id: "menopausal-depression",
@@ -835,7 +871,7 @@ Our technique recalibrates the nervous system's response to perinatal hormonal a
 The neurobiological mechanism involves the dramatic decline in estrogen during menopause, which serves as a neuromodulator supporting serotonin and dopamine systems. As estrogen drops, serotonin and dopamine become dysregulated, leading to depression and anhedonia. The noradrenergic system becomes hyperactive as compensatory response, creating anxiety and sleep disruption. The hippocampus becomes more vulnerable to stress-induced atrophy during menopause, impairing memory and emotional regulation. Additionally, hot flashes, night sweats, and sleep deprivation from these symptoms further dysregulate the nervous system. The amygdala may become sensitized to menopause-related bodily sensations as threat.
 
 Our technique recalibrates monoamine systems and limbic sensitivity to menopausal hormonal and physical changes through targeted intervention. We restore neurochemical balance independent of estrogen levels and recalibrate threat-sensitivity to menopause-related sensations. Your nervous system regains capacity for mood stability, motivation, and engagement. You experience freedom from menopausal depression and restored quality of life during and after menopause.`,
-		ngo_url: "/ngo/menopause",
+		ngo_url: "/ngo/north-american-menopause-society",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/menopausal-depression.png",
 	},
@@ -849,7 +885,8 @@ The neurobiological mechanisms vary across mood disorder types but generally inv
 
 Our technique identifies the specific dysregulation pattern and restores balanced mood regulation through targeted limbic intervention. We dissolve the driving mechanisms behind disordered mood states and restore healthy mood cycling or sustained stable affect. Your nervous system regains capacity for emotional resilience and appropriate mood response to circumstances. You experience freedom from mood disorder patterns and restored capacity for psychological wellbeing.`,
 		ngo_url: "/ngo/nami",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/general-mood-disorders.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-mood-disorders.png",
 	},
 	{
 		id: "dyslexia-reading-disorder",
@@ -884,7 +921,8 @@ Our technique identifies and recalibrates the specific neural pathway difference
 The neurobiological mechanism involves profound dysregulation of the mesolimbic dopamine pathway, where gambling-related cues trigger dopamine release that reinforces compulsive seeking despite negative outcomes. The prefrontal cortex loses regulatory capacity, failing to inhibit gambling urges despite intellectual awareness of consequences. The amygdala becomes sensitized to emotional distress (anxiety, depression, boredom) as a trigger for gambling urges. Gambling provides temporary dopamine elevation and relief from distress but leads to guilt, shame, and greater distress, increasing the need to gamble again. The cycle becomes self-perpetuating as only gambling provides relief from the distress gambling creates.
 
 Our technique recalibrates the dopamine reward system and dissolves the distress-gambling link through targeted limbic intervention. We restore executive capacity and genuine distress tolerance. Your nervous system ceases to pursue gambling as relief and accesses genuine anxiety-regulation alternatives. You experience freedom from gambling compulsion and restored financial and emotional stability.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/gambling-addiction.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/gambling-addiction.png",
 	},
 	{
 		id: "food-addiction",
@@ -895,7 +933,7 @@ Our technique recalibrates the dopamine reward system and dissolves the distress
 The neurobiological mechanism involves dysregulation of the mesolimbic reward pathway where highly palatable foods trigger excessive dopamine release, creating supernormal reward signals that exceed natural food reward. The prefrontal cortex loses regulatory capacity and cannot inhibit eating urges despite health goals. The amygdala becomes sensitized to emotional distress as a cue for eating. The insula loses interoceptive awareness of true hunger and satiety signals, becoming dysregulated by emotional states instead. Opioid pathways become dysregulated, creating craving for food as primary comfort mechanism. The cycle perpetuates as food provides temporary emotional relief before shame and physical discomfort drive further eating.
 
 Our technique recalibrates the food reward system and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the emotional-eating link and restore prefrontal regulation. Your nervous system ceases using food as primary emotional management and accesses genuine distress-tolerance alternatives. You experience restored capacity for balanced eating, appropriate appetite regulation, and emotional resilience.`,
-		ngo_url: "/ngo/national-eating-disorders",
+		ngo_url: "/ngo/national-eating-disorders-association",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/food-addiction.png",
 	},
@@ -908,7 +946,7 @@ Our technique recalibrates the food reward system and restores genuine interocep
 The neurobiological mechanism involves dysregulation of the mesolimbic dopamine pathway where the addictive stimulus triggers supernormal dopamine release. The ventromedial prefrontal cortex loses regulatory capacity to inhibit the addictive behavior. The amygdala becomes conditioned to emotional distress (anxiety, boredom, sadness) as a cue to engage the addictive behavior for relief. The anterior cingulate cortex generates compulsive approach toward the addictive target. Regardless of specific addiction, all involve the same core dysregulation: excessive dopamine reward signal combined with loss of executive inhibition and emotional-behavior coupling.
 
 Our technique recalibrates the dopamine reward system and restores executive capacity through targeted limbic intervention. We dissolve the distress-addiction link and restore genuine distress tolerance. Your nervous system ceases pursuing the addictive behavior and accesses genuine satisfaction and emotional regulation alternatives. You experience freedom from addiction and restored capacity for meaningful engagement with life.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-addictions.png",
 	},
@@ -922,7 +960,8 @@ The neurobiological mechanism involves the gut-brain axis bidirectional communic
 
 Our technique recalibrates the insula's dysregulated interoceptive awareness and reduces the amygdala's threat perception of body sensations through targeted limbic intervention. We restore normal vagal tone and the gutbrain axis decoupling from threat-response. We help the amygdala distinguish between normal disease symptoms and actual acute threat. Your nervous system ceases amplifying normal body-signals into perceived emergencies. You experience restored capacity for GI function and normal digestion, acceptance of health conditions with proportional rather than catastrophic anxiety, freedom from health-checking compulsions and reassurance-seeking, and the experience of your body as capable rather than as a betrayer generating constant threat-signals.`,
 		ngo_url: "/ngo/nami",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/anxiety-somatization-physical-symptoms-health-anxiety.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/anxiety-somatization-physical-symptoms-health-anxiety.png",
 	},
 	{
 		id: "general-neurological-issues",
@@ -933,7 +972,7 @@ Our technique recalibrates the insula's dysregulated interoceptive awareness and
 The neurobiological mechanisms vary across specific neurological conditions but generally involve atypical function in motor cortex, cerebellum, basal ganglia, sensory cortices, or other brain regions that generate symptoms specific to the affected system. Anxiety often co-occurs or develops as the secondary consequence when neurological symptoms create functional difficulty or social stigma. The amygdala may become sensitized to symptom-related threat or social threat, amplifying the subjective distress beyond the neurological basis alone.
 
 Our technique addresses both the neurological symptom generation and secondary anxiety through targeted neural intervention. We enhance compensatory neural pathway function and reduce threat-sensitivity to symptom experience. Your brain regains maximum functional capacity given the neurological condition present. You experience improved functional capacity and reduced anxiety about neurological symptoms.`,
-		ngo_url: "/ngo/aan",
+		ngo_url: "/ngo/american-academy-neurology",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png",
 	},
@@ -959,7 +998,7 @@ Our technique recalibrates the self-representation in the medial prefrontal cort
 The neurobiological mechanism involves the amygdala perceiving performance contexts as social threat where evaluation and judgment threaten status and worth. The prefrontal cortex becomes suppressed as amygdala activation increases, leading to working memory shutdown and access to learned skills becomes blocked. Stress neurochemicals (adrenaline, cortisol) increase in a way that impairs executive function and fine motor control despite enhancing gross motor activation. The anterior cingulate cortex may generate error-detection hyperactivity, making the nervous system hypercritical of performance in real-time, creating performance disruption through internal commentary.
 
 Our technique recalibrates the amygdala's threat perception of performance contexts through targeted limbic intervention. We restore executive function and skill access when performance stakes are present. Your nervous system ceases treating performance as social threat and maintains prefrontal regulation. You experience genuine performance capability when stakes are present and freedom to execute skill at full capacity.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-performance-issues.png",
 	},
@@ -973,7 +1012,8 @@ The neurobiological mechanism involves dysregulation of pain processing and emot
 
 Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
 		ngo_url: "/ngo/nami",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/cutting-self-harm.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/cutting-self-harm.png",
 	},
 	{
 		id: "hoarding-disorder",
@@ -984,7 +1024,8 @@ Our technique builds genuine distress tolerance and restores emotional regulatio
 The neurobiological mechanism involves amygdala hyperreactivity to the idea of discarding items, where letting go of possessions triggers existential loss threat disproportionate to the item's actual value. The ventromedial prefrontal cortex becomes hyperactive in attribution of too-much-meaning to objects, and loss-aversion becomes pathologically overamplified compared to normal loss-aversion. The dorsolateral prefrontal cortex loses capacity to override these threat and loss-aversion signals through rational decision-making. Items become imbued with emotional significance or hypothetical future utility that prevents discarding. The pattern becomes self-reinforcing as acquisition provides temporary dopamine relief from anxiety, then accumulated items generate anxiety about disposal.
 
 Our technique recalibrates item-meaning attribution and loss-aversion through targeted limbic intervention. We restore appropriate decision-making capacity and realistic meaning assignment to possessions. Your nervous system ceases extracting excessive emotional significance from objects. You experience freedom to make discard decisions and restored capacity to maintain functional living spaces.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/hoarding-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/hoarding-disorder.png",
 	},
 	{
 		id: "general-ocd-spectrum",
@@ -995,7 +1036,8 @@ Our technique recalibrates item-meaning attribution and loss-aversion through ta
 The neurobiological mechanism involves orbitofrontal cortex hyperactivity in error-detection that generates false threat-signals in response to normal thoughts or situations. The anterior cingulate cortex generates persistent error-checking and uncertainty. The amygdala becomes sensitized to obsession-related triggers, and compulsions provide temporary amygdala downregulation through sense-of-control or ritual completion. The cycle becomes self-perpetuating: obsessive thought generates threat-signal, compulsion provides temporary relief, uncertainty returns because compulsion never proves safety, compulsion must repeat. The neural circuitry becomes stuck in a threat-detection loop that treats uncertainty as requiring behavioral management.
 
 Our technique breaks the obsession-compulsion cycle by recalibrating the error-detection system and reducing amygdala threat-sensitivity through targeted limbic intervention. We restore accurate threat-assessment where obsessions no longer trigger compulsions. Your nervous system ceases generating false threat-signals and regains capacity to tolerate uncertainty. You experience freedom from obsessions and compulsions with dramatically reduced distress.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/general-ocd-spectrum.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-ocd-spectrum.png",
 	},
 	{
 		id: "relationship-jealousy-insecurity",
@@ -1006,7 +1048,8 @@ Our technique breaks the obsession-compulsion cycle by recalibrating the error-d
 The neurobiological mechanism involves insecure attachment patterns where the amygdala became conditioned to perceive partner separation or attention to others as abandonment threat. The ventromedial prefrontal cortex fails to maintain secure attachment representations during separation, leaving the amygdala persistently threat-activated when partner is unavailable or interacting with others. The insular cortex becomes hyperactive in monitoring social signals from the partner, interpreting neutral behavior as infidelity evidence. The anterior cingulate cortex generates persistent rumination about partner betrayal or abandonment. This hijacks the attachment system where security requires constant reassurance rather than secure base confidence.
 
 Our technique recalibrates attachment security and amygdala threat-perception of partner separation through targeted limbic intervention. We restore secure base confidence where partner autonomy can be tolerated without triggering abandonment anxiety. Your nervous system ceases treating partner's other relationships as personal threat. You experience secure attachment, reduced jealousy and monitoring, and restored relationship quality.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/relationship-jealousy-insecurity.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/relationship-jealousy-insecurity.png",
 	},
 	{
 		id: "codependency-relational-enmeshment",
@@ -1041,7 +1084,8 @@ Our technique recalibrates the attachment security representations through targe
 The neurobiological mechanism involves damage or disruption to language-dominant brain regions typically in the left hemisphere, including Broca's area (language production), Wernicke's area (language comprehension), and connecting pathways. The specific language difficulties depend on the lesion location: Broca's aphasia involves speech production difficulty while comprehension remains; Wernicke's aphasia involves comprehension difficulty while speech production continues but becomes nonsensical. The remaining intact brain regions may gradually compensate through neuroplasticity, though recovery depends on damage extent and time since injury. Anxiety about communication often compounds language difficulty.
 
 Our technique facilitates neural plasticity and language pathway reorganization through targeted language and limbic intervention. We engage compensatory neural pathways and reduce anxiety about communication. Your language access improves as the brain reorganizes function around the damage. This isn't speech therapy in the traditional sense. It's targeted facilitation of neural adaptation and language recovery. You can experience rapid language recovery and restored communication capacity, but individual results may vary depending on the lesion location.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/aphasia-language-disorder.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/aphasia-language-disorder.png",
 	},
 	{
 		id: "general-communication-issues",
@@ -1065,8 +1109,9 @@ Our technique recalibrates the specific communication system disruption through 
 The neurobiological mechanism involves amygdala sensitization and conditioning to trauma-related cues, where the nervous system continues responding as if threat persists long after actual danger has passed. The hippocampus becomes dysregulated, preventing proper time-stamping and integration of trauma memories, leaving them fragmented and intrusive. The prefrontal cortex loses regulatory capacity over the amygdala during trauma-reminder exposure. The ventromedial prefrontal cortex fails to maintain accurate threat assessment, leading to generalization where anything resembling trauma context becomes a threat trigger. The nervous system becomes locked in a protective hypervigilance that was once adaptive but now becomes constraining.
 
 Our technique systematically desensitizes trauma encoding and restores accurate threat-assessment through targeted limbic intervention. We process trauma memories and diminish their emotional charge and salience. Your nervous system regains capacity to distinguish past threat from present safety. You experience freedom from intrusive trauma memories and chronic threat-detection, restored capacity for trust and genuine engagement with life.`,
-		ngo_url: "/ngo/nctsn",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/trauma-drama-etc.png",
+		ngo_url: "/ngo/national-center-trauma-informed-care",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/trauma-drama-etc.png",
 	},
 	{
 		id: "power-control-issues",
@@ -1103,7 +1148,8 @@ Our technique systematically processes the trauma encoding and restores felt saf
 The neurobiological mechanism involves amygdala sensitization to the abuser as the primary source of both threat and relief. In high-stress environments with intermittent reinforcement (cycles of abuse followed by sporadic kindness), the nervous system learns that the abuser is simultaneously both threat and safety. The ventromedial prefrontal cortex becomes dysregulated in threat-assessment, failing to accurately encode the abuser as persistent danger. The oxytocin bonding system becomes hijacked, generating attachment-related activation in response to the abuser rather than protective distance. The dorsolateral prefrontal cortex loses capacity for objective threat-assessment under the emotional pull of trauma-bonding chemistry. The nervous system becomes neurochemically addicted to the relief-after-threat cycle.
 
 Our technique recalibrates the amygdala's threat-assessment and dissolves the trauma-bonding attachment through targeted limbic intervention. We restore accurate danger perception and sever the false therapeutic bond. Your nervous system regains capacity to recognize abusive patterns and activate protective rather than bonding responses toward abusers. You experience freedom from trauma bond, restored capacity to leave dangerous situations, and healthy attachment to safe people.`,
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/stockholm-syndrome-trauma-bonding.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/stockholm-syndrome-trauma-bonding.png",
 	},
 	{
 		id: "sex-addiction",
@@ -1116,7 +1162,7 @@ The neurobiological mechanism involves dysregulation of the mesolimbic dopamine 
 Our technique recalibrates the dopamine reward system and restores executive inhibition through targeted limbic intervention. We dissolve the distress-sexual-behavior link and restore genuine capacity for intimate sexuality. Your nervous system ceases using sexual compulsion as primary distress-regulation and accesses genuine emotional management alternatives. You experience freedom from sexual compulsion, restored capacity for authentic intimate sexuality with genuine partners, and integrated sexual expression.
 
 Related condition: Sex addiction involves compulsive sexual behavior used for distress-regulation, distinct from <a href="/remote-clinical-trial/free/porn-addiction/sexual-compulsivity/compulsive-use">Porn Addiction and Sexual Compulsivity</a> though both involve dopamine dysregulation.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/sex-addiction.png",
 	},
@@ -1129,7 +1175,7 @@ Related condition: Sex addiction involves compulsive sexual behavior used for di
 The neurobiological mechanism involves early amygdala conditioning where sexual diversity became paired with threat through parental messaging, religious indoctrination, or peer group social threat. The insula becomes hyperactive to same-sex intimacy or gender non-conformity, generating disgust responses. The anterior cingulate becomes activated to perceived moral violation when encountering LGBTQ+ content. The amygdala's threat detection system has been hijacked to treat gender and sexual diversity as danger-level threat requiring protective action. In-group bias networks become hyperactive, creating us vs. them categorization where LGBTQ+ individuals are coded as existential threat to identity, family, or culture. The prefrontal cortex loses capacity for nuance, empathy, and rational assessment when sexual diversity triggers limbic threat response.
 
 Our technique systematically deconditions the amygdala's threat associations with sexual orientation and gender diversity through targeted creative intervention. We identify the fear beliefs and in-group identity defenses that drive prejudicial patterns, then replace them with expanded capacity for human diversity and genuine compassion. Your nervous system shifts from threat-detection to recognition of shared humanity. Discriminatory impulses dissolve when the neural coding of LGBTQ+ people as threat is rewired. You access authentic moral frameworks, genuine religious faith beyond fear-based prejudice, cultural belonging through strength rather than exclusion, and liberated capacity for compassion.`,
-		ngo_url: "/ngo/hrc",
+		ngo_url: "/ngo/human-rights-campaign",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/homophobia-transphobia-sexual-orientation-gender-identity-prejudice.png",
@@ -1143,9 +1189,10 @@ Our technique systematically deconditions the amygdala's threat associations wit
 The neurobiological mechanism involves ancient evolutionary in-group bias systems (tribal survival through group favoritism and out-group suspicion) that become hijacked by amygdala threat-conditioning in environments of scarcity, conflict, or cultural/political messaging linking racial/ethnic differences to danger. The amygdala automatically fires threat-detection when encountering racial/ethnic differences. The insula becomes activated to out-group populations, creating disgust and contamination avoidance. In-group bias networks (posterior cingulate, temporo-parietal region) generate intense in-group favoritism and out-group derogation. The prefrontal cortex loses capacity for nuance and empathy when threat-detection systems activate around racial/ethnic difference. Conspiracy beliefs and zero-sum thinking (their gain is our loss) become hardened neural patterns that prevent accurate threat assessment and mutual understanding.
 
 Our technique targets the amygdala's threat-coding of racial and ethnic diversity and rebuilds the in-group/out-group balance through precision limbic recalibration. We dissolve fear-based threat associations and replace them with neural patterns of shared humanity and mutual benefit. The automatic prejud­icial threat response dissolves when the amygdala's racial/ethnic threat-coding is rewired. You access restored capacity for racial justice, authentic respect for cultural diversity, genuine security that doesn't require othering, and freedom from the exhausting cognitive burden of prejudicial vigilance.`,
-		ngo_url: "/ngo/adl",
+		ngo_url: "/ngo/anti-defamation-league",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/racism-xenophobia-ethnic-racial-prejudice.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/racism-xenophobia-ethnic-racial-prejudice.png",
 	},
 	{
 		id: "misogyny-gender-based-violence-fear-of-women",
@@ -1160,7 +1207,8 @@ Our technique recalibrates the amygdala's threat-coding of female power through 
 Related condition: For adolescent misogyny and gender-based violence patterns, this condition shares neurobiological mechanisms with <a href="/remote-clinical-trial/free/teen-bullying/aggressive-defense/peer-aggression">Teen Bullying & Aggressive Defense</a>.`,
 		ngo_url: "/ngo/vawnet",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/misogyny-gender-based-violence-fear-of-women.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/misogyny-gender-based-violence-fear-of-women.png",
 	},
 	{
 		id: "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
@@ -1171,7 +1219,7 @@ Related condition: For adolescent misogyny and gender-based violence patterns, t
 The neurobiological mechanism involves hyperactivity of the amygdala's in-group bias circuits and threat-detection systems, combined with suppression of the prefrontal cortex's capacity for independent evaluation. The medial prefrontal cortex becomes specialized for in-group member processing while the temporoparietal region becomes active only for in-group preference. The anterior insula becomes oversensitized to out-group otherness, generating automatic disgust. The amygdala becomes hyperresponsive to threats to group identity, causing defensive aggression when group beliefs are questioned. The ventromedial prefrontal cortex loses capacity for weighing evidence impartially when tribal identity is activated. Reward circuits become sensitized to in-group affiliation and in-group dominance over out-groups, making tribal identity neurochemically addictive. In-group conformity becomes neurologically prioritized over truth-seeking and ethical reasoning.
 
 Our technique recalibrates the amygdala's threat-response to out-group difference and restores prefrontal independence through targeted limbic intervention. We dissolve the neurochemical bonds that make tribal identity addictive and replace them with capacity for authentic values-driven thinking. Your nervous system shifts from tribal threat-detection to genuine problem-solving. The defensive rage and groupthink dissolve when the amygdala's polarized in-group/out-group coding is rewired toward genuine pluralism. You access independent thought, authentic values alignment, genuine security that doesn't require enemies, and freedom from the exhausting neurochemical addiction to tribal identity.`,
-		ngo_url: "/ngo/greater-good",
+		ngo_url: "/ngo/greater-good-science-center",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking.png",
@@ -1185,7 +1233,7 @@ Our technique recalibrates the amygdala's threat-response to out-group differenc
 The neurobiological mechanism: maternal attachment patterns become hardwired in the infant's oxytocin bonding system and amygdala threat-detection circuitry during the first two years of life when the mother is literally the child's entire world. If the mother is rejecting/withholding, the developing infant's ventromedial prefrontal cortex (responsible for self-worth and social safety) fails to develop healthy activation. The amygdala becomes hypersensitive to perceived rejection—a single withdrawn glance from the mother feels like existential threat and becomes encoded as persistent interpersonal danger. The oxytocin bonding system becomes dysregulated: bonding feels terrifying because the primary object of bonding was also the source of pain. Adult relationships unconsciously desperately seek a partner who will complete the unfinished maternal attunement, but the nervous system remains hypervigilant to maternal patterns of withdrawal, criticism, or control. Fear of abandonment drives either desperate pursuit or defensive emotional shutdown.
 
 Our technique targets the maternal wound's neurological foundation by recalibrating the amygdala's threat-coding of maternal/feminine presence and restoring healthy activation of self-worth circuits. We identify the specific maternal patterns (rejection, enmeshment, control, emotional unavailability) and their neurological fingerprint in your threat-detection and bonding systems. Through creative reprogramming, we dissolve the desperate seeking of maternal approval and replace it with intrinsic self-worth. Your amygdala ceases hypervigilance to abandonment cues. Your oxytocin bonding system regains capacity to bond safely without recreating maternal trauma. Adult relationships transform from recreations of maternal wound to genuine partnership based on healthy choice rather than unfinished business.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/maternal-wound-maternal-attachment-trauma-mother-complex.png",
@@ -1199,7 +1247,7 @@ Our technique targets the maternal wound's neurological foundation by recalibrat
 The neurobiological mechanism: the father becomes the child's template for external safety and worldly protection—the one who provides safe-haven when the world feels dangerous. When the father is absent, abusive, or emotionally cold, the developing child's ventromedial prefrontal cortex (which encodes safety and protection) fails to develop healthy activation. The amygdala becomes hypersensitive to male presence and male authority as potential sources of harm. For males, the orbitofrontal cortex fails to develop healthy modeling of authentic masculine strength, so the nervous system either becomes hyper-aggressive (over-compensation) or helplessly passive. For females, the amygdala learns that male approvals feel life-threateningly important, creating either desperate attraction to unavailable males or fear of male power. The ventromedial prefrontal cortex encodes males as fundamentally untrustworthy. Adult romantic relationships become attempts to heal the paternal wound: females unconsciously seeking emotionally unavailable males hoping to "fix" the father, males seeking validation from partners because paternal approval was never internalized.
 
 Our technique targets the paternal wound's neurological foundation by recalibrating the amygdala's threat-coding of paternal/masculine presence and restoring healthy activation of safety and protection circuits. We identify the specific paternal patterns (absence, abuse, coldness, inconsistency, failure to protect) and their neurological fingerprint in your threat-detection and trust systems. Through creative reprogramming, we dissolve the desperate need for paternal approval and the internalized belief that the world (or men) are fundamentally unsafe. Your amygdala ceases hypervigilance to male authority and male presence. Your ventromedial prefrontal cortex recodes men as potentially trustworthy and reliably protective. Adult relationships transform from desperate attempts to fix the paternal wound to genuine choice-based partnerships with men/people who offer genuine security and mutual respect.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/paternal-wound-paternal-attachment-trauma-father-complex.png",
@@ -1213,9 +1261,10 @@ Our technique targets the paternal wound's neurological foundation by recalibrat
 The neurobiological mechanism: parenting engages the anterior insula (social pain and responsibility-detection), the posterior cingulate cortex (self-related thinking and identity), and the amygdala (threat-detection for both the child's safety AND the parent's competence). When a parent's own childhood was chaotic, neglectful, or abusive, their nervous system learned that parenting = danger and shame. The prefrontal cortex fails to communicate safety-signals to the amygdala ("You are a capable parent"). The anterior insula becomes hyperactive to any sign of a child's distress—the nervous system interprets a child's crying as proof of parental failure. The brain becomes unable to distinguish between real danger and developmentally normal childhood challenges. Dopamine dysregulation means the parent cannot access the reward/pleasure of parenting—only the anxiety. The parent becomes locked in reactive parenting mode where everything feels urgent and catastrophic.
 
 Our technique recalibrates the amygdala's threat-coding around parenting responsibility and restores the prefrontal cortex's capacity to evaluate realistic parenting adequacy. We dissolve the linkage between a child's normal distress and the parent's experience of personal failure. Your nervous system learns that you can be a good-enough parent without being perfect, that your child's emotions are separate from your worth, and that parenting challenges are normal, not proof of incompetence. The anterior insula recodes your child's needs as solvable problems rather than existential threats to your identity. You access the genuine joy and presence available in parenting, manage challenges with calm capability rather than reactive panic, and develop intrinsic confidence in your parental adequacy.`,
-		ngo_url: "/ngo/zero-to-three",
+		ngo_url: "/ngo/zero-three",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/parenting-stress-anxiety-inadequacy-parental-overwhelm.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/parenting-stress-anxiety-inadequacy-parental-overwhelm.png",
 	},
 	{
 		id: "stepfamily-blended-family-adjustment-family-integration-stress",
@@ -1226,9 +1275,10 @@ Our technique recalibrates the amygdala's threat-coding around parenting respons
 The neurobiological mechanism: the amygdala becomes dysregulated by the presence of new authority figures and the disruption of established attachment patterns. The child's neural map of "family" becomes confused—the original parent's absence creates a threat-response (abandonment), while the new parental figure creates simultaneous feelings of replacement-threat. The insula becomes hyperactive to unfamiliar family members' presence and behaviors. The ventromedial prefrontal cortex fails to generalize trust from the original family structure to the blended family, so each new interaction feels unsafe. Children experience loyalty conflicts because the reward circuits (oxytocin bonding) become split between the biological and step-parents. The anterior cingulate cortex struggles with the cognitive dissonance of new family rules, new authority structures, and new intimacy expectations. The orbitofrontal cortex fails to develop a stable "family value system" because there appear to be competing value systems in the new family constellation.
 
 Our technique stabilizes the amygdala's response to family restructuring by creating clear neural maps of belonging, role clarity, and revised family identity. We dissolve loyalty conflicts by helping each family member understand that bonding with a step-parent is addition, not replacement. The child's ventromedial prefrontal cortex learns that the blended family structure is safe and trustworthy despite being different. Each family member's role becomes clear in the nervous system—what authority each person holds, what intimacy each relationship involves, and how the new family creates coherent values. The amygdala recodes the step-sibling and step-parent presences as part of the safe family, not as intruders or threats. Family members experience reduced conflict, clearer communication, and the capacity to build genuine affection across blended family boundaries.`,
-		ngo_url: "/ngo/stepfamilies",
+		ngo_url: "/ngo/national-stepfamily-resource-center",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/stepfamily-blended-family-adjustment-family-integration-stress.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/stepfamily-blended-family-adjustment-family-integration-stress.png",
 	},
 	{
 		id: "coparenting-custody-conflict-separation-anxiety",
@@ -1243,9 +1293,10 @@ The neurobiological mechanism is complex: The amygdala becomes dysregulated in b
 Our technique addresses both the co-parenting conflict dysfunction and the separation anxiety simultaneously. We recalibrate each parent's amygdala response to the co-parent, separating original relationship injury from current co-parenting function. We help parents understand that effective co-parenting is an adult responsibility—cordial functioning with someone you're no longer in love with, not reconciliation. We dissolve the linkage between the child's relationship with the co-parent and the parent's abandonment/betrayal/loss. We target the amygdala's false encoding of visitation transitions as actual abandonment, recalibrating neural representations of time ("separation has an endpoint") and safety ("relationship is continuous even apart"). Non-custodial parents' dopamine system learns to find reward in quality time rather than being depleted by absence. We create protocols for communication that disable threat-activation from original conflict. Children experience the nervous system relief of both parents committed to their wellbeing, consistent parenting values across homes, and freedom to love both parents without guilt. Parents experience capacity to be fully present during their time with the child, comfort with child's attachment in other home, and freedom from anxious monitoring that damages relationships.
 
 Related condition: Children caught in this dynamic frequently develop <a href="/remote-clinical-trial/free/adolescent-abandonment/trauma-hypervigilance/rejection-sensitivity">Adolescent Abandonment Trauma & Hyper-Vigilance</a> as they mature, internalizing both parental conflict and separation anxiety.`,
-		ngo_url: "/stepfamilies",
+		ngo_url: "/ngo/national-stepfamily-resource-center",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/coparenting-custody-conflict-separation-anxiety.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/coparenting-custody-conflict-separation-anxiety.png",
 	},
 	{
 		id: "adolescent-identity-development-self-discovery",
@@ -1256,9 +1307,10 @@ Related condition: Children caught in this dynamic frequently develop <a href="/
 The neurobiological mechanism: the prefrontal cortex undergoes pruning and myelination during adolescence, losing its childhood efficiency while building more complex circuits. The medial prefrontal cortex (self-concept) literally doesn't know who the adolescent is anymore because the neural patterns that defined childhood self are being dismantled. The amygdala becomes hypersensitive to social evaluation and rejection during this window. The nucleus accumbens becomes intensely dopamine-responsive to peer approval and status, creating an addiction-like dependence on social validation. The ventromedial prefrontal cortex fails to provide coherent self-worth independent of external feedback. The teen experiences existential terror about identity ("Who am I if I'm not what my parents wanted, what my friends expect, or what society demands?").
 
 Our technique stabilizes the medial prefrontal cortex during its reconstruction by anchoring the adolescent to their authentic values rather than reactive social performance. We help the teen separate identity-exploration from identity-desperation. The ventromedial prefrontal cortex learns to generate intrinsic self-worth independent of social approval, while the nucleus accumbens recalibrates to find reward in authentic self-expression rather than peer validation-seeking. The amygdala ceases treating identity-differentiation as social threat. The adolescent experiences genuine self-discovery rooted in values alignment rather than frantic persona-cycling, and the capacity to maintain authentic identity even when it differentiates from peer groups.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-identity-development-self-discovery.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-identity-development-self-discovery.png",
 	},
 	{
 		id: "adolescent-angst-oppositional-defiance",
@@ -1269,7 +1321,7 @@ Our technique stabilizes the medial prefrontal cortex during its reconstruction 
 The neurobiological mechanism: the dorsolateral prefrontal cortex undergoes massive reorganization during adolescence, shifting from external authority-reliance to internal autonomy. The amygdala becomes hyperactive to any signal of parental control or restriction. The orbitalfrontal cortex—responsible for evaluating social value and social hierarchy—becomes confused about authority: the neural circuits that encoded "parent as protector" are dismantling, while new circuits are forming that code parent authority as threatening to the emerging autonomous self. The nucleus accumbens becomes dopamine-sensitive to acts of defiance and rule-breaking, making rebellion neurochemically rewarding. The medial prefrontal cortex encodes compliance as loss of self. The anterior cingulate cortex (conflict monitoring) becomes hyperactive—every parental request is neurologically coded as conflict rather than care.
 
 Our technique decouples authority from threat in the adolescent's amygdala, separating legitimate safety-setting from arbitrary control. We rebuild the distinction between healthy autonomy-seeking and defensive rebelliousness. The orbitalfrontal cortex learns that accepting help/guidance is not loss of autonomy. The prefrontal cortex regains capacity to evaluate rules rationally ("Is this reasonable?" rather than "Does this feel like control?"). The teen develops capacity for genuine autonomy—authentic choice-making rather than reactive defiance. Relationships with parents transform from power-struggles into collaborative problem-solving where the teen's voice and autonomy are respected within reasonable safety parameters.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-angst-oppositional-defiance.png",
@@ -1297,9 +1349,10 @@ Our technique targets the insula's dysphoric encoding of the body and rebuilds s
 The neurobiological mechanism: the anterior insula (emotional awareness) becomes activated and validated in subcultures that welcome emotional intensity—a relief from mainstream teen culture's demand for emotional suppression. The medial prefrontal cortex can finally code intense emotion as acceptable rather than pathological. However, if the subculture-adoption is primarily defensive, the ventromedial prefrontal cortex fails to develop intrinsic emotional regulation. The amygdala becomes dependent on external subcultural validation to manage emotion. The orbitofrontal cortex may code mainstream identity-spaces as permanently unsafe, limiting the teen's social flexibility. The nucleus accumbens becomes reward-dependent on subcultural status and aesthetics rather than genuine emotional skill-building.
 
 Our technique supports the genuine aspects of emotional expression while building intrinsic emotional regulation independent of subcultural performance. We help the adolescent distinguish between authentic emotional intensity (valid and worth preserving) and defensive emotional performance (limiting and unsustainable). The ventromedial prefrontal cortex develops genuine emotion-regulation skills. The teen experiences the capacity to express authentic emotional depth in multiple contexts (not just within the subculture), to integrate emotional intensity with other identity aspects, and to make identity-choices from authentic preference rather than defensive subcultural dependence.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-emo-subculture-emotional-expression.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-emo-subculture-emotional-expression.png",
 	},
 
 	{
@@ -1311,7 +1364,7 @@ Our technique supports the genuine aspects of emotional expression while buildin
 The neurobiological mechanism: the ventromedial prefrontal cortex encodes powerlessness—the circuits that would normally generate agency and self-efficacy have been disabled by repeated failure. The anterior insula becomes hyperactive to experiences of pain/injustice, amplifying the sense of victimhood. The amygdala becomes locked in threat-response because the nervous system has concluded the world is unsafe and uncontrollable. The nucleus accumbens becomes depleted of dopamine—there's no reward-anticipation for effort because effort hasn't produced positive outcomes. The dorsolateral prefrontal cortex loses capacity for goal-directed behavior (if effort doesn't work, why try?). The medial prefrontal cortex encodes the victim identity as core self. The anterior cingulate cortex stops monitoring for change—the nervous system expects helplessness.
 
 Our technique rebuilds agency by creating experiences where the adolescent's actions DO produce outcomes. We help the teen distinguish between actual injustice (valid and potentially worth addressing) and learned helplessness (a neural pattern that's treatable). The ventromedial prefrontal cortex relearns self-efficacy through small, achievable experiences of agency. The nucleus accumbens regains dopamine-responsiveness to successful action. The amygdala begins to recognize situations where the teen DOES have capacity to influence outcomes. The adolescent develops restored sense of agency, capacity to take protective action on their own behalf, ability to distinguish between unchangeable circumstances and those within their control, and gradual shift from victim-identity toward resilience-identity.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-victim-identity-learned-helplessness.png",
@@ -1325,9 +1378,10 @@ Our technique rebuilds agency by creating experiences where the adolescent's act
 The neurobiological mechanism involves both dysregulated emotion-processing systems AND immature executive development. The insula (interoceptive awareness of emotional/bodily states) becomes hyperresponsive to emotional pain, making distress feel intolerable. The ventromedial prefrontal cortex fails to develop capacity to tolerate emotional experience—it immediately sends distress-alarm to the amygdala, which demands immediate action to stop the feeling. Simultaneously, the dorsolateral prefrontal cortex (executive function, consequence-evaluation, impulse-inhibition) is the brain region that develops LAST in adolescence. The ventromedial prefrontal cortex is still developing and remains weak compared to the amygdala and nucleus accumbens. When the amygdala fires in response to exciting/dangerous situation or intense emotional pain, it overwhelms whatever prefrontal capacity exists to "pump the brakes." The nucleus accumbens becomes dopamine-sensitized to adrenaline, thrill, and immediate reward—the adolescent's reward system has been trained to depend on high-risk stimulation and becomes additively sensitized as the teen escalates danger-level to maintain the dopamine surge. The anterior cingulate cortex fails to develop adequate emotion-acceptance capacity and conflict-monitoring. The white-matter connectivity between prefrontal regions and limbic regions is still being myelinated—the "highway" for executive control hasn't fully formed yet. Risk-taking becomes neurochemically addictive: whether driven by distress-regulation or impulsive reward-seeking, the behavior itself generates dopamine that reinforces continued escalation.
 
 Our technique addresses both underlying mechanisms: rebuilding distress-tolerance so the adolescent's nervous system can process emotional experience without generating existential panic, while simultaneously building inhibitory capacity and external structure that supports the still-developing prefrontal systems. The insula learns to process emotional experience without generating existential panic. The ventromedial prefrontal cortex develops capacity to hold emotional experience without demanding immediate escape AND learns to weight short-term impulse-reward against long-term consequences more effectively. We teach vagal regulation skills and explicit decision-making strategies that activate the parasympathetic nervous system as alternatives to adrenaline-seeking. The nucleus accumbens gradually recalibrates to find dopamine-reward in genuine emotion regulation, healthy goal-pursuit, and social connection rather than only in risk-taking. The dorsolateral prefrontal cortex develops functional inhibitory capacity through practice, and we support environmental structure that reduces the need for impulse-inhibition while development is ongoing. The anterior cingulate cortex develops emotion-acceptance capacity and genuine conflict-monitoring. Parents/caregivers learn to provide structure, limits, and consequences that support the developing executive system. The adolescent experiences increased distress-tolerance, decreased catastrophic impulsive choices, improved real-world outcomes, capacity to process difficult emotions without dangerous coping, safer mechanisms for emotion-regulation, and freedom from the escalating danger-spiral.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-risk-impulsivity-executive-dysfunction.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-risk-impulsivity-executive-dysfunction.png",
 	},
 	{
 		id: "teen-substance-abuse-addiction",
@@ -1338,7 +1392,7 @@ Our technique addresses both underlying mechanisms: rebuilding distress-toleranc
 The neurobiological mechanism: the nucleus accumbens of an adolescent is exquisitely sensitive to dopamine—the substance-induced dopamine surge creates supernormal reward-learning. The mesolimbic pathway (from VTA to nucleus accumbens) becomes rapidly sensitized to substance cues. The prefronta cortex is still pruning irrelevant circuits and myelinating critical pathways—it cannot yet provide sufficient inhibitory control. The amygdala is threat-reactive and substance provides immediate amygdala-quieting relief. The ventromedial prefrontal cortex never develops capacity for emotion-regulation, self-soothing, or distress-tolerance because the chemical solution has been available. Long-term heavy substance use in adolescence can cause permanent damage to prefrontal development and white-matter connectivity.
 
 Our technique begins by stabilizing the acute substance-dependence (often requiring medical intervention) and then rebuilding the underdeveloped prefrontal systems. We help the adolescent's nucleus accumbens recognize non-chemical sources of dopamine-reward. The prefrontal cortex develops genuine inhibitory capacity and rational decision-making. The ventromedial prefrontal cortex learns emotion-regulation, distress-tolerance, and self-worthiness that doesn't depend on chemical alteration. The amygdala stops depending on substances for threat-relief and develops behavioral regulation skills. The adolescent experiences restored cognitive capacity, rebuilt relationships with family/school, freedom from chemical dependence, and genuine development of the emotional/regulation systems that substance use prevented.`,
-		ngo_url: "/ngo/find-treatment",
+		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-substance-abuse-addiction.png",
@@ -1354,7 +1408,8 @@ The neurobiological mechanism: the adolescent brain's need for belonging and sta
 Our technique begins by acknowledging that the gang met a real need (belonging, status, protection) and that exiting requires developing these needs through non-violent channels. We help the adolescent disconnect amygdala-synchronization with the group through trauma processing of gang-violence exposure. The ventromedial prefrontal cortex develops intrinsic self-worth not dependent on gang-status. The nucleus accumbens learns to find dopamine-reward in school achievement, healthy relationships, genuine mentorship, and other status-pathways. The prefrontal cortex regains capacity for independent threat-evaluation and exit-planning. The adolescent develops capacity to exit gang involvement, access mentorship and legitimate opportunity, rebuild relationships outside gang, and develop identity that doesn't depend on violence or criminal participation.`,
 		ngo_url: "/ngo/ceasefire-now",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-gang-involvement-tribalism.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-gang-involvement-tribalism.png",
 	},
 	{
 		id: "teen-screen-addiction-digital-escapism",
@@ -1365,7 +1420,7 @@ Our technique begins by acknowledging that the gang met a real need (belonging, 
 The neurobiological mechanism: social media has been engineered to trigger maximal dopamine-reward in the nucleus accumbens (variable reward schedules = maximum addiction). The adolescent brain's nucleus accumbens is already hypersensitive to reward. The prefrontal cortex is still developing inhibitory capacity and cannot resist the engineered supernormal-stimulus. The anterior insula becomes dysregulated by the constant social comparison (Instagram showing others' highlight reels creates insula-generated feeling of personal inadequacy). The ventromedial prefrontal cortex's sense of self becomes contingent on digital validation (how many likes did I get?). Real-world distress (academic challenges, social anxiety, family conflict) becomes unbearable when compared to the digital-dopamine availability. The sleep system becomes disrupted by blue-light and endless stimulation. The amygdala remains dysregulated because screen-escapism prevents development of genuine distress-tolerance.
 
 Our technique rebuilds dopamine-system baseline so that real-world experiences feel rewarding again (this requires gradual screen reduction, not sudden cessation, because cessation generates withdrawal). The ventromedial prefrontal cortex rebuilds intrinsic self-worth independent of digital validation. The prefrontal cortex regains capacity for inhibitory control around screens. The insula recalibrates to manage real-world social comparison without generating shame. Real-world relationships become sources of dopamine-reward again. The sleep system resets. The adolescent develops capacity for genuine engagement with real-world challenges, experiences, and relationships, rather than constant digital-escapism.`,
-		ngo_url: "/ngo/addictioncenter",
+		ngo_url: "/ngo/addiction-center",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-screen-addiction-digital-escapism.png",
@@ -1379,9 +1434,10 @@ Our technique rebuilds dopamine-system baseline so that real-world experiences f
 The neurobiological mechanism: the amygdala has become sensitized to threat and shame-detection, and the default response-pathway is aggression. The orbitalfrontal cortex (social hierarchy processing) has become locked into dominance-seeking as the primary solution to status-anxiety. The ventromedial prefrontal cortex encodes aggression as the appropriate response to threat/shame. The anterior insula becomes hyperresponsive to signs of peer rejection or status-lowering, triggering protective aggression. Dopamine-reward has become linked to dominance and peer-fear of the adolescent. The dorsolateral prefrontal cortex loses capacity for empathy and social-information processing when status-threat is activated. Beneath the aggression is typically profound shame, fear of rejection, or family-learned violence-as-coping.
 
 Our technique decouples shame-activation from aggression-response and addresses the underlying terror/shame that the aggression protects. We help the adolescent's orbitalfrontal cortex distinguish between genuine status-threat and perceived status-threat, and develop alternative status-pathways that don't depend on aggression. The amygdala becomes less reactive to status-challenge situations. The ventromedial prefrontal cortex develops new values around genuine peer connection rather than fear-based dominance. The anterior insula recalibrates to detect genuine threat vs. social discomfort. The adolescent develops capacity for authentic peer relationships based on reciprocal respect rather than fear and dominance, decreased aggression and bullying, and integration of shame experiences rather than projection onto others.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-bullying-aggressive-defense.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-bullying-aggressive-defense.png",
 	},
 	{
 		id: "teen-crisis-survival-behaviors",
@@ -1392,7 +1448,7 @@ Our technique decouples shame-activation from aggression-response and addresses 
 The neurobiological mechanism: the amygdala is in maximum threat-response (this is survival-mode, not ordinary fear). The ventromedial prefrontal cortex is completely offline—the teen can't access problem-solving or perspective. The anterior cingulate cortex is hyperactive but generating only distress-signals with no solutions. The insula is generating intense bodily distress-signals (everything feels unbearable). The dorsolateral prefrontal cortex is unable to access longer-term thinking or memory of previous survival. Suicidal ideation or crisis-action feels like the only solution because all other options have been neurologically foreclosed by the intensity of threat-perception. The nervous system has concluded: "I cannot survive this."
 
 Our technique begins with immediate stabilization and safety (this is genuine emergency intervention requiring crisis-professional involvement). We recalibrate the amygdala's threat-assessment by addressing the triggering circumstances and providing actual safety/support. The ventromedial prefrontal cortex regains problem-solving capacity as the acute threat reduces. The anterior cingulate cortex begins to generate genuine options rather than only distress-signals. We address the underlying conditions that generated the crisis (family trauma, peer crisis, academic breakdown, etc.) and build sustainable coping capacity. The adolescent experiences decrease in acute suicidal/crisis ideation, restored problem-solving capacity, safety-planning and genuine support systems, and development of sustainable coping that makes crisis-behaviors unnecessary.`,
-		ngo_url: "/ngo/suicide-prevention-lifeline",
+		ngo_url: "/ngo/suicide-crisis-lifeline",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-crisis-survival-behaviors.png",
@@ -1406,9 +1462,10 @@ Our technique begins with immediate stabilization and safety (this is genuine em
 The neurobiological mechanism: family/placement generates chronic fear or rejection-activation in the amygdala. The ventromedial prefrontal cortex encodes "being in this environment" as threatening to survival. Running away becomes the amygdala's solution—better unknown danger than known threat. The adolescent's future-planning systems (dorsolateral prefrontal cortex) are underdeveloped and fail to generate adequate risk-assessment of runaway dangers. The oxytocin bonding system with caregivers has been damaged (family abuse, rejection, or failed bonding attempts). The risk-reward processing of the nucleus accumbens is dysregulated and the short-term escape-dopamine outweighs long-term survival-risk. Traumatized teens' threat-assessment is often accurate (this family/placement IS unsafe)—but the running away solution escalates danger rather than solving it.
 
 Our technique begins with meeting the adolescent's actual need (safety from the threat they're running from) rather than simply forcing return to the dangerous environment. If family is genuinely abusive/rejecting, real alternative safety is required. If placement is failing, effective re-placement is needed. We help the amygdala's threat-assessment become accurate about which environments are genuinely dangerous vs. which are merely containing/limiting. The ventromedial prefrontal cortex develops genuine problem-solving that doesn't require running. The oxytocin system has opportunity to potentially rebuild bonding with safer caregivers. The adolescent experiences genuine safety in the environment, restoration of family connections (if safe), or stable alternative placement, and decreasing need for escape-behavior because the current environment no longer feels survival-threatening.`,
-		ngo_url: "/ngo/nfyi",
+		ngo_url: "/ngo/national-foundation-youth-improvement",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-runaway-elopement.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-runaway-elopement.png",
 	},
 	{
 		id: "teen-suicidal-ideation-self-harm",
@@ -1419,7 +1476,7 @@ Our technique begins with meeting the adolescent's actual need (safety from the 
 The neurobiological mechanism: the ventromedial prefrontal cortex has entirely lost capacity to generate future-oriented thinking ("In one year, things might be different" is neurologically unavailable). Depression-related anhedonia has shut down dopamine-reward systems entirely—nothing feels good, nothing feels worth living for. The amygdala is in permanent threat-state, generating constant suffering-signals. Chronic pain from emotion is perceived through the anterior insula like chronic physical pain. The orbitofrontal cortex has lost value-weighting of life-sustaining activities. The anterior cingulate cortex generates unbearable emotional distress without matching coping capacity. The serotonin system is deregulated (depression pathway). Self-harm temporarily activates endogenous opioid systems, providing brief relief. Suicidal ideation represents the belief that pain can only end through death.
 
 Our technique begins with immediate crisis intervention and safety-planning (suicidality at any level requires immediate professional emergency intervention). We rebuild the ventromedial prefrontal cortex's capacity for future-oriented thinking and hope by addressing the specific circumstances generating hopelessness. We treat underlying depression/trauma/rejection. We develop actual pain-management alternatives to self-harm. We restore oxytocin-bonding through suicide prevention collaborative and genuine peer/family support. The anterior insula learns that emotional pain is manageable. The nucleus accumbens regains capacity to sense dopamine-reward. The adolescent experiences restored will-to-live, decreased suicidal ideation, cessation of self-harm, and integration of the pain that generated the self-injury impulse.`,
-		ngo_url: "/ngo/suicide-prevention-lifeline",
+		ngo_url: "/ngo/suicide-crisis-lifeline",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/teen-suicidal-ideation-self-harm.png",
@@ -1433,7 +1490,7 @@ Our technique begins with immediate crisis intervention and safety-planning (sui
 The neurobiological mechanism: the amygdala has been conditioned (by actual abandonment experience) to code disconnection-signals as fundamental threat. The oxytocin bonding system has been damaged—bonding feels unsafe because the primary object of bonding abandoned. The ventromedial prefrontal cortex encodes relationships as fundamentally unsafe/unstable. The insula becomes hyperresponsive to social exclusion cues. The nucleus accumbens becomes dopamine-sensitized to reassurance and reconnection, driving desperate reassurance-seeking. The anterior cingulate cortex is in constant conflict-monitoring as the adolescent reads every social interaction for abandonment-evidence. The medial prefrontal cortex encodes the self as unworthy of stable connection ("If I mattered, they wouldn't have left").
 
 Our technique addresses the actual abandonment trauma and helps the amygdala recalibrate abandonment-threat-assessment. The ventromedial prefrontal cortex rebuilds safety-template for relationships. We help the adolescent distinguish between actual rejection-signals and amygdala over-interpretation. The oxytocin system has opportunity to rebuild secure bonding with consistent, reliable adults. The nucleus accumbens decouples from reassurance-seeking dopamine and finds reward in genuine connection instead. The adolescent develops secure attachment capacity, decreased abandonment-panic, ability to tolerate normal disconnection without existential threat, and healthier relationship dynamics not driven by abandonment-terror.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-abandonment-trauma-hypervigilance.png",
@@ -1463,7 +1520,7 @@ The neurobiological mechanism: the medial prefrontal cortex (self-referential pr
 Our technique helps the medial prefrontal cortex develop authentic self-representation grounded in values, preferences, and genuine emotional responses rather than external-approval-seeking. We support the teen in tolerating the social risk of authenticity ("What if people don't like my real self?"). The ventromedial prefrontal cortex develops intrinsic self-worth not dependent on performed identity or approval. The anterior insula recalibrates to recognize that authenticity involves both acceptance and appropriate rejection (some people won't like you—that's okay). The nucleus accumbens learns to find dopamine-reward in authentic connection rather than wide-audience approval. The adolescent develops coherent, stable sense of authentic self, decreased identity-fragmentation, capacity to bring authentic self into social contexts, and the relief of genuine connection based on real identity rather than performed persona.
 
 Related conditions: This teen-specific social mimicry and identity diffusion is developmentally related to the broader <a href="/remote-clinical-trial/free/self-esteem-identity">Self-Esteem & Identity Issues</a> condition in adults, and identity confusion is tied to <a href="/remote-clinical-trial/free/sexual-identity/gender-dysphoria/social-dysphoria">Adolescent Sexual Identity Exploration</a> and sexual/gender development.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/adolescent-social-mimicry-identity-diffusion.png",
@@ -1477,9 +1534,10 @@ Related conditions: This teen-specific social mimicry and identity diffusion is 
 The neurobiological mechanism involves amygdala hyperactivity and fear-conditioning around specific food stimuli. The amygdala has learned to treat specific foods as threat-signals requiring escape/avoidance. The insula becomes hyperresponsive to sensory characteristics of the feared foods—a texture becomes intolerable, a taste becomes disgusting, an appearance triggers gagging. This is not a realistic assessment of danger; it's a dysregulated sensory-threat detection where the brain has learned to perceive normal food sensations as aversive or dangerous. The dorsolateral prefrontal cortex cannot override the amygdala's threat assessment despite conscious knowledge that the food is not dangerous. The vagus nerve becomes hyperactive, triggering gagging or nausea in anticipation of the feared food. Previous traumatic experiences (choking, aspiration, food-induced vomiting) have created genuine threat-associations that require targeted limbic intervention to resolve.
 
 Our technique recalibrates the amygdala's threat-classification of the feared foods and helps the insula modulate its dysregulated sensory-response. We carefully work with the person's fear hierarchy, gradually reintroducing feared foods in ways that allow the nervous system to update its threat-assessment. We separate genuine safety concerns (an actual choking risk) from irrational threat-perception. We dissolve the conditioned fear-response through targeted limbic work rather than through exposure alone. You experience expanded food acceptance and dietary diversity, reduced anxiety around mealtimes and social eating, improved nutrition and health, and freedom from the social isolation that ARFID often creates.`,
-		ngo_url: "/ngo/national-eating-disorders",
+		ngo_url: "/ngo/national-eating-disorders-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/food-phobia-arfid.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/food-phobia-arfid.png",
 	},
 	{
 		id: "narcissistic-personality-disorder-pride",
@@ -1490,7 +1548,7 @@ Our technique recalibrates the amygdala's threat-classification of the feared fo
 The neurobiological mechanism involves a fundamental dysregulation of the brain systems responsible for self-other integration and empathy. The medial prefrontal cortex (self-referential processing) is hyperactive and locked into self-focus—the narcissist's neural activity patterns show reduced connectivity between brain regions necessary for understanding others' mental states (Theory of Mind circuits). The insula (empathic resonance with others' distress) shows reduced activation—the narcissist's brain literally doesn't activate when seeing others suffer, making empathic concern neurologically unavailable. The ventromedial prefrontal cortex fails to generate accurate self-worth feedback from internal sources, creating a desperate dependence on external admiration to regulate self-esteem. When admiration is threatened, the amygdala becomes hyperactive in threat-response (narcissistic rage is a genuine neurological emergency response, not calculated manipulation). The orbitofrontal cortex (decision-making about others' needs vs. self-interest) becomes dysregulated around prioritizing self-interest at others' expense without guilt activation.
 
 Our technique recalibrates the medial prefrontal cortex's hyperactive self-focus and rebuilds the neural circuits for other-referential thinking and genuine empathy. We activate the insula's capacity to resonate with others' suffering, replacing the neurological absence of empathic concern. The ventromedial prefrontal cortex learns to generate intrinsic self-worth independent of external admiration, reducing the desperate reliance on narcissistic supply. The amygdala recalibrates to recognize that criticism and limitation are not existential threat. The orbitofrontal cortex rebuilds genuine capacity to weigh others' needs alongside self-interest. You experience profound internal worth independent of admiration, genuine capacity for authentic relationships based on reciprocal regard, freedom from narcissistic rage when facing limitation, and genuine empathy activation where others' suffering becomes meaningful.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/narcissistic-personality-disorder-pride.png",
@@ -1532,7 +1590,7 @@ Our technique restores dopamine signaling in the nucleus accumbens and rebuilds 
 The neurobiological mechanism involves pervasive amygdala hyperactivity in social threat-detection combined with ventromedial prefrontal cortex failure to generate accurate self-worth. The amygdala has become sensitized to perceive any possibility of social evaluation as threat requiring escape. The anterior insula becomes hyperresponsive to signs of rejection or disapproval, generating unbearable social pain. The medial prefrontal cortex encodes the self as fundamentally unworthy ("If they really know me, they will reject me"). The dorsolateral prefrontal cortex loses capacity for social risk-taking when rejection-fear activates. Unlike social anxiety (where the person is anxious but tries to engage), AVPD involves internalized conviction of unworthiness that makes approach behavior feel pointless or dangerous. The nucleus accumbens becomes dopamine-depleted around social engagement, losing the reward that would normally motivate social connection. The person becomes locked in an avoidance pattern: avoidance temporarily reduces anxiety, but sustained avoidance reinforces the belief that social situations are genuinely dangerous.
 
 Our technique recalibrates the amygdala's hyperactive rejection-detection and the insula's social pain intensity through targeted limbic intervention. We rebuild the medial prefrontal cortex's capacity to maintain self-worth independent of social approval. We systematically reduce the rewarded association between avoidance and anxiety-relief by gradually exposing the person to social situations while their limbic system recalibrates. The dorsolateral prefrontal cortex regains capacity for calculated social risk-taking. The nucleus accumbens relearns to find dopamine-reward in social connection. You experience decreased social anxiety where social situations become manageable, restored capacity to engage socially despite imperfection, genuine relationships based on authentic connection rather than avoidance of rejection, and the expansion of your world beyond the shrinking circle of isolation.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/avoidant-personality-disorder-cowardice.png",
@@ -1546,7 +1604,7 @@ Our technique recalibrates the amygdala's hyperactive rejection-detection and th
 The neurobiological mechanism involves a catastrophic misfiring of the interoceptive threat-detection system combined with amygdala hyperactivity and inaccurate body-signal interpretation. The insula (which monitors internal body signals) becomes hyperactive and begins generating disaster-predictions from normal sensations: "This rapid heartbeat means I'm having a heart attack," "This breathlessness means I'm suffocating," "This dizziness means I'm losing control." The amygdala becomes hyperresponsive to these misinterpreted signals, generating acute threat-response (fight-or-flight sympathetic activation) to what are actually harmless sensations. This triggers a vicious cycle: normal autonomic activation is misinterpreted as danger, generating anxiety, which generates more autonomic activation, which is misinterpreted as worsening catastrophe. The anterior cingulate cortex becomes locked in catastrophic prediction loops. The dorsolateral prefrontal cortex loses capacity to reality-test the catastrophic interpretations ("That's not a heart attack, it's anxiety"). Escape from the situation temporarily relieves anxiety, creating a powerful learned association: "I was dying but I escaped and survived." This makes avoidance intensely rewarded. Over time, agoraphobia develops as the person restricts their world to avoid triggering situations.
 
 Our technique recalibrates the insula's body-signal interpretation and transforms its disaster-prediction mode through targeted limbic intervention. We rebuild accurate threat/non-threat assessment of internal sensations. We help the amygdala recognize that the panic response itself, while intensely uncomfortable, is not dangerous. We recalibrate the anterior cingulate's catastrophic prediction circuits. We systematically reduce the learned association between escape and safety by supporting the person through discomfort without escape. The dorsolateral prefrontal cortex regains capacity for rational evaluation during panic. You experience decreased panic attack frequency and intensity, tolerance for the physical sensations of anxiety without interpreting them as catastrophe, expanded world as agoraphobic avoidance resolves, and the freedom to move through the world without terror-driven restriction.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/panic-disorder-agoraphobia-fear.png",
@@ -1560,9 +1618,10 @@ Our technique recalibrates the insula's body-signal interpretation and transform
 The neurobiological mechanism involves profound dysregulation of the empathy and conscience systems combined with enhanced reward sensitivity to dominance and exploitation. The insula and anterior cingulate cortex (crucial for empathic resonance with others' suffering and guilt generation) show reduced activation—the person's brain literally doesn't activate when viewing others' distress, making empathic concern neurologically unavailable. The ventromedial prefrontal cortex fails to generate guilt or shame in response to harm-causing, and fails to encode others' wellbeing as having personal value. The orbitofrontal cortex (decision-making) becomes hyperactive in pursuing dominance and exploitation, with reduced connectivity to regions responsible for considering others' perspectives. The amygdala shows reduced fear-response to punishment, making consequences less deterrent. The nucleus accumbens becomes hyperresponsive to rewards from dominance, deception success, and exploitation, making predatory behavior neurochemically rewarding. Early trauma, neglect, or abuse often contributes to the neural development that creates this pattern—the person learned that others cannot be trusted and exploitation is the only safe strategy.
 
 Our technique begins by activating the dormant neural circuits for empathic resonance and guilt-generation through intensive limbic intervention and experiential exposure to the genuine consequences of harm-causing. We rebuild the ventromedial prefrontal cortex's valuation of others' wellbeing through confrontation with the reality of harm caused and the human cost of exploitation. We recalibrate the orbitofrontal cortex's reward-sensitivity away from dominance-seeking toward reciprocal relationship. We activate genuine consequence-awareness in the amygdala's threat-detection. This work requires genuine motivation to change—without internal motivation, the person's sophisticated manipulation skills and lack of remorse make therapeutic change unlikely. When change occurs, you experience awakening of genuine empathic concern for others' suffering, reduced impulsive exploitation as alternative reward-pathways activate, capacity for authentic reciprocal relationships beyond manipulation, and integration of conscience where others' suffering becomes genuinely important.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/antisocial-personality-disorder-deception.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/antisocial-personality-disorder-deception.png",
 	},
 	{
 		id: "histrionic-personality-disorder-attention-seeking",
@@ -1573,9 +1632,10 @@ Our technique begins by activating the dormant neural circuits for empathic reso
 The neurobiological mechanism involves dysregulation of the reward system specifically around social attention and validation, combined with emotional dysregulation and identity instability similar to BPD but driven by different primary needs. The nucleus accumbens becomes hyperresponsive to attention and approval, making the person neurochemically dependent on being the center of social focus. The medial prefrontal cortex (self-concept) becomes unstable and primarily defined by reflected appraisals—the person's sense of self is contingent on how others perceive them, and they will dramatically shift their presentation to maintain positive attention. The insula becomes dysregulated in emotional intensity—emotions are experienced as overwhelming and dramatic, and the person uses theatrical emotional expression both to process their internal states and to guarantee others' emotional investment in them. The ventromedial prefrontal cortex fails to maintain genuine continuity of identity across contexts—the person becomes whoever garners maximum attention in each situation. The anterior cingulate cortex becomes sensitized to any threat of being ignored or deprioritized, generating intense distress that drives increased dramatic behavior. Unlike narcissistic individuals (who need admiration of their superiority), histrionic individuals need emotional involvement, whether positive or negative—disapproval is preferable to being ignored.
 
 Our technique recalibrates the nucleus accumbens's hyperactive attention-reward dependence and helps the person find dopamine-satisfaction in authentic connection rather than attention-capture. We stabilize the medial prefrontal cortex's unstable self-concept and build identity rooted in genuine values and preferences rather than relational performance. We help the insula learn to tolerate emotional experience without requiring dramatic expression for processing. We recalibrate the anterior cingulate's hypersensitivity to being ignored. We address the underlying terror of invisibility or irrelevance that drives the attention-seeking. You experience more stable sense of self across contexts, reduced dependency on external attention and approval, capacity for authentic relationships not driven by attention-maintenance, emotional expression that communicates genuine feeling rather than performing for effect, and the relief of being seen and valued for your actual self rather than your dramatic presentation.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/histrionic-personality-disorder-attention-seeking.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/histrionic-personality-disorder-attention-seeking.png",
 	},
 	{
 		id: "factitious-disorder-munchausen",
@@ -1614,7 +1674,7 @@ Our technique recalibrates the amygdala to recognize loss as integrated past rat
 The neurobiological mechanism involves premature activation of the grief-processing systems before the loss has actually occurred, creating a state of chronic threat-anticipation combined with ongoing relational connection. The anterior cingulate cortex becomes hyperactive in prediction about future loss, generating persistent low-grade anxiety about what is coming. The amygdala learns to treat the present moment as already threatening because of what's coming, preventing authentic presence. The insula generates persistent bodily distress about impending loss. The ventromedial prefrontal cortex becomes split between two incompatible realities: "This person is alive and here with me now" and "This person will no longer exist in my life soon." The nucleus accumbens becomes conflicted between the reward of present connection and the prediction of future dopamine-depletion from loss. The person may emotionally withdraw from the dying person as a protective strategy ("If I can't be close now, the loss will hurt less"), but this creates double loss: losing both the person's presence now and their relational engagement. Caregiving exhaustion often compounds anticipatory grief.
 
 Our technique helps the nervous system hold two truths simultaneously: present connection and impending loss, without the present becoming consumed by fear of the future. We recalibrate the anterior cingulate's hyperactive loss-prediction so it becomes realistic planning rather than chronic threat-response. We help the insula modulate the bodily distress of anticipatory grief while maintaining somatic presence. We stabilize the ventromedial prefrontal cortex's capacity to hold both realities without splitting. We help the nucleus accumbens remain dopamine-activated in current connection rather than pre-grieving. You experience increased capacity for presence with the living person despite knowing loss is coming, grief that unfolds gradually rather than all at once, preservation of the relational connection rather than premature emotional withdrawal, and natural grief-processing that begins with the actual loss rather than before it occurs.`,
-		ngo_url: "/ngo/hospice-net",
+		ngo_url: "/ngo/hospicenet",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/anticipatory-grief-facing-loss.png",
@@ -1644,7 +1704,8 @@ The neurobiological mechanism involves simultaneous activation of threat-circuit
 Our technique helps the nervous system process the betrayal as past trauma rather than continuing threat, separates the person's betrayal from the client's self-worth, and carefully works within the couple's attachment system to rebuild trust if repair is the goal. We recalibrate the amygdala's hyper-association between the partner and threat. We help the ventromedial prefrontal cortex integrate new information about the partner and relationship rather than remaining locked in the binary of "safe" or "threat." We resolve the anterior insula's shame and self-blame narratives. We support the nucleus accumbens's rewiring so attachment to the partner can potentially feel safe again (if repair occurs) or the person can fully disengage if the relationship is ending. You experience resolution of trauma symptoms related to the betrayal event, capacity to process the violation without it consuming your identity, and either genuine repair of the relationship on a more honest foundation or the clarity and closure to move forward separately.`,
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/betrayal-trauma-infidelity.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/betrayal-trauma-infidelity.png",
 	},
 	{
 		id: "rescuer-syndrome-caretaker-compulsion",
@@ -1657,7 +1718,8 @@ The neurobiological mechanism involves dysregulation of empathy-and-helping circ
 Our technique recalibrates the nucleus accumbens's helplessness-compulsion and helps the person find dopamine-reward in balance and self-care rather than in rescue-cycles. We reprogram the ventromedial prefrontal cortex's identity from "helper" to "whole person with value independent of usefulness." We modulate the anterior insula's hyper-responsiveness to others' distress so the person can be empathic without being compelled to fix. We activate the dorsolateral prefrontal cortex's capacity for healthy boundaries and help the word "no" feel safe and ethical. We address the early attachment wound that made worthiness conditional on caretaking. You experience freedom from compulsive helping, recovery of your own needs and desires, capacity for reciprocal relationships where both people give and receive, relief from resentment-cycles, and restoration of identity beyond caretaker role.`,
 		ngo_url: "/ngo/coda",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/rescuer-syndrome-caretaker-compulsion.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/rescuer-syndrome-caretaker-compulsion.png",
 	},
 	{
 		id: "geriatric-depression-aging-loss",
@@ -1668,9 +1730,10 @@ Our technique recalibrates the nucleus accumbens's helplessness-compulsion and h
 The neurobiological mechanism involves multiple overlapping systems dysregulation: the monoamine systems (serotonin, dopamine, norepinephrine) show age-related decline exacerbated by depression; the hypothalamic-pituitary-adrenal (HPA) axis becomes dysregulated with chronic stress and aging, maintaining elevated cortisol that erodes hippocampal volume and mood-regulation; the prefrontal cortex shows reduced glucose metabolism and connectivity; neuroinflammation increases with age and is associated with depression; the nucleus accumbens shows reduced dopamine responsiveness, making activities that once brought joy no longer rewarding. Brain-derived neurotrophic factor (BDNF) declines with age and depression, reducing neuroplasticity. Chronic medical illnesses (stroke, Parkinson's, cardiovascular disease) create specific damage to mood-regulation circuitry. Medications for other conditions (corticosteroids, beta-blockers, anticholinergics) can worsen depression. Social isolation reduces the environmental stimulation needed to maintain dopamine and reduce rumination.
 
 Our technique addresses the multiple biological vulnerabilities of late-life depression by supporting neuroplasticity despite age-related decline, recalibrating the HPA axis through stress-reduction and cortisol-management, activating dopamine pathways through meaningful engagement and social connection, and addressing existential aspects of aging through meaning-making rather than denial. We help the person integrate losses while discovering renewed purpose. Medical optimization (medication review, treatment of underlying conditions) combines with limbic recalibration. You experience improved mood and energy, restored interest in activities and relationships, reduced existential despair, improved sense of meaning and purpose in the later chapters of life, and prevention of the isolation that worsens geriatric depression.`,
-		ngo_url: "/ngo/nia",
+		ngo_url: "/ngo/national-institute-aging",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/geriatric-depression-aging-loss.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/geriatric-depression-aging-loss.png",
 	},
 	{
 		id: "identity-loss-aging-life-stage",
@@ -1681,9 +1744,10 @@ Our technique addresses the multiple biological vulnerabilities of late-life dep
 The neurobiological mechanism involves the medial prefrontal cortex's self-concept being architecture built primarily on role and function, leaving empty space when those external roles are removed. The ventromedial prefrontal cortex has encoded the person's value as conditional on productivity, creating crisis when productivity ends. The default mode network, which handles self-referential thinking, becomes hyperactive in rumination without the external structure of work/role to provide meaning-scaffolding. The anterior cingulate cortex struggles to integrate the new life phase while reflexively grasping toward the old one. The nucleus accumbens shows reduced stimulation from the environmental rewards that used to come from role-based engagement. The person often has never practiced self-definition separate from their function, leaving them neurologically under-equipped to answer "Who am I?" without external role-definition.
 
 Our technique helps the medial and ventromedial prefrontal cortex rebuild identity that encompasses continuity from the old life while being constructed from new foundations. We help the default mode network transition from rumination and role-loss grief to exploration of authentic interests and values. We support the nucleus accumbens in discovering new sources of reward and engagement in this life phase. We help the person genuinely integrate aging as a positive life stage rather than experiencing it as diminishment. We facilitate the psychological work of elder self-definition that includes wisdom, relationships, legacy, personal growth, and contribution in new forms. You experience clarity about who you are beyond your former roles, renewed sense of purpose and meaning in this life chapter, engagement in activities that feel authentically valuable rather than role-based, and integration of aging as a positive developmental stage with its own richness.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
-		background_image: "https://neurorecursion-assets.netlify.app/assets/backgrounds/identity-loss-aging-life-stage.png",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/identity-loss-aging-life-stage.png",
 	},
 	{
 		id: "sexual-dysfunction-intimacy-avoidance",
@@ -1708,7 +1772,7 @@ Our technique helps the nervous system recognize safety in sexual situations by 
 The neurobiological mechanism involves threat-detection circuits that are overactive in perceiving others as dangerous and requiring preemptive control. The amygdala generates persistent low-grade threat-response to others' autonomy or disagreement. The orbitofrontal cortex becomes hyperactive in reward-pathways connected to dominance and control, making aggression neurochemically rewarding. The ventromedial prefrontal cortex encodes a threat-based worldview ("Others will hurt me if I don't control them" or "Other people are obstacles to my needs"). The anterior insula becomes hyperactive in response to others' distress, but rather than generating empathy (as in healthy empathy), it generates satisfaction or justification ("They deserve it," "They needed to be controlled"). The dorsolateral prefrontal cortex may be hyperactive in strategic planning of control-tactics. Early trauma often involved either being violently controlled (leading to identification with the aggressor) or early powerlessness (leading to overcompensation through domination). In some cases, the persecutor is expressing unprocessed rage at historical injustices or powerlessness.
 
 Our technique addresses the underlying threat-perception and powerlessness-dynamics that drive the persecutor pattern. We help the amygdala distinguish between genuine threat and perceived threats emerging from control-insecurity. We recalibrate the orbitofrontal cortex's hyper-rewarding of dominance and replace it with genuine reward from healthy power-sharing and relational reciprocity. We reprogram the ventromedial prefrontal cortex's threat-worldview. We help the anterior insula develop genuine empathy instead of satisfaction at others' pain. We address the early trauma that generated either identification with the aggressor or aggressive compensation for powerlessness. This work requires genuine motivation to change, as the persecutor often feels justified in their aggression. You experience reduction in aggressive impulses, capacity for relational power-sharing without experiencing powerlessness, genuine empathy for others' experience, freedom from the need to dominate, and the possibility of healthy relationships based on mutuality rather than dominance.`,
-		ngo_url: "/ngo/the-hotline",
+		ngo_url: "/ngo/hotline-domestic-violence-support",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/persecutor-role-aggressive-control.png",
@@ -1723,7 +1787,7 @@ Our technique addresses the underlying threat-perception and powerlessness-dynam
 The neurobiological mechanisms are closely related across both presentations. The ventromedial prefrontal cortex fails to maintain adequate distinction between actual experiences and constructed narratives, and becomes hyperactive in self-protection (generating lies as automatic anxiety-reduction). The anterior cingulate cortex (error-detection and impulse-inhibition) shows dysregulation—either hyperactive-but-ineffective at stopping lies or hypoactive and allowing false narratives to maintain persistent activation without constant reality-checking. The nucleus accumbens becomes dopamine-responsive to the lie-generation or false-identity-maintenance process itself—the creative process of constructing false narratives becomes neurochemically rewarding, independent of external gain. The medial prefrontal cortex (self-representation and autobiographical memory) becomes dysregulated, with constructed narratives sometimes more psychologically vivid than accurate experiences. The insula shows either hyperactivity in resistance to vulnerable truth-telling (truth becomes encoded as dangerous exposure) or reduced interoceptive awareness disconnecting the person from authentic internal states. The posterior cingulate cortex and precuneus (autobiographical identity regions) show dysregulation, allowing false narratives or identities to compete with actual memory and self-representation. The amygdala has encoded threat-associations with honesty (early experiences where truth-telling resulted in punishment, shame, rejection, or abandonment) and may show hyperactive threat-response to exposure of lies or revelation of the actual self. In pathological lying presentations, the medial prefrontal cortex becomes bifurcated with reduced neural integration between the false identity and actual experience, creating dissociation. Across both patterns, profound underlying shame, identity fragmentation, early relational trauma, and learned patterns that made authentic self-disclosure feel threateningly dangerous drive the compulsive or organized deception. The difference lies partly in temporal scope (impulsive moment-to-moment lies vs. sustained identity-level deception) and neuropsychological mechanisms (working-memory vs. identity-encoding systems), but the root threat-association with honesty is consistent.
 
 Our technique recalibrates the entire truth-deception reward-and-threat system. We reprogram the ventromedial prefrontal cortex so truth-telling is encoded as genuine safety rather than danger, and so the person can tolerate vulnerability without defaulting to narrative falsification. We strengthen the anterior cingulate's reality-monitoring and impulse-inhibition, creating functional 'brakes' on automatic lie-generation and clarity about what is actual vs. constructed. We recalibrate the nucleus accumbens so authentic truth-telling, genuine achievement, and authentic relational connection become neurochemically rewarding—greater dopamine-response to truth and genuine connection than to lie-generation or false-identity maintenance. We help the insula tolerate authentic self-disclosure and reconnect with genuine internal states. We recalibrate the posterior cingulate and precuneus so autobiographical memory stabilizes around actual experiences. We address the amygdala's threat-associations with honesty, neutralizing early traumas that made truth-telling dangerous. If bifurcated identity is present, we progressively integrate actual and false self-representations so you can tolerate inhabiting your actual identity. We address the profound shame and unworthiness beliefs that made deception feel necessary. You experience dramatic reduction in lie-generation (both impulsive and organized), dissolution of false identity investments, increased capacity for authentic self-disclosure and genuine vulnerability, relief from the cognitive labor of maintaining deception, genuine relational connection based on authenticity, and development of solid self-worth rooted in actual accomplishment and genuine interiority.`,
-		ngo_url: "/ngo/psychologytoday",
+		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/pathological-lying-factitious-identity.png",
@@ -1737,7 +1801,7 @@ Our technique recalibrates the entire truth-deception reward-and-threat system. 
 The neurobiological mechanism involves the collapse of the default-mode network's narrative about life meaning and identity. The ventromedial prefrontal cortex (meaning-making and self-representation) has been organized for 18-25 years around the role of "parent" and the shared dyadic role of "co-parenting team"—when that role suddenly ends, the medial prefrontal cortex experiences a kind of identity deletion error, creating acute existential distress. The nucleus accumbens, which has been dopamine-responsive to parenting rewards (children's achievements, family stability, role fulfillment), suddenly receives no reward signals from those behaviors—depression and anhedonia result. The anterior cingulate cortex, which has been hyperactive in error-monitoring and conflict-resolution related to child-rearing, now extends this hyperactivity to the marital relationship itself, increasing perception of relationship errors and conflicts. The orbitofrontal cortex, which encoded the shared value-system of the couple as parents, now confronts a potential mismatch in deeper personal values—each partner may discover the other's actual interests, needs, and priorities now that parenting is not the organizing framework. The mirror neuron system and mentalizing circuits may show reduced activation between partners as they've spent years cooperating on child-rearing while avoiding intimate vulnerability. The amygdala becomes hyperresponsive to potential abandonment or relationship dissolution as the couple faces the real question: "Do we actually want to be together?" Often, one or both partners have spent 20 years in a parenting role that provided clear structure, validation, and meaning, and now face an existential void. The person's sense of worth has been fused with "good parent" identity, and losing that role creates profound shame and worthlessness feelings. The relationship may have been maintained by avoidance of intimacy through the constant demands of child-care—now there's nothing to avoid with, and the couple must address either genuine reconnection or the true dissolution of the marriage.
 
 Our technique helps you rebuild identity independent of the parenting role while simultaneously rebuilding genuine intimacy with your partner. We help the medial prefrontal cortex develop a coherent post-parenting identity with intrinsic meaning beyond child-rearing. We restore dopamine responsiveness to authentic partnership, genuine conversation, shared experiences, and mutual vulnerability rather than to parenting role-fulfillment. We reduce the anterior cingulate's hyperactive conflict-scanning and help the couple develop genuine conflict-repair skills rather than parenting-focused cooperation. We help the orbitofrontal cortex re-discover or establish genuine shared values and interests independent of children. We restore mirror neuron resonance and mentalizing capacity between partners through practices of genuine emotional attunement and risk-taking vulnerability. We help each partner grieve the loss of the active parenting identity while building acceptance of genuine mid-life redirection. We address any infidelity, addiction, or escape-behavior reactivation as a symptom of the underlying identity and relationship crisis rather than as a character failure. If the partnership is genuinely incompatible, we help the couple consciously choose separation rather than years of resentful co-habitation. If the partnership has genuine foundation, we help rebuild authentic intimacy and discover new shared meaning in the second act of marriage. You experience integration of post-parenting identity with authentic self, genuine emotional and relational reconnection with your partner (or conscious healthy dissolution), restoration of meaning and purpose beyond parenting, and potential emergence of a mature, intimate partnership based on authentic choice rather than logistical necessity.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/empty-nest-syndrome-marital-disconnection.png",
@@ -1751,7 +1815,7 @@ Our technique helps you rebuild identity independent of the parenting role while
 The neurobiological mechanism involves hyperactivation of the amygdala in response to the neurologically primitive threat-signal of "being watched by an audience"—humans have ancient nervous system programming that interprets being visually focused on by multiple eyes as a predation threat or a status-threat. The amygdala's threat-detection triggers a cascade: the sympathetic nervous system floods the system with adrenaline and cortisol, the anterior cingulate cortex (executive function and attention regulation) becomes hypoactive, the medial prefrontal cortex (social self-consciousness and self-representation) becomes hyperactive creating acute self-awareness and self-scrutiny, and the dorsal anterior insula becomes hyperactive generating acute interoceptive fear (you become hyperaware of your own body sensations, racing heart, shaking, which further triggers threat-response). The brainstem's locus coeruleus (arousal center) fires intensely, creating hypervigilance and redirecting all cognitive resources toward threat-detection and survival-response rather than toward the performance task itself. The motor cortex becomes dysregulated—fine motor control is suppressed in favor of gross motor threat-responses (fighting or fleeing show up as tremor, rigidity, or uncontrolled movement), and learned motor sequences (the muscle memory of playing an instrument, choreography, or speaking patterns) become inaccessible because the nervous system has abandoned learned behavior in favor of primitive survival scripts. The posterior inferior parietal cortex (sense of body ownership and embodiment) becomes dysregulated, creating the sensation of being outside your body or watching yourself perform from a distance. The Wernicke's area (language production) often becomes hypoactive, creating vocal constriction, voice loss, or the sensation that the words won't come out. Often, past experiences of performance failure, humiliation, criticism by authority figures during childhood, or public embarrassment have created deep threat-associations with being visually focused on and evaluated. Additionally, perfectionism and early messages that "being watched means being judged" create additional layers of threat-encoding.
 
 Our technique dissolves the amygdala's threat-encoding by directly neutralizing the primitive "being watched means danger" association at the neurochemical and neural circuit level. We reprogram the threat-signal itself so the presence of an audience no longer triggers the cascade of sympathetic activation. We strengthen the medial prefrontal cortex's stable self-representation independent of external observation—your worth and performance quality are not determined by being watched. We restore dorsal anterior insula regulation so body sensations (heartbeat, breathing) register as normal arousal rather than threat. We restore the anterior cingulate and dorsolateral prefrontal cortex so executive function and genuine attention to the performance task automatically override threat-scanning. We help the motor cortex and cerebellum restore full access to learned motor sequences by recalibrating the nervous system's behavioral-availability hierarchy. We address traumas and early experiences that encoded watching-by-others as dangerous, neutralizing those threat-memories at source. You experience swift elimination of sympathetic flooding during performance, immediate restoration of access to your full abilities and learned skills, fluid vocal quality and movement, sharp memory access and executive function, genuine freedom and enjoyment during performance, and the capacity to take authentic artistic risks without the nervous system overriding your performance.`,
-		ngo_url: "/ngo/adaa",
+		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/stage-fright-performance-anxiety-live-audience.png",
@@ -1765,7 +1829,7 @@ Our technique dissolves the amygdala's threat-encoding by directly neutralizing 
 The neurobiological mechanism involves dysregulation of the ventromedial prefrontal cortex's reward-prediction for future outcomes combined with hyperactive amygdala threat-response specifically to task initiation and sustained focus. When the person approaches a significant task, the amygdala fires with threat-intensity—the task triggers deep associations: failure-shame, judgment, exposure of inadequacy, loss of autonomy, or drowning in overwhelm. The ventromedial prefrontal cortex, which normally generates motivation by computing the value of delayed rewards ("if I complete this, I'll achieve X"), fails to generate sufficient dopamine-responsive motivation—the future reward feels distant and uncertain while the present dysphoria of starting is immediate and intolerable. The anterior cingulate cortex, which monitors for conflict and generates "push through" signals, becomes dysregulated—instead of amplifying effort-allocation when difficulty is encountered, it amplifies threat-perception. The dorsolateral prefrontal cortex (sustained focus and working memory) becomes hypoactive—when the person tries to maintain focus, the nervous system's resources are redirected to threat-response rather than task-execution. The midbrain's dopamine systems show dysregulated delay-discounting: present aversion is neurochemically weighted far more heavily than future reward, creating the sensation that the pain of starting is infinitely large compared to the benefit of completion. The nucleus accumbens becomes dopamine-dependent on avoidance behaviors (scrolling, distraction, escape activities) which provide immediate relief, reinforcing the procrastination loop. Often, childhood experiences of harsh criticism for mistakes, perfectionist standards creating terror of inadequacy, early failure-shaming, or developmental experiences where admitting incompetence resulted in punishment or abandonment have created deep threat-encoding around task performance and evaluation. Additionally, ADHD, anxiety, or depression frequently co-occur and compound the pattern. The person may have lost jobs, relationships, educational opportunities, or creative identity due to the procrastination-incompletions pattern, which then creates meta-shame ("I'm someone who can't follow through") that further increases task-aversion.
 
 Our technique eliminates the amygdala's threat-encoding around task initiation and completion by directly neutralizing the false associations between challenging work and existential danger. We restore dopamine responsiveness to the completion of even small task increments—rewiring the nucleus accumbens so genuine task-progress becomes neurochemically reinforcing rather than avoidance-behaviors. We recalibrate the ventromedial prefrontal cortex's value-computation for delayed rewards so future outcomes feel genuinely motivating in real-time. We strengthen the anterior cingulate and dorsolateral prefrontal cortex's capacity to sustain focus and override threat-signals when difficulty emerges. We dissolve the shame-narratives and perfectionism-encoding that made task-initiation feel like existential risk. We address any underlying ADHD, anxiety, or trauma that exacerbates the pattern. We recondition the nervous system so the act of starting and sustaining focus on meaningful work generates genuine interest and activation rather than aversion-cascade. You experience immediate elimination of procrastination-driven dysphoria, swift task initiation and completion capacity, restoration of genuine motivation and interest in meaningful work, freedom from shame-cycles, recovery of creative and professional identity, and the systematic capacity to follow through on important life projects.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/chronic-procrastination-failure-to-launch-incompletions.png",
@@ -1779,7 +1843,7 @@ Our technique eliminates the amygdala's threat-encoding around task initiation a
 The neurobiological mechanism involves hyperactivation of the amygdala in response to financial stimuli, combined with dysregulation of the anterior insula (which generates feelings of wrongness or threat). Often, the person has encoded money with early trauma: family violence centered around money, severe poverty with associated deprivation or shame, financial abandonment or betrayal, or messages that "money is evil" or "you don't deserve it." The ventromedial prefrontal cortex fails to generate accurate threat-assessment of money versus actual existential threats, and instead encodes financial engagement as equivalent to mortal danger. The anterior cingulate cortex becomes hyperactive in conflict-monitoring when financial decisions must be made. The dorsolateral prefrontal cortex's rational planning capacity becomes suppressed by amygdala-driven threat-response. The insula generates persistent bodily distress in the presence of money or financial stimuli.
 
 Our technique dissolves the amygdala's false threat-encoding of financial activity by directly recalibrating the neural circuits that have encoded money as dangerous. We reprogram the anterior insula so financial stimuli (cash, bills, bank statements) register as neutral or manageable rather than generating internal wrongness-signals. We restore the ventromedial prefrontal cortex's capacity for accurate threat-assessment so rational financial evaluation becomes possible. We address any underlying trauma that created the money-threat association and reprogram those neural pathways. We restore the dorsolateral prefrontal cortex's capacity to engage in rational financial planning. You experience rapid elimination of acute anxiety in financial situations, ability to handle money and make financial decisions without panic, restored access to banking and financial management, and the capacity to engage with finances as normal adult functioning rather than as survival threat.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/chrometophobia-fear-money.png",
@@ -1793,7 +1857,7 @@ Our technique dissolves the amygdala's false threat-encoding of financial activi
 The neurobiological mechanism involves chronic activation of the HPA axis (hypothalamic-pituitary-adrenal) in response to perceived resource insufficiency, creating persistent elevation of cortisol and adrenaline. The amygdala remains in hypervigilant threat-scanning, constantly monitoring for resource-threat. The ventromedial prefrontal cortex's future-planning and delayed-gratification capacity becomes suppressed by the dominance of amygdala threat-response—the nervous system computes that it must prioritize immediate survival over future outcomes. The dorsolateral prefrontal cortex shows reduced capacity for complex planning and abstract thinking as cognitive resources are redirected toward survival-mode processing. The insula becomes hypersensitive to internal distress signals, creating the sensation of urgency and deprivation even when resources are objectively secure. The nucleus accumbens becomes dysregulated—it fails to generate reward from healthy long-term goals and instead becomes responsive only to immediate resource-acquisition. Often, genuine childhood deprivation, early scarcity experiences, or parents with scarcity-mindset have encoded the nervous system's baseline as "resources are never enough." Even when the person achieves financial security, their nervous system's threat-baseline remains calibrated to scarcity, creating the paradox of financial sufficiency coexisting with felt deprivation.
 
 Our technique recalibrates the HPA axis's threat-assessment and the amygdala's resource-threat hypervigilance. We help the ventromedial and dorsolateral prefrontal cortex recover capacity for long-term planning and future-reward computation. We reprogram the insula's distress-sensitivity so the person's internal signal of safety matches their actual resource-reality. We address any early deprivation trauma that established the scarcity-baseline and reprogram those neural encodings. We help the nucleus accumbens discover genuine dopamine-reward in long-term security-building rather than only in immediate consumption. We dissolve the fear-of-homelessness threat-encoding and help the person's nervous system recalibrate to accurate threat-assessment. You experience dramatic reduction in survival-mode activation despite objective security, restored capacity for long-term planning and delayed gratification, reduction in chronic stress and cortisol-elevation, ability to build and maintain financial security without neurological sabotage, and genuine internal experience of sufficiency and safety.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/scarcity-mindset-resource-poverty.png",
@@ -1807,7 +1871,7 @@ Our technique recalibrates the HPA axis's threat-assessment and the amygdala's r
 The neurobiological mechanism involves dysregulation of the anterior insula (perception of internal financial status) combined with dissociation between objective financial data and the ventromedial prefrontal cortex's self-worth computation. The person's interoceptive system generates a persistent signal of financial inadequacy or shame regardless of objective financial markers. The medial prefrontal cortex encodes net worth with self-worth—if the felt sense is "I'm worth less than I claim," the person unconsciously generates spending or financial sabotage that aligns actual financial status with internal self-worth narrative. The ventromedial prefrontal cortex fails to update its financial threat-assessment even when presented with objective evidence (bank statements, asset lists, income documentation). The nucleus accumbens shows dysregulated reward-response—either it generates dopamine-reward from image-maintenance spending despite financial danger, or it fails to generate any reward from actual financial security if the internal narrative is "I'm poor anyway." The anterior cingulate cortex shows reduced error-detection capacity, allowing gross misalignment between financial reality and perception to persist without generating corrective action. Often, early messages about worthiness, family financial trauma, or experiences of sudden financial loss have created deep encodings that link financial safety to shame or unworthiness.
 
 Our technique directly recalibrates the anterior insula's perception of financial status by repeatedly exposing it to actual financial data while neutralizing the shame-affect that usually accompanies money-awareness. We reprogram the medial prefrontal cortex's equation of net-worth with self-worth, untangling financial safety from identity-value. We restore the ventromedial prefrontal cortex's capacity to update threat-assessment when presented with objective financial evidence. We recalibrate the nucleus accumbens so genuine financial security becomes neurochemically rewarding, and image-maintenance spending loses its dopamine-appeal. We strengthen the anterior cingulate's error-detection so financial reality-checking becomes automatic. We address early trauma or messages that encoded money with shame and reprogram those pathways. You experience rapid restoration of accurate internal perception of your actual financial state, elimination of the shame-affect that distorts financial awareness, aligned decision-making where behavior matches reality rather than internal distortion, and genuine internal experience of financial security that matches objective reality.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/money-dysmorphia-financial-distortion.png",
@@ -1821,7 +1885,7 @@ Our technique directly recalibrates the anterior insula's perception of financia
 The neurobiological mechanism involves neural encoding in the ventromedial prefrontal cortex and posterior cingulate cortex (regions that represent self and integrated identity) where financial beliefs have become fused with identity-core. The beliefs were encoded during childhood when the developing brain was maximally plastic and when parental modeling and messaging directly shaped limbic system organization. The nucleus accumbens became conditioned to associate specific financial behaviors with reward or punishment based on parental messages—money-avoidance may have been rewarded with parental approval, money-worship with dopamine-hits from consumption, money-status with validation, money-vigilance with safety-through-control. The anterior cingulate cortex encodes the script as a fundamental rule of how the world works, creating resistance to evidence that contradicts the script. The amygdala becomes hyperactive to financial situations that violate the script—money-avoiders become anxious when acquiring money, money-worshippers panic without continuous consumption, money-status people experience shame in non-wealthy contexts, money-vigilant people cannot relax around financial management. These scripts often remain invisible to the person—they feel like truth rather than programming—and efforts to change financial behavior fail because the script remain neurologically active.
 
 Our technique makes the invisible scripts visible and then reprograms them at the neurological level. We identify the specific money scripts operating (often multiple simultaneous scripts in conflict), trace them to their childhood origins, and then systematically decondition the limbic system's responses to money-related situations. We reprogram the ventromedial and posterior cingulate so financial situations no longer trigger identity-threat responses. We recalibrate the nucleus accumbens so healthy financial behaviors generate genuine reward. We restore the anterior cingulate's capacity to hold nuanced understandings of money that transcend the limiting script. We help the amygdala develop accurate threat-assessment around financial situations. We establish new neural patterns where your financial decisions are driven by your actual values and goals rather than inherited unconscious programming. You experience clarity about previously invisible financial scripts, freedom from script-driven automatic reactions, capacity to make conscious financial decisions aligned with actual values, integration of multiple money-perspectives without internal conflict, and genuine enjoyment of financial security without the contamination of script-related shame or fear.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/money-scripts-unconscious-beliefs.png",
@@ -1835,7 +1899,7 @@ Our technique makes the invisible scripts visible and then reprograms them at th
 The neurobiological mechanism involves the collapse of the default-mode network's organizing narrative. For decades, the ventromedial prefrontal cortex has been organized around the computation "my life meaning comes from accumulation/survival" and the anterior cingulate has been hyperactive in effort-allocation around financial goals. The nucleus accumbens became dopamine-responsive to markers of financial progress—each achievement generated reward-surge. When the goal suddenly becomes unnecessary (financial security is complete), the entire reward-system baseline collapses. The person experiences anhedonia (inability to feel pleasure from normal activities) because the nucleus accumbens has been exclusively dopamine-trained to the specific goal that is now irrelevant. The medial prefrontal cortex lacks alternate sources of identity and meaning because 40 years of cognitive resources were devoted to a single mission. The amygdala may paradoxically become hyperactive—sudden wealth often brings new threats (managing investments, family dynamics around inheritance, target for exploitation) that generate ongoing threat-response. The ventromedial prefrontal cortex's value-computation has not been reconsidered to include newer life priorities (relationships, contribution, creativity, learning, legacy) and so these domains fail to generate genuine motivation. The posterior cingulate cortex (autobiographical identity) becomes dysregulated when the person cannot integrate "I am secure and purposeless" into a coherent identity narrative.
 
 Our technique reinstalls the organizing narrative and purpose-generating systems of the nervous system with genuine values-alignment rather than mere survival-drive. We help the medial prefrontal cortex develop coherent identity and life-meaning independent of financial status or accumulation. We reprogram the nucleus accumbens to discover dopamine-reward in genuine contribution, relationships, learning, creative expression, and legacy-building rather than exclusive focus on financial markers. We recalibrate the anterior cingulate to generate effort-allocation for authentic goals rather than only financial accumulation. We help the amygdala recalibrate to distinguish between genuine threats and new trigger-points related to wealth management. We address the ventromedial prefrontal cortex's value-hierarchy to integrate multiple sources of meaning and motivation. We help the person grieve the loss of the driven-identity while building authentic second-act purpose. You experience restoration of genuine motivation and engagement with life-domains beyond financial security, clarified values and purposes independent of accumulation, sustainable meaning-making and identity rooted in contribution and connection, improved relationships based on genuine mutual choice rather than role-based necessity, and the capacity to enjoy financial security as foundation for purposeful living rather than as end-point that creates meaninglessness.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/affluenza-wealth-integration-identity-loss.png",
@@ -1849,7 +1913,7 @@ Our technique reinstalls the organizing narrative and purpose-generating systems
 The neurobiological mechanism involves dissociation between the person's behavior (hiding money) and their explicit values (commitment to partnership honesty). The ventromedial prefrontal cortex encodes financial information as "dangerous if known" based on early experiences (controlling parents, financial punishment, partner's past financial control or shaming). The amygdala becomes hyperactive to the prospect of financial transparency—vulnerability around money is encoded as mortal threat. The anterior cingulate cortex shows reduced impulse-inhibition and error-detection around financial deception—the person knows the deception violates partnership values but cannot override the amygdala's threat-response to transparency. The nucleus accumbens becomes dopamine-dependent on the relief-surge that comes from maintaining the secret and avoiding the threat of exposure. The medial prefrontal cortex develops bifurcated self-representation—one identity for the "honest partner" and one for the person who maintains financial secrets, creating compartmentalization. Often, profound shame about financial inadequacy, early experiences of financial betrayal, controlling parents or partners, or learned survival-patterns (hoarding hidden resources for escape) drive the deception. The person may experience genuine shame when discovered, or may feel suddenly seen and relieved, depending on whether the secret-keeping or the secrecy-necessity was the primary organizer.
 
 Our technique first addresses the core threat-associations that made financial transparency feel dangerous: shame about financial standing, fear of partner control or judgment, early betrayal or abandonment trauma, or learned survival patterns of financial-autonomy-through-secrecy. We reprogram the ventromedial prefrontal cortex so financial transparency is encoded as safety and connection rather than as danger. We recalibrate the amygdala's threat-response to financial vulnerability and partner-knowledge. We restore the anterior cingulate's capacity for impulse inhibition and values-alignment. We dissolve the dopamine-reward from secret-keeping and help the nucleus accumbens discover greater reward-response to genuine transparency and partnership integrity. We integrate the bifurcated self-representations so the person can be genuinely congruent. We address any early trauma that established the deception-is-safety pattern and reprogram those pathways. We help the couples' mirror-neuron system and mentalizing capacity rebuild genuine empathy for the partner's experience of betrayal. You experience elimination of the anxiety-burden of secret-keeping, restored capacity for financial transparency without threat-response, genuine partnership integrity and relational embodiment of honesty, elimination of the compartmentalization and dissociation, rebuilt trust and safety within the partnership relationship, and financial systems organized around genuine partnership collaboration rather than hidden parallel systems.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/financial-infidelity-hidden-transactions.png",
@@ -1863,7 +1927,7 @@ Our technique first addresses the core threat-associations that made financial t
 The neurobiological mechanism involves traumatic encoding of financial events in the amygdala and insula, combined with dysregulation of the threat-assessment systems. The amygdala has encoded financial events (particularly specific triggers like losing a job, receiving a foreclosure notice, or watching savings disappear) as acute threat equivalent to mortal danger. The anterior insula generates persistent bodily threat-signals in response to financial reminders—racing heartbeat, nausea, or panic in response to seeing numbers on bank statements or receiving financial communications. The ventromedial prefrontal cortex's threat-appraisal system has been recalibrated and remains locked in the belief "financial security is impossible" despite objective current stability. The dorsolateral prefrontal cortex shows reduced capacity for rational financial planning because cognitive resources are redirected toward threat-scanning. The default mode network generates repetitive fearful narratives about future financial catastrophe. The hippocampus may show dysregulation in the integration of new financial stability-information—the person's episodic memory remains locked in the catastrophe event rather than updating to current reality.
 
 Our technique involves dual-layer recalibration: (1) traumatic encoding resolution in which the specific financial traumatic memories are processed and the amygdala's threat-encoding is neutralized through direct limbic recalibration without exposure; and (2) threat-appraisal system recalibration in which the ventromedial prefrontal cortex's belief in inevitable financial catastrophe is reprogrammed through direct nervous system work and integration of new stability-information. We recalibrate the anterior insula's bodily threat-signals so financial reminders and communications no longer generate survival-mode activation. We restore the dorsolateral prefrontal cortex's capacity for rational financial planning and executive function. We reprogram the default mode network's narrative from "catastrophe is inevitable" to "I have survived and can maintain stability." We help the hippocampus integrate new positive financial experiences to update the memory-system away from exclusive focus on the traumatic event. We address any behavior patterns (hoarding, avoidance, compulsive checking) that developed as protective responses and reprogram them. You experience rapid elimination of trauma-related hypervigilance and panic in financial situations, restored capacity for rational financial planning and decision-making, elimination of compulsive or avoidant financial behaviors, ability to build and maintain financial security without the intrusive terror of impending catastrophe, integration of past trauma while building authentic future security, and genuine internal experience of financial stability that matches objective reality.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/financial-flashpoint-trauma.png",
@@ -1877,7 +1941,7 @@ Our technique involves dual-layer recalibration: (1) traumatic encoding resoluti
 The neurobiological mechanism involves dysregulation of threat-assessment systems applied to financial domain, combined with attentional bias toward financial threat-information and learned helplessness from past scarcity. The amygdala remains subclinically active to financial stimuli even in safe financial conditions, producing persistent low-grade anxiety. The anterior cingulate cortex (threat monitoring) generates excessive focus on potential financial problems or mistakes. The ventromedial prefrontal cortex has encoded beliefs about financial unfairness or impossibility based on past experience (family scarcity, poverty, financial instability) and fails to update those beliefs based on current objective evidence. The dorsolateral prefrontal cortex's executive function becomes suppressed under financial anxiety, producing money-related procrastination and decision avoidance. The insula generates persistent bodily sensations of financial threat—tension, dread, or dysphoria when handling money or reviewing finances. The anterior insula may encode cynical interpretations of financial information ("the system is rigged," "I'm incapable")—essentially a learned cynicism that becomes self-perpetuating.
 
 Our technique recalibrates the threat-assessment systems specifically for financial stimuli, dissolving the amygdala's threat-encoding of money and financial decisions. We reprogram the ventromedial prefrontal cortex's beliefs about financial fairness and personal capacity, replacing cynicism with realistic appraisal. We restore the dorsolateral prefrontal cortex's executive function so financial decisions become possible. We recalibrate the anterior insula's cynical interpretations and replace them with discernment (genuine danger vs. normal financial uncertainty). We eliminate the attentional bias toward financial threat-information. You experience profound reduction in chronic money-worry, restoration of financial decision-making capacity, elimination of money-related decision paralysis, replacement of cynicism with realistic financial assessment, ability to engage with finances without anhedonia or dread, and a nervous system that differentiates actual financial threat from normal financial uncertainty.`,
-		ngo_url: "/ngo/apa",
+		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-financial-anxiety-cynicism.png",
