@@ -39,7 +39,7 @@
 		return `https://neurorecursion-assets.netlify.app/assets/ogimages/${imageUrl}`
 	}
 
-	const assetImageUrl = getAssetImageUrl(imageUrl)
+	const assetImageUrl = $derived(getAssetImageUrl(imageUrl))
 
 	async function copyToClipboard() {
 		try {
@@ -148,7 +148,11 @@
 
 		<!-- Preview Card -->
 		<div class="share-card">
-			<img src={assetImageUrl || imageUrl} class="share-image" />
+			<img
+				src={assetImageUrl || imageUrl}
+				alt={title}
+				class="share-image"
+			/>
 
 			<div class="share-text">
 				<h2 class="share-title">{title}</h2>

@@ -1,0 +1,1529 @@
+[
+  {
+    "query": "remote-clinical-trial/free/depression/suicidal"
+  },
+  {
+    "query": "remote-clinical-trial"
+  },
+  {
+    "query": "free"
+  },
+  {
+    "query": "depression"
+  },
+  {
+    "query": "suicidal"
+  },
+  {
+    "query": "remote-clinical-trial/free/trauma"
+  },
+  {
+    "query": "trauma"
+  },
+  {
+    "query": "remote-clinical-trial/free/cult-recovery/religious-trauma/damnation/recovery"
+  },
+  {
+    "query": "cult-recovery"
+  },
+  {
+    "query": "religious-trauma"
+  },
+  {
+    "query": "damnation"
+  },
+  {
+    "query": "recovery"
+  },
+  {
+    "query": "remote-clinical-trial/free/divorce/love/family/relationships"
+  },
+  {
+    "query": "divorce"
+  },
+  {
+    "query": "love"
+  },
+  {
+    "query": "family"
+  },
+  {
+    "query": "relationships"
+  },
+  {
+    "query": "remote-clinical-trial/free/attachment/anxious/avoidant/relational-patterns"
+  },
+  {
+    "query": "attachment"
+  },
+  {
+    "query": "anxious"
+  },
+  {
+    "query": "avoidant"
+  },
+  {
+    "query": "relational-patterns"
+  },
+  {
+    "query": "remote-clinical-trial/free/loneliness/isolation/social-disconnection"
+  },
+  {
+    "query": "loneliness"
+  },
+  {
+    "query": "isolation"
+  },
+  {
+    "query": "social-disconnection"
+  },
+  {
+    "query": "remote-clinical-trial/free/ptsd/post/traumatic"
+  },
+  {
+    "query": "ptsd"
+  },
+  {
+    "query": "post"
+  },
+  {
+    "query": "traumatic"
+  },
+  {
+    "query": "remote-clinical-trial/free/migraine/headache"
+  },
+  {
+    "query": "migraine"
+  },
+  {
+    "query": "headache"
+  },
+  {
+    "query": "remote-clinical-trial/free/health-anxiety/hypochondria/health-preoccupation"
+  },
+  {
+    "query": "health-anxiety"
+  },
+  {
+    "query": "hypochondria"
+  },
+  {
+    "query": "health-preoccupation"
+  },
+  {
+    "query": "remote-clinical-trial/free/chronic-pain/psychosomatic/pain-amplification"
+  },
+  {
+    "query": "chronic-pain"
+  },
+  {
+    "query": "psychosomatic"
+  },
+  {
+    "query": "pain-amplification"
+  },
+  {
+    "query": "remote-clinical-trial/free/stutter/fluency/stammer"
+  },
+  {
+    "query": "stutter"
+  },
+  {
+    "query": "fluency"
+  },
+  {
+    "query": "stammer"
+  },
+  {
+    "query": "remote-clinical-trial/free/spider/arachnophobia/fear/phobia"
+  },
+  {
+    "query": "spider"
+  },
+  {
+    "query": "arachnophobia"
+  },
+  {
+    "query": "fear"
+  },
+  {
+    "query": "phobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/snake/ophidiophobia/fear/phobia"
+  },
+  {
+    "query": "snake"
+  },
+  {
+    "query": "ophidiophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/height/acrophobia/fear/phobia"
+  },
+  {
+    "query": "height"
+  },
+  {
+    "query": "acrophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/speaking/glossophobia/fear/phobia"
+  },
+  {
+    "query": "speaking"
+  },
+  {
+    "query": "glossophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/imposter/syndrome/fraud/inadequacy"
+  },
+  {
+    "query": "imposter"
+  },
+  {
+    "query": "syndrome"
+  },
+  {
+    "query": "fraud"
+  },
+  {
+    "query": "inadequacy"
+  },
+  {
+    "query": "remote-clinical-trial/free/performance-anxiety/evaluation/judgment/social-threat"
+  },
+  {
+    "query": "performance-anxiety"
+  },
+  {
+    "query": "evaluation"
+  },
+  {
+    "query": "judgment"
+  },
+  {
+    "query": "social-threat"
+  },
+  {
+    "query": "remote-clinical-trial/free/agoraphobia/social/phobia/crowds/open"
+  },
+  {
+    "query": "agoraphobia"
+  },
+  {
+    "query": "social"
+  },
+  {
+    "query": "crowds"
+  },
+  {
+    "query": "open"
+  },
+  {
+    "query": "remote-clinical-trial/free/flying/aerophobia/fear/phobia"
+  },
+  {
+    "query": "flying"
+  },
+  {
+    "query": "aerophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/rejection-sensitivity/rejection-dysphoria/social-pain"
+  },
+  {
+    "query": "rejection-sensitivity"
+  },
+  {
+    "query": "rejection-dysphoria"
+  },
+  {
+    "query": "social-pain"
+  },
+  {
+    "query": "remote-clinical-trial/free/dog/cynophobia/fear/phobia"
+  },
+  {
+    "query": "dog"
+  },
+  {
+    "query": "cynophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/needle/trypanophobia/fear/phobia"
+  },
+  {
+    "query": "needle"
+  },
+  {
+    "query": "trypanophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/enclosed/claustrophobia/fear/phobia"
+  },
+  {
+    "query": "enclosed"
+  },
+  {
+    "query": "claustrophobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/storm/astraphobia/fear/phobia"
+  },
+  {
+    "query": "storm"
+  },
+  {
+    "query": "astraphobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/asd/autism/aspergers/spectrum"
+  },
+  {
+    "query": "asd"
+  },
+  {
+    "query": "autism"
+  },
+  {
+    "query": "aspergers"
+  },
+  {
+    "query": "spectrum"
+  },
+  {
+    "query": "remote-clinical-trial/free/adhd/attention/deficit/hyperactivity"
+  },
+  {
+    "query": "adhd"
+  },
+  {
+    "query": "attention"
+  },
+  {
+    "query": "deficit"
+  },
+  {
+    "query": "hyperactivity"
+  },
+  {
+    "query": "remote-clinical-trial/free/bipolar"
+  },
+  {
+    "query": "bipolar"
+  },
+  {
+    "query": "remote-clinical-trial/free/gun-addiction/weapons/firearms/compulsive"
+  },
+  {
+    "query": "gun-addiction"
+  },
+  {
+    "query": "weapons"
+  },
+  {
+    "query": "firearms"
+  },
+  {
+    "query": "compulsive"
+  },
+  {
+    "query": "remote-clinical-trial/free/homicidal-ideation/violent-thoughts/harm-urges"
+  },
+  {
+    "query": "homicidal-ideation"
+  },
+  {
+    "query": "violent-thoughts"
+  },
+  {
+    "query": "harm-urges"
+  },
+  {
+    "query": "remote-clinical-trial/free/rage/anger/ied"
+  },
+  {
+    "query": "rage"
+  },
+  {
+    "query": "anger"
+  },
+  {
+    "query": "ied"
+  },
+  {
+    "query": "remote-clinical-trial/free/burnout/exhaustion/depersonalization/work-stress"
+  },
+  {
+    "query": "burnout"
+  },
+  {
+    "query": "exhaustion"
+  },
+  {
+    "query": "depersonalization"
+  },
+  {
+    "query": "work-stress"
+  },
+  {
+    "query": "remote-clinical-trial/free/alcohol/substance/abuse"
+  },
+  {
+    "query": "alcohol"
+  },
+  {
+    "query": "substance"
+  },
+  {
+    "query": "abuse"
+  },
+  {
+    "query": "remote-clinical-trial/free/screen-addiction/technology/compulsive-use"
+  },
+  {
+    "query": "screen-addiction"
+  },
+  {
+    "query": "technology"
+  },
+  {
+    "query": "compulsive-use"
+  },
+  {
+    "query": "remote-clinical-trial/free/porn-addiction/sexual-compulsivity/compulsive-use"
+  },
+  {
+    "query": "porn-addiction"
+  },
+  {
+    "query": "sexual-compulsivity"
+  },
+  {
+    "query": "remote-clinical-trial/free/sexual-dysfunction/impotence/performance-anxiety/ed"
+  },
+  {
+    "query": "sexual-dysfunction"
+  },
+  {
+    "query": "impotence"
+  },
+  {
+    "query": "ed"
+  },
+  {
+    "query": "remote-clinical-trial/free/fear-intimacy/commitment/closeness-phobia"
+  },
+  {
+    "query": "fear-intimacy"
+  },
+  {
+    "query": "commitment"
+  },
+  {
+    "query": "closeness-phobia"
+  },
+  {
+    "query": "remote-clinical-trial/free/ai-anxiety/technophobia/fear-artificial-intelligence"
+  },
+  {
+    "query": "ai-anxiety"
+  },
+  {
+    "query": "technophobia"
+  },
+  {
+    "query": "fear-artificial-intelligence"
+  },
+  {
+    "query": "remote-clinical-trial/free/social-media-anxiety/fomo/comparison/digital-judgment"
+  },
+  {
+    "query": "social-media-anxiety"
+  },
+  {
+    "query": "fomo"
+  },
+  {
+    "query": "comparison"
+  },
+  {
+    "query": "digital-judgment"
+  },
+  {
+    "query": "remote-clinical-trial/free/paranoia/fear-strangers/crime-threat/persecution"
+  },
+  {
+    "query": "paranoia"
+  },
+  {
+    "query": "fear-strangers"
+  },
+  {
+    "query": "crime-threat"
+  },
+  {
+    "query": "persecution"
+  },
+  {
+    "query": "remote-clinical-trial/free/tics/tourette"
+  },
+  {
+    "query": "tics"
+  },
+  {
+    "query": "tourette"
+  },
+  {
+    "query": "remote-clinical-trial/free/epilepsy/seizure"
+  },
+  {
+    "query": "epilepsy"
+  },
+  {
+    "query": "seizure"
+  },
+  {
+    "query": "remote-clinical-trial/free/insomnia/sleep/hyperarousal/wakefulness"
+  },
+  {
+    "query": "insomnia"
+  },
+  {
+    "query": "sleep"
+  },
+  {
+    "query": "hyperarousal"
+  },
+  {
+    "query": "wakefulness"
+  },
+  {
+    "query": "remote-clinical-trial/free/ocd/obsessive/compulsive"
+  },
+  {
+    "query": "ocd"
+  },
+  {
+    "query": "obsessive"
+  },
+  {
+    "query": "remote-clinical-trial/free/trichotillomania/hair-pulling/body-focused-repetitive"
+  },
+  {
+    "query": "trichotillomania"
+  },
+  {
+    "query": "hair-pulling"
+  },
+  {
+    "query": "body-focused-repetitive"
+  },
+  {
+    "query": "remote-clinical-trial/free/body-dysmorphia/body-image/appearance-preoccupation"
+  },
+  {
+    "query": "body-dysmorphia"
+  },
+  {
+    "query": "body-image"
+  },
+  {
+    "query": "appearance-preoccupation"
+  },
+  {
+    "query": "remote-clinical-trial/free/eating-disorders/anorexia/bulimia/binge-eating"
+  },
+  {
+    "query": "eating-disorders"
+  },
+  {
+    "query": "anorexia"
+  },
+  {
+    "query": "bulimia"
+  },
+  {
+    "query": "binge-eating"
+  },
+  {
+    "query": "remote-clinical-trial/free/spd/sensory/processing"
+  },
+  {
+    "query": "spd"
+  },
+  {
+    "query": "sensory"
+  },
+  {
+    "query": "processing"
+  },
+  {
+    "query": "remote-clinical-trial/free/misophonia/selective/sound/sensitivity"
+  },
+  {
+    "query": "misophonia"
+  },
+  {
+    "query": "selective"
+  },
+  {
+    "query": "sound"
+  },
+  {
+    "query": "sensitivity"
+  },
+  {
+    "query": "remote-clinical-trial/free/mutism/selective/silence"
+  },
+  {
+    "query": "mutism"
+  },
+  {
+    "query": "silence"
+  },
+  {
+    "query": "remote-clinical-trial/free/dyspraxia/motor/coordination"
+  },
+  {
+    "query": "dyspraxia"
+  },
+  {
+    "query": "motor"
+  },
+  {
+    "query": "coordination"
+  },
+  {
+    "query": "remote-clinical-trial/free/dyscalculia/math/numbers"
+  },
+  {
+    "query": "dyscalculia"
+  },
+  {
+    "query": "math"
+  },
+  {
+    "query": "numbers"
+  },
+  {
+    "query": "remote-clinical-trial/free/test-anxiety/academic-performance/exam-anxiety"
+  },
+  {
+    "query": "test-anxiety"
+  },
+  {
+    "query": "academic-performance"
+  },
+  {
+    "query": "exam-anxiety"
+  },
+  {
+    "query": "remote-clinical-trial/free/perfectionism/impossible-standards/self-imposed-threat"
+  },
+  {
+    "query": "perfectionism"
+  },
+  {
+    "query": "impossible-standards"
+  },
+  {
+    "query": "self-imposed-threat"
+  },
+  {
+    "query": "remote-clinical-trial/free/dysgraphia/writing/handwriting"
+  },
+  {
+    "query": "dysgraphia"
+  },
+  {
+    "query": "writing"
+  },
+  {
+    "query": "handwriting"
+  },
+  {
+    "query": "remote-clinical-trial/free/generalized/anxiety"
+  },
+  {
+    "query": "generalized"
+  },
+  {
+    "query": "anxiety"
+  },
+  {
+    "query": "remote-clinical-trial/free/chronophobia/fear/time"
+  },
+  {
+    "query": "chronophobia"
+  },
+  {
+    "query": "time"
+  },
+  {
+    "query": "remote-clinical-trial/free/thanatophobia/death/anxiety"
+  },
+  {
+    "query": "thanatophobia"
+  },
+  {
+    "query": "death"
+  },
+  {
+    "query": "remote-clinical-trial/free/moral-injury/values/violation"
+  },
+  {
+    "query": "moral-injury"
+  },
+  {
+    "query": "values"
+  },
+  {
+    "query": "violation"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-fears-phobias"
+  },
+  {
+    "query": "general-fears-phobias"
+  },
+  {
+    "query": "remote-clinical-trial/free/seasonal-affective-disorder"
+  },
+  {
+    "query": "seasonal-affective-disorder"
+  },
+  {
+    "query": "remote-clinical-trial/free/perinatal-depression"
+  },
+  {
+    "query": "perinatal-depression"
+  },
+  {
+    "query": "remote-clinical-trial/free/menopausal-depression"
+  },
+  {
+    "query": "menopausal-depression"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-mood-disorders"
+  },
+  {
+    "query": "general-mood-disorders"
+  },
+  {
+    "query": "remote-clinical-trial/free/dyslexia/reading/disorder"
+  },
+  {
+    "query": "dyslexia"
+  },
+  {
+    "query": "reading"
+  },
+  {
+    "query": "disorder"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-neurodevelopmental"
+  },
+  {
+    "query": "general-neurodevelopmental"
+  },
+  {
+    "query": "remote-clinical-trial/free/gambling-addiction"
+  },
+  {
+    "query": "gambling-addiction"
+  },
+  {
+    "query": "remote-clinical-trial/free/food-addiction"
+  },
+  {
+    "query": "food-addiction"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-addictions"
+  },
+  {
+    "query": "general-addictions"
+  },
+  {
+    "query": "remote-clinical-trial/free/anxiety-somatization/physical-symptoms/health-anxiety"
+  },
+  {
+    "query": "anxiety-somatization"
+  },
+  {
+    "query": "physical-symptoms"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-neurological-issues"
+  },
+  {
+    "query": "general-neurological-issues"
+  },
+  {
+    "query": "remote-clinical-trial/free/self-esteem-identity"
+  },
+  {
+    "query": "self-esteem-identity"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-performance-issues"
+  },
+  {
+    "query": "general-performance-issues"
+  },
+  {
+    "query": "remote-clinical-trial/free/cutting-self-harm"
+  },
+  {
+    "query": "cutting-self-harm"
+  },
+  {
+    "query": "remote-clinical-trial/free/hoarding-disorder"
+  },
+  {
+    "query": "hoarding-disorder"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-ocd-spectrum"
+  },
+  {
+    "query": "general-ocd-spectrum"
+  },
+  {
+    "query": "remote-clinical-trial/free/relationship-jealousy"
+  },
+  {
+    "query": "relationship-jealousy"
+  },
+  {
+    "query": "remote-clinical-trial/free/codependency"
+  },
+  {
+    "query": "codependency"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-attachment-issues"
+  },
+  {
+    "query": "general-attachment-issues"
+  },
+  {
+    "query": "remote-clinical-trial/free/aphasia"
+  },
+  {
+    "query": "aphasia"
+  },
+  {
+    "query": "remote-clinical-trial/free/general-communication-issues"
+  },
+  {
+    "query": "general-communication-issues"
+  },
+  {
+    "query": "remote-clinical-trial/free/trauma-drama"
+  },
+  {
+    "query": "trauma-drama"
+  },
+  {
+    "query": "remote-clinical-trial/free/power-control-issues"
+  },
+  {
+    "query": "power-control-issues"
+  },
+  {
+    "query": "remote-clinical-trial/free/rape-sexual-assault"
+  },
+  {
+    "query": "rape-sexual-assault"
+  },
+  {
+    "query": "remote-clinical-trial/free/stockholm-syndrome"
+  },
+  {
+    "query": "stockholm-syndrome"
+  },
+  {
+    "query": "remote-clinical-trial/free/sex-addiction"
+  },
+  {
+    "query": "sex-addiction"
+  },
+  {
+    "query": "remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity"
+  },
+  {
+    "query": "homophobia"
+  },
+  {
+    "query": "sexual-orientation"
+  },
+  {
+    "query": "gender-identity"
+  },
+  {
+    "query": "remote-clinical-trial/free/racism/xenophobia/ethnic-prejudice"
+  },
+  {
+    "query": "racism"
+  },
+  {
+    "query": "xenophobia"
+  },
+  {
+    "query": "ethnic-prejudice"
+  },
+  {
+    "query": "remote-clinical-trial/free/misogyny/gender-based-violence/fear-of-women"
+  },
+  {
+    "query": "misogyny"
+  },
+  {
+    "query": "gender-based-violence"
+  },
+  {
+    "query": "fear-of-women"
+  },
+  {
+    "query": "remote-clinical-trial/free/tribalism/groupthink/ingroup-outgroup-bias"
+  },
+  {
+    "query": "tribalism"
+  },
+  {
+    "query": "groupthink"
+  },
+  {
+    "query": "ingroup-outgroup-bias"
+  },
+  {
+    "query": "remote-clinical-trial/free/maternal-wound/mother-complex/maternal-attachment"
+  },
+  {
+    "query": "maternal-wound"
+  },
+  {
+    "query": "mother-complex"
+  },
+  {
+    "query": "maternal-attachment"
+  },
+  {
+    "query": "remote-clinical-trial/free/paternal-wound/father-complex/paternal-attachment"
+  },
+  {
+    "query": "paternal-wound"
+  },
+  {
+    "query": "father-complex"
+  },
+  {
+    "query": "paternal-attachment"
+  },
+  {
+    "query": "remote-clinical-trial/free/parenting-stress/parental-anxiety/parental-inadequacy"
+  },
+  {
+    "query": "parenting-stress"
+  },
+  {
+    "query": "parental-anxiety"
+  },
+  {
+    "query": "parental-inadequacy"
+  },
+  {
+    "query": "remote-clinical-trial/free/stepfamily/blended-family/family-integration"
+  },
+  {
+    "query": "stepfamily"
+  },
+  {
+    "query": "blended-family"
+  },
+  {
+    "query": "family-integration"
+  },
+  {
+    "query": "remote-clinical-trial/free/coparenting-custody-conflict/family-separation-anxiety"
+  },
+  {
+    "query": "coparenting-custody-conflict"
+  },
+  {
+    "query": "family-separation-anxiety"
+  },
+  {
+    "query": "remote-clinical-trial/free/adolescent-identity/self-discovery/identity-formation"
+  },
+  {
+    "query": "adolescent-identity"
+  },
+  {
+    "query": "self-discovery"
+  },
+  {
+    "query": "identity-formation"
+  },
+  {
+    "query": "remote-clinical-trial/free/adolescent-angst/oppositional-defiance/autonomy-conflict"
+  },
+  {
+    "query": "adolescent-angst"
+  },
+  {
+    "query": "oppositional-defiance"
+  },
+  {
+    "query": "autonomy-conflict"
+  },
+  {
+    "query": "remote-clinical-trial/free/sexual-identity/gender-dysphoria/social-dysphoria"
+  },
+  {
+    "query": "sexual-identity"
+  },
+  {
+    "query": "gender-dysphoria"
+  },
+  {
+    "query": "social-dysphoria"
+  },
+  {
+    "query": "remote-clinical-trial/free/emo-subculture/alternative-identity/emotional-expression"
+  },
+  {
+    "query": "emo-subculture"
+  },
+  {
+    "query": "alternative-identity"
+  },
+  {
+    "query": "emotional-expression"
+  },
+  {
+    "query": "remote-clinical-trial/free/victim-identity/learned-helplessness/powerlessness"
+  },
+  {
+    "query": "victim-identity"
+  },
+  {
+    "query": "learned-helplessness"
+  },
+  {
+    "query": "powerlessness"
+  },
+  {
+    "query": "remote-clinical-trial/free/adolescent-risk/impulsivity/executive-dysfunction"
+  },
+  {
+    "query": "adolescent-risk"
+  },
+  {
+    "query": "impulsivity"
+  },
+  {
+    "query": "executive-dysfunction"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-substance-abuse/adolescent-addiction/substance-dependence"
+  },
+  {
+    "query": "teen-substance-abuse"
+  },
+  {
+    "query": "adolescent-addiction"
+  },
+  {
+    "query": "substance-dependence"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-gang/tribal-belonging/gang-identity"
+  },
+  {
+    "query": "teen-gang"
+  },
+  {
+    "query": "tribal-belonging"
+  },
+  {
+    "query": "gang-identity"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-screen-addiction/digital-escapism/internet-dependence"
+  },
+  {
+    "query": "teen-screen-addiction"
+  },
+  {
+    "query": "digital-escapism"
+  },
+  {
+    "query": "internet-dependence"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-bullying/aggressive-defense/peer-aggression"
+  },
+  {
+    "query": "teen-bullying"
+  },
+  {
+    "query": "aggressive-defense"
+  },
+  {
+    "query": "peer-aggression"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-crisis/survival-behaviors/acute-distress"
+  },
+  {
+    "query": "teen-crisis"
+  },
+  {
+    "query": "survival-behaviors"
+  },
+  {
+    "query": "acute-distress"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-runaway/elopement/escape-behavior"
+  },
+  {
+    "query": "teen-runaway"
+  },
+  {
+    "query": "elopement"
+  },
+  {
+    "query": "escape-behavior"
+  },
+  {
+    "query": "remote-clinical-trial/free/teen-suicide/self-harm/suicidal-intent"
+  },
+  {
+    "query": "teen-suicide"
+  },
+  {
+    "query": "self-harm"
+  },
+  {
+    "query": "suicidal-intent"
+  },
+  {
+    "query": "remote-clinical-trial/free/adolescent-abandonment/trauma-hypervigilance/rejection-sensitivity"
+  },
+  {
+    "query": "adolescent-abandonment"
+  },
+  {
+    "query": "trauma-hypervigilance"
+  },
+  {
+    "query": "remote-clinical-trial/free/foster-family/reactive-attachment/family-integration"
+  },
+  {
+    "query": "foster-family"
+  },
+  {
+    "query": "reactive-attachment"
+  },
+  {
+    "query": "remote-clinical-trial/free/social-mimicry/identity-diffusion/authentic-self"
+  },
+  {
+    "query": "social-mimicry"
+  },
+  {
+    "query": "identity-diffusion"
+  },
+  {
+    "query": "authentic-self"
+  },
+  {
+    "query": "remote-clinical-trial/free/food-phobia/arfid/avoidant-restriction"
+  },
+  {
+    "query": "food-phobia"
+  },
+  {
+    "query": "arfid"
+  },
+  {
+    "query": "avoidant-restriction"
+  },
+  {
+    "query": "remote-clinical-trial/free/narcissism/personality/pride"
+  },
+  {
+    "query": "narcissism"
+  },
+  {
+    "query": "personality"
+  },
+  {
+    "query": "pride"
+  },
+  {
+    "query": "remote-clinical-trial/free/borderline/personality/envy"
+  },
+  {
+    "query": "borderline"
+  },
+  {
+    "query": "envy"
+  },
+  {
+    "query": "remote-clinical-trial/free/depression/major-depressive/anhedonia"
+  },
+  {
+    "query": "major-depressive"
+  },
+  {
+    "query": "anhedonia"
+  },
+  {
+    "query": "remote-clinical-trial/free/avoidant/cowardice/social-inhibition"
+  },
+  {
+    "query": "cowardice"
+  },
+  {
+    "query": "social-inhibition"
+  },
+  {
+    "query": "remote-clinical-trial/free/panic/agoraphobia/fear-escape"
+  },
+  {
+    "query": "panic"
+  },
+  {
+    "query": "fear-escape"
+  },
+  {
+    "query": "remote-clinical-trial/free/antisocial/deception/manipulation"
+  },
+  {
+    "query": "antisocial"
+  },
+  {
+    "query": "deception"
+  },
+  {
+    "query": "manipulation"
+  },
+  {
+    "query": "remote-clinical-trial/free/histrionic/attention/dramatic-behavior"
+  },
+  {
+    "query": "histrionic"
+  },
+  {
+    "query": "dramatic-behavior"
+  },
+  {
+    "query": "remote-clinical-trial/free/factitious/munchausen/medical-deception"
+  },
+  {
+    "query": "factitious"
+  },
+  {
+    "query": "munchausen"
+  },
+  {
+    "query": "medical-deception"
+  },
+  {
+    "query": "remote-clinical-trial/free/grief/loss/complicated-bereavement"
+  },
+  {
+    "query": "grief"
+  },
+  {
+    "query": "loss"
+  },
+  {
+    "query": "complicated-bereavement"
+  },
+  {
+    "query": "remote-clinical-trial/free/anticipatory-grief/loss/terminal-illness"
+  },
+  {
+    "query": "anticipatory-grief"
+  },
+  {
+    "query": "terminal-illness"
+  },
+  {
+    "query": "remote-clinical-trial/free/family-of-addicts/adult-children/inherited-patterns"
+  },
+  {
+    "query": "family-of-addicts"
+  },
+  {
+    "query": "adult-children"
+  },
+  {
+    "query": "inherited-patterns"
+  },
+  {
+    "query": "remote-clinical-trial/free/relational-betrayal/infidelity/trust-rupture"
+  },
+  {
+    "query": "relational-betrayal"
+  },
+  {
+    "query": "infidelity"
+  },
+  {
+    "query": "trust-rupture"
+  },
+  {
+    "query": "remote-clinical-trial/free/drama-triangle/rescuer/karpman-role"
+  },
+  {
+    "query": "drama-triangle"
+  },
+  {
+    "query": "rescuer"
+  },
+  {
+    "query": "karpman-role"
+  },
+  {
+    "query": "remote-clinical-trial/free/aging/geriatric/late-life-depression"
+  },
+  {
+    "query": "aging"
+  },
+  {
+    "query": "geriatric"
+  },
+  {
+    "query": "late-life-depression"
+  },
+  {
+    "query": "remote-clinical-trial/free/aging/identity/meaning-loss"
+  },
+  {
+    "query": "identity"
+  },
+  {
+    "query": "meaning-loss"
+  },
+  {
+    "query": "remote-clinical-trial/free/sexual-health/dysfunction/intimacy-connection"
+  },
+  {
+    "query": "sexual-health"
+  },
+  {
+    "query": "dysfunction"
+  },
+  {
+    "query": "intimacy-connection"
+  },
+  {
+    "query": "remote-clinical-trial/free/drama-triangle/persecutor/karpman-aggression"
+  },
+  {
+    "query": "persecutor"
+  },
+  {
+    "query": "karpman-aggression"
+  },
+  {
+    "query": "remote-clinical-trial/free/pathological-lying/factitious-identity/chronic-deception"
+  },
+  {
+    "query": "pathological-lying"
+  },
+  {
+    "query": "factitious-identity"
+  },
+  {
+    "query": "chronic-deception"
+  },
+  {
+    "query": "remote-clinical-trial/free/empty-nest/marital-crisis/identity-loss"
+  },
+  {
+    "query": "empty-nest"
+  },
+  {
+    "query": "marital-crisis"
+  },
+  {
+    "query": "identity-loss"
+  },
+  {
+    "query": "remote-clinical-trial/free/stage-fright/live-performance/audience-anxiety"
+  },
+  {
+    "query": "stage-fright"
+  },
+  {
+    "query": "live-performance"
+  },
+  {
+    "query": "audience-anxiety"
+  },
+  {
+    "query": "remote-clinical-trial/free/procrastination/avoidance/executive-dysfunction"
+  },
+  {
+    "query": "procrastination"
+  },
+  {
+    "query": "avoidance"
+  },
+  {
+    "query": "remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
+  },
+  {
+    "query": "chrometophobia"
+  },
+  {
+    "query": "fear-money"
+  },
+  {
+    "query": "financial-anxiety"
+  },
+  {
+    "query": "remote-clinical-trial/free/scarcity/poverty-mindset/survival-fixation"
+  },
+  {
+    "query": "scarcity"
+  },
+  {
+    "query": "poverty-mindset"
+  },
+  {
+    "query": "survival-fixation"
+  },
+  {
+    "query": "remote-clinical-trial/free/money-dysmorphia/financial-distortion/wealth-misperception"
+  },
+  {
+    "query": "money-dysmorphia"
+  },
+  {
+    "query": "financial-distortion"
+  },
+  {
+    "query": "wealth-misperception"
+  },
+  {
+    "query": "remote-clinical-trial/free/money-scripts/unconscious-beliefs/financial-programming"
+  },
+  {
+    "query": "money-scripts"
+  },
+  {
+    "query": "unconscious-beliefs"
+  },
+  {
+    "query": "financial-programming"
+  },
+  {
+    "query": "remote-clinical-trial/free/affluenza/sudden-wealth/identity-crisis"
+  },
+  {
+    "query": "affluenza"
+  },
+  {
+    "query": "sudden-wealth"
+  },
+  {
+    "query": "identity-crisis"
+  },
+  {
+    "query": "remote-clinical-trial/free/financial-infidelity/hidden-debt/relational-deception"
+  },
+  {
+    "query": "financial-infidelity"
+  },
+  {
+    "query": "hidden-debt"
+  },
+  {
+    "query": "relational-deception"
+  },
+  {
+    "query": "remote-clinical-trial/free/financial-trauma/bankruptcy/loss-displacement"
+  },
+  {
+    "query": "financial-trauma"
+  },
+  {
+    "query": "bankruptcy"
+  },
+  {
+    "query": "loss-displacement"
+  },
+  {
+    "query": "remote-clinical-trial/free/financial-anxiety/money-worry/cynicism"
+  },
+  {
+    "query": "money-worry"
+  },
+  {
+    "query": "cynicism"
+  },
+  {
+    "query": "pioneers/paul-maclean"
+  },
+  {
+    "query": "pioneers/daniel-goleman"
+  },
+  {
+    "query": "pioneers/gul-dolen"
+  },
+  {
+    "query": "pioneers/ann-graybiel"
+  },
+  {
+    "query": "pioneers/carla-shatz"
+  },
+  {
+    "query": "pioneers/trevor-robbins"
+  },
+  {
+    "query": "pioneers/erin-schuman"
+  },
+  {
+    "query": "pioneers/giacomo-indiveri"
+  },
+  {
+    "query": "pioneers/yukiyasu-kamitani"
+  },
+  {
+    "query": "pioneers/aditya-murthy"
+  },
+  {
+    "query": "pioneers/bo-li"
+  },
+  {
+    "query": "pioneers/mary-galea"
+  },
+  {
+    "query": "pioneers/daniel-wegner"
+  },
+  {
+    "query": "pioneers/karl-friston"
+  },
+  {
+    "query": "pioneers/karim-nader"
+  },
+  {
+    "query": "pioneers/olivier-hardt"
+  },
+  {
+    "query": "pioneers/daniela-schiller"
+  }
+]

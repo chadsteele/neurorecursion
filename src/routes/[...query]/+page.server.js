@@ -1,32 +1,45 @@
-import Conditions from "$data/Conditions.js"
-import Pioneers from "$data/Pioneers.js"
+import fs from "fs"
+import path from "path"
+import {fileURLToPath} from "url"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export const prerender = "auto"
 
-// Generate prerender entries for all condition paths and keywords
+// Load prerender entries from generated file (avoids bundling large data files)
+function loadPrerenderedEntries() {
+	try {
+		const entriesPath = path.join(
+			__dirname,
+			"../../static/prerender-entries.json",
+		)
+		const data = fs.readFileSync(entriesPath, "utf-8")
+		return JSON.parse(data)
+	} catch (e) {
+		console.warn("Warning: prerender-entries.json not found. Defaulting to []")
+		return []
+	}
+}
+
+const prerenderedEntries = loadPrerenderedEntries()
+
+// Generate prerender entries - uses data generated during prebuild
 export function entries() {
-	const paths = new Set()
-
-	Conditions.forEach((condition) => {
-		// Add the full path
-		const fullPath = condition.path.slice(1) // Remove leading slash
-		paths.add(fullPath)
-
-		// Also add each individual word from the path
-		// e.g., "/depression/suicidal" -> also add "depression" and "suicidal"
-		const words = fullPath.split("/").filter(Boolean)
-		words.forEach((word) => {
-			paths.add(word)
-		})
-	})
-
-	return Array.from(paths).map((path) => {
-		return {query: path}
-	})
+	return prerenderedEntries
 }
 
 export async function load({params}) {
-	// Load function required for prerendering, but OG tags are handled by edge function
-	// No data needed to be returned - edge function handles all OG rewriting
-	return {}
+	// Return data from server (not bundled into client)
+	// Dynamic imports ensure data files are only loaded on server
+	// Only return serializable data - functions cannot be sent to client
+	const conditionsModule = await import("../../data/Conditions.js")
+	const pioneersModule = await import("../../data/Pioneers.js")
+	
+	return {
+		conditions: conditionsModule.default,
+		conditionsMap: conditionsModule.ConditionsMap,
+		pioneers: pioneersModule.default,
+		sortedPioneers: pioneersModule.sorted,
+		pioneersMap: pioneersModule.PioneersMap,
+	}
 }

@@ -9,7 +9,7 @@
 		"resize-images": "node scripts/ResizeImages.js",
 		"images": "npm run rename-images && npm run resize-images && npm run og-images",
 		"og-images": "node scripts/generate-og-images.js",
-		"prebuild": " node scripts/generate-metadata.js && node scripts/embed-edge-metadata.js && node scripts/generate-sitemap.js && node scripts/generate-schemas.js",
+		"prebuild": " node scripts/generate-metadata.js && node scripts/embed-edge-metadata.js && node scripts/generate-sitemap.js && node scripts/generate-schemas.js && node scripts/generate-prerender-entries.js",
 		"build": " vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

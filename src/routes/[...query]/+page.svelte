@@ -16,31 +16,67 @@
 	// Lazy-loaded data
 	let Conditions = $state([])
 	let ConditionsMap = $state({})
-	let getCondition = $state(null)
 	let Pioneers = $state([])
 	let sortedPioneers = $state([])
 	let PioneersMap = $state({})
-	let isLoadingData = $state(true)
+	let isLoadingData = $state(false)
 
-	// Load data on client side
+	// Load data from server (passed via load function)
 	$effect(() => {
-		if (browser && isLoadingData) {
-			Promise.all([
-				import("$data/Conditions.js"),
-				import("$data/Pioneers.js"),
-			]).then(([conditionsModule, pioneersModule]) => {
-				Conditions = conditionsModule.default
-				ConditionsMap = conditionsModule.ConditionsMap
-				getCondition = conditionsModule.getCondition
-
-				Pioneers = pioneersModule.default
-				sortedPioneers = pioneersModule.sorted
-				PioneersMap = pioneersModule.PioneersMap
-
-				isLoadingData = false
-			})
+		if (data?.conditions && data?.pioneers) {
+			Conditions = data.conditions || []
+			ConditionsMap = data.conditionsMap || {}
+			Pioneers = data.pioneers || []
+			sortedPioneers = data.sortedPioneers || []
+			PioneersMap = data.pioneersMap || {}
+			isLoadingData = false
 		}
 	})
+
+	// Recreate getCondition function locally since we can't serialize functions
+	function getCondition(input) {
+		if (!Conditions.length) return null
+		if (!input) return null
+
+		function scoreCondition(condition, words) {
+			let score = 0
+			const conditionStr = `${condition.name}${condition.id}${condition.path}`.toLowerCase()
+			for (const word of words) {
+				if (condition.name.toLowerCase().includes(word)) {
+					score += 10
+				}
+				if (condition.id.toLowerCase().includes(word)) {
+					score += 5
+				}
+				if (conditionStr.includes(word)) {
+					score += 1
+				}
+			}
+			return score
+		}
+
+		const words = Array.isArray(input)
+			? input
+			: input
+					.toLowerCase()
+					.split(/[\s,/_-]+/)
+					.filter(Boolean)
+
+		if (words.length === 0) return null
+
+		let bestCondition = null
+		let bestScore = -1
+
+		for (const condition of Conditions) {
+			const score = scoreCondition(condition, words)
+			if (score > bestScore) {
+				bestScore = score
+				bestCondition = condition
+			}
+		}
+
+		return bestCondition
+	}
 
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
