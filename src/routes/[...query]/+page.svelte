@@ -40,7 +40,8 @@
 
 		function scoreCondition(condition, words) {
 			let score = 0
-			const conditionStr = `${condition.name}${condition.id}${condition.path}`.toLowerCase()
+			const conditionStr =
+				`${condition.name}${condition.id}${condition.path}`.toLowerCase()
 			for (const word of words) {
 				if (condition.name.toLowerCase().includes(word)) {
 					score += 10

@@ -16,7 +16,9 @@ function loadPrerenderedEntries() {
 		const data = fs.readFileSync(entriesPath, "utf-8")
 		return JSON.parse(data)
 	} catch (e) {
-		console.warn("Warning: prerender-entries.json not found. Defaulting to []")
+		console.warn(
+			"Warning: prerender-entries.json not found. Defaulting to []",
+		)
 		return []
 	}
 }
@@ -34,7 +36,7 @@ export async function load({params}) {
 	// Only return serializable data - functions cannot be sent to client
 	const conditionsModule = await import("../../data/Conditions.js")
 	const pioneersModule = await import("../../data/Pioneers.js")
-	
+
 	return {
 		conditions: conditionsModule.default,
 		conditionsMap: conditionsModule.ConditionsMap,
