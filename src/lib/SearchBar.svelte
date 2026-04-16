@@ -92,7 +92,8 @@
 				const newUrl = newSearch
 					? `${window.location.pathname}?${newSearch}`
 					: window.location.pathname
-				goto(newUrl, {replaceState: true})
+				// Use window.history.replaceState to avoid scroll behavior from goto
+				window.history.replaceState({}, "", newUrl)
 			}
 		}
 	})
