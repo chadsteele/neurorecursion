@@ -107,41 +107,11 @@
 		)
 	}
 
-	async function handleFormSubmit(event) {
-		event.preventDefault()
-
+	function handleFormSubmit(event) {
 		if (!validateBeforeSubmit()) {
-			return
+			event.preventDefault()
 		}
-
-		// Prepare form data for submission
-		const form = event.target
-		const formDataObj = new FormData(form)
-
-		try {
-			// Submit to Netlify Forms via POST
-			const response = await fetch("/careers", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formDataObj).toString(),
-			})
-
-			if (response.ok) {
-				// Redirect after successful submission
-				setTimeout(() => {
-					window.location.href = "/success?redirectTo=/"
-				}, 500)
-			} else {
-				alert(
-					"There was an error submitting the form. Please try again.",
-				)
-			}
-		} catch (error) {
-			console.error("Form submission error:", error)
-			alert("There was an error submitting the form. Please try again.")
-		}
+		// Allow form to submit naturally to Netlify
 	}
 
 	function handleCancel() {
