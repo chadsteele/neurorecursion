@@ -217,7 +217,9 @@
 	})
 </script>
 
-<Parallax background="/backgrounds/children.png">
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png"
+>
 	<div id="about" path="/about"></div>
 	<Intro class="paper container" />
 	<div id="references" path="/references"></div>
@@ -231,7 +233,9 @@
 <div class="category-section">
 	<h1>Clinical Trials</h1>
 </div>
-<Parallax background="/backgrounds/kids-grass.png">
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/kids-grass.png"
+>
 	<section class="paper container">
 		<h2>Enrolling now!</h2>
 		<p>Find your condition below and sign up to see if you qualify!</p>
@@ -321,7 +325,9 @@
 	<h1>Supportive Communities</h1>
 </div>
 <div id="support" path="/support"></div>
-<Parallax background="/backgrounds/kids-blowing-bubbles.png">
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/kids-blowing-bubbles.png"
+>
 	<Orgs class="paper container" />
 </Parallax>
 
