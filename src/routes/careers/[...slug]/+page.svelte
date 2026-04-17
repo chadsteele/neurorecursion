@@ -4,12 +4,14 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import CareersForm from "$lib/CareersForm.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import ShareModal from "$lib/ShareModal.svelte"
 	import ClinicalResearchAssociate from "$lib/jobs/ClinicalResearchAssociate.svelte"
 	import GrowthAffiliateMarketingSpecialist from "$lib/jobs/GrowthAffiliateMarketingSpecialist.svelte"
 	import SmallGroupFacilitator from "$lib/jobs/SmallGroupFacilitator.svelte"
 	import CertifiedCoach from "$lib/jobs/CertifiedCoach.svelte"
 	import SpeakerFacilitator from "$lib/jobs/SpeakerFacilitator.svelte"
 	import OtherTalent from "$lib/jobs/OtherTalent.svelte"
+	import jobs from "../../../data/Jobs.js"
 
 	const jobMapping = {
 		"clinical-research-associate": ClinicalResearchAssociate,
@@ -25,10 +27,43 @@
 		goto("/careers")
 	}
 
+	let showShareModal = $state(false)
+	let Share2Icon = $state(null)
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			Share2Icon = module.Share2
+		})
+	})
+
+	function handleShare() {
+		showShareModal = true
+	}
+
 	let CurrentComponent = $derived(jobMapping[$page.params.slug])
+	let backgroundUrl = $derived.by(() => {
+		const job = jobs.find((job) => job.id === $page.params.slug)
+		return job
+			? job.background_url
+			: "https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+	})
 </script>
 
-<Parallax background="/backgrounds/children.png">
+{#if showShareModal}
+	<ShareModal
+		title={CurrentComponent
+			? jobs.find((j) => j.id === $page.params.slug)?.title
+			: "Join Our Team"}
+		description="We're hiring! Join the Neuro Recursion Institute team."
+		imageUrl={backgroundUrl}
+		url={typeof window !== "undefined"
+			? `${window.location.origin}/careers/${$page.params.slug}`
+			: `/careers/${$page.params.slug}`}
+		onClose={() => (showShareModal = false)}
+	/>
+{/if}
+
+<Parallax background={backgroundUrl}>
 	<section class="paper container">
 		<button class="back-button" onclick={goBack}>← Back to Careers</button>
 
@@ -51,8 +86,19 @@
 							title="Follow us on LinkedIn"
 						>
 							<LinkedInIcon />
-							Find us on LinkedIn
+							LinkedIn
 						</a>
+
+						<button
+							type="button"
+							class="share-btn"
+							onclick={handleShare}
+						>
+							{#if Share2Icon}
+								<Share2Icon size={18} strokeWidth={2} />
+							{/if}
+							Share
+						</button>
 					</div>
 				</div>
 			{:else}
@@ -115,10 +161,9 @@
 
 	.social-links {
 		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin: 2rem 0 3rem 0;
-		padding-top: 2rem;
+		gap: clamp(0.5rem, 2vw, 1rem);
+		margin-top: 2rem;
+		padding-top: 1.5rem;
 		border-top: 1px solid rgba(74, 159, 216, 0.2);
 	}
 
@@ -137,7 +182,44 @@
 		transform: translateY(-2px);
 	}
 
+	.social-link svg {
+		width: 18px;
+		height: 18px;
+		transition: transform 0.3s ease;
+		stroke-width: 2;
+	}
+
 	.social-link:hover svg {
+		transform: scale(1.1);
+	}
+
+	.share-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: none;
+		border: none;
+		color: #4a9fd8;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 1rem;
+		padding: 0;
+	}
+
+	.share-btn:hover {
+		color: #a0d8ff;
+		transform: translateY(-2px);
+	}
+
+	.share-btn :global(svg) {
+		width: 18px;
+		height: 18px;
+		transition: transform 0.3s ease;
+		stroke-width: 2;
+	}
+
+	.share-btn:hover :global(svg) {
 		transform: scale(1.1);
 	}
 </style>

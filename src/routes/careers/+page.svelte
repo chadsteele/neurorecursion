@@ -1,10 +1,38 @@
 <script>
 	import Parallax from "$lib/Parallax.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import ShareModal from "$lib/ShareModal.svelte"
 	import jobs from "../../data/Jobs.js"
+
+	let showShareModal = $state(false)
+	let Share2Icon = $state(null)
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			Share2Icon = module.Share2
+		})
+	})
+
+	function handleShare() {
+		showShareModal = true
+	}
 </script>
 
-<Parallax background="/backgrounds/children.png">
+{#if showShareModal}
+	<ShareModal
+		title="Neuro Recursion Institute - Careers"
+		description="Join our team! We're hiring talented people passionate about neuroscience research and clinical innovation."
+		imageUrl="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+		url={typeof window !== "undefined"
+			? `${window.location.origin}/careers`
+			: "/careers"}
+		onClose={() => (showShareModal = false)}
+	/>
+{/if}
+
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+>
 	<section class="paper container">
 		<div class="header-flex">
 			<img
@@ -58,8 +86,15 @@
 				title="Follow us on LinkedIn"
 			>
 				<LinkedInIcon />
-				Find us on LinkedIn
+				LinkedIn
 			</a>
+
+			<button type="button" class="share-btn" onclick={handleShare}>
+				{#if Share2Icon}
+					<Share2Icon size={18} strokeWidth={2} />
+				{/if}
+				Share
+			</button>
 		</div>
 	</section>
 </Parallax>
@@ -110,10 +145,9 @@
 
 	.social-links {
 		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin: 2rem 0 3rem 0;
-		padding-top: 2rem;
+		gap: clamp(0.5rem, 2vw, 1rem);
+		margin-top: 2rem;
+		padding-top: 1.5rem;
 		border-top: 1px solid rgba(74, 159, 216, 0.2);
 	}
 
@@ -133,12 +167,43 @@
 	}
 
 	.social-link svg {
-		width: 24px;
-		height: 24px;
+		width: 18px;
+		height: 18px;
 		transition: transform 0.3s ease;
+		stroke-width: 2;
 	}
 
 	.social-link:hover svg {
+		transform: scale(1.1);
+	}
+
+	.share-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: none;
+		border: none;
+		color: #4a9fd8;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 1rem;
+		padding: 0;
+	}
+
+	.share-btn:hover {
+		color: #a0d8ff;
+		transform: translateY(-2px);
+	}
+
+	.share-btn :global(svg) {
+		width: 18px;
+		height: 18px;
+		transition: transform 0.3s ease;
+		stroke-width: 2;
+	}
+
+	.share-btn:hover :global(svg) {
 		transform: scale(1.1);
 	}
 

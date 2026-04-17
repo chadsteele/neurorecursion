@@ -12,9 +12,10 @@
 	const bgValue = $derived.by(() => {
 		if (!isLoaded || !background || !showBackground) return null
 		if (
-			background.startsWith("url") ||
-			background.startsWith("http") ||
-			background.includes(".")
+			typeof background === "string" &&
+			(background.startsWith("url") ||
+				background.startsWith("http") ||
+				background.includes("."))
 		) {
 			return `url('${background}')`
 		}
