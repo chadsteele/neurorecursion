@@ -1,7 +1,6 @@
 <script>
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
-	import Parallax from "$lib/Parallax.svelte"
 	import CareersForm from "$lib/CareersForm.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
@@ -63,9 +62,9 @@
 	/>
 {/if}
 
-<Parallax background={backgroundUrl}>
-	<section class="paper container">
-		<button class="back-button" onclick={goBack}>← Back to Careers</button>
+<section class="job-section" style="background-image: url('{backgroundUrl}')">
+	<div class="paper container">
+		<!-- <button class="back-button" onclick={goBack}>← Back to Careers</button> -->
 
 		<div class="job-content">
 			{#if CurrentComponent}
@@ -105,10 +104,50 @@
 				<div class="error-message">Job listing not found</div>
 			{/if}
 		</div>
-	</section>
-</Parallax>
+	</div>
+</section>
 
 <style>
+	@keyframes kenBurns {
+		0% {
+			background-size: 120%;
+		}
+		50% {
+			background-size: 150%;
+		}
+		100% {
+			background-size: 120%;
+		}
+	}
+
+	@keyframes bgFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.job-section {
+		display: flex;
+		flex-direction: column;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		animation:
+			kenBurns 60s ease-in-out infinite,
+			bgFadeIn 0.8s ease-in-out;
+		filter: brightness(0.7);
+	}
+
+	.job-section .paper.container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
 	.back-button {
 		display: inline-block;
 		margin-bottom: 2rem;
@@ -132,6 +171,11 @@
 	.job-content {
 		color: #d0d0d0;
 		line-height: 1.8;
+		margin: 3rem 0;
+		padding: 2rem;
+		background: rgba(26, 36, 71, 0.5);
+		border-radius: 8px;
+		border: 1px solid rgba(74, 159, 216, 0.2);
 	}
 
 	.error-message {

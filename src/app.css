@@ -9,7 +9,7 @@ html {
 }
 
 div[id] {
-	margin-bottom: 100px;
+	scroll-margin-top: 80px;
 }
 
 @keyframes fadeIn {

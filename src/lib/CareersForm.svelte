@@ -118,7 +118,7 @@
 	}
 
 	function handleCancel() {
-		goto("/")
+		goto("/careers")
 	}
 </script>
 

@@ -8,7 +8,6 @@
 		Copy,
 		ArrowRight,
 	} from "lucide-svelte"
-	import Parallax from "$lib/Parallax.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 
 	let showShareModal = $state(false)
@@ -36,10 +35,27 @@
 	/>
 </svelte:head>
 
-<Parallax
-	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+<section
+	class="affiliate-page"
+	style="background-image: url('https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png')"
 >
-	<section class="paper container affiliate-page">
+	<div class="paper container">
+		<div class="section-shell teaser-shell">
+			<div class="teaser-copy">
+				<h2>Show me the money!</h2>
+				<div class="teaser-links">
+					<a href="#math" class="primary-link">10% commission</a>
+					<a href="#math" class="primary-link">$10k example</a>
+					<a href="#math" class="primary-link">$25k example</a>
+					<a href="#math" class="primary-link">$60k example</a>
+				</div>
+				<p>
+					NeuroRecursion offers a flat 10% commission on referred
+					purchases, tracked end to end, with revenue scenarios below
+					so you can evaluate the opportunity without hype.
+				</p>
+			</div>
+		</div>
 		<div class="hero-panel">
 			<div class="hero-copy">
 				<div class="eyebrow">You're already an affiliate</div>
@@ -490,7 +506,7 @@
 			</div>
 		</div>
 
-		<div class="section-shell money-shell">
+		<div id="math" class="section-shell money-shell">
 			<h2>Money: The math that works</h2>
 			<p>
 				Commission is 10% of every purchase your referral makes. There
@@ -586,11 +602,45 @@
 				</a>
 			</div>
 		</div>
-	</section>
-</Parallax>
+	</div>
+</section>
 
 <style>
+	@keyframes kenBurns {
+		0% {
+			background-size: 120%;
+		}
+		50% {
+			background-size: 150%;
+		}
+		100% {
+			background-size: 120%;
+		}
+	}
+
+	@keyframes bgFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
 	.affiliate-page {
+		display: flex;
+		flex-direction: column;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		animation:
+			kenBurns 60s ease-in-out infinite,
+			bgFadeIn 0.8s ease-in-out;
+		filter: brightness(0.7);
+	}
+
+	.affiliate-page .paper.container {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
@@ -727,6 +777,41 @@
 		display: grid;
 		gap: 1rem;
 		align-content: start;
+	}
+
+	.teaser-shell {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.teaser-copy {
+		display: grid;
+		gap: 0.85rem;
+		/* max-width: 72ch; */
+	}
+
+	.teaser-copy h2 {
+		margin: 0;
+		/* max-width: 26ch; */
+	}
+
+	.teaser-copy p {
+		margin: 0;
+		color: #dce8f2;
+	}
+
+	.teaser-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		align-items: center;
+	}
+
+	.teaser-links .primary-link {
+		padding: 0.55rem 0.95rem;
+		font-size: 0.9rem;
+		font-weight: 700;
+		min-width: 140px;
 	}
 
 	.stat-card {
@@ -1076,6 +1161,7 @@
 		font-size: 0.95rem;
 		color: #9bbfd8;
 		font-style: italic;
+		margin: 0;
 		padding: 1rem;
 		border-left: 3px solid rgba(160, 216, 255, 0.3);
 	}
@@ -1344,6 +1430,10 @@
 			grid-template-columns: 1fr;
 		}
 
+		.teaser-links {
+			justify-content: center;
+		}
+
 		h1 {
 			font-size: clamp(1.8rem, 3vw, 3rem);
 			max-width: none;
@@ -1358,5 +1448,9 @@
 		.credentials-container {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	#math {
+		scroll-margin-top: 80px;
 	}
 </style>
