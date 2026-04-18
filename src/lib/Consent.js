@@ -7,12 +7,17 @@ export default [
 	{
 		id: "confidentiality",
 		title: "Confidentiality & Proprietary Process",
-		text: `I acknowledge that the research methodology and underlying process are proprietary and confidential. I agree to maintain the confidentiality of all information disclosed during this study and shall not disclose, publish, or distribute any details of the protocol without prior written consent from the company.`,
+		text: `I acknowledge that the research methodology, underlying process, techniques, frameworks, and all associated materials are proprietary and strictly confidential intellectual property owned exclusively by the company. I solemnly agree to maintain absolute confidentiality of all information disclosed during this study. I shall not, under any circumstances, disclose, publish, distribute, reproduce, explain, teach, or make available any details of the protocol, technique, methodology, or derivative information without prior written consent from the company. This obligation survives termination of my participation and extends indefinitely.`,
 	},
 	{
 		id: "liability",
 		title: "Liability for Unauthorized Disclosure",
-		text: `I understand and agree that I am solely responsible for maintaining the confidentiality of this research. I agree to be held liable for any damages arising from unauthorized disclosure, sale, distribution, or breach of confidentiality of the proprietary information or methodology shared during this study.`,
+		text: `I understand and agree that I am solely and fully responsible for maintaining confidentiality of all proprietary information. I agree to be held strictly liable for all damages, costs, losses, and expenses—including attorney fees, legal proceedings, and reputational harm—arising from any unauthorized disclosure, sale, distribution, reproduction, teaching, or breach of confidentiality. The company retains the right to pursue both civil and injunctive remedies for any violation. I further agree that the company may seek specific performance, injunctive relief, and liquidated damages for breaches of this confidentiality obligation. I shall indemnify and hold harmless the company from all claims, damages, and costs arising from my breach.`,
+	},
+	{
+		id: "ip_protection",
+		title: "Intellectual Property Protection & Enforcement",
+		text: `I expressly agree to actively protect the company's intellectual property and shall take all reasonable measures to prevent disclosure or misuse. I understand that the company's proprietary methodology is a valuable trade secret protected by law. I agree not to photograph, record, copy, or document any materials, techniques, or processes without explicit written authorization. I commit to immediately reporting any unauthorized use, disclosure, or violation to the company. I acknowledge that violation of these IP protections may result in immediate legal action, including cease and desist letters and litigation. I understand that damages for IP theft can be substantial and include lost profits, punitive damages, and attorney fees.`,
 	},
 	{
 		id: "recording",
@@ -26,8 +31,8 @@ export default [
 	},
 	{
 		id: "rights",
-		title: "Transfer of Rights & Likeness",
-		text: `I hereby transfer all intellectual property rights, including but not limited to the resulting footage, recordings, and any derivative works, to the company for its exclusive use. I grant the company the perpetual, non-exclusive right to use my likeness and first name in connection with this research, materials, and documentation.`,
+		title: "Transfer of Rights & Intellectual Property",
+		text: `I hereby irrevocably transfer all intellectual property rights, copyright, and exclusive ownership to the company, including but not limited to: all resulting footage, recordings, derivative works, edited materials, transcripts, data, and any content derived from my participation. I acknowledge that the company owns these materials in perpetuity worldwide. I waive all moral rights and claim no ownership or royalties. I grant the company perpetual, worldwide, exclusive, and irrevocable rights to edit, reproduce, distribute, and commercialize all materials. I understand that the company's intellectual property is protected by law, and that I retain no rights to any materials produced during or after my participation.`,
 	},
 	{
 		id: "disclaimers",
