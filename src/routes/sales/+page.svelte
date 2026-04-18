@@ -1,14 +1,15 @@
 <script>
 	import {tick} from "svelte"
+	import {
+		Share2 as Share2Icon,
+		ShoppingCart as CheckoutIcon,
+	} from "lucide-svelte"
 
 	import Parallax from "$lib/Parallax.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 
 	let showShareModal = $state(false)
-	let CancelIcon = $state(null)
-	let FileTextIcon = $state(null)
-	let Share2Icon = $state(null)
 	let highlightedProductId = $state(null)
 	let orderError = $state("")
 	let orderStatus = $state("idle")
@@ -208,14 +209,6 @@
 		attendees *
 		affiliateExample.coachingPrice *
 		affiliateExample.commissionRate
-
-	$effect(() => {
-		import("lucide-svelte").then((module) => {
-			FileTextIcon = module.FileText
-			Share2Icon = module.Share2
-			CancelIcon = module.X
-		})
-	})
 
 	$effect(() => {
 		const selectionSignature = getSelectedProducts()
@@ -461,9 +454,7 @@
 						class="share-trigger"
 						onclick={handleShare}
 					>
-						{#if Share2Icon}
-							<Share2Icon size={18} strokeWidth={2} />
-						{/if}
+						<Share2Icon size={18} strokeWidth={2} />
 						Share this page
 					</button>
 				</div>
@@ -685,17 +676,33 @@
 						onkeydown={(event) =>
 							handleToggleKeydown(event, step.name)}
 					>
-						<div class="cert-number">0{index + 1}</div>
+						<div
+							class="cert-number"
+							class:cert-number-selected={isProductSelected(
+								step.name,
+							)}
+						>
+							<span
+								class="cert-number-value"
+								class:cert-number-value-hidden={isProductSelected(
+									step.name,
+								)}
+								aria-hidden={isProductSelected(step.name)}
+							>
+								0{index + 1}
+							</span>
+							<span
+								class="cert-number-check"
+								class:cert-number-check-visible={isProductSelected(
+									step.name,
+								)}
+								aria-hidden={!isProductSelected(step.name)}
+								>&check;</span
+							>
+						</div>
 						<div class="cert-copy">
 							<div class="offer-topline">
 								<div class="card-title">
-									<span
-										class="selection-checkbox"
-										class:is-checked={isProductSelected(
-											step.name,
-										)}
-										aria-hidden="true"
-									></span>
 									<h3>{step.name}</h3>
 								</div>
 								<div class="price-pill">
@@ -806,7 +813,7 @@
 					class="social-inline"
 				>
 					<LinkedInIcon />
-					Follow NeuroRecursion
+					NeuroRecursion
 				</a>
 			</div>
 		</div>
@@ -962,66 +969,63 @@
 							Send order request
 						</button>
 					</div>
-
-					<aside
-						class="order-summary"
-						class:toast-visible={showOrderSummaryToast}
-						aria-live="polite"
-						bind:this={orderSummaryElement}
-					>
-						<div class="summary-header">
-							<button
-								type="button"
-								class="summary-cta"
-								onclick={reviewOrderForm}
-							>
-								{#if FileTextIcon}
-									<FileTextIcon size={16} strokeWidth={2} />
-								{/if}
-							</button>
-
-							<button
-								type="button"
-								class="summary-close"
-								aria-label="Close selected products summary"
-								onclick={dismissOrderSummaryToast}
-							>
-								{#if CancelIcon}
-									<CancelIcon size={16} strokeWidth={2} />
-								{:else}
-									<span aria-hidden="true">x</span>
-								{/if}
-							</button>
-						</div>
-
-						<ul class="summary-list">
-							{#if getSelectedProducts().length > 0}
-								{#each getSelectedProducts() as product}
-									<li>
-										<span>{product.name}</span>
-										<strong
-											>{formatPrice(
-												product.price,
-											)}</strong
-										>
-									</li>
-								{/each}
-								<div class="summary-total">
-									<span>Estimated total</span>
-									<strong
-										>{formatPrice(
-											getSelectedTotal(),
-										)}</strong
-									>
-								</div>
-							{:else}
-								<li class="summary-empty">
-									No products selected yet.
-								</li>
-							{/if}
-						</ul>
-					</aside>
 				</div>
+
+				<aside
+					class="order-summary"
+					class:toast-visible={showOrderSummaryToast}
+					aria-live="polite"
+					bind:this={orderSummaryElement}
+				>
+					<div class="summary-header">
+						<button
+							type="button"
+							class="summary-cta"
+							onclick={reviewOrderForm}
+						>
+							<CheckoutIcon size={16} strokeWidth={2} />
+							<span>Checkout</span>
+						</button>
+
+						<button
+							type="button"
+							class="summary-close"
+							aria-label="Close selected products summary"
+							onclick={dismissOrderSummaryToast}
+						>
+							<span class="summary-close-glyph" aria-hidden="true"
+								>&times;</span
+							>
+						</button>
+					</div>
+
+					<p class="summary-copy">
+						Review the full order form to confirm your selections
+						and next steps.
+					</p>
+
+					<ul class="summary-list">
+						{#if getSelectedProducts().length > 0}
+							{#each getSelectedProducts() as product}
+								<li>
+									<span>{product.name}</span>
+									<strong>{formatPrice(product.price)}</strong
+									>
+								</li>
+							{/each}
+							<div class="summary-total">
+								<span>Estimated total</span>
+								<strong
+									>{formatPrice(getSelectedTotal())}</strong
+								>
+							</div>
+						{:else}
+							<li class="summary-empty">
+								No products selected yet.
+							</li>
+						{/if}
+					</ul>
+				</aside>
 			</form>
 		</div>
 	</section>
@@ -1442,10 +1446,60 @@
 		height: 3rem;
 		display: grid;
 		place-items: center;
+		position: relative;
 		border-radius: 50%;
 		background: linear-gradient(135deg, #4a9fd8, #7bd9ff);
 		color: #07111d;
 		font-weight: 800;
+		font-size: 1rem;
+		line-height: 1;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease,
+			background 0.25s ease,
+			color 0.25s ease;
+	}
+
+	.cert-number-value,
+	.cert-number-check {
+		position: absolute;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+		transition:
+			opacity 0.22s ease,
+			transform 0.22s ease;
+	}
+
+	.cert-number-value {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	.cert-number-value-hidden {
+		opacity: 0;
+		transform: scale(0.55);
+	}
+
+	.cert-number-selected {
+		background: linear-gradient(135deg, #a8f1ff, #66d6ff);
+		box-shadow:
+			0 0 0 4px rgba(123, 217, 255, 0.16),
+			0 12px 28px rgba(10, 31, 58, 0.24);
+		transform: scale(1.04);
+	}
+
+	.cert-number-check {
+		font-size: 1.9rem;
+		font-weight: 800;
+		opacity: 0;
+		transform: scale(0.45) rotate(-12deg);
+	}
+
+	.cert-number-check-visible {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
 	}
 
 	.example-card {
@@ -1494,7 +1548,7 @@
 
 	.order-grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+		grid-template-columns: minmax(0, 1fr);
 		gap: 1rem;
 	}
 
@@ -1706,11 +1760,19 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.summary-copy {
+		max-width: 28ch;
+		margin: 0 0 0.9rem;
+		color: #9fc1d8;
+		line-height: 1.6;
 	}
 
 	.summary-close {
-		width: 2rem;
-		height: 2rem;
+		width: 2.8rem;
+		height: 2.8rem;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -1739,6 +1801,16 @@
 		border-color: rgba(123, 217, 255, 0.42);
 	}
 
+	.summary-close-glyph {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.25rem;
+		font-weight: 700;
+		line-height: 1;
+		transform: translateY(-0.03rem);
+	}
+
 	.summary-total {
 		display: flex;
 		justify-content: space-between;
@@ -1762,17 +1834,20 @@
 	}
 
 	.summary-cta {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.45rem;
-		padding: 0.8rem 1rem;
+		width: fit-content;
+		min-height: 2.8rem;
+		padding: 0 1rem;
 		border-radius: 999px;
 		background: rgba(123, 217, 255, 0.14);
 		border: 1px solid rgba(123, 217, 255, 0.25);
 		color: #effbff;
 		font: inherit;
 		font-weight: 700;
+		white-space: nowrap;
 		cursor: pointer;
 		transition: all 0.25s ease;
 	}
@@ -1816,10 +1891,19 @@
 	}
 
 	.closing-shell {
-		display: grid;
-		grid-template-columns: minmax(0, 1.4fr) auto;
+		display: flex;
+		flex-direction: column;
 		gap: 1.5rem;
-		align-items: center;
+		align-items: flex-start;
+	}
+
+	.closing-copy {
+		width: 100%;
+	}
+
+	.closing-actions {
+		flex-direction: row;
+		align-items: flex-start;
 	}
 
 	.social-inline :global(svg),
