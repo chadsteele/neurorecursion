@@ -24,6 +24,7 @@
 		phone: "",
 		notes: "",
 		selected: {},
+		quantities: {},
 	})
 
 	const priceFormatter = new Intl.NumberFormat("en-US", {
@@ -175,6 +176,49 @@
 	}
 
 	const attendees = affiliateExample.views * affiliateExample.conversionRate
+
+	const productConfig = {
+		"NeuroRecursion Clinical Trial": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+		"Facilitated Small Group Conversations": {
+			supportsQuantity: true,
+			unitLabel: (count) => (count === 1 ? "Session" : "Sessions"),
+			discountTiers: [
+				{threshold: 3, rate: 0.1},
+				{threshold: 10, rate: 0.2},
+			],
+		},
+		"One-on-One Coaching": {
+			supportsQuantity: true,
+			unitLabel: (count) => (count === 1 ? "Hour" : "Hours"),
+			discountTiers: [
+				{threshold: 3, rate: 0.1},
+				{threshold: 10, rate: 0.2},
+			],
+		},
+		"Coach Certification Course and Materials": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+		"Coach Certification Study Group": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+		"Coach Certification Practice Exam": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+		"Coach Certification Exam": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+		"Annual Coach License Renewal + Reexamination": {
+			supportsQuantity: false,
+			discountTiers: [],
+		},
+	}
 	const orderGroups = [
 		{
 			category: "clinical trial",
@@ -293,6 +337,57 @@
 			.find((product) => product.name === name)
 	}
 
+	function getProductById(productId) {
+		return orderCatalog
+			.flatMap((group) => group.products)
+			.find((product) => product.id === productId)
+	}
+
+	function supportsQuantity(productOrName) {
+		const productName =
+			typeof productOrName === "string"
+				? productOrName
+				: productOrName?.name
+
+		return productConfig[productName]?.supportsQuantity ?? false
+	}
+
+	function getQuantityUnitLabel(productOrName, count = 2) {
+		const productName =
+			typeof productOrName === "string"
+				? productOrName
+				: productOrName?.name
+
+		const config = productConfig[productName]
+
+		if (config?.unitLabel) {
+			return config.unitLabel(count)
+		}
+
+		return count === 1 ? "Unit" : "Units"
+	}
+
+	function getProductQuantity(productId) {
+		const product = getProductById(productId)
+
+		if (!product || !supportsQuantity(product)) {
+			return 1
+		}
+
+		const quantity = Number(orderForm.quantities[productId])
+		const isSelected = Boolean(orderForm.selected[productId])
+
+		if (!Number.isFinite(quantity)) {
+			return isSelected ? 1 : 0
+		}
+
+		if (quantity <= 0) {
+			return 0
+		}
+
+		return Math.floor(quantity)
+	}
+
 	function isProductSelected(name) {
 		const product = getProductByName(name)
 
@@ -300,9 +395,55 @@
 	}
 
 	function toggleProductSelection(productId) {
-		orderForm.selected[productId] = !orderForm.selected[productId]
+		const product = getProductById(productId)
+		const nextSelected = !orderForm.selected[productId]
+
+		orderForm.selected[productId] = nextSelected
+
+		if (product && supportsQuantity(product)) {
+			orderForm.quantities[productId] = nextSelected
+				? Math.max(1, getProductQuantity(productId))
+				: 0
+		}
 		orderError = ""
 		orderStatus = "idle"
+	}
+
+	function setProductQuantity(productId, quantity) {
+		const product = getProductById(productId)
+
+		if (!product || !supportsQuantity(product)) {
+			return
+		}
+
+		const nextQuantity = Math.max(0, Math.floor(quantity))
+
+		orderForm.quantities[productId] = nextQuantity
+		orderForm.selected[productId] = nextQuantity > 0
+		orderError = ""
+		orderStatus = "idle"
+	}
+
+	function handleQuantityAdjust(event, productId, delta) {
+		event.preventDefault()
+		event.stopPropagation()
+
+		setProductQuantity(productId, getProductQuantity(productId) + delta)
+		void pulseCheckboxRow(productId)
+	}
+
+	function handleProductCheckboxChange(event, product) {
+		const isChecked = event.currentTarget.checked
+
+		if (supportsQuantity(product)) {
+			setProductQuantity(product.id, isChecked ? 1 : 0)
+		} else {
+			orderForm.selected[product.id] = isChecked
+			orderError = ""
+			orderStatus = "idle"
+		}
+
+		void pulseCheckboxRow(product.id)
 	}
 
 	function toggleProductByName(name) {
@@ -340,9 +481,118 @@
 		)
 	}
 
+	function getLineSubtotal(product) {
+		return product.price * getProductQuantity(product.id)
+	}
+
+	function getQuantityDiscountRate(product) {
+		if (!supportsQuantity(product)) {
+			return 0
+		}
+
+		const config = productConfig[product.name]
+		const quantity = getProductQuantity(product.id)
+
+		if (!config?.discountTiers?.length) {
+			return 0
+		}
+
+		// Find the highest matching tier
+		let appliedRate = 0
+		for (const tier of config.discountTiers) {
+			if (quantity >= tier.threshold) {
+				appliedRate = tier.rate
+			}
+		}
+
+		return appliedRate
+	}
+
+	function getQuantityDiscountPercent(product) {
+		return Math.round(getQuantityDiscountRate(product) * 100)
+	}
+
+	function getNextQuantityDiscount(product) {
+		if (!supportsQuantity(product)) {
+			return null
+		}
+
+		const config = productConfig[product.name]
+		if (!config?.discountTiers?.length) {
+			return null
+		}
+
+		const quantity = getProductQuantity(product.id)
+
+		// Find the next tier not yet achieved
+		for (const tier of config.discountTiers) {
+			if (quantity < tier.threshold) {
+				return {
+					remaining: tier.threshold - quantity,
+					percent: Math.round(tier.rate * 100),
+				}
+			}
+		}
+
+		return null
+	}
+
+	function getLineDiscount(product) {
+		const discountRate = getQuantityDiscountRate(product)
+
+		if (discountRate === 0) {
+			return 0
+		}
+
+		return getLineSubtotal(product) * discountRate
+	}
+
+	function getRemainingForQuantityDiscount(product) {
+		const nextDiscount = getNextQuantityDiscount(product)
+
+		if (!nextDiscount) {
+			return 0
+		}
+
+		return nextDiscount.remaining
+	}
+
+	function getNextQuantityDiscountPercent(product) {
+		return getNextQuantityDiscount(product)?.percent ?? 0
+	}
+
+	function shouldEncourageNextQuantityDiscount(product) {
+		if (!supportsQuantity(product)) {
+			return false
+		}
+
+		const config = productConfig[product.name]
+		if (!config?.discountTiers?.length || config.discountTiers.length < 2) {
+			return false
+		}
+
+		const quantity = getProductQuantity(product.id)
+		const firstTier = config.discountTiers[0]
+		const secondTier = config.discountTiers[1]
+
+		return quantity > firstTier.threshold && quantity < secondTier.threshold
+	}
+
+	function getLineTotal(product) {
+		return getLineSubtotal(product) - getLineDiscount(product)
+	}
+
+	function getQuantityTotalLabel(product) {
+		if (supportsQuantity(product) && getProductQuantity(product.id) === 0) {
+			return ""
+		}
+
+		return formatPrice(getLineTotal(product))
+	}
+
 	function getSelectedTotal() {
 		return getSelectedProducts().reduce(
-			(sum, product) => sum + product.price,
+			(sum, product) => sum + getLineTotal(product),
 			0,
 		)
 	}
@@ -368,7 +618,20 @@
 		const formData = new FormData(form)
 		formData.set(
 			"selected_products",
-			selectedProducts.map((product) => product.value).join(", "),
+			selectedProducts
+				.map((product) => {
+					if (!supportsQuantity(product)) {
+						return product.value
+					}
+
+					const quantity = getProductQuantity(product.id)
+					const discount = getLineDiscount(product)
+
+					return discount > 0
+						? `${product.value} x${quantity} (${getQuantityDiscountPercent(product)}% volume discount applied)`
+						: `${product.value} x${quantity}`
+				})
+				.join(", "),
 		)
 		formData.set("estimated_total", formatPrice(getSelectedTotal()))
 
@@ -392,6 +655,7 @@
 				phone: "",
 				notes: "",
 				selected: {},
+				quantities: {},
 			}
 			form.reset()
 		} catch (error) {
@@ -910,11 +1174,16 @@
 													type="checkbox"
 													name="selected_products"
 													value={product.value}
-													bind:checked={
+													checked={Boolean(
 														orderForm.selected[
 															product.id
-														]
-													}
+														],
+													)}
+													onchange={(event) =>
+														handleProductCheckboxChange(
+															event,
+															product,
+														)}
 												/>
 												<div class="checkbox-copy">
 													<div
@@ -935,6 +1204,114 @@
 															class="checkbox-duration"
 														>
 															Duration: {product.duration}
+														</div>
+													{/if}
+													{#if supportsQuantity(product)}
+														<div
+															class="quantity-controls"
+														>
+															<span
+																class="quantity-label"
+																>{getQuantityUnitLabel(
+																	product,
+																	getProductQuantity(
+																		product.id,
+																	) || 2,
+																)}</span
+															>
+															<div
+																class="quantity-stepper"
+															>
+																<button
+																	type="button"
+																	class="quantity-btn"
+																	onclick={(
+																		event,
+																	) =>
+																		handleQuantityAdjust(
+																			event,
+																			product.id,
+																			-1,
+																		)}
+																	aria-label={`Decrease quantity for ${product.name}`}
+																>
+																	-
+																</button>
+																<span
+																	class="quantity-value"
+																	>{getProductQuantity(
+																		product.id,
+																	)}</span
+																>
+																<button
+																	type="button"
+																	class="quantity-btn"
+																	onclick={(
+																		event,
+																	) =>
+																		handleQuantityAdjust(
+																			event,
+																			product.id,
+																			1,
+																		)}
+																	aria-label={`Increase quantity for ${product.name}`}
+																>
+																	+
+																</button>
+															</div>
+															<div
+																class="quantity-pricing"
+															>
+																<span
+																	class="quantity-total"
+																	>{getQuantityTotalLabel(
+																		product,
+																	)}</span
+																>
+																{#if getLineDiscount(product) > 0}
+																	<span
+																		class="quantity-discount"
+																		>{getQuantityDiscountPercent(
+																			product,
+																		)}% off
+																		applied
+																		for {getProductQuantity(
+																			product.id,
+																		)}
+																		{getQuantityUnitLabel(
+																			product,
+																			getProductQuantity(
+																				product.id,
+																			),
+																		)}</span
+																	>
+																	{#if shouldEncourageNextQuantityDiscount(product)}
+																		<span
+																			class="quantity-notice"
+																			>Order
+																			{getRemainingForQuantityDiscount(
+																				product,
+																			)} more
+																			to get
+																			{getNextQuantityDiscountPercent(
+																				product,
+																			)}%
+																			off!</span
+																		>
+																	{/if}
+																{:else if getProductQuantity(product.id) > 0}
+																	<span
+																		class="quantity-notice"
+																		>Order {getRemainingForQuantityDiscount(
+																			product,
+																		)}
+																		more to get
+																		{getNextQuantityDiscountPercent(
+																			product,
+																		)}% off!</span
+																	>
+																{/if}
+															</div>
 														</div>
 													{/if}
 												</div>
@@ -1009,8 +1386,27 @@
 						{#if getSelectedProducts().length > 0}
 							{#each getSelectedProducts() as product}
 								<li>
-									<span>{product.name}</span>
-									<strong>{formatPrice(product.price)}</strong
+									<span>
+										{product.name}
+										{#if supportsQuantity(product)}
+											<span class="summary-quantity"
+												>x{getProductQuantity(
+													product.id,
+												)}</span
+											>
+										{/if}
+										{#if getLineDiscount(product) > 0}
+											<span class="summary-line-discount"
+												>{getQuantityDiscountPercent(
+													product,
+												)}% off</span
+											>
+										{/if}
+									</span>
+									<strong
+										>{formatPrice(
+											getLineTotal(product),
+										)}</strong
 									>
 								</li>
 							{/each}
@@ -1077,6 +1473,11 @@
 		margin: 0;
 		color: #eaf7ff;
 		font-size: 1.1rem;
+	}
+
+	button,
+	a {
+		user-select: none;
 	}
 
 	p {
@@ -1704,6 +2105,97 @@
 		font-size: 0.9rem;
 	}
 
+	.quantity-controls {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.75rem;
+		margin-top: 0.9rem;
+		padding-top: 0.85rem;
+		border-top: 1px solid rgba(160, 216, 255, 0.12);
+	}
+
+	.quantity-label,
+	.quantity-total,
+	.summary-quantity {
+		color: #9fc1d8;
+		font-size: 0.9rem;
+	}
+
+	.quantity-pricing {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.2rem;
+		margin-left: auto;
+	}
+
+	.quantity-discount,
+	.summary-line-discount {
+		color: #9ff8c2;
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+
+	.quantity-notice {
+		color: #ffd98a;
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+
+	.quantity-stepper {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+
+	.quantity-btn {
+		width: 2rem;
+		height: 2rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		border: 1px solid rgba(123, 217, 255, 0.24);
+		background: rgba(255, 255, 255, 0.05);
+		color: #eff8ff;
+		font: inherit;
+		font-weight: 800;
+		cursor: pointer;
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.quantity-btn:hover {
+		background: rgba(123, 217, 255, 0.14);
+		border-color: rgba(123, 217, 255, 0.36);
+		transform: translateY(-1px);
+	}
+
+	.quantity-btn:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.18);
+	}
+
+	.quantity-value {
+		min-width: 1.5rem;
+		text-align: center;
+		font-weight: 700;
+		color: #eff8ff;
+	}
+
+	.summary-quantity {
+		display: inline-flex;
+		margin-left: 0.35rem;
+	}
+
+	.summary-line-discount {
+		display: inline-flex;
+		margin-left: 0.45rem;
+	}
+
 	.submit-order-btn {
 		margin-top: 1rem;
 		width: fit-content;
@@ -1960,6 +2452,10 @@
 		.cert-card {
 			display: flex;
 			flex-direction: column;
+		}
+
+		.quantity-controls {
+			flex-wrap: wrap;
 		}
 
 		.order-summary {

@@ -166,14 +166,14 @@
 		transform: translateY(-2px);
 	}
 
-	.social-link svg {
+	.social-link :global(svg) {
 		width: 18px;
 		height: 18px;
 		transition: transform 0.3s ease;
 		stroke-width: 2;
 	}
 
-	.social-link:hover svg {
+	.social-link:hover :global(svg) {
 		transform: scale(1.1);
 	}
 

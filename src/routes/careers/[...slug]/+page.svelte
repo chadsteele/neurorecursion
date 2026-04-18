@@ -69,7 +69,7 @@
 
 		<div class="job-content">
 			{#if CurrentComponent}
-				<svelte:component this={CurrentComponent} />
+				<CurrentComponent />
 				<div class="application-form">
 					<h2>Apply Now</h2>
 					<p>
@@ -182,14 +182,14 @@
 		transform: translateY(-2px);
 	}
 
-	.social-link svg {
+	.social-link :global(svg) {
 		width: 18px;
 		height: 18px;
 		transition: transform 0.3s ease;
 		stroke-width: 2;
 	}
 
-	.social-link:hover svg {
+	.social-link:hover :global(svg) {
 		transform: scale(1.1);
 	}
 
