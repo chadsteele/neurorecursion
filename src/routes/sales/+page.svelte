@@ -69,7 +69,6 @@
 	const maintenanceOptions = [
 		{
 			name: "Facilitated Small Group Conversations",
-			price: 49,
 			duration: "Generally 1 hour",
 			description:
 				"Practice the protocol in live conversation with other people working on related conditions. This is where understanding becomes repetition, repetition becomes confidence, and confidence becomes durability.",
@@ -78,7 +77,6 @@
 		},
 		{
 			name: "One-on-One Coaching",
-			price: 99,
 			duration: "Per hour",
 			description:
 				"A coach helps you reinforce the protocol, identify where the old loop is trying to sneak back in, and connect the work to other useful modalities based on training and expertise.",
@@ -90,7 +88,6 @@
 	const clinicalTrialOptions = [
 		{
 			name: "NeuroRecursion Clinical Trial",
-			price: 0,
 			duration: "Self-directed protocol",
 			description:
 				"A free entry point designed to break entrenched limbic loops and create space for sustained recovery.",
@@ -100,32 +97,27 @@
 	const certificationTrack = [
 		{
 			name: "Coach Certification Course and Materials",
-			price: 499,
 			description:
 				"Build the conceptual foundation: why loops persist, how the protocol interrupts them, how to lead sessions responsibly, and what ethical NeuroRecursion coaching looks like in practice.",
 		},
 		{
 			name: "Coach Certification Study Group",
-			price: 0,
 			description:
 				"Practice with peers, compare notes, sharpen your language, and develop real confidence before you test.",
 		},
 		{
 			name: "Coach Certification Practice Exam",
-			price: 99,
 			description:
 				"Pressure-test your understanding before the real exam and expose weak spots while the stakes are still low.",
 		},
 		{
 			name: "Coach Certification Exam",
-			price: 499,
 			description:
 				"A formal proctored exam for people who want to coach, teach, or represent the work with rigor. Passing this exam earns your initial NeuroRecursion certification and qualifies you to apply for an active coaching license.",
 			note: "Initial certification exam",
 		},
 		{
 			name: "Annual Coach License Renewal + Reexamination",
-			price: 199,
 			description:
 				"Active coaches renew annually to remain listed, licensed, and in good standing. Renewal includes reexamination so coaches keep demonstrating current knowledge, ethical judgment, and fidelity to the NeuroRecursion method.",
 			note: "Required annually for active licensed coaches",
@@ -176,6 +168,17 @@
 	}
 
 	const attendees = affiliateExample.views * affiliateExample.conversionRate
+
+	const prices = {
+		"NeuroRecursion Clinical Trial": 0,
+		"Facilitated Small Group Conversations": 49,
+		"One-on-One Coaching": 99,
+		"Coach Certification Course and Materials": 499,
+		"Coach Certification Study Group": 0,
+		"Coach Certification Practice Exam": 99,
+		"Coach Certification Exam": 499,
+		"Annual Coach License Renewal + Reexamination": 199,
+	}
 
 	const productConfig = {
 		"NeuroRecursion Clinical Trial": {
@@ -244,7 +247,6 @@
 
 			return {
 				name: product.name,
-				price: product.price,
 				description: product.description,
 				duration: product.duration ?? product.note,
 				id,
@@ -481,8 +483,17 @@
 		)
 	}
 
+	function getProductPrice(productOrName) {
+		const productName =
+			typeof productOrName === "string"
+				? productOrName
+				: productOrName?.name
+
+		return prices[productName] ?? 0
+	}
+
 	function getLineSubtotal(product) {
-		return product.price * getProductQuantity(product.id)
+		return getProductPrice(product) * getProductQuantity(product.id)
 	}
 
 	function getQuantityDiscountRate(product) {
@@ -890,7 +901,7 @@
 								<h3>{option.name}</h3>
 							</div>
 							<div class="price-pill">
-								{formatPrice(option.price)}
+								{formatPrice(getProductPrice(option.name))}
 							</div>
 						</div>
 						<div class="offer-duration">{option.duration}</div>
@@ -971,7 +982,7 @@
 									<h3>{step.name}</h3>
 								</div>
 								<div class="price-pill">
-									{formatPrice(step.price)}
+									{formatPrice(getProductPrice(step.name))}
 								</div>
 							</div>
 							<p>{step.description}</p>
@@ -1174,6 +1185,9 @@
 													type="checkbox"
 													name="selected_products"
 													value={product.value}
+													disabled={getProductQuantity(
+														product.id,
+													) > 1}
 													checked={Boolean(
 														orderForm.selected[
 															product.id
@@ -1194,7 +1208,9 @@
 														>
 														<span
 															>{formatPrice(
-																product.price,
+																getProductPrice(
+																	product,
+																),
 															)}</span
 														>
 													</div>
@@ -1210,54 +1226,61 @@
 														<div
 															class="quantity-controls"
 														>
-															<span
-																class="quantity-label"
-																>{getQuantityUnitLabel(
-																	product,
-																	getProductQuantity(
-																		product.id,
-																	) || 2,
-																)}</span
-															>
 															<div
-																class="quantity-stepper"
+																class="fixed-to-top"
 															>
-																<button
-																	type="button"
-																	class="quantity-btn"
-																	onclick={(
-																		event,
-																	) =>
-																		handleQuantityAdjust(
-																			event,
-																			product.id,
-																			-1,
-																		)}
-																	aria-label={`Decrease quantity for ${product.name}`}
-																>
-																	-
-																</button>
 																<span
-																	class="quantity-value"
-																	>{getProductQuantity(
-																		product.id,
+																	class="quantity-label"
+																	>{getQuantityUnitLabel(
+																		product,
+																		getProductQuantity(
+																			product.id,
+																		) || 2,
 																	)}</span
 																>
-																<button
-																	type="button"
-																	class="quantity-btn"
-																	onclick={(
-																		event,
-																	) =>
-																		handleQuantityAdjust(
-																			event,
-																			product.id,
-																			1,
-																		)}
-																	aria-label={`Increase quantity for ${product.name}`}
+																<div
+																	class="quantity-stepper"
 																>
-																	+
-																</button>
+																	<button
+																		type="button"
+																		class="quantity-btn"
+																		disabled={getProductQuantity(
+																			product.id,
+																		) === 0}
+																		onclick={(
+																			event,
+																		) =>
+																			handleQuantityAdjust(
+																				event,
+																				product.id,
+																				-1,
+																			)}
+																		aria-label={`Decrease quantity for ${product.name}`}
+																	>
+																		-
+																	</button>
+																	<span
+																		class="quantity-value"
+																		>{getProductQuantity(
+																			product.id,
+																		)}</span
+																	>
+																	<button
+																		type="button"
+																		class="quantity-btn"
+																		onclick={(
+																			event,
+																		) =>
+																			handleQuantityAdjust(
+																				event,
+																				product.id,
+																				1,
+																			)}
+																		aria-label={`Increase quantity for ${product.name}`}
+																	>
+																		+
+																	</button>
+																</div>
 															</div>
 															<div
 																class="quantity-pricing"
@@ -1570,6 +1593,7 @@
 		background: rgba(255, 255, 255, 0.04);
 		border: 1px solid rgba(160, 216, 255, 0.12);
 		cursor: pointer;
+		user-select: none;
 		transition:
 			transform 0.25s ease,
 			box-shadow 0.25s ease,
@@ -1694,6 +1718,7 @@
 		border: 1px solid rgba(160, 216, 255, 0.12);
 		border-radius: 20px;
 		padding: 1.15rem;
+		user-select: none;
 	}
 
 	.offer-card,
@@ -2041,6 +2066,7 @@
 		background: rgba(255, 255, 255, 0.03);
 		border: 1px solid rgba(160, 216, 255, 0.1);
 		cursor: pointer;
+		user-select: none;
 		transition:
 			transform 0.25s ease,
 			border-color 0.25s ease,
@@ -2087,6 +2113,10 @@
 		accent-color: #7bd9ff;
 	}
 
+	.checkbox-copy {
+		position: relative;
+	}
+
 	.checkbox-copy p {
 		margin: 0.35rem 0 0;
 		font-size: 0.95rem;
@@ -2107,19 +2137,33 @@
 
 	.quantity-controls {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: flex-start;
 		gap: 0.75rem;
 		margin-top: 0.9rem;
 		padding-top: 0.85rem;
 		border-top: 1px solid rgba(160, 216, 255, 0.12);
+		position: sticky;
+		top: 0;
+	}
+
+	.fixed-to-top {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		flex-shrink: 0;
 	}
 
 	.quantity-label,
-	.quantity-total,
 	.summary-quantity {
 		color: #9fc1d8;
 		font-size: 0.9rem;
+	}
+
+	.quantity-total {
+		color: #ffffff;
+		font-size: 1.08rem;
+		font-weight: 600;
 	}
 
 	.quantity-pricing {
