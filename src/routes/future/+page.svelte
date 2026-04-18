@@ -1,0 +1,1887 @@
+<script>
+	import {tick} from "svelte"
+
+	import Parallax from "$lib/Parallax.svelte"
+	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import ShareModal from "$lib/ShareModal.svelte"
+
+	let showShareModal = $state(false)
+	let CancelIcon = $state(null)
+	let FileTextIcon = $state(null)
+	let Share2Icon = $state(null)
+	let highlightedProductId = $state(null)
+	let orderError = $state("")
+	let orderStatus = $state("idle")
+	let highlightResetTimer
+	let orderSummaryElement
+	let orderSummaryTimer
+	let orderSummaryShownAt = 0
+	let showOrderSummaryToast = $state(false)
+	let orderForm = $state({
+		name: "",
+		email: "",
+		phone: "",
+		notes: "",
+		selected: {},
+	})
+
+	const priceFormatter = new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: "USD",
+		maximumFractionDigits: 0,
+	})
+
+	const roadmap = [
+		{
+			phase: "1. Relief",
+			title: "Interrupt the old limbic loop",
+			description:
+				"The clinical trial is designed to weaken entrenched fear, shame, compulsion, and stress loops so the nervous system finally has room to do something new.",
+		},
+		{
+			phase: "2. Stabilization",
+			title: "Practice until the new response feels real",
+			description:
+				"Many people get enough freedom from the trial that they can maintain progress for life. Others need repetition, structure, and community so the new pattern becomes automatic.",
+		},
+		{
+			phase: "3. Expansion",
+			title: "Catch deeper layers before they rebuild",
+			description:
+				"Some conditions have multiple layers. Some patients meet new triggers, new seasons of life, or old coping patterns that try to reassemble. Maintenance keeps recovery moving forward instead of backward.",
+		},
+		{
+			phase: "4. Mastery",
+			title: "Turn insight into skill",
+			description:
+				"At this stage you are not just surviving symptoms. You understand the protocol, can use it under pressure, and can recognize when a loop is starting before it fully takes over.",
+		},
+		{
+			phase: "5. Multiplication",
+			title: "Help other people recover too",
+			description:
+				"For many patients, the natural next step is contribution: coaching, studying, joining certification, or sharing the protocol so other people can experience the same breakthrough.",
+		},
+	]
+
+	const maintenanceOptions = [
+		{
+			name: "Facilitated Small Group Conversations",
+			price: 49,
+			duration: "Generally 1 hour",
+			description:
+				"Practice the protocol in live conversation with other people working on related conditions. This is where understanding becomes repetition, repetition becomes confidence, and confidence becomes durability.",
+			bestFor:
+				"People who want affordable reinforcement, accountability, and the emotional relief of not doing this alone.",
+		},
+		{
+			name: "One-on-One Coaching",
+			price: 99,
+			duration: "Per hour",
+			description:
+				"A coach helps you reinforce the protocol, identify where the old loop is trying to sneak back in, and connect the work to other useful modalities based on training and expertise.",
+			bestFor:
+				"People with complex cases, layered histories, or a strong desire for precision and individualized support.",
+		},
+	]
+
+	const clinicalTrialOptions = [
+		{
+			name: "NeuroRecursion Clinical Trial",
+			price: 0,
+			duration: "Self-directed protocol",
+			description:
+				"A free entry point designed to break entrenched limbic loops and create space for sustained recovery.",
+		},
+	]
+
+	const certificationTrack = [
+		{
+			name: "Coach Certification Course Material",
+			price: 99,
+			description:
+				"Build the conceptual foundation: why loops persist, how the protocol interrupts them, and what ethical practice looks like.",
+		},
+		{
+			name: "Coach Certification Study Group",
+			price: 0,
+			description:
+				"Practice with peers, compare notes, sharpen your language, and develop real confidence before you test.",
+		},
+		{
+			name: "Coach Certification Practice Exam",
+			price: 99,
+			description:
+				"Pressure-test your understanding before the real exam and expose weak spots while the stakes are still low.",
+		},
+		{
+			name: "Coach Certification Exam",
+			price: 499,
+			description:
+				"A formal checkpoint for people who want to teach, coach, or represent the work with rigor.",
+			note: "Per attempt",
+		},
+	]
+
+	const patientProfiles = [
+		{
+			title: "The person who finally feels normal again",
+			copy: "The trial may be enough. If your loops are quiet, your stress response is lighter, and your life is opening back up, your job is simple: keep practicing while life is easy, not only when it is hard.",
+		},
+		{
+			title: "The person who improves but still feels unfinished",
+			copy: "This is common. Sometimes the first breakthrough reveals the next layer. Maintenance is not failure. It is what serious recovery looks like when the nervous system still has more to unwind.",
+		},
+		{
+			title: "The helper who wants to pay recovery forward",
+			copy: "Therapists, coaches, parents, and former patients often move from relief into mission. Certification gives that impulse structure so enthusiasm becomes competence.",
+		},
+	]
+
+	const faq = [
+		{
+			question: "Is the clinical trial really enough for some people?",
+			answer: "Yes. For some patients, breaking the main loop and practicing the protocol is enough to sustain recovery for years or for life. The degree of permanence depends on the condition, the person's environment, and whether they actually keep using the tool.",
+		},
+		{
+			question:
+				"Why would someone need maintenance after a major breakthrough?",
+			answer: "Because life keeps happening. New stressors can appear. Old circuits can try to return. Some conditions are layered. Maintenance exists to prevent relapse, deepen skill, and help people stay ahead of the next wave instead of getting buried by it.",
+		},
+		{
+			question: "Who should choose group support versus coaching?",
+			answer: "Group support is the best first step for people who want repetition, affordability, and shared momentum. Coaching is better when the case is more personal, more complex, or when progress depends on targeted feedback.",
+		},
+		{
+			question: "Is certification only for professionals?",
+			answer: "No. Professionals may be drawn to it, but many parents, former patients, and serious students also want to understand the protocol deeply enough to help other people use it well.",
+		},
+	]
+
+	const affiliateExample = {
+		views: 100000,
+		conversionRate: 0.01,
+		smallGroupPrice: 49,
+		coachingPrice: 99,
+		commissionRate: 0.1,
+	}
+
+	const attendees = affiliateExample.views * affiliateExample.conversionRate
+	const orderGroups = [
+		{
+			category: "clinical trial",
+			products: clinicalTrialOptions,
+		},
+		{
+			category: "maintenance",
+			products: maintenanceOptions,
+		},
+		{
+			category: "certification",
+			products: certificationTrack,
+		},
+	]
+
+	const orderCatalog = orderGroups.map((group) => ({
+		category: group.category,
+		products: group.products.map((product) => {
+			const id = `${group.category}-${product.name}`
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, "-")
+				.replace(/^-|-$/g, "")
+
+			return {
+				name: product.name,
+				price: product.price,
+				description: product.description,
+				duration: product.duration ?? product.note,
+				id,
+				value: `${group.category}: ${product.name}`,
+			}
+		}),
+	}))
+	const smallGroupCommission =
+		attendees *
+		affiliateExample.smallGroupPrice *
+		affiliateExample.commissionRate
+	const coachingCommission =
+		attendees *
+		affiliateExample.coachingPrice *
+		affiliateExample.commissionRate
+
+	$effect(() => {
+		import("lucide-svelte").then((module) => {
+			FileTextIcon = module.FileText
+			Share2Icon = module.Share2
+			CancelIcon = module.X
+		})
+	})
+
+	$effect(() => {
+		const selectionSignature = getSelectedProducts()
+			.map((product) => product.id)
+			.sort()
+			.join("|")
+
+		clearTimeout(orderSummaryTimer)
+
+		if (!selectionSignature) {
+			showOrderSummaryToast = false
+			return
+		}
+
+		showOrderSummaryToastForSelection()
+
+		return () => {
+			clearTimeout(orderSummaryTimer)
+		}
+	})
+
+	function handleShare() {
+		showShareModal = true
+	}
+
+	function reviewOrderForm() {
+		const orderFormSection = document.getElementById("order-form")
+
+		orderFormSection?.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		})
+		dismissOrderSummaryToast()
+	}
+
+	function dismissOrderSummaryToast() {
+		clearTimeout(orderSummaryTimer)
+		showOrderSummaryToast = false
+	}
+
+	function showOrderSummaryToastForSelection() {
+		orderSummaryShownAt = Date.now()
+		showOrderSummaryToast = true
+		clearTimeout(orderSummaryTimer)
+		orderSummaryTimer = setTimeout(() => {
+			showOrderSummaryToast = false
+		}, 3000)
+	}
+
+	function handleWindowClick(event) {
+		if (!showOrderSummaryToast || !orderSummaryElement) {
+			return
+		}
+
+		if (Date.now() - orderSummaryShownAt < 150) {
+			return
+		}
+
+		if (!orderSummaryElement.contains(event.target)) {
+			dismissOrderSummaryToast()
+		}
+	}
+
+	function formatPrice(value) {
+		if (value === 0) {
+			return "Free"
+		}
+
+		return priceFormatter.format(value)
+	}
+
+	function getProductByName(name) {
+		return orderCatalog
+			.flatMap((group) => group.products)
+			.find((product) => product.name === name)
+	}
+
+	function isProductSelected(name) {
+		const product = getProductByName(name)
+
+		return product ? Boolean(orderForm.selected[product.id]) : false
+	}
+
+	function toggleProductSelection(productId) {
+		orderForm.selected[productId] = !orderForm.selected[productId]
+		orderError = ""
+		orderStatus = "idle"
+	}
+
+	function toggleProductByName(name) {
+		const product = getProductByName(name)
+
+		if (!product) {
+			return
+		}
+
+		toggleProductSelection(product.id)
+		void pulseCheckboxRow(product.id)
+	}
+
+	async function pulseCheckboxRow(productId) {
+		highlightedProductId = null
+		await tick()
+		highlightedProductId = productId
+
+		clearTimeout(highlightResetTimer)
+		highlightResetTimer = setTimeout(() => {
+			highlightedProductId = null
+		}, 1400)
+	}
+
+	function handleToggleKeydown(event, name) {
+		if (event.key === "Enter" || event.key === " ") {
+			event.preventDefault()
+			toggleProductByName(name)
+		}
+	}
+
+	function getSelectedProducts() {
+		return orderCatalog.flatMap((group) =>
+			group.products.filter((product) => orderForm.selected[product.id]),
+		)
+	}
+
+	function getSelectedTotal() {
+		return getSelectedProducts().reduce(
+			(sum, product) => sum + product.price,
+			0,
+		)
+	}
+
+	async function handleOrderSubmit(event) {
+		event.preventDefault()
+		orderError = ""
+		orderStatus = "idle"
+
+		const form = event.currentTarget
+		const selectedProducts = getSelectedProducts()
+
+		if (selectedProducts.length === 0) {
+			orderError =
+				"Select at least one product to submit an order request."
+			return
+		}
+
+		if (!form.reportValidity()) {
+			return
+		}
+
+		const formData = new FormData(form)
+		formData.set(
+			"selected_products",
+			selectedProducts.map((product) => product.value).join(", "),
+		)
+		formData.set("estimated_total", formatPrice(getSelectedTotal()))
+
+		try {
+			const response = await fetch("/future", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+				body: new URLSearchParams(formData).toString(),
+			})
+
+			if (!response.ok) {
+				throw new Error("Order form submission failed")
+			}
+
+			orderStatus = "success"
+			orderForm = {
+				name: "",
+				email: "",
+				phone: "",
+				notes: "",
+				selected: {},
+			}
+			form.reset()
+		} catch (error) {
+			console.error("Order form submission error:", error)
+			orderError =
+				"There was a problem sending your request. Please try again."
+		}
+	}
+</script>
+
+<svelte:window onclick={handleWindowClick} />
+
+<svelte:head>
+	<title>The Future of Recovery | Neuro Recursion Institute</title>
+	<meta
+		name="description"
+		content="A practical, compelling roadmap for sustained recovery after the NeuroRecursion clinical trial, including maintenance, coaching, certification, and affiliate pathways."
+	/>
+</svelte:head>
+
+{#if showShareModal}
+	<ShareModal
+		title="The Future of Recovery"
+		description="See the NeuroRecursion roadmap for sustained recovery, maintenance, certification, and affiliate growth."
+		imageUrl="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+		url={typeof window !== "undefined"
+			? `${window.location.origin}/future`
+			: "/future"}
+		onClose={() => (showShareModal = false)}
+	/>
+{/if}
+
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+>
+	<section class="paper container future-page">
+		<div class="hero-panel">
+			<div class="hero-copy">
+				<div class="eyebrow">The roadmap after the breakthrough</div>
+				<h1>
+					The future is not just symptom relief. It is durable
+					freedom.
+				</h1>
+				<p class="lead">
+					Here is the roadmap to full and sustained recovery: break
+					the old limbic loop, create space for a better one, then
+					reinforce that new path until it holds under real life
+					pressure.
+				</p>
+				<p>
+					The clinical trial is often enough to carry a patient for a
+					lifetime. It is free, and if practiced seriously it can
+					create lasting relief, sometimes permanent relief, depending
+					on the condition and the patient's commitment. But sometimes
+					there is more work to do. More loops to break. More layers
+					to uncover. More life to integrate.
+				</p>
+				<div class="hero-actions">
+					<a href="#maintenance" class="primary-link"
+						>Explore maintenance</a
+					>
+					<a href="#certification" class="secondary-link"
+						>See the coach path</a
+					>
+					<button
+						type="button"
+						class="share-trigger"
+						onclick={handleShare}
+					>
+						{#if Share2Icon}
+							<Share2Icon size={18} strokeWidth={2} />
+						{/if}
+						Share this page
+					</button>
+				</div>
+			</div>
+
+			<div class="hero-stats">
+				<div
+					class="stat-card glow"
+					class:selected-card={isProductSelected(
+						"NeuroRecursion Clinical Trial",
+					)}
+					role="button"
+					tabindex="0"
+					onclick={() =>
+						toggleProductByName("NeuroRecursion Clinical Trial")}
+					onkeydown={(event) =>
+						handleToggleKeydown(
+							event,
+							"NeuroRecursion Clinical Trial",
+						)}
+				>
+					<div class="stat-label">
+						<span
+							class="selection-checkbox"
+							class:is-checked={isProductSelected(
+								"NeuroRecursion Clinical Trial",
+							)}
+							aria-hidden="true"
+						></span>
+						<span>Clinical trial</span>
+					</div>
+					<div class="stat-value">Free</div>
+					<p>
+						Built to dismantle entrenched loops and create real
+						breathing room.
+					</p>
+				</div>
+				<div
+					class="stat-card"
+					class:selected-card={isProductSelected(
+						"Facilitated Small Group Conversations",
+					)}
+					role="button"
+					tabindex="0"
+					onclick={() =>
+						toggleProductByName(
+							"Facilitated Small Group Conversations",
+						)}
+					onkeydown={(event) =>
+						handleToggleKeydown(
+							event,
+							"Facilitated Small Group Conversations",
+						)}
+				>
+					<div class="stat-label">
+						<span
+							class="selection-checkbox"
+							class:is-checked={isProductSelected(
+								"Facilitated Small Group Conversations",
+							)}
+							aria-hidden="true"
+						></span>
+						<span>Small group practice</span>
+					</div>
+					<div class="stat-value">$49</div>
+					<p>
+						Live reinforcement with other people doing the work
+						beside you.
+					</p>
+				</div>
+				<div
+					class="stat-card"
+					class:selected-card={isProductSelected(
+						"One-on-One Coaching",
+					)}
+					role="button"
+					tabindex="0"
+					onclick={() => toggleProductByName("One-on-One Coaching")}
+					onkeydown={(event) =>
+						handleToggleKeydown(event, "One-on-One Coaching")}
+				>
+					<div class="stat-label">
+						<span
+							class="selection-checkbox"
+							class:is-checked={isProductSelected(
+								"One-on-One Coaching",
+							)}
+							aria-hidden="true"
+						></span>
+						<span>1:1 coaching</span>
+					</div>
+					<div class="stat-value">$99/hr</div>
+					<p>
+						Targeted support for complex cases, stubborn loops, and
+						precision.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section-shell">
+			<h2>What happens after the first major win?</h2>
+			<p>
+				A major breakthrough can feel almost strange at first. The panic
+				is quieter. The compulsion is less convincing. The shame story
+				is weaker. The body is no longer yelling the same emergency
+				every day. But this is also when patients discover a hard truth:
+				healing is not only about getting unstuck once. It is also about
+				becoming the kind of person who knows how not to get captured
+				again.
+			</p>
+			<p>
+				That is why the future matters. The future is where repetition
+				turns a breakthrough into a baseline. It is where patients stop
+				measuring life by how bad it used to be and start measuring it
+				by what they can build now. Better relationships. Better sleep.
+				Better focus. Better choices. More agency. More calm. More
+				range.
+			</p>
+			<p>
+				And for some people, the future becomes bigger than maintenance.
+				It becomes vocation. They do not just want to stay well. They
+				want to help other people get free too.
+			</p>
+		</div>
+
+		<div class="section-shell roadmap-shell">
+			<h2>The recovery roadmap</h2>
+			<div class="roadmap-grid">
+				{#each roadmap as item}
+					<article class="roadmap-card">
+						<div class="roadmap-phase">{item.phase}</div>
+						<h3>{item.title}</h3>
+						<p>{item.description}</p>
+					</article>
+				{/each}
+			</div>
+		</div>
+
+		<div class="section-shell" id="maintenance">
+			<h2>Maintenance that keeps recovery alive</h2>
+			<p>
+				If old loops were built through repetition, new ones are
+				strengthened the same way. Maintenance is not a consolation
+				prize. It is a deliberate strategy for making recovery more
+				stable, more flexible, and more difficult to reverse.
+			</p>
+			<div class="offer-grid">
+				{#each maintenanceOptions as option}
+					<div
+						class="offer-card spotlight"
+						class:selected-card={isProductSelected(option.name)}
+						role="button"
+						tabindex="0"
+						onclick={() => toggleProductByName(option.name)}
+						onkeydown={(event) =>
+							handleToggleKeydown(event, option.name)}
+					>
+						<div class="offer-topline">
+							<div class="card-title">
+								<span
+									class="selection-checkbox"
+									class:is-checked={isProductSelected(
+										option.name,
+									)}
+									aria-hidden="true"
+								></span>
+								<h3>{option.name}</h3>
+							</div>
+							<div class="price-pill">
+								{formatPrice(option.price)}
+							</div>
+						</div>
+						<div class="offer-duration">{option.duration}</div>
+						<p>{option.description}</p>
+						<div class="offer-footer">
+							<strong>Best for:</strong>
+							{option.bestFor}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<div class="section-shell profile-shell">
+			<h2>Three futures patients often discover</h2>
+			<div class="profile-grid">
+				{#each patientProfiles as profile}
+					<article class="profile-card">
+						<h3>{profile.title}</h3>
+						<p>{profile.copy}</p>
+					</article>
+				{/each}
+			</div>
+		</div>
+
+		<div class="section-shell" id="certification">
+			<h2>When recovery turns into mission</h2>
+			<p>
+				Therapists, coaches, parents, and many patients eventually
+				arrive at the same thought: "I want to help cure others too."
+				That impulse makes sense. Once you have felt the reality of a
+				nervous system changing, it becomes hard not to want that for
+				somebody else.
+			</p>
+			<p>
+				The certification path exists for that reason. It turns
+				enthusiasm into study, study into discipline, and discipline
+				into a standard you can be proud of.
+			</p>
+			<div class="certification-stack">
+				{#each certificationTrack as step, index}
+					<div
+						class="cert-card"
+						class:selected-card={isProductSelected(step.name)}
+						role="button"
+						tabindex="0"
+						onclick={() => toggleProductByName(step.name)}
+						onkeydown={(event) =>
+							handleToggleKeydown(event, step.name)}
+					>
+						<div class="cert-number">0{index + 1}</div>
+						<div class="cert-copy">
+							<div class="offer-topline">
+								<div class="card-title">
+									<span
+										class="selection-checkbox"
+										class:is-checked={isProductSelected(
+											step.name,
+										)}
+										aria-hidden="true"
+									></span>
+									<h3>{step.name}</h3>
+								</div>
+								<div class="price-pill">
+									{formatPrice(step.price)}
+								</div>
+							</div>
+							<p>{step.description}</p>
+							{#if step.note}
+								<div class="cert-note">{step.note}</div>
+							{/if}
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<div class="section-shell affiliate-shell">
+			<h2>
+				Love talking about your breakthrough? There is a path for that
+				too.
+			</h2>
+			<p>
+				If your transformation is real, people notice. They ask what
+				changed. They ask what worked. They watch how you carry
+				yourself. For some people, that becomes a natural bridge into
+				affiliate marketing.
+			</p>
+			<p>
+				Affiliate commission is 10% of future purchases by your referred
+				customer. That means your own story can become both testimony
+				and traction. The upside is not imaginary, but it is also not
+				automatic. It depends on trust, attention, message quality, and
+				whether the people you reach are genuinely ready.
+			</p>
+			<div class="example-card">
+				<h3>Illustrative scenario</h3>
+				<p>
+					Suppose a social campaign gets {affiliateExample.views.toLocaleString()}
+					views, and 1% of those viewers attend one small group session.
+				</p>
+				<div class="example-math">
+					<div>
+						<span>Attendees</span>
+						<strong>{attendees.toLocaleString()}</strong>
+					</div>
+					<div>
+						<span>10% commission on one $49 small group</span>
+						<strong>{formatPrice(smallGroupCommission)}</strong>
+					</div>
+					<div>
+						<span
+							>10% commission if each also books one $99 coaching
+							hour</span
+						>
+						<strong>{formatPrice(coachingCommission)}</strong>
+					</div>
+				</div>
+				<p class="fine-print">
+					These numbers are illustrative, not a promise. They show the
+					mechanics, not a guaranteed outcome. Real performance
+					depends on audience quality, platform, offer fit, and
+					follow-through.
+				</p>
+			</div>
+		</div>
+
+		<div class="section-shell faq-shell">
+			<h2>Questions people usually ask next</h2>
+			<div class="faq-list">
+				{#each faq as item}
+					<article class="faq-card">
+						<h3>{item.question}</h3>
+						<p>{item.answer}</p>
+					</article>
+				{/each}
+			</div>
+		</div>
+
+		<div class="section-shell closing-shell">
+			<div class="closing-copy">
+				<h2>
+					Recovery is the beginning. The future is what you do with
+					it.
+				</h2>
+				<p>
+					The goal is not endless management. The goal is increasing
+					freedom, increasing capability, and increasing contribution.
+					Maybe you will take one small group session every so often.
+					Maybe you will work with a coach until the next layer breaks
+					open. Maybe you will study, certify, and teach. Maybe your
+					recovery story will quietly change a family, a friend, or a
+					stranger on the internet.
+				</p>
+				<p>
+					Whatever form it takes, the future is not passive. It is
+					practiced. Built. Protected. Shared.
+				</p>
+			</div>
+			<div class="closing-actions">
+				<a href="/#signup" class="primary-link">Start the trial</a>
+				<a href="#certification" class="secondary-link"
+					>Explore certification</a
+				>
+				<a
+					href="https://www.linkedin.com/company/neurorecursion"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="social-inline"
+				>
+					<LinkedInIcon />
+					Follow NeuroRecursion
+				</a>
+			</div>
+		</div>
+
+		<div class="section-shell order-shell" id="order-form">
+			<div class="order-intro">
+				<h2>Build your order request</h2>
+				<p>
+					Choose any products you want more information about or are
+					ready to purchase. Submit the form and NeuroRecursion can
+					follow up with the right next step, scheduling details, and
+					purchase guidance.
+				</p>
+			</div>
+
+			<form
+				name="future-order-request"
+				method="POST"
+				netlify-honeypot="bot-field"
+				netlify
+				onsubmit={handleOrderSubmit}
+				class="order-form"
+			>
+				<input
+					type="hidden"
+					name="form-name"
+					value="future-order-request"
+				/>
+				<input type="hidden" name="selected_products" value="" />
+				<input type="hidden" name="estimated_total" value="" />
+
+				<div class="hidden-field" aria-hidden="true">
+					<label for="bot-field-future-order">
+						Do not fill this out if you are human
+						<input
+							id="bot-field-future-order"
+							type="text"
+							name="bot-field"
+						/>
+					</label>
+				</div>
+
+				<div class="order-grid">
+					<div class="order-fields">
+						<div class="form-grid">
+							<label class="field">
+								<span>Name</span>
+								<input
+									type="text"
+									name="name"
+									bind:value={orderForm.name}
+									required
+									placeholder="Your full name"
+								/>
+							</label>
+
+							<label class="field">
+								<span>Email</span>
+								<input
+									type="email"
+									name="email"
+									bind:value={orderForm.email}
+									required
+									placeholder="you@example.com"
+								/>
+							</label>
+
+							<label class="field field-full">
+								<span>Phone</span>
+								<input
+									type="tel"
+									name="phone"
+									bind:value={orderForm.phone}
+									placeholder="Optional phone number"
+								/>
+							</label>
+						</div>
+
+						<div class="catalog-stack">
+							{#each orderCatalog as group}
+								<fieldset class="catalog-group">
+									<legend>{group.category}</legend>
+									<div class="checkbox-list">
+										{#each group.products as product}
+											<label
+												class="checkbox-card"
+												class:highlighted-checkbox={highlightedProductId ===
+													product.id}
+												for={product.id}
+											>
+												<input
+													id={product.id}
+													type="checkbox"
+													name="selected_products"
+													value={product.value}
+													bind:checked={
+														orderForm.selected[
+															product.id
+														]
+													}
+												/>
+												<div class="checkbox-copy">
+													<div
+														class="checkbox-topline"
+													>
+														<strong
+															>{product.name}</strong
+														>
+														<span
+															>{formatPrice(
+																product.price,
+															)}</span
+														>
+													</div>
+													<p>{product.description}</p>
+													{#if product.duration}
+														<div
+															class="checkbox-duration"
+														>
+															Duration: {product.duration}
+														</div>
+													{/if}
+												</div>
+											</label>
+										{/each}
+									</div>
+								</fieldset>
+							{/each}
+						</div>
+
+						<label class="field field-full">
+							<span>Notes</span>
+							<textarea
+								name="notes"
+								bind:value={orderForm.notes}
+								rows="5"
+								placeholder="Tell us what you are interested in, your timeline, or any questions you want answered first."
+							></textarea>
+						</label>
+
+						{#if orderError}
+							<div class="order-message error">{orderError}</div>
+						{/if}
+
+						{#if orderStatus === "success"}
+							<div class="order-message success">
+								Your order request has been sent. We will follow
+								up with next steps.
+							</div>
+						{/if}
+
+						<button type="submit" class="submit-order-btn">
+							Send order request
+						</button>
+					</div>
+
+					<aside
+						class="order-summary"
+						class:toast-visible={showOrderSummaryToast}
+						aria-live="polite"
+						bind:this={orderSummaryElement}
+					>
+						<div class="summary-header">
+							<button
+								type="button"
+								class="summary-cta"
+								onclick={reviewOrderForm}
+							>
+								{#if FileTextIcon}
+									<FileTextIcon size={16} strokeWidth={2} />
+								{/if}
+							</button>
+
+							<button
+								type="button"
+								class="summary-close"
+								aria-label="Close selected products summary"
+								onclick={dismissOrderSummaryToast}
+							>
+								{#if CancelIcon}
+									<CancelIcon size={16} strokeWidth={2} />
+								{:else}
+									<span aria-hidden="true">x</span>
+								{/if}
+							</button>
+						</div>
+
+						<ul class="summary-list">
+							{#if getSelectedProducts().length > 0}
+								{#each getSelectedProducts() as product}
+									<li>
+										<span>{product.name}</span>
+										<strong
+											>{formatPrice(
+												product.price,
+											)}</strong
+										>
+									</li>
+								{/each}
+								<div class="summary-total">
+									<span>Estimated total</span>
+									<strong
+										>{formatPrice(
+											getSelectedTotal(),
+										)}</strong
+									>
+								</div>
+							{:else}
+								<li class="summary-empty">
+									No products selected yet.
+								</li>
+							{/if}
+						</ul>
+					</aside>
+				</div>
+			</form>
+		</div>
+	</section>
+</Parallax>
+
+<style>
+	.future-page {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.eyebrow {
+		display: inline-flex;
+		padding: 0.45rem 0.85rem;
+		border-radius: 999px;
+		background: rgba(74, 159, 216, 0.14);
+		border: 1px solid rgba(160, 216, 255, 0.25);
+		color: #a0d8ff;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin-bottom: 1rem;
+	}
+
+	.hero-panel {
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+		gap: 1.5rem;
+		align-items: stretch;
+	}
+
+	h1 {
+		font-size: clamp(2.2rem, 4vw, 4.25rem);
+		line-height: 1.05;
+		margin: 0 0 1rem;
+		color: #f5fbff;
+		max-width: 12ch;
+	}
+
+	h2 {
+		color: #4a9fd8;
+		font-size: clamp(1.5rem, 2vw, 2.1rem);
+		margin: 0 0 1rem;
+	}
+
+	h3 {
+		margin: 0;
+		color: #eaf7ff;
+		font-size: 1.1rem;
+	}
+
+	p {
+		color: #d5deea;
+		line-height: 1.75;
+	}
+
+	.lead {
+		font-size: 1.15rem;
+		color: #eff8ff;
+		max-width: 60ch;
+	}
+
+	.hero-copy,
+	.hero-stats,
+	.section-shell,
+	.closing-shell {
+		background: radial-gradient(
+				circle at top right,
+				rgba(74, 159, 216, 0.16),
+				transparent 35%
+			),
+			rgba(19, 28, 53, 0.88);
+		border: 1px solid rgba(74, 159, 216, 0.18);
+		border-radius: 24px;
+		padding: 1.6rem;
+		box-shadow: 0 20px 50px rgba(2, 8, 20, 0.32);
+	}
+
+	.hero-actions,
+	.closing-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.85rem;
+		margin-top: 1.5rem;
+	}
+
+	.primary-link,
+	.secondary-link,
+	.share-trigger,
+	.social-inline {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.8rem 1.1rem;
+		border-radius: 999px;
+		text-decoration: none;
+		font-weight: 700;
+		transition: all 0.25s ease;
+	}
+
+	.primary-link {
+		background: linear-gradient(135deg, #4a9fd8, #7bd9ff);
+		color: #07111d;
+	}
+
+	.secondary-link,
+	.share-trigger,
+	.social-inline {
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(160, 216, 255, 0.2);
+		color: #dff5ff;
+	}
+
+	.primary-link:hover,
+	.secondary-link:hover,
+	.share-trigger:hover,
+	.social-inline:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 28px rgba(74, 159, 216, 0.22);
+	}
+
+	.share-trigger {
+		cursor: pointer;
+		font-size: 1rem;
+	}
+
+	.hero-stats {
+		display: grid;
+		gap: 1rem;
+		align-content: start;
+	}
+
+	.stat-card {
+		position: relative;
+		overflow: hidden;
+		padding: 1rem;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(160, 216, 255, 0.12);
+		cursor: pointer;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease,
+			border-color 0.25s ease,
+			background 0.25s ease;
+	}
+
+	.stat-card::before,
+	.offer-card::before,
+	.cert-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background: linear-gradient(
+			135deg,
+			rgba(123, 217, 255, 0.08),
+			transparent 45%,
+			rgba(74, 159, 216, 0.06)
+		);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.22s ease;
+	}
+
+	.stat-card::after,
+	.offer-card::after,
+	.cert-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		box-shadow: inset 0 0 0 1px rgba(123, 217, 255, 0.18);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.22s ease;
+	}
+
+	.stat-card:hover,
+	.offer-card:hover,
+	.cert-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 16px 32px rgba(4, 12, 28, 0.28);
+		border-color: rgba(123, 217, 255, 0.24);
+	}
+
+	.stat-card:hover::before,
+	.stat-card:hover::after,
+	.offer-card:hover::before,
+	.offer-card:hover::after,
+	.cert-card:hover::before,
+	.cert-card:hover::after,
+	.stat-card:focus-visible::before,
+	.stat-card:focus-visible::after,
+	.offer-card:focus-visible::before,
+	.offer-card:focus-visible::after,
+	.cert-card:focus-visible::before,
+	.cert-card:focus-visible::after {
+		opacity: 1;
+	}
+
+	.stat-card:focus-visible,
+	.offer-card:focus-visible,
+	.cert-card:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.2);
+		border-color: rgba(123, 217, 255, 0.4);
+	}
+
+	.stat-card.glow {
+		background: linear-gradient(
+			160deg,
+			rgba(74, 159, 216, 0.22),
+			rgba(255, 255, 255, 0.04)
+		);
+	}
+
+	.stat-label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		color: #9bbfd8;
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-bottom: 0.45rem;
+	}
+
+	.stat-value {
+		font-size: 2rem;
+		font-weight: 800;
+		color: #f5fbff;
+		margin: 0.3rem 0 0.5rem;
+	}
+
+	.roadmap-grid,
+	.offer-grid,
+	.profile-grid,
+	.faq-list {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.roadmap-grid {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
+
+	.offer-grid,
+	.profile-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.roadmap-card,
+	.offer-card,
+	.profile-card,
+	.faq-card,
+	.example-card,
+	.cert-card {
+		position: relative;
+		overflow: hidden;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(160, 216, 255, 0.12);
+		border-radius: 20px;
+		padding: 1.15rem;
+	}
+
+	.offer-card,
+	.cert-card {
+		cursor: pointer;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease,
+			border-color 0.25s ease,
+			background 0.25s ease;
+	}
+
+	.selected-card {
+		border-color: rgba(123, 217, 255, 0.62);
+		box-shadow:
+			0 0 0 1px rgba(123, 217, 255, 0.2),
+			0 18px 36px rgba(13, 37, 71, 0.34);
+		background: linear-gradient(
+			180deg,
+			rgba(74, 159, 216, 0.18),
+			rgba(255, 255, 255, 0.05)
+		);
+	}
+
+	.selected-card::before,
+	.selected-card::after {
+		opacity: 1;
+	}
+
+	.selected-card::after {
+		box-shadow:
+			inset 0 0 0 1px rgba(123, 217, 255, 0.28),
+			inset 0 42px 60px rgba(123, 217, 255, 0.04);
+	}
+
+	.selection-checkbox {
+		width: 1rem;
+		height: 1rem;
+		border-radius: 0.22rem;
+		border: 1.5px solid rgba(159, 220, 255, 0.75);
+		background: rgba(255, 255, 255, 0.03);
+		position: relative;
+		flex-shrink: 0;
+		align-self: center;
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			box-shadow 0.2s ease;
+	}
+
+	.selection-checkbox::after {
+		content: "";
+		position: absolute;
+		left: 0.27rem;
+		top: 0.08rem;
+		width: 0.28rem;
+		height: 0.52rem;
+		border-right: 2px solid #07111d;
+		border-bottom: 2px solid #07111d;
+		transform: rotate(45deg) scale(0);
+		transform-origin: center;
+		transition: transform 0.18s ease;
+	}
+
+	.selection-checkbox.is-checked {
+		background: linear-gradient(135deg, #7bd9ff, #4a9fd8);
+		border-color: rgba(123, 217, 255, 0.95);
+		box-shadow: 0 0 0 3px rgba(74, 159, 216, 0.14);
+	}
+
+	.selection-checkbox.is-checked::after {
+		transform: rotate(45deg) scale(1);
+	}
+
+	.selected-card .stat-label,
+	.selected-card .card-title h3,
+	.selected-card .offer-duration,
+	.selected-card .offer-footer,
+	.selected-card .cert-note {
+		color: #c8ecff;
+	}
+
+	.card-title {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		min-width: 0;
+	}
+
+	.card-title h3 {
+		margin: 0;
+		line-height: 1.15;
+	}
+
+	.roadmap-phase {
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #7fdcff;
+		margin-bottom: 0.65rem;
+	}
+
+	.offer-topline {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.price-pill {
+		flex-shrink: 0;
+		padding: 0.45rem 0.75rem;
+		border-radius: 999px;
+		background: rgba(123, 217, 255, 0.14);
+		border: 1px solid rgba(123, 217, 255, 0.25);
+		color: #e9fbff;
+		font-weight: 700;
+	}
+
+	.offer-duration,
+	.offer-footer,
+	.cert-note,
+	.fine-print {
+		color: #9fc1d8;
+		font-size: 0.95rem;
+	}
+
+	.spotlight {
+		background: linear-gradient(
+			180deg,
+			rgba(74, 159, 216, 0.14),
+			rgba(255, 255, 255, 0.04)
+		);
+	}
+
+	.certification-stack {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.cert-card {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 1rem;
+		align-items: start;
+	}
+
+	.cert-number {
+		width: 3rem;
+		height: 3rem;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #4a9fd8, #7bd9ff);
+		color: #07111d;
+		font-weight: 800;
+	}
+
+	.example-card {
+		margin-top: 1rem;
+	}
+
+	.example-math {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+
+	.example-math div {
+		padding: 1rem;
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(160, 216, 255, 0.1);
+	}
+
+	.example-math span {
+		display: block;
+		color: #9fc1d8;
+		font-size: 0.88rem;
+		margin-bottom: 0.4rem;
+	}
+
+	.example-math strong {
+		font-size: 1.6rem;
+		color: #f6fbff;
+	}
+
+	.order-shell {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.order-intro {
+		max-width: 62ch;
+	}
+
+	.order-form {
+		display: block;
+	}
+
+	.order-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+		gap: 1rem;
+	}
+
+	.order-fields,
+	.order-summary {
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(160, 216, 255, 0.12);
+		border-radius: 20px;
+		padding: 1.15rem;
+	}
+
+	.form-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.9rem;
+		margin-bottom: 1rem;
+	}
+
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+
+	.field-full {
+		grid-column: 1 / -1;
+	}
+
+	.field span,
+	.catalog-group legend {
+		color: #a9d3ec;
+		font-size: 0.9rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+	}
+
+	.field input,
+	.field textarea {
+		width: 100%;
+		padding: 0.9rem 1rem;
+		border-radius: 14px;
+		border: 1px solid rgba(160, 216, 255, 0.18);
+		background: rgba(7, 17, 29, 0.55);
+		color: #eff8ff;
+		font: inherit;
+	}
+
+	.field input:focus,
+	.field textarea:focus {
+		outline: none;
+		border-color: rgba(123, 217, 255, 0.55);
+		box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.12);
+	}
+
+	.field textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	.catalog-stack {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.catalog-group {
+		border: 1px solid rgba(160, 216, 255, 0.12);
+		border-radius: 18px;
+		padding: 1rem;
+	}
+
+	.catalog-group legend {
+		padding: 0 0.4rem;
+		text-transform: capitalize;
+	}
+
+	.checkbox-list {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.checkbox-card {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.85rem;
+		padding: 0.95rem;
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(160, 216, 255, 0.1);
+		cursor: pointer;
+		transition:
+			transform 0.25s ease,
+			border-color 0.25s ease,
+			box-shadow 0.25s ease,
+			background 0.25s ease;
+	}
+
+	.highlighted-checkbox {
+		border-color: rgba(123, 217, 255, 0.72);
+		background: rgba(74, 159, 216, 0.14);
+		box-shadow:
+			0 0 0 1px rgba(123, 217, 255, 0.22),
+			0 0 0 10px rgba(74, 159, 216, 0.08);
+		animation: checkboxPulse 0.9s ease;
+	}
+
+	@keyframes checkboxPulse {
+		0% {
+			transform: scale(0.985);
+			box-shadow:
+				0 0 0 0 rgba(123, 217, 255, 0.28),
+				0 0 0 0 rgba(74, 159, 216, 0.18);
+		}
+
+		45% {
+			transform: scale(1.01);
+			box-shadow:
+				0 0 0 1px rgba(123, 217, 255, 0.25),
+				0 0 0 14px rgba(74, 159, 216, 0.12);
+		}
+
+		100% {
+			transform: scale(1);
+			box-shadow:
+				0 0 0 1px rgba(123, 217, 255, 0.22),
+				0 0 0 10px rgba(74, 159, 216, 0.08);
+		}
+	}
+
+	.checkbox-card input {
+		margin-top: 0.25rem;
+		width: 18px;
+		height: 18px;
+		accent-color: #7bd9ff;
+	}
+
+	.checkbox-copy p {
+		margin: 0.35rem 0 0;
+		font-size: 0.95rem;
+	}
+
+	.checkbox-topline {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	.checkbox-topline span,
+	.checkbox-duration {
+		color: #9fc1d8;
+		font-size: 0.9rem;
+	}
+
+	.submit-order-btn {
+		margin-top: 1rem;
+		width: fit-content;
+		padding: 0.9rem 1.15rem;
+		border-radius: 999px;
+		background: linear-gradient(135deg, #4a9fd8, #7bd9ff);
+		color: #07111d;
+		font-weight: 800;
+	}
+
+	.order-message {
+		margin-top: 0.75rem;
+		padding: 0.85rem 1rem;
+		border-radius: 14px;
+		font-weight: 600;
+	}
+
+	.order-message.error {
+		background: rgba(182, 54, 79, 0.18);
+		border: 1px solid rgba(255, 129, 153, 0.28);
+		color: #ffd5df;
+	}
+
+	.order-message.success {
+		background: rgba(55, 132, 99, 0.2);
+		border: 1px solid rgba(122, 237, 186, 0.25);
+		color: #dbfff0;
+	}
+
+	.order-summary {
+		position: fixed;
+		right: 1.5rem;
+		bottom: 1.5rem;
+		width: min(360px, calc(100vw - 2rem));
+		height: fit-content;
+		z-index: 40;
+		opacity: 0;
+		transform: translateY(1rem) scale(0.98);
+		pointer-events: none;
+		box-shadow: 0 24px 60px rgba(3, 9, 23, 0.45);
+		backdrop-filter: blur(18px);
+		transition:
+			opacity 0.24s ease,
+			transform 0.24s ease;
+	}
+
+	.order-summary.toast-visible {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		pointer-events: auto;
+	}
+
+	.summary-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.summary-close {
+		width: 2rem;
+		height: 2rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		border: 1px solid rgba(160, 216, 255, 0.18);
+		background: rgba(255, 255, 255, 0.05);
+		color: #eff8ff;
+		font-size: 1.15rem;
+		line-height: 1;
+		cursor: pointer;
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.summary-close:hover {
+		background: rgba(123, 217, 255, 0.14);
+		border-color: rgba(123, 217, 255, 0.28);
+		transform: scale(1.04);
+	}
+
+	.summary-close:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.18);
+		border-color: rgba(123, 217, 255, 0.42);
+	}
+
+	.summary-total {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		align-items: baseline;
+		padding: 0.9rem 0;
+		margin: 1rem 0;
+		border-top: 1px solid rgba(160, 216, 255, 0.12);
+		border-bottom: 1px solid rgba(160, 216, 255, 0.12);
+	}
+
+	.summary-total span,
+	.summary-list,
+	.summary-empty {
+		color: #9fc1d8;
+	}
+
+	.summary-total strong {
+		font-size: 1.4rem;
+		color: #f6fbff;
+	}
+
+	.summary-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.45rem;
+		padding: 0.8rem 1rem;
+		border-radius: 999px;
+		background: rgba(123, 217, 255, 0.14);
+		border: 1px solid rgba(123, 217, 255, 0.25);
+		color: #effbff;
+		font: inherit;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.25s ease;
+	}
+
+	.summary-cta:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 10px 24px rgba(74, 159, 216, 0.18);
+	}
+
+	.summary-cta:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.18);
+		border-color: rgba(123, 217, 255, 0.42);
+	}
+
+	.summary-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0.7rem;
+	}
+
+	.summary-list li {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	.summary-list strong {
+		color: #f0f7ff;
+	}
+
+	.hidden-field {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
+
+	.closing-shell {
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) auto;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.social-inline :global(svg),
+	.share-trigger :global(svg) {
+		width: 18px;
+		height: 18px;
+		stroke-width: 2;
+	}
+
+	@media (max-width: 1100px) {
+		.roadmap-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.hero-panel,
+		.closing-shell,
+		.order-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.order-summary {
+			right: 1rem;
+			bottom: 1rem;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.offer-grid,
+		.profile-grid,
+		.example-math,
+		.roadmap-grid,
+		.form-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.future-page {
+			gap: 1.25rem;
+		}
+
+		.hero-copy,
+		.hero-stats,
+		.section-shell,
+		.closing-shell {
+			padding: 1.2rem;
+			border-radius: 20px;
+		}
+
+		.offer-topline,
+		.cert-card {
+			grid-template-columns: 1fr;
+		}
+
+		.cert-card {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.order-summary {
+			left: 1rem;
+			right: 1rem;
+			width: auto;
+			bottom: 1rem;
+		}
+	}
+</style>
