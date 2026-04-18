@@ -98,10 +98,10 @@
 
 	const certificationTrack = [
 		{
-			name: "Coach Certification Course Material",
-			price: 99,
+			name: "Coach Certification Course and Materials",
+			price: 499,
 			description:
-				"Build the conceptual foundation: why loops persist, how the protocol interrupts them, and what ethical practice looks like.",
+				"Build the conceptual foundation: why loops persist, how the protocol interrupts them, how to lead sessions responsibly, and what ethical NeuroRecursion coaching looks like in practice.",
 		},
 		{
 			name: "Coach Certification Study Group",
@@ -119,8 +119,15 @@
 			name: "Coach Certification Exam",
 			price: 499,
 			description:
-				"A formal checkpoint for people who want to teach, coach, or represent the work with rigor.",
-			note: "Per attempt",
+				"A formal proctored exam for people who want to coach, teach, or represent the work with rigor. Passing this exam earns your initial NeuroRecursion certification and qualifies you to apply for an active coaching license.",
+			note: "Initial certification exam",
+		},
+		{
+			name: "Annual Coach License Renewal + Reexamination",
+			price: 199,
+			description:
+				"Active coaches renew annually to remain listed, licensed, and in good standing. Renewal includes reexamination so coaches keep demonstrating current knowledge, ethical judgment, and fidelity to the NeuroRecursion method.",
+			note: "Required annually for active licensed coaches",
 		},
 	]
 
@@ -174,7 +181,7 @@
 			products: clinicalTrialOptions,
 		},
 		{
-			category: "maintenance",
+			category: "personal treatment and support",
 			products: maintenanceOptions,
 		},
 		{
@@ -425,7 +432,7 @@
 			<div class="hero-copy">
 				<div class="eyebrow">The roadmap after the breakthrough</div>
 				<h1>
-					The future is not just symptom relief. It is durable
+					The future is not just symptom relief. <br />It is durable
 					freedom.
 				</h1>
 				<p class="lead">
@@ -443,12 +450,6 @@
 					to uncover. More life to integrate.
 				</p>
 				<div class="hero-actions">
-					<a href="#maintenance" class="primary-link"
-						>Explore maintenance</a
-					>
-					<a href="#certification" class="secondary-link"
-						>See the coach path</a
-					>
 					<button
 						type="button"
 						class="share-trigger"
