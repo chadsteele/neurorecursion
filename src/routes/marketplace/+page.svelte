@@ -609,8 +609,7 @@
 		)
 	}
 
-	async function handleOrderSubmit(event) {
-		event.preventDefault()
+	function handleOrderSubmit(event) {
 		orderError = ""
 		orderStatus = "idle"
 
@@ -620,10 +619,12 @@
 		if (selectedProducts.length === 0) {
 			orderError =
 				"Select at least one product to submit an order request."
+			event.preventDefault()
 			return
 		}
 
 		if (!form.reportValidity()) {
+			event.preventDefault()
 			return
 		}
 
@@ -647,34 +648,8 @@
 		)
 		formData.set("estimated_total", formatPrice(getSelectedTotal()))
 
-		try {
-			const response = await fetch("/future", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formData).toString(),
-			})
-
-			if (!response.ok) {
-				throw new Error("Order form submission failed")
-			}
-
-			orderStatus = "success"
-			orderForm = {
-				name: "",
-				email: "",
-				phone: "",
-				notes: "",
-				selected: {},
-				quantities: {},
-			}
-			form.reset()
-		} catch (error) {
-			console.error("Order form submission error:", error)
-			orderError =
-				"There was a problem sending your request. Please try again."
-		}
+		// Let the form submit naturally to Netlify Forms
+		// No preventDefault - allow browser to handle the POST
 	}
 </script>
 

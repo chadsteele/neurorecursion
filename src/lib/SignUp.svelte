@@ -140,10 +140,9 @@
 		return !(errors.name || errors.email || errors.message)
 	}
 
-	async function handleFormSubmit(event) {
-		event.preventDefault()
-
+	function handleFormSubmit(event) {
 		if (!validateBeforeSubmit()) {
+			event.preventDefault()
 			return
 		}
 
@@ -160,30 +159,8 @@
 			formDataObj.set("conditions", selectedConditions)
 		}
 
-		try {
-			// Submit to Netlify Forms via POST
-			const response = await fetch("/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formDataObj).toString(),
-			})
-
-			if (response.ok) {
-				// Redirect after successful submission
-				setTimeout(() => {
-					window.location.href = "/success?redirectTo=/consent"
-				}, 500)
-			} else {
-				alert(
-					"There was an error submitting the form. Please try again.",
-				)
-			}
-		} catch (error) {
-			console.error("Form submission error:", error)
-			alert("There was an error submitting the form. Please try again.")
-		}
+		// If validation passes, let the form submit naturally to Netlify Forms
+		// No preventDefault - allow browser to handle the POST
 	}
 </script>
 

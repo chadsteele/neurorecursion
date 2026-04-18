@@ -1,6 +1,7 @@
 <script>
 	import Consent from "$lib/Consent.js"
 	import {onMount} from "svelte"
+	import Parallax from "$lib/Parallax.svelte"
 
 	let formData = $state({
 		signupData: {
@@ -90,194 +91,173 @@
 		validateSignature()
 	}
 
-	async function handleSubmit(e) {
-		e.preventDefault()
-
-		// Validate all fields
+	function handleSubmit(e) {
+		// Validate all fields before submission
 		touched.consent = true
 		touched.signature = true
 
 		validateConsent()
 		validateSignature()
 
-		// Check if there are any errors
+		// If validation fails, prevent form submission
 		if (errors.consent || errors.signature) {
+			e.preventDefault()
 			return
 		}
 
-		// Prepare form data for submission
-		const form = e.target
-		const formDataObj = new FormData(form)
-
-		// Convert consents array to comma-separated string
-		const consents = Array.from(formDataObj.getAll("consents")).join(", ")
-		if (consents) {
-			formDataObj.set("consents", consents)
-		}
-
-		try {
-			// Submit to Netlify Forms via POST
-			const response = await fetch("/consent", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-				},
-				body: new URLSearchParams(formDataObj).toString(),
-			})
-
-			if (response.ok) {
-				// Redirect after successful submission
-				setTimeout(() => {
-					window.location.href = "/success?redirectTo=/"
-				}, 500)
-			} else {
-				alert(
-					"There was an error submitting the form. Please try again.",
-				)
-			}
-		} catch (error) {
-			console.error("Form submission error:", error)
-			alert("There was an error submitting the form. Please try again.")
-		}
+		// If validation passes, let the form submit naturally to Netlify Forms
+		// The form element will handle the actual POST submission
 	}
 </script>
 
-<section class="paper container">
-	<h2>Consent & Legal Agreements</h2>
-	<p>
-		Please review and accept all agreements below to proceed with the
-		research study.
-	</p>
+<Parallax
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+>
+	<section class="paper container">
+		<h2>Consent & Legal Agreements</h2>
+		<p>
+			Please review and accept all agreements below to proceed with the
+			research study.
+		</p>
 
-	{#if formData.signupData.name}
-		<div class="participant-info">
-			<p><strong>Participant Name:</strong> {formData.signupData.name}</p>
-			<p><strong>Email:</strong> {formData.signupData.email}</p>
-		</div>
-	{/if}
+		{#if formData.signupData.name}
+			<div class="participant-info">
+				<p>
+					<strong>Participant Name:</strong>
+					{formData.signupData.name}
+				</p>
+				<p><strong>Email:</strong> {formData.signupData.email}</p>
+			</div>
+		{/if}
 
-	<form
-		name="consent"
-		method="POST"
-		netlify-honeypot="bot-field"
-		netlify
-		onsubmit={handleSubmit}
-		novalidate
-	>
-		<!-- Hidden field for Netlify Forms -->
-		<input type="hidden" name="form-name" value="consent" />
-		<!-- Honeypot field for spam protection -->
-		<div class="hidden">
-			<label for="bot-field">
-				Don't fill this out if you're human:
-				<input
-					id="bot-field"
-					type="text"
-					name="bot-field"
-					tabindex="-1"
-				/>
-			</label>
-		</div>
-		<div class="consent-section">
-			<h3 class="consent-section-label">Consent & Legal Agreements</h3>
-			<div class="consent-agreements">
-				{#each Consent as agreement (agreement.id)}
-					<div
-						class="consent-agreement-card"
-						role="button"
-						tabindex="0"
-						onclick={() => {
-							formData.consent[agreement.id] =
-								!formData.consent[agreement.id]
-						}}
-						onkeydown={(e) => {
-							if (e.key === "Enter" || e.key === " ") {
-								e.preventDefault()
+		<form
+			name="consent"
+			method="POST"
+			netlify-honeypot="bot-field"
+			netlify
+			onsubmit={handleSubmit}
+			novalidate
+		>
+			<!-- Hidden field for Netlify Forms -->
+			<input type="hidden" name="form-name" value="consent" />
+			<!-- Honeypot field for spam protection -->
+			<div class="hidden">
+				<label for="bot-field">
+					Don't fill this out if you're human:
+					<input
+						id="bot-field"
+						type="text"
+						name="bot-field"
+						tabindex="-1"
+					/>
+				</label>
+			</div>
+			<div class="consent-section">
+				<h3 class="consent-section-label">
+					Consent & Legal Agreements
+				</h3>
+				<div class="consent-agreements">
+					{#each Consent as agreement (agreement.id)}
+						<div
+							class="consent-agreement-card"
+							role="button"
+							tabindex="0"
+							onclick={() => {
 								formData.consent[agreement.id] =
 									!formData.consent[agreement.id]
-							}
-						}}
-					>
-						<input
-							type="checkbox"
-							id={`consent-${agreement.id}`}
-							name="consents"
-							value={agreement.id}
-							bind:checked={formData.consent[agreement.id]}
-							required
-							onblur={handleConsentBlur}
-							class:error={touched.consent && errors.consent}
-							class="consent-checkbox"
-							onclick={(e) => e.stopPropagation()}
-						/>
-						<div class="consent-agreement-content">
-							<label
-								for={`consent-${agreement.id}`}
-								class="agreement-title"
-							>
-								{agreement.title}
-							</label>
-							<p class="agreement-text">{agreement.text}</p>
+							}}
+							onkeydown={(e) => {
+								if (e.key === "Enter" || e.key === " ") {
+									e.preventDefault()
+									formData.consent[agreement.id] =
+										!formData.consent[agreement.id]
+								}
+							}}
+						>
+							<input
+								type="checkbox"
+								id={`consent-${agreement.id}`}
+								name="consents"
+								value={agreement.id}
+								bind:checked={formData.consent[agreement.id]}
+								required
+								onblur={handleConsentBlur}
+								class:error={touched.consent && errors.consent}
+								class="consent-checkbox"
+								onclick={(e) => e.stopPropagation()}
+							/>
+							<div class="consent-agreement-content">
+								<label
+									for={`consent-${agreement.id}`}
+									class="agreement-title"
+								>
+									{agreement.title}
+								</label>
+								<p class="agreement-text">{agreement.text}</p>
+							</div>
+						</div>
+					{/each}
+				</div>
+				{#if touched.consent && errors.consent}
+					<div class="error-message consent-error">
+						<span class="error-icon">⚠</span>
+						{errors.consent}
+					</div>
+				{/if}
+			</div>
+
+			<div class="signature-section">
+				<h3 class="signature-section-label">Digital Signature</h3>
+				<p class="signature-instructions">
+					To complete your agreement, please enter your full name and
+					birthdate below as your digital signature.
+				</p>
+				<div class="signature-grid">
+					<div class="form-group">
+						<label for="signature-name">Full Name</label>
+						<div class="input-wrapper">
+							<input
+								type="text"
+								id="signature-name"
+								name="signature_full_name"
+								bind:value={formData.signature.fullName}
+								placeholder="Enter your full name"
+								required
+								onblur={handleSignatureBlur}
+								class:error={touched.signature &&
+									errors.signature}
+							/>
 						</div>
 					</div>
-				{/each}
-			</div>
-			{#if touched.consent && errors.consent}
-				<div class="error-message consent-error">
-					<span class="error-icon">⚠</span>
-					{errors.consent}
-				</div>
-			{/if}
-		</div>
-
-		<div class="signature-section">
-			<h3 class="signature-section-label">Digital Signature</h3>
-			<p class="signature-instructions">
-				To complete your agreement, please enter your full name and
-				birthdate below as your digital signature.
-			</p>
-			<div class="signature-grid">
-				<div class="form-group">
-					<label for="signature-name">Full Name</label>
-					<div class="input-wrapper">
-						<input
-							type="text"
-							id="signature-name"
-							name="signature_full_name"
-							bind:value={formData.signature.fullName}
-							placeholder="Enter your full name"
-							required
-							onblur={handleSignatureBlur}
-							class:error={touched.signature && errors.signature}
-						/>
+					<div class="form-group">
+						<label for="signature-birthdate">Birthdate</label>
+						<div class="input-wrapper">
+							<input
+								type="date"
+								id="signature-birthdate"
+								name="signature_birthdate"
+								bind:value={formData.signature.birthdate}
+								required
+								onblur={handleSignatureBlur}
+								class:error={touched.signature &&
+									errors.signature}
+							/>
+						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="signature-birthdate">Birthdate</label>
-					<div class="input-wrapper">
-						<input
-							type="date"
-							id="signature-birthdate"
-							name="signature_birthdate"
-							bind:value={formData.signature.birthdate}
-							required
-							onblur={handleSignatureBlur}
-							class:error={touched.signature && errors.signature}
-						/>
+				{#if touched.signature && errors.signature}
+					<div class="error-message signature-error">
+						<span class="error-icon">⚠</span>
+						{errors.signature}
 					</div>
-				</div>
+				{/if}
 			</div>
-			{#if touched.signature && errors.signature}
-				<div class="error-message signature-error">
-					<span class="error-icon">⚠</span>
-					{errors.signature}
-				</div>
-			{/if}
-		</div>
 
-		<button type="submit" class="submit-button">Accept Agreement</button>
-	</form>
-</section>
+			<button type="submit" class="submit-button">Accept Agreement</button
+			>
+		</form>
+	</section>
+</Parallax>
 
 <style>
 	h2 {
