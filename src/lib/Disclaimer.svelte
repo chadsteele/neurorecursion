@@ -1,6 +1,6 @@
 <script>
 	let {
-		text = "Organizations and individuals featured on this site are not necessarily affiliated with the Neuro Recursion Institute.  All information is provided for educational and informational purposes only and should not be construed as an endorsement or affiliation by any party.  Trademarks, copyrights, and intellectual property rights belong to their respective owners.",
+		text = "The Neuro Recursion Institute is not necessarily affiliated with or responsible for featured organizations or individuals on this site. Trademarks and intellectual property belong to their respective owners.",
 	} = $props()
 </script>
 

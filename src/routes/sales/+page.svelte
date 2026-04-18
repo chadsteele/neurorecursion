@@ -3,6 +3,7 @@
 	import {
 		Share2 as Share2Icon,
 		ShoppingCart as CheckoutIcon,
+		Check as CheckIcon,
 	} from "lucide-svelte"
 
 	import Parallax from "$lib/Parallax.svelte"
@@ -691,7 +692,7 @@
 	<ShareModal
 		title="The Future of Recovery"
 		description="See the NeuroRecursion roadmap for sustained recovery, maintenance, certification, and affiliate growth."
-		imageUrl="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+		imageUrl="https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png"
 		url={typeof window !== "undefined"
 			? `${window.location.origin}/future`
 			: "/future"}
@@ -700,7 +701,7 @@
 {/if}
 
 <Parallax
-	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png"
 >
 	<section class="paper container future-page">
 		<div class="hero-panel">
@@ -1367,7 +1368,8 @@
 						{/if}
 
 						<button type="submit" class="submit-order-btn">
-							Send order request
+							<CheckIcon size={18} strokeWidth={2} />
+							<span>Submit</span>
 						</button>
 					</div>
 				</div>
