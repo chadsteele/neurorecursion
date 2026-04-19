@@ -1,7 +1,5 @@
 <script>
-	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
-	import {page} from "$app/stores"
 	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 
 	let {jobId = ""} = $props()
@@ -27,9 +25,7 @@
 		message: false,
 	})
 
-	const successAction = $derived(
-		`/success?form=careers&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
-	)
+	const successAction = "/success"
 
 	function validateName() {
 		if (!formData.name.trim()) {

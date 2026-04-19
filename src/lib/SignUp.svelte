@@ -1,6 +1,4 @@
 <script>
-	import {browser} from "$app/environment"
-	import {page} from "$app/stores"
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 
@@ -24,9 +22,7 @@
 		message: false,
 	})
 
-	const successAction = $derived(
-		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
-	)
+	const successAction = "/success"
 
 	function validateName() {
 		if (!formData.name.trim()) {

@@ -1,6 +1,4 @@
 <script>
-	import {browser} from "$app/environment"
-	import {page} from "$app/stores"
 	import Consent from "$lib/Consent.js"
 	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 	import {onMount} from "svelte"
@@ -30,9 +28,7 @@
 		signature: false,
 	})
 
-	const successAction = $derived(
-		`/success?form=consent&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
-	)
+	const successAction = "/success"
 
 	onMount(() => {
 		// Load signup form data from localStorage

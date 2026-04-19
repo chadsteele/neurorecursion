@@ -19,30 +19,28 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Keep the honeypot field present in rendered HTML with `name="bot-field"`.
 - Client-side validation is allowed, but only to block invalid submits. If validation passes, let the browser submit naturally to Netlify.
 - Success UX in this repo is not the default Netlify confirmation page. Forms should submit to:
-    - `/success?form=<form-id>&redirectTo=<current-path-and-query>`
-- The success page already reads:
-    - `form` for copy variation
+    - `/success`
+- Form context should be stored client-side before the native submit:
+    - `form` for success-page copy variation
     - `redirectTo` for countdown return and the `Return now` button
 
 ## Current Repo Strategy
 
-- Derive the form action from the current page URL instead of hard-coding a plain `/success`.
-- On prerendered pages, do not read `$page.url.search` or `searchParams` during SSR. Guard query-string access with `browser` and fall back to the pathname during prerender.
+- Use a plain `/success` action. In production, query-string actions can fall through to a direct POST on `/success?...` and return `405 Method Not Allowed` instead of being handled by Netlify.
+- Save success-page context in `sessionStorage` during the `onsubmit` handler before allowing the native submit.
 - Keep existing `onsubmit` handlers only for validation and field preparation.
 - Do not call `event.preventDefault()` unless the submission is invalid.
 - Do not add SvelteKit form actions or API routes for Netlify-managed forms.
 - Preserve any hidden inputs that serialize extra state into the submission payload.
+- Keep `src/routes/success/+page.server.js` prerendered so the custom success page exists as static output.
 
 ## Canonical Pattern
 
 ```svelte
 <script>
-	import {browser} from "$app/environment"
-	import {page} from "$app/stores"
+	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 
-	const successAction = $derived(
-		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
-	)
+	const successAction = "/success"
 
 	function handleFormSubmit(event) {
 		const isValid = true
@@ -51,6 +49,11 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 			event.preventDefault()
 			return
 		}
+
+		saveNetlifySuccessContext({
+			form: "signup",
+			redirectTo: window.location.pathname + window.location.search,
+		})
 
 		// Let the browser submit naturally to Netlify Forms.
 	}
@@ -86,8 +89,9 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Does the form still render as actual HTML at build/runtime so Netlify can detect it?
 - Does `form-name` exactly match the form `name`?
 - Does the submit path still end in native browser submission?
-- Does the form action include both `form` and `redirectTo` query params?
-- If the route is prerendered, is query-string access guarded so SSR does not touch `url.search` or `searchParams`?
+- Does the form action point to `/success`?
+- Does the `onsubmit` handler save both `form` and `redirectTo` before allowing the native submit?
+- Is `src/routes/success/+page.server.js` still set to `prerender = true`?
 - Did any validation change accidentally stop valid submits?
 - If hidden derived fields exist, are they still populated before submit?
 - After edits, check Svelte compile errors and verify there are no deprecated event bindings introduced nearby.
@@ -99,4 +103,5 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Missing or mismatched `form-name` prevents Netlify from recognizing the form.
 - Removing the honeypot changes spam filtering behavior.
 - Accessing `$page.url.search` directly on prerendered pages causes the build to fail.
-- Reverting to `action="/success"` loses context-aware return routing.
+- Using query-string success actions can produce a direct POST to `/success?...` and return `405 Method Not Allowed`.
+- Reverting to a plain `/success` action without storing context loses form-specific copy and return routing.
