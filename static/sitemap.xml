@@ -116,6 +116,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/inner-ear/vertigo/tinnitus</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/health-anxiety/hypochondria/health-preoccupation</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>

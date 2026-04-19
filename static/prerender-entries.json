@@ -99,6 +99,18 @@
     "query": "headache"
   },
   {
+    "query": "remote-clinical-trial/free/inner-ear/vertigo/tinnitus"
+  },
+  {
+    "query": "inner-ear"
+  },
+  {
+    "query": "vertigo"
+  },
+  {
+    "query": "tinnitus"
+  },
+  {
     "query": "remote-clinical-trial/free/health-anxiety/hypochondria/health-preoccupation"
   },
   {
