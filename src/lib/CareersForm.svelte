@@ -134,7 +134,7 @@
 
 		saveNetlifySuccessContext({
 			form: "careers",
-			redirectTo: currentFormPath,
+			redirectTo: "/careers",
 		})
 
 		isSubmitting = true

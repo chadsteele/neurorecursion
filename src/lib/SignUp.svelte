@@ -188,7 +188,7 @@
 
 		saveNetlifySuccessContext({
 			form: "signup",
-			redirectTo: currentFormPath,
+			redirectTo: "/",
 		})
 
 		isSubmitting = true

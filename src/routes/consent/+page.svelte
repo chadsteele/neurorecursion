@@ -149,7 +149,7 @@
 
 		saveNetlifySuccessContext({
 			form: "consent",
-			redirectTo: currentFormPath,
+			redirectTo: "/",
 		})
 
 		isSubmitting = true

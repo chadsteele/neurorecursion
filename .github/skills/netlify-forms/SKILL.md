@@ -28,6 +28,7 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 
 - Use a plain `/success` action. In production, query-string actions can fall through to a direct POST on `/success?...` and return `405 Method Not Allowed` instead of being handled by Netlify.
 - Save success-page context in `sessionStorage` during the `onsubmit` handler before allowing the native submit.
+- The shared success page should read `redirectTo` from stored client context. Use this for per-form final destinations.
 - Keep existing `onsubmit` handlers only for validation and field preparation.
 - Do not call `event.preventDefault()` unless the submission is invalid.
 - Do not add SvelteKit form actions or API routes for Netlify-managed forms.

@@ -15,12 +15,12 @@
 
 	onMount(() => {
 		const storedContext = readNetlifySuccessContext()
+		formType =
+			$page.url.searchParams.get("form") || storedContext.form || ""
 		redirectTo =
 			$page.url.searchParams.get("redirectTo") ||
 			storedContext.redirectTo ||
 			"/"
-		formType =
-			$page.url.searchParams.get("form") || storedContext.form || ""
 		clearNetlifySuccessContext()
 	})
 

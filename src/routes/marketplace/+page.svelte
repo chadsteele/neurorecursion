@@ -673,7 +673,7 @@
 
 		saveNetlifySuccessContext({
 			form: "marketplace",
-			redirectTo: currentFormPath,
+			redirectTo: "/marketplace",
 		})
 
 		isSubmitting = true
