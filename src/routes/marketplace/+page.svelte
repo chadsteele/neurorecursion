@@ -1431,7 +1431,6 @@
 </section>
 
 <style>
-
 	h1 {
 		font-size: clamp(2.2rem, 4vw, 4.25rem);
 		line-height: 1.05;
@@ -1530,7 +1529,6 @@
 		box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / 0.2);
 		border-color: rgb(var(--accent-bright-rgb) / 0.4);
 	}
-
 
 	.stat-value {
 		font-size: 2rem;
@@ -1634,7 +1632,11 @@
 	}
 
 	.selection-checkbox.is-checked {
-		background: linear-gradient(135deg, var(--accent-bright), var(--accent-500));
+		background: linear-gradient(
+			135deg,
+			var(--accent-bright),
+			var(--accent-500)
+		);
 		border-color: rgb(var(--accent-bright-rgb) / 0.95);
 		box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 0.14);
 	}
@@ -1725,7 +1727,11 @@
 		place-items: center;
 		position: relative;
 		border-radius: 50%;
-		background: linear-gradient(135deg, var(--accent-500), var(--accent-bright));
+		background: linear-gradient(
+			135deg,
+			var(--accent-500),
+			var(--accent-bright)
+		);
 		color: #07111d;
 		font-weight: 800;
 		font-size: 1rem;
@@ -2095,7 +2101,11 @@
 		width: fit-content;
 		padding: 0.9rem 1.15rem;
 		border-radius: 999px;
-		background: linear-gradient(135deg, var(--accent-500), var(--accent-bright));
+		background: linear-gradient(
+			135deg,
+			var(--accent-500),
+			var(--accent-bright)
+		);
 		color: #07111d;
 		font-weight: 800;
 	}

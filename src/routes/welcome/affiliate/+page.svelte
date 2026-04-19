@@ -760,7 +760,11 @@
 		width: 3rem;
 		height: 3rem;
 		border-radius: 50%;
-		background: linear-gradient(135deg, var(--accent-500), var(--accent-bright));
+		background: linear-gradient(
+			135deg,
+			var(--accent-500),
+			var(--accent-bright)
+		);
 		color: #07111d;
 		font-size: 1.25rem;
 		font-weight: 800;

@@ -146,7 +146,8 @@ section > form {
 .hero-stats,
 .section-shell,
 .closing-shell {
-	background: radial-gradient(
+	background:
+		radial-gradient(
 			circle at top right,
 			rgb(var(--accent-rgb) / 0.16),
 			transparent 35%
@@ -182,7 +183,11 @@ section > form {
 }
 
 .primary-link {
-	background: linear-gradient(135deg, var(--accent-500), var(--accent-bright));
+	background: linear-gradient(
+		135deg,
+		var(--accent-500),
+		var(--accent-bright)
+	);
 	color: #07111d;
 }
 
