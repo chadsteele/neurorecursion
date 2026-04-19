@@ -2,278 +2,164 @@
 
 ## Project Overview
 
-This is a SvelteKit-based clinical research signup form with integrated form handling via Netlify Forms (no external services required).
+This project is a SvelteKit site deployed on Netlify and uses native Netlify Forms for submission capture. The current strategy does not use custom server endpoints, SvelteKit form actions, SendGrid, or AJAX for the final form submit path.
 
-## Quick Start for Netlify Deployment
+## Quick Start For Deployment
 
-### Step 1: Prerequisites
+### 1. Prerequisites
 
-- Node.js 18+
-- Netlify account (free tier available at https://netlify.com)
-- GitHub account (for easy continuous deployment)
+- A Netlify account
+- A GitHub repository for this project
+- A local Node.js version compatible with the project configuration
 
-### Step 2: Local Setup
+### 2. Local Setup
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
-
-# Visit http://localhost:5173
 ```
 
-### Step 3: Test Form Locally
-
-The form includes:
-
-- Name (required, validated)
-- Email (required, validated)
-- Message (optional, checked for HTML/SQL injection)
-- Conditions (multiple checkboxes)
-
-After submission, the success page displays and auto-redirects to home after 5 seconds.
-
-### Step 4: Build for Production
+### 3. Verify The Build
 
 ```bash
-# Build the project
 npm run build
-
-# This creates the .svelte-kit/netlify directory
 ```
 
-### Step 5: Deploy to Netlify
+Netlify should build from the repository's existing `netlify.toml` configuration.
 
-#### Method A: GitHub Integration (Recommended)
+### 4. Deploy To Netlify
 
-1. Push your code to GitHub:
+#### Option A: GitHub Integration
 
-```bash
-git add .
-git commit -m "Prepare for Netlify deployment"
-git push
-```
+1. Push the repository to GitHub.
+2. In Netlify, choose Add new site → Import an existing project.
+3. Select the repository.
+4. Let Netlify use the settings from `netlify.toml`.
+5. Deploy.
 
-2. Go to [netlify.com](https://netlify.com)
-
-3. Click "Add new site" → "Import an existing project"
-
-4. Select GitHub and authorize Netlify to access your repositories
-
-5. Choose your repository
-
-6. Netlify will auto-detect settings from `netlify.toml`:
-    - Build command: `npm run build`
-    - Publish directory: `.svelte-kit/netlify`
-
-7. Click "Deploy site"
-
-Your site will build and deploy automatically! 🚀
-
-#### Method B: Netlify CLI
+#### Option B: Netlify CLI
 
 ```bash
-# Install Netlify CLI globally
 npm install -g netlify-cli
-
-# Login to your Netlify account
 netlify login
-
-# Deploy to production
 netlify deploy --prod
 ```
 
-### Step 6: Form Submission Setup
+## Netlify Forms Strategy In This Repo
 
-Netlify Forms captures submissions automatically. No configuration needed!
+All Netlify-managed forms in this repository follow the same pattern:
 
-To view form submissions:
+- Native browser `POST` submission
+- `netlify` attribute on the form
+- `netlify-honeypot="bot-field"`
+- Hidden input with `name="form-name"`
+- Client-side validation only blocks invalid submits
+- If validation passes, the browser submits naturally to Netlify
 
-1. Go to your site's Netlify dashboard
-2. Select your site
-3. Click "Forms" in the left navigation
-4. You'll see the "signup" form with all submissions
-5. Each submission shows the timestamp and field values
+Current active forms:
 
-### Step 7: Optional - Email Notifications
+- `signup`
+- `careers`
+- `consent`
+- `future-order-request`
 
-To receive email notifications when someone submits the form:
+## Success Flow
 
-1. In Netlify dashboard, go to "Forms" → "signup"
-2. Click "Add notification" → "Email notification"
-3. Enter email address(es) to receive alerts
-4. Click "Save"
+Forms should submit to a success URL shaped like this:
 
-Now you'll get an email each time someone fills out the form!
+```text
+/success?form=<form-id>&redirectTo=<current-path-and-query>
+```
+
+That allows the shared success page to:
+
+- render form-specific success copy
+- auto-redirect after a short countdown
+- offer a `Return now` button
+- return the user to the page they came from instead of always sending them to `/`
 
 ## Form Submission Flow
 
-```
-User fills form
-        ↓
-Clicks "Submit"
-        ↓
-Form data sent to Netlify
-        ↓
-Netlify captures data
-        ↓
-Success page displays
-        ↓
-Auto-redirect to home
-```
-
-## Accessing Your Site
-
-Once deployed, your site will be live at:
-
-- Default Netlify URL: `https://[random-name].netlify.app`
-- Custom domain: Set up under "Domain settings" in your site's Netlify dashboard
-
-### Step 5: Configure Environment Variables on Netlify
-
-After initial deployment:
-
-1. Go to your site on [netlify.com](https://netlify.com)
-
-2. Navigate to **Site Settings** → **Build & Deploy** → **Environment**
-
-3. Add the following variables:
-    - `SENDGRID_API_KEY` - Your SendGrid API key
-    - `FROM_EMAIL` - Sender email (e.g., noreply@example.com)
-
-4. Redeploy to activate variables:
-    ```bash
-    netlify deploy --prod
-    ```
-
-### Step 6: Set Up SendGrid
-
-1. Create account at [sendgrid.com](https://sendgrid.com)
-
-2. Go to **Settings** → **API Keys**
-
-3. Click "Create API Key"
-
-4. Give it a name like "NRI Netlify"
-
-5. Grant "Mail Send" permissions
-
-6. Copy the key and add to Netlify environment variables
-
-### Step 7: Verify Sender Email
-
-1. In SendGrid, go to **Settings** → **Sender Authentication**
-
-2. Click "Verify an Address"
-
-3. Add the email from `FROM_EMAIL` environment variable
-
-4. Confirm verification via email
-
-## Form Submission Flow
-
-```
+```text
 User fills form
     ↓
-Client-side validation
+Client-side validation runs
     ↓
-Form submitted (POST)
+Browser submits form with POST
     ↓
-Server-side validation (+page.server.js)
+Netlify captures submission
     ↓
-Data processed and logged
+User lands on /success with form + redirectTo query params
     ↓
-User redirected to /success
+Success page shows context-aware message
     ↓
-Success page displays confirmation
-    ↓
-Auto-redirect to home after 5 seconds
+User auto-redirects back to the originating page or clicks Return now
 ```
 
-## Form Data Handling
+## Viewing Submissions
 
-Netlify Forms automatically:
+1. Open the site in the Netlify dashboard.
+2. Open Forms.
+3. Select the form name you want to inspect.
+4. Review entries or export CSV as needed.
 
-- Captures all form field data
-- Stores submissions in your Netlify dashboard
-- Provides CSV export functionality
-- Keeps data indefinitely
-- No code or configuration needed
+## Optional Notifications
 
-## File Structure
+If you want email alerts for submissions, configure them directly in Netlify:
 
-```
-neurorecursion/
-├── src/
-│   ├── routes/
-│   │   ├── +page.svelte           # Main page
-│   │   ├── +page.server.js        # Form action handler
-│   │   └── success/
-│   │       └── +page.svelte       # Success page
-│   ├── lib/
-│   │   ├── SignUp.svelte          # Signup form component
-│   │   └── Conditions.js          # Conditions list
-│   └── app.css                     # Global styles
-├── netlify.toml                    # Netlify configuration
-├── svelte.config.js                # SvelteKit configuration
-├── NETLIFY_DEPLOYMENT.md           # Detailed deployment guide
-├── .env.example                    # Environment variables template
-└── package.json                    # Dependencies
+1. Open Forms in the Netlify dashboard.
+2. Open a form.
+3. Add a form notification.
+
+This is operationally separate from the site code. The repository itself does not send form emails through a custom backend.
+
+## Relevant Files
+
+```text
+src/lib/SignUp.svelte
+src/lib/CareersForm.svelte
+src/routes/consent/+page.svelte
+src/routes/marketplace/+page.svelte
+src/routes/success/+page.svelte
+netlify.toml
 ```
 
 ## Troubleshooting
 
-### Emails not sending
+### Form submissions not appearing
 
-- ✓ Check SendGrid API key is in Netlify environment variables
-- ✓ Verify sender email is verified in SendGrid
-- ✓ Check SendGrid quota/usage
+- Verify the form still has `method="POST"`, `netlify`, `netlify-honeypot`, and matching `form-name`.
+- Verify client-side validation is not calling `preventDefault()` for valid submissions.
+- Verify the form still renders as real HTML in the built output.
+- Confirm you are looking at the right form name in the Netlify dashboard.
+
+### Redirect behavior is wrong
+
+- Verify the form action includes both `form` and `redirectTo` query params.
+- Verify the success page still reads those params.
 
 ### Build fails on Netlify
 
-- ✓ Ensure Node.js version matches locally
-- ✓ Clear Netlify cache: Site Settings → Build & Deploy → Clear Cache
-- ✓ Check build logs for errors
+- Check the build logs.
+- Confirm `netlify.toml` parses cleanly.
+- Clear the Netlify cache and redeploy if needed.
 
-### Form validation not working
+## Important Notes
 
-- ✓ Clear browser cache
-- ✓ Check browser console for JavaScript errors
-- ✓ Ensure JavaScript is enabled
-
-### Form submits but success page doesn't show
-
-- ✓ Check Netlify function logs
-- ✓ Verify form fields have correct `name` attributes
-- ✓ Check browser network tab for errors
-
-## Monitoring
-
-### View submissions
-
-1. Go to Netlify Site Settings
-2. Select Build & Deploy → Functions
-3. Check logs for submission records
-
-### SendGrid Dashboard
-
-- Monitor email delivery rates
-- View bounce/unsubscribe rates
-- Check API usage
+- Do not replace the final submit path with `fetch` or an API route.
+- Do not remove the honeypot field.
+- Do not change a form name without updating the hidden `form-name` input to match.
+- Do not revert actions back to plain `/success` if you want context-aware return behavior.
 
 ## Security Notes
 
 - Form validation prevents HTML/SQL injection
-- Environment variables never exposed to client
-- Serverless functions run securely on Netlify
+- Environment variables remain separate from the Netlify Forms flow
 - No user data stored on frontend
 
 ## Support Resources
 
 - **Netlify**: https://docs.netlify.com/
-- **SendGrid**: https://sendgrid.com/docs/
 - **SvelteKit**: https://kit.svelte.dev/docs
 - **SvelteKit + Netlify**: https://docs.netlify.com/integrations/frameworks/sveltekit/
 
@@ -283,7 +169,7 @@ After deployment, check:
 
 - Core Web Vitals in Netlify Analytics
 - Build time (should be < 2 minutes)
-- Function execution time (should be < 5 seconds)
+- Form capture and redirect behavior on each active form
 
 ## Next Steps
 

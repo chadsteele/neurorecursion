@@ -1,5 +1,6 @@
 <script>
 	import {goto} from "$app/navigation"
+	import {page} from "$app/stores"
 
 	let {jobId = ""} = $props()
 
@@ -23,6 +24,10 @@
 		website: false,
 		message: false,
 	})
+
+	const successAction = $derived(
+		`/success?form=careers&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+	)
 
 	function validateName() {
 		if (!formData.name.trim()) {
@@ -124,6 +129,7 @@
 
 <form
 	method="POST"
+	action={successAction}
 	netlify-honeypot="bot-field"
 	netlify
 	onsubmit={handleFormSubmit}

@@ -1,4 +1,5 @@
 <script>
+	import {page} from "$app/stores"
 	import Consent from "$lib/Consent.js"
 	import {onMount} from "svelte"
 	import PageBackground from "$lib/PageBackground.svelte"
@@ -26,6 +27,10 @@
 		consent: false,
 		signature: false,
 	})
+
+	const successAction = $derived(
+		`/success?form=consent&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+	)
 
 	onMount(() => {
 		// Load signup form data from localStorage
@@ -134,6 +139,7 @@
 	<form
 		name="consent"
 		method="POST"
+		action={successAction}
 		netlify-honeypot="bot-field"
 		netlify
 		onsubmit={handleSubmit}

@@ -1,4 +1,5 @@
 <script>
+	import {page} from "$app/stores"
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 
 	let {
@@ -20,6 +21,10 @@
 		email: false,
 		message: false,
 	})
+
+	const successAction = $derived(
+		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+	)
 
 	function validateName() {
 		if (!formData.name.trim()) {
@@ -195,6 +200,7 @@
 	<form
 		name="signup"
 		method="POST"
+		action={successAction}
 		netlify-honeypot="bot-field"
 		netlify
 		onsubmit={handleFormSubmit}

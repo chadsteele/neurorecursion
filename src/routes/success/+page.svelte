@@ -4,6 +4,50 @@
 
 	let countdown = $state(5)
 	let CheckCircleIcon = $state(null)
+	const redirectTo = $derived($page.url.searchParams.get("redirectTo") || "/")
+
+	const successContent = $derived.by(() => {
+		switch ($page.url.searchParams.get("form")) {
+			case "careers":
+				return {
+					title: "Application Received",
+					message:
+						"Your application has been successfully submitted.",
+					detail: "We've received your information and will review your application.",
+					followUp: "You'll hear from us soon if there is a fit.",
+				}
+			case "marketplace":
+				return {
+					title: "Order Request Received",
+					message:
+						"Your order request has been successfully submitted.",
+					detail: "We've received your product selections and contact information.",
+					followUp:
+						"We'll follow up with pricing, availability, and next steps.",
+				}
+			case "consent":
+				return {
+					title: "Agreement Received",
+					message: "Your agreement has been successfully submitted.",
+					detail: "We've received your consent and digital signature.",
+					followUp: "We'll use this to move your next steps forward.",
+				}
+			case "signup":
+				return {
+					title: "Thank You!",
+					message: "Your form has been successfully submitted.",
+					detail: "We've received your information and will review your application.",
+					followUp: "You'll hear from us soon with next steps.",
+				}
+			default:
+				return {
+					title: "Thank You!",
+					message: "Your form has been successfully submitted.",
+					detail: "We've received your information.",
+					followUp: "We'll be in touch if follow-up is needed.",
+				}
+		}
+	})
 
 	$effect(() => {
 		import("lucide-svelte").then((module) => {
@@ -15,8 +59,6 @@
 		const interval = setInterval(() => {
 			countdown--
 			if (countdown === 0) {
-				const redirectTo =
-					$page.url.searchParams.get("redirectTo") || "/"
 				goto(redirectTo)
 			}
 		}, 1000)
@@ -32,14 +74,21 @@
 				<CheckCircleIcon size={48} strokeWidth={2} />
 			{/if}
 		</div>
-		<h1>Thank You!</h1>
-		<p>Your form has been successfully submitted.</p>
-		<p>We've received your information and will review your application.</p>
-		<p>You'll hear from us soon with next steps.</p>
+		<h1>{successContent.title}</h1>
+		<p>{successContent.message}</p>
+		<p>{successContent.detail}</p>
+		<p>{successContent.followUp}</p>
 
 		<div class="redirect-notice">
 			Redirecting in <span class="countdown">{countdown}</span>s...
 		</div>
+		<button
+			class="return-now"
+			type="button"
+			onclick={() => goto(redirectTo)}
+		>
+			Return now
+		</button>
 	</div>
 </div>
 
@@ -96,6 +145,34 @@
 		margin-top: 2.5rem;
 		font-size: 0.95rem;
 		color: #a0d8ff;
+	}
+
+	.return-now {
+		margin-top: 1rem;
+		padding: 0.8rem 1.4rem;
+		border: 1px solid rgba(74, 159, 216, 0.45);
+		border-radius: 999px;
+		background: rgba(74, 159, 216, 0.14);
+		color: #f4f8ff;
+		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		cursor: pointer;
+		transition:
+			transform 0.18s ease,
+			background 0.18s ease,
+			border-color 0.18s ease;
+	}
+
+	.return-now:hover {
+		transform: translateY(-1px);
+		background: rgba(74, 159, 216, 0.22);
+		border-color: rgba(74, 159, 216, 0.62);
+	}
+
+	.return-now:focus-visible {
+		outline: 2px solid rgba(74, 159, 216, 0.75);
+		outline-offset: 3px;
 	}
 
 	.countdown {

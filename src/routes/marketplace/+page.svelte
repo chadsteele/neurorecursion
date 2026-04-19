@@ -1,4 +1,5 @@
 <script>
+	import {page} from "$app/stores"
 	import {tick} from "svelte"
 	import {
 		Share2 as Share2Icon,
@@ -19,6 +20,9 @@
 	let orderSummaryTimer
 	let orderSummaryShownAt = 0
 	let showOrderSummaryToast = $state(false)
+	const successAction = $derived(
+		`/success?form=marketplace&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+	)
 	let orderForm = $state({
 		name: "",
 		email: "",
@@ -1086,6 +1090,7 @@
 			<form
 				name="future-order-request"
 				method="POST"
+				action={successAction}
 				netlify-honeypot="bot-field"
 				netlify
 				onsubmit={handleOrderSubmit}

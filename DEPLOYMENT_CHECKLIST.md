@@ -6,8 +6,7 @@
 
 - [x] Updated `svelte.config.js` to use `@sveltejs/adapter-netlify`
 - [x] Created `netlify.toml` with build configuration
-- [x] Updated form component with Netlify Forms attributes (`form-name="signup"`)
-- [x] Created form action handler: `src/routes/+page.server.js`
+- [x] Updated active forms to use Netlify Forms attributes and native POST submission
 - [x] Created success page: `src/routes/success/+page.svelte`
 - [x] Build verification: ✓ Build completes successfully in 8.83s
 
@@ -55,11 +54,12 @@
 ### 4. Test Your Deployment
 
 - [ ] Visit the generated URL (e.g., `https://random-name.netlify.app`)
-- [ ] Fill out the form completely
-- [ ] Submit the form
-- [ ] Verify success page appears and auto-redirects after 5 seconds
+- [ ] Submit each active form you care about testing
+- [ ] Verify the success page appears with the correct form-specific copy
+- [ ] Verify the success page auto-redirects back to the originating page
+- [ ] Verify the `Return now` button works
 - [ ] Go to your Netlify dashboard → "Forms" tab
-- [ ] Verify your test submission appears in the "signup" form submissions
+- [ ] Verify your test submission appears under the correct form name
 
 ### 5. Optional - Email Notifications
 
@@ -90,7 +90,7 @@
 
 ### Content Updates
 
-- [ ] To update conditions, edit `src/lib/Conditions.js`
+- [ ] To update conditions, edit `src/data/Conditions.js`
 - [ ] To update form fields, edit `src/lib/SignUp.svelte`
 - [ ] Commit and push changes to GitHub
 - [ ] Netlify automatically rebuilds and redeploys
@@ -112,8 +112,10 @@
 
 ### Form Submissions Not Appearing
 
-- [ ] Verify form has `form-name="signup"` attribute
+- [ ] Verify form has a matching form `name` and hidden `form-name` input
 - [ ] Check that form method is POST
+- [ ] Check that the form still has `netlify` and `netlify-honeypot="bot-field"`
+- [ ] Check that valid submissions are not blocked by `preventDefault()`
 - [ ] Verify you're looking at the correct form in Netlify Forms tab
 - [ ] Try a test submission and wait 30 seconds
 
@@ -135,96 +137,36 @@
 - [ ] Run: `netlify login`
 - [ ] Run: `netlify deploy --prod`
 
-### 4. Configure Environment Variables on Netlify
-
-After deployment completes:
-
-- [ ] Go to your Netlify site dashboard
-- [ ] Navigate to **Site Settings** → **Build & Deploy** → **Environment**
-- [ ] Click "Edit variables"
-- [ ] Add `SENDGRID_API_KEY` = [Your SendGrid API key]
-- [ ] Add `FROM_EMAIL` = [Your verified sender email from SendGrid]
-- [ ] Save changes
-- [ ] Redeploy site: `netlify deploy --prod`
-
-### 5. Test Deployment
-
-- [ ] Visit your deployed site URL
-- [ ] Fill out signup form with test data
-- [ ] Submit form
-- [ ] Verify success page appears
-- [ ] Check that email was received at zippyskippy@gmail.com
-- [ ] Check SendGrid activity dashboard for delivery status
-
-## Post-Deployment
-
-### Monitoring
-
-- [ ] Check Netlify Analytics
-- [ ] Monitor SendGrid email delivery
-- [ ] Set up email notifications for failed submissions
-
-### Maintenance
-
-- [ ] Set up automated backups of submission data
-- [ ] Monitor form spam and implement CAPTCHA if needed
-- [ ] Review SendGrid bounce/unsubscribe rates monthly
-
 ## Troubleshooting Common Issues
 
-### Build Fails on Netlify
+### Build Fails On Netlify
 
 ```bash
-# Clear cache in Netlify UI
 Site Settings → Build & Deploy → Clear cache and retry
 ```
 
-### Emails Not Sending
-
-- Verify `SENDGRID_API_KEY` is correct in Netlify environment variables
-- Confirm sender email is verified in SendGrid
-- Check SendGrid account quota
-- Review function logs in Netlify dashboard
-
 ### Form Not Submitting
 
-- Check browser console for JavaScript errors
-- Verify all form fields have correct `name` attributes
-- Check that form action file exists: `src/routes/+page.server.js`
-- Inspect network tab in browser DevTools
-
-### Environment Variables Not Detected
-
-- Redeploy after adding variables: `netlify deploy --prod`
-- Wait 30 seconds for changes to propagate
-- Check that variable names match exactly
+- [ ] Check browser console for JavaScript errors
+- [ ] Verify all required form fields still have `name` attributes
+- [ ] Verify the form action still targets `/success?form=...&redirectTo=...`
+- [ ] Inspect the network request in browser DevTools
 
 ## Important Notes
 
 ### Security
 
-- ✓ Never commit `.env` file to git
-- ✓ Environment variables are not visible in client-side code
-- ✓ Form data validated on both client and server
-- ✓ HTML/SQL injection attempts blocked
-- ✓ SendGrid API key kept secure on server
+- ✓ Never commit `.env` to git
+- ✓ Form validation is client-side only for submit blocking in the Netlify flow
+- ✓ HTML/SQL-like input guards are still enforced in the form components
 
 ### Form Features
 
 - ✓ Real-time client-side validation
-- ✓ HTML/SQL injection prevention
-- ✓ Plain text only message field
-- ✓ Multiple condition selection with checkboxes
-- ✓ Success page with auto-redirect
-- ✓ Responsive design
-
-### Email Delivery
-
-- Email recipient: **zippyskippy@gmail.com** (hardcoded in function)
-- Subject: "New Signup: [User Name]"
-- Reply-To: User's email address
-- Sender: FROM_EMAIL environment variable
-- Format: Plain text with structured fields
+- ✓ Honeypot spam protection
+- ✓ Shared success page with form-specific copy
+- ✓ Auto-redirect plus `Return now` option
+- ✓ Context-aware return routing
 
 ## File Summary
 
@@ -232,7 +174,6 @@ Created/Modified Files:
 
 - ✓ `netlify.toml` - Netlify configuration
 - ✓ `svelte.config.js` - Updated adapter
-- ✓ `src/routes/+page.server.js` - Form action
 - ✓ `src/routes/success/+page.svelte` - Success page
 - ✓ `src/lib/SignUp.svelte` - Updated form component
 - ✓ `NETLIFY_DEPLOYMENT.md` - Deployment guide
@@ -249,7 +190,6 @@ Created/Modified Files:
 ## Support Contacts
 
 - **Netlify Support**: https://support.netlify.com
-- **SendGrid Support**: https://sendgrid.com/docs/
 - **SvelteKit Docs**: https://kit.svelte.dev/docs
 
 ---
@@ -259,7 +199,5 @@ Created/Modified Files:
 Once all steps are checked off, your project will be:
 
 - ✓ Deployed on Netlify (global CDN)
-- ✓ Configured for serverless functions
-- ✓ Sending emails via SendGrid
 - ✓ Receiving form submissions automatically
 - ✓ Displaying instant user feedback
