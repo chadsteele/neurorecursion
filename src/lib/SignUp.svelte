@@ -1,6 +1,9 @@
 <script>
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
-	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
+	import {
+		getCurrentFormPath,
+		saveNetlifySuccessContext,
+	} from "$lib/netlifySuccess.js"
 
 	let {
 		formData = {conditions: {}},
@@ -22,7 +25,7 @@
 		message: false,
 	})
 
-	const successAction = "/success"
+	const successAction = "/consent"
 
 	function validateName() {
 		if (!formData.name.trim()) {
@@ -149,13 +152,19 @@
 			return
 		}
 
+		const currentFormPath = getCurrentFormPath()
+		const form = event.currentTarget
+		const formPathField = form.elements.namedItem("form_path")
+		if (formPathField instanceof HTMLInputElement) {
+			formPathField.value = currentFormPath
+		}
+
 		saveNetlifySuccessContext({
 			form: "signup",
-			redirectTo: window.location.pathname + window.location.search,
+			redirectTo: currentFormPath,
 		})
 
 		// Prepare form data for submission
-		const form = event.target
 		const formDataObj = new FormData(form)
 
 		// Convert conditions to comma-separated string
@@ -210,6 +219,7 @@
 	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="signup" />
+		<input type="hidden" name="form_path" value="" />
 		<!-- Honeypot field for spam protection -->
 		<div class="hidden">
 			<label for="bot-field">

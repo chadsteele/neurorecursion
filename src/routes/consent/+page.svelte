@@ -1,6 +1,9 @@
 <script>
 	import Consent from "$lib/Consent.js"
-	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
+	import {
+		getCurrentFormPath,
+		saveNetlifySuccessContext,
+	} from "$lib/netlifySuccess.js"
 	import {onMount} from "svelte"
 	import PageBackground from "$lib/PageBackground.svelte"
 
@@ -108,9 +111,16 @@
 			return
 		}
 
+		const currentFormPath = getCurrentFormPath()
+		const form = e.currentTarget
+		const formPathField = form.elements.namedItem("form_path")
+		if (formPathField instanceof HTMLInputElement) {
+			formPathField.value = currentFormPath
+		}
+
 		saveNetlifySuccessContext({
 			form: "consent",
-			redirectTo: window.location.pathname + window.location.search,
+			redirectTo: currentFormPath,
 		})
 
 		// If validation passes, let the form submit naturally to Netlify Forms
@@ -150,6 +160,7 @@
 	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="consent" />
+		<input type="hidden" name="form_path" value="" />
 		<!-- Honeypot field for spam protection -->
 		<div class="hidden">
 			<label for="bot-field">

@@ -1,6 +1,9 @@
 <script>
 	import {goto} from "$app/navigation"
-	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
+	import {
+		getCurrentFormPath,
+		saveNetlifySuccessContext,
+	} from "$lib/netlifySuccess.js"
 
 	let {jobId = ""} = $props()
 
@@ -116,9 +119,16 @@
 			return
 		}
 
+		const currentFormPath = getCurrentFormPath()
+		const form = event.currentTarget
+		const formPathField = form.elements.namedItem("form_path")
+		if (formPathField instanceof HTMLInputElement) {
+			formPathField.value = currentFormPath
+		}
+
 		saveNetlifySuccessContext({
 			form: "careers",
-			redirectTo: window.location.pathname + window.location.search,
+			redirectTo: currentFormPath,
 		})
 
 		// If validation passes, let the form submit naturally to Netlify Forms
@@ -139,6 +149,7 @@
 >
 	<!-- Hidden field for Netlify Forms -->
 	<input type="hidden" name="form-name" value="careers" />
+	<input type="hidden" name="form_path" value="" />
 	<!-- Job ID field -->
 	{#if jobId}
 		<input type="hidden" name="job_id" value={jobId} />

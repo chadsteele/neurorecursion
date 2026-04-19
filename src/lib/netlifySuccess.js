@@ -39,3 +39,11 @@ export function clearNetlifySuccessContext() {
 	sessionStorage.removeItem(FORM_KEY)
 	sessionStorage.removeItem(REDIRECT_KEY)
 }
+
+export function getCurrentFormPath() {
+	if (!browser) {
+		return ""
+	}
+
+	return window.location.pathname + window.location.search
+}

@@ -7,7 +7,10 @@
 	} from "lucide-svelte"
 
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
-	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
+	import {
+		getCurrentFormPath,
+		saveNetlifySuccessContext,
+	} from "$lib/netlifySuccess.js"
 	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 
@@ -630,9 +633,15 @@
 			return
 		}
 
+		const currentFormPath = getCurrentFormPath()
+		const formPathField = form.elements.namedItem("form_path")
+		if (formPathField instanceof HTMLInputElement) {
+			formPathField.value = currentFormPath
+		}
+
 		saveNetlifySuccessContext({
 			form: "marketplace",
-			redirectTo: window.location.pathname + window.location.search,
+			redirectTo: currentFormPath,
 		})
 
 		const formData = new FormData(form)
@@ -1104,6 +1113,7 @@
 					name="form-name"
 					value="future-order-request"
 				/>
+				<input type="hidden" name="form_path" value="" />
 				<input type="hidden" name="selected_products" value="" />
 				<input type="hidden" name="estimated_total" value="" />
 
