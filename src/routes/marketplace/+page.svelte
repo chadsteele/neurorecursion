@@ -9,6 +9,7 @@
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 	import {
 		getCurrentFormPath,
+		handleLocalFormNavigation,
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
 	import PageBackground from "$lib/PageBackground.svelte"
@@ -615,7 +616,7 @@
 		)
 	}
 
-	function handleOrderSubmit(event) {
+	async function handleOrderSubmit(event) {
 		if (isSubmitting) {
 			event.preventDefault()
 			return
@@ -677,6 +678,10 @@
 		})
 
 		isSubmitting = true
+
+		if (await handleLocalFormNavigation(event, successAction)) {
+			return
+		}
 
 		// Let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST

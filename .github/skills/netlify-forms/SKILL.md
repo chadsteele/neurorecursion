@@ -29,6 +29,8 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Use a plain `/success` action. In production, query-string actions can fall through to a direct POST on `/success?...` and return `405 Method Not Allowed` instead of being handled by Netlify.
 - Save success-page context in `sessionStorage` during the `onsubmit` handler before allowing the native submit.
 - The shared success page should read `redirectTo` from stored client context. Use this for per-form final destinations.
+- Plain `vite dev` on `localhost:5173` does not provide Netlify Forms handling and will return `405 Method Not Allowed` on native POSTs.
+- In local Vite development only, use a client-side bypass that navigates to the form action path after saving success context. Keep production and Netlify Dev on the native submission path.
 - Keep existing `onsubmit` handlers only for validation and field preparation.
 - Do not call `event.preventDefault()` unless the submission is invalid.
 - Do not add SvelteKit form actions or API routes for Netlify-managed forms.
@@ -118,6 +120,7 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Removing the honeypot changes spam filtering behavior.
 - Accessing `$page.url.search` directly on prerendered pages causes the build to fail.
 - Using query-string success actions can produce a direct POST to `/success?...` and return `405 Method Not Allowed`.
+- Running against plain Vite localhost without a dev-only bypass or Netlify Dev will return `405 Method Not Allowed` for native form POSTs.
 - Reverting to a plain `/success` action without storing context loses form-specific copy and return routing.
 - Disabling actual form controls before native submission can cause those values to be omitted from the payload.
 - Updating a throwaway `FormData` instance without posting it leaves Netlify with stale or missing values.

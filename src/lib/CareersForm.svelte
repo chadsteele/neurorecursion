@@ -2,6 +2,7 @@
 	import {goto} from "$app/navigation"
 	import {
 		getCurrentFormPath,
+		handleLocalFormNavigation,
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
 
@@ -114,7 +115,7 @@
 		)
 	}
 
-	function handleFormSubmit(event) {
+	async function handleFormSubmit(event) {
 		if (isSubmitting) {
 			event.preventDefault()
 			return
@@ -138,6 +139,10 @@
 		})
 
 		isSubmitting = true
+
+		if (await handleLocalFormNavigation(event, successAction)) {
+			return
+		}
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST
@@ -237,6 +242,21 @@
 			{/if}
 		</div>
 	</div>
+	<p class="form-helper-copy">
+		If your CV is not available online, you can paste a link to a file
+		sharing service (like
+		<a
+			href="https://drive.google.com/"
+			target="_blank"
+			rel="noopener noreferrer">Google Drive</a
+		>
+		or
+		<a
+			href="https://www.dropbox.com/"
+			target="_blank"
+			rel="noopener noreferrer">Dropbox</a
+		>) or simply include it in the text field below.
+	</p>
 
 	<div class="form-group">
 		<label for="message">Message</label>
@@ -365,6 +385,23 @@
 
 	.error-icon {
 		font-weight: bold;
+	}
+
+	.form-helper-copy {
+		color: #d0d0d0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0 0 1.5rem;
+	}
+
+	.form-helper-copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 0.16em;
+	}
+
+	.form-helper-copy a:hover {
+		color: #a0d8ff;
 	}
 
 	.submit-progress {

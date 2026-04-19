@@ -2,6 +2,7 @@
 	import Consent from "$lib/Consent.js"
 	import {
 		getCurrentFormPath,
+		handleLocalFormNavigation,
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
 	import {onMount} from "svelte"
@@ -115,7 +116,7 @@
 		validateSignature()
 	}
 
-	function handleSubmit(e) {
+	async function handleSubmit(e) {
 		if (isSubmitting) {
 			e.preventDefault()
 			return
@@ -153,6 +154,10 @@
 		})
 
 		isSubmitting = true
+
+		if (await handleLocalFormNavigation(e, successAction)) {
+			return
+		}
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// The form element will handle the actual POST submission

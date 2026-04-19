@@ -1,4 +1,5 @@
-import {browser} from "$app/environment"
+import {browser, dev} from "$app/environment"
+import {goto} from "$app/navigation"
 
 const FORM_KEY = "netlify-success-form"
 const REDIRECT_KEY = "netlify-success-redirect-to"
@@ -46,4 +47,31 @@ export function getCurrentFormPath() {
 	}
 
 	return window.location.pathname + window.location.search
+}
+
+function isPlainLocalDevServer() {
+	if (!browser || !dev) {
+		return false
+	}
+
+	const isLocalHost =
+		window.location.hostname === "localhost" ||
+		window.location.hostname === "127.0.0.1"
+
+	if (!isLocalHost) {
+		return false
+	}
+
+	// Netlify Dev typically serves on 8888 and can preserve native form behavior.
+	return window.location.port !== "8888"
+}
+
+export async function handleLocalFormNavigation(event, targetPath) {
+	if (!isPlainLocalDevServer()) {
+		return false
+	}
+
+	event.preventDefault()
+	await goto(targetPath)
+	return true
 }

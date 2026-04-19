@@ -2,6 +2,7 @@
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 	import {
 		getCurrentFormPath,
+		handleLocalFormNavigation,
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
 
@@ -152,7 +153,7 @@
 		return !(errors.name || errors.email || errors.message)
 	}
 
-	function handleFormSubmit(event) {
+	async function handleFormSubmit(event) {
 		if (isSubmitting) {
 			event.preventDefault()
 			return
@@ -192,6 +193,10 @@
 		})
 
 		isSubmitting = true
+
+		if (await handleLocalFormNavigation(event, successAction)) {
+			return
+		}
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST
