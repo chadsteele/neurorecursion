@@ -9,6 +9,7 @@
 	} from "lucide-svelte"
 
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 
@@ -632,6 +633,11 @@
 			event.preventDefault()
 			return
 		}
+
+		saveNetlifySuccessContext({
+			form: "marketplace",
+			redirectTo: window.location.pathname + window.location.search,
+		})
 
 		const formData = new FormData(form)
 		formData.set(

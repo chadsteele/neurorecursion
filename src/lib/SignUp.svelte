@@ -2,6 +2,7 @@
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
+	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 
 	let {
 		formData = {conditions: {}},
@@ -151,6 +152,11 @@
 			event.preventDefault()
 			return
 		}
+
+		saveNetlifySuccessContext({
+			form: "signup",
+			redirectTo: window.location.pathname + window.location.search,
+		})
 
 		// Prepare form data for submission
 		const form = event.target

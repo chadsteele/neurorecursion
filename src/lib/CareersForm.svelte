@@ -2,6 +2,7 @@
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
+	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 
 	let {jobId = ""} = $props()
 
@@ -118,6 +119,11 @@
 			event.preventDefault()
 			return
 		}
+
+		saveNetlifySuccessContext({
+			form: "careers",
+			redirectTo: window.location.pathname + window.location.search,
+		})
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST

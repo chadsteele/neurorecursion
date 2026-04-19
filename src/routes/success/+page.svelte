@@ -2,15 +2,27 @@
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
+	import {
+		clearNetlifySuccessContext,
+		readNetlifySuccessContext,
+	} from "$lib/netlifySuccess.js"
+	import {onMount} from "svelte"
 
 	let countdown = $state(5)
 	let CheckCircleIcon = $state(null)
-	const redirectTo = $derived(
-		browser ? $page.url.searchParams.get("redirectTo") || "/" : "/",
-	)
-	const formType = $derived(
-		browser ? $page.url.searchParams.get("form") || "" : "",
-	)
+	let redirectTo = $state("/")
+	let formType = $state("")
+
+	onMount(() => {
+		const storedContext = readNetlifySuccessContext()
+		redirectTo =
+			$page.url.searchParams.get("redirectTo") ||
+			storedContext.redirectTo ||
+			"/"
+		formType =
+			$page.url.searchParams.get("form") || storedContext.form || ""
+		clearNetlifySuccessContext()
+	})
 
 	const successContent = $derived.by(() => {
 		switch (formType) {

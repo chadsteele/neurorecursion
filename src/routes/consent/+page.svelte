@@ -2,6 +2,7 @@
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import Consent from "$lib/Consent.js"
+	import {saveNetlifySuccessContext} from "$lib/netlifySuccess.js"
 	import {onMount} from "svelte"
 	import PageBackground from "$lib/PageBackground.svelte"
 
@@ -110,6 +111,11 @@
 			e.preventDefault()
 			return
 		}
+
+		saveNetlifySuccessContext({
+			form: "consent",
+			redirectTo: window.location.pathname + window.location.search,
+		})
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// The form element will handle the actual POST submission
