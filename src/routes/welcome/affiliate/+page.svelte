@@ -9,6 +9,7 @@
 		ArrowRight,
 	} from "lucide-svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import PageBackground from "$lib/PageBackground.svelte"
 
 	let showShareModal = $state(false)
 	let affiliateId = "NR-8742-XKPQ"
@@ -35,10 +36,11 @@
 	/>
 </svelte:head>
 
-<section
-	class="affiliate-page"
-	style="background-image: url('https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png')"
->
+<PageBackground
+	src="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+/>
+
+<section class="affiliate-page">
 	<div class="paper container">
 		<div class="section-shell teaser-shell">
 			<div class="teaser-copy">
@@ -606,38 +608,9 @@
 </section>
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-		}
-		50% {
-			background-size: 150%;
-		}
-		100% {
-			background-size: 120%;
-		}
-	}
-
-	@keyframes bgFadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
 	.affiliate-page {
 		display: flex;
 		flex-direction: column;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		animation:
-			kenBurns 60s ease-in-out infinite,
-			bgFadeIn 0.8s ease-in-out;
-		filter: brightness(0.7);
 	}
 
 	.affiliate-page .paper.container {

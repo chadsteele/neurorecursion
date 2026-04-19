@@ -6,8 +6,8 @@
 		Check as CheckIcon,
 	} from "lucide-svelte"
 
-	import Parallax from "$lib/Parallax.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 
 	let showShareModal = $state(false)
@@ -675,10 +675,11 @@
 	/>
 {/if}
 
-<section
-	class="future-page"
-	style="background-image: url('https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png')"
->
+<PageBackground
+	src="https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png"
+/>
+
+<section class="future-page">
 	<div class="paper container">
 		<div class="hero-panel paper container">
 			<div class="hero-copy">
@@ -1451,29 +1452,9 @@
 		}
 	}
 
-	.parallax-hero-wrapper {
-		display: none;
-	}
-
-	.parallax-hero {
-		display: none;
-	}
-
-	.parallax-hero::after {
-		display: none;
-	}
-
 	.future-page {
 		display: flex;
 		flex-direction: column;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		animation:
-			kenBurns 60s ease-in-out infinite,
-			bgFadeIn 0.8s ease-in-out;
-		filter: brightness(0.7);
 	}
 
 	.future-page .paper.container {

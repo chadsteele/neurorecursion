@@ -3,6 +3,7 @@
 	import {page} from "$app/stores"
 	import CareersForm from "$lib/CareersForm.svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import ClinicalResearchAssociate from "$lib/jobs/ClinicalResearchAssociate.svelte"
 	import GrowthAffiliateMarketingSpecialist from "$lib/jobs/GrowthAffiliateMarketingSpecialist.svelte"
@@ -62,7 +63,9 @@
 	/>
 {/if}
 
-<section class="job-section" style="background-image: url('{backgroundUrl}')">
+<PageBackground src={backgroundUrl} />
+
+<section class="job-section">
 	<div class="paper container">
 		<!-- <button class="back-button" onclick={goBack}>← Back to Careers</button> -->
 
@@ -108,64 +111,15 @@
 </section>
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-		}
-		50% {
-			background-size: 150%;
-		}
-		100% {
-			background-size: 120%;
-		}
-	}
-
-	@keyframes bgFadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
 	.job-section {
 		display: flex;
 		flex-direction: column;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		animation:
-			kenBurns 60s ease-in-out infinite,
-			bgFadeIn 0.8s ease-in-out;
-		filter: brightness(0.7);
 	}
 
 	.job-section .paper.container {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-	}
-
-	.back-button {
-		display: inline-block;
-		margin-bottom: 2rem;
-		padding: 0.5rem 1rem;
-		background: rgba(74, 159, 216, 0.1);
-		color: #4a9fd8;
-		border: 1px solid rgba(74, 159, 216, 0.3);
-		border-radius: 4px;
-		font-size: 0.95rem;
-		font-weight: 500;
-		cursor: pointer;
-		transition: all 0.3s ease;
-	}
-
-	.back-button:hover {
-		background: rgba(74, 159, 216, 0.2);
-		border-color: #4a9fd8;
-		transform: translateX(-4px);
 	}
 
 	.job-content {

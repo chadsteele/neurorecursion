@@ -3,36 +3,102 @@
 	import Navbar from "$lib/Navbar.svelte"
 	import SearchBar from "$lib/SearchBar.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
+	import {pageBackground} from "$lib/stores"
 
 	let {children} = $props()
 </script>
 
-<Navbar />
-<SearchBar />
+<div class="site-shell">
+	{#if $pageBackground}
+		{#key $pageBackground}
+			<div
+				class="layout-background"
+				style={`background-image: url('${$pageBackground}');`}
+			></div>
+		{/key}
+	{/if}
 
-<div class="main-content">
-	{@render children()}
+	<div class="site-content">
+		<Navbar />
+		<SearchBar />
+
+		<div class="main-content">
+			{@render children()}
+		</div>
+
+		<footer class="footer">
+			<div class="footer-content">
+				<p>
+					&copy; {new Date().getFullYear()} Neuro Recursion Institute.
+				</p>
+				<p>All rights reserved.</p>
+				<p>Patents Pending Worldwide.</p>
+				<p>2120 University Ave, Berkeley, CA 94704, United States</p>
+				<div style="flex-basis: 100%;">
+					<Disclaimer />
+				</div>
+				<!-- <p>
+					<a href="https://hire.chadsteele.com">Made with ❤️ by Chad Steele</a
+					>
+				</p> -->
+			</div>
+		</footer>
+	</div>
 </div>
 
-<footer class="footer">
-	<div class="footer-content">
-		<p>
-			&copy; {new Date().getFullYear()} Neuro Recursion Institute.
-		</p>
-		<p>All rights reserved.</p>
-		<p>Patents Pending Worldwide.</p>
-		<p>2120 University Ave, Berkeley, CA 94704, United States</p>
-		<div style="flex-basis: 100%;">
-			<Disclaimer />
-		</div>
-		<!-- <p>
-			<a href="https://hire.chadsteele.com">Made with ❤️ by Chad Steele</a
-			>
-		</p> -->
-	</div>
-</footer>
-
 <style>
+	@keyframes kenBurns {
+		0% {
+			background-size: 120%;
+		}
+		50% {
+			background-size: 150%;
+		}
+		100% {
+			background-size: 120%;
+		}
+	}
+
+	@keyframes bgFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.site-shell {
+		position: relative;
+		min-height: 100vh;
+	}
+
+	.layout-background {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		animation:
+			kenBurns 60s ease-in-out infinite,
+			bgFadeIn 0.8s ease-in-out;
+		filter: brightness(0.7);
+	}
+
+	.site-content {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main-content {
+		flex: 1;
+	}
+
 	.footer {
 		text-align: center;
 		padding: 2rem;

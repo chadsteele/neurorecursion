@@ -1,5 +1,6 @@
 <script>
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
+	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import jobs from "../../data/Jobs.js"
 
@@ -29,10 +30,11 @@
 	/>
 {/if}
 
-<section
-	class="careers-section"
-	style="background-image: url('https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png')"
->
+<PageBackground
+	src="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+/>
+
+<section class="careers-section">
 	<div class="paper container">
 		<div class="header-flex">
 			<img
@@ -100,38 +102,9 @@
 </section>
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-		}
-		50% {
-			background-size: 150%;
-		}
-		100% {
-			background-size: 120%;
-		}
-	}
-
-	@keyframes bgFadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
 	.careers-section {
 		display: flex;
 		flex-direction: column;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		animation:
-			kenBurns 60s ease-in-out infinite,
-			bgFadeIn 0.8s ease-in-out;
-		filter: brightness(0.7);
 	}
 
 	.careers-section .paper.container {
