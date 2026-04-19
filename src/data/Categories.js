@@ -166,6 +166,7 @@ export const Categories = [
 
 			"general-neurological-issues",
 			"migraines",
+			"chronic-inner-ear-vertigo-tinnitus",
 			"chronic-pain-psychosomatic",
 			"epilepsy-seizure-disorders",
 			"tics-tourette-syndrome-tic-disorders",

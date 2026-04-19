@@ -112,6 +112,21 @@ Our technique targets the anxiety-pain signaling loop through conscious reprogra
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/migraines.png",
 	},
 	{
+		id: "chronic-inner-ear-vertigo-tinnitus",
+		path: "/remote-clinical-trial/free/inner-ear/vertigo/tinnitus",
+		name: "Chronic Inner Ear Conditions - Vertigo, Tinnitus and Dizziness",
+		description: `Some inner ear conditions begin as physical events and then remain active because the brain learns to treat ordinary vestibular or auditory signals as ongoing threat. This entry is for chronic inner-ear-related syndromes that are strongly shaped by stress, hypervigilance, and limbic looping. That includes Persistent Postural-Perceptual Dizziness (PPPD), chronic subjective dizziness, residual dizziness after vestibular neuritis or labyrinthitis, stress-amplified vertigo, tinnitus that has become threat-coded, auditory hypervigilance, and similar chronic vestibular-auditory patterns where the original event may have healed but the nervous system is still acting as if danger is present. People in this state often experience rocking, swaying, motion sensitivity, fear of falling, visually induced dizziness, ringing or buzzing in the ears, sleep disruption, concentration problems, and constant scanning for the next flare.
+
+The neurobiological mechanism often involves a reciprocal loop between the vestibular system, auditory salience networks, and the limbic system. Once the amygdala classifies internal signals of motion, imbalance, ear noise, or sensory instability as dangerous, the brain allocates more attention and threat chemistry to them. Cortisol and adrenaline increase nervous system gain. The vestibular cortex, insula, attentional networks, and auditory pathways become more reactive. Fear of dizziness can generate more dizziness. Fear of tinnitus can make the sound feel louder and more intrusive. Habituation is blocked because the nervous system keeps flagging the signal as urgent instead of background. Over time, the problem becomes not only the original sensation but the brain's learned habit of monitoring and amplifying it.
+
+Our technique targets the limbic amplification that keeps these chronic inner-ear-related conditions alive after the original trigger. By reducing amygdala hijacks, restoring prefrontal regulation, and allowing habituation to resume, the nervous system stops over-interpreting minor balance or auditory signals as emergencies. Neural sensitivity decreases, signal salience drops, and the chronic stress-symptom loop begins to dissolve. This is not a substitute for medical workup, and it does not claim to fix structural conditions that require ENT, neurologic, surgical, infectious, or metabolic treatment. It is designed for chronic vestibular-auditory conditions that are clearly stress-reactive and functionally amplified. It does not cover clearly structural or urgent conditions such as acoustic neuroma, cholesteatoma, active Ménière's disease requiring medical management, or other inner-ear disorders where the primary issue is not a stress-amplified nervous-system loop. When the amygdala stops broadcasting instability and alarm, the brain can relearn steadiness, filtering, and calm.`,
+		ngo_url: "/ngo/world-federation-neurology",
+		scientific_reference:
+			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781499/",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/vertigo-pppd-chronic-dizziness.png",
+	},
+	{
 		id: "health-anxiety-hypochondriasis",
 		path: "/remote-clinical-trial/free/health-anxiety/hypochondria/health-preoccupation",
 		name: "Health Anxiety and Hypochondriasis",
