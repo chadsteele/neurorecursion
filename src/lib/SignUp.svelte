@@ -1,4 +1,5 @@
 <script>
+	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import ConditionGrid from "$lib/ConditionGrid.svelte"
 
@@ -23,7 +24,7 @@
 	})
 
 	const successAction = $derived(
-		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
 	)
 
 	function validateName() {

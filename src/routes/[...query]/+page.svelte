@@ -135,9 +135,15 @@
 
 	// Routing logic based on [...query] parameter
 	$effect(() => {
+		if (!browser) {
+			return
+		}
+
+		const search = $page.url.search
+
 		console.log("[Routing] Effect triggered")
 		console.log("  $page.url:", $page.url.toString())
-		console.log("  $page.url.search:", $page.url.search)
+		console.log("  $page.url.search:", search)
 		console.log("  $page.params.query:", $page.params.query)
 		console.log("  isLoadingData:", isLoadingData)
 
@@ -148,7 +154,7 @@
 		}
 
 		// PRIORITY 0: If search terms are in querystring, ignore routing
-		if ($page.url.search.includes("q=")) {
+		if (search.includes("q=")) {
 			console.log("  -> SKIPPING: Search active, ignoring routing")
 			return
 		}

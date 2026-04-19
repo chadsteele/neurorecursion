@@ -1,8 +1,5 @@
 import fs from "fs"
 import path from "path"
-import {fileURLToPath} from "url"
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export const prerender = "auto"
 
@@ -10,8 +7,9 @@ export const prerender = "auto"
 function loadPrerenderedEntries() {
 	try {
 		const entriesPath = path.join(
-			__dirname,
-			"../../static/prerender-entries.json",
+			process.cwd(),
+			"static",
+			"prerender-entries.json",
 		)
 		const data = fs.readFileSync(entriesPath, "utf-8")
 		return JSON.parse(data)

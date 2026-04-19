@@ -1,4 +1,5 @@
 <script>
+	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import Consent from "$lib/Consent.js"
 	import {onMount} from "svelte"
@@ -29,7 +30,7 @@
 	})
 
 	const successAction = $derived(
-		`/success?form=consent&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+		`/success?form=consent&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
 	)
 
 	onMount(() => {

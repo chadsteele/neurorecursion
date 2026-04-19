@@ -1,13 +1,19 @@
 <script>
+	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
 
 	let countdown = $state(5)
 	let CheckCircleIcon = $state(null)
-	const redirectTo = $derived($page.url.searchParams.get("redirectTo") || "/")
+	const redirectTo = $derived(
+		browser ? $page.url.searchParams.get("redirectTo") || "/" : "/",
+	)
+	const formType = $derived(
+		browser ? $page.url.searchParams.get("form") || "" : "",
+	)
 
 	const successContent = $derived.by(() => {
-		switch ($page.url.searchParams.get("form")) {
+		switch (formType) {
 			case "careers":
 				return {
 					title: "Application Received",

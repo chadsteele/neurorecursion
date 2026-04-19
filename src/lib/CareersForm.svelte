@@ -1,4 +1,5 @@
 <script>
+	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
 	import {page} from "$app/stores"
 
@@ -26,7 +27,7 @@
 	})
 
 	const successAction = $derived(
-		`/success?form=careers&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+		`/success?form=careers&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
 	)
 
 	function validateName() {

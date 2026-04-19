@@ -27,6 +27,7 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 ## Current Repo Strategy
 
 - Derive the form action from the current page URL instead of hard-coding a plain `/success`.
+- On prerendered pages, do not read `$page.url.search` or `searchParams` during SSR. Guard query-string access with `browser` and fall back to the pathname during prerender.
 - Keep existing `onsubmit` handlers only for validation and field preparation.
 - Do not call `event.preventDefault()` unless the submission is invalid.
 - Do not add SvelteKit form actions or API routes for Netlify-managed forms.
@@ -36,10 +37,11 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 
 ```svelte
 <script>
+	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 
 	const successAction = $derived(
-		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+		`/success?form=signup&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
 	)
 
 	function handleFormSubmit(event) {
@@ -85,6 +87,7 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Does `form-name` exactly match the form `name`?
 - Does the submit path still end in native browser submission?
 - Does the form action include both `form` and `redirectTo` query params?
+- If the route is prerendered, is query-string access guarded so SSR does not touch `url.search` or `searchParams`?
 - Did any validation change accidentally stop valid submits?
 - If hidden derived fields exist, are they still populated before submit?
 - After edits, check Svelte compile errors and verify there are no deprecated event bindings introduced nearby.
@@ -95,4 +98,5 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - `preventDefault()` left in place after validation refactors silently breaks capture.
 - Missing or mismatched `form-name` prevents Netlify from recognizing the form.
 - Removing the honeypot changes spam filtering behavior.
+- Accessing `$page.url.search` directly on prerendered pages causes the build to fail.
 - Reverting to `action="/success"` loses context-aware return routing.

@@ -1,4 +1,5 @@
 <script>
+	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
 	import {tick} from "svelte"
 	import {
@@ -21,7 +22,7 @@
 	let orderSummaryShownAt = 0
 	let showOrderSummaryToast = $state(false)
 	const successAction = $derived(
-		`/success?form=marketplace&redirectTo=${encodeURIComponent($page.url.pathname + $page.url.search)}`,
+		`/success?form=marketplace&redirectTo=${encodeURIComponent($page.url.pathname + (browser ? $page.url.search : ""))}`,
 	)
 	let orderForm = $state({
 		name: "",
