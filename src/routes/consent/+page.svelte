@@ -269,7 +269,7 @@
 	label {
 		display: block;
 		margin-bottom: 0.5rem;
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-weight: 500;
 	}
 
@@ -296,8 +296,8 @@
 
 	input:focus {
 		outline: none;
-		border-color: #4a9fd8;
-		box-shadow: 0 0 0 3px rgba(74, 159, 216, 0.2);
+		border-color: var(--accent-500);
+		box-shadow: 0 0 0 3px rgb(var(--accent-rgb) / 0.2);
 		background: #202844;
 	}
 
@@ -327,13 +327,13 @@
 		margin-bottom: 1.5rem;
 		margin-top: 2rem;
 		padding-top: 1.5rem;
-		border-top: 1px solid rgba(74, 159, 216, 0.2);
+		border-top: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.consent-section-label {
 		display: block;
 		margin-bottom: 1.5rem;
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-weight: 600;
 		font-size: 1rem;
 	}
@@ -351,7 +351,7 @@
 		align-items: flex-start;
 		padding: 1rem;
 		background: rgba(26, 36, 71, 0.8);
-		border: 2px solid rgba(74, 159, 216, 0.2);
+		border: 2px solid rgb(var(--accent-rgb) / 0.2);
 		border-radius: 6px;
 		transition: all 0.3s ease;
 		cursor: pointer;
@@ -359,8 +359,8 @@
 
 	.consent-agreement-card:hover {
 		background: rgba(26, 36, 71, 1);
-		border-color: rgba(74, 159, 216, 0.5);
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.15);
+		border-color: rgb(var(--accent-rgb) / 0.5);
+		box-shadow: 0 4px 12px rgb(var(--accent-rgb) / 0.15);
 	}
 
 	.consent-agreement-card:active {
@@ -368,8 +368,8 @@
 	}
 
 	.consent-agreement-card:has(.consent-checkbox:checked) {
-		background: rgba(74, 159, 216, 0.15);
-		border-color: rgba(74, 159, 216, 0.6);
+		background: rgb(var(--accent-rgb) / 0.15);
+		border-color: rgb(var(--accent-rgb) / 0.6);
 	}
 
 	.consent-agreement-content {
@@ -380,7 +380,7 @@
 	}
 
 	.agreement-title {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-weight: 600;
 		cursor: pointer;
 		margin: 0;
@@ -400,13 +400,13 @@
 		height: 20px;
 		margin-top: 0.25rem;
 		cursor: pointer;
-		accent-color: #4a9fd8;
+		accent-color: var(--accent-500);
 		flex-shrink: 0;
 		transition: all 0.3s ease;
 	}
 
 	.consent-checkbox.error {
-		accent-color: #4a9fd8;
+		accent-color: var(--accent-500);
 	}
 
 	.consent-error {
@@ -418,15 +418,15 @@
 		margin-bottom: 1.5rem;
 		margin-top: 2rem;
 		padding: 1.5rem;
-		background: rgba(74, 159, 216, 0.08);
-		border: 2px solid rgba(74, 159, 216, 0.3);
+		background: rgb(var(--accent-rgb) / 0.08);
+		border: 2px solid rgb(var(--accent-rgb) / 0.3);
 		border-radius: 6px;
 	}
 
 	.signature-section-label {
 		display: block;
 		margin-bottom: 0.75rem;
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-weight: 600;
 		font-size: 1rem;
 	}
@@ -455,7 +455,7 @@
 	}
 
 	.submit-button {
-		background: linear-gradient(135deg, #4a9fd8, #2e7caf);
+		background: linear-gradient(135deg, var(--accent-500), #2e7caf);
 		color: white;
 		border: none;
 		padding: 0.75rem 2rem;
@@ -468,18 +468,18 @@
 
 	.submit-button:hover {
 		background: linear-gradient(135deg, #5aafed, #3d8bc4);
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
+		box-shadow: 0 4px 12px rgb(var(--accent-rgb) / 0.3);
 		transform: translateY(-2px);
 	}
 
 	.submit-button:active {
 		transform: translateY(0);
-		box-shadow: 0 2px 6px rgba(74, 159, 216, 0.2);
+		box-shadow: 0 2px 6px rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.participant-info {
-		background: rgba(74, 159, 216, 0.08);
-		border: 2px solid rgba(74, 159, 216, 0.3);
+		background: rgb(var(--accent-rgb) / 0.08);
+		border: 2px solid rgb(var(--accent-rgb) / 0.3);
 		border-radius: 6px;
 		padding: 1rem 1.5rem;
 		margin: 1.5rem 0;
@@ -493,7 +493,7 @@
 	}
 
 	.participant-info strong {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-weight: 600;
 	}
 

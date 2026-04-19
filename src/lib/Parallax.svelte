@@ -99,32 +99,11 @@
 {/if}
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-		}
-		50% {
-			background-size: 150%;
-		}
-		100% {
-			background-size: 120%;
-		}
-	}
-
 	.parallax-container {
 		position: relative;
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		min-height: 100vh;
-	}
-
-	@keyframes bgFadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
 	}
 
 	.parallax-container::before {

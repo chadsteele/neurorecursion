@@ -47,27 +47,6 @@
 </div>
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-		}
-		50% {
-			background-size: 150%;
-		}
-		100% {
-			background-size: 120%;
-		}
-	}
-
-	@keyframes bgFadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
 	.site-shell {
 		position: relative;
 		min-height: 100vh;

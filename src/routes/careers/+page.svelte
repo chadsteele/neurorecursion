@@ -34,8 +34,8 @@
 	src="https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
 />
 
-<section class="careers-section">
-	<div class="paper container">
+<section class="careers-section page-shell">
+	<div class="paper container page-stack">
 		<div class="header-flex">
 			<img
 				src="/logo.png"
@@ -102,17 +102,6 @@
 </section>
 
 <style>
-	.careers-section {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.careers-section .paper.container {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
 	.header-flex {
 		display: flex;
 		align-items: flex-start;
@@ -161,21 +150,21 @@
 		gap: clamp(0.5rem, 2vw, 1rem);
 		margin-top: 2rem;
 		padding-top: 1.5rem;
-		border-top: 1px solid rgba(74, 159, 216, 0.2);
+		border-top: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.social-link {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		color: #4a9fd8;
+		color: var(--accent-500);
 		text-decoration: none;
 		font-weight: 500;
 		transition: all 0.3s ease;
 	}
 
 	.social-link:hover {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		transform: translateY(-2px);
 	}
 
@@ -196,7 +185,7 @@
 		gap: 0.5rem;
 		background: none;
 		border: none;
-		color: #4a9fd8;
+		color: var(--accent-500);
 		font-weight: 500;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -205,7 +194,7 @@
 	}
 
 	.share-btn:hover {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		transform: translateY(-2px);
 	}
 
@@ -225,11 +214,11 @@
 		padding: 2rem;
 		background: rgba(26, 36, 71, 0.5);
 		border-radius: 8px;
-		border: 1px solid rgba(74, 159, 216, 0.2);
+		border: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.jobs-section h3 {
-		color: #4a9fd8;
+		color: var(--accent-500);
 		font-size: 1.4rem;
 		margin-top: 0;
 		margin-bottom: 1.5rem;
@@ -243,7 +232,7 @@
 
 	.job-item {
 		background: rgba(43, 58, 84, 0.5);
-		border: 1px solid rgba(74, 159, 216, 0.15);
+		border: 1px solid rgb(var(--accent-rgb) / 0.15);
 		border-radius: 6px;
 		overflow: hidden;
 		display: flex;
@@ -258,19 +247,19 @@
 
 	.job-item:hover {
 		background: rgba(43, 58, 84, 0.8);
-		border-color: #4a9fd8;
+		border-color: var(--accent-500);
 		transform: translateX(4px);
-		box-shadow: 0 4px 12px rgba(74, 159, 216, 0.15);
+		box-shadow: 0 4px 12px rgb(var(--accent-rgb) / 0.15);
 	}
 
 	.job-title {
-		color: #4a9fd8;
+		color: var(--accent-500);
 		font-size: 1.1rem;
 		font-weight: 600;
 	}
 
 	.job-info {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		font-size: 0.9rem;
 	}
 </style>

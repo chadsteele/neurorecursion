@@ -54,21 +54,6 @@
 ></div>
 
 <style>
-	@keyframes kenBurns {
-		0% {
-			background-size: 120%;
-			background-position: center;
-		}
-		50% {
-			background-size: 150%;
-			background-position: center;
-		}
-		100% {
-			background-size: 120%;
-			background-position: center;
-		}
-	}
-
 	.lazy-parallax-image {
 		width: 100%;
 		height: 20vh;

@@ -65,8 +65,8 @@
 
 <PageBackground src={backgroundUrl} />
 
-<section class="job-section">
-	<div class="paper container">
+<section class="job-section page-shell">
+	<div class="paper container page-stack">
 		<!-- <button class="back-button" onclick={goBack}>← Back to Careers</button> -->
 
 		<div class="job-content">
@@ -111,17 +111,6 @@
 </section>
 
 <style>
-	.job-section {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.job-section .paper.container {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
 	.job-content {
 		color: #d0d0d0;
 		line-height: 1.8;
@@ -129,7 +118,7 @@
 		padding: 2rem;
 		background: rgba(26, 36, 71, 0.5);
 		border-radius: 8px;
-		border: 1px solid rgba(74, 159, 216, 0.2);
+		border: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.error-message {
@@ -142,11 +131,11 @@
 	.application-form {
 		margin-top: 4rem;
 		padding-top: 3rem;
-		border-top: 2px solid rgba(74, 159, 216, 0.2);
+		border-top: 2px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.application-form h2 {
-		color: #4a9fd8;
+		color: var(--accent-500);
 		font-size: 1.6rem;
 		margin-bottom: 1rem;
 	}
@@ -162,21 +151,21 @@
 		gap: clamp(0.5rem, 2vw, 1rem);
 		margin-top: 2rem;
 		padding-top: 1.5rem;
-		border-top: 1px solid rgba(74, 159, 216, 0.2);
+		border-top: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.social-link {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		color: #4a9fd8;
+		color: var(--accent-500);
 		text-decoration: none;
 		font-weight: 500;
 		transition: all 0.3s ease;
 	}
 
 	.social-link:hover {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		transform: translateY(-2px);
 	}
 
@@ -197,7 +186,7 @@
 		gap: 0.5rem;
 		background: none;
 		border: none;
-		color: #4a9fd8;
+		color: var(--accent-500);
 		font-weight: 500;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -206,7 +195,7 @@
 	}
 
 	.share-btn:hover {
-		color: #a0d8ff;
+		color: var(--accent-soft);
 		transform: translateY(-2px);
 	}
 
