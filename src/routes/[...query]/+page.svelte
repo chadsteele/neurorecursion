@@ -1,7 +1,6 @@
 <script>
 	import {browser} from "$app/environment"
 	import {page} from "$app/stores"
-	import {onMount} from "svelte"
 	import Intro from "$lib/Intro.svelte"
 	import Orgs from "$lib/Orgs.svelte"
 	import References from "$lib/References.svelte"
@@ -13,33 +12,11 @@
 
 	let {data} = $props()
 
-	// Lazy-loaded data
-	let Categories = $state([])
-	let Conditions = $state([])
-	let ConditionsMap = $state({})
-	let Pioneers = $state([])
-	let sortedPioneers = $state([])
-	let PioneersMap = $state({})
-	let isLoadingData = $state(true) // Start as true since data loads async
-
-	// Load all data client-side to avoid serializing large datasets
-	$effect(() => {
-		if (browser && Conditions.length === 0) {
-			Promise.all([
-				import("$data/Conditions.js"),
-				import("$data/Pioneers.js"),
-				import("$data/Categories.js"),
-			]).then(([condMod, pioneerMod, catMod]) => {
-				Conditions = condMod.default || []
-				ConditionsMap = condMod.ConditionsMap || {}
-				Pioneers = pioneerMod.default || []
-				sortedPioneers = pioneerMod.sorted || []
-				PioneersMap = pioneerMod.PioneersMap || {}
-				Categories = catMod.Categories || []
-				isLoadingData = false
-			})
-		}
-	})
+	const Categories = $derived(data.Categories || [])
+	const Conditions = $derived(data.Conditions || [])
+	const ConditionsMap = $derived(data.ConditionsMap || {})
+	const sortedPioneers = $derived(data.sortedPioneers || [])
+	const PioneersMap = $derived(data.PioneersMap || {})
 
 	// Recreate getCondition function locally since we can't serialize functions
 	function getCondition(input) {
@@ -141,21 +118,8 @@
 
 		const search = $page.url.search
 
-		console.log("[Routing] Effect triggered")
-		console.log("  $page.url:", $page.url.toString())
-		console.log("  $page.url.search:", search)
-		console.log("  $page.params.query:", $page.params.query)
-		console.log("  isLoadingData:", isLoadingData)
-
-		// Wait for data to finish loading before attempting routing
-		if (isLoadingData) {
-			console.log("  -> SKIPPING: Data still loading")
-			return
-		}
-
 		// PRIORITY 0: If search terms are in querystring, ignore routing
 		if (search.includes("q=")) {
-			console.log("  -> SKIPPING: Search active, ignoring routing")
 			return
 		}
 
@@ -167,12 +131,10 @@
 
 		// If no query path, stay at home
 		if (!queryPath || typeof queryPath !== "string") {
-			console.log("  -> No query path, staying at home")
 			return
 		}
 
 		const pathToFind = `/${queryPath}`
-		console.log("  pathToFind:", pathToFind)
 
 		// PRIORITY 1: Try to find element with path=[query]
 		let targetElement = null
@@ -181,7 +143,6 @@
 			const elPath = el.getAttribute("path")
 			if (elPath && elPath.toLowerCase() === pathToFind.toLowerCase()) {
 				targetElement = el
-				console.log("  -> Found via [path] attribute")
 				break
 			}
 		}
@@ -189,9 +150,6 @@
 		// PRIORITY 2: If not found, try to find element with id=[query]
 		if (!targetElement) {
 			targetElement = document.getElementById(queryPath)
-			if (targetElement) {
-				console.log("  -> Found via id attribute")
-			}
 		}
 
 		// PRIORITY 3: If not found, use getCondition to find best matched condition
@@ -199,26 +157,17 @@
 			const matchedCondition = getCondition(queryPath)
 			if (matchedCondition) {
 				targetElement = document.getElementById(matchedCondition.id)
-				console.log("  -> Found via getCondition:", matchedCondition.id)
 			}
 		}
 
 		// If target element found, scroll to it
 		if (targetElement) {
-			console.log("  -> Scrolling to target element")
-			const scrollTop =
-				targetElement.getBoundingClientRect().top + window.scrollY
-			console.log("  -> Scroll position:", scrollTop)
 			setTimeout(() => {
 				targetElement.scrollIntoView({
 					behavior: "smooth",
 					block: "start",
 				})
 			}, 100)
-		} else {
-			console.log(
-				"  -> No target element found, staying at current position",
-			)
 		}
 	})
 </script>
@@ -246,7 +195,7 @@
 		<h2>Enrolling now!</h2>
 		<p>Find your condition below and sign up to see if you qualify!</p>
 		<p>
-			These conditions benefit from our technolgy that targets
+			These conditions benefit from our technology that targets
 			neuroplasticity and replaces hardened limbic loops with new neural
 			pathways that increase your capacity for confidence, security, and
 			joy.
@@ -270,20 +219,18 @@
 	</section>
 </Parallax>
 
-{#if !isLoadingData}
-	{#each Categories as category (category.category_name)}
-		<div class="category-section" path={category.path}>
-			<h1>{category.category_name}</h1>
-		</div>
+{#each Categories as category (category.category_name)}
+	<div class="category-section" path={category.path}>
+		<h1>{category.category_name}</h1>
+	</div>
 
-		{#each category.ids as conditionId (conditionId)}
-			{@const condition = ConditionsMap[conditionId]}
-			{#if condition}
-				<ConditionCard {condition} {formData} />
-			{/if}
-		{/each}
+	{#each category.ids as conditionId (conditionId)}
+		{@const condition = ConditionsMap[conditionId]}
+		{#if condition}
+			<ConditionCard {condition} {formData} />
+		{/if}
 	{/each}
-{/if}
+{/each}
 
 <div id="pioneers" path="/pioneers"></div>
 <div class="category-section">
@@ -316,16 +263,14 @@
 	</p>
 </section>
 
-{#if !isLoadingData}
-	<div class="pioneers-grid">
-		{#each sortedPioneers as pioneerId (pioneerId)}
-			{@const pioneer = PioneersMap[pioneerId]}
-			{#if pioneer}
-				<PioneerCard {pioneer} />
-			{/if}
-		{/each}
-	</div>
-{/if}
+<div class="pioneers-grid">
+	{#each sortedPioneers as pioneerId (pioneerId)}
+		{@const pioneer = PioneersMap[pioneerId]}
+		{#if pioneer}
+			<PioneerCard {pioneer} />
+		{/if}
+	{/each}
+</div>
 
 <div class="category-section">
 	<h1>Supportive Communities</h1>

@@ -24,8 +24,14 @@
 		email: false,
 		message: false,
 	})
+	let isSubmitting = $state(false)
 
 	const successAction = "/consent"
+	const selectedConditions = $derived(
+		Object.keys(formData.conditions)
+			.filter((key) => formData.conditions[key])
+			.join(", "),
+	)
 
 	function validateName() {
 		if (!formData.name.trim()) {
@@ -147,6 +153,11 @@
 	}
 
 	function handleFormSubmit(event) {
+		if (isSubmitting) {
+			event.preventDefault()
+			return
+		}
+
 		if (!validateBeforeSubmit()) {
 			event.preventDefault()
 			return
@@ -159,22 +170,28 @@
 			formPathField.value = currentFormPath
 		}
 
+		const conditionsField = form.elements.namedItem("conditions")
+		if (conditionsField instanceof HTMLInputElement) {
+			conditionsField.value = selectedConditions
+		}
+
+		localStorage.setItem(
+			"signupFormData",
+			JSON.stringify({
+				name: formData.name,
+				email: formData.email,
+				message: formData.message,
+				conditions: formData.conditions,
+				formPath: currentFormPath,
+			}),
+		)
+
 		saveNetlifySuccessContext({
 			form: "signup",
 			redirectTo: currentFormPath,
 		})
 
-		// Prepare form data for submission
-		const formDataObj = new FormData(form)
-
-		// Convert conditions to comma-separated string
-		const selectedConditions = Object.keys(formData.conditions)
-			.filter((key) => formData.conditions[key])
-			.join(", ")
-
-		if (selectedConditions) {
-			formDataObj.set("conditions", selectedConditions)
-		}
+		isSubmitting = true
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST
@@ -216,10 +233,13 @@
 		netlify-honeypot="bot-field"
 		netlify
 		onsubmit={handleFormSubmit}
+		class:is-submitting={isSubmitting}
+		aria-busy={isSubmitting}
 	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="signup" />
 		<input type="hidden" name="form_path" value="" />
+		<input type="hidden" name="conditions" value={selectedConditions} />
 		<!-- Honeypot field for spam protection -->
 		<div class="hidden">
 			<label for="bot-field">
@@ -322,7 +342,13 @@
 			</div>
 		</div>
 
-		<button type="submit" class="submit-button">Submit</button>
+		<div class="submit-progress" class:is-visible={isSubmitting}>
+			<div class="submit-progress-bar"></div>
+		</div>
+
+		<button type="submit" class="submit-button" disabled={isSubmitting}>
+			{isSubmitting ? "Submitting..." : "Submit"}
+		</button>
 	</form>
 </section>
 
@@ -426,6 +452,39 @@
 		background: #202844;
 	}
 
+	.is-submitting {
+		pointer-events: none;
+		opacity: 0.78;
+	}
+
+	.submit-progress {
+		overflow: hidden;
+		height: 0;
+		margin: 0;
+		border-radius: 999px;
+		background: rgba(74, 159, 216, 0.12);
+		border: 1px solid rgba(74, 159, 216, 0.22);
+		opacity: 0;
+		transition:
+			height 0.2s ease,
+			margin 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	.submit-progress.is-visible {
+		height: 0.5rem;
+		margin: 1rem 0 0.85rem;
+		opacity: 1;
+	}
+
+	.submit-progress-bar {
+		width: 40%;
+		height: 100%;
+		border-radius: inherit;
+		background: linear-gradient(90deg, #4a9fd8, #9dd8ff);
+		animation: submitProgress 1.1s ease-in-out infinite;
+	}
+
 	.submit-button {
 		background: linear-gradient(135deg, #4a9fd8, #2e7caf);
 		color: white;
@@ -436,6 +495,13 @@
 		font-weight: 600;
 		cursor: pointer;
 		transition: all 0.3s ease;
+	}
+
+	.submit-button:disabled {
+		cursor: wait;
+		box-shadow: none;
+		transform: none;
+		filter: saturate(0.8);
 	}
 
 	.submit-button:hover {
@@ -456,5 +522,15 @@
 		height: 0 !important;
 		width: 0 !important;
 		overflow: hidden !important;
+	}
+
+	@keyframes submitProgress {
+		0% {
+			transform: translateX(-115%);
+		}
+
+		100% {
+			transform: translateX(260%);
+		}
 	}
 </style>

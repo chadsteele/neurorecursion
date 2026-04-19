@@ -30,8 +30,14 @@
 		consent: false,
 		signature: false,
 	})
+	let isSubmitting = $state(false)
 
 	const successAction = "/success"
+	const selectedSignupConditions = $derived(
+		Object.keys(formData.signupData.conditions || {})
+			.filter((key) => formData.signupData.conditions[key])
+			.join(", "),
+	)
 
 	onMount(() => {
 		// Load signup form data from localStorage
@@ -47,6 +53,18 @@
 			} catch (e) {
 				console.error("Failed to parse localStorage data:", e)
 			}
+		}
+	})
+
+	$effect(() => {
+		if (touched.consent) {
+			validateConsent()
+		}
+	})
+
+	$effect(() => {
+		if (touched.signature) {
+			validateSignature()
 		}
 	})
 
@@ -98,6 +116,11 @@
 	}
 
 	function handleSubmit(e) {
+		if (isSubmitting) {
+			e.preventDefault()
+			return
+		}
+
 		// Validate all fields before submission
 		touched.consent = true
 		touched.signature = true
@@ -118,10 +141,18 @@
 			formPathField.value = currentFormPath
 		}
 
+		const signupConditionsField =
+			form.elements.namedItem("signup_conditions")
+		if (signupConditionsField instanceof HTMLInputElement) {
+			signupConditionsField.value = selectedSignupConditions
+		}
+
 		saveNetlifySuccessContext({
 			form: "consent",
 			redirectTo: currentFormPath,
 		})
+
+		isSubmitting = true
 
 		// If validation passes, let the form submit naturally to Netlify Forms
 		// The form element will handle the actual POST submission
@@ -157,10 +188,37 @@
 		netlify
 		onsubmit={handleSubmit}
 		novalidate
+		class:is-submitting={isSubmitting}
+		aria-busy={isSubmitting}
 	>
 		<!-- Hidden field for Netlify Forms -->
 		<input type="hidden" name="form-name" value="consent" />
 		<input type="hidden" name="form_path" value="" />
+		<input
+			type="hidden"
+			name="signup_name"
+			value={formData.signupData.name}
+		/>
+		<input
+			type="hidden"
+			name="signup_email"
+			value={formData.signupData.email}
+		/>
+		<input
+			type="hidden"
+			name="signup_message"
+			value={formData.signupData.message}
+		/>
+		<input
+			type="hidden"
+			name="signup_conditions"
+			value={selectedSignupConditions}
+		/>
+		<input
+			type="hidden"
+			name="signup_form_path"
+			value={formData.signupData.formPath || ""}
+		/>
 		<!-- Honeypot field for spam protection -->
 		<div class="hidden">
 			<label for="bot-field">
@@ -270,7 +328,13 @@
 			{/if}
 		</div>
 
-		<button type="submit" class="submit-button">Accept Agreement</button>
+		<div class="submit-progress" class:is-visible={isSubmitting}>
+			<div class="submit-progress-bar"></div>
+		</div>
+
+		<button type="submit" class="submit-button" disabled={isSubmitting}>
+			{isSubmitting ? "Submitting..." : "Accept Agreement"}
+		</button>
 	</form>
 </section>
 
@@ -284,6 +348,11 @@
 
 	.form-group {
 		margin-bottom: 1.5rem;
+	}
+
+	.is-submitting {
+		pointer-events: none;
+		opacity: 0.78;
 	}
 
 	label {
@@ -474,6 +543,34 @@
 		margin-top: 0.5rem;
 	}
 
+	.submit-progress {
+		overflow: hidden;
+		height: 0;
+		margin: 0;
+		border-radius: 999px;
+		background: rgba(74, 159, 216, 0.12);
+		border: 1px solid rgba(74, 159, 216, 0.22);
+		opacity: 0;
+		transition:
+			height 0.2s ease,
+			margin 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	.submit-progress.is-visible {
+		height: 0.5rem;
+		margin: 1rem 0 0.85rem;
+		opacity: 1;
+	}
+
+	.submit-progress-bar {
+		width: 40%;
+		height: 100%;
+		border-radius: inherit;
+		background: linear-gradient(90deg, var(--accent-500), #9dd8ff);
+		animation: submitProgress 1.1s ease-in-out infinite;
+	}
+
 	.submit-button {
 		background: linear-gradient(135deg, var(--accent-500), #2e7caf);
 		color: white;
@@ -484,6 +581,13 @@
 		font-weight: 600;
 		cursor: pointer;
 		transition: all 0.3s ease;
+	}
+
+	.submit-button:disabled {
+		cursor: wait;
+		box-shadow: none;
+		transform: none;
+		filter: saturate(0.8);
 	}
 
 	.submit-button:hover {
@@ -524,5 +628,15 @@
 		height: 0 !important;
 		width: 0 !important;
 		overflow: hidden !important;
+	}
+
+	@keyframes submitProgress {
+		0% {
+			transform: translateX(-115%);
+		}
+
+		100% {
+			transform: translateX(260%);
+		}
 	}
 </style>

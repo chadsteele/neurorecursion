@@ -23,6 +23,7 @@
 	let orderSummaryTimer
 	let orderSummaryShownAt = 0
 	let showOrderSummaryToast = $state(false)
+	let isSubmitting = $state(false)
 	const successAction = "/success"
 	let orderForm = $state({
 		name: "",
@@ -615,6 +616,11 @@
 	}
 
 	function handleOrderSubmit(event) {
+		if (isSubmitting) {
+			event.preventDefault()
+			return
+		}
+
 		orderError = ""
 		orderStatus = "idle"
 
@@ -639,30 +645,38 @@
 			formPathField.value = currentFormPath
 		}
 
+		const selectedProductsSummary = selectedProducts
+			.map((product) => {
+				if (!supportsQuantity(product)) {
+					return product.value
+				}
+
+				const quantity = getProductQuantity(product.id)
+				const discount = getLineDiscount(product)
+
+				return discount > 0
+					? `${product.value} x${quantity} (${getQuantityDiscountPercent(product)}% volume discount applied)`
+					: `${product.value} x${quantity}`
+			})
+			.join(", ")
+
+		const selectedProductsField =
+			form.elements.namedItem("selected_products")
+		if (selectedProductsField instanceof HTMLInputElement) {
+			selectedProductsField.value = selectedProductsSummary
+		}
+
+		const estimatedTotalField = form.elements.namedItem("estimated_total")
+		if (estimatedTotalField instanceof HTMLInputElement) {
+			estimatedTotalField.value = formatPrice(getSelectedTotal())
+		}
+
 		saveNetlifySuccessContext({
 			form: "marketplace",
 			redirectTo: currentFormPath,
 		})
 
-		const formData = new FormData(form)
-		formData.set(
-			"selected_products",
-			selectedProducts
-				.map((product) => {
-					if (!supportsQuantity(product)) {
-						return product.value
-					}
-
-					const quantity = getProductQuantity(product.id)
-					const discount = getLineDiscount(product)
-
-					return discount > 0
-						? `${product.value} x${quantity} (${getQuantityDiscountPercent(product)}% volume discount applied)`
-						: `${product.value} x${quantity}`
-				})
-				.join(", "),
-		)
-		formData.set("estimated_total", formatPrice(getSelectedTotal()))
+		isSubmitting = true
 
 		// Let the form submit naturally to Netlify Forms
 		// No preventDefault - allow browser to handle the POST
@@ -1107,6 +1121,8 @@
 				netlify
 				onsubmit={handleOrderSubmit}
 				class="order-form"
+				class:is-submitting={isSubmitting}
+				aria-busy={isSubmitting}
 			>
 				<input
 					type="hidden"
@@ -1179,7 +1195,6 @@
 												<input
 													id={product.id}
 													type="checkbox"
-													name="selected_products"
 													value={product.value}
 													disabled={getProductQuantity(
 														product.id,
@@ -1362,9 +1377,24 @@
 							</div>
 						{/if}
 
-						<button type="submit" class="submit-order-btn">
+						<div
+							class="submit-progress"
+							class:is-visible={isSubmitting}
+						>
+							<div class="submit-progress-bar"></div>
+						</div>
+
+						<button
+							type="submit"
+							class="submit-order-btn"
+							disabled={isSubmitting}
+						>
 							<CheckIcon size={18} strokeWidth={2} />
-							<span>Submit</span>
+							<span
+								>{isSubmitting
+									? "Submitting..."
+									: "Submit"}</span
+							>
 						</button>
 					</div>
 				</div>
@@ -1853,6 +1883,11 @@
 		gap: 1rem;
 	}
 
+	.order-form.is-submitting {
+		pointer-events: none;
+		opacity: 0.8;
+	}
+
 	.order-fields,
 	.order-summary {
 		background: rgba(255, 255, 255, 0.04);
@@ -2128,6 +2163,45 @@
 		font-weight: 800;
 	}
 
+	.submit-order-btn:disabled {
+		cursor: wait;
+		box-shadow: none;
+		transform: none;
+		filter: saturate(0.8);
+	}
+
+	.submit-progress {
+		overflow: hidden;
+		height: 0;
+		margin: 0;
+		border-radius: 999px;
+		background: rgba(74, 159, 216, 0.12);
+		border: 1px solid rgba(74, 159, 216, 0.22);
+		opacity: 0;
+		transition:
+			height 0.2s ease,
+			margin 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	.submit-progress.is-visible {
+		height: 0.5rem;
+		margin: 1rem 0 0.85rem;
+		opacity: 1;
+	}
+
+	.submit-progress-bar {
+		width: 40%;
+		height: 100%;
+		border-radius: inherit;
+		background: linear-gradient(
+			90deg,
+			var(--accent-500),
+			var(--accent-bright)
+		);
+		animation: submitProgress 1.1s ease-in-out infinite;
+	}
+
 	.order-message {
 		margin-top: 0.75rem;
 		padding: 0.85rem 1rem;
@@ -2162,6 +2236,16 @@
 		transition:
 			opacity 0.24s ease,
 			transform 0.24s ease;
+	}
+
+	@keyframes submitProgress {
+		0% {
+			transform: translateX(-115%);
+		}
+
+		100% {
+			transform: translateX(260%);
+		}
 	}
 
 	.order-summary.toast-visible {

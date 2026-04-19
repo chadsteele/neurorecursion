@@ -1,6 +1,10 @@
 import fs from "fs"
 import path from "path"
 
+import Conditions, {ConditionsMap} from "$data/Conditions.js"
+import {Categories} from "$data/Categories.js"
+import Pioneers, {PioneersMap, sorted} from "$data/Pioneers.js"
+
 export const prerender = "auto"
 
 // Load prerender entries from generated file (avoids bundling large data files)
@@ -29,7 +33,12 @@ export function entries() {
 }
 
 export async function load({params}) {
-	// Return minimal data - avoid serializing large datasets through SvelteKit
-	// Data will be loaded client-side instead
-	return {}
+	return {
+		Categories,
+		Conditions,
+		ConditionsMap,
+		Pioneers,
+		sortedPioneers: sorted,
+		PioneersMap,
+	}
 }

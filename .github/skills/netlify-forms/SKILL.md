@@ -33,6 +33,9 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Do not add SvelteKit form actions or API routes for Netlify-managed forms.
 - Preserve any hidden inputs that serialize extra state into the submission payload.
 - Keep `src/routes/success/+page.server.js` prerendered so the custom success page exists as static output.
+- If a form collects derived or UI-only state, mirror that state into real named form inputs before submission.
+- Use a submitting state to prevent double-submit, but do not disable submitted inputs before the browser serializes the form payload. Prefer disabling only submit/cancel buttons and using `pointer-events: none` on the form UI.
+- Show an indeterminate horizontal progress bar directly above the submit action while the native POST is in flight.
 
 ## Canonical Pattern
 
@@ -77,6 +80,13 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 </form>
 ```
 
+## Submission Payload Checklist
+
+- Every meaningful value visible to the user must be present in a real submitted control with a `name` attribute.
+- If state exists only in Svelte objects, checkbox maps, quantity maps, or derived summaries, mirror it into hidden inputs before submit.
+- Creating `new FormData(form)` and mutating it is not enough unless you are actually sending that `FormData` yourself.
+- For multi-step forms, persist any step-one data needed by step two and mirror that data into hidden inputs on the final submitted step.
+
 ## Active Forms To Check Before Changing Behavior
 
 - `src/lib/SignUp.svelte`
@@ -92,6 +102,9 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Does the form action point to `/success`?
 - Does the `onsubmit` handler save both `form` and `redirectTo` before allowing the native submit?
 - Is `src/routes/success/+page.server.js` still set to `prerender = true`?
+- Does every user-visible or derived value have a real submitted input name?
+- If there is a submitting state, does it prevent double-submit without disabling inputs that need to be included in the POST?
+- Is there an indeterminate progress bar immediately above the submit button while submitting?
 - Did any validation change accidentally stop valid submits?
 - If hidden derived fields exist, are they still populated before submit?
 - After edits, check Svelte compile errors and verify there are no deprecated event bindings introduced nearby.
@@ -105,3 +118,5 @@ Use this skill when adding, fixing, reviewing, or refactoring any form that shou
 - Accessing `$page.url.search` directly on prerendered pages causes the build to fail.
 - Using query-string success actions can produce a direct POST to `/success?...` and return `405 Method Not Allowed`.
 - Reverting to a plain `/success` action without storing context loses form-specific copy and return routing.
+- Disabling actual form controls before native submission can cause those values to be omitted from the payload.
+- Updating a throwaway `FormData` instance without posting it leaves Netlify with stale or missing values.
