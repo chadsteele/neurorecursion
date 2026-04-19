@@ -55,12 +55,16 @@
 
 <style>
 	@keyframes kenBurns {
-		from {
+		0% {
 			background-size: 120%;
 			background-position: center;
 		}
-		to {
+		50% {
 			background-size: 150%;
+			background-position: center;
+		}
+		100% {
+			background-size: 120%;
 			background-position: center;
 		}
 	}
@@ -72,14 +76,13 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		animation: kenBurns 8s ease-in-out infinite alternate;
+		animation: kenBurns 60s ease-in-out infinite;
 	}
 
 	/* Parallax for devices 600px+ */
 	@media (min-width: 600px) {
 		.lazy-parallax-image {
 			background-attachment: fixed;
-			animation: none;
 		}
 	}
 </style>
