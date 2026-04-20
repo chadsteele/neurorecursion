@@ -22,7 +22,7 @@
 	<ShareModal
 		title="Neuro Recursion Institute - Careers"
 		description="Join our team! We're hiring talented people passionate about neuroscience research and clinical innovation."
-		imageUrl="https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/general-neurological-issues.png"
+		imageUrl="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.png"
 		url={typeof window !== "undefined"
 			? `${window.location.origin}/careers`
 			: "/careers"}
@@ -31,7 +31,7 @@
 {/if}
 
 <PageBackground
-	src="https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/general-neurological-issues.png"
+	src="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.png"
 />
 
 <section class="careers-section page-shell">

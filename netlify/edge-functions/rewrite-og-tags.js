@@ -53,7 +53,8 @@ export default async (request, context) => {
 	let ogTitle = "Sign up for remote clinical trials. FREE!"
 	let ogDescription =
 		"Neuro Recursion Institute - our clinical trial is fast, easy, no drugs, devices or hypnotherapy.  This could be your breakthrough. Join us and experience the future of mental health treatment today."
-	let ogImage = "https://cri-cdn.netlify.app/neurorecursion.com/ogfamily.png"
+	let ogImage =
+		"https://cri-cdn.netlify.app/src/neurorecursion.com/ogfamily.png"
 	let ogUrl = url.href
 
 	// Helper function to convert kebab-case to Title Case
@@ -76,7 +77,7 @@ export default async (request, context) => {
 			const pioneerName = toTitleCase(pioneerId)
 			ogTitle = `${pioneerName} | Neuroscience Pioneer`
 			ogDescription = `Learn about ${pioneerName}'s groundbreaking contributions to neuroscience research and neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://cri-cdn.netlify.app/neurorecursion.com/pioneers/pioneer-${pioneerId}.png`
+			ogImage = `https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/pioneer-${pioneerId}.png`
 			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {

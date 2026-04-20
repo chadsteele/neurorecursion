@@ -702,7 +702,7 @@
 	<ShareModal
 		title="The Future of Recovery"
 		description="See the NeuroRecursion roadmap for sustained recovery, maintenance, certification, and affiliate growth."
-		imageUrl="https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/children.png"
+		imageUrl="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.png"
 		url={typeof window !== "undefined"
 			? `${window.location.origin}/future`
 			: "/future"}
@@ -711,7 +711,7 @@
 {/if}
 
 <PageBackground
-	src="https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/children.png"
+	src="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.png"
 />
 
 <section class="future-page page-shell">

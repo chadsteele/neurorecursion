@@ -165,7 +165,7 @@
 </script>
 
 <PageBackground
-	src="https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/general-neurological-issues.png"
+	src="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.png"
 />
 
 <section class="paper container">

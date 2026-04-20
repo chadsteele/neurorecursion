@@ -19,19 +19,7 @@
 	function getAssetImageUrl(imageUrl) {
 		if (!imageUrl) return ""
 		if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
-			//https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/developmental-trauma-childhood-trauma.png
-
-			//https://cri-cdn.netlify.app/og/neurorecursion.com//adolescent-social-mimicry-identity-diffusion.png
-
-			//https://cri-cdn.netlify.app/neurorecursion.com/pioneers/kamitani.png
-
-			//https://cri-cdn.netlify.app/og/neurorecursion.com//pioneer-daniel-goleman.png
-
-			//todo: this is crap - we should just store og image urls in the data, not try to guess them from the background image urls. but for now, this is a quick fix to get the correct og images showing up when sharing pioneers and conditions that use asset images.
-			let temp = imageUrl
-				.replace("assets/backgrounds/", "assets/ogimages/")
-				.replace("assets/pioneers/", "assets/ogimages/pioneer-")
-
+			let temp = imageUrl.replace("/src/", "/og/")
 			return temp
 		}
 
