@@ -470,7 +470,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/al-anon",
 		href: "https://www.al-anon.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-al-anon.png",
+			"https://cri-cdn.netlify.app/og/neurorecursion.com/partners/al-anon.png",
 		imageAlt: "Al-Anon Logo",
 		name: "Al-Anon",
 		description:
