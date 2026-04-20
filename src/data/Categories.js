@@ -74,7 +74,6 @@ export const Categories = [
 			"betrayal-trauma-infidelity",
 			"rejection-sensitivity",
 			"stockholm-syndrome-trauma-bonding",
-			"adolescent-abandonment-trauma-hypervigilance",
 			"loneliness-social-disconnection",
 			"maternal-wound-maternal-attachment-trauma-mother-complex",
 			"misogyny-gender-based-violence-fear-of-women",
@@ -98,7 +97,6 @@ export const Categories = [
 			"performance-anxiety-evaluation-fear",
 
 			"depressed-suicidal-major-depressive-disorder",
-			"adolescent-sexual-identity-exploration-social-dysphoria",
 			"cult-recovery-religious-trauma-damnation-fear",
 			"imposter-syndrome",
 			"eating-disorders-anorexia-bulimia-binge",
@@ -110,7 +108,6 @@ export const Categories = [
 		path: "/relationships/family",
 		ids: [
 			"general-attachment-issues",
-			"anxious-avoidant-attachment-relational-patterns",
 			"adolescent-abandonment-trauma-hypervigilance",
 
 			"divorce-relational-trauma-family-systems-stress",
@@ -170,6 +167,9 @@ export const Categories = [
 			"chronic-pain-psychosomatic",
 			"epilepsy-seizure-disorders",
 			"tics-tourette-syndrome-tic-disorders",
+			"functional-neurological-symptom-disorder-motor-sensory",
+			"psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding",
+			"tmj-bruxism-lockjaw-jaw-clenching-masseter-tension",
 			"insomnia-sleep-hyperarousal",
 			"factitious-disorder-munchausen",
 			"anxiety-somatization-physical-symptoms-health-anxiety",

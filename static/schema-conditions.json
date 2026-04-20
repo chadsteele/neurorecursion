@@ -491,6 +491,42 @@
       "name": "Tics - Tourette Syndrome and Tic Disorders"
     }
   },
+  "functional-neurological-symptom-disorder-motor-sensory": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Functional Neurological Symptom Disorder - Motor and Sensory Symptoms",
+    "description": "Your nervous system is producing real neurological symptoms through dysfunctional signaling rather than structural destruction. Functional Neurological Symptom Disorder (FND), historically called conversion disorder, involves genuine disturbances in movement, sensation, speech, gait, coordination, vision, or other neurological functions that are not fully explained by a primary lesion, degenerative disease, or conventional structural finding. Symptoms can include weakness, tremor, abnormal gait,",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/functional-neurological-symptom-disorder/motor/sensory",
+    "identifier": "functional-neurological-symptom-disorder-motor-sensory",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Functional Neurological Symptom Disorder - Motor and Sensory Symptoms"
+    }
+  },
+  "psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Psychogenic Movement Disorders - Stress Tics, Bruxism, and Facial Muscle Guarding",
+    "description": "Your face and jaw are not malfunctioning at random. Your nervous system is broadcasting distress through movement, tension, and protective holding patterns. Psychogenic movement disorders are a functional sub-category of movement disorders in which psychological distress, chronic anxiety, or trauma dysregulation generates involuntary or semi-involuntary motor symptoms without the pattern being fully explained by a primary structural neurological disease. This can include anxiety-driven facial ti",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding",
+    "identifier": "psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Psychogenic Movement Disorders - Stress Tics, Bruxism, and Facial Muscle Guarding"
+    }
+  },
+  "tmj-bruxism-lockjaw-jaw-clenching-masseter-tension": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "TMJ, Bruxism, Lock Jaw, and Jaw Clenching",
+    "description": "Your jaw may be carrying more threat than your conscious mind can register. Temporomandibular dysfunction, bruxism, chronic jaw clenching, masseter tension, and stress-linked lock jaw patterns often emerge when the nervous system recruits the jaw as part of a chronic defense posture. People with this cluster may experience teeth grinding in sleep, daytime clenching they barely notice, jaw pain, temple pain, clicking or popping at the joint, limited opening, facial asymmetry from overused massete",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension",
+    "identifier": "tmj-bruxism-lockjaw-jaw-clenching-masseter-tension",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "TMJ, Bruxism, Lock Jaw, and Jaw Clenching"
+    }
+  },
   "epilepsy-seizure-disorders": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",

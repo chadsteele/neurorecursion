@@ -489,6 +489,48 @@
     "query": "tourette"
   },
   {
+    "query": "remote-clinical-trial/free/functional-neurological-symptom-disorder/motor/sensory"
+  },
+  {
+    "query": "functional-neurological-symptom-disorder"
+  },
+  {
+    "query": "motor"
+  },
+  {
+    "query": "sensory"
+  },
+  {
+    "query": "remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding"
+  },
+  {
+    "query": "psychogenic-movement-disorders"
+  },
+  {
+    "query": "stress-tics"
+  },
+  {
+    "query": "bruxism"
+  },
+  {
+    "query": "facial-guarding"
+  },
+  {
+    "query": "remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension"
+  },
+  {
+    "query": "tmj"
+  },
+  {
+    "query": "lockjaw"
+  },
+  {
+    "query": "jaw-clenching"
+  },
+  {
+    "query": "masseter-tension"
+  },
+  {
     "query": "remote-clinical-trial/free/epilepsy/seizure"
   },
   {
@@ -567,9 +609,6 @@
     "query": "spd"
   },
   {
-    "query": "sensory"
-  },
-  {
     "query": "processing"
   },
   {
@@ -601,9 +640,6 @@
   },
   {
     "query": "dyspraxia"
-  },
-  {
-    "query": "motor"
   },
   {
     "query": "coordination"

@@ -18,6 +18,7 @@
 	let mainContent = $state(null)
 	let markInstance = $state(null)
 	let localQuery = $state("")
+	let lastSearchedQuery = $state("")
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
@@ -130,12 +131,15 @@
 	function performSearch(query) {
 		if (!mainContent || !markInstance) return
 
+		lastSearchedQuery = query
+
 		// Clear old marks
 		markInstance.unmark()
 
 		if (!query.trim()) {
 			totalMatches.set(0)
 			currentMatchIndex.set(-1)
+			lastSearchedQuery = ""
 			return
 		}
 
@@ -144,6 +148,7 @@
 		if (words.length === 0) {
 			totalMatches.set(0)
 			currentMatchIndex.set(-1)
+			lastSearchedQuery = ""
 			return
 		}
 
@@ -194,6 +199,7 @@
 		}
 		currentMatchIndex.set(-1)
 		totalMatches.set(0)
+		lastSearchedQuery = ""
 		searchOpen.set(false)
 		// The $effect on searchOpen will handle removing q and i params
 	}
@@ -211,6 +217,35 @@
 		// Reset counts - search only happens on < or > clicks
 		totalMatches.set(0)
 		currentMatchIndex.set(-1)
+		lastSearchedQuery = ""
+	}
+
+	function handleInputKeydown(e) {
+		if (e.key !== "Enter") return
+
+		e.preventDefault()
+
+		if (e.shiftKey) {
+			handlePrevious()
+			return
+		}
+
+		handleNext()
+	}
+
+	function ensureSearchResults() {
+		if (!localQuery.trim()) {
+			return false
+		}
+
+		if (
+			localQuery !== lastSearchedQuery ||
+			!mainContent?.querySelector("mark")
+		) {
+			performSearch(localQuery)
+		}
+
+		return getMatchGroups().length > 0
 	}
 
 	function handlePrevious() {
@@ -222,10 +257,7 @@
 		)
 		console.log("  current $page.url.pathname:", $page.url.pathname)
 
-		// Perform search first if not done yet
-		if (!mainContent?.querySelector("mark")) {
-			performSearch(localQuery)
-		}
+		if (!ensureSearchResults()) return
 
 		const groups = getMatchGroups()
 		if (groups.length === 0) return
@@ -264,10 +296,7 @@
 		)
 		console.log("  current $page.url.pathname:", $page.url.pathname)
 
-		// Perform search first if not done yet
-		if (!mainContent?.querySelector("mark")) {
-			performSearch(localQuery)
-		}
+		if (!ensureSearchResults()) return
 
 		const groups = getMatchGroups()
 		if (groups.length === 0) return
@@ -346,21 +375,17 @@
 		}
 	})
 
-	// When search opens, recalculate marks
-	$effect(() => {
-		if ($searchOpen && localQuery) {
-			performSearch(localQuery)
-		}
-	})
-
 	// Sync searchQuery store to localQuery when external components update it
 	$effect(() => {
 		const storeQuery = $searchQuery
 		if (storeQuery && storeQuery !== localQuery) {
 			localQuery = storeQuery
 			localStorage.setItem("searchQuery", storeQuery)
-			if ($searchOpen) {
-				performSearch(storeQuery)
+			totalMatches.set(0)
+			currentMatchIndex.set(-1)
+			lastSearchedQuery = ""
+			if (markInstance) {
+				markInstance.unmark()
 			}
 		}
 	})
@@ -384,6 +409,7 @@
 			placeholder="Search conditions..."
 			value={localQuery}
 			oninput={handleInputChange}
+			onkeydown={handleInputKeydown}
 			class="search-input"
 		/>
 
@@ -398,7 +424,7 @@
 			onclick={handlePrevious}
 			aria-label="Previous result"
 			title="Previous"
-			disabled={!localQuery.trim() || $totalMatches === 0}
+			disabled={!localQuery.trim()}
 		>
 			{#if ChevronLeft}
 				<ChevronLeft size={18} strokeWidth={2} />
@@ -410,7 +436,7 @@
 			onclick={handleNext}
 			aria-label="Next result"
 			title="Next"
-			disabled={!localQuery.trim() || $totalMatches === 0}
+			disabled={!localQuery.trim()}
 		>
 			{#if ChevronRight}
 				<ChevronRight size={18} strokeWidth={2} />

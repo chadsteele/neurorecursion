@@ -7,7 +7,7 @@
 		// Set the search query to the label
 		searchQuery.set(label)
 
-		// Open the search bar (this will trigger search via SearchBar's effect)
+		// Open the search bar; results are only computed when nav buttons are clicked
 		searchOpen.set(true)
 	}
 </script>

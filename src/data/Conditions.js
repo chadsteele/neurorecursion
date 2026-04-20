@@ -1,4 +1,6 @@
-const Conditions = [
+import RelatedConditions from "./RelatedConditions.js"
+
+const rawConditions = [
 	{
 		id: "depressed-suicidal-major-depressive-disorder",
 		path: "/remote-clinical-trial/free/depression/suicidal",
@@ -580,11 +582,53 @@ Our technique recalibrates threat perception in social contexts and restores acc
 
 The basal ganglia, a set of brain structures crucial for voluntary motor control and habit formation, plays a central role in tic expression and the anxiety-tic relationship. Anxiety triggers the basal ganglia and limbic system, causing a failure in inhibitory control that increases the frequency and severity of involuntary motor and vocal tics. Interestingly, anxiety about tics themselves becomes a key factor that worsens tics—stress about being watched or judged often intensifies tic expression, creating a feedback loop where anxiety amplifies the very symptoms individuals wish to control. The amygdala's hyperactivity disrupts the smooth regulation of the basal ganglia.
 
-Our technique targets the intersection of vestibular and limbic signal processing through targeted creative reprogramming. We stabilize vestibular function while simultaneously recalibrating the amygdala's threat assessment for heights. The automatic fear cascade transforms into genuine confidence and presence. This isn't gradual exposure or forced habituation. It's swift recoding of the threat signature and vestibular integration. You access bridges, buildings, and mountains with the courage that heights inspire.`,
+		Our technique recalibrates the anxiety-basal-ganglia loop and restores smoother inhibitory control through targeted limbic intervention. We reduce the threat-state that amplifies tic frequency and dismantle the shame-surveillance cycle that keeps the nervous system braced against its own motor output. This isn't suppression training or forcing yourself to hide symptoms. It's recoding of the threat and motor circuits that keep tic expression intensified. You experience greater ease, reduced tic severity, and a nervous system that no longer escalates under observation.`,
 		ngo_url: "/ngo/tourette-association-america",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/40585552/",
 		background_image:
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/tics-tourette-syndrome-tic-disorders.png",
+	},
+	{
+		id: "functional-neurological-symptom-disorder-motor-sensory",
+		path: "/remote-clinical-trial/free/functional-neurological-symptom-disorder/motor/sensory",
+		name: "Functional Neurological Symptom Disorder - Motor and Sensory Symptoms",
+		description: `Your nervous system is producing real neurological symptoms through dysfunctional signaling rather than structural destruction. Functional Neurological Symptom Disorder (FND), historically called conversion disorder, involves genuine disturbances in movement, sensation, speech, gait, coordination, vision, or other neurological functions that are not fully explained by a primary lesion, degenerative disease, or conventional structural finding. Symptoms can include weakness, tremor, abnormal gait, non-epileptic seizure-like episodes, sensory changes, speech blocks, facial asymmetry, or motor freezing. These symptoms are not faked, imagined, or voluntary. They are real outputs of a nervous system whose threat-processing, attention, prediction, and motor-control networks have become dysregulated.
+
+The neurobiological mechanism involves disrupted communication between limbic threat circuits, salience networks, motor planning systems, and predictive coding pathways. The brain begins over-predicting danger, misallocating attention to bodily signals, and generating abnormal motor or sensory outputs that become self-reinforcing through hypervigilance, fear, and symptom-monitoring. Trauma, chronic anxiety, overwhelm, dissociation, or repeated stress can sensitize these networks so that normal movement or sensation becomes interrupted by threat-based neural interference. The symptom is functional, not fictional: the hardware may be intact, but the operating pattern is compromised.
+
+Our technique targets the threat-signaling and predictive-control systems driving the symptom pattern. We reduce amygdala overactivation, recalibrate the salience network's fixation on symptom output, and restore smoother top-down and bottom-up communication between motor, sensory, and emotional systems. This is not telling you the symptom is all in your head. It's targeted recoding of the nervous system processes that are producing the symptom in real time. You regain trust in your body, reduced symptom volatility, and a brain that stops converting distress into neurological interference.`,
+		ngo_url: "/ngo/fnd-hope",
+		scientific_reference: "",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/functional-neurological-symptom-disorder-motor-sensory.png",
+	},
+	{
+		id: "psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding",
+		path: "/remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding",
+		name: "Psychogenic Movement Disorders - Stress Tics, Bruxism, and Facial Muscle Guarding",
+		description: `Your face and jaw are not malfunctioning at random. Your nervous system is broadcasting distress through movement, tension, and protective holding patterns. Psychogenic movement disorders are a functional sub-category of movement disorders in which psychological distress, chronic anxiety, or trauma dysregulation generates involuntary or semi-involuntary motor symptoms without the pattern being fully explained by a primary structural neurological disease. This can include anxiety-driven facial tics or stress tics, psychogenic blepharospasm with involuntary eyelid squeezing or closure, chronic bruxism and masseter tension that visibly distort the jawline, and subtle but persistent facial asymmetries created by muscle guarding.
+
+The neurobiological mechanism involves threat-state overactivation of the basal ganglia, limbic system, facial motor pathways, and habitual muscle-bracing networks. When the amygdala remains locked in vigilance, the face often becomes part of the defense system: the corrugator supercilii maintains a furrowed-brow alarm signal, the levator labii may hold a unilateral elevation that reads as a sneer or partial palsy, the orbicularis oculi can clamp into stress blinking or eyelid closure, and the jaw musculature may remain chronically contracted as if preparing for impact. These are not imaginary symptoms. They are functional motor outputs shaped by anxiety, hypervigilance, affective masking, and semi-permanent muscle guarding that can become self-reinforcing through shame and symptom-monitoring.
+
+Our technique interrupts the distress-to-movement loop by recalibrating the threat circuitry driving the motor pattern. We reduce amygdala overactivation, dissolve the bracing reflex encoded into the face and jaw, and restore smoother signaling through the motor control systems so expression no longer gets hijacked by protection strategies. This is not cosmetic coaching or endless behavior monitoring. It's targeted recoding of how your nervous system uses facial musculature, blinking, clenching, and micro-expressions to broadcast danger. You regain relaxed symmetry, voluntary control, and a face that no longer feels conscripted into survival mode.`,
+		ngo_url: "/ngo/world-federation-neurology",
+		scientific_reference: "",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding.png",
+	},
+	{
+		id: "tmj-bruxism-lockjaw-jaw-clenching-masseter-tension",
+		path: "/remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension",
+		name: "TMJ, Bruxism, Lock Jaw, and Jaw Clenching",
+		description: `Your jaw may be carrying more threat than your conscious mind can register. Temporomandibular dysfunction, bruxism, chronic jaw clenching, masseter tension, and stress-linked lock jaw patterns often emerge when the nervous system recruits the jaw as part of a chronic defense posture. People with this cluster may experience teeth grinding in sleep, daytime clenching they barely notice, jaw pain, temple pain, clicking or popping at the joint, limited opening, facial asymmetry from overused masseter muscles, headaches, ear pressure, and a sense that the jaw is always braced for impact.
+
+The neurobiological mechanism involves threat-state overactivation of facial motor pathways, trigeminal pain signaling, and habitual muscle-armoring networks. When the amygdala stays activated, the jaw becomes one of the body's preferred sites for storing defensive contraction. The masseter, temporalis, and surrounding fascial structures remain partially engaged, especially during sleep, high concentration, anger suppression, or hypervigilance. Over time, this bracing alters bite pressure, irritates the temporomandibular joint, amplifies pain through central sensitization, and teaches the nervous system to treat relaxation of the jaw as unsafe. Anxiety, trauma, and symptom-monitoring then reinforce the cycle.
+
+Our technique targets the jaw-threat loop directly. We reduce amygdala-driven bracing, recalibrate the facial and trigeminal threat pathways, and restore a nervous system that no longer uses the jaw as a default armor plate. This is not just a mouth guard, stretching protocol, or reminder to unclench. It's targeted recoding of the chronic stress pattern driving jaw contraction and pain amplification. You experience less grinding, more effortless opening, reduced jaw and temple pain, and a face that no longer feels locked into protective tension.`,
+		ngo_url: "/ngo/american-academy-orofacial-pain",
+		scientific_reference: "",
+		background_image:
+			"https://neurorecursion-assets.netlify.app/assets/backgrounds/tmj-bruxism-lockjaw-jaw-clenching-masseter-tension.png",
 	},
 	{
 		id: "epilepsy-seizure-disorders",
@@ -1962,6 +2006,11 @@ Our technique recalibrates the threat-assessment systems specifically for financ
 			"https://neurorecursion-assets.netlify.app/assets/backgrounds/general-financial-anxiety-cynicism.png",
 	},
 ]
+
+const Conditions = rawConditions.map((condition) => ({
+	...condition,
+	related_conditions: RelatedConditions[condition.id] ?? [],
+}))
 
 /**
  * Score a condition based on word matches with position and field priority weighting

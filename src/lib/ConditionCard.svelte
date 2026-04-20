@@ -2,7 +2,7 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import LazyParallaxImage from "$lib/LazyParallaxImage.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
-	import {browser} from "$app/environment"
+	import {ConditionsMap} from "$data/Conditions.js"
 	import {
 		CheckCircle2,
 		Heart,
@@ -18,6 +18,12 @@
 	function handleShare() {
 		showShareModal = true
 	}
+
+	const relatedConditions = $derived(
+		(condition.related_conditions ?? [])
+			.map((conditionId) => ConditionsMap[conditionId])
+			.filter(Boolean),
+	)
 </script>
 
 <div id={condition.id} path={condition.path}></div>
@@ -113,6 +119,19 @@
 				Share
 			</button>
 		</div>
+		{#if relatedConditions.length > 0}
+			<h3 style="margin-top:2rem">Related Conditions</h3>
+			<div class="related-conditions" aria-label="Related conditions">
+				{#each relatedConditions as relatedCondition (relatedCondition.id)}
+					<a
+						href={relatedCondition.path}
+						class="related-condition-link"
+					>
+						{relatedCondition.name}
+					</a>
+				{/each}
+			</div>
+		{/if}
 	</section>
 </Parallax>
 
@@ -137,6 +156,38 @@
 
 	:global(.condition-description a:active) {
 		transform: translateY(0) !important;
+	}
+
+	.related-conditions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		margin: 1rem 0 1.25rem;
+	}
+
+	.related-condition-link {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.45rem 0.75rem;
+		border-radius: 999px;
+		border: 1px solid rgba(74, 159, 216, 0.35);
+		background: rgba(74, 159, 216, 0.12);
+		color: #a0d8ff;
+		text-decoration: none;
+		font-size: 0.9rem;
+		line-height: 1.3;
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.related-condition-link:hover {
+		background: rgba(74, 159, 216, 0.24);
+		border-color: rgba(74, 159, 216, 0.65);
+		color: white;
+		transform: translateY(-1px);
 	}
 
 	h3 {

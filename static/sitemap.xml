@@ -281,6 +281,21 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/functional-neurological-symptom-disorder/motor/sensory</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/epilepsy/seizure</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
