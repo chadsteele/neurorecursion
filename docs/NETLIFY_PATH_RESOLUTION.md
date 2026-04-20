@@ -140,9 +140,9 @@ If you find unsafe path patterns:
 
 ```javascript
 // Before
-const filePath = path.join(__dirname, "../../../../static/file.png")
+const filePath = path.join(__dirname, "../../../../static/logo.png")
 
 // After
 import {resolveStaticFile} from "$lib/server/file-resolver.js"
-const filePath = await resolveStaticFile("file.png")
+const filePath = await resolveStaticFile("logo.png")
 ```

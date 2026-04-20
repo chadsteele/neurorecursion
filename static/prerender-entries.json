@@ -501,7 +501,7 @@
     "query": "sensory"
   },
   {
-    "query": "remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding"
+    "query": "remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/facial-guarding/functional-facial-symptoms"
   },
   {
     "query": "psychogenic-movement-disorders"
@@ -510,16 +510,19 @@
     "query": "stress-tics"
   },
   {
-    "query": "bruxism"
-  },
-  {
     "query": "facial-guarding"
   },
   {
-    "query": "remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension"
+    "query": "functional-facial-symptoms"
+  },
+  {
+    "query": "remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/temporomandibular-dysfunction"
   },
   {
     "query": "tmj"
+  },
+  {
+    "query": "bruxism"
   },
   {
     "query": "lockjaw"
@@ -528,7 +531,7 @@
     "query": "jaw-clenching"
   },
   {
-    "query": "masseter-tension"
+    "query": "temporomandibular-dysfunction"
   },
   {
     "query": "remote-clinical-trial/free/epilepsy/seizure"

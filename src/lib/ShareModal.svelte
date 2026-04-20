@@ -2,7 +2,7 @@
 	let {
 		title = "",
 		description = "",
-		imageUrl = "/pioneers/bluebrain.png",
+		imageUrl = "/logo.png",
 		url = "",
 		onClose = () => {},
 	} = $props()
@@ -23,8 +23,12 @@
 			return temp
 		}
 
+		if (imageUrl.startsWith("/")) {
+			return imageUrl
+		}
+
 		// If it's just a filename, construct the full asset URL
-		return `https://cri-cdn.netlify.app/og/neurorecursion.com//${imageUrl}`
+		return `https://cri-cdn.netlify.app/og/neurorecursion.com/${imageUrl.replace(/^\/+/, "")}`
 	}
 
 	const assetImageUrl = $derived(getAssetImageUrl(imageUrl))

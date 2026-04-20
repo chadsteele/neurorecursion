@@ -97,7 +97,7 @@ export default async (request, context) => {
 				ogDescription = variantName
 					? `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
 					: `Evidence-based treatment for ${conditionName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-				ogImage = `https://cri-cdn.netlify.app/og/neurorecursion.com//${conditionId}.png`
+				ogImage = `https://cri-cdn.netlify.app/og/neurorecursion.com/${conditionId}.png`
 				console.log(`[edge] Condition: ${conditionId}`)
 			}
 		}

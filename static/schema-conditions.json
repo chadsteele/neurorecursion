@@ -503,28 +503,28 @@
       "name": "Functional Neurological Symptom Disorder - Motor and Sensory Symptoms"
     }
   },
-  "psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding": {
+  "psychogenic-movement-disorders-stress-tics-facial-guarding-functional-facial-symptoms": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Psychogenic Movement Disorders - Stress Tics, Bruxism, and Facial Muscle Guarding",
-    "description": "Your face and jaw are not malfunctioning at random. Your nervous system is broadcasting distress through movement, tension, and protective holding patterns. Psychogenic movement disorders are a functional sub-category of movement disorders in which psychological distress, chronic anxiety, or trauma dysregulation generates involuntary or semi-involuntary motor symptoms without the pattern being fully explained by a primary structural neurological disease. This can include anxiety-driven facial ti",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/bruxism/facial-guarding",
-    "identifier": "psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding",
+    "name": "Psychogenic Movement Disorders - Stress Tics, Facial Guarding, and Functional Facial Motor Symptoms",
+    "description": "Your facial motor system may be acting like it is on threat duty even when no structural neurological damage is present. Psychogenic movement disorders are a functional sub-category of movement disorders in which psychological distress, chronic anxiety, or trauma dysregulation generates involuntary or semi-involuntary motor symptoms without the pattern being fully explained by a primary structural neurological disease. In this presentation, the symptoms center on facial and peri-ocular motor out",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/psychogenic-movement-disorders/stress-tics/facial-guarding/functional-facial-symptoms",
+    "identifier": "psychogenic-movement-disorders-stress-tics-facial-guarding-functional-facial-symptoms",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Psychogenic Movement Disorders - Stress Tics, Bruxism, and Facial Muscle Guarding"
+      "name": "Psychogenic Movement Disorders - Stress Tics, Facial Guarding, and Functional Facial Motor Symptoms"
     }
   },
-  "tmj-bruxism-lockjaw-jaw-clenching-masseter-tension": {
+  "tmj-bruxism-lockjaw-jaw-clenching-temporomandibular-dysfunction": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "TMJ, Bruxism, Lock Jaw, and Jaw Clenching",
-    "description": "Your jaw may be carrying more threat than your conscious mind can register. Temporomandibular dysfunction, bruxism, chronic jaw clenching, masseter tension, and stress-linked lock jaw patterns often emerge when the nervous system recruits the jaw as part of a chronic defense posture. People with this cluster may experience teeth grinding in sleep, daytime clenching they barely notice, jaw pain, temple pain, clicking or popping at the joint, limited opening, facial asymmetry from overused massete",
-    "url": "https://neurorecursion.com/remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/masseter-tension",
-    "identifier": "tmj-bruxism-lockjaw-jaw-clenching-masseter-tension",
+    "name": "TMJ, Bruxism, Lockjaw, Jaw Clenching, and Masseter Tension",
+    "description": "Your jaw may be carrying more threat than your conscious mind can register. Temporomandibular dysfunction, bruxism, chronic jaw clenching, masseter tension, and stress-linked lockjaw patterns often emerge when the nervous system recruits the jaw as part of a chronic defense posture. This condition is specifically about jaw-centered symptoms: teeth grinding in sleep, daytime clenching you barely notice, jaw pain, temple pain, clicking or popping at the temporomandibular joint, limited opening, pa",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/tmj/bruxism/lockjaw/jaw-clenching/temporomandibular-dysfunction",
+    "identifier": "tmj-bruxism-lockjaw-jaw-clenching-temporomandibular-dysfunction",
     "mainEntity": {
       "@type": "Thing",
-      "name": "TMJ, Bruxism, Lock Jaw, and Jaw Clenching"
+      "name": "TMJ, Bruxism, Lockjaw, Jaw Clenching, and Masseter Tension"
     }
   },
   "epilepsy-seizure-disorders": {
