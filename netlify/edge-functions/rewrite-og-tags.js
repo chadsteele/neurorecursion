@@ -77,7 +77,7 @@ export default async (request, context) => {
 			const pioneerName = toTitleCase(pioneerId)
 			ogTitle = `${pioneerName} | Neuroscience Pioneer`
 			ogDescription = `Learn about ${pioneerName}'s groundbreaking contributions to neuroscience research and neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/pioneer-${pioneerId}.png`
+			ogImage = `https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/${pioneerId}.png`
 			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
@@ -97,7 +97,7 @@ export default async (request, context) => {
 				ogDescription = variantName
 					? `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
 					: `Evidence-based treatment for ${conditionName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-				ogImage = `https://cri-cdn.netlify.app/og/neurorecursion.com/${conditionId}.png`
+				ogImage = `https://cri-cdn.netlify.app/og/neurorecursion.com/backgrounds/${conditionId}.png`
 				console.log(`[edge] Condition: ${conditionId}`)
 			}
 		}
