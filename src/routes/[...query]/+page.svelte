@@ -7,6 +7,7 @@
 	import SignUp from "$lib/SignUp.svelte"
 	import Parallax from "$lib/Parallax.svelte"
 	import ConditionCard from "$lib/ConditionCard.svelte"
+	import {getCondition} from "$data/Conditions.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
 
@@ -17,52 +18,6 @@
 	const ConditionsMap = $derived(data.ConditionsMap || {})
 	const sortedPioneers = $derived(data.sortedPioneers || [])
 	const PioneersMap = $derived(data.PioneersMap || {})
-
-	// Recreate getCondition function locally since we can't serialize functions
-	function getCondition(input) {
-		if (!Conditions.length) return null
-		if (!input) return null
-
-		function scoreCondition(condition, words) {
-			let score = 0
-			const conditionStr =
-				`${condition.name}${condition.id}${condition.path}`.toLowerCase()
-			for (const word of words) {
-				if (condition.name.toLowerCase().includes(word)) {
-					score += 10
-				}
-				if (condition.id.toLowerCase().includes(word)) {
-					score += 5
-				}
-				if (conditionStr.includes(word)) {
-					score += 1
-				}
-			}
-			return score
-		}
-
-		const words = Array.isArray(input)
-			? input
-			: input
-					.toLowerCase()
-					.split(/[\s,/_-]+/)
-					.filter(Boolean)
-
-		if (words.length === 0) return null
-
-		let bestCondition = null
-		let bestScore = -1
-
-		for (const condition of Conditions) {
-			const score = scoreCondition(condition, words)
-			if (score > bestScore) {
-				bestScore = score
-				bestCondition = condition
-			}
-		}
-
-		return bestCondition
-	}
 
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
