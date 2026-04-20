@@ -27,6 +27,53 @@ function loadPrerenderedEntries() {
 
 const prerenderedEntries = loadPrerenderedEntries()
 
+function loadPioneerSchemas() {
+	try {
+		const schemaPath = path.join(
+			process.cwd(),
+			"static",
+			"schema-pioneers.json",
+		)
+		const data = fs.readFileSync(schemaPath, "utf-8")
+		return JSON.parse(data)
+	} catch (e) {
+		console.warn(
+			"Warning: schema-pioneers.json not found. Defaulting to {}",
+		)
+		return {}
+	}
+}
+
+const pioneerSchemas = loadPioneerSchemas()
+
+function getRequestPath(params) {
+	const queryArray = params.query
+	const queryPath = Array.isArray(queryArray)
+		? queryArray.join("/")
+		: queryArray || ""
+
+	return queryPath ? `/${queryPath}` : "/"
+}
+
+function getPioneerSchemasForPath(params) {
+	const requestPath = getRequestPath(params)
+
+	if (requestPath === "/pioneers") {
+		return Object.values(pioneerSchemas)
+	}
+
+	const matchedPioneer = Pioneers.find(
+		(pioneer) => pioneer.path === requestPath,
+	)
+	if (!matchedPioneer) {
+		return []
+	}
+
+	return pioneerSchemas[matchedPioneer.id]
+		? [pioneerSchemas[matchedPioneer.id]]
+		: []
+}
+
 // Generate prerender entries - uses data generated during prebuild
 export function entries() {
 	return prerenderedEntries
@@ -38,6 +85,7 @@ export async function load({params}) {
 		Conditions,
 		ConditionsMap,
 		Pioneers,
+		pioneerSchemasForPath: getPioneerSchemasForPath(params),
 		sortedPioneers: sorted,
 		PioneersMap,
 	}

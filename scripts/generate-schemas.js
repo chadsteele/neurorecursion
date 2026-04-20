@@ -89,8 +89,11 @@ function generatePioneerSchema(pioneer) {
 		knowsAbout: pioneer.researchAreas || [],
 	}
 
-	if (pioneer.img_url) {
-		schema.image = `${baseUrl}${pioneer.img_url}`
+	const pioneerImage = pioneer.img_url || pioneer.background_url
+	if (pioneerImage) {
+		schema.image = /^https?:\/\//i.test(pioneerImage)
+			? pioneerImage
+			: `${baseUrl}${pioneerImage}`
 	}
 
 	if (pioneer.education) {

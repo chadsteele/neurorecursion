@@ -16,8 +16,13 @@
 	const Categories = $derived(data.Categories || [])
 	const Conditions = $derived(data.Conditions || [])
 	const ConditionsMap = $derived(data.ConditionsMap || {})
+	const pioneerSchemasForPath = $derived(data.pioneerSchemasForPath || [])
 	const sortedPioneers = $derived(data.sortedPioneers || [])
 	const PioneersMap = $derived(data.PioneersMap || {})
+
+	function stringifyJsonLd(schema) {
+		return JSON.stringify(schema).replace(/</g, "\\u003c")
+	}
 
 	// Helper function to replace hyphens with non-breaking dashes (en-dashes)
 	function formatName(name) {
@@ -126,6 +131,14 @@
 		}
 	})
 </script>
+
+<svelte:head>
+	{#each pioneerSchemasForPath as schema, index (`${schema.url}-${index}`)}
+		<script type="application/ld+json">
+			{@html stringifyJsonLd(schema)}
+		</script>
+	{/each}
+</svelte:head>
 
 <Parallax
 	background="https://neurorecursion-assets.netlify.app/assets/backgrounds/children.png"
