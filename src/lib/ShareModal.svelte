@@ -19,13 +19,13 @@
 	function getAssetImageUrl(imageUrl) {
 		if (!imageUrl) return ""
 		if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
-			//https://neurorecursion-assets.netlify.app/assets/backgrounds/developmental-trauma-childhood-trauma.png
+			//https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/developmental-trauma-childhood-trauma.png
 
-			//https://neurorecursion-assets.netlify.app/assets/ogimages/adolescent-social-mimicry-identity-diffusion.png
+			//https://cri-cdn.netlify.app/og/neurorecursion.com//adolescent-social-mimicry-identity-diffusion.png
 
-			//https://neurorecursion-assets.netlify.app/assets/pioneers/kamitani.png
+			//https://cri-cdn.netlify.app/neurorecursion.com/pioneers/kamitani.png
 
-			//https://neurorecursion-assets.netlify.app/assets/ogimages/pioneer-daniel-goleman.png
+			//https://cri-cdn.netlify.app/og/neurorecursion.com//pioneer-daniel-goleman.png
 
 			//todo: this is crap - we should just store og image urls in the data, not try to guess them from the background image urls. but for now, this is a quick fix to get the correct og images showing up when sharing pioneers and conditions that use asset images.
 			let temp = imageUrl
@@ -36,7 +36,7 @@
 		}
 
 		// If it's just a filename, construct the full asset URL
-		return `https://neurorecursion-assets.netlify.app/assets/ogimages/${imageUrl}`
+		return `https://cri-cdn.netlify.app/og/neurorecursion.com//${imageUrl}`
 	}
 
 	const assetImageUrl = $derived(getAssetImageUrl(imageUrl))

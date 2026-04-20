@@ -45,7 +45,7 @@
 		const job = jobs.find((job) => job.id === $page.params.slug)
 		return job
 			? job.background_url
-			: "https://neurorecursion-assets.netlify.app/assets/backgrounds/general-neurological-issues.png"
+			: "https://cri-cdn.netlify.app/neurorecursion.com/backgrounds/general-neurological-issues.png"
 	})
 </script>
 
