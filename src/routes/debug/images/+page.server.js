@@ -68,8 +68,16 @@ function getLineNumber(content, index) {
 	return line
 }
 
+function hasTemplateInterpolation(rawUrl) {
+	return rawUrl.includes("${")
+}
+
 function normalizeUrl(rawUrl, filePath, rootDir) {
-	if (!rawUrl || !IMAGE_EXTENSIONS.test(rawUrl)) {
+	if (
+		!rawUrl ||
+		hasTemplateInterpolation(rawUrl) ||
+		!IMAGE_EXTENSIONS.test(rawUrl)
+	) {
 		return null
 	}
 

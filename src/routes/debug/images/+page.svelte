@@ -98,7 +98,14 @@
 			<div class="failures-list">
 				{#each failedImages as image (image.resolvedUrl)}
 					<article class="failure-item">
-						<p class="url-value">{getFullUrl(image.resolvedUrl)}</p>
+						<a
+							href={getFullUrl(image.resolvedUrl)}
+							class="url-value"
+							target="_blank"
+							rel="noreferrer"
+						>
+							{getFullUrl(image.resolvedUrl)}
+						</a>
 						<ul class="occurrence-list compact">
 							{#each image.occurrences as occurrence, index (`failure-${image.resolvedUrl}-${occurrence.file}-${occurrence.line}-${index}`)}
 								<li>
@@ -136,13 +143,27 @@
 				</p>
 
 				<p class="url-label">Full path</p>
-				<p class="url-value">{getFullUrl(image.resolvedUrl)}</p>
+				<a
+					href={getFullUrl(image.resolvedUrl)}
+					class="url-value"
+					target="_blank"
+					rel="noreferrer"
+				>
+					{getFullUrl(image.resolvedUrl)}
+				</a>
 
 				{#if image.rawUrls.length > 1 || image.rawUrls[0] !== image.resolvedUrl}
 					<p class="url-label">Matched strings</p>
 					<div class="raw-url-list">
 						{#each image.rawUrls as rawUrl (rawUrl)}
-							<p class="raw-url">{rawUrl}</p>
+							<a
+								href={getFullUrl(rawUrl)}
+								class="raw-url"
+								target="_blank"
+								rel="noreferrer"
+							>
+								{rawUrl}
+							</a>
 						{/each}
 					</div>
 				{/if}
@@ -294,10 +315,17 @@
 	.url-value,
 	.raw-url {
 		margin: 0;
+		display: block;
 		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 			"Liberation Mono", "Courier New", monospace;
 		font-size: 0.82rem;
 		color: #dfe9f5;
+		text-decoration: none;
+	}
+
+	.url-value:hover,
+	.raw-url:hover {
+		text-decoration: underline;
 	}
 
 	.raw-url-list {
