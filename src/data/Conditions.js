@@ -1226,6 +1226,20 @@ Related condition: Sex addiction involves compulsive sexual behavior used for di
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sex-addiction.png",
 	},
 	{
+		id: "sexual-orientation-asexuality-gender-identity-anxiety",
+		path: "/remote-clinical-trial/free/sexual-orientation/asexuality/gender-identity/anxiety",
+		name: "Sexual Orientation, Asexuality & Gender Identity Anxiety - Shame, Concealment & Self-Doubt",
+		description: `Your nervous system may have learned that authentic identity is dangerous to reveal, question, or even feel. Sexual orientation and gender identity anxiety refers to chronic fear, shame, hypervigilance, concealment, or compulsive self-doubt surrounding one's sexual orientation, romantic orientation, asexuality-spectrum identity, or gender identity. This is not the identity itself being a disorder. The distress arises when a person has been taught that their internal reality is unsafe, unacceptable, invalid, or socially catastrophic. Individuals may obsessively question whether they are "really" who they think they are, fear rejection if known, experience panic about being judged by family or religion, or feel trapped between authenticity and belonging.
+
+The neurobiological mechanism involves amygdala threat-conditioning around identity disclosure, desire, non-desire, embodiment, and social belonging. The insula becomes hypervigilant to bodily and relational cues, making every attraction, lack of attraction, gendered feeling, or interpersonal reaction feel diagnostic and high-stakes. This can affect people across the spectrum, including asexual individuals whose lack of sexual attraction is repeatedly pathologized, doubted, or pressured into explanation. The anterior cingulate fuels rumination and compulsive identity-checking, while the ventromedial prefrontal cortex may encode shame narratives such as "If this is true about me, I will lose love, safety, or legitimacy." The result is a loop of concealment, self-monitoring, reassurance-seeking, and minority-stress activation.
+
+Our technique targets the threat-encoding around authentic identity rather than treating orientation, asexuality, or gender diversity as pathology. We help the nervous system uncouple authenticity from danger, reduce panic-based self-monitoring, and restore internal permission to exist without compulsive justification. This is not conversion work, ideological persuasion, or identity assignment. It is recalibration of the fear circuitry that turns self-knowledge into threat. You experience reduced shame, less compulsive self-doubt, greater capacity for clarity without panic, and a nervous system that no longer treats authentic identity as something to hide from or defend against at all times.`,
+		ngo_url: "/ngo/human-rights-campaign",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-orientation-asexuality-gender-identity-anxiety.png",
+	},
+	{
 		id: "homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
 		path: "/remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity",
 		name: "Homophobia, Transphobia, Sexual Orientation & Gender Identity Prejudice",
@@ -1282,6 +1296,34 @@ Our technique recalibrates the amygdala's threat-response to out-group differenc
 		scientific_reference: "",
 		background_image:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking.png",
+	},
+	{
+		id: "scapegoating-hate-projection-enemy-creation",
+		path: "/remote-clinical-trial/free/scapegoating/hate/projection/enemy-creation",
+		name: "Scapegoating, Hate Projection & Enemy Creation",
+		description: `Your nervous system may have learned to discharge fear, shame, grievance, or powerlessness by locating a target to blame, punish, or cast out. Scapegoating and hate-projection are patterns in which diffuse internal distress or collective anxiety gets concentrated onto a person or group who becomes framed as the cause of decline, humiliation, impurity, or danger. Rather than tolerating uncertainty, grief, status loss, or complexity, the mind creates relief through simplification: if the enemy can be named, then pain appears explainable and aggression feels righteous. This mechanism can operate in families, workplaces, religious movements, politics, online culture, and mass movements.
+
+The neurobiological mechanism involves threat-detection, projection, and social-bonding circuits becoming fused. The amygdala marks ambiguity, shame, and loss of control as danger, while the ventromedial prefrontal cortex constructs a blame narrative that relocates intolerable internal states onto an external target. The anterior insula can convert disgust, humiliation, or moral panic into visceral certainty that the target is contaminating or dangerous. Reward circuits then begin reinforcing outrage, group cohesion, and punishment fantasies because shared hatred produces belonging, certainty, and temporary relief from helplessness. The prefrontal cortex loses nuance as the nervous system becomes increasingly invested in enemy-construction over reality-testing.
+
+Our technique targets the projection-and-threat circuitry that turns pain into persecution. We help the nervous system tolerate ambiguity, status injury, shame, and fear without needing a human target to carry them. This is not political persuasion or forced moral agreement. It is recalibration of the neural process that converts distress into hatred and belonging-through-exclusion. You experience reduced compulsion to blame, less attraction to enemy narratives, restored capacity for complexity and empathy, and a nervous system that no longer requires a scapegoat in order to feel organized or safe.`,
+		ngo_url: "/ngo/anti-defamation-league",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/scapegoating-hate-projection-enemy-creation.png",
+	},
+	{
+		id: "family-scapegoat-identified-patient-blame-displacement",
+		path: "/remote-clinical-trial/free/family-scapegoat/identified-patient/blame-displacement",
+		name: "Family Scapegoat & Identified Patient Pattern - Blame Displacement in Dysfunctional Systems",
+		description: `Your family system may have organized its anxiety, shame, conflict, or instability around making one person carry what the whole system cannot face. The family scapegoat pattern occurs when one member becomes the designated problem, disappointment, rebel, sick one, difficult child, or "identified patient" whose symptoms or behavior are treated as the source of the family's distress. In reality, the scapegoated person is often expressing or absorbing tensions that belong to the entire system. This role can emerge in families marked by trauma, addiction, personality disturbance, rigid hierarchy, favoritism, emotional immaturity, or chronic denial. The scapegoated person often grows up confused, over-blamed, hypervigilant, and deeply split from their own sense of innocence and reality.
+
+The neurobiological mechanism involves chronic attachment threat combined with group-level blame displacement. The family system uses projection to externalize intolerable shame, aggression, grief, or chaos onto one member, while that person's amygdala becomes conditioned to expect accusation, exclusion, and misinterpretation. The insula becomes hyperreactive to signs of disapproval, making even neutral interactions feel like imminent indictment. The ventromedial prefrontal cortex can internalize the role itself, encoding beliefs such as "I am the problem," "I ruin everything," or "I must either disappear or fight to exist." At the same time, other family members gain temporary relief and false cohesion by keeping distress localized in one person rather than confronting systemic dysfunction.
+
+		Our technique targets the nervous-system imprint of being made to carry collective blame. We help separate the person's authentic self from the role assigned by the family, reduce hypervigilance to accusation and exclusion, and restore reality-testing where the entire system's dysfunction is no longer encoded as personal defect. This is not about rehearsing resentment or proving one side morally pure. It is recalibration of the attachment-trauma and shame circuitry created by chronic blame displacement. You experience relief from the internalized belief that you are the family's problem, stronger self-trust, less automatic collapse in the face of criticism, and restored capacity to form relationships where you are not unconsciously cast as the container for everyone else's pain.`,
+		ngo_url: "/ngo/aamft",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/family-scapegoat-identified-patient-blame-displacement.png",
 	},
 	{
 		id: "maternal-wound-maternal-attachment-trauma-mother-complex",
@@ -2004,6 +2046,160 @@ Our technique recalibrates the threat-assessment systems specifically for financ
 		scientific_reference: "",
 		background_image:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-financial-anxiety-cynicism.png",
+	},
+	{
+		id: "psoriasis-stress-reactive-neuroimmune-flare",
+		path: "/remote-clinical-trial/free/psoriasis/stress/skin/flare",
+		name: "Psoriasis - Stress-Reactive Neuroimmune Skin Flares",
+		description: `Your skin may be expressing a nervous system that has learned to stay inflamed. Psoriasis is a chronic inflammatory skin condition involving red, scaly, painful, or itchy plaques that can flare unpredictably and create profound self-consciousness because the illness is visible to the outside world. While psoriasis has an immune and genetic basis, many individuals experience unmistakable worsening during periods of acute stress, shame, social conflict, sleep disruption, or chronic threat-state activation. The result is a skin condition that is both immunologic and neurologically amplified.
+
+The neurobiological mechanism involves reciprocal signaling between the immune system, HPA axis, autonomic nervous system, and limbic threat circuitry. When the amygdala remains hyperactive, cortisol rhythm becomes dysregulated and inflammatory cascades become harder to resolve cleanly. The skin becomes a visible endpoint of neuroimmune signaling: itch, burning, plaque expansion, scratching, embarrassment, and social vigilance then feed further sympathetic activation. The person becomes trapped in a loop where stress worsens the flare and the flare becomes a chronic source of stress.
+
+Our technique targets the stress-amplification layer of psoriasis by reducing limbic overactivation, restoring autonomic regulation, and interrupting the shame-inflammation feedback loop. This does not claim to replace dermatologic care, biologics, or medical management of autoimmune disease. It is targeted at the nervous-system contribution that makes flares more persistent, more reactive, and more distressing than they would otherwise be. You experience reduced stress-reactivity, less symptom amplification, and a body that is no longer treating every psychological strain as a signal to inflame the skin.`,
+		ngo_url: "/ngo/who",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/psoriasis-stress-reactive-neuroimmune-flare.png",
+	},
+	{
+		id: "restless-legs-syndrome-sleep-urge-movement",
+		path: "/remote-clinical-trial/free/restless-legs/sleep/urge/movement",
+		name: "Restless Legs Syndrome - Urge to Move, Night-Time Agitation & Sleep Disruption",
+		description: `Your nervous system may be turning stillness into alarm. Restless Legs Syndrome (RLS) is characterized by an uncomfortable urge to move the legs, usually worsening during rest and in the evening, often described as crawling, buzzing, pulling, or electrical discomfort deep in the limbs. Many individuals with RLS experience anticipatory dread about bedtime, fragmented sleep, daytime fatigue, and escalating anxiety because quiet rest reliably becomes the moment symptoms intensify.
+
+The neurobiological mechanism involves dysregulation across dopaminergic signaling, sensory processing, arousal systems, and sleep-wake control. Anxiety and hypervigilance increase the salience of internal limb sensations, while the amygdala and autonomic nervous system make the body treat stillness as if it were unsafe. The result is not simply movement for comfort but a learned nervous-system pattern where the absence of motion is experienced as mounting threat or agitation. Fear of symptoms then amplifies the symptoms themselves, especially at night.
+
+Our technique targets the threat-coding that makes rest feel intolerable and recalibrates the nervous system's interpretation of internal leg sensations. This is not a substitute for iron workup, sleep medicine, or neurologic treatment where needed. It addresses the stress-reactive amplification, bedtime dread, and conditioned arousal loop that often hardens around RLS. You experience greater calm at rest, reduced fear of the evening window, and a nervous system more capable of tolerating stillness without escalating into motor urgency.`,
+		ngo_url: "/ngo/national-sleep-foundation",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/restless-legs-syndrome-sleep-urge-movement.png",
+	},
+	{
+		id: "parkinsons-disease-freezing-gait-anxiety",
+		path: "/remote-clinical-trial/free/parkinsons/freezing-gait/anxiety/movement",
+		name: "Parkinson's Disease - Freezing of Gait, Performance Fear & Movement Shutdown",
+		description: `Your movement system may already be under strain, and anxiety can make it seize even harder. Parkinson's disease is a neurodegenerative movement disorder involving tremor, rigidity, slowed movement, gait disturbance, and progressive difficulty with automatic motor control. Many people with Parkinson's also experience freezing of gait, hesitation in doorways or crowded spaces, and abrupt motor shutdown that becomes dramatically worse under pressure, observation, startle, or fear of falling.
+
+The neurobiological mechanism involves degeneration in basal ganglia circuits that normally smooth and automate movement, combined with limbic interference when the person becomes anxious. The amygdala and autonomic nervous system can hijack already fragile motor sequencing, causing feet to feel glued to the floor, stride length to collapse, and movement to become consciously effortful. Fear of freezing then becomes part of the freezing circuitry itself: the person scans for failure, anticipates embarrassment or falling, and the threat-state further jams motor execution.
+
+Our technique targets the anxiety-motor interference layer by reducing amygdala activation, restoring calmer autonomic tone, and interrupting the fear-freezing feedback loop. This is not presented as a cure for Parkinson's disease or a replacement for neurology, medication, or rehabilitation. It is aimed at the stress-amplified component that makes gait, confidence, and movement reliability deteriorate further under threat. You experience reduced freezing reactivity, improved confidence in movement contexts, and a nervous system less likely to convert fear into motor shutdown.`,
+		ngo_url: "/ngo/american-academy-neurology",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/parkinsons-disease-freezing-gait-anxiety.png",
+	},
+	{
+		id: "hyperhidrosis-emotional-sweating-social-fear",
+		path: "/remote-clinical-trial/free/hyperhidrosis/emotional-sweating/social-fear",
+		name: "Hyperhidrosis - Emotional Sweating, Social Fear & Sympathetic Overdrive",
+		description: `Your sympathetic nervous system may be treating ordinary social exposure like an emergency. Hyperhidrosis involves excessive sweating beyond what temperature or exertion alone would explain, commonly affecting the palms, feet, underarms, or face. For many individuals, the most disabling part is not the sweat itself but the dread of being seen sweating, shaking hands, staining clothing, or being judged as anxious, unclean, or weak.
+
+The neurobiological mechanism involves overactivation of sympathetic output to sweat glands combined with social-threat conditioning. The amygdala interprets observation, performance, or interpersonal contact as danger, causing immediate autonomic escalation. Once sweating begins, the insula and self-monitoring systems lock onto it as proof of social threat, which amplifies the body's output further. The result is a rapid loop: fear of sweating creates more sweating, and the visible symptom becomes a chronic trigger for shame and avoidance.
+
+Our technique targets the social-threat coding and autonomic overreaction that keep emotional sweating self-reinforcing. This is not a replacement for dermatologic, neurologic, or surgical care such as antiperspirants, Botox, medication, or sympathectomy when those are indicated. It addresses the fear-sweat loop that makes the condition far more functionally impairing. You experience reduced anticipatory dread, less escalation in watched or evaluated situations, and a nervous system that no longer treats social exposure as a signal to flood the body with sweat.`,
+		ngo_url: "/ngo/american-psychological-association",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hyperhidrosis-emotional-sweating-social-fear.png",
+	},
+	{
+		id: "vaginismus-pelvic-floor-fear-spasm",
+		path: "/remote-clinical-trial/free/vaginismus/pelvic-floor/fear/spasm",
+		name: "Vaginismus - Pelvic Floor Guarding, Penetration Fear & Involuntary Spasm",
+		description: `Your pelvic floor may be acting like a defense perimeter. Vaginismus involves involuntary tightening of the pelvic floor and vaginal entrance in anticipation of penetration or intimate contact, often making sex, tampon use, gynecologic exams, or even the thought of penetration painful, impossible, or deeply distressing. The condition is not a failure of desire or character. It is a real protective reflex encoded into the body, often intensified by shame, prior pain, fear, trauma, or repeated anticipatory dread.
+
+The neurobiological mechanism involves threat-signaling through the amygdala, insula, autonomic nervous system, and pelvic floor motor circuitry. Sexual context becomes encoded as danger, causing protective bracing before conscious choice can intervene. The body begins guarding against pain, exposure, judgment, or loss of control. Once pain or failed attempts occur, the nervous system stores those experiences as confirmation that penetration is dangerous, making the next attempt even more reflexively defended.
+
+Our technique targets the fear-bracing circuitry and helps the nervous system reinterpret intimate contact as safe rather than invasive. This is not a replacement for pelvic floor therapy, gynecologic care, trauma-informed sexual counseling, or medical evaluation where needed. It is targeted recalibration of the threat response that keeps the body clamping into protection. You experience reduced anticipatory fear, softer involuntary guarding, and restored capacity for consent-based intimacy without the body reflexively overriding you.`,
+		ngo_url: "/ngo/aasect",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/vaginismus-pelvic-floor-fear-spasm.png",
+	},
+	{
+		id: "neurocardiogenic-syncope-vasovagal-fainting",
+		path: "/remote-clinical-trial/free/neurocardiogenic-syncope/vasovagal/fainting/startle",
+		name: "Neurocardiogenic Syncope - Vasovagal Fainting, Startle Collapse & Fear-Based Blood Pressure Drop",
+		description: `Your nervous system may be triggering a shutdown response when threat or overwhelm spikes too suddenly. Neurocardiogenic syncope, often overlapping with vasovagal fainting patterns, is the most common cause of fainting and involves abrupt drops in blood pressure and heart rate leading to dizziness, tunneling vision, nausea, heat, weakness, and loss of consciousness. Episodes are often triggered by fear, pain, needles, medical situations, prolonged standing, or emotional shock, leaving the person anxious about when the next collapse might happen.
+
+The neurobiological mechanism involves dysregulated autonomic switching where the nervous system overcorrects under perceived threat. Instead of maintaining balanced arousal, the person flips into a parasympathetic crash that drains blood pressure and cerebral perfusion. The amygdala then encodes situations associated with prior fainting as danger contexts, meaning the anticipation of fainting becomes part of the fainting risk itself. This creates an elegant but destructive loop: fear of collapsing destabilizes the very physiology the person is trying to protect.
+
+Our technique targets the fear-physiology loop by reducing amygdala reactivity to known triggers and recalibrating autonomic interpretation of bodily changes. This is not a substitute for cardiology, autonomic testing, hydration strategies, compression, or medical workup for fainting. It is aimed at the conditioned threat overlay that makes episodes more frequent, more anticipated, and more disabling. You experience reduced anticipatory panic, more stable response to known triggers, and a nervous system less likely to convert fear into shutdown.`,
+		ngo_url: "/ngo/world-federation-neurology",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/neurocardiogenic-syncope-vasovagal-fainting.png",
+	},
+	{
+		id: "narcolepsy-type-1-cataplexy-sleep-attacks",
+		path: "/remote-clinical-trial/free/narcolepsy/cataplexy/sleep-attacks/type-1",
+		name: "Narcolepsy Type 1 - Cataplexy, Sleep Attacks & Emotion-Triggered Shutdown",
+		description: `Your sleep-wake boundary may be collapsing when the nervous system is hit by emotional intensity. Narcolepsy Type 1 is a neurologic sleep disorder characterized by overwhelming daytime sleepiness, sudden sleep attacks, fragmented night sleep, dream intrusion phenomena, and cataplexy, where strong emotions such as laughter, surprise, or fear trigger abrupt loss of muscle tone. Because the symptoms are dramatic and unpredictable, many individuals begin to fear emotion itself, public settings, or any circumstance where collapse or sudden sleep would be humiliating.
+
+The neurobiological mechanism involves dysregulation of sleep-wake circuitry and orexin-hypocretin signaling, with limbic states often acting as trigger multipliers. Emotional spikes can destabilize already fragile muscle-tone and arousal control, while the amygdala's response to anticipation and embarrassment increases overall nervous-system volatility. The person becomes caught in a loop where fear of cataplexy or sleep attacks intensifies vigilance, fatigue, and symptom-monitoring, making the condition more functionally intrusive.
+
+Our technique targets the anticipatory fear, shame, and trigger-reactivity that layer onto narcolepsy and make daily life narrower than the neurologic disorder alone would require. This is not framed as a replacement for sleep medicine, stimulant therapy, sodium oxybate, or neurologic care. It addresses the threat overlay that turns symptom possibility into chronic life-constriction. You experience reduced fear of symptom exposure, calmer response to emotional activation, and a nervous system less likely to amplify the disorder through constant anticipatory alarm.`,
+		ngo_url: "/ngo/national-sleep-foundation",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/narcolepsy-type-1-cataplexy-sleep-attacks.png",
+	},
+	{
+		id: "stiff-person-syndrome-startle-spasm",
+		path: "/remote-clinical-trial/free/stiff-person-syndrome/startle/spasm/rigidity",
+		name: "Stiff Person Syndrome - Startle-Induced Rigidity, Spasm & Emotional Trigger Locking",
+		description: `Your body may be treating sound, surprise, or emotion like a signal to lock down. Stiff Person Syndrome is a rare neurologic disorder involving progressive rigidity, painful muscle spasms, exaggerated startle, and severe sensitivity to sudden stimuli or emotional upset. Because attacks can be dramatic and disabling, the person often begins living in a state of constant anticipatory guarding, scanning for noises, interruptions, or emotional spikes that could trigger full-body spasm.
+
+The neurobiological mechanism involves disordered inhibitory signaling in motor pathways, with startle and threat circuitry magnifying muscle rigidity when the nervous system is provoked. Emotional shock or fear can recruit the autonomic nervous system and make the body shift even faster into painful contraction. Over time, the amygdala learns that ordinary environments are full of possible spasm triggers, and the person becomes trapped in a loop where fear of the next spasm increases baseline muscular bracing and sensory reactivity.
+
+Our technique addresses the fear-rigidity amplification loop, not the underlying rare neurologic disease process itself. It is not a replacement for neurology, immunotherapy, medication, mobility support, or specialist care. It targets the secondary threat-conditioning that causes the person's world to shrink around startle avoidance. You experience reduced anticipatory alarm, less emotional contribution to whole-body locking, and a nervous system that does not add unnecessary threat chemistry to an already vulnerable motor system.`,
+		ngo_url: "/ngo/world-federation-neurology",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stiff-person-syndrome-startle-spasm.png",
+	},
+	{
+		id: "anorgasmia-orgasmic-disorder-desire-arousal-block",
+		path: "/remote-clinical-trial/free/anorgasmia/orgasmic-disorder/arousal/block",
+		name: "Anorgasmia - Orgasmic Disorder, Delay and Inability to Reach Sexual Release",
+		description: `Your nervous system may be allowing sexual activation but refusing the final surrender into climax. Anorgasmia is a persistent or recurrent delay in, marked difficulty with, or absence of orgasm despite adequate desire, stimulation, and effort. It may be lifelong or acquired, generalized or situational, and often creates shame, frustration, relationship strain, and self-monitoring that further interferes with sexual responsiveness.
+
+The neurobiological mechanism involves excessive cortical control, performance monitoring, sympathetic threat activation, and inhibition of the parasympathetic surrender required for orgasmic release. The amygdala may interpret full sexual expression as exposure, danger, or loss of control, while the insula becomes hyperaware of whether orgasm is happening quickly enough. The person begins tracking performance instead of inhabiting sensation, and orgasm becomes a pressure goal rather than an allowed reflex.
+
+Our technique targets the threat and monitoring circuitry that block orgasmic completion. This is not a replacement for medical review, hormonal assessment, medication review, pelvic health care, or sexual technique education where those are needed. It addresses the fear-based overcontrol that prevents the nervous system from allowing full release. You experience greater embodied presence, less self-surveillance, and restored capacity to reach climax without the body or mind reflexively hitting the brakes.`,
+		ngo_url: "/ngo/aasect",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anorgasmia-orgasmic-disorder-desire-arousal-block.png",
+	},
+	{
+		id: "persistent-genital-arousal-disorder-pgad",
+		path: "/remote-clinical-trial/free/pgad/persistent-genital-arousal/unwanted-arousal",
+		name: "Persistent Genital Arousal Disorder (PGAD) - Intrusive Unwanted Arousal & Pelvic Distress",
+		description: `Your body may be generating sexual arousal signals that you did not choose and do not want. Persistent Genital Arousal Disorder (PGAD) involves recurrent or continuous genital arousal sensations, pressure, tingling, throbbing, or near-orgasmic urgency occurring without corresponding sexual desire. The condition is often profoundly distressing because the body appears sexually activated while the person feels invaded, frightened, exhausted, or desperate for the sensations to stop.
+
+The neurobiological mechanism can involve dysregulated peripheral nerve signaling, pelvic floor overactivation, vascular factors, and central salience amplification by the brain. Once the sensations begin, the amygdala and insula often classify them as threatening, humiliating, or inescapable, which increases muscular guarding and attentional fixation. The person becomes trapped in a vicious loop where unwanted arousal causes panic, panic increases nervous-system gain, and the genital signal becomes even more intrusive.
+
+Our technique targets the threat-amplification and pelvic vigilance loop that makes PGAD even more unbearable. This is not a replacement for pelvic neurology, gynecology, urology, medication review, or vascular assessment where needed. It addresses the nervous-system escalation that converts an already difficult sensory condition into a constant emergency. You experience reduced panic around the sensations, softer salience and body-monitoring, and a nervous system less likely to intensify the unwanted signal through fear.`,
+		ngo_url: "/ngo/aasect",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/persistent-genital-arousal-disorder-pgad.png",
+	},
+	{
+		id: "hypoactive-sexual-desire-disorder-hsdd",
+		path: "/remote-clinical-trial/free/hsdd/low-libido/desire-loss/sexual-interest",
+		name: "Hypoactive Sexual Desire Disorder (HSDD) - Low Libido, Desire Loss & Intimacy Flatlining",
+		description: `Your nervous system may have stopped treating sexuality as rewarding, safe, or relevant. Hypoactive Sexual Desire Disorder (HSDD) involves persistent lack of sexual desire, fantasies, or interest in sexual activity that causes distress. It often appears in long-term relationships as sexual desire discrepancy, where the absence of drive creates confusion, rejection, resentment, or fear that love itself has disappeared. The issue is not moral failure. It is a loss of motivational access to erotic engagement.
+
+The neurobiological mechanism often involves dopamine depletion, stress chemistry, autonomic overactivation, shame encoding, relationship threat, or endocrine contributors that suppress the reward value of sexuality. The nucleus accumbens stops responding to erotic connection as strongly as it should, while the amygdala and prefrontal monitoring systems classify intimacy as pressure, duty, vulnerability, or performance risk. The person becomes detached from desire not because they are cold, but because the nervous system no longer marks sexual engagement as safe or rewarding.
+
+Our technique targets the low-reward and high-threat coding that shut down desire. This is not a substitute for hormonal assessment, medication review, relationship therapy, or sexual medicine. It addresses the limbic and motivational circuitry that makes intimacy feel flat, pressured, or neurologically unavailable. You experience renewed access to desire, less dread around sexual engagement, and a nervous system that can once again register erotic connection as alive, safe, and worth moving toward.`,
+		ngo_url: "/ngo/aasect",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hypoactive-sexual-desire-disorder-hsdd.png",
 	},
 ]
 

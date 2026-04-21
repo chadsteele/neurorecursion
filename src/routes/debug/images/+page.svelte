@@ -1,6 +1,8 @@
 <script>
 	import {browser} from "$app/environment"
 
+	const GOOGLE_IMAGES_SEARCH_URL = "https://www.google.com/search?tbm=isch&q="
+
 	let {data} = $props()
 	let loadState = $state({})
 
@@ -24,6 +26,27 @@
 
 	function statusFor(url) {
 		return loadState[url] || "pending"
+	}
+
+	function getImageId(url) {
+		if (!url) return ""
+
+		try {
+			const pathname = new URL(url, browser ? window.location.href : "https://example.com")
+				.pathname
+			const filename = pathname.split("/").pop() || ""
+			return filename.replace(/\.[^.]+$/, "")
+		} catch {
+			const filename = url.split("/").pop() || ""
+			return filename.replace(/\.[^.]+$/, "")
+		}
+	}
+
+	function getGoogleImageSearchHref(url) {
+		const imageId = getImageId(url)
+		if (!imageId) return GOOGLE_IMAGES_SEARCH_URL
+
+		return `${GOOGLE_IMAGES_SEARCH_URL}${encodeURIComponent(`${imageId} background image`)}`
 	}
 
 	const loadedCount = $derived.by(
@@ -106,6 +129,14 @@
 						>
 							{getFullUrl(image.resolvedUrl)}
 						</a>
+						<a
+							href={getGoogleImageSearchHref(image.resolvedUrl)}
+							class="search-link"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Search Google Images
+						</a>
 						<ul class="occurrence-list compact">
 							{#each image.occurrences as occurrence, index (`failure-${image.resolvedUrl}-${occurrence.file}-${occurrence.line}-${index}`)}
 								<li>
@@ -150,6 +181,15 @@
 					rel="noreferrer"
 				>
 					{getFullUrl(image.resolvedUrl)}
+				</a>
+
+				<a
+					href={getGoogleImageSearchHref(image.resolvedUrl)}
+					class="search-link"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Search Google Images for "{getImageId(image.resolvedUrl)} background image"
 				</a>
 
 				{#if image.rawUrls.length > 1 || image.rawUrls[0] !== image.resolvedUrl}
@@ -292,6 +332,7 @@
 	.status-label,
 	.url-label,
 	.url-value,
+	.search-link,
 	.raw-url,
 	.occurrence-file,
 	.occurrence-type {
@@ -313,6 +354,7 @@
 	}
 
 	.url-value,
+	.search-link,
 	.raw-url {
 		margin: 0;
 		display: block;
@@ -324,8 +366,14 @@
 	}
 
 	.url-value:hover,
+	.search-link:hover,
 	.raw-url:hover {
 		text-decoration: underline;
+	}
+
+	.search-link {
+		margin-top: 0.45rem;
+		color: #8bb6d8;
 	}
 
 	.raw-url-list {
