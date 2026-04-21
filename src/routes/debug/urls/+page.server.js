@@ -3,11 +3,9 @@ import path from "path"
 
 export const prerender = true
 
-const IMAGE_EXTENSIONS = /\.(png|jpe?g|gif|webp|svg)(\?[^\s"'`)]*)?$/i
-const CSS_URL_REGEX =
-	/url\((['"]?)([^)'"\s]+\.(?:png|jpe?g|gif|webp|svg)(?:\?[^)'"\s]*)?)\1\)/gi
-const STRING_URL_REGEX =
-	/(["'`])((?:https?:\/\/|\/|\.{1,2}\/)[^\s"'`)]*\.(?:png|jpe?g|gif|webp|svg)(?:\?[^\s"'`)]*)?)\1/gi
+const EXTERNAL_URL_REGEX = /(["'`])(https?:\/\/[^\s"'`<>{}]+)\1/gi
+const ASSET_EXTENSIONS =
+	/\.(?:png|jpe?g|gif|webp|svg|mp4|webm|mp3|wav|pdf|zip)(?:\?[^\s"'`]*)?$/i
 
 const INCLUDED_EXTENSIONS = new Set([
 	".css",
@@ -72,57 +70,31 @@ function hasTemplateInterpolation(rawUrl) {
 	return rawUrl.includes("${")
 }
 
-function normalizeUrl(rawUrl, filePath, rootDir) {
-	if (
-		!rawUrl ||
-		hasTemplateInterpolation(rawUrl) ||
-		!IMAGE_EXTENSIONS.test(rawUrl)
-	) {
-		return null
+function shouldIncludeUrl(rawUrl) {
+	if (!rawUrl || hasTemplateInterpolation(rawUrl)) {
+		return false
 	}
 
-	if (rawUrl.startsWith("static/")) {
-		return `/${rawUrl.slice("static/".length)}`
+	if (!/^https?:\/\//i.test(rawUrl)) {
+		return false
 	}
 
-	if (/^https?:\/\//i.test(rawUrl) || rawUrl.startsWith("/")) {
-		return rawUrl
+	if (ASSET_EXTENSIONS.test(rawUrl)) {
+		return false
 	}
 
-	if (/^\.{1,2}\//.test(rawUrl)) {
-		const absolutePath = path.resolve(path.dirname(filePath), rawUrl)
-		const staticSegment = `${path.sep}static${path.sep}`
-		const staticIndex = absolutePath.lastIndexOf(staticSegment)
-
-		if (staticIndex !== -1) {
-			return `/${absolutePath
-				.slice(staticIndex + staticSegment.length)
-				.split(path.sep)
-				.join("/")}`
-		}
-	}
-
-	return rawUrl
+	return true
 }
 
-function addMatch(
-	results,
-	rootDir,
-	filePath,
-	content,
-	rawUrl,
-	matchIndex,
-	sourceType,
-) {
-	const resolvedUrl = normalizeUrl(rawUrl, filePath, rootDir)
-	if (!resolvedUrl) return
+function addMatch(results, rootDir, filePath, content, rawUrl, matchIndex) {
+	if (!shouldIncludeUrl(rawUrl)) return
 
 	const relativeFile = path
 		.relative(rootDir, filePath)
 		.split(path.sep)
 		.join("/")
 	const line = getLineNumber(content, matchIndex)
-	const key = `${resolvedUrl}::${relativeFile}::${line}`
+	const key = `${rawUrl}::${relativeFile}::${line}`
 
 	if (results.seen.has(key)) {
 		return
@@ -130,25 +102,25 @@ function addMatch(
 
 	results.seen.add(key)
 
-	if (!results.byUrl.has(resolvedUrl)) {
-		results.byUrl.set(resolvedUrl, {
-			resolvedUrl,
+	if (!results.byUrl.has(rawUrl)) {
+		results.byUrl.set(rawUrl, {
+			url: rawUrl,
 			rawUrls: new Set(),
 			occurrences: [],
 		})
 	}
 
-	const entry = results.byUrl.get(resolvedUrl)
+	const entry = results.byUrl.get(rawUrl)
 	entry.rawUrls.add(rawUrl)
 	entry.occurrences.push({
 		file: relativeFile,
 		line,
-		sourceType,
+		sourceType: "external-url",
 	})
 }
 
-function extractImageUrls(content, filePath, rootDir, results) {
-	for (const match of content.matchAll(CSS_URL_REGEX)) {
+function extractExternalUrls(content, filePath, rootDir, results) {
+	for (const match of content.matchAll(EXTERNAL_URL_REGEX)) {
 		addMatch(
 			results,
 			rootDir,
@@ -156,24 +128,11 @@ function extractImageUrls(content, filePath, rootDir, results) {
 			content,
 			match[2],
 			match.index ?? 0,
-			"css-url",
-		)
-	}
-
-	for (const match of content.matchAll(STRING_URL_REGEX)) {
-		addMatch(
-			results,
-			rootDir,
-			filePath,
-			content,
-			match[2],
-			match.index ?? 0,
-			"string",
 		)
 	}
 }
 
-async function collectImageReferences(rootDir) {
+async function collectExternalUrlReferences(rootDir) {
 	const files = await collectFiles(rootDir, rootDir)
 	const results = {
 		byUrl: new Map(),
@@ -182,12 +141,12 @@ async function collectImageReferences(rootDir) {
 
 	for (const filePath of files) {
 		const content = await fs.readFile(filePath, "utf8")
-		extractImageUrls(content, filePath, rootDir, results)
+		extractExternalUrls(content, filePath, rootDir, results)
 	}
 
 	return Array.from(results.byUrl.values())
 		.map((entry) => ({
-			resolvedUrl: entry.resolvedUrl,
+			url: entry.url,
 			rawUrls: Array.from(entry.rawUrls).sort(),
 			occurrences: entry.occurrences.sort((left, right) => {
 				if (left.file !== right.file) {
@@ -196,18 +155,16 @@ async function collectImageReferences(rootDir) {
 				return left.line - right.line
 			}),
 		}))
-		.sort((left, right) =>
-			left.resolvedUrl.localeCompare(right.resolvedUrl),
-		)
+		.sort((left, right) => left.url.localeCompare(right.url))
 }
 
 export async function load() {
 	const rootDir = process.cwd()
 	const sourceDir = path.join(rootDir, "src")
-	const images = await collectImageReferences(sourceDir)
+	const urls = await collectExternalUrlReferences(sourceDir)
 
 	return {
-		images,
-		imageCount: images.length,
+		urls,
+		urlCount: urls.length,
 	}
 }
