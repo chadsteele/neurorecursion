@@ -8,6 +8,8 @@
 	let Share2Icon = $state(null)
 	let PlayIcon = $state(null)
 
+	const blur = 10
+
 	$effect(() => {
 		import("lucide-svelte").then((module) => {
 			Share2Icon = module.Share2
@@ -34,7 +36,7 @@
 	/>
 {/if}
 
-<Parallax background={pioneer.background_url || ""}>
+<Parallax background={pioneer.background_url || ""} {blur}>
 	<section class="paper container">
 		<div class="pioneer-header">
 			{#if pioneer.img_url}

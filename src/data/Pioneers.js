@@ -8,7 +8,8 @@ const Pioneers = [
 		department: "Laboratory of Brain Evolution and Behavior",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/paul-maclean.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/paul-maclean-background.png",
 		description: `Paul MacLean's triune brain model provides the foundational concept for NeuroRecursion: the limbic system as a hardened, ancient survival mechanism that can be accessed and restructured through neocortical intervention. His mapping of the limbic system revealed how the amygdala, hippocampus, and related structures encode threat-based emotional memories in ways that bypass rational thought—the very neural organization that NeuroRecursion targets.
 
 MacLean's insight that the limbic system is not subordinate to reason but rather a dominant organizing principle illuminates why direct willpower fails to change hardened emotional loops. His work establishes that the limbic system operates according to its own logic, one where fear and survival responses are encoded in persistent neural circuits. NeuroRecursion's approach of bypassing rational suppression and instead flooding the limbic system with high-valence recursive scenarios works precisely because it speaks in the limbic system's native language of comparison, hierarchy, and survival threat.
@@ -159,7 +160,8 @@ Her evidence that neural connections are continuously evaluated and refined base
 		department: "Psychology",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/trevor-robbins.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/trevor-robbins-background.png",
 		description: `Trevor Robbins's research on prefrontal-limbic circuits directly maps NeuroRecursion's architecture: the prefrontal cortex as a narrative architect that can override, reorganize, and integrate limbic survival responses. His work identifying the specific circuits that govern impulse control and emotional regulation reveals the neural substrate through which NeuroRecursion operates.
 
 Robbins's fundamental insight—that dysregulation in prefrontal-limbic communication underlies fear, anxiety, and compulsive behaviors—frames the problem NeuroRecursion solves. His evidence that these circuits can be rebalanced through targeted intervention validates NeuroRecursion's core assumption: by leveraging the prefrontal cortex's narrative architecture to construct and process absurd, high-valence traumatic scenarios, one can restructure the limbic system's threat database and rebalance its relationship to prefrontal governance.
@@ -187,7 +189,8 @@ NeuroRecursion implements Robbins's circuit-level understanding at a metacogniti
 		department: "Synaptic Systems and Plasticity",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/erin-schuman.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/erin-schuman-background.png",
 		description: `Erin Schuman's discovery of molecular machinery for synaptic remodeling reveals the cellular basis for how NeuroRecursion's effects become permanent: memory reconsolidation operates through precisely the molecular mechanisms Schuman studies. During the reconsolidation window—the labile period after memory reactivation—new patterns of neural activity reshape synaptic strength through local protein synthesis.
 
 Schuman's work showing that synaptic strength is dynamically regulated by activity-dependent molecular signals explains the mechanism by which NeuroRecursion's recursive scenarios produce lasting change. As the limbic system processes millions of high-valence comparative scenarios, the activity triggered by these novel threat paradigms recruits local protein synthesis to strengthen new, safety-based synaptic connections while allowing original fear circuits to weaken through disuse.
@@ -242,7 +245,8 @@ However, NeuroRecursion's approach works not by disrupting the limbic system's l
 		department: "Computational Neuroscience",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/yukiyasu-kamitani.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/yukiyasu-kamitani-background.png",
 		description: `Yukiyasu Kamitani's brain decoding research provides tools for monitoring NeuroRecursion's neural mechanism: tracking whether interventions shift the balance of dominance from limbic to prefrontal processing. His ability to decode neural states and internal imagery offers a method for understanding the neural signatures of NeuroRecursion's core transformation: the shift from limbic-driven fear reactivity to prefrontal-integrated narrative processing.
 
 Kamitani's work on the brain's generative capacity—its ability to construct and sustain internal models—is foundational to NeuroRecursion's method. The intervention relies on the prefrontal cortex's unique capacity for imagination and narrative construction: the generation of synthetic, high-valence traumatic scenarios that overwhelm the limbic system's threat database. Kamitani's research validates that this imaginative capacity is not superficial but capable of generating neural states as powerful as real-world threats.
@@ -270,7 +274,8 @@ Kamitani's discoveries that brain activity can be decoded and neural patterns ca
 		department: "Neuroscience",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/aditya-murthy.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/aditya-murthy-background.png",
 		description: `Aditya Murthy's research on motor learning and neural reorganization provides a model for how NeuroRecursion restructures emotional circuits. His work showing that practice and repeated activity reshape neural networks across multiple brain systems—cerebellum, cortex, basal ganglia—demonstrates that intensive, targeted repetition produces measurable circuit reorganization.
 
 Murthy's evidence that motor learning involves dynamic reorganization of entire networks rather than isolated circuits parallels NeuroRecursion's mechanism: the recursive scenarios do not simply suppress fear but reorganize entire fear networks by forcing thousands of iterations of threat comparison and resolution. The repeated, high-valence processing demands of NeuroRecursion mirror motor learning's principle that intensive practice produces neural reorganization.
@@ -299,7 +304,8 @@ Murthy's insight that the nervous system continuously refines performance throug
 		department: "Neural Circuits and Behavior",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/bo-li.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/bo-li-background.png",
 		description: `Bo Li's mapping of fear circuits and the neural basis of threat-driven emotional hierarchies reveals the exact target NeuroRecursion aims to restructure: the specific neural populations that generate automatic fear responses to originally traumatic triggers. His work showing that fear and aggression are not monolithic but rather organized in distinct, modifiable circuits validates NeuroRecursion's assumption that fear can be parsed, weakened, and ultimately neutralized through circuit-level intervention.
 
 Li's insight that emotional responses emerge from definable neural populations demonstrates that fear is not a global, irreversible state but rather an output of specific circuits that process threat comparisons. NeuroRecursion operates at precisely this level: by flooding Li's fear circuits with millions of recursive threat scenarios, it changes the information these circuits process and the comparative judgments they make about threat relevance.
@@ -386,7 +392,8 @@ Wegner's theory explains NeuroRecursion's counter-intuitive methodology: by forc
 		department: "Wellcome Centre for Neuroimaging",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karl-friston.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karl-friston-background.png",
 		description: `NeuroRecursion works using Karl Friston's free-energy principle. His theory that the brain constantly generates threat predictions and updates them when violated by actual experience reveals how NeuroRecursion works subconsciously at the deepest computational level.
 
 Friston's insight that the brain is fundamentally a prediction machine whose goal is minimizing prediction error illuminates the core of NeuroRecursion's mechanism. The hardened limbic loop exists because the brain has encoded a strong threat prediction about a stimulus that, in the person's current reality, no longer represents actual threat. By generating millions of recursive threat scenarios that violate the original threat prediction, NeuroRecursion creates cascading prediction errors so massive that the brain's threat model must be fundamentally updated.
@@ -473,7 +480,8 @@ Hardt's demonstration that specific molecular events can be targeted therapeutic
 		department: "Psychiatry and Neuroscience",
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniela-schiller.png",
-		background_url: "",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniela-schiller-background.png",
 		description: `Daniela Schiller's landmark research provides the clinical proof-of-concept that NeuroRecursion aims to achieve: permanent fear neutralization through reconsolidation-based memory updating. Her demonstration that fear extinction can be rendered permanent—lasting weeks and months—rather than temporary shows that the terminal neutralization event NeuroRecursion targets is scientifically achievable.
 
 Schiller's critical insight is that reconsolidation-based updating produces qualitatively different outcomes from surface extinction: it doesn't leave the original fear memory intact alongside a new non-fear memory, but rather fundamentally modifies the original memory itself. NeuroRecursion operates precisely at this level—not teaching the limbic system that the trigger is safe (which could be forgotten or overcome by stress), but rewriting the original memory so that the trigger is no longer encoded as a threat signal.
@@ -492,26 +500,267 @@ Schiller's evidence that fear prevention is possible by intervening at the recon
 		education: "B.S. Tel Aviv University, Ph.D. Hebrew University",
 		researchFocus: "Memory Reconsolidation and Fear Extinction",
 	},
+	{
+		id: "eric-kandel",
+		name: "Eric Kandel",
+		title: "University Professor, Nobel Laureate",
+		path: "/pioneers/eric-kandel",
+		institution: "Columbia University",
+		department: "Neuroscience",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/eric-kandel.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/eric-kandel-background.png",
+		description: `Eric Kandel's Nobel Prize winning research on the physiological basis of memory storage provides one of the deepest foundations for NeuroRecursion: experience becomes durable when neural activity changes synaptic strength. His work established that memory is not an abstract psychological phenomenon floating above biology, but a physical process embedded in neurons and altered by learning. That insight is indispensable for any attempt to rewrite hardened fear and trauma patterns.
+
+Kandel demonstrated that synaptic plasticity allows experience to be converted into long-term change through identifiable cellular and molecular mechanisms. This matters directly for NeuroRecursion because the intervention assumes that emotionally charged experiences can be re-encoded rather than merely suppressed. If fear memories are stored through modifiable synaptic processes, then the limbic system's threat associations are not fixed destiny; they are biological patterns capable of revision.
+
+Kandel's work also created the modern bridge between molecular memory science and clinical disorders such as PTSD and neurodegeneration. NeuroRecursion sits downstream of that bridge: it depends on the premise that intense, targeted experience can alter the structure of remembered threat. Kandel supplied the canonical proof that memory is stored in living, changing synapses and therefore can, under the right conditions, be fundamentally rewritten.`,
+		researchAreas: [
+			"Memory Storage",
+			"Synaptic Plasticity",
+			"Learning",
+			"Long-Term Memory",
+			"Neural Signaling",
+			"PTSD",
+			"Alzheimer's Disease",
+			"Molecular Neuroscience",
+		],
+		education: "",
+		researchFocus: "Physiological Basis of Memory Storage",
+	},
+	{
+		id: "joseph-ledoux",
+		name: "Joseph LeDoux",
+		title: "Professor of Neural Science",
+		path: "/pioneers/joseph-ledoux",
+		institution: "New York University",
+		department: "Neural Science",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/joseph-ledoux.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/joseph-ledoux-background.png",
+		description: `Joseph LeDoux redefined modern understanding of the amygdala by showing how threat processing and fear conditioning are implemented in specific neural circuits rather than vague emotional abstractions. His work made fear scientifically tractable: something that can be mapped, tested, and altered at the level of circuitry. That makes him one of the most directly relevant pioneers for any model centered on limbic threat loops.
+
+LeDoux's research bridges the limbic system's hardware with the lived clinical realities of anxiety, phobias, and trauma. He demonstrated how sensory information can rapidly trigger defensive responses through amygdala pathways before reflective reasoning fully engages. NeuroRecursion is aimed precisely at this problem: automatic fear predictions that outrun conscious logic and continue firing even when the original danger is gone.
+
+By identifying the neural pathways through which fear is learned and expressed, LeDoux provided a circuit-level map for therapeutic intervention. NeuroRecursion builds on the same premise that fear is not a mystical essence but a trainable output of organized systems. His work validates the idea that if the threat circuits of the amygdala can be taught a trigger no longer predicts danger, the emotional response can be transformed at the source rather than merely managed on the surface.`,
+		researchAreas: [
+			"Amygdala",
+			"Fear Conditioning",
+			"Emotional Processing",
+			"Threat Circuits",
+			"Anxiety",
+			"Phobias",
+			"Trauma",
+			"Defensive Behavior",
+		],
+		education: "",
+		researchFocus: "Amygdala Circuits and Fear Learning",
+	},
+	{
+		id: "michael-merzenich",
+		name: "Michael Merzenich",
+		title: "Professor Emeritus",
+		path: "/pioneers/michael-merzenich",
+		institution: "University of California, San Francisco",
+		department: "Neuroscience",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-merzenich.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-merzenich-background.png",
+		description: `Michael Merzenich is one of the principal pioneers of adult brain plasticity, showing that the mature brain retains the capacity to reorganize itself in response to training, injury, and altered experience. His work directly challenges the old assumption that major rewiring belongs only to childhood. For NeuroRecursion, that is not a side note but a prerequisite: if adult brains cannot change deeply, the whole therapeutic project collapses.
+
+Merzenich demonstrated that neural maps in the adult cortex can be refined and reorganized through intensive, targeted engagement. This principle has shaped neurological rehabilitation, sensory retraining, and treatment approaches for disorders involving maladaptive processing. NeuroRecursion relies on the same underlying logic, though applied to emotional-threat networks rather than primary sensory maps: repeated, strategically structured experience can drive lasting circuit change.
+
+His work is especially important because it grounds plasticity in disciplined neuroscience rather than inspirational metaphor. NeuroRecursion's claim that entrenched fear patterns can be destabilized and replaced becomes far more credible in the context of Merzenich's evidence that the adult nervous system is continuously trainable. He made plasticity a mainstream biological fact, and that fact underwrites any serious attempt to therapeutically rewire the limbic system.`,
+		researchAreas: [
+			"Brain Plasticity",
+			"Adult Neuroplasticity",
+			"Cortical Remapping",
+			"Neurological Rehabilitation",
+			"Sensory Processing",
+			"Learning",
+			"Auditory Processing",
+			"Brain Training",
+		],
+		education: "",
+		researchFocus: "Adult Neuroplasticity and Cortical Reorganization",
+	},
+	{
+		id: "lisa-feldman-barrett",
+		name: "Lisa Feldman Barrett",
+		title: "University Distinguished Professor",
+		path: "/pioneers/lisa-feldman-barrett",
+		institution: "Northeastern University",
+		department: "Psychology",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/lisa-feldman-barrett.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/lisa-feldman-barrett-background.png",
+		description: `Lisa Feldman Barrett's theory of constructed emotion challenges the classical view that the brain contains fixed, fingerprint-like emotional programs waiting to be triggered. Instead, she argues that the brain predicts and constructs emotional experience from past learning, bodily signals, and context. This is highly relevant to NeuroRecursion because it reframes fear and distress as model-based predictions rather than permanent essences embedded in the self.
+
+Barrett's work suggests that the limbic system does not merely emit preset emotions, but participates in predictive processes that assemble meaning from prior experience. That perspective aligns naturally with therapeutic approaches that seek to change emotional life by changing what the brain expects, categorizes, and interprets. NeuroRecursion similarly assumes that if the brain's threat predictions are overwhelmed and revised, the resulting emotional outputs can change dramatically.
+
+Her research broadens the scientific basis for treating affective disorders by showing that emotional suffering may be altered through prediction, categorization, and interoceptive recalibration. NeuroRecursion can be understood as an extreme intervention into that predictive machinery: a method for forcing the brain to generate new inferences about danger, safety, and meaning. Barrett helps make clear why changing past-conditioned interpretation can change lived emotion itself.`,
+		researchAreas: [
+			"Constructed Emotion",
+			"Affective Neuroscience",
+			"Prediction",
+			"Interoception",
+			"Emotion Regulation",
+			"Concept Learning",
+			"Affective Disorders",
+			"Brain-Body Integration",
+		],
+		education: "",
+		researchFocus:
+			"Constructed Emotion and Predictive Affective Neuroscience",
+	},
+	{
+		id: "susumu-tonegawa",
+		name: "Susumu Tonegawa",
+		title: "Professor, Nobel Laureate",
+		path: "/pioneers/susumu-tonegawa",
+		institution: "Massachusetts Institute of Technology",
+		department: "Biology and Neuroscience",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/susumu-tonegawa.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/susumu-tonegawa-background.png",
+		description: `Susumu Tonegawa's neuroscience work on engram cells brought extraordinary precision to the study of memory by identifying physical traces of stored experience in the brain. His research shows that memories are not vague psychological impressions but can be localized, reactivated, and experimentally manipulated within specific neural populations. That level of specificity is profoundly relevant to NeuroRecursion's ambition to alter hardened trauma-related memory structures.
+
+By tracing memory engrams in the hippocampus and related systems, Tonegawa helped establish that recall and emotional valence can be modified through targeted reactivation. This has major implications for retrograde amnesia, dementia, and fear memory research, but it also speaks directly to therapeutic rewriting: if memory traces can be accessed and shifted, the original emotional meaning of an experience is not neurologically untouchable. NeuroRecursion operates on the same assumption at a psychological scale.
+
+Tonegawa's work provides a mechanistic bridge between memory science and intervention. Rather than treating memory as a static archive, his research presents it as a living circuit process subject to updating under the right conditions. That scientific picture strengthens the plausibility of any method, including NeuroRecursion, that seeks to reactivate deeply encoded fear and then transform its downstream significance.`,
+		researchAreas: [
+			"Engram Cells",
+			"Hippocampus",
+			"Memory Manipulation",
+			"Memory Recall",
+			"Fear Memory",
+			"Retrograde Amnesia",
+			"Dementia",
+			"Neural Circuits",
+		],
+		education: "",
+		researchFocus: "Engram Cells and Memory Circuitry",
+	},
+	{
+		id: "michael-meaney",
+		name: "Michael Meaney",
+		title: "Professor",
+		path: "/pioneers/michael-meaney",
+		institution: "McGill University",
+		department: "Psychiatry",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-meaney.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-meaney-background.png",
+		description: `Michael Meaney's research on the epigenetics of stress revealed how early experience can become biologically embedded in the brain. His work showed that maternal care and early-life stress alter gene expression in limbic structures such as the hippocampus, producing lasting differences in stress regulation and vulnerability. This gives NeuroRecursion an important developmental context: threat sensitivity is not only learned psychologically, but sculpted into the body's regulatory architecture.
+
+Meaney demonstrated that the quality of early caregiving changes how the brain and endocrine system respond to future adversity. That insight is crucial for understanding why some individuals become highly vulnerable to depression, anxiety, or trauma-related dysregulation. NeuroRecursion addresses the downstream consequences of that vulnerability by attempting to rewrite the threat patterns the nervous system has encoded, but Meaney helps explain how those patterns were made so durable in the first place.
+
+His work also matters because it breaks the false opposition between biology and life history. Experience changes biology; biology then shapes future experience. NeuroRecursion depends on the same core principle, though applied therapeutically rather than developmentally: sufficiently powerful experience can change the operating logic of the nervous system. Meaney's work validates the idea that emotional suffering can be rooted in plastic, modifiable biological systems rather than fixed defects.`,
+		researchAreas: [
+			"Epigenetics",
+			"Early Life Stress",
+			"Maternal Care",
+			"Hippocampus",
+			"Depression",
+			"Stress Regulation",
+			"Gene Expression",
+			"Developmental Neuroscience",
+		],
+		education: "",
+		researchFocus: "Epigenetics of Stress and Early Experience",
+	},
+	{
+		id: "elizabeth-phelps",
+		name: "Elizabeth Phelps",
+		title: "Pershing Square Professor of Human Evolutionary Biology",
+		path: "/pioneers/elizabeth-phelps",
+		institution: "Harvard University",
+		department: "Human Evolutionary Biology",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps-background.png",
+		description: `Elizabeth Phelps is a leading figure in cognitive neuroscience whose work has clarified how emotion and memory interact in the human brain. She has mapped the relationship between the amygdala and cortical systems in shaping social behavior, valuation, and decision-making. For NeuroRecursion, her importance lies in showing that emotional salience and memory are not separable processes but part of a tightly integrated architecture that determines how people interpret risk and act under uncertainty.
+
+Phelps's research helps translate fear and emotional learning from animal models into human neuroscience. She has shown how human amygdala-cortex interactions guide attention, bias memory, and influence choices in social and uncertain environments. NeuroRecursion depends on exactly this kind of interaction: a top-down narrative system engaging and ultimately re-educating bottom-up emotional predictions.
+
+Her work also supports the idea that changing emotional memory changes future judgment, not just present distress. When the significance of a remembered threat is altered, the person's social behavior and decision-making can shift with it. Phelps therefore provides a human-level bridge between laboratory emotion science and the practical ambition of therapeutic rewiring.`,
+		researchAreas: [
+			"Emotion and Memory",
+			"Amygdala",
+			"Decision-Making",
+			"Social Behavior",
+			"Fear Learning",
+			"Human Neuroscience",
+			"Cortex",
+			"Affective Cognition",
+		],
+		education: "",
+		researchFocus: "Emotion, Memory, and Human Decision-Making",
+	},
+	{
+		id: "takao-hensch",
+		name: "Takao Hensch",
+		title: "Professor of Molecular and Cellular Biology",
+		path: "/pioneers/takao-hensch",
+		institution: "Harvard University",
+		department: "Molecular and Cellular Biology",
+		img_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/takao-hensch.png",
+		background_url:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/takao-hensch-background.png",
+		description: `Takao Hensch is recognized for identifying critical periods in brain development and the biological mechanisms that open and close these windows of heightened plasticity. His work showed that the brain's capacity for rapid reorganization is actively gated by identifiable molecular and circuit conditions. This is directly relevant to NeuroRecursion because the intervention presumes that even apparently closed adult threat loops can be pushed back into a state of malleability.
+
+Hensch's research on restoring plasticity after developmental windows have narrowed has important implications for conditions such as autism and amblyopia, but its significance is broader: it demonstrates that plasticity is not an all-or-nothing childhood event. Instead, it is a regulated state that can potentially be re-engaged. NeuroRecursion's intensive recursive scenarios can be understood within that same ambition: creating the conditions under which entrenched emotional circuitry becomes writable again.
+
+By identifying the biological triggers that regulate sensitive periods, Hensch helped move neuroplasticity from metaphor to mechanism. NeuroRecursion benefits from that shift because it frames limbic rewiring as a problem of reopening change-capacity, not merely adding insight. His work supports the idea that therapeutic transformation may require more than persuasion; it may require re-establishing the neural conditions under which deep updating becomes possible.`,
+		researchAreas: [
+			"Critical Periods",
+			"Brain Development",
+			"Plasticity Windows",
+			"Autism",
+			"Amblyopia",
+			"Circuit Maturation",
+			"Inhibitory Networks",
+			"Developmental Plasticity",
+		],
+		education: "",
+		researchFocus: "Critical Period Biology and Reopened Plasticity",
+	},
 ]
 
 export const sorted = [
-	"daniel-wegner",
+	"eric-kandel",
+	"susumu-tonegawa",
+	"ann-graybiel",
+	"carla-shatz",
 	"karl-friston",
+	"paul-maclean",
+	"joseph-ledoux",
+	"trevor-robbins",
+	"elizabeth-phelps",
+	"takao-hensch",
+	"erin-schuman",
+	"michael-merzenich",
+	"lisa-feldman-barrett",
+	"gul-dolen",
 	"karim-nader",
 	"daniela-schiller",
-	"olivier-hardt",
-	"trevor-robbins",
-	"daniel-goleman",
+	"michael-meaney",
 	"bo-li",
-	"ann-graybiel",
-	"paul-maclean",
-	"carla-shatz",
-	"erin-schuman",
+	"daniel-wegner",
+	"daniel-goleman",
 	"mary-galea",
-	"aditya-murthy",
-	"gul-dolen",
-	"yukiyasu-kamitani",
 	"giacomo-indiveri",
+	"yukiyasu-kamitani",
+	"aditya-murthy",
+	"olivier-hardt",
 ]
 
 export const PioneersMap = Object.fromEntries(
