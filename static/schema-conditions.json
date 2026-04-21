@@ -1067,6 +1067,18 @@
       "name": "Sex Addiction"
     }
   },
+  "sexual-orientation-asexuality-gender-identity-anxiety": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Sexual Orientation, Asexuality & Gender Identity Anxiety - Shame, Concealment & Self-Doubt",
+    "description": "Your nervous system may have learned that authentic identity is dangerous to reveal, question, or even feel. Sexual orientation and gender identity anxiety refers to chronic fear, shame, hypervigilance, concealment, or compulsive self-doubt surrounding one's sexual orientation, romantic orientation, asexuality-spectrum identity, or gender identity. This is not the identity itself being a disorder. The distress arises when a person has been taught that their internal reality is unsafe, unacceptab",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/sexual-orientation/asexuality/gender-identity/anxiety",
+    "identifier": "sexual-orientation-asexuality-gender-identity-anxiety",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Sexual Orientation, Asexuality & Gender Identity Anxiety - Shame, Concealment & Self-Doubt"
+    }
+  },
   "homophobia-transphobia-sexual-orientation-gender-identity-prejudice": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
@@ -1113,6 +1125,30 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "Tribalism, Groupthink & In-Group/Out-Group Bias (Us vs Them Syndrome)"
+    }
+  },
+  "scapegoating-hate-projection-enemy-creation": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Scapegoating, Hate Projection & Enemy Creation",
+    "description": "Your nervous system may have learned to discharge fear, shame, grievance, or powerlessness by locating a target to blame, punish, or cast out. Scapegoating and hate-projection are patterns in which diffuse internal distress or collective anxiety gets concentrated onto a person or group who becomes framed as the cause of decline, humiliation, impurity, or danger. Rather than tolerating uncertainty, grief, status loss, or complexity, the mind creates relief through simplification: if the enemy can",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/scapegoating/hate/projection/enemy-creation",
+    "identifier": "scapegoating-hate-projection-enemy-creation",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Scapegoating, Hate Projection & Enemy Creation"
+    }
+  },
+  "family-scapegoat-identified-patient-blame-displacement": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Family Scapegoat & Identified Patient Pattern - Blame Displacement in Dysfunctional Systems",
+    "description": "Your family system may have organized its anxiety, shame, conflict, or instability around making one person carry what the whole system cannot face. The family scapegoat pattern occurs when one member becomes the designated problem, disappointment, rebel, sick one, difficult child, or \"identified patient\" whose symptoms or behavior are treated as the source of the family's distress. In reality, the scapegoated person is often expressing or absorbing tensions that belong to the entire system. Thi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/family-scapegoat/identified-patient/blame-displacement",
+    "identifier": "family-scapegoat-identified-patient-blame-displacement",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Family Scapegoat & Identified Patient Pattern - Blame Displacement in Dysfunctional Systems"
     }
   },
   "maternal-wound-maternal-attachment-trauma-mother-complex": {
@@ -1725,6 +1761,138 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "General Financial Anxiety & Cynicism"
+    }
+  },
+  "psoriasis-stress-reactive-neuroimmune-flare": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Psoriasis - Stress-Reactive Neuroimmune Skin Flares",
+    "description": "Your skin may be expressing a nervous system that has learned to stay inflamed. Psoriasis is a chronic inflammatory skin condition involving red, scaly, painful, or itchy plaques that can flare unpredictably and create profound self-consciousness because the illness is visible to the outside world. While psoriasis has an immune and genetic basis, many individuals experience unmistakable worsening during periods of acute stress, shame, social conflict, sleep disruption, or chronic threat-state ac",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/psoriasis/stress/skin/flare",
+    "identifier": "psoriasis-stress-reactive-neuroimmune-flare",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Psoriasis - Stress-Reactive Neuroimmune Skin Flares"
+    }
+  },
+  "restless-legs-syndrome-sleep-urge-movement": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Restless Legs Syndrome - Urge to Move, Night-Time Agitation & Sleep Disruption",
+    "description": "Your nervous system may be turning stillness into alarm. Restless Legs Syndrome (RLS) is characterized by an uncomfortable urge to move the legs, usually worsening during rest and in the evening, often described as crawling, buzzing, pulling, or electrical discomfort deep in the limbs. Many individuals with RLS experience anticipatory dread about bedtime, fragmented sleep, daytime fatigue, and escalating anxiety because quiet rest reliably becomes the moment symptoms intensify.\n\nThe neurobiologi",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/restless-legs/sleep/urge/movement",
+    "identifier": "restless-legs-syndrome-sleep-urge-movement",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Restless Legs Syndrome - Urge to Move, Night-Time Agitation & Sleep Disruption"
+    }
+  },
+  "parkinsons-disease-freezing-gait-anxiety": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Parkinson's Disease - Freezing of Gait, Performance Fear & Movement Shutdown",
+    "description": "Your movement system may already be under strain, and anxiety can make it seize even harder. Parkinson's disease is a neurodegenerative movement disorder involving tremor, rigidity, slowed movement, gait disturbance, and progressive difficulty with automatic motor control. Many people with Parkinson's also experience freezing of gait, hesitation in doorways or crowded spaces, and abrupt motor shutdown that becomes dramatically worse under pressure, observation, startle, or fear of falling.\n\nThe ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/parkinsons/freezing-gait/anxiety/movement",
+    "identifier": "parkinsons-disease-freezing-gait-anxiety",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Parkinson's Disease - Freezing of Gait, Performance Fear & Movement Shutdown"
+    }
+  },
+  "hyperhidrosis-emotional-sweating-social-fear": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Hyperhidrosis - Emotional Sweating, Social Fear & Sympathetic Overdrive",
+    "description": "Your sympathetic nervous system may be treating ordinary social exposure like an emergency. Hyperhidrosis involves excessive sweating beyond what temperature or exertion alone would explain, commonly affecting the palms, feet, underarms, or face. For many individuals, the most disabling part is not the sweat itself but the dread of being seen sweating, shaking hands, staining clothing, or being judged as anxious, unclean, or weak.\n\nThe neurobiological mechanism involves overactivation of sympath",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/hyperhidrosis/emotional-sweating/social-fear",
+    "identifier": "hyperhidrosis-emotional-sweating-social-fear",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Hyperhidrosis - Emotional Sweating, Social Fear & Sympathetic Overdrive"
+    }
+  },
+  "vaginismus-pelvic-floor-fear-spasm": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Vaginismus - Pelvic Floor Guarding, Penetration Fear & Involuntary Spasm",
+    "description": "Your pelvic floor may be acting like a defense perimeter. Vaginismus involves involuntary tightening of the pelvic floor and vaginal entrance in anticipation of penetration or intimate contact, often making sex, tampon use, gynecologic exams, or even the thought of penetration painful, impossible, or deeply distressing. The condition is not a failure of desire or character. It is a real protective reflex encoded into the body, often intensified by shame, prior pain, fear, trauma, or repeated ant",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/vaginismus/pelvic-floor/fear/spasm",
+    "identifier": "vaginismus-pelvic-floor-fear-spasm",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Vaginismus - Pelvic Floor Guarding, Penetration Fear & Involuntary Spasm"
+    }
+  },
+  "neurocardiogenic-syncope-vasovagal-fainting": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Neurocardiogenic Syncope - Vasovagal Fainting, Startle Collapse & Fear-Based Blood Pressure Drop",
+    "description": "Your nervous system may be triggering a shutdown response when threat or overwhelm spikes too suddenly. Neurocardiogenic syncope, often overlapping with vasovagal fainting patterns, is the most common cause of fainting and involves abrupt drops in blood pressure and heart rate leading to dizziness, tunneling vision, nausea, heat, weakness, and loss of consciousness. Episodes are often triggered by fear, pain, needles, medical situations, prolonged standing, or emotional shock, leaving the person",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/neurocardiogenic-syncope/vasovagal/fainting/startle",
+    "identifier": "neurocardiogenic-syncope-vasovagal-fainting",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Neurocardiogenic Syncope - Vasovagal Fainting, Startle Collapse & Fear-Based Blood Pressure Drop"
+    }
+  },
+  "narcolepsy-type-1-cataplexy-sleep-attacks": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Narcolepsy Type 1 - Cataplexy, Sleep Attacks & Emotion-Triggered Shutdown",
+    "description": "Your sleep-wake boundary may be collapsing when the nervous system is hit by emotional intensity. Narcolepsy Type 1 is a neurologic sleep disorder characterized by overwhelming daytime sleepiness, sudden sleep attacks, fragmented night sleep, dream intrusion phenomena, and cataplexy, where strong emotions such as laughter, surprise, or fear trigger abrupt loss of muscle tone. Because the symptoms are dramatic and unpredictable, many individuals begin to fear emotion itself, public settings, or a",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/narcolepsy/cataplexy/sleep-attacks/type-1",
+    "identifier": "narcolepsy-type-1-cataplexy-sleep-attacks",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Narcolepsy Type 1 - Cataplexy, Sleep Attacks & Emotion-Triggered Shutdown"
+    }
+  },
+  "stiff-person-syndrome-startle-spasm": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Stiff Person Syndrome - Startle-Induced Rigidity, Spasm & Emotional Trigger Locking",
+    "description": "Your body may be treating sound, surprise, or emotion like a signal to lock down. Stiff Person Syndrome is a rare neurologic disorder involving progressive rigidity, painful muscle spasms, exaggerated startle, and severe sensitivity to sudden stimuli or emotional upset. Because attacks can be dramatic and disabling, the person often begins living in a state of constant anticipatory guarding, scanning for noises, interruptions, or emotional spikes that could trigger full-body spasm.\n\nThe neurobio",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/stiff-person-syndrome/startle/spasm/rigidity",
+    "identifier": "stiff-person-syndrome-startle-spasm",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Stiff Person Syndrome - Startle-Induced Rigidity, Spasm & Emotional Trigger Locking"
+    }
+  },
+  "anorgasmia-orgasmic-disorder-desire-arousal-block": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Anorgasmia - Orgasmic Disorder, Delay and Inability to Reach Sexual Release",
+    "description": "Your nervous system may be allowing sexual activation but refusing the final surrender into climax. Anorgasmia is a persistent or recurrent delay in, marked difficulty with, or absence of orgasm despite adequate desire, stimulation, and effort. It may be lifelong or acquired, generalized or situational, and often creates shame, frustration, relationship strain, and self-monitoring that further interferes with sexual responsiveness.\n\nThe neurobiological mechanism involves excessive cortical contr",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/anorgasmia/orgasmic-disorder/arousal/block",
+    "identifier": "anorgasmia-orgasmic-disorder-desire-arousal-block",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Anorgasmia - Orgasmic Disorder, Delay and Inability to Reach Sexual Release"
+    }
+  },
+  "persistent-genital-arousal-disorder-pgad": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Persistent Genital Arousal Disorder (PGAD) - Intrusive Unwanted Arousal & Pelvic Distress",
+    "description": "Your body may be generating sexual arousal signals that you did not choose and do not want. Persistent Genital Arousal Disorder (PGAD) involves recurrent or continuous genital arousal sensations, pressure, tingling, throbbing, or near-orgasmic urgency occurring without corresponding sexual desire. The condition is often profoundly distressing because the body appears sexually activated while the person feels invaded, frightened, exhausted, or desperate for the sensations to stop.\n\nThe neurobiolo",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/pgad/persistent-genital-arousal/unwanted-arousal",
+    "identifier": "persistent-genital-arousal-disorder-pgad",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Persistent Genital Arousal Disorder (PGAD) - Intrusive Unwanted Arousal & Pelvic Distress"
+    }
+  },
+  "hypoactive-sexual-desire-disorder-hsdd": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Hypoactive Sexual Desire Disorder (HSDD) - Low Libido, Desire Loss & Intimacy Flatlining",
+    "description": "Your nervous system may have stopped treating sexuality as rewarding, safe, or relevant. Hypoactive Sexual Desire Disorder (HSDD) involves persistent lack of sexual desire, fantasies, or interest in sexual activity that causes distress. It often appears in long-term relationships as sexual desire discrepancy, where the absence of drive creates confusion, rejection, resentment, or fear that love itself has disappeared. The issue is not moral failure. It is a loss of motivational access to erotic ",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/hsdd/low-libido/desire-loss/sexual-interest",
+    "identifier": "hypoactive-sexual-desire-disorder-hsdd",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Hypoactive Sexual Desire Disorder (HSDD) - Low Libido, Desire Loss & Intimacy Flatlining"
     }
   }
 }

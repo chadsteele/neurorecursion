@@ -105,7 +105,7 @@
 					class="category-conditions"
 					transition:slide={{duration: 300}}
 				>
-					<a href={`#${category.ids[0]}`} class="read-more">
+					<a href={category.path} class="read-more">
 						{#if SearchIcon}
 							<SearchIcon size={16} strokeWidth={2} />
 						{/if}

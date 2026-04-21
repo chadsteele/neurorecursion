@@ -21,12 +21,17 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/anxiety/panic/phobias</loc>
+    <loc>https://neurorecursion.com/anxiety/panic/social-threat</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/mood/self</loc>
+    <loc>https://neurorecursion.com/phobias/fear/existential</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/mood/identity/body-image</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -56,17 +61,32 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/neurodevelopmental/learning</loc>
+    <loc>https://neurorecursion.com/neurodevelopmental/communication</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/careers/workplace</loc>
+    <loc>https://neurorecursion.com/neurology/movement</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/sleep/somatic/functional</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/careers/performance/prosperity</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://neurorecursion.com/trauma/personality</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/identity/culture/prejudice</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -521,6 +541,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/sexual-orientation/asexuality/gender-identity/anxiety</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
@@ -537,6 +562,16 @@
   </url>
   <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/tribalism/groupthink/ingroup-outgroup-bias</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/scapegoating/hate/projection/enemy-creation</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/family-scapegoat/identified-patient/blame-displacement</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -792,6 +827,61 @@
   </url>
   <url>
     <loc>https://neurorecursion.com/remote-clinical-trial/free/financial-anxiety/money-worry/cynicism</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/psoriasis/stress/skin/flare</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/restless-legs/sleep/urge/movement</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/parkinsons/freezing-gait/anxiety/movement</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/hyperhidrosis/emotional-sweating/social-fear</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/vaginismus/pelvic-floor/fear/spasm</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/neurocardiogenic-syncope/vasovagal/fainting/startle</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/narcolepsy/cataplexy/sleep-attacks/type-1</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/stiff-person-syndrome/startle/spasm/rigidity</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/anorgasmia/orgasmic-disorder/arousal/block</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/pgad/persistent-genital-arousal/unwanted-arousal</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/remote-clinical-trial/free/hsdd/low-libido/desire-loss/sexual-interest</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>

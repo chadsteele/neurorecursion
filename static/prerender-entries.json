@@ -906,16 +906,22 @@
     "query": "sex-addiction"
   },
   {
-    "query": "remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity"
-  },
-  {
-    "query": "homophobia"
+    "query": "remote-clinical-trial/free/sexual-orientation/asexuality/gender-identity/anxiety"
   },
   {
     "query": "sexual-orientation"
   },
   {
+    "query": "asexuality"
+  },
+  {
     "query": "gender-identity"
+  },
+  {
+    "query": "remote-clinical-trial/free/homophobia/sexual-orientation/gender-identity"
+  },
+  {
+    "query": "homophobia"
   },
   {
     "query": "remote-clinical-trial/free/racism/xenophobia/ethnic-prejudice"
@@ -952,6 +958,33 @@
   },
   {
     "query": "ingroup-outgroup-bias"
+  },
+  {
+    "query": "remote-clinical-trial/free/scapegoating/hate/projection/enemy-creation"
+  },
+  {
+    "query": "scapegoating"
+  },
+  {
+    "query": "hate"
+  },
+  {
+    "query": "projection"
+  },
+  {
+    "query": "enemy-creation"
+  },
+  {
+    "query": "remote-clinical-trial/free/family-scapegoat/identified-patient/blame-displacement"
+  },
+  {
+    "query": "family-scapegoat"
+  },
+  {
+    "query": "identified-patient"
+  },
+  {
+    "query": "blame-displacement"
   },
   {
     "query": "remote-clinical-trial/free/maternal-wound/mother-complex/maternal-attachment"
@@ -1525,6 +1558,147 @@
   },
   {
     "query": "cynicism"
+  },
+  {
+    "query": "remote-clinical-trial/free/psoriasis/stress/skin/flare"
+  },
+  {
+    "query": "psoriasis"
+  },
+  {
+    "query": "stress"
+  },
+  {
+    "query": "skin"
+  },
+  {
+    "query": "flare"
+  },
+  {
+    "query": "remote-clinical-trial/free/restless-legs/sleep/urge/movement"
+  },
+  {
+    "query": "restless-legs"
+  },
+  {
+    "query": "urge"
+  },
+  {
+    "query": "movement"
+  },
+  {
+    "query": "remote-clinical-trial/free/parkinsons/freezing-gait/anxiety/movement"
+  },
+  {
+    "query": "parkinsons"
+  },
+  {
+    "query": "freezing-gait"
+  },
+  {
+    "query": "remote-clinical-trial/free/hyperhidrosis/emotional-sweating/social-fear"
+  },
+  {
+    "query": "hyperhidrosis"
+  },
+  {
+    "query": "emotional-sweating"
+  },
+  {
+    "query": "social-fear"
+  },
+  {
+    "query": "remote-clinical-trial/free/vaginismus/pelvic-floor/fear/spasm"
+  },
+  {
+    "query": "vaginismus"
+  },
+  {
+    "query": "pelvic-floor"
+  },
+  {
+    "query": "spasm"
+  },
+  {
+    "query": "remote-clinical-trial/free/neurocardiogenic-syncope/vasovagal/fainting/startle"
+  },
+  {
+    "query": "neurocardiogenic-syncope"
+  },
+  {
+    "query": "vasovagal"
+  },
+  {
+    "query": "fainting"
+  },
+  {
+    "query": "startle"
+  },
+  {
+    "query": "remote-clinical-trial/free/narcolepsy/cataplexy/sleep-attacks/type-1"
+  },
+  {
+    "query": "narcolepsy"
+  },
+  {
+    "query": "cataplexy"
+  },
+  {
+    "query": "sleep-attacks"
+  },
+  {
+    "query": "type-1"
+  },
+  {
+    "query": "remote-clinical-trial/free/stiff-person-syndrome/startle/spasm/rigidity"
+  },
+  {
+    "query": "stiff-person-syndrome"
+  },
+  {
+    "query": "rigidity"
+  },
+  {
+    "query": "remote-clinical-trial/free/anorgasmia/orgasmic-disorder/arousal/block"
+  },
+  {
+    "query": "anorgasmia"
+  },
+  {
+    "query": "orgasmic-disorder"
+  },
+  {
+    "query": "arousal"
+  },
+  {
+    "query": "block"
+  },
+  {
+    "query": "remote-clinical-trial/free/pgad/persistent-genital-arousal/unwanted-arousal"
+  },
+  {
+    "query": "pgad"
+  },
+  {
+    "query": "persistent-genital-arousal"
+  },
+  {
+    "query": "unwanted-arousal"
+  },
+  {
+    "query": "remote-clinical-trial/free/hsdd/low-libido/desire-loss/sexual-interest"
+  },
+  {
+    "query": "hsdd"
+  },
+  {
+    "query": "low-libido"
+  },
+  {
+    "query": "desire-loss"
+  },
+  {
+    "query": "sexual-interest"
   },
   {
     "query": "pioneers/paul-maclean"

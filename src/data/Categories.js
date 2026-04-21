@@ -1,14 +1,20 @@
 export const Categories = [
 	{
-		category_name: "Anxiety, Panic & Phobias",
-		path: "/anxiety/panic/phobias",
+		category_name: "Anxiety, Panic & Social Threat",
+		path: "/anxiety/panic/social-threat",
 		ids: [
 			"generalized-anxiety-disorder",
 			"social-media-anxiety-disorder",
 			"health-anxiety-hypochondriasis",
 			"agoraphobia-social-phobia",
 			"panic-disorder-agoraphobia-fear",
-
+			"hyperhidrosis-emotional-sweating-social-fear",
+		],
+	},
+	{
+		category_name: "Specific Phobias & Existential Fear",
+		path: "/phobias/fear/existential",
+		ids: [
 			"general-fears-phobias",
 			"cynophobia-fear-dogs",
 			"astraphobia-fear-storms",
@@ -21,30 +27,27 @@ export const Categories = [
 			"aerophobia-fear-flying",
 			"chronophobia-fear-time-future",
 			"chrometophobia-fear-money",
-
-			"moral-injury-values-violation",
-			"stage-fright-performance-anxiety-live-audience",
-			"hyperhidrosis-emotional-sweating-social-fear",
 		],
 	},
 	{
-		category_name: "Mood & Perception Disorders",
-		path: "/mood/self",
+		category_name: "Mood, Identity & Body Image",
+		path: "/mood/identity/body-image",
 		ids: [
 			"general-mood-disorders",
+			"depressed-suicidal-major-depressive-disorder",
 			"major-depressive-disorder-sloth",
 			"bpd-bipolar-disorder",
 			"seasonal-affective-disorder-sad",
 			"perinatal-depression-paternal-postpartum-depression",
 			"menopausal-depression",
 			"geriatric-depression-aging-loss",
-
-			"general-performance-issues",
 			"self-esteem-identity-issues",
+			"imposter-syndrome",
 			"affluenza-wealth-integration-identity-loss",
+			"body-dysmorphia",
+			"eating-disorders-anorexia-bulimia-binge",
 		],
 	},
-
 	{
 		category_name: "Addictions & Compulsive Behaviors",
 		path: "/addictions/compulsive",
@@ -77,21 +80,17 @@ export const Categories = [
 			"stockholm-syndrome-trauma-bonding",
 			"loneliness-social-disconnection",
 			"maternal-wound-maternal-attachment-trauma-mother-complex",
-			"misogyny-gender-based-violence-fear-of-women",
 			"paternal-wound-paternal-attachment-trauma-father-complex",
 			"rescuer-syndrome-caretaker-compulsion",
-			"homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
-			"sexual-orientation-asexuality-gender-identity-anxiety",
 			"financial-infidelity-hidden-transactions",
 		],
 	},
 	{
-		category_name: "Sexual Addictions, Phobias & Dysfunctions",
+		category_name: "Sexual Health & Dysfunction",
 		path: "/sexual-health/dysfunction",
 		ids: [
 			"porn-addiction-sexual-compulsivity",
 			"sex-addiction",
-
 			"sexual-dysfunction-performance-anxiety-impotence",
 			"anorgasmia-orgasmic-disorder-desire-arousal-block",
 			"persistent-genital-arousal-disorder-pgad",
@@ -99,23 +98,14 @@ export const Categories = [
 			"vaginismus-pelvic-floor-fear-spasm",
 			"fear-of-intimacy-commitment-fear",
 			"sexual-dysfunction-intimacy-avoidance",
-			"body-dysmorphia",
-			"performance-anxiety-evaluation-fear",
-
-			"depressed-suicidal-major-depressive-disorder",
-			"cult-recovery-religious-trauma-damnation-fear",
-			"imposter-syndrome",
-			"eating-disorders-anorexia-bulimia-binge",
 		],
 	},
-
 	{
 		category_name: "Family, Parenting, Grief & Aging",
 		path: "/relationships/family",
 		ids: [
 			"general-attachment-issues",
 			"adolescent-abandonment-trauma-hypervigilance",
-
 			"divorce-relational-trauma-family-systems-stress",
 			"adult-children-of-alcoholics-family-trauma",
 			"family-scapegoat-identified-patient-blame-displacement",
@@ -124,16 +114,14 @@ export const Categories = [
 			"stepfamily-blended-family-adjustment-family-integration-stress",
 			"teen-foster-family-integration-reactive-attachment",
 			"teen-runaway-elopement",
-
 			"empty-nest-syndrome-marital-disconnection",
-
 			"complicated-grief-disorder-loss",
 			"identity-loss-aging-life-stage",
 			"anticipatory-grief-facing-loss",
 		],
 	},
 	{
-		category_name: "Adolescent  & Identity",
+		category_name: "Adolescent & Identity",
 		path: "/adolescent/development",
 		ids: [
 			"teen-suicidal-ideation-self-harm",
@@ -143,16 +131,14 @@ export const Categories = [
 			"adolescent-risk-impulsivity-executive-dysfunction",
 			"adolescent-sexual-identity-exploration-social-dysphoria",
 			"adolescent-social-mimicry-identity-diffusion",
-
 			"teen-emo-subculture-emotional-expression",
 			"teen-crisis-survival-behaviors",
 			"teen-gang-involvement-tribalism",
 		],
 	},
-
 	{
-		category_name: "Neurological Health",
-		path: "/neurodevelopmental/learning",
+		category_name: "Neurodevelopmental & Communication",
+		path: "/neurodevelopmental/communication",
 		ids: [
 			"general-neurodevelopmental-issues",
 			"adhd-attention-deficit-hyperactivity-disorder",
@@ -161,28 +147,38 @@ export const Categories = [
 			"spd-sensory-processing-disorder",
 			"dyslexia-reading-disorder",
 			"dyscalculia",
-
 			"general-communication-issues",
 			"aphasia-language-disorder",
 			"stuttering-childhood-onset-fluency-disorder",
 			"selective-mutism",
 			"dysgraphia",
-
+		],
+	},
+	{
+		category_name: "Neurological & Movement Disorders",
+		path: "/neurology/movement",
+		ids: [
 			"general-neurological-issues",
 			"migraines",
 			"chronic-inner-ear-vertigo-tinnitus",
-			"chronic-pain-psychosomatic",
 			"epilepsy-seizure-disorders",
 			"tics-tourette-syndrome-tic-disorders",
 			"functional-neurological-symptom-disorder-motor-sensory",
 			"psychogenic-movement-disorders-stress-tics-facial-guarding-functional-facial-symptoms",
+			"parkinsons-disease-freezing-gait-anxiety",
+			"neurocardiogenic-syncope-vasovagal-fainting",
+			"stiff-person-syndrome-startle-spasm",
+		],
+	},
+	{
+		category_name: "Sleep, Somatic & Functional Disorders",
+		path: "/sleep/somatic/functional",
+		ids: [
+			"chronic-pain-psychosomatic",
 			"tmj-bruxism-lockjaw-jaw-clenching-temporomandibular-dysfunction",
 			"insomnia-sleep-hyperarousal",
 			"restless-legs-syndrome-sleep-urge-movement",
-			"parkinsons-disease-freezing-gait-anxiety",
-			"neurocardiogenic-syncope-vasovagal-fainting",
 			"narcolepsy-type-1-cataplexy-sleep-attacks",
-			"stiff-person-syndrome-startle-spasm",
 			"factitious-disorder-munchausen",
 			"anxiety-somatization-physical-symptoms-health-anxiety",
 			"psoriasis-stress-reactive-neuroimmune-flare",
@@ -190,25 +186,25 @@ export const Categories = [
 		],
 	},
 	{
-		category_name: "Career, Future & Prosperity",
-		path: "/careers/workplace",
+		category_name: "Career, Performance & Prosperity",
+		path: "/careers/performance/prosperity",
 		ids: [
 			"burnout-exhaustion-depersonalization",
 			"perfectionism",
 			"test-anxiety",
 			"glossophobia-fear-public-speaking",
+			"performance-anxiety-evaluation-fear",
+			"stage-fright-performance-anxiety-live-audience",
+			"general-performance-issues",
 			"chronic-procrastination-failure-to-launch-incompletions",
 			"ai-anxiety-technophobia-fear-ai",
-
 			"general-financial-anxiety-cynicism",
 			"scarcity-mindset-resource-poverty",
 			"money-dysmorphia-financial-distortion",
 			"money-scripts-unconscious-beliefs",
-
 			"screen-addiction",
 		],
 	},
-
 	{
 		category_name: "Trauma, Crisis & Personality Pathology",
 		path: "/trauma/personality",
@@ -216,15 +212,28 @@ export const Categories = [
 			"rape-sexual-assault",
 			"ptsd-post-traumatic-stress-disorder",
 			"developmental-trauma-childhood-trauma",
+			"cult-recovery-religious-trauma-damnation-fear",
 			"financial-flashpoint-trauma",
+			"moral-injury-values-violation",
 			"trauma-drama-etc",
-
 			"narcissistic-personality-disorder-pride",
 			"antisocial-personality-disorder-deception",
 			"pathological-lying-factitious-identity",
 			"histrionic-personality-disorder-attention-seeking",
 			"avoidant-personality-disorder-cowardice",
 			"borderline-personality-disorder-envy",
+		],
+	},
+	{
+		category_name: "Identity, Culture & Prejudice",
+		path: "/identity/culture/prejudice",
+		ids: [
+			"sexual-orientation-asexuality-gender-identity-anxiety",
+			"homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
+			"racism-xenophobia-ethnic-racial-prejudice",
+			"misogyny-gender-based-violence-fear-of-women",
+			"scapegoating-hate-projection-enemy-creation",
+			"tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
 		],
 	},
 	{
@@ -238,9 +247,6 @@ export const Categories = [
 			"paranoia-scelerephobia-fear-strangers-criminals",
 			"persecutor-role-aggressive-control",
 			"teen-bullying-aggressive-defense",
-			"racism-xenophobia-ethnic-racial-prejudice",
-			"scapegoating-hate-projection-enemy-creation",
-			"tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
 		],
 	},
 ]
