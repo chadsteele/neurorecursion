@@ -14,8 +14,8 @@
 
 		A single traumatic moment that takes a fraction of a second can create
 		limbic loops that can terrorize you for a lifetime. This employs the
-		same neuroplasticity, but without the trauma, and it works in reverse.
-		As powerfully as trauma can cause a lifetime of fear, this process can
+		same neuroplasticity, but without the trauma and it works in reverse. As
+		powerfully as trauma can cause a lifetime of fear, this process can
 		cause a lifetime of freedom from that fear.
 
 		<p>
