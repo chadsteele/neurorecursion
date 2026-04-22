@@ -51,16 +51,22 @@
 					<a href="#math" class="primary-link">$25k example</a>
 					<a href="#math" class="primary-link">$60k example</a>
 				</div>
-				<p>
+				<div>
 					NeuroRecursion offers a flat 10% commission on referred
 					purchases, tracked end to end, with revenue scenarios below
 					so you can evaluate the opportunity without hype.
-				</p>
+				</div>
+			</div>
+			<div class="teaser-visual">
+				<img
+					src="/money-man.png"
+					alt="Money-themed illustration"
+					class="teaser-money-image"
+				/>
 			</div>
 		</div>
 		<div class="hero-panel">
 			<div class="hero-copy">
-				<div class="eyebrow">You're already an affiliate</div>
 				<h1>
 					Your recovery story is worth something. <br />To you and to
 					others.
@@ -651,8 +657,21 @@
 	}
 
 	.teaser-shell {
+		--accent-500: #2ea96f;
+		--accent-600: #218255;
+		--accent-700: #186645;
+		--accent-bright: #78efad;
+		--accent-soft: #b1ffd3;
+		--accent-pale: #d5f7e1;
+		--accent-muted: #9bd8b5;
+		--accent-muted-alt: #8fcca9;
+		--accent-rgb: 46 169 111;
+		--accent-bright-rgb: 120 239 173;
+		--accent-soft-rgb: 177 255 211;
 		display: grid;
+		grid-template-columns: minmax(0, 1.25fr) minmax(180px, 280px);
 		gap: 1.25rem;
+		align-items: center;
 	}
 
 	.teaser-copy {
@@ -663,12 +682,13 @@
 
 	.teaser-copy h2 {
 		margin: 0;
+		color: var(--accent-bright);
 		/* max-width: 26ch; */
 	}
 
 	.teaser-copy p {
 		margin: 0;
-		color: #dce8f2;
+		color: var(--accent-pale);
 	}
 
 	.teaser-links {
@@ -683,6 +703,22 @@
 		font-size: 0.9rem;
 		font-weight: 700;
 		min-width: 140px;
+		border: 1px solid rgb(var(--accent-soft-rgb) / 0.28);
+		box-shadow: 0 12px 28px rgb(var(--accent-rgb) / 0.18);
+	}
+
+	.teaser-visual {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.teaser-money-image {
+		display: block;
+		width: min(100%, 240px);
+		height: auto;
+		object-fit: contain;
+		filter: drop-shadow(0 18px 30px rgb(var(--accent-rgb) / 0.22));
 	}
 
 	.prerequisite-content {
@@ -1078,8 +1114,20 @@
 	}
 
 	@media (max-width: 768px) {
+		.teaser-shell {
+			grid-template-columns: 1fr;
+		}
+
 		.teaser-links {
 			justify-content: center;
+		}
+
+		.teaser-visual {
+			justify-content: center;
+		}
+
+		.teaser-money-image {
+			width: min(100%, 165px);
 		}
 
 		h1 {
