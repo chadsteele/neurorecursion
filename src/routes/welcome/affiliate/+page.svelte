@@ -656,6 +656,21 @@
 		max-width: 60ch;
 	}
 
+	.affiliate-page .primary-link {
+		background: linear-gradient(135deg, #2ea96f, #78efad);
+		color: #07111d;
+		padding: 0.55rem 0.95rem;
+		font-size: 0.9rem;
+		font-weight: 700;
+		min-width: 140px;
+		border: 1px solid rgb(177 255 211 / 0.28);
+		box-shadow: 0 12px 28px rgb(46 169 111 / 0.18);
+	}
+
+	.affiliate-page .primary-link:hover {
+		box-shadow: 0 12px 28px rgb(46 169 111 / 0.22);
+	}
+
 	.teaser-shell {
 		--accent-500: #2ea96f;
 		--accent-600: #218255;
@@ -686,7 +701,7 @@
 		/* max-width: 26ch; */
 	}
 
-	.teaser-copy p {
+	.teaser-copy > :global(div:last-child) {
 		margin: 0;
 		color: var(--accent-pale);
 	}
@@ -699,11 +714,7 @@
 	}
 
 	.teaser-links .primary-link {
-		padding: 0.55rem 0.95rem;
-		font-size: 0.9rem;
-		font-weight: 700;
-		min-width: 140px;
-		border: 1px solid rgb(var(--accent-soft-rgb) / 0.28);
+		border-color: rgb(var(--accent-soft-rgb) / 0.28);
 		box-shadow: 0 12px 28px rgb(var(--accent-rgb) / 0.18);
 	}
 
