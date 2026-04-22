@@ -86,7 +86,7 @@
 				</p>
 				<div class="hero-actions">
 					<a
-						href="https://neurorecursion.lemonsqueezy.com/checkout/buy/8e27e9f9-f15b-4c3e-800a-c67aed17dce6"
+						href="https://neurorecursion.lemonsqueezy.com/affiliates"
 						target="_blank"
 						rel="noopener"
 						class="primary-link"
@@ -601,7 +601,7 @@
 			</div>
 			<div class="closing-actions">
 				<a
-					href="https://neurorecursion.lemonsqueezy.com/checkout/buy/8e27e9f9-f15b-4c3e-800a-c67aed17dce6"
+					href="https://neurorecursion.lemonsqueezy.com/affiliates"
 					target="_blank"
 					rel="noopener"
 					class="primary-link"

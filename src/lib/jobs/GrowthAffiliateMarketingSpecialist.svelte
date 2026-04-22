@@ -97,8 +97,8 @@
 	Once you have earned $10,000 in commissions, we can discuss expanding the
 	relationship into a full-time or part-time hourly role with a base salary
 	plus commission, if that is the direction you want. In other words: start by
-	proving demand, start by getting paid, and if the fit is strong, we can
-	build something more permanent together.
+	proving demand, start by getting paid, and if the fit is strong, you'll
+	qualify for permanent employment.
 </p>
 
 <DiversityStatement
