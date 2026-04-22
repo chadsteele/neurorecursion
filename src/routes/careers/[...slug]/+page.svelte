@@ -121,6 +121,25 @@
 		border: 1px solid rgb(var(--accent-rgb) / 0.2);
 	}
 
+	.job-content :global(a) {
+		color: var(--accent-soft);
+		text-decoration: none;
+		border-bottom: 1px solid rgb(var(--accent-soft-rgb) / 0.28);
+		box-shadow: inset 0 -1px 0 rgb(var(--accent-soft-rgb) / 0.12);
+		transition:
+			color 0.25s ease,
+			border-color 0.25s ease,
+			box-shadow 0.25s ease,
+			background-color 0.25s ease;
+	}
+
+	.job-content :global(a:hover) {
+		color: #f3fbff;
+		border-bottom-color: rgb(var(--accent-bright-rgb) / 0.5);
+		box-shadow: inset 0 -1px 0 rgb(var(--accent-bright-rgb) / 0.22);
+		background: rgb(var(--accent-rgb) / 0.08);
+	}
+
 	.error-message {
 		color: #ff6b6b;
 		font-size: 1.1rem;
@@ -160,6 +179,12 @@
 		gap: 0.5rem;
 		color: var(--accent-500);
 		text-decoration: none;
+		border-bottom: none;
+		box-shadow: none;
+		background: rgb(var(--accent-rgb) / 0.08);
+		border: 1px solid rgb(var(--accent-rgb) / 0.18);
+		border-radius: 999px;
+		padding: 0.7rem 1rem;
 		font-weight: 500;
 		transition: all 0.3s ease;
 	}
@@ -167,6 +192,8 @@
 	.social-link:hover {
 		color: var(--accent-soft);
 		transform: translateY(-2px);
+		background: rgb(var(--accent-rgb) / 0.14);
+		border-color: rgb(var(--accent-soft-rgb) / 0.28);
 	}
 
 	.social-link :global(svg) {

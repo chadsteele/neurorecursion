@@ -71,6 +71,36 @@
 	</li>
 </ul>
 
+<h2>Compensation</h2>
+<p>Make this a side-hustle or a full-time. Up to you.</p>
+<p>
+	This is a low-friction way to start earning immediately while you prove what
+	you can build. The role is temporary, part-time, 100% remote, and flexible
+	according to your schedule. Payouts are handled twice monthly through our
+	affiliate marketing partner. See <a
+		href="https://docs.lemonsqueezy.com/help/affiliates/payouts"
+		target="_blank"
+		rel="noopener">Affiliate Payout Policy</a
+	>
+</p>
+
+<p>
+	You begin as a commission-only affiliate marketer, which means there is no
+	waiting period before you can contribute and get paid for the reach you
+	create. If you can drive qualified attention and real enrollments, you can
+	start monetizing that performance right away. No interview required. <a
+		href="/welcome/affiliate">Sign up now</a
+	> to get started.
+</p>
+
+<p>
+	Once you have earned $10,000 in commissions, we can discuss expanding the
+	relationship into a full-time or part-time hourly role with a base salary
+	plus commission, if that is the direction you want. In other words: start by
+	proving demand, start by getting paid, and if the fit is strong, we can
+	build something more permanent together.
+</p>
+
 <DiversityStatement
 	text="The Neuro Recursion Institute is an equal opportunity employer committed to fostering an inclusive environment that celebrates neurodiversity and cultural variety. We believe that a diverse team brings the necessary breadth of perspective to solve complex neurological challenges."
 />
