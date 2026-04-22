@@ -82,15 +82,14 @@ function extractImageMappings(dataContent, type) {
 			}
 		}
 	} else if (type === "partners") {
-		const partnerMatches = dataContent.matchAll(
-			/imageSrc:\s*"[^/]*\/([^"]+)"/g,
-		)
+		const partnerMatches = dataContent.matchAll(/imageSrc:\s*"([^"]+)"/g)
 		for (const match of partnerMatches) {
-			const filename = match[1]
+			const imageUrl = match[1]
+			const filename = path.basename(imageUrl)
 			// Try to find the ID by reverse matching from directory
 			mappings.set(filename, {
 				id: filename.replace(/\.[^.]+$/, ""),
-				imageUrl: filename,
+				imageUrl,
 				type: "partners",
 			})
 		}
@@ -191,18 +190,17 @@ function updateDataFile(filePath, type, renamedFiles, cdnPath) {
 			},
 		)
 	} else if (type === "partners") {
-		// Replace imageSrc URLs (local paths)
-		content = content.replace(
-			/imageSrc:\s*"\/partners\/([^"]+)"/g,
-			(match, filename) => {
-				if (fileMap.has(filename)) {
-					const newFilename = fileMap.get(filename)
-					console.log(`  imageSrc: ${filename} → ${newFilename}`)
-					return `imageSrc: "/partners/${newFilename}"`
-				}
-				return match
-			},
-		)
+		// Replace imageSrc URLs while preserving the existing CDN base.
+		content = content.replace(/imageSrc:\s*"([^"]+)"/g, (match, url) => {
+			const filename = path.basename(url)
+			if (fileMap.has(filename)) {
+				const newFilename = fileMap.get(filename)
+				const newUrl = url.replace(filename, newFilename)
+				console.log(`  imageSrc: ${filename} → ${newFilename}`)
+				return `imageSrc: "${newUrl}"`
+			}
+			return match
+		})
 	}
 
 	// Write back to file

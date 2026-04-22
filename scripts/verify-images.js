@@ -40,11 +40,9 @@ function extractAllIDs() {
 	// Read NGOs (Partners)
 	const ngosPath = path.join(DATA_DIR, "NGOs.js")
 	const ngosContent = fs.readFileSync(ngosPath, "utf-8")
-	const partnerMatches = ngosContent.matchAll(
-		/imageSrc:\s*"\/partners\/([^"]+)"/g,
-	)
+	const partnerMatches = ngosContent.matchAll(/imageSrc:\s*"([^"]+)"/g)
 	for (const match of partnerMatches) {
-		const filename = match[1].replace(/\.[^.]+$/, "") // Remove extension
+		const filename = path.basename(match[1]).replace(/\.[^.]+$/, "")
 		ids.partners.add(filename)
 	}
 

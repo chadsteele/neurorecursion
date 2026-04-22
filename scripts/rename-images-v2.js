@@ -90,11 +90,9 @@ class ImageRenamer {
 			this.dataFiles.partners.path,
 			"utf-8",
 		)
-		const partnerMatches = ngosContent.matchAll(
-			/imageSrc:\s*"\/partners\/([^"]+)"/g,
-		)
+		const partnerMatches = ngosContent.matchAll(/imageSrc:\s*"([^"]+)"/g)
 		for (const match of partnerMatches) {
-			const filename = match[1]
+			const filename = path.basename(match[1])
 			const id = filename.replace(/\.[^.]+$/, "") // Remove extension
 			mappings.partners[filename] = {id, filename}
 		}

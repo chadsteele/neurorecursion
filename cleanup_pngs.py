@@ -15,13 +15,7 @@ files_to_delete = [
     'static/backgrounds/group-diverse-kids-playing-field-together_53876-78365.png',
     'static/backgrounds/istockphoto-998670532-612x612.png',
     'static/backgrounds/sharma-obesity-kids-playing-outside.png',
-    'static/backgrounds/smiling-kids-playing-with-multi-colored-toy-blocks-generated-by-ai-free-photo.png',
-    'static/partners/soquiet.png',
-    'static/partners/ldaa.png',
-    'static/partners/britishdyslexia.png',
-    'static/partners/autismeurope.png',
-    'static/partners/cpi-primary-logo.png',
-    'static/partners/nas.png'
+    'static/backgrounds/smiling-kids-playing-with-multi-colored-toy-blocks-generated-by-ai-free-photo.png'
 ]
 
 deleted = 0

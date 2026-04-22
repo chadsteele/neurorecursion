@@ -224,8 +224,8 @@ urls = [
 
 print(f"Processing {len(urls)} URLs and downloading images...\n")
 
-# Create partners directory if it doesn't exist
-partners_dir = Path("static/partners")
+# Download partner logos into the CDN source asset directory.
+partners_dir = Path(__file__).resolve().parents[2] / "assets/assets/partners"
 partners_dir.mkdir(parents=True, exist_ok=True)
 
 saved_count = 0
