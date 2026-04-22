@@ -3,7 +3,7 @@ import path from "path"
 
 import Conditions, {ConditionsMap} from "$data/Conditions.js"
 import {Categories} from "$data/Categories.js"
-import Pioneers, {PioneersMap, sorted} from "$data/Pioneers.js"
+import Pioneers, {PioneersMap, getPioneer, sorted} from "$data/Pioneers.js"
 
 export const prerender = "auto"
 
@@ -65,12 +65,13 @@ function getPioneerSchemasForPath(params) {
 	const matchedPioneer = Pioneers.find(
 		(pioneer) => pioneer.path === requestPath,
 	)
-	if (!matchedPioneer) {
+	const resolvedPioneer = matchedPioneer || getPioneer(requestPath)
+	if (!resolvedPioneer) {
 		return []
 	}
 
-	return pioneerSchemas[matchedPioneer.id]
-		? [pioneerSchemas[matchedPioneer.id]]
+	return pioneerSchemas[resolvedPioneer.id]
+		? [pioneerSchemas[resolvedPioneer.id]]
 		: []
 }
 

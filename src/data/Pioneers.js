@@ -767,4 +767,86 @@ export const PioneersMap = Object.fromEntries(
 	Pioneers.map((pioneer) => [pioneer.id, pioneer]),
 )
 
+function scorePioneer(pioneer, words) {
+	const pioneerId = pioneer.id.toLowerCase()
+	const pioneerPath = pioneer.path.toLowerCase()
+	const pioneerName = pioneer.name.toLowerCase()
+	const pioneerInstitution = (pioneer.institution || "").toLowerCase()
+	const pioneerDescription = (pioneer.description || "").toLowerCase()
+	const pathSegments = pioneerPath.split("/").filter(Boolean)
+
+	let totalScore = 0
+	let matchingWordCount = 0
+
+	for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+		const word = words[wordIndex]
+		let wordScore = 0
+
+		const pathPosition = pathSegments.findIndex((segment) =>
+			segment.includes(word),
+		)
+		if (pathPosition !== -1) {
+			wordScore += 100 - pathPosition * 15
+			matchingWordCount++
+		}
+
+		if (pioneerName.includes(word)) {
+			wordScore += 50 + (10 - wordIndex * 2)
+			if (pathPosition === -1) matchingWordCount++
+		}
+
+		if (pioneerId.includes(word)) {
+			wordScore += 35
+			if (pathPosition === -1 && !pioneerName.includes(word)) {
+				matchingWordCount++
+			}
+		}
+
+		if (pioneerInstitution.includes(word) && wordScore < 25) {
+			wordScore += 25
+			if (
+				pathPosition === -1 &&
+				!pioneerName.includes(word) &&
+				!pioneerId.includes(word)
+			) {
+				matchingWordCount++
+			}
+		}
+
+		if (pioneerDescription.includes(word) && wordScore < 5) {
+			wordScore += 5
+		}
+
+		totalScore += wordScore
+	}
+
+	return totalScore * (1 + matchingWordCount * 0.2)
+}
+
+export function getPioneer(input) {
+	if (!input) return null
+
+	const words = Array.isArray(input)
+		? input
+		: input
+				.toLowerCase()
+				.split(/[\s,/_-]+/)
+				.filter(Boolean)
+
+	if (words.length === 0) return null
+
+	let bestPioneer = null
+	let bestScore = -1
+
+	for (const pioneer of Pioneers) {
+		const score = scorePioneer(pioneer, words)
+		if (score > bestScore) {
+			bestScore = score
+			bestPioneer = pioneer
+		}
+	}
+
+	return bestScore > 0 ? bestPioneer : null
+}
+
 export default Pioneers

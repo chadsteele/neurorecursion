@@ -8,6 +8,7 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import ConditionCard from "$lib/ConditionCard.svelte"
 	import {getCondition} from "$data/Conditions.js"
+	import {getPioneer} from "$data/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
 
@@ -117,6 +118,14 @@
 			const matchedCondition = getCondition(queryPath)
 			if (matchedCondition) {
 				targetElement = document.getElementById(matchedCondition.id)
+			}
+		}
+
+		// PRIORITY 4: If not found, use getPioneer to find best matched pioneer
+		if (!targetElement && getPioneer) {
+			const matchedPioneer = getPioneer(queryPath)
+			if (matchedPioneer) {
+				targetElement = document.getElementById(matchedPioneer.id)
 			}
 		}
 

@@ -1704,51 +1704,222 @@
     "query": "pioneers/paul-maclean"
   },
   {
+    "query": "paul"
+  },
+  {
+    "query": "maclean"
+  },
+  {
     "query": "pioneers/daniel-goleman"
+  },
+  {
+    "query": "daniel"
+  },
+  {
+    "query": "goleman"
   },
   {
     "query": "pioneers/gul-dolen"
   },
   {
+    "query": "gul"
+  },
+  {
+    "query": "dolen"
+  },
+  {
     "query": "pioneers/ann-graybiel"
+  },
+  {
+    "query": "ann"
+  },
+  {
+    "query": "graybiel"
   },
   {
     "query": "pioneers/carla-shatz"
   },
   {
+    "query": "carla"
+  },
+  {
+    "query": "shatz"
+  },
+  {
     "query": "pioneers/trevor-robbins"
+  },
+  {
+    "query": "trevor"
+  },
+  {
+    "query": "robbins"
   },
   {
     "query": "pioneers/erin-schuman"
   },
   {
+    "query": "erin"
+  },
+  {
+    "query": "schuman"
+  },
+  {
     "query": "pioneers/giacomo-indiveri"
+  },
+  {
+    "query": "giacomo"
+  },
+  {
+    "query": "indiveri"
   },
   {
     "query": "pioneers/yukiyasu-kamitani"
   },
   {
+    "query": "yukiyasu"
+  },
+  {
+    "query": "kamitani"
+  },
+  {
     "query": "pioneers/aditya-murthy"
+  },
+  {
+    "query": "aditya"
+  },
+  {
+    "query": "murthy"
   },
   {
     "query": "pioneers/bo-li"
   },
   {
+    "query": "bo"
+  },
+  {
+    "query": "li"
+  },
+  {
     "query": "pioneers/mary-galea"
+  },
+  {
+    "query": "mary"
+  },
+  {
+    "query": "galea"
   },
   {
     "query": "pioneers/daniel-wegner"
   },
   {
+    "query": "wegner"
+  },
+  {
     "query": "pioneers/karl-friston"
+  },
+  {
+    "query": "karl"
+  },
+  {
+    "query": "friston"
   },
   {
     "query": "pioneers/karim-nader"
   },
   {
+    "query": "karim"
+  },
+  {
+    "query": "nader"
+  },
+  {
     "query": "pioneers/olivier-hardt"
   },
   {
+    "query": "olivier"
+  },
+  {
+    "query": "hardt"
+  },
+  {
     "query": "pioneers/daniela-schiller"
+  },
+  {
+    "query": "daniela"
+  },
+  {
+    "query": "schiller"
+  },
+  {
+    "query": "pioneers/eric-kandel"
+  },
+  {
+    "query": "eric"
+  },
+  {
+    "query": "kandel"
+  },
+  {
+    "query": "pioneers/joseph-ledoux"
+  },
+  {
+    "query": "joseph"
+  },
+  {
+    "query": "ledoux"
+  },
+  {
+    "query": "pioneers/michael-merzenich"
+  },
+  {
+    "query": "michael"
+  },
+  {
+    "query": "merzenich"
+  },
+  {
+    "query": "pioneers/lisa-feldman-barrett"
+  },
+  {
+    "query": "lisa"
+  },
+  {
+    "query": "feldman"
+  },
+  {
+    "query": "barrett"
+  },
+  {
+    "query": "pioneers/susumu-tonegawa"
+  },
+  {
+    "query": "susumu"
+  },
+  {
+    "query": "tonegawa"
+  },
+  {
+    "query": "pioneers/michael-meaney"
+  },
+  {
+    "query": "meaney"
+  },
+  {
+    "query": "pioneers/elizabeth-phelps"
+  },
+  {
+    "query": "elizabeth"
+  },
+  {
+    "query": "phelps"
+  },
+  {
+    "query": "pioneers/takao-hensch"
+  },
+  {
+    "query": "takao"
+  },
+  {
+    "query": "hensch"
   }
 ]

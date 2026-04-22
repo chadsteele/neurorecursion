@@ -25,6 +25,11 @@ Conditions.forEach((condition) => {
 Pioneers.forEach((pioneer) => {
 	const fullPath = `pioneers/${pioneer.id}`
 	paths.add(fullPath)
+
+	const idWords = pioneer.id.split("-").filter(Boolean)
+	idWords.forEach((word) => {
+		paths.add(word)
+	})
 })
 
 // Convert to entries format
