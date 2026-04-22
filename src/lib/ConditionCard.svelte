@@ -78,11 +78,7 @@
 			</a>
 
 			{#if condition.ngo_url}
-				<a
-					href={condition.ngo_url}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
+				<a href={condition.ngo_url} target="_blank" rel="noopener">
 					<Heart size={18} strokeWidth={2} />
 					Support
 				</a>
@@ -91,7 +87,7 @@
 			<a
 				href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noopener"
 			>
 				<MapPin size={18} strokeWidth={2} />
 				Help near you
@@ -100,7 +96,7 @@
 				href={condition.scientific_reference ||
 					`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noopener"
 			>
 				<FlaskConical size={18} strokeWidth={2} />
 				Science
@@ -109,7 +105,7 @@
 				class="share-btn"
 				href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noopener"
 			>
 				<Play size={18} strokeWidth={2} />
 				Watch

@@ -17,7 +17,7 @@
 					><a
 						href="https://www.harvard.edu"
 						target="_blank"
-						rel="noopener noreferrer">Harvard University</a
+						rel="noopener">Harvard University</a
 					></strong
 				>
 				-&nbsp;Department of Psychology; groundbreaking research on mental
@@ -30,7 +30,7 @@
 					><a
 						href="https://www.mit.edu"
 						target="_blank"
-						rel="noopener noreferrer">MIT</a
+						rel="noopener">MIT</a
 					></strong
 				>
 				-&nbsp;Brain and Cognitive Sciences Division and McGovern Institute
@@ -42,7 +42,7 @@
 					><a
 						href="https://www.stanford.edu"
 						target="_blank"
-						rel="noopener noreferrer">Stanford University</a
+						rel="noopener">Stanford University</a
 					></strong
 				>
 				-&nbsp;Department of Neurobiology; leading research on neural circuits,
@@ -54,7 +54,7 @@
 					><a
 						href="https://www.cam.ac.uk"
 						target="_blank"
-						rel="noopener noreferrer">University of Cambridge</a
+						rel="noopener">University of Cambridge</a
 					></strong
 				>
 				-&nbsp;Department of Psychology; advanced research in neurodevelopmental
@@ -66,8 +66,7 @@
 					><a
 						href="https://www.berkeley.edu"
 						target="_blank"
-						rel="noopener noreferrer"
-						>University of California, Berkeley</a
+						rel="noopener">University of California, Berkeley</a
 					></strong
 				>
 				-&nbsp;Helen Wills Neuroscience Institute and Department of Neurobiology;
@@ -80,8 +79,7 @@
 					><a
 						href="https://www.ucl.ac.uk"
 						target="_blank"
-						rel="noopener noreferrer"
-						>University College London (UCL)</a
+						rel="noopener">University College London (UCL)</a
 					></strong
 				>
 				-&nbsp;Institute of Neurology and Wellcome Centre for Neuroimaging;
@@ -93,7 +91,7 @@
 					><a
 						href="https://www.ethz.ch"
 						target="_blank"
-						rel="noopener noreferrer">ETH Zurich</a
+						rel="noopener">ETH Zurich</a
 					></strong
 				>
 				(Switzerland) -&nbsp;Institute for Neuroinformatics and Brain Research
@@ -107,7 +105,7 @@
 					><a
 						href="https://www.brain.mpg.de"
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="noopener"
 						>Max Planck Institute for Brain Research</a
 					></strong
 				>
@@ -120,7 +118,7 @@
 					><a
 						href="https://www.unimelb.edu.au"
 						target="_blank"
-						rel="noopener noreferrer">University of Melbourne</a
+						rel="noopener">University of Melbourne</a
 					></strong
 				>
 				(Australia) -&nbsp;Department of Anatomy and Neuroscience; pioneering
@@ -132,7 +130,7 @@
 					><a
 						href="https://www.mcgill.ca"
 						target="_blank"
-						rel="noopener noreferrer">McGill University</a
+						rel="noopener">McGill University</a
 					></strong
 				>
 				(Canada) -&nbsp;Department of Psychology; pioneering research on
@@ -144,7 +142,7 @@
 					><a
 						href="https://www.u-tokyo.ac.jp"
 						target="_blank"
-						rel="noopener noreferrer">University of Tokyo</a
+						rel="noopener">University of Tokyo</a
 					></strong
 				>
 				-&nbsp;Institute of Medical Science; pioneering non-invasive neuromodulation
@@ -156,7 +154,7 @@
 					><a
 						href="https://www.tsinghua.edu.cn"
 						target="_blank"
-						rel="noopener noreferrer">Tsinghua University</a
+						rel="noopener">Tsinghua University</a
 					></strong
 				>
 				(China) -&nbsp;School of Life Sciences and McGovern Institute for
@@ -168,7 +166,7 @@
 					><a
 						href="https://www.unige.ch"
 						target="_blank"
-						rel="noopener noreferrer">University of Geneva</a
+						rel="noopener">University of Geneva</a
 					></strong
 				>
 				(Switzerland) -&nbsp;Swiss Centre for Affective Sciences; research
@@ -180,8 +178,7 @@
 					><a
 						href="https://www.iisc.ac.in"
 						target="_blank"
-						rel="noopener noreferrer"
-						>Indian Institute of Science (IISc)</a
+						rel="noopener">Indian Institute of Science (IISc)</a
 					></strong
 				>
 				(Bangalore, India) -&nbsp;Centre for Neuroscience; leading research
@@ -193,7 +190,7 @@
 					><a
 						href="https://www.mountsinai.org"
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="noopener"
 						>Icahn School of Medicine at Mount Sinai</a
 					></strong
 				>

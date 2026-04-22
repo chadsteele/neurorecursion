@@ -1098,7 +1098,7 @@
 				<a
 					href="https://www.linkedin.com/company/neurorecursion"
 					target="_blank"
-					rel="noopener noreferrer"
+					rel="noopener"
 					class="social-inline"
 				>
 					<LinkedInIcon />

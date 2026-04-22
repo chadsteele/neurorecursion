@@ -245,16 +245,12 @@
 	<p class="form-helper-copy">
 		If your CV is not available online, you can paste a link to a file
 		sharing service (like
-		<a
-			href="https://drive.google.com/"
-			target="_blank"
-			rel="noopener noreferrer">Google Drive</a
+		<a href="https://drive.google.com/" target="_blank" rel="noopener"
+			>Google Drive</a
 		>
 		or
-		<a
-			href="https://www.dropbox.com/"
-			target="_blank"
-			rel="noopener noreferrer">Dropbox</a
+		<a href="https://www.dropbox.com/" target="_blank" rel="noopener"
+			>Dropbox</a
 		>) or simply include it in the text field below.
 	</p>
 

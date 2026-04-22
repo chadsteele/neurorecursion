@@ -109,7 +109,7 @@
 				class="share-btn"
 				href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noopener"
 			>
 				{#if PlayIcon}
 					<PlayIcon size={18} strokeWidth={2} />

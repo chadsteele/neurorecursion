@@ -1,8 +1,8 @@
 <script>
 	import "../app.css"
+	import Footer from "$lib/Footer.svelte"
 	import Navbar from "$lib/Navbar.svelte"
 	import SearchBar from "$lib/SearchBar.svelte"
-	import Disclaimer from "$lib/Disclaimer.svelte"
 	import {pageBackground} from "$lib/stores"
 
 	let {children} = $props()
@@ -26,23 +26,7 @@
 			{@render children()}
 		</div>
 
-		<footer class="footer">
-			<div class="footer-content">
-				<p>
-					&copy; {new Date().getFullYear()} Neuro Recursion Institute.
-				</p>
-				<p>All rights reserved.</p>
-				<p>Patents Pending Worldwide.</p>
-				<p>2120 University Ave, Berkeley, CA 94704, United States</p>
-				<div class="footer-disclaimer">
-					<Disclaimer />
-				</div>
-				<!-- <p>
-					<a href="https://hire.chadsteele.com">Made with ❤️ by Chad Steele</a
-					>
-				</p> -->
-			</div>
-		</footer>
+		<Footer />
 	</div>
 </div>
 
@@ -78,64 +62,6 @@
 		flex: 1;
 	}
 
-	.footer {
-		margin-top: 4rem;
-		padding: 2rem 0;
-		background: rgba(10, 14, 39, 0.92);
-		border-top: 1px solid #1e5a96;
-	}
-
-	.footer-content {
-		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 2rem;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem 1.5rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-
-	.footer-content p {
-		margin: 0;
-		flex-shrink: 0;
-		white-space: nowrap;
-		color: #9fb4c8;
-		font-size: 0.92rem;
-		font-weight: 400;
-	}
-
-	.footer-disclaimer {
-		flex-basis: 100%;
-		margin-top: 0.75rem;
-		padding-top: 0.75rem;
-		border-top: 1px solid rgba(74, 159, 216, 0.18);
-		color: #7fa9c8;
-	}
-
-	.footer-disclaimer :global(p) {
-		margin: 0;
-		color: inherit;
-		text-align: center;
-		font-size: 0.9rem;
-		line-height: 1.6;
-	}
-
 	@media (max-width: 900px) {
-		.footer-content {
-			padding: 0 1rem;
-			gap: 0.45rem;
-		}
-
-		.footer-content p {
-			flex-basis: 100%;
-			white-space: normal;
-		}
-
-		.footer-disclaimer {
-			padding-top: 0.8rem;
-		}
 	}
 </style>

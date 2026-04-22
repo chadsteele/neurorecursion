@@ -82,7 +82,7 @@
 					<a
 						href="https://neurorecursion.lemonsqueezy.com/checkout/buy/8e27e9f9-f15b-4c3e-800a-c67aed17dce6"
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="noopener"
 						class="primary-link"
 					>
 						→ Register as affiliate
@@ -597,7 +597,7 @@
 				<a
 					href="https://neurorecursion.lemonsqueezy.com/checkout/buy/8e27e9f9-f15b-4c3e-800a-c67aed17dce6"
 					target="_blank"
-					rel="noopener noreferrer"
+					rel="noopener"
 					class="primary-link"
 				>
 					→ Complete affiliate registration
