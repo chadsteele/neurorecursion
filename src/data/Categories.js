@@ -26,6 +26,7 @@ export const Categories = [
 			"thanatophobia-death-anxiety",
 			"aerophobia-fear-flying",
 			"chronophobia-fear-time-future",
+			"fear-of-success-achievemeophobia-jonah-complex",
 			"chrometophobia-fear-money",
 		],
 	},

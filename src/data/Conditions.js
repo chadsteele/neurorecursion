@@ -1936,6 +1936,20 @@ Our technique eliminates the amygdala's threat-encoding around task initiation a
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronic-procrastination-failure-to-launch-incompletions.png",
 	},
 	{
+		id: "fear-of-success-achievemeophobia-jonah-complex",
+		path: "/remote-clinical-trial/free/fear-of-success/achievemeophobia/jonah-complex",
+		name: "Achievemeophobia - Fear of Success, Power, and the Jonah Complex",
+		description: `Your nervous system may be interpreting the prospect of high achievement as a threat to your social safety and identity. Achievemeophobia and the Jonah Complex involve an unconscious avoidance of your own potential; often driven by the dread of isolation, the burden of new responsibilities, or the fear that power will lead to moral corruption. For many, the most paralyzing aspect is the belief that success will alienate friends or make one a target for resentment and judgment.
+
+The neurobiological mechanism involves a conflict between the drive for self actualization and the evolutionary need for tribal belonging. When you approach a threshold of significant power or wealth, the amygdala signals a social survival threat; fearing that rising above the group will result in ostracization. This creates a self sabotaging loop where the brain treats professional or personal breakthroughs as signals to retreat into mediocrity. The result is a chronic pattern of hesitation and the active avoidance of the very destiny you desire.
+
+Our technique starts with your beliefs about "powerful people", authority, and extreme wealth.  We identify your social currency and what threatens it.  These beliefs are likely limiting beliefs about what you deserve, who you are allowed to be, and how others will perceive you.  Together, we target the threat encoding associated with expansion and high status. We work to decouple the concept of power from the fear of corruption and social loss.  You will be newly inspired to be the best Gazillionaire on the planet! This process addresses the autonomic brakes that stop you from finishing projects or accepting leadership roles. You experience a recalibrated nervous system that views success as a safe, if not critically important, and sustainable state rather than a dangerous departure from your identity and community.`,
+		ngo_url: "/ngo/american-psychological-association",
+		scientific_reference: "",
+		background_image:
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/fear-of-success-achievemeophobia-jonah-complex.png",
+	},
+	{
 		id: "chrometophobia-fear-money",
 		path: "/remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety",
 		name: "Chrometophobia - Extreme Fear of Money & Financial Anxiety",
