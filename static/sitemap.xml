@@ -21,7 +21,12 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://neurorecursion.com/freedom/courage/love/leadership/power/prosperity</loc>
+    <loc>https://neurorecursion.com/freedom/power/prosperity</loc>
+    <priority>1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://neurorecursion.com/courage/love/leadership</loc>
     <priority>1</priority>
     <changefreq>monthly</changefreq>
   </url>
