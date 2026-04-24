@@ -1667,6 +1667,18 @@
       "name": "Chronic Procrastination, Failure to Launch & Incompletions - Executive Dysfunction & Aversion-Based Avoidance"
     }
   },
+  "fear-of-success-achievemeophobia-jonah-complex": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Achievemeophobia - Fear of Success, Power, and the Jonah Complex",
+    "description": "Your nervous system may be interpreting the prospect of high achievement as a threat to your social safety and identity. Achievemeophobia and the Jonah Complex involve an unconscious avoidance of your own potential; often driven by the dread of isolation, the burden of new responsibilities, or the fear that power will lead to moral corruption. For many, the most paralyzing aspect is the belief that success will alienate friends or make one a target for resentment and judgment.\n\nThe neurobiologic",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/fear-of-success/achievemeophobia/jonah-complex",
+    "identifier": "fear-of-success-achievemeophobia-jonah-complex",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Achievemeophobia - Fear of Success, Power, and the Jonah Complex"
+    }
+  },
   "chrometophobia-fear-money": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
@@ -1761,6 +1773,30 @@
     "mainEntity": {
       "@type": "Thing",
       "name": "General Financial Anxiety & Cynicism"
+    }
+  },
+  "hyper-cynicism-depressive-realism-distrust": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Hyper Cynicism - Depressive Realism, Pervasive Distrust & Defensive Negativity",
+    "description": "Your nervous system may have decided that hope is what gets people hurt. Hyper cynicism is not ordinary skepticism or healthy discernment. It is a rigid, overlearned interpretive stance in which the mind narrates people, systems, motives, and future outcomes through a lens of betrayal, futility, corruption, or inevitable disappointment. The person may feel that they are simply being \"realistic\" while everyone else is naive, sentimental, or self-deceived. In some individuals this resembles what h",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/cynicism/depressive-realism/distrust/moral-injury",
+    "identifier": "hyper-cynicism-depressive-realism-distrust",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Hyper Cynicism - Depressive Realism, Pervasive Distrust & Defensive Negativity"
+    }
+  },
+  "defensive-idealization-unrealistic-optimism-denial": {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    "name": "Defensive Idealization - Unrealistic Optimism, Reality Avoidance & Wish-Based Thinking",
+    "description": "Your nervous system may have decided that the only tolerable future is the one it beautifies, sanitizes, or spiritually guarantees. Defensive idealization is the opposite pole of hyper cynicism. Instead of anticipating betrayal, collapse, or disappointment, the mind overcorrects toward unrealistic optimism, selective attention to reassuring signs, and a refusal to metabolize contradictory evidence. This is not grounded hope, resilience, or mature faith. It is an overlearned protective style in w",
+    "url": "https://neurorecursion.com/remote-clinical-trial/free/idealization/unrealistic-optimism/denial/wishful-thinking",
+    "identifier": "defensive-idealization-unrealistic-optimism-denial",
+    "mainEntity": {
+      "@type": "Thing",
+      "name": "Defensive Idealization - Unrealistic Optimism, Reality Avoidance & Wish-Based Thinking"
     }
   },
   "psoriasis-stress-reactive-neuroimmune-flare": {

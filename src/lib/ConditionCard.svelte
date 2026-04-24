@@ -11,6 +11,8 @@
 		MapPin,
 		Play,
 	} from "lucide-svelte"
+	import Virtues from "$data/Virtues.js"
+	import RelatedVirtues from "$data/RelatedVirtues.js"
 
 	let {condition = {}, formData = {}, blur = 10} = $props()
 	let showShareModal = $state(false)
@@ -19,10 +21,32 @@
 		showShareModal = true
 	}
 
-	const relatedConditions = $derived(
-		(condition.related_conditions ?? [])
-			.map((conditionId) => ConditionsMap[conditionId])
+	let checked = $derived(
+		formData.conditions && condition.name
+			? formData.conditions[condition.name]
+			: false,
+	)
+	function handleCheckedChange(event) {
+		if (formData.conditions && condition.name) {
+			formData.conditions[condition.name] = event.target.checked
+		}
+	}
+
+	let isVirtue = $derived(!RelatedVirtues[condition.id])
+	let relatedVirtueIds = $derived(
+		isVirtue ? [] : (RelatedVirtues[condition.id] ?? []),
+	)
+	let relatedVirtues = $derived(
+		relatedVirtueIds
+			.map((virtueId) => Virtues.find((v) => v.id === virtueId))
 			.filter(Boolean),
+	)
+	let relatedConditions = $derived(
+		isVirtue
+			? []
+			: relatedVirtueIds
+					.map((virtueId) => ConditionsMap[virtueId])
+					.filter(Boolean),
 	)
 </script>
 
@@ -40,23 +64,29 @@
 	/>
 {/if}
 
-<Parallax background={condition.background_image} {blur}>
+<Parallax background={condition.background_image || undefined} {blur}>
 	<section class="paper container">
-		<LazyParallaxImage
-			src={condition.background_image}
-			alt={condition.name}
-		/>
+		{#if condition.background_image}
+			<LazyParallaxImage
+				src={condition.background_image}
+				alt={condition.name}
+			/>
+		{/if}
 
 		<h3>{condition.name}</h3>
 
-		<div class="condition-description">
-			A single traumatic moment that takes a fraction of a second can
-			create limbic loops that can terrorize you for a lifetime. This
-			employs the same neuroplasticity, but without the trauma, and it
-			works in reverse. As powerfully as trauma can cause a lifetime of
-			fear, this process can cause a lifetime of freedom from that fear.
-		</div>
-		<p>This could be your breakthrough!</p>
+		{#if condition.type !== "virtue"}
+			<div class="condition-description">
+				A single traumatic moment that takes a fraction of a second can
+				create limbic loops that can terrorize you for a lifetime. This
+				employs the same neuroplasticity, but without the trauma, and it
+				works in reverse. As powerfully as trauma can cause a lifetime
+				of fear, this process can cause a lifetime of freedom from that
+				fear.
+			</div>
+			<p>This could be your breakthrough!</p>
+		{/if}
+
 		<div class="condition-description">
 			{@html condition?.description
 				?.trim()
@@ -66,25 +96,32 @@
 				.join("")}
 		</div>
 
-		<p>This could be your breakthrough! Sign up now.</p>
+		{#if condition.type !== "virtue"}
+			<p>This could be your breakthrough! Sign up now.</p>
+		{/if}
 
 		<div class="condition-links">
-			<label class="toggle-slider">
-				<input
-					type="checkbox"
-					bind:checked={formData.conditions[condition.name]}
-				/>
-				<span class="slider"></span>
-				<span class="toggle-label">
-					{formData.conditions[condition.name]
-						? "Yes, maybe?"
-						: "No, not me!"}
-				</span>
-			</label>
-			<a type="button" class="signup-btn" href="/signup">
-				<CheckCircle2 size={18} strokeWidth={2} />
-				Sign up!
-			</a>
+			{#if condition.type !== "virtue"}
+				<label class="toggle-slider">
+					<input
+						type="checkbox"
+						{checked}
+						onchange={handleCheckedChange}
+					/>
+					<span class="slider"></span>
+					<span class="toggle-label">
+						{formData.conditions &&
+						condition.name &&
+						formData.conditions[condition.name]
+							? "Yes, maybe?"
+							: "No, not me!"}
+					</span>
+				</label>
+				<a type="button" class="signup-btn" href="/signup">
+					<CheckCircle2 size={18} strokeWidth={2} />
+					Sign up!
+				</a>
+			{/if}
 
 			{#if condition.ngo_url}
 				<a href={condition.ngo_url} target="_blank" rel="noopener">
@@ -93,37 +130,53 @@
 				</a>
 			{/if}
 
-			<a
-				href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
-				target="_blank"
-				rel="noopener"
-			>
-				<MapPin size={18} strokeWidth={2} />
-				Help near you
-			</a>
-			<a
-				href={condition.scientific_reference ||
-					`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
-				target="_blank"
-				rel="noopener"
-			>
-				<FlaskConical size={18} strokeWidth={2} />
-				Science
-			</a>
-			<a
-				class="share-btn"
-				href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
-				target="_blank"
-				rel="noopener"
-			>
-				<Play size={18} strokeWidth={2} />
-				Watch
-			</a>
-			<button type="button" class="share-btn" onclick={handleShare}>
-				<Share2 size={18} strokeWidth={2} />
-				Share
-			</button>
+			{#if condition.type !== "virtue"}
+				<a
+					href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
+					target="_blank"
+					rel="noopener"
+				>
+					<MapPin size={18} strokeWidth={2} />
+					Help near you
+				</a>
+				<a
+					href={condition.scientific_reference ||
+						`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
+					target="_blank"
+					rel="noopener"
+				>
+					<FlaskConical size={18} strokeWidth={2} />
+					Science
+				</a>
+				<a
+					class="share-btn"
+					href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
+					target="_blank"
+					rel="noopener"
+				>
+					<Play size={18} strokeWidth={2} />
+					Watch
+				</a>
+				<button type="button" class="share-btn" onclick={handleShare}>
+					<Share2 size={18} strokeWidth={2} />
+					Share
+				</button>
+			{/if}
 		</div>
+
+		{#if relatedVirtues.length > 0}
+			<h3 style="margin-top:2rem">
+				Opportunities for more emotional freedom
+			</h3>
+			<div class="related-conditions" aria-label="Related virtues">
+				{#each relatedVirtues as virtue (virtue.id)}
+					<a href={virtue.path} class="related-condition-link">
+						{virtue.name}
+					</a>
+				{/each}
+			</div>
+		{/if}
+
 		{#if relatedConditions.length > 0}
 			<h3 style="margin-top:2rem">Related Conditions</h3>
 			<div class="related-conditions" aria-label="Related conditions">

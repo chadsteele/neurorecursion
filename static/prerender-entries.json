@@ -1467,6 +1467,18 @@
     "query": "avoidance"
   },
   {
+    "query": "remote-clinical-trial/free/fear-of-success/achievemeophobia/jonah-complex"
+  },
+  {
+    "query": "fear-of-success"
+  },
+  {
+    "query": "achievemeophobia"
+  },
+  {
+    "query": "jonah-complex"
+  },
+  {
     "query": "remote-clinical-trial/free/chrometophobia/fear-money/financial-anxiety"
   },
   {
@@ -1558,6 +1570,30 @@
   },
   {
     "query": "cynicism"
+  },
+  {
+    "query": "remote-clinical-trial/free/cynicism/depressive-realism/distrust/moral-injury"
+  },
+  {
+    "query": "depressive-realism"
+  },
+  {
+    "query": "distrust"
+  },
+  {
+    "query": "remote-clinical-trial/free/idealization/unrealistic-optimism/denial/wishful-thinking"
+  },
+  {
+    "query": "idealization"
+  },
+  {
+    "query": "unrealistic-optimism"
+  },
+  {
+    "query": "denial"
+  },
+  {
+    "query": "wishful-thinking"
   },
   {
     "query": "remote-clinical-trial/free/psoriasis/stress/skin/flare"

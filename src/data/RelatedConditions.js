@@ -159,9 +159,43 @@ const conditionIds = [
 	"anorgasmia-orgasmic-disorder-desire-arousal-block",
 	"persistent-genital-arousal-disorder-pgad",
 	"hypoactive-sexual-desire-disorder-hsdd",
+	// ...existing condition IDs...
+	// Empowerment & Leadership Desires
+	"radical-transparency-vulnerability",
+	"psychological-safety-anchoring",
+	"empathic-resonance-attunement",
+	"collaborative-innovation-flow",
+	"visionary-courage-risk-appraisal",
+	"inclusive-belonging-bias-neutralization",
+	"authentic-influence-integrity",
+	"limbic-regulation-leadership",
+	"tribal-cohesion-social-safety",
+	"adaptive-resilience-growth-mindset",
+	"high-trust-bandwidth-communication",
+	"intentional-culture-design",
+	"conflict-alchemy-resolution",
+	"strategic-patience-impulse-control",
+	"servant-leadership-altruism",
 ]
 
 const groupMembers = {
+	desires: [
+		"radical-transparency-vulnerability",
+		"psychological-safety-anchoring",
+		"empathic-resonance-attunement",
+		"collaborative-innovation-flow",
+		"visionary-courage-risk-appraisal",
+		"inclusive-belonging-bias-neutralization",
+		"authentic-influence-integrity",
+		"limbic-regulation-leadership",
+		"tribal-cohesion-social-safety",
+		"adaptive-resilience-growth-mindset",
+		"high-trust-bandwidth-communication",
+		"intentional-culture-design",
+		"conflict-alchemy-resolution",
+		"strategic-patience-impulse-control",
+		"servant-leadership-altruism",
+	],
 	mood: [
 		"depressed-suicidal-major-depressive-disorder",
 		"bpd-bipolar-disorder",

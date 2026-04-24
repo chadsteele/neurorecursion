@@ -1,5 +1,27 @@
 export const Categories = [
 	{
+		category_name:
+			"Freedom, Courage, Love and Leadership, Power and Prosperity",
+		path: "/freedom/courage/love/leadership/power/prosperity",
+		ids: [
+			"radical-transparency-vulnerability",
+			"psychological-safety-anchoring",
+			"empathic-resonance-attunement",
+			"collaborative-innovation-flow",
+			"visionary-courage-risk-appraisal",
+			"inclusive-belonging-bias-neutralization",
+			"authentic-influence-integrity",
+			"limbic-regulation-leadership",
+			"tribal-cohesion-social-safety",
+			"adaptive-resilience-growth-mindset",
+			"high-trust-bandwidth-communication",
+			"intentional-culture-design",
+			"conflict-alchemy-resolution",
+			"strategic-patience-impulse-control",
+			"servant-leadership-altruism",
+		],
+	},
+	{
 		category_name: "Anxiety, Panic & Social Threat",
 		path: "/anxiety/panic/social-threat",
 		ids: [
@@ -256,6 +278,31 @@ export const Categories = [
 			"paranoia-scelerephobia-fear-strangers-criminals",
 			"persecutor-role-aggressive-control",
 			"teen-bullying-aggressive-defense",
+		],
+	},
+]
+
+// Empowerment & Leadership Desires
+export const DesireCategories = [
+	{
+		category_name: "Empowerment & Leadership Desires",
+		path: "/empowerment/leadership/desires",
+		ids: [
+			"radical-transparency-vulnerability",
+			"psychological-safety-anchoring",
+			"empathic-resonance-attunement",
+			"collaborative-innovation-flow",
+			"visionary-courage-risk-appraisal",
+			"inclusive-belonging-bias-neutralization",
+			"authentic-influence-integrity",
+			"limbic-regulation-leadership",
+			"tribal-cohesion-social-safety",
+			"adaptive-resilience-growth-mindset",
+			"high-trust-bandwidth-communication",
+			"intentional-culture-design",
+			"conflict-alchemy-resolution",
+			"strategic-patience-impulse-control",
+			"servant-leadership-altruism",
 		],
 	},
 ]

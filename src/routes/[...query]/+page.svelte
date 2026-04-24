@@ -7,7 +7,9 @@
 	import SignUp from "$lib/SignUp.svelte"
 	import Parallax from "$lib/Parallax.svelte"
 	import ConditionCard from "$lib/ConditionCard.svelte"
+	// import VirtueCard from "$lib/VirtueCard.svelte"
 	import {getCondition} from "$data/Conditions.js"
+	import Virtues from "$data/Virtues.js"
 	import {getPioneer} from "$data/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
@@ -17,6 +19,12 @@
 	const Categories = $derived(data.Categories || [])
 	const Conditions = $derived(data.Conditions || [])
 	const ConditionsMap = $derived(data.ConditionsMap || {})
+	const VirtuesMap = $derived(
+		Virtues.reduce((acc, v) => {
+			acc[v.id] = v
+			return acc
+		}, {}),
+	)
 	const pioneerSchemasForPath = $derived(data.pioneerSchemasForPath || [])
 	const sortedPioneers = $derived(data.sortedPioneers || [])
 	const PioneersMap = $derived(data.PioneersMap || {})
@@ -201,10 +209,13 @@
 		<h1>{category.category_name}</h1>
 	</div>
 
-	{#each category.ids as conditionId (conditionId)}
-		{@const condition = ConditionsMap[conditionId]}
+	{#each category.ids as id (id)}
+		{@const condition = ConditionsMap[id]}
+		{@const virtue = VirtuesMap[id]}
 		{#if condition}
 			<ConditionCard {condition} {formData} />
+		{:else if virtue}
+			<ConditionCard condition={virtue} />
 		{/if}
 	{/each}
 {/each}
