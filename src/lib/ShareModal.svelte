@@ -2,7 +2,7 @@
 	let {
 		title = "",
 		description = "",
-		imageUrl = "/logo.webp",
+		imageUrl = "/logo.png",
 		url = "",
 		onClose = () => {},
 	} = $props()
@@ -33,53 +33,164 @@
 
 	const assetImageUrl = $derived(getAssetImageUrl(imageUrl))
 
+	function getImageUrlCandidates(url) {
+		if (!url) return []
+
+		const candidates = [url]
+		if (url.includes("/og/")) {
+			candidates.push(url.replace("/og/", "/src/"))
+		}
+		if (url.endsWith(".webp")) {
+			candidates.push(url.replace(/\.webp$/, ".png"))
+		}
+
+		const expandedCandidates = []
+		for (const candidate of candidates) {
+			expandedCandidates.push(candidate)
+			if (candidate.includes("/og/")) {
+				expandedCandidates.push(candidate.replace("/og/", "/src/"))
+			}
+			if (candidate.endsWith(".webp")) {
+				expandedCandidates.push(candidate.replace(/\.webp$/, ".png"))
+			}
+		}
+
+		return [...new Set(expandedCandidates)]
+	}
+
+	async function fetchFirstAvailableImage(url) {
+		const candidates = getImageUrlCandidates(url)
+		for (const candidate of candidates) {
+			try {
+				const response = await fetch(candidate, {
+					mode: "cors",
+					credentials: "omit",
+				})
+				if (response.ok) {
+					return {
+						blob: await response.blob(),
+						resolvedUrl: candidate,
+					}
+				}
+			} catch {
+				// Continue through fallback candidates.
+			}
+		}
+
+		return {
+			blob: null,
+			resolvedUrl: "",
+		}
+	}
+
+	function setCopiedState() {
+		copied = true
+		clearTimeout(copyTimeout)
+		copyTimeout = setTimeout(() => {
+			copied = false
+		}, 2000)
+	}
+
+	function legacyCopyRichContent(htmlContent, plainText) {
+		const container = document.createElement("div")
+		container.contentEditable = "true"
+		container.style.position = "fixed"
+		container.style.left = "-99999px"
+		container.style.top = "0"
+		container.style.opacity = "0"
+		container.style.pointerEvents = "none"
+		container.innerHTML = htmlContent
+
+		document.body.appendChild(container)
+
+		const selection = window.getSelection()
+		const range = document.createRange()
+		range.selectNodeContents(container)
+
+		selection?.removeAllRanges()
+		selection?.addRange(range)
+
+		let copiedWithLegacyPath = false
+		const onCopy = (event) => {
+			if (!event.clipboardData) return
+			event.preventDefault()
+			event.clipboardData.setData("text/html", htmlContent)
+			event.clipboardData.setData("text/plain", plainText)
+			copiedWithLegacyPath = true
+		}
+
+		document.addEventListener("copy", onCopy, {once: true})
+		document.execCommand("copy")
+
+		selection?.removeAllRanges()
+		document.body.removeChild(container)
+
+		return copiedWithLegacyPath
+	}
+
+	async function toPngBlob(sourceBlob) {
+		if (!sourceBlob) return null
+		if (sourceBlob.type === "image/png") return sourceBlob
+
+		const bitmap = await createImageBitmap(sourceBlob)
+		const canvas = document.createElement("canvas")
+		canvas.width = bitmap.width
+		canvas.height = bitmap.height
+
+		const context = canvas.getContext("2d")
+		if (!context) {
+			throw new Error(
+				"Could not create canvas context for PNG conversion",
+			)
+		}
+
+		context.drawImage(bitmap, 0, 0)
+
+		return await new Promise((resolve, reject) => {
+			canvas.toBlob((blob) => {
+				if (blob) resolve(blob)
+				else reject(new Error("PNG conversion failed"))
+			}, "image/png")
+		})
+	}
+
 	async function copyToClipboard() {
 		try {
 			const plainText = url
 				? `${title}\n\n${description}\n\n${url}`
 				: `${title}\n\n${description}`
 
-			// Fetch image and convert to base64 for HTML
+			// Fetch image, convert to PNG (better paste support), and encode for HTML
 			let imageBase64 = ""
 			let imageBlob = null
+			let resolvedImageUrl = assetImageUrl
 			if (assetImageUrl) {
 				try {
-					console.log("Fetching image from:", assetImageUrl)
-					const response = await fetch(assetImageUrl, {
-						mode: "cors",
-						credentials: "omit",
-					})
-					if (!response.ok) {
-						console.error(
-							"Image fetch failed with status:",
-							response.status,
+					const {blob: fetchedBlob, resolvedUrl} =
+						await fetchFirstAvailableImage(assetImageUrl)
+					if (!fetchedBlob) {
+						throw new Error(
+							"No usable image found at any fallback URL",
 						)
-						throw new Error(`HTTP ${response.status}`)
 					}
-					imageBlob = await response.blob()
-					console.log(
-						"Image blob created:",
-						imageBlob.type,
-						imageBlob.size,
-					)
+					resolvedImageUrl = resolvedUrl
+					imageBlob = await toPngBlob(fetchedBlob)
 					const reader = new FileReader()
 					imageBase64 = await new Promise((resolve, reject) => {
 						reader.onloadend = () => resolve(reader.result)
 						reader.onerror = () => reject(reader.error)
 						reader.readAsDataURL(imageBlob)
 					})
-					console.log(
-						"Image converted to base64, length:",
-						imageBase64.length,
-					)
 				} catch (err) {
 					console.error("Failed to fetch image:", err)
 				}
 			}
 
 			const imageHtml = imageBase64
-				? `<img src="${assetImageUrl}" alt="" style="width: 100%; max-height: 300px; object-fit: cover; display: block;" />`
-				: ""
+				? `<img src="${imageBase64}" alt="" style="width: 100%; max-height: 300px; object-fit: cover; display: block;" />`
+				: resolvedImageUrl
+					? `<img src="${resolvedImageUrl}" alt="" style="width: 100%; max-height: 300px; object-fit: cover; display: block;" />`
+					: ""
 			const urlHtml = url
 				? `<p style="margin: 0; font-size: 12px; color: #0a66c2;"><a href="${url}" style="color: #0a66c2; text-decoration: none;">${url}</a></p>`
 				: ""
@@ -96,6 +207,15 @@
 </div>
 			`.trim()
 
+			const copiedWithLegacyPath = legacyCopyRichContent(
+				htmlContent,
+				plainText,
+			)
+			if (copiedWithLegacyPath) {
+				setCopiedState()
+				return
+			}
+
 			const htmlBlob = new Blob([htmlContent], {type: "text/html"})
 			const textBlob = new Blob([plainText], {type: "text/plain"})
 
@@ -104,19 +224,15 @@
 				"text/plain": textBlob,
 			}
 
-			// Add image blob as fallback
+			// Add PNG image data for editors that accept image clipboard types
 			if (imageBlob) {
-				clipboardData[imageBlob.type] = imageBlob
+				clipboardData["image/png"] = imageBlob
 			}
 
 			const data = [new ClipboardItem(clipboardData)]
 
 			await navigator.clipboard.write(data)
-			copied = true
-			clearTimeout(copyTimeout)
-			copyTimeout = setTimeout(() => {
-				copied = false
-			}, 2000)
+			setCopiedState()
 		} catch (err) {
 			console.error("Failed to copy to clipboard:", err)
 			// Fallback to plain text
@@ -125,11 +241,7 @@
 					? `${title}\n\n${description}\n\n${url}`
 					: `${title}\n\n${description}`
 				await navigator.clipboard.writeText(plainText)
-				copied = true
-				clearTimeout(copyTimeout)
-				copyTimeout = setTimeout(() => {
-					copied = false
-				}, 2000)
+				setCopiedState()
 			} catch (fallbackErr) {
 				console.error("Fallback copy also failed:", fallbackErr)
 			}
@@ -263,6 +375,7 @@
 		color: #65676b;
 		line-height: 1.4;
 		display: -webkit-box;
+		line-clamp: 3;
 		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
