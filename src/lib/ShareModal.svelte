@@ -39,24 +39,46 @@
 				? `${title}\n\n${description}\n\n${url}`
 				: `${title}\n\n${description}`
 
-			// Fetch image and convert to base64
+			// Fetch image and convert to base64 for HTML
 			let imageBase64 = ""
+			let imageBlob = null
 			if (assetImageUrl) {
 				try {
-					const response = await fetch(assetImageUrl)
-					const blob = await response.blob()
-					const reader = new FileReader()
-					imageBase64 = await new Promise((resolve) => {
-						reader.onloadend = () => resolve(reader.result)
-						reader.readAsDataURL(blob)
+					console.log("Fetching image from:", assetImageUrl)
+					const response = await fetch(assetImageUrl, {
+						mode: "cors",
+						credentials: "omit",
 					})
+					if (!response.ok) {
+						console.error(
+							"Image fetch failed with status:",
+							response.status,
+						)
+						throw new Error(`HTTP ${response.status}`)
+					}
+					imageBlob = await response.blob()
+					console.log(
+						"Image blob created:",
+						imageBlob.type,
+						imageBlob.size,
+					)
+					const reader = new FileReader()
+					imageBase64 = await new Promise((resolve, reject) => {
+						reader.onloadend = () => resolve(reader.result)
+						reader.onerror = () => reject(reader.error)
+						reader.readAsDataURL(imageBlob)
+					})
+					console.log(
+						"Image converted to base64, length:",
+						imageBase64.length,
+					)
 				} catch (err) {
 					console.error("Failed to fetch image:", err)
 				}
 			}
 
 			const imageHtml = imageBase64
-				? `<img src="${imageBase64}" alt="" style="width: 100%; max-height: 300px; object-fit: cover; display: block;" />`
+				? `<img src="${assetImageUrl}" alt="" style="width: 100%; max-height: 300px; object-fit: cover; display: block;" />`
 				: ""
 			const urlHtml = url
 				? `<p style="margin: 0; font-size: 12px; color: #0a66c2;"><a href="${url}" style="color: #0a66c2; text-decoration: none;">${url}</a></p>`
@@ -77,12 +99,17 @@
 			const htmlBlob = new Blob([htmlContent], {type: "text/html"})
 			const textBlob = new Blob([plainText], {type: "text/plain"})
 
-			const data = [
-				new ClipboardItem({
-					"text/html": htmlBlob,
-					"text/plain": textBlob,
-				}),
-			]
+			const clipboardData = {
+				"text/html": htmlBlob,
+				"text/plain": textBlob,
+			}
+
+			// Add image blob as fallback
+			if (imageBlob) {
+				clipboardData[imageBlob.type] = imageBlob
+			}
+
+			const data = [new ClipboardItem(clipboardData)]
 
 			await navigator.clipboard.write(data)
 			copied = true
