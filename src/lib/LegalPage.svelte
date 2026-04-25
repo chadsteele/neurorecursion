@@ -61,7 +61,7 @@
 </svelte:head>
 
 <PageBackground
-	src="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.png"
+	src="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.webp"
 />
 
 <section class="legal-page page-shell">

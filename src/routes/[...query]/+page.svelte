@@ -158,7 +158,7 @@
 </svelte:head>
 
 <Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.png"
+	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.webp"
 >
 	<div id="about" path="/about"></div>
 	<Intro class="paper container" />
@@ -174,7 +174,7 @@
 	<h1>Clinical Trials</h1>
 </div>
 <Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-grass.png"
+	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-grass.webp"
 >
 	<section class="paper container">
 		<h2>Enrolling now!</h2>
@@ -265,7 +265,7 @@
 </div>
 <div id="support" path="/support"></div>
 <Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-blowing-bubbles.png"
+	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-blowing-bubbles.webp"
 >
 	<Orgs class="paper container" />
 </Parallax>
