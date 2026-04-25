@@ -2,7 +2,7 @@
 	let {
 		title = "",
 		description = "",
-		imageUrl = "/logo.png",
+		imageUrl = "/logo.webp",
 		url = "",
 		onClose = () => {},
 	} = $props()

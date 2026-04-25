@@ -7,7 +7,7 @@
 	<h1>Join our clinical trials</h1>
 	<div>
 		<img
-			src="/logo.png"
+			src="/logo.webp"
 			alt="Neuro Recursion Institute"
 			class="float-logo"
 		/>

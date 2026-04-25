@@ -38,7 +38,7 @@
 	<div class="paper container page-stack">
 		<div class="header-flex">
 			<img
-				src="/logo.png"
+				src="/logo.webp"
 				alt="Neuro Recursion Institute"
 				class="float-logo"
 			/>
