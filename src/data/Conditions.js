@@ -13,7 +13,7 @@ Our technique targets and rewires this cascade through creative reprogramming of
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/depressed-suicidal-major-depressive-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/depressed-suicidal-major-depressive-disorder.avif",
 	},
 	{
 		id: "developmental-trauma-childhood-trauma",
@@ -27,7 +27,7 @@ Our technique targets these ancient survival blueprints through creative reprogr
 		ngo_url: "/ngo/national-center-trauma-informed-care",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/developmental-trauma-childhood-trauma.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/developmental-trauma-childhood-trauma.avif",
 	},
 	{
 		id: "cult-recovery-religious-trauma-damnation-fear",
@@ -41,7 +41,7 @@ Our technique systematically deconditions the amygdala's association between aut
 		ngo_url: "/ngo/international-cultic-studies-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cult-recovery-religious-trauma-damnation-fear.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cult-recovery-religious-trauma-damnation-fear.avif",
 	},
 	{
 		id: "divorce-relational-trauma-family-systems-stress",
@@ -55,7 +55,7 @@ Our technique works with the nervous systems of both partners to recode the thre
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/divorce-relational-trauma-family-systems-stress.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/divorce-relational-trauma-family-systems-stress.avif",
 	},
 	{
 		id: "anxious-avoidant-attachment-relational-patterns",
@@ -69,7 +69,7 @@ Our technique reprograms the attachment circuitry by recalibrating the amygdala'
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anxious-avoidant-attachment-relational-patterns.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anxious-avoidant-attachment-relational-patterns.avif",
 	},
 	{
 		id: "loneliness-social-disconnection",
@@ -83,7 +83,7 @@ Our technique recalibrates social threat perception and restores social reward c
 		ngo_url: "/ngo/campaign-end-loneliness",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/loneliness-social-disconnection.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/loneliness-social-disconnection.avif",
 	},
 	{
 		id: "ptsd-post-traumatic-stress-disorder",
@@ -97,7 +97,7 @@ Our technique recodes the threat-detection and memory-processing systems through
 		ngo_url: "/ngo/national-center-ptsd",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ptsd-post-traumatic-stress-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ptsd-post-traumatic-stress-disorder.avif",
 	},
 	{
 		id: "migraines",
@@ -111,7 +111,7 @@ Our technique targets the anxiety-pain signaling loop through conscious reprogra
 		ngo_url: "/ngo/american-migraine-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/migraines.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/migraines.avif",
 	},
 	{
 		id: "chronic-inner-ear-vertigo-tinnitus",
@@ -126,7 +126,7 @@ Our technique targets the limbic amplification that keeps these chronic inner-ea
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781499/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/vertigo-pppd-chronic-dizziness.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/vertigo-pppd-chronic-dizziness.avif",
 	},
 	{
 		id: "health-anxiety-hypochondriasis",
@@ -140,7 +140,7 @@ Our technique recalibrates the amygdala's interpretation of bodily signals and r
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/health-anxiety-hypochondriasis.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/health-anxiety-hypochondriasis.avif",
 	},
 	{
 		id: "chronic-pain-psychosomatic",
@@ -154,7 +154,7 @@ Our technique recalibrates the pain-amplification circuitry by reducing threat p
 		ngo_url: "/ngo/international-association-study-pain",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronic-pain-psychosomatic.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronic-pain-psychosomatic.avif",
 	},
 	{
 		id: "stuttering-childhood-onset-fluency-disorder",
@@ -168,7 +168,7 @@ Our research demonstrates that by breaking the hardened anxiety-stutter loop, in
 		ngo_url: "/ngo/stuttering-help",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stuttering-childhood-onset-fluency-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stuttering-childhood-onset-fluency-disorder.avif",
 	},
 	{
 		id: "arachnophobia-fear-spiders",
@@ -182,7 +182,7 @@ Our technique recodes the amygdala's threat classification through targeted crea
 		ngo_url: "/ngo/anxiety-canada",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/arachnophobia-fear-spiders.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/arachnophobia-fear-spiders.avif",
 	},
 	{
 		id: "ophidiophobia-fear-snakes",
@@ -196,7 +196,7 @@ Our technique targets the amygdala's threat detection architecture, recalibratin
 		ngo_url: "/ngo/international-ocd-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ophidiophobia-fear-snakes.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ophidiophobia-fear-snakes.avif",
 	},
 	{
 		id: "acrophobia-fear-heights",
@@ -210,7 +210,7 @@ Our technique engages the intersection of vestibular and limbic signal processin
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/acrophobia-fear-heights.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/acrophobia-fear-heights.avif",
 	},
 	{
 		id: "glossophobia-fear-public-speaking",
@@ -224,7 +224,7 @@ Our technique recodes the amygdala's threat coding for audiences through targete
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/glossophobia-fear-public-speaking.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/glossophobia-fear-public-speaking.avif",
 	},
 	{
 		id: "imposter-syndrome",
@@ -238,7 +238,7 @@ Our technique recalibrates the threat-detection bias and restores accurate self-
 		ngo_url: "/ngo/impostor-syndrome-support",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/imposter-syndrome.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/imposter-syndrome.avif",
 	},
 	{
 		id: "performance-anxiety-evaluation-fear",
@@ -252,7 +252,7 @@ Our technique recalibrates the social-evaluation threat response through targete
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/performance-anxiety-evaluation-fear.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/performance-anxiety-evaluation-fear.avif",
 	},
 	{
 		id: "agoraphobia-social-phobia",
@@ -266,7 +266,7 @@ Our technique dismantles the agoraphobia trap through targeted recalibration of 
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/agoraphobia-social-phobia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/agoraphobia-social-phobia.avif",
 	},
 	{
 		id: "aerophobia-fear-flying",
@@ -280,7 +280,7 @@ Our technique targets the convergence of fears through precise limbic reprogramm
 		ngo_url: "/ngo/fear-flying-help",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/aerophobia-fear-flying.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/aerophobia-fear-flying.avif",
 	},
 	{
 		id: "rejection-sensitivity",
@@ -294,7 +294,7 @@ Our technique recalibrates the rejection-threat response by resetting the amygda
 		ngo_url: "/ngo/chadd",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rejection-sensitivity.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rejection-sensitivity.avif",
 	},
 	{
 		id: "cynophobia-fear-dogs",
@@ -308,7 +308,7 @@ Our technique dissolves the learned dog-threat association through targeted limb
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cynophobia-fear-dogs.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cynophobia-fear-dogs.avif",
 	},
 	{
 		id: "trypanophobia-fear-needles",
@@ -322,7 +322,7 @@ Our technique recalibrates the needle-threat association through targeted creati
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trypanophobia-fear-needles.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trypanophobia-fear-needles.avif",
 	},
 
 	{
@@ -337,7 +337,7 @@ Our technique recalibrates the confinement-threat association and interoceptive 
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/claustrophobia-fear-enclosed-spaces.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/claustrophobia-fear-enclosed-spaces.avif",
 	},
 	{
 		id: "astraphobia-fear-storms",
@@ -351,7 +351,7 @@ Our technique recalibrates the storm threat association through targeted creativ
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/astraphobia-fear-storms.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/astraphobia-fear-storms.avif",
 	},
 
 	{
@@ -367,7 +367,7 @@ Our technique isn't about 'curing' autism or making you more neurotypical. It's 
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7398158/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/asd-autism-aspergers-autistic-spectrum-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/asd-autism-aspergers-autistic-spectrum-disorder.avif",
 	},
 	{
 		id: "adhd-attention-deficit-hyperactivity-disorder",
@@ -381,7 +381,7 @@ Our technique targets the anxiety infrastructure that compounds ADHD impairment.
 		ngo_url: "/ngo/chadd",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adhd-attention-deficit-hyperactivity-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adhd-attention-deficit-hyperactivity-disorder.avif",
 	},
 
 	{
@@ -396,7 +396,7 @@ Our technique stabilizes the nervous system's stress response patterns through t
 		ngo_url: "/ngo/bipolar-uk",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/bpd-bipolar-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/bpd-bipolar-disorder.avif",
 	},
 	{
 		id: "gun-addiction-weapons-obsession",
@@ -410,7 +410,7 @@ Our technique recalibrates the threat-response system and restores genuine safet
 		ngo_url: "/ngo/gun-violence-archive",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/gun-addiction-weapons-obsession.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/gun-addiction-weapons-obsession.avif",
 	},
 	{
 		id: "homicidal-ideation-violent-urges",
@@ -424,7 +424,7 @@ Our technique recalibrates threat-response proportionality and restores prefront
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/homicidal-ideation-violent-urges.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/homicidal-ideation-violent-urges.avif",
 	},
 	{
 		id: "ied-rage-intermittent-explosive-disorder",
@@ -438,7 +438,7 @@ Our technique breaks this reinforcement cycle by providing more effective ways t
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ied-rage-intermittent-explosive-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ied-rage-intermittent-explosive-disorder.avif",
 	},
 	{
 		id: "burnout-exhaustion-depersonalization",
@@ -452,7 +452,7 @@ Our technique recalibrates the nervous system from chronic threat-state through 
 
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/burnout-exhaustion-depersonalization.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/burnout-exhaustion-depersonalization.avif",
 	},
 	{
 		id: "alcohol-substance-abuse",
@@ -468,7 +468,7 @@ Related condition: For adolescent substance abuse during critical developmental 
 		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/alcohol-substance-abuse.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/alcohol-substance-abuse.avif",
 	},
 	{
 		id: "screen-addiction",
@@ -484,7 +484,7 @@ Related condition: For adolescent-specific screen addiction during critical deve
 		ngo_url: "/ngo/addiction-center",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/screen-addiction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/screen-addiction.avif",
 	},
 	{
 		id: "porn-addiction-sexual-compulsivity",
@@ -500,7 +500,7 @@ Related condition: Porn addiction and compulsive sexual behavior are distinct fr
 		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/porn-addiction-sexual-compulsivity.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/porn-addiction-sexual-compulsivity.avif",
 	},
 	{
 		id: "sexual-dysfunction-performance-anxiety-impotence",
@@ -514,9 +514,9 @@ Our technique recalibrates the amygdala's threat perception around sexual perfor
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-performance-anxiety-impotence.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-performance-anxiety-impotence.avif",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-performance-anxiety-impotence.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-performance-anxiety-impotence.avif",
 	},
 	{
 		id: "fear-of-intimacy-commitment-fear",
@@ -530,7 +530,7 @@ Our technique recalibrates the intimacy-threat association by restoring secure a
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/fear-of-intimacy-commitment-fear.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/fear-of-intimacy-commitment-fear.avif",
 	},
 	{
 		id: "ai-anxiety-technophobia-fear-ai",
@@ -544,7 +544,7 @@ Our technique recalibrates threat-perception in response to AI and technological
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ai-anxiety-technophobia-fear-ai.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ai-anxiety-technophobia-fear-ai.avif",
 	},
 	{
 		id: "social-media-anxiety-disorder",
@@ -558,7 +558,7 @@ Our technique dissolves the social-evaluation threat perception specific to soci
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/social-media-anxiety-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/social-media-anxiety-disorder.avif",
 	},
 	{
 		id: "paranoia-scelerephobia-fear-strangers-criminals",
@@ -572,7 +572,7 @@ Our technique recalibrates threat perception in social contexts and restores acc
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/paranoia-scelerephobia-fear-strangers-criminals.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/paranoia-scelerephobia-fear-strangers-criminals.avif",
 	},
 	{
 		id: "tics-tourette-syndrome-tic-disorders",
@@ -586,7 +586,7 @@ The basal ganglia, a set of brain structures crucial for voluntary motor control
 		ngo_url: "/ngo/tourette-association-america",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/40585552/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tics-tourette-syndrome-tic-disorders.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tics-tourette-syndrome-tic-disorders.avif",
 	},
 	{
 		id: "functional-neurological-symptom-disorder-motor-sensory",
@@ -600,7 +600,7 @@ Our technique targets the threat-signaling and predictive-control systems drivin
 		ngo_url: "/ngo/fnd-hope",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/functional-neurological-symptom-disorder-motor-sensory.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/functional-neurological-symptom-disorder-motor-sensory.avif",
 	},
 	{
 		id: "psychogenic-movement-disorders-stress-tics-facial-guarding-functional-facial-symptoms",
@@ -614,7 +614,7 @@ Our technique interrupts the distress-to-movement loop by recalibrating the thre
 		ngo_url: "/ngo/world-federation-neurology",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/psychogenic-movement-disorders-stress-tics-bruxism-facial-guarding.avif",
 	},
 	{
 		id: "tmj-bruxism-lockjaw-jaw-clenching-temporomandibular-dysfunction",
@@ -628,7 +628,7 @@ Our technique targets the jaw-threat loop directly. We reduce amygdala-driven cl
 		ngo_url: "/ngo/american-academy-orofacial-pain",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tmj-bruxism-lockjaw-jaw-clenching-masseter-tension.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tmj-bruxism-lockjaw-jaw-clenching-masseter-tension.avif",
 	},
 	{
 		id: "epilepsy-seizure-disorders",
@@ -642,7 +642,7 @@ Our technique restores parasympathetic nervous system activation and reduces chr
 		ngo_url: "/ngo/epilepsy-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/epilepsy-seizure-disorders.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/epilepsy-seizure-disorders.avif",
 	},
 	{
 		id: "insomnia-sleep-hyperarousal",
@@ -656,7 +656,7 @@ Our technique recalibrates night-time threat detection and restores parasympathe
 		ngo_url: "/ngo/national-sleep-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/insomnia-sleep-hyperarousal.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/insomnia-sleep-hyperarousal.avif",
 	},
 	{
 		id: "ocd-obsessive-compulsive-disorder",
@@ -670,7 +670,7 @@ Our technique breaks the obsessive-compulsive circuit through targeted recalibra
 		ngo_url: "/ngo/international-ocd-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ocd-obsessive-compulsive-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/ocd-obsessive-compulsive-disorder.avif",
 	},
 	{
 		id: "trichotillomania-hair-pulling",
@@ -684,7 +684,7 @@ Our technique dissolves the anxiety-BFRB link by recalibrating how the nervous s
 		ngo_url: "/ngo/tlc-foundation-body-focused-repetitive-behaviors",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trichotillomania-hair-pulling.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trichotillomania-hair-pulling.avif",
 	},
 	{
 		id: "body-dysmorphia",
@@ -698,7 +698,7 @@ Our technique recalibrates appearance-threat perception and restores accurate se
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/body-dysmorphia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/body-dysmorphia.avif",
 	},
 	{
 		id: "eating-disorders-anorexia-bulimia-binge",
@@ -712,7 +712,7 @@ Our technique recalibrates anxiety-management and restores genuine interoceptive
 		ngo_url: "/ngo/national-eating-disorders-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/eating-disorders-anorexia-bulimia-binge.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/eating-disorders-anorexia-bulimia-binge.avif",
 	},
 	{
 		id: "spd-sensory-processing-disorder",
@@ -726,7 +726,7 @@ Our technique restores normal sensory gating by reducing threat-sensitivity and 
 		ngo_url: "/ngo/star-institute-sensory-processing",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/spd-sensory-processing-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/spd-sensory-processing-disorder.avif",
 	},
 	{
 		id: "misophonia",
@@ -741,7 +741,7 @@ Our technique dissolves the pathological auditory-limbic connection through targ
 		scientific_reference:
 			"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5321671/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/misophonia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/misophonia.avif",
 	},
 	{
 		id: "selective-mutism",
@@ -755,7 +755,7 @@ Our technique shatters the selective mutism loop through targeted limbic reprogr
 		ngo_url: "/ngo/selective-mutism-association",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/26709680/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/selective-mutism.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/selective-mutism.avif",
 	},
 
 	{
@@ -770,7 +770,7 @@ Our technique restores smooth motor planning by reducing anxiety and targeting t
 		ngo_url: "/ngo/dyspraxia-usa",
 		scientific_reference: "https://pubmed.ncbi.nlm.nih.gov/29159933/",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dcd-dyspraxia-developmental-coordination-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dcd-dyspraxia-developmental-coordination-disorder.avif",
 	},
 	{
 		id: "dyscalculia",
@@ -784,7 +784,7 @@ Our technique reduces math-related anxiety by recalibrating threat perception an
 		ngo_url: "/ngo/learning-disabilities-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dyscalculia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dyscalculia.avif",
 	},
 	{
 		id: "test-anxiety",
@@ -798,7 +798,7 @@ Our technique recalibrates the evaluation-threat perception in testing contexts 
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/test-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/test-anxiety.avif",
 	},
 	{
 		id: "perfectionism",
@@ -814,7 +814,7 @@ Our technique recalibrates the threat-perception in response to imperfection and
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/perfectionism.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/perfectionism.avif",
 	},
 	{
 		id: "dysgraphia",
@@ -828,7 +828,7 @@ Our technique restores a relaxed neuromuscular state and recalibrates working me
 		ngo_url: "/ngo/dysgraphia-support",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dysgraphia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dysgraphia.avif",
 	},
 	{
 		id: "generalized-anxiety-disorder",
@@ -841,7 +841,7 @@ The neurobiological mechanism involves amygdala hyperactivity and reduced prefro
 Our technique recalibrates the threat-detection system and reduces amygdala hyperactivity through targeted limbic intervention. We dissolve the false belief that worry provides safety and restore accurate threat-assessment. Your nervous system ceases generating excessive worry and excess anxiety production. You experience stable baseline calm where worry no longer dominates consciousness and genuine safety is felt despite life's inherent uncertainties.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/generalized-anxiety-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/generalized-anxiety-disorder.avif",
 	},
 	{
 		id: "chronophobia-fear-time-future",
@@ -854,7 +854,7 @@ The neurobiological mechanism involves an overactive amygdala that perceives tim
 Our technique recalibrates the amygdala's threat perception around time and mortality through targeted limbic intervention. We dissolve the existential threat association with temporal awareness and restore presence and acceptance of mortality. Your nervous system ceases to treat time's passage as danger. You experience peace in the present moment, healthy perspective on aging, and freedom from mortality obsession.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronophobia-fear-time-future.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronophobia-fear-time-future.avif",
 	},
 	{
 		id: "thanatophobia-death-anxiety",
@@ -867,7 +867,7 @@ The neurobiological mechanism involves an amygdala that has been conditioned to 
 Our technique recalibrates death perception and dissolves the morbid obsession pattern through targeted limbic intervention. We restore accurate probability assessment and emotional proportionality around mortality. Your nervous system ceases to treat death awareness as immediate threat. You experience acceptance of mortality, freedom from intrusive death thoughts, and restored capacity to engage fully in life.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/thanatophobia-death-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/thanatophobia-death-anxiety.avif",
 	},
 	{
 		id: "moral-injury-values-violation",
@@ -880,7 +880,7 @@ The neurobiological mechanism involves the medial prefrontal cortex—which main
 Our technique integrates the moral violation into a coherent, compassionate identity narrative through targeted limbic and identity work. We dissolve the shame-encoding and restore wholeness of self. Your nervous system ceases to treat the moral violation as defining your identity. You experience integrated self-understanding, restored capacity for self-compassion, and renewed sense of meaning and values.`,
 		ngo_url: "/ngo/nami",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/moral-injury-values-violation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/moral-injury-values-violation.avif",
 	},
 	{
 		id: "general-fears-phobias",
@@ -893,7 +893,7 @@ The neurobiological mechanism involves classical conditioning where a neutral st
 Our technique dissolves the specific stimulus-threat association through targeted amygdala recalibration. We break the conditioned fear response and restore accurate threat assessment of the specific stimulus. Your nervous system ceases to respond with fear when encountering the phobic object. You experience rapid freedom from the specific phobia and restored capacity to engage with previously avoided situations.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-fears-phobias.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-fears-phobias.avif",
 	},
 	{
 		id: "seasonal-affective-disorder-sad",
@@ -906,7 +906,7 @@ The neurobiological mechanism involves dysregulation of circadian rhythms caused
 Our technique recalibrates circadian rhythm sensitivity to seasonal light changes through targeted limbic intervention. We restore robust dopamine and serotonin signaling independent of seasonal darkness. Your nervous system ceases to treat winter darkness as threat or signal for depressive shutdown. You experience consistent mood and motivation year-round without seasonal variation.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/seasonal-affective-disorder-sad.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/seasonal-affective-disorder-sad.avif",
 	},
 	{
 		id: "perinatal-depression-paternal-postpartum-depression",
@@ -919,7 +919,7 @@ The neurobiological mechanism involves massive hormonal shifts—particularly sh
 Our technique recalibrates the nervous system's response to perinatal hormonal and sleep shifts through targeted limbic and endocrine intervention. We restore monoamine signaling and hippocampal function independent of hormonal status. Your nervous system regains capacity for bonding, pleasure, and engagement with your baby and life. You experience freedom from perinatal/postpartum depression and access to genuine maternal (or paternal) connection.`,
 		ngo_url: "/ngo/postpartum-support-international",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/perinatal-depression-paternal-postpartum-depression.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/perinatal-depression-paternal-postpartum-depression.avif",
 	},
 	{
 		id: "menopausal-depression",
@@ -932,7 +932,7 @@ The neurobiological mechanism involves the dramatic decline in estrogen during m
 Our technique recalibrates monoamine systems and limbic sensitivity to menopausal hormonal and physical changes through targeted intervention. We restore neurochemical balance independent of estrogen levels and recalibrate threat-sensitivity to menopause-related sensations. Your nervous system regains capacity for mood stability, motivation, and engagement. You experience freedom from menopausal depression and restored quality of life during and after menopause.`,
 		ngo_url: "/ngo/north-american-menopause-society",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/menopausal-depression.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/menopausal-depression.avif",
 	},
 	{
 		id: "general-mood-disorders",
@@ -945,7 +945,7 @@ The neurobiological mechanisms vary across mood disorder types but generally inv
 Our technique identifies the specific dysregulation pattern and restores balanced mood regulation through targeted limbic intervention. We dissolve the driving mechanisms behind disordered mood states and restore healthy mood cycling or sustained stable affect. Your nervous system regains capacity for emotional resilience and appropriate mood response to circumstances. You experience freedom from mood disorder patterns and restored capacity for psychological wellbeing.`,
 		ngo_url: "/ngo/nami",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-mood-disorders.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-mood-disorders.avif",
 	},
 	{
 		id: "dyslexia-reading-disorder",
@@ -957,7 +957,7 @@ The neurobiological mechanism involves atypical connectivity between the visual 
 
 Our technique optimizes the visual-phonological integration pathways and reduces reading-related anxiety through targeted limbic and visual processing intervention. We enhance the neural coordination between visual recognition and phonological access. Your reading becomes more fluent and automatic as the visual-phonological pathways synchronize. This isn't reading tutoring or more practice. It's recalibration of how the brain integrates visual letter forms with sound. You experience faster reading speed, improved accuracy, and restored willingness to engage with written material.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dyslexia-reading-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/dyslexia-reading-disorder.avif",
 	},
 	{
 		id: "general-neurodevelopmental-issues",
@@ -969,7 +969,7 @@ The neurobiological mechanisms vary across specific neurodevelopmental condition
 
 Our technique identifies and recalibrates the specific neural pathway differences through targeted neurodevelopmental intervention. We enhance the efficiency of atypical neural pathways and reduce secondary anxiety that compounds functional difficulty. Your brain's atypical wiring becomes an asset rather than a limitation, processing efficiently through its unique pathways. You experience functional improvements in affected domains and restored confidence in your capabilities.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurodevelopmental-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurodevelopmental-issues.avif",
 	},
 	{
 		id: "gambling-addiction",
@@ -981,7 +981,7 @@ The neurobiological mechanism involves profound dysregulation of the mesolimbic 
 
 Our technique recalibrates the dopamine reward system and dissolves the distress-gambling link through targeted limbic intervention. We restore executive capacity and genuine distress tolerance. Your nervous system ceases to pursue gambling as relief and accesses genuine anxiety-regulation alternatives. You experience freedom from gambling compulsion and restored financial and emotional stability.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/gambling-addiction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/gambling-addiction.avif",
 	},
 	{
 		id: "food-addiction",
@@ -994,7 +994,7 @@ The neurobiological mechanism involves dysregulation of the mesolimbic reward pa
 Our technique recalibrates the food reward system and restores genuine interoceptive awareness through targeted limbic intervention. We dissolve the emotional-eating link and restore prefrontal regulation. Your nervous system ceases using food as primary emotional management and accesses genuine distress-tolerance alternatives. You experience restored capacity for balanced eating, appropriate appetite regulation, and emotional resilience.`,
 		ngo_url: "/ngo/national-eating-disorders-association",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/food-addiction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/food-addiction.avif",
 	},
 	{
 		id: "general-addictions",
@@ -1007,7 +1007,7 @@ The neurobiological mechanism involves dysregulation of the mesolimbic dopamine 
 Our technique recalibrates the dopamine reward system and restores executive capacity through targeted limbic intervention. We dissolve the distress-addiction link and restore genuine distress tolerance. Your nervous system ceases pursuing the addictive behavior and accesses genuine satisfaction and emotional regulation alternatives. You experience freedom from addiction and restored capacity for meaningful engagement with life.`,
 		ngo_url: "/ngo/find-treatment-samhsa",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-addictions.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-addictions.avif",
 	},
 	{
 		id: "anxiety-somatization-physical-symptoms-health-anxiety",
@@ -1020,7 +1020,7 @@ The neurobiological mechanism involves the gut-brain axis bidirectional communic
 Our technique recalibrates the insula's dysregulated interoceptive awareness and reduces the amygdala's threat perception of body sensations through targeted limbic intervention. We restore normal vagal tone and the gutbrain axis decoupling from threat-response. We help the amygdala distinguish between normal disease symptoms and actual acute threat. Your nervous system ceases amplifying normal body-signals into perceived emergencies. You experience restored capacity for GI function and normal digestion, acceptance of health conditions with proportional rather than catastrophic anxiety, freedom from health-checking compulsions and reassurance-seeking, and the experience of your body as capable rather than as a betrayer generating constant threat-signals.`,
 		ngo_url: "/ngo/nami",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anxiety-somatization-physical-symptoms-health-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anxiety-somatization-physical-symptoms-health-anxiety.avif",
 	},
 	{
 		id: "general-neurological-issues",
@@ -1033,7 +1033,7 @@ The neurobiological mechanisms vary across specific neurological conditions but 
 Our technique addresses both the neurological symptom generation and secondary anxiety through targeted neural intervention. We enhance compensatory neural pathway function and reduce threat-sensitivity to symptom experience. Your brain regains maximum functional capacity given the neurological condition present. You experience improved functional capacity and reduced anxiety about neurological symptoms.`,
 		ngo_url: "/ngo/american-academy-neurology",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.avif",
 	},
 	{
 		id: "self-esteem-identity-issues",
@@ -1046,7 +1046,7 @@ The neurobiological mechanism involves the medial prefrontal cortex—which enco
 Our technique recalibrates the self-representation in the medial prefrontal cortex and reduces amygdala's sensitivity to status/competence threat through targeted identity and limbic intervention. We restore accurate self-perception free from threat-distortion. Your nervous system encodes self-worth based on authentic capability and intrinsic value. You experience stable healthy self-esteem and clarified authentic identity.`,
 		ngo_url: "/ngo/nami",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/self-esteem-identity-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/self-esteem-identity-issues.avif",
 	},
 	{
 		id: "general-performance-issues",
@@ -1059,7 +1059,7 @@ The neurobiological mechanism involves the amygdala perceiving performance conte
 Our technique recalibrates the amygdala's threat perception of performance contexts through targeted limbic intervention. We restore executive function and skill access when performance stakes are present. Your nervous system ceases treating performance as social threat and maintains prefrontal regulation. You experience genuine performance capability when stakes are present and freedom to execute skill at full capacity.`,
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-performance-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-performance-issues.avif",
 	},
 	{
 		id: "cutting-self-harm",
@@ -1072,7 +1072,7 @@ The neurobiological mechanism involves dysregulation of pain processing and emot
 Our technique builds genuine distress tolerance and restores emotional regulation without self-injury through targeted limbic and identity intervention. We dissolve the self-harm to relief link and establish healthier regulation pathways. Your nervous system regains capacity to tolerate intense emotion without requiring physical pain. You experience freedom from urges to self-harm and restored capacity to be present in your body and emotions without medical consequences.`,
 		ngo_url: "/ngo/nami",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cutting-self-harm.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/cutting-self-harm.avif",
 	},
 	{
 		id: "hoarding-disorder",
@@ -1084,7 +1084,7 @@ The neurobiological mechanism involves amygdala hyperreactivity to the idea of d
 
 Our technique recalibrates item-meaning attribution and loss-aversion through targeted limbic intervention. We restore appropriate decision-making capacity and realistic meaning assignment to possessions. Your nervous system ceases extracting excessive emotional significance from objects. You experience freedom to make discard decisions and restored capacity to maintain functional living spaces.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hoarding-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hoarding-disorder.avif",
 	},
 	{
 		id: "general-ocd-spectrum",
@@ -1096,7 +1096,7 @@ The neurobiological mechanism involves orbitofrontal cortex hyperactivity in err
 
 Our technique breaks the obsession-compulsion cycle by recalibrating the error-detection system and reducing amygdala threat-sensitivity through targeted limbic intervention. We restore accurate threat-assessment where obsessions no longer trigger compulsions. Your nervous system ceases generating false threat-signals and regains capacity to tolerate uncertainty. You experience freedom from obsessions and compulsions with dramatically reduced distress.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-ocd-spectrum.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-ocd-spectrum.avif",
 	},
 	{
 		id: "relationship-jealousy-insecurity",
@@ -1108,7 +1108,7 @@ The neurobiological mechanism involves insecure attachment patterns where the am
 
 Our technique recalibrates attachment security and amygdala threat-perception of partner separation through targeted limbic intervention. We restore secure base confidence where partner autonomy can be tolerated without triggering abandonment anxiety. Your nervous system ceases treating partner's other relationships as personal threat. You experience secure attachment, reduced jealousy and monitoring, and restored relationship quality.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/relationship-jealousy-insecurity.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/relationship-jealousy-insecurity.avif",
 	},
 	{
 		id: "codependency-relational-enmeshment",
@@ -1120,7 +1120,7 @@ The neurobiological mechanism involves overactive mirror neuron systems where ot
 
 Our technique restores self-other boundaries and personal autonomy through targeted limbic and identity intervention. We recalibrate interoceptive awareness of personal needs and reduce amygdala's reactivity to others' emotional states. Your nervous system restores clear sense of self separate from others. You experience healthy interdependence with maintained self-integrity, ability to set boundaries, and reduced compulsive caregiving.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/codependency-relational-enmeshment.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/codependency-relational-enmeshment.avif",
 	},
 	{
 		id: "general-attachment-issues",
@@ -1132,7 +1132,7 @@ The neurobiological mechanism involves the ventromedial prefrontal cortex encodi
 
 Our technique recalibrates the attachment security representations through targeted limbic and relational intervention. We dissolve the early attachment trauma pattern and restore capacity for secure adult attachment. Your nervous system regains capacity for genuine closeness with maintained autonomy and healthy dependence. You experience secure attachment patterns and restored capacity for fulfilling intimate relationships.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-attachment-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-attachment-issues.avif",
 	},
 	{
 		id: "aphasia-language-disorder",
@@ -1144,7 +1144,7 @@ The neurobiological mechanism involves damage or disruption to language-dominant
 
 Our technique facilitates neural plasticity and language pathway reorganization through targeted language and limbic intervention. We engage compensatory neural pathways and reduce anxiety about communication. Your language access improves as the brain reorganizes function around the damage. This isn't speech therapy in the traditional sense. It's targeted facilitation of neural adaptation and language recovery. You can experience rapid language recovery and restored communication capacity, but individual results may vary depending on the lesion location.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/aphasia-language-disorder.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/aphasia-language-disorder.avif",
 	},
 	{
 		id: "general-communication-issues",
@@ -1157,7 +1157,7 @@ The neurobiological mechanisms vary across communication issues but often involv
 Our technique recalibrates the specific communication system disruption through targeted neural intervention. We improve neural coordination in affected communication systems and reduce secondary anxiety that compounds difficulty. Your communication becomes more fluid, accurate, and socially effective. This isn't speech therapy or communication coaching. It's targeted recalibration of the neural systems generating communication difficulty. You experience improved communication effectiveness and restored confidence in social and professional communication.`,
 		ngo_url: "/ngo/asha",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-communication-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-communication-issues.avif",
 	},
 	{
 		id: "trauma-drama-etc",
@@ -1170,7 +1170,7 @@ The neurobiological mechanism involves amygdala sensitization and conditioning t
 Our technique systematically desensitizes trauma encoding and restores accurate threat-assessment through targeted limbic intervention. We process trauma memories and diminish their emotional charge and salience. Your nervous system regains capacity to distinguish past threat from present safety. You experience freedom from intrusive trauma memories and chronic threat-detection, restored capacity for trust and genuine engagement with life.`,
 		ngo_url: "/ngo/national-center-trauma-informed-care",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trauma-drama-etc.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/trauma-drama-etc.avif",
 	},
 	{
 		id: "power-control-issues",
@@ -1183,7 +1183,7 @@ The neurobiological mechanism often involves early experiences where the environ
 Our technique recalibrates threat-perception around loss of control and restores capacity to tolerate appropriate vulnerability through targeted limbic intervention. We reduce amygdala reactivity to control-loss and increase tolerance for uncontrollable systems. Your nervous system regains capacity for genuine connection where autonomy need not threaten your sense of safety. You experience freedom from control-compulsion and restored capacity for healthy relationships and collaborative rather than dominance-based relating.`,
 		ngo_url: "/ngo/aamft",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/power-control-issues.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/power-control-issues.avif",
 	},
 	{
 		id: "rape-sexual-assault",
@@ -1196,7 +1196,7 @@ The neurobiological mechanism involves amygdala sensitization to assault-related
 Our technique systematically processes the trauma encoding and restores felt safety in the body through targeted trauma-specific limbic intervention. We desensitize trauma triggers and restore accurate threat-assessment. Your nervous system regains capacity to distinguish assault threat from current safety. You experience reclaimed body ownership, restored capacity for intimacy and pleasure, freedom from intrusive trauma memories, and integration of the assault as something that happened to you rather than something that defines who you are.`,
 		ngo_url: "/ngo/rainn",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rape-sexual-assault.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rape-sexual-assault.avif",
 	},
 	{
 		id: "stockholm-syndrome-trauma-bonding",
@@ -1208,7 +1208,7 @@ The neurobiological mechanism involves amygdala sensitization to the abuser as t
 
 Our technique recalibrates the amygdala's threat-assessment and dissolves the trauma-bonding attachment through targeted limbic intervention. We restore accurate danger perception and sever the false therapeutic bond. Your nervous system regains capacity to recognize abusive patterns and activate protective rather than bonding responses toward abusers. You experience freedom from trauma bond, restored capacity to leave dangerous situations, and healthy attachment to safe people.`,
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stockholm-syndrome-trauma-bonding.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stockholm-syndrome-trauma-bonding.avif",
 	},
 	{
 		id: "sex-addiction",
@@ -1223,7 +1223,7 @@ Our technique recalibrates the dopamine reward system and restores executive inh
 Related condition: Sex addiction involves compulsive sexual behavior used for distress-regulation, distinct from <a href="/remote-clinical-trial/free/porn-addiction/sexual-compulsivity/compulsive-use">Porn Addiction and Sexual Compulsivity</a> though both involve dopamine dysregulation.`,
 		ngo_url: "/ngo/find-treatment-samhsa",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sex-addiction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sex-addiction.avif",
 	},
 	{
 		id: "sexual-orientation-asexuality-gender-identity-anxiety",
@@ -1237,7 +1237,7 @@ Our technique targets the threat-encoding around authentic identity rather than 
 		ngo_url: "/ngo/human-rights-campaign",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-orientation-asexuality-gender-identity-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-orientation-asexuality-gender-identity-anxiety.avif",
 	},
 	{
 		id: "homophobia-transphobia-sexual-orientation-gender-identity-prejudice",
@@ -1251,7 +1251,7 @@ Our technique systematically deconditions the amygdala's threat associations wit
 		ngo_url: "/ngo/human-rights-campaign",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/homophobia-transphobia-sexual-orientation-gender-identity-prejudice.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/homophobia-transphobia-sexual-orientation-gender-identity-prejudice.avif",
 	},
 	{
 		id: "racism-xenophobia-ethnic-racial-prejudice",
@@ -1265,7 +1265,7 @@ Our technique targets the amygdala's threat-coding of racial and ethnic diversit
 		ngo_url: "/ngo/anti-defamation-league",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/racism-xenophobia-ethnic-racial-prejudice.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/racism-xenophobia-ethnic-racial-prejudice.avif",
 	},
 	{
 		id: "misogyny-gender-based-violence-fear-of-women",
@@ -1281,7 +1281,7 @@ Related condition: For adolescent misogyny and gender-based violence patterns, t
 		ngo_url: "/ngo/vawnet",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/misogyny-gender-based-violence-fear-of-women.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/misogyny-gender-based-violence-fear-of-women.avif",
 	},
 	{
 		id: "tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking",
@@ -1295,7 +1295,7 @@ Our technique recalibrates the amygdala's threat-response to out-group differenc
 		ngo_url: "/ngo/greater-good-science-center",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/tribalism-groupthink-ingroup-outgroup-bias-zero-sum-thinking.avif",
 	},
 	{
 		id: "scapegoating-hate-projection-enemy-creation",
@@ -1309,7 +1309,7 @@ Our technique targets the projection-and-threat circuitry that turns pain into p
 		ngo_url: "/ngo/anti-defamation-league",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/scapegoating-hate-projection-enemy-creation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/scapegoating-hate-projection-enemy-creation.avif",
 	},
 	{
 		id: "family-scapegoat-identified-patient-blame-displacement",
@@ -1323,7 +1323,7 @@ The neurobiological mechanism involves chronic attachment threat combined with g
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/family-scapegoat-identified-patient-blame-displacement.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/family-scapegoat-identified-patient-blame-displacement.avif",
 	},
 	{
 		id: "maternal-wound-maternal-attachment-trauma-mother-complex",
@@ -1337,7 +1337,7 @@ Our technique targets the maternal wound's neurological foundation by recalibrat
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/maternal-wound-maternal-attachment-trauma-mother-complex.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/maternal-wound-maternal-attachment-trauma-mother-complex.avif",
 	},
 	{
 		id: "paternal-wound-paternal-attachment-trauma-father-complex",
@@ -1351,7 +1351,7 @@ Our technique targets the paternal wound's neurological foundation by recalibrat
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/paternal-wound-paternal-attachment-trauma-father-complex.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/paternal-wound-paternal-attachment-trauma-father-complex.avif",
 	},
 	{
 		id: "parenting-stress-anxiety-inadequacy-parental-overwhelm",
@@ -1365,7 +1365,7 @@ Our technique recalibrates the amygdala's threat-coding around parenting respons
 		ngo_url: "/ngo/zero-three",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/parenting-stress-anxiety-inadequacy-parental-overwhelm.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/parenting-stress-anxiety-inadequacy-parental-overwhelm.avif",
 	},
 	{
 		id: "stepfamily-blended-family-adjustment-family-integration-stress",
@@ -1379,7 +1379,7 @@ Our technique stabilizes the amygdala's response to family restructuring by crea
 		ngo_url: "/ngo/national-stepfamily-resource-center",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stepfamily-blended-family-adjustment-family-integration-stress.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stepfamily-blended-family-adjustment-family-integration-stress.avif",
 	},
 	{
 		id: "coparenting-custody-conflict-separation-anxiety",
@@ -1397,7 +1397,7 @@ Related condition: Children caught in this dynamic frequently develop <a href="/
 		ngo_url: "/ngo/national-stepfamily-resource-center",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/coparenting-custody-conflict-separation-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/coparenting-custody-conflict-separation-anxiety.avif",
 	},
 	{
 		id: "adolescent-identity-development-self-discovery",
@@ -1411,7 +1411,7 @@ Our technique stabilizes the medial prefrontal cortex during its reconstruction 
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-identity-development-self-discovery.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-identity-development-self-discovery.avif",
 	},
 	{
 		id: "adolescent-angst-oppositional-defiance",
@@ -1425,7 +1425,7 @@ Our technique decouples authority from threat in the adolescent's amygdala, sepa
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-angst-oppositional-defiance.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-angst-oppositional-defiance.avif",
 	},
 	{
 		id: "adolescent-sexual-identity-exploration-social-dysphoria",
@@ -1439,7 +1439,7 @@ Our technique targets the insula's dysphoric encoding of the body and rebuilds s
 		ngo_url: "/ngo/trevor-project",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-sexual-identity-exploration-social-dysphoria.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-sexual-identity-exploration-social-dysphoria.avif",
 	},
 	{
 		id: "teen-emo-subculture-emotional-expression",
@@ -1453,7 +1453,7 @@ Our technique supports the genuine aspects of emotional expression while buildin
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-emo-subculture-emotional-expression.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-emo-subculture-emotional-expression.avif",
 	},
 
 	{
@@ -1468,7 +1468,7 @@ Our technique rebuilds agency by creating experiences where the adolescent's act
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-victim-identity-learned-helplessness.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-victim-identity-learned-helplessness.avif",
 	},
 	{
 		id: "adolescent-risk-impulsivity-executive-dysfunction",
@@ -1482,7 +1482,7 @@ Our technique addresses both underlying mechanisms: rebuilding distress-toleranc
 		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-risk-impulsivity-executive-dysfunction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-risk-impulsivity-executive-dysfunction.avif",
 	},
 	{
 		id: "teen-substance-abuse-addiction",
@@ -1496,7 +1496,7 @@ Our technique begins by stabilizing the acute substance-dependence (often requir
 		ngo_url: "/ngo/find-treatment-samhsa",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-substance-abuse-addiction.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-substance-abuse-addiction.avif",
 	},
 	{
 		id: "teen-gang-involvement-tribalism",
@@ -1510,7 +1510,7 @@ Our technique begins by acknowledging that the gang met a real need (belonging, 
 		ngo_url: "/ngo/ceasefire-now",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-gang-involvement-tribalism.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-gang-involvement-tribalism.avif",
 	},
 	{
 		id: "teen-screen-addiction-digital-escapism",
@@ -1524,7 +1524,7 @@ Our technique rebuilds dopamine-system baseline so that real-world experiences f
 		ngo_url: "/ngo/addiction-center",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-screen-addiction-digital-escapism.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-screen-addiction-digital-escapism.avif",
 	},
 	{
 		id: "teen-bullying-aggressive-defense",
@@ -1538,7 +1538,7 @@ Our technique decouples shame-activation from aggression-response and addresses 
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-bullying-aggressive-defense.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-bullying-aggressive-defense.avif",
 	},
 	{
 		id: "teen-crisis-survival-behaviors",
@@ -1552,7 +1552,7 @@ Our technique begins with immediate stabilization and safety (this is genuine em
 		ngo_url: "/ngo/suicide-crisis-lifeline",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-crisis-survival-behaviors.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-crisis-survival-behaviors.avif",
 	},
 	{
 		id: "teen-runaway-elopement",
@@ -1566,7 +1566,7 @@ Our technique begins with meeting the adolescent's actual need (safety from the 
 		ngo_url: "/ngo/national-foundation-youth-improvement",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-runaway-elopement.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-runaway-elopement.avif",
 	},
 	{
 		id: "teen-suicidal-ideation-self-harm",
@@ -1580,7 +1580,7 @@ Our technique begins with immediate crisis intervention and safety-planning (sui
 		ngo_url: "/ngo/suicide-crisis-lifeline",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-suicidal-ideation-self-harm.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-suicidal-ideation-self-harm.avif",
 	},
 	{
 		id: "adolescent-abandonment-trauma-hypervigilance",
@@ -1594,7 +1594,7 @@ Our technique addresses the actual abandonment trauma and helps the amygdala rec
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-abandonment-trauma-hypervigilance.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-abandonment-trauma-hypervigilance.avif",
 	},
 	{
 		id: "teen-foster-family-integration-reactive-attachment",
@@ -1608,7 +1608,7 @@ Our technique helps foster families understand that testing-behaviors are not ma
 		ngo_url: "/ngo/sos-childrens-villages",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-foster-family-integration-reactive-attachment.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/teen-foster-family-integration-reactive-attachment.avif",
 	},
 	{
 		id: "adolescent-social-mimicry-identity-diffusion",
@@ -1624,7 +1624,7 @@ Related conditions: This teen-specific social mimicry and identity diffusion is 
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-social-mimicry-identity-diffusion.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adolescent-social-mimicry-identity-diffusion.avif",
 	},
 	{
 		id: "food-phobia-arfid",
@@ -1638,7 +1638,7 @@ Our technique recalibrates the amygdala's threat-classification of the feared fo
 		ngo_url: "/ngo/national-eating-disorders-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/food-phobia-arfid.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/food-phobia-arfid.avif",
 	},
 	{
 		id: "narcissistic-personality-disorder-pride",
@@ -1652,7 +1652,7 @@ Our technique recalibrates the medial prefrontal cortex's hyperactive self-focus
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/narcissistic-personality-disorder-pride.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/narcissistic-personality-disorder-pride.avif",
 	},
 	{
 		id: "borderline-personality-disorder-envy",
@@ -1666,7 +1666,7 @@ Our technique helps the amygdala recalibrate abandonment-threat perception and r
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/borderline-personality-disorder-envy.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/borderline-personality-disorder-envy.avif",
 	},
 	{
 		id: "major-depressive-disorder-sloth",
@@ -1680,7 +1680,7 @@ Our technique restores dopamine signaling in the nucleus accumbens and rebuilds 
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/major-depressive-disorder-sloth.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/major-depressive-disorder-sloth.avif",
 	},
 	{
 		id: "avoidant-personality-disorder-cowardice",
@@ -1694,7 +1694,7 @@ Our technique recalibrates the amygdala's hyperactive rejection-detection and th
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/avoidant-personality-disorder-cowardice.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/avoidant-personality-disorder-cowardice.avif",
 	},
 	{
 		id: "panic-disorder-agoraphobia-fear",
@@ -1708,7 +1708,7 @@ Our technique recalibrates the insula's body-signal interpretation and transform
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/panic-disorder-agoraphobia-fear.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/panic-disorder-agoraphobia-fear.avif",
 	},
 	{
 		id: "antisocial-personality-disorder-deception",
@@ -1722,7 +1722,7 @@ Our technique begins by activating the dormant neural circuits for empathic reso
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/antisocial-personality-disorder-deception.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/antisocial-personality-disorder-deception.avif",
 	},
 	{
 		id: "histrionic-personality-disorder-attention-seeking",
@@ -1736,7 +1736,7 @@ Our technique recalibrates the nucleus accumbens's hyperactive attention-reward 
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/histrionic-personality-disorder-attention-seeking.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/histrionic-personality-disorder-attention-seeking.avif",
 	},
 	{
 		id: "factitious-disorder-munchausen",
@@ -1750,7 +1750,7 @@ Our technique addresses the profound relational trauma underlying the factitious
 		ngo_url: "/ngo/mayo-clinic",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/factitious-disorder-munchausen.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/factitious-disorder-munchausen.avif",
 	},
 	{
 		id: "complicated-grief-disorder-loss",
@@ -1764,7 +1764,7 @@ Our technique recalibrates the amygdala to recognize loss as integrated past rat
 		ngo_url: "/ngo/nami",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/complicated-grief-disorder-loss.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/complicated-grief-disorder-loss.avif",
 	},
 	{
 		id: "anticipatory-grief-facing-loss",
@@ -1778,7 +1778,7 @@ Our technique helps the nervous system hold two truths simultaneously: present c
 		ngo_url: "/ngo/hospicenet",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anticipatory-grief-facing-loss.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anticipatory-grief-facing-loss.avif",
 	},
 	{
 		id: "adult-children-of-alcoholics-family-trauma",
@@ -1792,7 +1792,7 @@ Our technique recalibrates the amygdala's hypervigilance to unpredictability and
 		ngo_url: "/ngo/al-anon",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adult-children-of-alcoholics-family-trauma.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/adult-children-of-alcoholics-family-trauma.avif",
 	},
 	{
 		id: "betrayal-trauma-infidelity",
@@ -1806,7 +1806,7 @@ Our technique helps the nervous system process the betrayal as past trauma rathe
 		ngo_url: "/ngo/aamft",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/betrayal-trauma-infidelity.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/betrayal-trauma-infidelity.avif",
 	},
 	{
 		id: "rescuer-syndrome-caretaker-compulsion",
@@ -1820,7 +1820,7 @@ Our technique recalibrates the nucleus accumbens's helplessness-compulsion and h
 		ngo_url: "/ngo/coda",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rescuer-syndrome-caretaker-compulsion.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/rescuer-syndrome-caretaker-compulsion.avif",
 	},
 	{
 		id: "geriatric-depression-aging-loss",
@@ -1834,7 +1834,7 @@ Our technique addresses the multiple biological vulnerabilities of late-life dep
 		ngo_url: "/ngo/national-institute-aging",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/geriatric-depression-aging-loss.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/geriatric-depression-aging-loss.avif",
 	},
 	{
 		id: "identity-loss-aging-life-stage",
@@ -1848,7 +1848,7 @@ Our technique helps the medial and ventromedial prefrontal cortex rebuild identi
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/identity-loss-aging-life-stage.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/identity-loss-aging-life-stage.avif",
 	},
 	{
 		id: "sexual-dysfunction-intimacy-avoidance",
@@ -1862,7 +1862,7 @@ Our technique helps the nervous system recognize safety in sexual situations by 
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-intimacy-avoidance.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/sexual-dysfunction-intimacy-avoidance.avif",
 	},
 	{
 		id: "persecutor-role-aggressive-control",
@@ -1876,7 +1876,7 @@ Our technique addresses the underlying threat-perception and powerlessness-dynam
 		ngo_url: "/ngo/hotline-domestic-violence-support",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/persecutor-role-aggressive-control.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/persecutor-role-aggressive-control.avif",
 	},
 
 	{
@@ -1891,7 +1891,7 @@ Our technique recalibrates the entire truth-deception reward-and-threat system. 
 		ngo_url: "/ngo/psychology-today",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/pathological-lying-factitious-identity.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/pathological-lying-factitious-identity.avif",
 	},
 	{
 		id: "empty-nest-syndrome-marital-disconnection",
@@ -1905,7 +1905,7 @@ Our technique helps you rebuild identity independent of the parenting role while
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/empty-nest-syndrome-marital-disconnection.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/empty-nest-syndrome-marital-disconnection.avif",
 	},
 	{
 		id: "stage-fright-performance-anxiety-live-audience",
@@ -1919,7 +1919,7 @@ Our technique dissolves the amygdala's threat-encoding by directly neutralizing 
 		ngo_url: "/ngo/anxiety-depression-association-america",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stage-fright-performance-anxiety-live-audience.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stage-fright-performance-anxiety-live-audience.avif",
 	},
 	{
 		id: "chronic-procrastination-failure-to-launch-incompletions",
@@ -1933,7 +1933,7 @@ Our technique eliminates the amygdala's threat-encoding around task initiation a
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronic-procrastination-failure-to-launch-incompletions.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chronic-procrastination-failure-to-launch-incompletions.avif",
 	},
 	{
 		id: "fear-of-success-achievemeophobia-jonah-complex",
@@ -1947,7 +1947,7 @@ Our technique starts with your beliefs about "powerful people", authority, and e
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/fear-of-success-achievemeophobia-jonah-complex.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/fear-of-success-achievemeophobia-jonah-complex.avif",
 	},
 	{
 		id: "chrometophobia-fear-money",
@@ -1961,7 +1961,7 @@ Our technique dissolves the amygdala's false threat-encoding of financial activi
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chrometophobia-fear-money.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/chrometophobia-fear-money.avif",
 	},
 	{
 		id: "scarcity-mindset-resource-poverty",
@@ -1975,7 +1975,7 @@ Our technique recalibrates the HPA axis's threat-assessment and the amygdala's r
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/scarcity-mindset-resource-poverty.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/scarcity-mindset-resource-poverty.avif",
 	},
 	{
 		id: "money-dysmorphia-financial-distortion",
@@ -1989,7 +1989,7 @@ Our technique directly recalibrates the anterior insula's perception of financia
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/money-dysmorphia-financial-distortion.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/money-dysmorphia-financial-distortion.avif",
 	},
 	{
 		id: "money-scripts-unconscious-beliefs",
@@ -2003,7 +2003,7 @@ Our technique makes the invisible scripts visible and then reprograms them at th
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/money-scripts-unconscious-beliefs.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/money-scripts-unconscious-beliefs.avif",
 	},
 	{
 		id: "affluenza-wealth-integration-identity-loss",
@@ -2017,7 +2017,7 @@ Our technique reinstalls the organizing narrative and purpose-generating systems
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/affluenza-wealth-integration-identity-loss.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/affluenza-wealth-integration-identity-loss.avif",
 	},
 	{
 		id: "financial-infidelity-hidden-transactions",
@@ -2031,7 +2031,7 @@ Our technique first addresses the core threat-associations that made financial t
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/financial-infidelity-hidden-transactions.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/financial-infidelity-hidden-transactions.avif",
 	},
 	{
 		id: "financial-flashpoint-trauma",
@@ -2045,7 +2045,7 @@ Our technique involves dual-layer recalibration: (1) traumatic encoding resoluti
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/financial-flashpoint-trauma.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/financial-flashpoint-trauma.avif",
 	},
 	{
 		id: "general-financial-anxiety-cynicism",
@@ -2059,7 +2059,7 @@ Our technique recalibrates the threat-assessment systems specifically for financ
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-financial-anxiety-cynicism.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-financial-anxiety-cynicism.avif",
 	},
 	{
 		id: "hyper-cynicism-depressive-realism-distrust",
@@ -2073,7 +2073,7 @@ Our technique targets the threat-prediction machinery beneath the cynical narrat
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hyper-cynicism-depressive-realism-distrust.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hyper-cynicism-depressive-realism-distrust.avif",
 	},
 	{
 		id: "defensive-idealization-unrealistic-optimism-denial",
@@ -2087,7 +2087,7 @@ The neurobiological mechanism involves top-down inhibition of threat information
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/defensive-idealization-unrealistic-optimism-denial.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/defensive-idealization-unrealistic-optimism-denial.avif",
 	},
 	{
 		id: "psoriasis-stress-reactive-neuroimmune-flare",
@@ -2101,7 +2101,7 @@ Our technique targets the stress-amplification layer of psoriasis by reducing li
 		ngo_url: "/ngo/who",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/psoriasis-stress-reactive-neuroimmune-flare.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/psoriasis-stress-reactive-neuroimmune-flare.avif",
 	},
 	{
 		id: "restless-legs-syndrome-sleep-urge-movement",
@@ -2115,7 +2115,7 @@ Our technique targets the threat-coding that makes rest feel intolerable and rec
 		ngo_url: "/ngo/national-sleep-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/restless-legs-syndrome-sleep-urge-movement.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/restless-legs-syndrome-sleep-urge-movement.avif",
 	},
 	{
 		id: "parkinsons-disease-freezing-gait-anxiety",
@@ -2129,7 +2129,7 @@ Our technique targets the anxiety-motor interference layer by reducing amygdala 
 		ngo_url: "/ngo/american-academy-neurology",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/parkinsons-disease-freezing-gait-anxiety.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/parkinsons-disease-freezing-gait-anxiety.avif",
 	},
 	{
 		id: "hyperhidrosis-emotional-sweating-social-fear",
@@ -2143,7 +2143,7 @@ Our technique targets the social-threat coding and autonomic overreaction that k
 		ngo_url: "/ngo/american-psychological-association",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hyperhidrosis-emotional-sweating-social-fear.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hyperhidrosis-emotional-sweating-social-fear.avif",
 	},
 	{
 		id: "vaginismus-pelvic-floor-fear-spasm",
@@ -2157,7 +2157,7 @@ Our technique targets the fear-bracing circuitry and helps the nervous system re
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/vaginismus-pelvic-floor-fear-spasm.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/vaginismus-pelvic-floor-fear-spasm.avif",
 	},
 	{
 		id: "neurocardiogenic-syncope-vasovagal-fainting",
@@ -2171,7 +2171,7 @@ Our technique targets the fear-physiology loop by reducing amygdala reactivity t
 		ngo_url: "/ngo/world-federation-neurology",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/neurocardiogenic-syncope-vasovagal-fainting.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/neurocardiogenic-syncope-vasovagal-fainting.avif",
 	},
 	{
 		id: "narcolepsy-type-1-cataplexy-sleep-attacks",
@@ -2185,7 +2185,7 @@ Our technique targets the anticipatory fear, shame, and trigger-reactivity that 
 		ngo_url: "/ngo/national-sleep-foundation",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/narcolepsy-type-1-cataplexy-sleep-attacks.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/narcolepsy-type-1-cataplexy-sleep-attacks.avif",
 	},
 	{
 		id: "stiff-person-syndrome-startle-spasm",
@@ -2199,7 +2199,7 @@ Our technique addresses the fear-rigidity amplification loop, not the underlying
 		ngo_url: "/ngo/world-federation-neurology",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stiff-person-syndrome-startle-spasm.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/stiff-person-syndrome-startle-spasm.avif",
 	},
 	{
 		id: "anorgasmia-orgasmic-disorder-desire-arousal-block",
@@ -2213,7 +2213,7 @@ Our technique targets the threat and monitoring circuitry that block orgasmic co
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anorgasmia-orgasmic-disorder-desire-arousal-block.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/anorgasmia-orgasmic-disorder-desire-arousal-block.avif",
 	},
 	{
 		id: "persistent-genital-arousal-disorder-pgad",
@@ -2227,7 +2227,7 @@ Our technique targets the threat-amplification and pelvic vigilance loop that ma
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/persistent-genital-arousal-disorder-pgad.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/persistent-genital-arousal-disorder-pgad.avif",
 	},
 	{
 		id: "hypoactive-sexual-desire-disorder-hsdd",
@@ -2241,7 +2241,7 @@ Our technique targets the low-reward and high-threat coding that shut down desir
 		ngo_url: "/ngo/aasect",
 		scientific_reference: "",
 		background_image:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hypoactive-sexual-desire-disorder-hsdd.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/hypoactive-sexual-desire-disorder-hsdd.avif",
 	},
 ]
 

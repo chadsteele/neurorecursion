@@ -5,7 +5,7 @@ const globalOrganizations = [
 		path: "/ngo/who",
 		href: "https://www.who.int/health-topics/mental-health",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-who.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-who.avif",
 		imageAlt: "WHO Logo",
 		name: "WHO (World Health Organization) - Mental Health Division",
 		description:
@@ -16,7 +16,7 @@ const globalOrganizations = [
 		path: "/ngo/unicef",
 		href: "https://www.unicef.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-unicef.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-unicef.avif",
 		imageAlt: "UNICEF Logo",
 		name: "UNICEF (UN Children's Fund)",
 		description:
@@ -27,7 +27,7 @@ const globalOrganizations = [
 		path: "/ngo/unodc",
 		href: "https://www.unodc.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-unodc.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-unodc.avif",
 		imageAlt: "UNODC Logo",
 		name: "UNODC (UN Office on Drugs and Crime)",
 		description:
@@ -38,7 +38,7 @@ const globalOrganizations = [
 		path: "/ngo/world-federation-mental-health",
 		href: "https://www.wfmh.global/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-for-mental-health.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-for-mental-health.avif",
 		imageAlt: "World Federation for Mental Health Logo",
 		name: "World Federation for Mental Health (WFMH)",
 		description:
@@ -49,7 +49,7 @@ const globalOrganizations = [
 		path: "/ngo/world-psychiatric-association",
 		href: "https://www.wpanet.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-psychiatric-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-psychiatric-association.avif",
 		imageAlt: "World Psychiatric Association Logo",
 		name: "World Psychiatric Association (WPA)",
 		description:
@@ -60,7 +60,7 @@ const globalOrganizations = [
 		path: "/ngo/world-federation-neurology",
 		href: "https://www.wfneurology.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-of-neurology.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-of-neurology.avif",
 		imageAlt: "World Federation of Neurology Logo",
 		name: "World Federation of Neurology (WFN)",
 		description:
@@ -71,7 +71,7 @@ const globalOrganizations = [
 		path: "/ngo/médecins-sans-frontières",
 		href: "https://www.msf.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-médecins-sans-frontières.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-médecins-sans-frontières.avif",
 		imageAlt: "Médecins Sans Frontières Logo",
 		name: "Médecins Sans Frontières (Doctors Without Borders)",
 		description:
@@ -82,7 +82,7 @@ const globalOrganizations = [
 		path: "/ngo/amnesty-international",
 		href: "https://www.amnesty.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-amnesty-international.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-amnesty-international.avif",
 		imageAlt: "Amnesty International Logo",
 		name: "Amnesty International",
 		description:
@@ -97,7 +97,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/autism-speaks",
 		href: "https://www.autismspeaks.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-autism-speaks.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-autism-speaks.avif",
 		imageAlt: "Autism Speaks Logo",
 		name: "Autism Speaks",
 		description:
@@ -108,7 +108,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/pda-society",
 		href: "https://www.pdasociety.org.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-pda-society.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-pda-society.avif",
 		imageAlt: "PDA Society Logo",
 		name: "PDA Society",
 		description:
@@ -119,7 +119,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/chadd",
 		href: "https://chadd.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-chadd.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-chadd.avif",
 		imageAlt: "CHADD Logo",
 		name: "CHADD (Children and Adults with ADHD)",
 		description:
@@ -130,7 +130,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/international-dyslexia-association",
 		href: "https://dyslexiaida.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-dyslexia-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-dyslexia-association.avif",
 		imageAlt: "IDA Logo",
 		name: "International Dyslexia Association (IDA)",
 		description:
@@ -141,7 +141,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/dyscalculia-association",
 		href: "https://www.dyscalculia.me.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-dyscalculia-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-dyscalculia-association.avif",
 		imageAlt: "Dyscalculia Association Logo",
 		name: "The Dyscalculia Association",
 		description:
@@ -152,7 +152,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/dysgraphia-support",
 		href: "https://www.dysgraphia.life/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dysgraphia-support.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dysgraphia-support.avif",
 		imageAlt: "Dysgraphia Logo",
 		name: "Dysgraphia Support",
 		description:
@@ -163,7 +163,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/dyspraxia-foundation",
 		href: "https://dyspraxiafoundation.co.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dyspraxia-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dyspraxia-foundation.avif",
 		imageAlt: "Dyspraxia Foundation Logo",
 		name: "Dyspraxia Foundation (UK)",
 		description:
@@ -174,7 +174,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/dyspraxia-usa",
 		href: "https://dyspraxiausa.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dyspraxia-usa.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-dyspraxia-usa.avif",
 		imageAlt: "Dyspraxia USA Logo",
 		name: "Dyspraxia USA",
 		description:
@@ -185,7 +185,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/star-institute-sensory-processing",
 		href: "https://sensoryhealth.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-star-institute-for-sensory-processing.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-star-institute-for-sensory-processing.avif",
 		imageAlt: "STAR Institute Logo",
 		name: "STAR Institute for Sensory Processing",
 		description:
@@ -196,7 +196,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/national-stuttering-association",
 		href: "https://westutter.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-stuttering-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-stuttering-association.avif",
 		imageAlt: "National Stuttering Association Logo",
 		name: "National Stuttering Association (NSA)",
 		description:
@@ -207,7 +207,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/stuttering-help",
 		href: "https://www.stutteringhelp.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-stuttering-help.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-stuttering-help.avif",
 		imageAlt: "Stuttering Help Logo",
 		name: "Stuttering Help (Also known as Speech Easy)",
 		description:
@@ -218,7 +218,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/selective-mutism-association",
 		href: "https://www.selectivemutism.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-selective-mutism-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-selective-mutism-association.avif",
 		imageAlt: "Selective Mutism Logo",
 		name: "Selective Mutism Association",
 		description:
@@ -229,7 +229,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/learning-disabilities-association-america",
 		href: "https://ldaamerica.org/what-is-dyscalculia/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-learning-disabilities-association-of-america.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-learning-disabilities-association-of-america.avif",
 		imageAlt: "Learning Disabilities Association Logo",
 		name: "Learning Disabilities Association of America",
 		description:
@@ -240,7 +240,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/world-literacy-foundation",
 		href: "https://worldliteracyfoundation.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-literacy-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-literacy-foundation.avif",
 		imageAlt: "World Literacy Foundation Logo",
 		name: "World Literacy Foundation",
 		description:
@@ -251,7 +251,7 @@ const neurodevelopmentalOrganizations = [
 		path: "/ngo/asha",
 		href: "https://www.asha.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-asha.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-asha.avif",
 		imageAlt: "ASHA Logo",
 		name: "ASHA (American Speech-Language-Hearing Association)",
 		description:
@@ -266,7 +266,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/brain-spine-foundation",
 		href: "https://www.brainandspine.org.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-brain-and-spine-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-brain-and-spine-foundation.avif",
 		imageAlt: "Brain and Spine Foundation Logo",
 		name: "Brain and Spine Foundation (Global)",
 		description:
@@ -277,7 +277,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/neurological-alliance",
 		href: "https://www.neural.org.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-neurological-alliance.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-neurological-alliance.avif",
 		imageAlt: "The Neurological Alliance Logo",
 		name: "The Neurological Alliance",
 		description:
@@ -288,7 +288,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/epilepsy-foundation",
 		href: "https://www.epilepsy.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-epilepsy-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-epilepsy-foundation.avif",
 		imageAlt: "Epilepsy Logo",
 		name: "Epilepsy Foundation",
 		description:
@@ -299,7 +299,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/tourette-association-america",
 		href: "https://tourette.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-tourette-association-of-america.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-tourette-association-of-america.avif",
 		imageAlt: "Tourette Association of America Logo",
 		name: "Tourette Association of America (TAA)",
 		description:
@@ -310,7 +310,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/international-association-study-pain",
 		href: "https://www.iasp-pain.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-association-for-the-study-of-pain.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-association-for-the-study-of-pain.avif",
 		imageAlt: "IASP Logo",
 		name: "International Association for the Study of Pain (IASP)",
 		description:
@@ -321,7 +321,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/american-migraine-foundation",
 		href: "https://americanmigrainefoundation.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-migraine-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-migraine-foundation.avif",
 		imageAlt: "American Migraine Foundation Logo",
 		name: "American Migraine Foundation",
 		description:
@@ -332,7 +332,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/misophonia-hub",
 		href: "https://misophonia-hub.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-misophonia-hub.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-misophonia-hub.avif",
 		imageAlt: "Misophonia Hub Logo",
 		name: "Misophonia Hub",
 		description: "A resource center for misophonia research and support.",
@@ -342,7 +342,7 @@ const neurologicalOrganizations = [
 		path: "/ngo/tlc-foundation-body-focused-repetitive-behaviors",
 		href: "https://www.bfrb.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-tlc-foundation-for-body-focused-repetitive-behaviors.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-tlc-foundation-for-body-focused-repetitive-behaviors.avif",
 		imageAlt: "BFRB Logo",
 		name: "TLC Foundation for Body-Focused Repetitive Behaviors (BFRB)",
 		description:
@@ -357,7 +357,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/anxiety-depression-association-america",
 		href: "https://adaa.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anxiety-and-depression-association-of-america.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anxiety-and-depression-association-of-america.avif",
 		imageAlt: "ADAA Logo",
 		name: "Anxiety and Depression Association of America (ADAA)",
 		description:
@@ -368,7 +368,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/anxiety-canada",
 		href: "https://www.anxietycanada.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anxiety-canada.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anxiety-canada.avif",
 		imageAlt: "Anxiety Canada Logo",
 		name: "Anxiety Canada",
 		description:
@@ -379,7 +379,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/fear-flying-help",
 		href: "https://www.fearofflying.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-fear-of-flying-help.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-fear-of-flying-help.avif",
 		imageAlt: "Fear of Flying Logo",
 		name: "Fear of Flying Help",
 		description: "Resources and support for those with aviophobia.",
@@ -389,7 +389,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/international-ocd-foundation",
 		href: "https://iocdf.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-ocd-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-ocd-foundation.avif",
 		imageAlt: "International OCD Foundation Logo",
 		name: "International OCD Foundation (IOCDF)",
 		description:
@@ -400,7 +400,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/depression-bipolar-support-alliance",
 		href: "https://www.dbsalliance.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-depression-and-bipolar-support-alliance.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-depression-and-bipolar-support-alliance.avif",
 		imageAlt: "DBSA Logo",
 		name: "Depression and Bipolar Support Alliance (DBSA)",
 		description:
@@ -411,7 +411,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/international-bipolar-foundation",
 		href: "https://ibpf.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-bipolar-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-bipolar-foundation.avif",
 		imageAlt: "International Bipolar Foundation Logo",
 		name: "International Bipolar Foundation (IBPF)",
 		description:
@@ -422,7 +422,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/bipolar-uk",
 		href: "https://www.bipolaruk.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-bipolar-uk.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-bipolar-uk.avif",
 		imageAlt: "Bipolar UK Logo",
 		name: "Bipolar UK",
 		description:
@@ -433,7 +433,7 @@ const psychiatricOrganizations = [
 		path: "/ngo/national-eating-disorders-association",
 		href: "https://www.nationaleatingdisorders.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-eating-disorders-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-eating-disorders-association.avif",
 		imageAlt: "NEDA Logo",
 		name: "National Eating Disorders Association (NEDA)",
 		description:
@@ -448,7 +448,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/alcoholics-anonymous",
 		href: "https://www.aa.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-alcoholics-anonymous.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-alcoholics-anonymous.avif",
 		imageAlt: "Alcoholics Anonymous Logo",
 		name: "Alcoholics Anonymous (AA)",
 		description:
@@ -459,7 +459,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/narcotics-anonymous",
 		href: "https://www.na.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-narcotics-anonymous.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-narcotics-anonymous.avif",
 		imageAlt: "Narcotics Anonymous Logo",
 		name: "Narcotics Anonymous (NA)",
 		description:
@@ -470,7 +470,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/al-anon",
 		href: "https://www.al-anon.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/og/neurorecursion.com/partners/al-anon.webp",
+			"https://cri-cdn.netlify.app/og/neurorecursion.com/partners/al-anon.avif",
 		imageAlt: "Al-Anon Logo",
 		name: "Al-Anon",
 		description:
@@ -481,7 +481,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/world-federation-against-drugs",
 		href: "https://www.wfad.se/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-against-drugs.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-federation-against-drugs.avif",
 		imageAlt: "World Federation Against Drugs Logo",
 		name: "World Federation Against Drugs (WFAD)",
 		description:
@@ -492,7 +492,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/addiction-center",
 		href: "https://www.addictioncenter.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-addiction-center.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-addiction-center.avif",
 		imageAlt: "Addiction Center Logo",
 		name: "Addiction Center",
 		description:
@@ -503,7 +503,7 @@ const substanceAbuseOrganizations = [
 		path: "/ngo/find-treatment-samhsa",
 		href: "https://findtreatment.gov/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-find-treatment-samhsa.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-find-treatment-samhsa.avif",
 		imageAlt: "Find Treatment Logo",
 		name: "Find Treatment - SAMHSA",
 		description:
@@ -518,7 +518,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/mind",
 		href: "https://www.mind.org.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mind.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mind.avif",
 		imageAlt: "Mind Logo",
 		name: "Mind (UK Mental Health Charity)",
 		description:
@@ -529,7 +529,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/mental-health-america",
 		href: "https://www.mhanational.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mental-health-america.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mental-health-america.avif",
 		imageAlt: "Mental Health America Logo",
 		name: "Mental Health America (MHA)",
 		description:
@@ -540,7 +540,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/mental-health-foundation",
 		href: "https://www.mentalhealth.org.uk/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mental-health-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mental-health-foundation.avif",
 		imageAlt: "Mental Health Foundation Logo",
 		name: "Mental Health Foundation (Global)",
 		description:
@@ -551,7 +551,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/hope-+-me",
 		href: "https://www.hopeandme.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-hope-+-me.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-hope-+-me.avif",
 		imageAlt: "Hope + Me Logo",
 		name: "Hope + Me",
 		description:
@@ -562,7 +562,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/gidget-foundation-australia",
 		href: "https://www.gidgetfoundation.org.au/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-gidget-foundation-australia.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-gidget-foundation-australia.avif",
 		imageAlt: "Gidget Foundation Australia Logo",
 		name: "Gidget Foundation Australia",
 		description:
@@ -573,7 +573,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/psychology-today",
 		href: "https://www.psychologytoday.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-psychology-today.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-psychology-today.avif",
 		imageAlt: "Psychology Today Logo",
 		name: "Psychology Today",
 		description:
@@ -584,7 +584,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/greater-good-science-center",
 		href: "https://greatergood.berkeley.edu/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-greater-good-science-center.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-greater-good-science-center.avif",
 		imageAlt: "Greater Good Science Center Logo",
 		name: "Greater Good Science Center",
 		description:
@@ -595,7 +595,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/campaign-end-loneliness",
 		href: "https://www.campaigntoendloneliness.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-campaign-to-end-loneliness.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-campaign-to-end-loneliness.avif",
 		imageAlt: "Campaign to End Loneliness Logo",
 		name: "Campaign to End Loneliness",
 		description:
@@ -606,7 +606,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/national-sleep-foundation",
 		href: "https://www.thensf.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-sleep-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-sleep-foundation.avif",
 		imageAlt: "Sleep Foundation Logo",
 		name: "National Sleep Foundation",
 		description:
@@ -617,7 +617,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/impostor-syndrome-support",
 		href: "https://impostorsyndrome.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-impostor-syndrome-support.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-impostor-syndrome-support.avif",
 		imageAlt: "Impostor Syndrome Logo",
 		name: "Impostor Syndrome Support",
 		description:
@@ -628,7 +628,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/nami",
 		href: "https://www.nami.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-nami.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-nami.avif",
 		imageAlt: "NAMI Logo",
 		name: "NAMI (National Alliance on Mental Illness)",
 		description:
@@ -639,7 +639,7 @@ const mentalHealthOrganizations = [
 		path: "/ngo/postpartum-support-international",
 		href: "https://www.postpartum.net/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-postpartum-support-international.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-postpartum-support-international.avif",
 		imageAlt: "Postpartum Support International Logo",
 		name: "Postpartum Support International (PSI)",
 		description:
@@ -654,7 +654,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/suicide-crisis-lifeline",
 		href: "https://suicidepreventionlifeline.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-suicide-crisis-lifeline.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-suicide-crisis-lifeline.avif",
 		imageAlt: "Suicide Prevention Lifeline Logo",
 		name: "Suicide & Crisis Lifeline",
 		description:
@@ -665,7 +665,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/trevor-project",
 		href: "https://www.thetrevorproject.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-trevor-project.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-trevor-project.avif",
 		imageAlt: "The Trevor Project Logo",
 		name: "The Trevor Project",
 		description:
@@ -676,7 +676,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/rainn",
 		href: "https://rainn.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-rainn.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-rainn.avif",
 		imageAlt: "RAINN Logo",
 		name: "RAINN (Rape, Abuse & Incest National Network)",
 		description:
@@ -687,7 +687,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/hotline-domestic-violence-support",
 		href: "https://www.thehotline.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-hotline-domestic-violence-support.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-the-hotline-domestic-violence-support.avif",
 		imageAlt: "The Hotline Logo",
 		name: "The Hotline - Domestic Violence Support",
 		description:
@@ -698,7 +698,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/vawnet",
 		href: "https://www.vawnet.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-vawnet.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-vawnet.avif",
 		imageAlt: "VAWnet Logo",
 		name: "VAWnet (Violence Against Women Network)",
 		description:
@@ -709,7 +709,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/national-center-trauma-informed-care",
 		href: "https://www.nctsn.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-center-for-trauma-informed-care.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-center-for-trauma-informed-care.avif",
 		imageAlt: "NCTSN Logo",
 		name: "National Center for Trauma-Informed Care (NCTSN)",
 		description:
@@ -720,7 +720,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/national-center-ptsd",
 		href: "https://www.ptsd.va.gov/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-center-for-ptsd.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-center-for-ptsd.avif",
 		imageAlt: "PTSD Logo",
 		name: "National Center for PTSD (VA)",
 		description:
@@ -731,7 +731,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/futures-without-violence",
 		href: "https://www.futureswithoutviolence.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-futures-without-violence.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-futures-without-violence.avif",
 		imageAlt: "Futures Without Violence Logo",
 		name: "Futures Without Violence",
 		description:
@@ -742,7 +742,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/gun-violence-archive",
 		href: "https://www.gunviolencearchive.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-gun-violence-archive.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-gun-violence-archive.avif",
 		imageAlt: "Gun Violence Archive Logo",
 		name: "Gun Violence Archive",
 		description:
@@ -753,7 +753,7 @@ const traumaViolenceOrganizations = [
 		path: "/ngo/one-love-foundation",
 		href: "https://www.joinonelove.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-one-love-foundation.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-one-love-foundation.avif",
 		imageAlt: "One Love Foundation Logo",
 		name: "One Love Foundation",
 		description:
@@ -768,7 +768,7 @@ const healthcareOrganizations = [
 		path: "/ngo/mayo-clinic",
 		href: "https://www.mayoclinic.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mayo-clinic.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-mayo-clinic.avif",
 		imageAlt: "Mayo Clinic Logo",
 		name: "Mayo Clinic",
 		description:
@@ -779,7 +779,7 @@ const healthcareOrganizations = [
 		path: "/ngo/american-psychological-association",
 		href: "https://www.apa.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-psychological-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-psychological-association.avif",
 		imageAlt: "American Psychological Association Logo",
 		name: "American Psychological Association (APA)",
 		description:
@@ -790,7 +790,7 @@ const healthcareOrganizations = [
 		path: "/ngo/aasect",
 		href: "https://www.aasect.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-aasect.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-aasect.avif",
 		imageAlt: "AASECT Logo",
 		name: "AASECT (American Association of Sexuality Educators, Counselors and Therapists)",
 		description:
@@ -801,7 +801,7 @@ const healthcareOrganizations = [
 		path: "/ngo/aamft",
 		href: "https://www.aamft.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-aamft.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-aamft.avif",
 		imageAlt: "AAMFT Logo",
 		name: "AAMFT (American Association for Marriage and Family Therapy)",
 		description:
@@ -812,7 +812,7 @@ const healthcareOrganizations = [
 		path: "/ngo/american-academy-neurology",
 		href: "https://www.aan.com/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-academy-of-neurology.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-american-academy-of-neurology.avif",
 		imageAlt: "American Academy of Neurology Logo",
 		name: "American Academy of Neurology (AAN)",
 		description:
@@ -823,7 +823,7 @@ const healthcareOrganizations = [
 		path: "/ngo/north-american-menopause-society",
 		href: "https://www.menopause.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-north-american-menopause-society.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-north-american-menopause-society.avif",
 		imageAlt: "Menopause Logo",
 		name: "North American Menopause Society",
 		description:
@@ -834,7 +834,7 @@ const healthcareOrganizations = [
 		path: "/ngo/national-institute-aging",
 		href: "https://www.nia.nih.gov/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-institute-on-aging.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-institute-on-aging.avif",
 		imageAlt: "NIA Logo",
 		name: "National Institute on Aging (NIA)",
 		description:
@@ -845,7 +845,7 @@ const healthcareOrganizations = [
 		path: "/ngo/hospicenet",
 		href: "https://www.hospicenet.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-hospicenet.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-hospicenet.avif",
 		imageAlt: "Hospice Net Logo",
 		name: "HospiceNet",
 		description:
@@ -860,7 +860,7 @@ const lgbtqOrganizations = [
 		path: "/ngo/human-rights-campaign",
 		href: "https://www.hrc.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-human-rights-campaign.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-human-rights-campaign.avif",
 		imageAlt: "HRC Logo",
 		name: "Human Rights Campaign (HRC)",
 		description: "A leading LGBTQ+ civil rights organization.",
@@ -874,7 +874,7 @@ const humanitarianOrganizations = [
 		path: "/ngo/naacp",
 		href: "https://www.naacp.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-naacp.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-naacp.avif",
 		imageAlt: "NAACP Logo",
 		name: "NAACP (National Association for the Advancement of Colored People)",
 		description:
@@ -885,7 +885,7 @@ const humanitarianOrganizations = [
 		path: "/ngo/anti-defamation-league",
 		href: "https://www.adl.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anti-defamation-league.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-anti-defamation-league.avif",
 		imageAlt: "ADL Logo",
 		name: "Anti-Defamation League (ADL)",
 		description:
@@ -896,7 +896,7 @@ const humanitarianOrganizations = [
 		path: "/ngo/ceasefire-now",
 		href: "https://www.ceasefirenow.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-ceasefire-now.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-ceasefire-now.avif",
 		imageAlt: "Ceasefire Now Logo",
 		name: "Ceasefire Now",
 		description:
@@ -907,7 +907,7 @@ const humanitarianOrganizations = [
 		path: "/ngo/helpage-international",
 		href: "https://www.helpage.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-helpage-international.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-helpage-international.avif",
 		imageAlt: "HelpAge International Logo",
 		name: "HelpAge International",
 		description:
@@ -918,7 +918,7 @@ const humanitarianOrganizations = [
 		path: "/ngo/sos-childrens-villages",
 		href: "https://www.sos-childrensvillages.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-sos-childrens-villages.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-sos-childrens-villages.avif",
 		imageAlt: "SOS Children's Villages Logo",
 		name: "SOS Children's Villages",
 		description:
@@ -933,7 +933,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/zero-three",
 		href: "https://www.zerotothree.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-zero-to-three.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-zero-to-three.avif",
 		imageAlt: "Zero to Three Logo",
 		name: "Zero to Three",
 		description:
@@ -944,7 +944,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/ja-worldwide",
 		href: "https://www.jaworldwide.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-ja-worldwide.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-ja-worldwide.avif",
 		imageAlt: "JA Worldwide Logo",
 		name: "JA Worldwide (Junior Achievement)",
 		description:
@@ -955,7 +955,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/national-foundation-youth-improvement",
 		href: "https://www.nfyi.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-foundation-for-youth-improvement.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-foundation-for-youth-improvement.avif",
 		imageAlt: "NFYI Logo",
 		name: "National Foundation for Youth Improvement",
 		description:
@@ -966,7 +966,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/coda",
 		href: "https://www.coda.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-coda.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-coda.avif",
 		imageAlt: "CODA Logo",
 		name: "CODA (Children of Deaf Adults)",
 		description: "A support organization for children of deaf parents.",
@@ -976,7 +976,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/national-stepfamily-resource-center",
 		href: "https://www.stepfamilies.info/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-stepfamily-resource-center.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-national-stepfamily-resource-center.avif",
 		imageAlt: "Stepfamilies Logo",
 		name: "National Stepfamily Resource Center",
 		description:
@@ -987,7 +987,7 @@ const childFamilyOrganizations = [
 		path: "/ngo/world-council-gifted-talented-children",
 		href: "https://world-gifted.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-council-for-gifted-and-talented-children.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-world-council-for-gifted-and-talented-children.avif",
 		imageAlt: "World Council for Gifted and Talented Children Logo",
 		name: "World Council for Gifted and Talented Children (WCGTC)",
 		description:
@@ -1002,7 +1002,7 @@ const specializedOrganizations = [
 		path: "/ngo/international-cultic-studies-association",
 		href: "https://internationalculticstudies.org/",
 		imageSrc:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-cultic-studies-association.webp",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/partners/ngo-international-cultic-studies-association.avif",
 		imageAlt: "ICSA Logo",
 		name: "International Cultic Studies Association (ICSA)",
 		description:

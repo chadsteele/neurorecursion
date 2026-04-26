@@ -45,7 +45,7 @@
 		const job = jobs.find((job) => job.id === $page.params.slug)
 		return job
 			? job.background_url
-			: "https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.webp"
+			: "https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/general-neurological-issues.avif"
 	})
 </script>
 

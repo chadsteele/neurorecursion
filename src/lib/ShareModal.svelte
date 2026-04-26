@@ -40,8 +40,8 @@
 		if (url.includes("/og/")) {
 			candidates.push(url.replace("/og/", "/src/"))
 		}
-		if (url.endsWith(".webp")) {
-			candidates.push(url.replace(/\.webp$/, ".png"))
+		if (url.endsWith(".avif")) {
+			candidates.push(url.replace(/\.avif$/, ".png"))
 		}
 
 		const expandedCandidates = []
@@ -50,8 +50,8 @@
 			if (candidate.includes("/og/")) {
 				expandedCandidates.push(candidate.replace("/og/", "/src/"))
 			}
-			if (candidate.endsWith(".webp")) {
-				expandedCandidates.push(candidate.replace(/\.webp$/, ".png"))
+			if (candidate.endsWith(".avif")) {
+				expandedCandidates.push(candidate.replace(/\.avif$/, ".png"))
 			}
 		}
 

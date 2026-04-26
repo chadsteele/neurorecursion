@@ -3,7 +3,7 @@
 
 <div class="nav-logo">
 	<a href="/">
-		<img src="/brain.webp" alt="Neuro Recursion" class="brain-logo" />
+		<img src="/brain.avif" alt="Neuro Recursion" class="brain-logo" />
 		<div class="nav-logo-text">
 			<div>Neuro</div>
 			<div>Recursion</div>
