@@ -181,8 +181,8 @@
 						reader.onerror = () => reject(reader.error)
 						reader.readAsDataURL(imageBlob)
 					})
-				} catch (err) {
-					console.error("Failed to fetch image:", err)
+				} catch {
+					// CDN images may be CORS-blocked; falls back to remote URL in HTML
 				}
 			}
 

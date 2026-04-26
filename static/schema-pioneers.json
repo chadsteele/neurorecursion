@@ -20,7 +20,7 @@
       "Aggression",
       "Social Behavior"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/paul-maclean.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/paul-maclean-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. Columbia University, M.D. Yale University"
@@ -47,7 +47,7 @@
       "Resilience",
       "Brain Science Communication"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniel-goleman.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniel-goleman-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.A. Amherst College, Ph.D. Harvard University"
@@ -79,7 +79,7 @@
       "PTSD",
       "Addiction"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/gul-dolen.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/gul-dolen-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "MD/PhD Brown University/Massachusetts Institute of Technology"
@@ -106,7 +106,7 @@
       "Neural Circuits",
       "Neuroplasticity"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/ann-graybiel.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/ann-graybiel-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Illinois, Ph.D. University of Wisconsin"
@@ -132,7 +132,7 @@
       "Pattern Recognition",
       "Development"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/carla-shatz.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/carla-shatz-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. Cornell University, Ph.D. UC Berkeley"
@@ -159,7 +159,7 @@
       "Decision-Making",
       "Reward"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/trevor-robbins.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/trevor-robbins-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.A. Oxford University, Ph.D. Cambridge University"
@@ -185,7 +185,7 @@
       "Local Translation",
       "Synaptic Strength"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/erin-schuman.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/erin-schuman-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Michigan, Ph.D. UC San Diego"
@@ -211,7 +211,7 @@
       "Spiking Neural Networks",
       "Real-Time Learning"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/giacomo-indiveri.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/giacomo-indiveri-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Genoa, Ph.D. University of Genoa"
@@ -238,7 +238,7 @@
       "Mental Imagery",
       "Neural Interfaces"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/yukiyasu-kamitani.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/yukiyasu-kamitani-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Tokyo, Ph.D. University of Tokyo"
@@ -265,7 +265,7 @@
       "Neural Coding",
       "Movement Disorders"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/aditya-murthy.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/aditya-murthy-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.Tech Indian Institute of Technology, Ph.D. Johns Hopkins University"
@@ -292,7 +292,7 @@
       "Social Behavior",
       "Emotion Regulation"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/bo-li.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/bo-li-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. Tsinghua University, Ph.D. UC Berkeley"
@@ -319,7 +319,7 @@
       "Learning",
       "Neuroimaging"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/mary-galea.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/mary-galea-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Melbourne, Ph.D. University of Melbourne"
@@ -346,7 +346,7 @@
       "Emotional Control",
       "Cognitive Psychology"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniel-wegner.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniel-wegner-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.A. Duke University, Ph.D. Duke University"
@@ -373,7 +373,7 @@
       "Theoretical Neuroscience",
       "Active Inference"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karl-friston.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karl-friston-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.Sc. University of London, Ph.D. University of London"
@@ -400,7 +400,7 @@
       "Traumatic Memory",
       "Fear Memory"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karim-nader.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/karim-nader-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. McGill University, Ph.D. Hebrew University"
@@ -427,7 +427,7 @@
       "Synaptic Plasticity",
       "Affective Neuroscience"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/olivier-hardt.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/olivier-hardt-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. University of Geneva, Ph.D. University of Geneva"
@@ -454,7 +454,7 @@
       "fMRI",
       "Therapeutic Intervention"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniela-schiller.png",
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/daniela-schiller-small.avif",
     "educationDetails": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "B.S. Tel Aviv University, Ph.D. Hebrew University"
@@ -481,7 +481,7 @@
       "Alzheimer's Disease",
       "Molecular Neuroscience"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/eric-kandel.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/eric-kandel-small.avif"
   },
   "joseph-ledoux": {
     "@context": "https://schema.org",
@@ -504,7 +504,7 @@
       "Trauma",
       "Defensive Behavior"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/joseph-ledoux.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/joseph-ledoux-small.avif"
   },
   "michael-merzenich": {
     "@context": "https://schema.org",
@@ -527,7 +527,7 @@
       "Auditory Processing",
       "Brain Training"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-merzenich.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-merzenich-small.avif"
   },
   "lisa-feldman-barrett": {
     "@context": "https://schema.org",
@@ -550,7 +550,7 @@
       "Affective Disorders",
       "Brain-Body Integration"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/lisa-feldman-barrett.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/lisa-feldman-barrett-small.avif"
   },
   "susumu-tonegawa": {
     "@context": "https://schema.org",
@@ -573,7 +573,7 @@
       "Dementia",
       "Neural Circuits"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/susumu-tonegawa.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/susumu-tonegawa-small.avif"
   },
   "michael-meaney": {
     "@context": "https://schema.org",
@@ -596,7 +596,7 @@
       "Gene Expression",
       "Developmental Neuroscience"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-meaney.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/michael-meaney-small.avif"
   },
   "elizabeth-phelps": {
     "@context": "https://schema.org",
@@ -619,7 +619,7 @@
       "Cortex",
       "Affective Cognition"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps-small.avif"
   },
   "takao-hensch": {
     "@context": "https://schema.org",
@@ -642,6 +642,6 @@
       "Inhibitory Networks",
       "Developmental Plasticity"
     ],
-    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/takao-hensch.png"
+    "image": "https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/takao-hensch-small.avif"
   }
 }

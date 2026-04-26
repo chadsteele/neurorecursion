@@ -1,12 +1,24 @@
 <script>
 	import {browser} from "$app/environment"
+	import {
+		PUBLIC_SUPABASE_ANON_KEY,
+		PUBLIC_SUPABASE_URL,
+	} from "$env/static/public"
 	import {searchOpen} from "$lib/stores.js"
+	import {createClient} from "@supabase/supabase-js"
+	import {onMount} from "svelte"
 	import Logo from "$lib/Logo.svelte"
 
 	let isMenuOpen = $state(false)
 	let scrolling = $state(false)
+	let isSignedIn = $state(false)
+	let username = $state("")
 	let User = $state(null)
 	let Search = $state(null)
+
+	const isSupabaseConfigured = Boolean(
+		PUBLIC_SUPABASE_URL && PUBLIC_SUPABASE_ANON_KEY,
+	)
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
@@ -30,6 +42,51 @@
 	function handleScroll() {
 		scrolling = window.scrollY > 10
 	}
+
+	function formatDisplayName(value) {
+		const normalized = (value || "").trim()
+		if (normalized.length <= 12) return normalized
+
+		return `${normalized.slice(0, 5)}*${normalized.slice(-5)}`
+	}
+
+	function updateUserState(user) {
+		isSignedIn = Boolean(user)
+		if (!user) {
+			username = ""
+			return
+		}
+
+		const firstName = user.user_metadata?.first_name?.trim()
+		const fullName = user.user_metadata?.full_name?.trim()
+		const emailName = user.email?.split("@")[0]
+		const baseName = firstName || fullName || emailName || "Account"
+
+		username = formatDisplayName(baseName)
+	}
+
+	onMount(() => {
+		if (!isSupabaseConfigured) return
+
+		const supabase = createClient(
+			PUBLIC_SUPABASE_URL,
+			PUBLIC_SUPABASE_ANON_KEY,
+		)
+
+		supabase.auth.getUser().then(({data}) => {
+			updateUserState(data?.user ?? null)
+		})
+
+		const {data: authListener} = supabase.auth.onAuthStateChange(
+			(_event, session) => {
+				updateUserState(session?.user ?? null)
+			},
+		)
+
+		return () => {
+			authListener.subscription.unsubscribe()
+		}
+	})
 </script>
 
 <svelte:window onscroll={handleScroll} />
@@ -75,12 +132,16 @@
 			</button>
 			<a
 				class="user-avatar"
-				href="/#signup"
-				aria-label="Go to sign up"
-				title="Sign up"
+				class:signed-in={isSignedIn}
+				href={isSignedIn ? "/user/dashboard" : "/user/login"}
+				aria-label={isSignedIn ? "Go to dashboard" : "Go to login"}
+				title={isSignedIn ? "Dashboard" : "Login"}
 			>
 				{#if User}
 					<User size={40} strokeWidth={1.5} />
+				{/if}
+				{#if isSignedIn && username}
+					<span class="user-name">{username}</span>
 				{/if}
 			</a>
 		</div>
@@ -157,11 +218,28 @@
 		flex-shrink: 0;
 		display: flex;
 		align-items: center;
+		gap: 0.45rem;
 		justify-content: center;
 		background: none;
 		border: none;
 		cursor: pointer;
 		padding: 0;
+		text-decoration: none;
+	}
+
+	.user-avatar.signed-in {
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.user-name {
+		color: #a0d8ff;
+		font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+		font-weight: 600;
+		max-width: 130px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	:global(.user-avatar svg) {
@@ -170,6 +248,11 @@
 		stroke: #4a9fd8;
 		cursor: pointer;
 		transition: all 0.3s ease;
+	}
+
+	.user-avatar.signed-in :global(svg) {
+		width: clamp(22px, 5vw, 30px);
+		height: clamp(22px, 5vw, 30px);
 	}
 
 	:global(.user-avatar svg:hover) {
@@ -272,6 +355,10 @@
 
 		.nav-right {
 			gap: 1rem;
+		}
+
+		.user-name {
+			display: none;
 		}
 	}
 </style>
