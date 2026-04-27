@@ -5,7 +5,64 @@
 <div id="scientific-references"></div>
 <section {...props}>
 	<div class="references">
-		<h3>Scientific References</h3>
+		<h3>Brain Science</h3>
+		<p>
+			Fear makes every thing worse. Disease is dis ease. Chronic pain,
+			phobias and neuroses usually stem from accidental trauma that locks
+			the brain into a permanent limbic loop. Because the limbic system
+			cannot distinguish between a nightmare and reality, these loops
+			trigger chronic physical stress. Persistent fear and anxiety cause
+			the hypothalamus to over-stimulate the adrenal glands, flooding the
+			body with cortisol and adrenaline. This chronic activation
+			suppresses the immune system, increases systemic inflammation, and
+			is a documented factor in the development of cardiovascular disease,
+			gastrointestinal disorders, and metabolic syndrome. Fear also
+			impairs neuroplasticity, making it difficult for the brain to rewire
+			itself out of these loops. By targeting the limbic system and
+			leveraging neuroplasticity, we can break these cycles and restore
+			neurological health.
+		</p>
+		<img
+			src="/stress-response.avif"
+			alt="Stress Response Diagram"
+			class="reference-image"
+		/>
+
+		<p>
+			NeuroRecursion is a conversational protocol, similar to Exposure
+			Therapy, but without the exposure, risk, or inconvenience, that
+			leverages neuroplasticity to rewire these cycles. By leveraging the
+			creative agency of the prefrontal cortex, we help you bypass old
+			loops and create new neural pathways. While the brain possesses a
+			natural elasticity, a biological tendency to snap back into
+			established, familiar patterns, NeuroRecursion uses a deliberate
+			"conscious trauma" breakthrough to shatter that resistance.
+		</p>
+
+		<p>
+			This process essentially highjacks the mechanics of the placebo
+			effect. A placebo works because the brain's expectation of relief
+			triggers a drop in the fear response, allowing the body to cease its
+			defensive stress production and begin self-repair. NeuroRecursion
+			creates a massive, conscious "relief" from the old loop during the
+			breakthrough.
+		</p>
+
+		<p>
+			Our clinical trials focus on this high-impact, transformative event.
+			To prevent the inevitable snap-back of neural elasticity, we also
+			provide an ecosystem for ongoing maintenance that connects users
+			with small group facilitators, 1 on 1 coaching, and seminars led by
+			certified NeuroRecursion coaches to ensure the new neural landscape
+			is reinforced and remains fixed in spite of neural elasticity.
+		</p>
+
+		<p>
+			Join us. The clinical trial is free, fast, and could be your
+			breakthrough. Sometimes it's all you need.
+		</p>
+
+		<h3>References</h3>
 		<p>
 			Our work is grounded in the pioneering research and cognitive
 			computational models developed by the world's leading neurological
@@ -215,5 +272,17 @@
 	}
 	li > a::before {
 		content: "— ";
+	}
+
+	.reference-image {
+		display: block;
+		width: min(100%, 760px);
+		height: auto;
+		margin: 1.5rem auto;
+		border-radius: 18px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow:
+			0 18px 40px rgba(0, 0, 0, 0.45),
+			0 0 36px rgba(102, 126, 234, 0.35);
 	}
 </style>
