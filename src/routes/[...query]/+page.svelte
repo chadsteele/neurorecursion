@@ -38,6 +38,109 @@
 		return name.replace(/-/g, "\u2011") // U+2011 is non-breaking hyphen
 	}
 
+	function normalizeMatchText(value) {
+		return (value || "")
+			.toLowerCase()
+			.replace(/[_/\-]+/g, " ")
+			.replace(/[^a-z0-9\s]/g, " ")
+			.replace(/\s+/g, " ")
+			.trim()
+	}
+
+	function scoreMatch(queryRaw, candidateRaw, type) {
+		if (!queryRaw || !candidateRaw) return 0
+
+		const query = normalizeMatchText(queryRaw)
+		const candidate = normalizeMatchText(candidateRaw)
+
+		if (!query || !candidate) return 0
+
+		const typeBonus =
+			type === "path"
+				? 12
+				: type === "id"
+					? 8
+					: type === "heading"
+						? 4
+						: 0
+
+		if (query === candidate) {
+			return 100 + typeBonus
+		}
+
+		let score = 0
+
+		if (candidate.startsWith(query)) score += 50
+		if (query.startsWith(candidate)) score += 32
+		if (candidate.includes(query)) score += 24
+
+		const queryTokens = query.split(" ").filter(Boolean)
+		const candidateTokens = candidate.split(" ").filter(Boolean)
+		const querySet = new Set(queryTokens)
+		const candidateSet = new Set(candidateTokens)
+		let overlapCount = 0
+
+		for (const token of querySet) {
+			if (candidateSet.has(token)) {
+				overlapCount += 1
+			}
+		}
+
+		if (overlapCount > 0) {
+			const unionCount = new Set([...querySet, ...candidateSet]).size || 1
+			score += (overlapCount / unionCount) * 50
+		}
+
+		return score + typeBonus
+	}
+
+	function findBestDomMatch(queryPath) {
+		const rawQuery = (queryPath || "").trim()
+		if (!rawQuery) return null
+
+		const pathQuery = `/${rawQuery}`
+		const searchScope = document.querySelectorAll(
+			"[path], [id], h1, h2, h3",
+		)
+
+		let bestElement = null
+		let bestScore = 0
+
+		for (const el of searchScope) {
+			const pathValue = el.getAttribute("path")
+			if (pathValue) {
+				const pathScore = scoreMatch(pathQuery, pathValue, "path")
+				if (pathScore > bestScore) {
+					bestScore = pathScore
+					bestElement = el
+				}
+			}
+
+			const idValue = el.id
+			if (idValue) {
+				const idScore = scoreMatch(rawQuery, idValue, "id")
+				if (idScore > bestScore) {
+					bestScore = idScore
+					bestElement = el
+				}
+			}
+
+			if (el.matches("h1, h2, h3")) {
+				const headingScore = scoreMatch(
+					rawQuery,
+					el.textContent || "",
+					"heading",
+				)
+				if (headingScore > bestScore) {
+					bestScore = headingScore
+					bestElement = el
+				}
+			}
+		}
+
+		return bestScore >= 20 ? bestElement : null
+	}
+
 	// Initialize formData with restored values from localStorage (only on browser)
 	let formData = $state(
 		browser
@@ -103,23 +206,8 @@
 			return
 		}
 
-		const pathToFind = `/${queryPath}`
-
-		// PRIORITY 1: Try to find element with path=[query]
-		let targetElement = null
-		const pathElements = document.querySelectorAll("[path]")
-		for (const el of pathElements) {
-			const elPath = el.getAttribute("path")
-			if (elPath && elPath.toLowerCase() === pathToFind.toLowerCase()) {
-				targetElement = el
-				break
-			}
-		}
-
-		// PRIORITY 2: If not found, try to find element with id=[query]
-		if (!targetElement) {
-			targetElement = document.getElementById(queryPath)
-		}
+		// PRIORITY 1: Find closest DOM match among path/id/h1/h2/h3
+		let targetElement = findBestDomMatch(queryPath)
 
 		// PRIORITY 3: If not found, use getCondition to find best matched condition
 		if (!targetElement && getCondition) {

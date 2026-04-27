@@ -2,10 +2,9 @@
 	let {...props} = $props()
 </script>
 
-<div id="scientific-references"></div>
 <section {...props}>
 	<div class="references">
-		<h3>Brain Science</h3>
+		<h3 path="/brain-science">Brain Science</h3>
 		<p>Fear makes every thing worse. Disease is dis-ease.</p>
 		<p>
 			Chronic pain, phobias and neuroses usually stem from accidental
@@ -62,7 +61,7 @@
 			breakthrough. Sometimes it's all you need.
 		</p>
 
-		<h3>References</h3>
+		<h3 path="/scientific-references">References</h3>
 		<p>
 			Our work is grounded in the pioneering research and cognitive
 			computational models developed by the world's leading neurological

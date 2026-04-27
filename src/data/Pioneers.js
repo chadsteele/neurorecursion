@@ -685,7 +685,7 @@ His work also matters because it breaks the false opposition between biology and
 		img_url:
 			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps-small.avif",
 		background_url:
-			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/elizabeth-phelps-background.avif",
+			"https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/harvard-background.avif",
 		description: `Elizabeth Phelps is a leading figure in cognitive neuroscience whose work has clarified how emotion and memory interact in the human brain. She has mapped the relationship between the amygdala and cortical systems in shaping social behavior, valuation, and decision-making. For NeuroRecursion, her importance lies in showing that emotional salience and memory are not separable processes but part of a tightly integrated architecture that determines how people interpret risk and act under uncertainty.
 
 Phelps's research helps translate fear and emotional learning from animal models into human neuroscience. She has shown how human amygdala-cortex interactions guide attention, bias memory, and influence choices in social and uncertain environments. NeuroRecursion depends on exactly this kind of interaction: a top-down narrative system engaging and ultimately re-educating bottom-up emotional predictions.
