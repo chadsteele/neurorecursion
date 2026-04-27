@@ -6,21 +6,21 @@
 <section {...props}>
 	<div class="references">
 		<h3>Brain Science</h3>
+		<p>Fear makes every thing worse. Disease is dis-ease.</p>
 		<p>
-			Fear makes every thing worse. Disease is dis ease. Chronic pain,
-			phobias and neuroses usually stem from accidental trauma that locks
-			the brain into a permanent limbic loop. Because the limbic system
-			cannot distinguish between a nightmare and reality, these loops
-			trigger chronic physical stress. Persistent fear and anxiety cause
-			the hypothalamus to over-stimulate the adrenal glands, flooding the
-			body with cortisol and adrenaline. This chronic activation
-			suppresses the immune system, increases systemic inflammation, and
-			is a documented factor in the development of cardiovascular disease,
-			gastrointestinal disorders, and metabolic syndrome. Fear also
-			impairs neuroplasticity, making it difficult for the brain to rewire
-			itself out of these loops. By targeting the limbic system and
-			leveraging neuroplasticity, we can break these cycles and restore
-			neurological health.
+			Chronic pain, phobias and neuroses usually stem from accidental
+			trauma that locks the brain into a permanent limbic loop. Because
+			the limbic system cannot distinguish between a nightmare and
+			reality, these loops trigger chronic physical stress. Persistent
+			fear and anxiety cause the hypothalamus to over-stimulate the
+			adrenal glands, flooding the body with cortisol and adrenaline. This
+			chronic activation suppresses the immune system, increases systemic
+			inflammation, and is a documented factor in the development of
+			cardiovascular disease, gastrointestinal disorders, and metabolic
+			syndrome. Fear also impairs neuroplasticity, making it difficult for
+			the brain to rewire itself out of these loops. By targeting the
+			limbic system and leveraging neuroplasticity, we can break these
+			cycles and restore neurological health.
 		</p>
 		<img
 			src="/stress-response.avif"
@@ -280,9 +280,12 @@
 		height: auto;
 		margin: 1.5rem auto;
 		border-radius: 18px;
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(165, 192, 255, 0.45);
+		filter: saturate(1.05);
 		box-shadow:
-			0 18px 40px rgba(0, 0, 0, 0.45),
-			0 0 36px rgba(102, 126, 234, 0.35);
+			0 24px 50px rgba(0, 0, 0, 0.48),
+			0 0 30px rgba(96, 140, 255, 0.55),
+			0 0 72px rgba(96, 140, 255, 0.42),
+			0 0 110px rgba(96, 140, 255, 0.26);
 	}
 </style>

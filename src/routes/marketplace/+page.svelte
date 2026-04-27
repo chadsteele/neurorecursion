@@ -170,22 +170,20 @@
 	const affiliateExample = {
 		views: 100000,
 		conversionRate: 0.01,
-		smallGroupPrice: 49,
-		coachingPrice: 99,
 		commissionRate: 0.1,
 	}
 
 	const attendees = affiliateExample.views * affiliateExample.conversionRate
 
 	const prices = {
-		"NeuroRecursion Clinical Trial": 0,
-		"Facilitated Small Group Conversations": 49,
-		"One-on-One Coaching": 99,
-		"Coach Certification Course and Materials": 499,
-		"Coach Certification Study Group": 0,
-		"Coach Certification Practice Exam": 99,
-		"Coach Certification Exam": 499,
-		"Annual Coach License Renewal + Reexamination": 199,
+		"NeuroRecursion Clinical Trial": "Free!",
+		"Facilitated Small Group Conversations": 99,
+		"One-on-One Coaching": 199,
+		"Coach Certification Course and Materials": 999,
+		"Coach Certification Study Group": "Free!",
+		"Coach Certification Practice Exam": 199,
+		"Coach Certification Exam": 999,
+		"Annual Coach License Renewal + Reexamination": 399,
 	}
 
 	const productConfig = {
@@ -262,13 +260,23 @@
 			}
 		}),
 	}))
+	const affiliateSmallGroupPrice =
+		prices["Facilitated Small Group Conversations"]
+	const affiliateCoachingPrice = prices["One-on-One Coaching"]
+
+	function toNumberOrZero(value) {
+		const numericValue = typeof value === "number" ? value : Number(value)
+
+		return Number.isFinite(numericValue) ? numericValue : 0
+	}
+
 	const smallGroupCommission =
 		attendees *
-		affiliateExample.smallGroupPrice *
+		toNumberOrZero(affiliateSmallGroupPrice) *
 		affiliateExample.commissionRate
 	const coachingCommission =
 		attendees *
-		affiliateExample.coachingPrice *
+		toNumberOrZero(affiliateCoachingPrice) *
 		affiliateExample.commissionRate
 
 	$effect(() => {
@@ -334,11 +342,17 @@
 	}
 
 	function formatPrice(value) {
-		if (value === 0) {
+		const numericValue = typeof value === "number" ? value : Number(value)
+
+		if (!Number.isFinite(numericValue)) {
+			return String(value)
+		}
+
+		if (numericValue === 0) {
 			return "Free"
 		}
 
-		return priceFormatter.format(value)
+		return priceFormatter.format(numericValue)
 	}
 
 	function getProductByName(name) {
@@ -501,7 +515,10 @@
 	}
 
 	function getLineSubtotal(product) {
-		return getProductPrice(product) * getProductQuantity(product.id)
+		return (
+			toNumberOrZero(getProductPrice(product)) *
+			getProductQuantity(product.id)
+		)
 	}
 
 	function getQuantityDiscountRate(product) {
@@ -775,7 +792,9 @@
 						></span>
 						<span>Clinical trial</span>
 					</div>
-					<div class="stat-value">Free</div>
+					<div class="stat-value">
+						{formatPrice(prices["NeuroRecursion Clinical Trial"])}
+					</div>
 					<p>
 						Built to dismantle entrenched loops and create real
 						breathing room.
@@ -808,7 +827,11 @@
 						></span>
 						<span>Small group practice</span>
 					</div>
-					<div class="stat-value">$49</div>
+					<div class="stat-value">
+						{formatPrice(
+							prices["Facilitated Small Group Conversations"],
+						)}
+					</div>
 					<p>
 						Live reinforcement with other people doing the work
 						beside you.
@@ -835,7 +858,9 @@
 						></span>
 						<span>1:1 coaching</span>
 					</div>
-					<div class="stat-value">$99/hr</div>
+					<div class="stat-value">
+						{formatPrice(prices["One-on-One Coaching"])} /hr
+					</div>
 					<p>
 						Targeted support for complex cases, stubborn loops, and
 						precision.
@@ -1038,13 +1063,18 @@
 						<strong>{attendees.toLocaleString()}</strong>
 					</div>
 					<div>
-						<span>10% commission on one $49 small group</span>
+						<span>
+							10% commission on one {formatPrice(
+								affiliateSmallGroupPrice,
+							)} small group
+						</span>
 						<strong>{formatPrice(smallGroupCommission)}</strong>
 					</div>
 					<div>
 						<span
-							>10% commission if each also books one $99 coaching
-							hour</span
+							>10% commission if each also books one {formatPrice(
+								affiliateCoachingPrice,
+							)} coaching hour</span
 						>
 						<strong>{formatPrice(coachingCommission)}</strong>
 					</div>
