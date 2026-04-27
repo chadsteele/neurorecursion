@@ -1,11 +1,10 @@
 <script>
 	import {goto} from "$app/navigation"
-	import {
-		PUBLIC_SUPABASE_ANON_KEY,
-		PUBLIC_SUPABASE_URL,
-	} from "$env/static/public"
+	import {env} from "$env/dynamic/public"
 	import {createClient} from "@supabase/supabase-js"
 
+	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
+	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
 	const SUPABASE_URL = PUBLIC_SUPABASE_URL
 	const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY
 	const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
@@ -91,10 +90,6 @@
 	h1 {
 		margin: 0 0 0.75rem 0;
 		font-size: 1.6rem;
-	}
-
-	p {
-		margin: 0;
 		color: #444;
 	}
 

@@ -1,13 +1,12 @@
 <script>
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
-	import {
-		PUBLIC_SUPABASE_ANON_KEY,
-		PUBLIC_SUPABASE_URL,
-	} from "$env/static/public"
+	import {env} from "$env/dynamic/public"
 	import {createClient} from "@supabase/supabase-js"
 	import {onMount} from "svelte"
 
+	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
+	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
 	const SUPABASE_URL = PUBLIC_SUPABASE_URL
 	const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY
 	const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)

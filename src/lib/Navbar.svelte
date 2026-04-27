@@ -1,9 +1,6 @@
 <script>
 	import {browser} from "$app/environment"
-	import {
-		PUBLIC_SUPABASE_ANON_KEY,
-		PUBLIC_SUPABASE_URL,
-	} from "$env/static/public"
+	import {env} from "$env/dynamic/public"
 	import {searchOpen} from "$lib/stores.js"
 	import {createClient} from "@supabase/supabase-js"
 	import {onMount} from "svelte"
@@ -15,6 +12,8 @@
 	let username = $state("")
 	let User = $state(null)
 	let Search = $state(null)
+	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
+	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
 
 	const isSupabaseConfigured = Boolean(
 		PUBLIC_SUPABASE_URL && PUBLIC_SUPABASE_ANON_KEY,
