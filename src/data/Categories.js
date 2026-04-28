@@ -219,7 +219,7 @@ export const Categories = [
 	},
 	{
 		category_name: "Career, Performance & Prosperity",
-		path: "/careers/performance/prosperity",
+		path: "/performance/prosperity/career",
 		ids: [
 			"burnout-exhaustion-depersonalization",
 			"hyper-cynicism-depressive-realism-distrust",
