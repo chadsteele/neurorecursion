@@ -12,6 +12,7 @@
 	import SpeakerFacilitator from "$lib/jobs/SpeakerFacilitator.svelte"
 	import OtherTalent from "$lib/jobs/OtherTalent.svelte"
 	import jobs from "../../../data/Jobs.js"
+	import Speak from "$lib/Speak.svelte"
 
 	const jobMapping = {
 		"clinical-research-associate": ClinicalResearchAssociate,
