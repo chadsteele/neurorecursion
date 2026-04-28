@@ -146,15 +146,6 @@
 				pushWrappedSegment(index + 1)
 				continue
 			}
-
-			if (isPauseHyphen(text, index)) {
-				pushWrappedSegment(index)
-				segments.push({
-					text: text[index],
-					wrap: false,
-				})
-				segmentStart = index + 1
-			}
 		}
 
 		if (segmentStart < text.length) {

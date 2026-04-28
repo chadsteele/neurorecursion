@@ -218,7 +218,7 @@ export const Categories = [
 		],
 	},
 	{
-		category_name: "Career, Performance & Prosperity",
+		category_name: "Performance, Prosperity & Career",
 		path: "/performance/prosperity/career",
 		ids: [
 			"burnout-exhaustion-depersonalization",

@@ -10,8 +10,10 @@
 		volume = 1,
 	} = $props()
 
+	let ttsAvailable = $state(false)
 	let speechAvailable = $state(false)
 	let voices = $state([])
+	let activeEngine = $state("webspeech")
 	let isReading = $state(false)
 	let isPaused = $state(false)
 	let currentSpan = $state(null)
@@ -25,16 +27,43 @@
 	let trashHovering = $state(false)
 	let speakTimeout = null
 	let activeSpeechToken = 0
+	let piperApi = null
+	let piperLoadAttempted = false
+	let piperLoadFailed = false
+	let piperVoiceId = $state("")
+	let piperSessionByVoice = new Map()
+	let piperSessionInitPromise = new Map()
+	let piperNextSegmentText = ""
+	let piperNextSegmentPromise = null // Promise<Blob>
+	let currentAudio = null
+	let currentAudioUrl = ""
+	let isGeneratingPiper = $state(false)
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
 	const SENTENCE_PAUSE_MS = 220
-	const HYPHEN_PAUSE_MS = SENTENCE_PAUSE_MS
 	const SPAN_PAUSE_MS = 420
+	const PIPER_SEGMENT_PAUSE_MS = 0
+	const PIPER_SPAN_PAUSE_MS = 100
 	const FEMALE_VOICE_HINTS = ["moira", "zira", "aria", "jenny", "female"]
 	const READER_POSITION_STORAGE_KEY = "reader-floating-position"
 	const READER_BASE_LEFT_PX = 50
 	const READER_BASE_TOP_PX = 100
+	const DEFAULT_PIPER_VOICE_ID = "en_US-libritts_r-medium"
+	const PIPER_WASM_PATHS = {
+		onnxWasm: "/piper/onnx/",
+		piperData: "/piper/phonemize/piper_phonemize.data",
+		piperWasm: "/piper/phonemize/piper_phonemize.wasm",
+	}
+	const PIPER_PREFERRED_VOICE_IDS = [
+		"en_US-libritts_r-high",
+		"en_US-libritts_r-medium",
+		"en_US-lessac-high",
+		"en_US-lessac-medium",
+		"en_US-ryan-high",
+		"en_US-ryan-medium",
+		"en_US-hfc_female-medium",
+	]
 
 	function loadVoices() {
 		if (typeof window === "undefined" || !window.speechSynthesis) return
@@ -66,6 +95,10 @@
 		return sameLang[0] || voices[0]
 	}
 
+	function ts() {
+		return `+${performance.now().toFixed(0)}ms`
+	}
+
 	function splitIntoSentences(text) {
 		const normalizedText = (text || "").trim()
 		if (!normalizedText) return []
@@ -75,26 +108,10 @@
 			.map((sentence) => sentence.trim())
 			.filter(Boolean)
 
-		const segments = []
-
-		for (const sentence of sentenceParts) {
-			const hyphenParts = sentence
-				.split(/\s+-\s+/)
-				.map((part) => part.trim())
-				.filter(Boolean)
-
-			hyphenParts.forEach((part, index) => {
-				const isLastPartInSentence = index === hyphenParts.length - 1
-				segments.push({
-					text: part,
-					pauseAfter: isLastPartInSentence
-						? SENTENCE_PAUSE_MS
-						: HYPHEN_PAUSE_MS,
-				})
-			})
-		}
-
-		return segments
+		return sentenceParts.map((text) => ({
+			text,
+			pauseAfter: SENTENCE_PAUSE_MS,
+		}))
 	}
 
 	function clearSpeakTimeout() {
@@ -104,8 +121,23 @@
 		}
 	}
 
-	function cancelBrowserSpeech() {
+	function cleanupCurrentAudio() {
+		if (currentAudio) {
+			currentAudio.pause()
+			currentAudio.src = ""
+			currentAudio = null
+		}
+
+		if (currentAudioUrl) {
+			URL.revokeObjectURL(currentAudioUrl)
+			currentAudioUrl = ""
+		}
+	}
+
+	function cancelAllSpeechEngines() {
 		clearSpeakTimeout()
+		cleanupCurrentAudio()
+		isGeneratingPiper = false
 
 		if (typeof window !== "undefined" && window.speechSynthesis) {
 			window.speechSynthesis.cancel()
@@ -115,7 +147,9 @@
 	}
 
 	function stopReading({clearHighlight = false} = {}) {
-		cancelBrowserSpeech()
+		cancelAllSpeechEngines()
+		piperNextSegmentText = ""
+		piperNextSegmentPromise = null
 		currentSegments = []
 		currentSentenceIndex = 0
 		isReading = false
@@ -125,6 +159,124 @@
 			currentSpan = null
 			highlightSpan(null)
 		}
+	}
+
+	function mapLangToPiperPrefix(langCode) {
+		return (langCode || "en-US").replace("-", "_").toLowerCase()
+	}
+
+	function selectPiperVoiceId(availableVoiceIds) {
+		if (voiceName && availableVoiceIds.includes(voiceName)) {
+			return voiceName
+		}
+
+		for (const preferredVoiceId of PIPER_PREFERRED_VOICE_IDS) {
+			if (availableVoiceIds.includes(preferredVoiceId)) {
+				return preferredVoiceId
+			}
+		}
+
+		const preferredPrefix = mapLangToPiperPrefix(lang)
+		const langMatch = availableVoiceIds.find((voiceId) =>
+			voiceId.toLowerCase().startsWith(preferredPrefix),
+		)
+		if (langMatch) return langMatch
+
+		if (availableVoiceIds.includes(DEFAULT_PIPER_VOICE_ID)) {
+			return DEFAULT_PIPER_VOICE_ID
+		}
+
+		return availableVoiceIds[0] || DEFAULT_PIPER_VOICE_ID
+	}
+
+	async function ensurePiperReady() {
+		if (typeof window === "undefined") return false
+		if (piperLoadAttempted) return !piperLoadFailed && Boolean(piperApi)
+
+		piperLoadAttempted = true
+
+		try {
+			console.log("[Reader] Loading @realtimex/piper-tts-web...")
+			const module = await import("@realtimex/piper-tts-web")
+			piperApi = module
+			console.log("[Reader] Piper module loaded:", Object.keys(module))
+
+			const voicesResult = await piperApi.voices?.()
+			console.log("[Reader] Piper voices() raw result:", voicesResult)
+			console.log(
+				"[Reader] First voice object sample:",
+				voicesResult?.[0],
+			)
+
+			// voices() returns an array of objects; extract the string ID from
+			// whichever property holds it (key > id > name)
+			const extractId = (v) => {
+				if (typeof v === "string") return v
+				return v?.key ?? v?.id ?? v?.name ?? null
+			}
+
+			const availableVoiceIds = Array.isArray(voicesResult)
+				? voicesResult.map(extractId).filter(Boolean)
+				: voicesResult && typeof voicesResult === "object"
+					? Object.keys(voicesResult)
+					: []
+			console.log(
+				"[Reader] Available Piper voice IDs:",
+				availableVoiceIds,
+			)
+
+			piperVoiceId = selectPiperVoiceId(availableVoiceIds)
+			console.log("[Reader] Selected Piper voice ID:", piperVoiceId)
+			return true
+		} catch (err) {
+			console.error("[Reader] Piper load FAILED:", err)
+			piperLoadFailed = true
+			piperApi = null
+			return false
+		}
+	}
+
+	async function getPiperSessionForVoice(voiceId) {
+		if (!piperApi?.TtsSession || !voiceId) return null
+
+		if (piperSessionByVoice.has(voiceId)) {
+			return piperSessionByVoice.get(voiceId)
+		}
+
+		if (piperSessionInitPromise.has(voiceId)) {
+			return piperSessionInitPromise.get(voiceId)
+		}
+
+		console.log(
+			`[Reader] ${ts()} Creating Piper session for voice: ${voiceId}`,
+		)
+
+		// Force single-threading on the ort instance Piper uses internally.
+		try {
+			const ortEnv =
+				piperApi?.env?.wasm ??
+				piperApi?.ort?.env?.wasm ??
+				globalThis?.ort?.env?.wasm
+			if (ortEnv) ortEnv.numThreads = 1
+		} catch {
+			// best-effort
+		}
+
+		const promise = piperApi.TtsSession.create({
+			voiceId,
+			allowLocalModels: true,
+			fallbackStrategy: "local",
+			wasmPaths: PIPER_WASM_PATHS,
+			logger: (msg) => console.log(`[Reader][Session]`, msg),
+		}).then((session) => {
+			piperSessionByVoice.set(voiceId, session)
+			piperSessionInitPromise.delete(voiceId)
+			console.log(`[Reader] ${ts()} Session ready for: ${voiceId}`)
+			return session
+		})
+
+		piperSessionInitPromise.set(voiceId, promise)
+		return promise
 	}
 
 	function remToPx(rem) {
@@ -269,9 +421,158 @@
 		})
 	}
 
+	function scheduleNextSegment(token, pauseAfter) {
+		speakTimeout = setTimeout(() => {
+			speakTimeout = null
+			if (token === activeSpeechToken && !isPaused) {
+				speakCurrentSentence(token)
+			}
+		}, pauseAfter)
+	}
+
+	async function speakCurrentSentenceWithPiper(segment, token) {
+		console.log(
+			`[Reader] ${ts()} speakWithPiper [${currentSentenceIndex}]: "${segment.text.slice(0, 60)}"`,
+		)
+		if (!piperApi) return false
+
+		isGeneratingPiper = true
+		let wavBlob = null
+
+		const voiceCandidates = [piperVoiceId]
+		if (
+			piperVoiceId !== DEFAULT_PIPER_VOICE_ID &&
+			!voiceCandidates.includes(DEFAULT_PIPER_VOICE_ID)
+		) {
+			voiceCandidates.push(DEFAULT_PIPER_VOICE_ID)
+		}
+
+		for (const candidateVoiceId of voiceCandidates) {
+			if (!candidateVoiceId) continue
+
+			try {
+				const session = await getPiperSessionForVoice(candidateVoiceId)
+				if (!session) throw new Error("Piper session unavailable")
+
+				if (
+					piperNextSegmentText === segment.text &&
+					piperNextSegmentPromise
+				) {
+					const tWait = performance.now()
+					console.log(
+						`[Reader] ${ts()} Prefetch HIT — waiting: "${segment.text.slice(0, 50)}"`,
+					)
+					wavBlob = await piperNextSegmentPromise
+					console.log(
+						`[Reader] ${ts()} Prefetch resolved after ${(performance.now() - tWait).toFixed(0)}ms wait`,
+					)
+				} else {
+					console.log(
+						`[Reader] ${ts()} Prefetch MISS — fresh synthesis: "${segment.text.slice(0, 50)}"`,
+					)
+					const tSynth = performance.now()
+					wavBlob = await session.predict(segment.text)
+					console.log(
+						`[Reader] ${ts()} Fresh synthesis: ${(performance.now() - tSynth).toFixed(0)}ms`,
+					)
+				}
+
+				piperNextSegmentText = ""
+				piperNextSegmentPromise = null
+
+				// Determine the next text to synthesize:
+				// — next sentence within this span, or
+				// — first sentence of the next span (cross-span lookahead)
+				let nextTextToPrefetch = null
+				const nextInSpan = currentSegments[currentSentenceIndex + 1]
+				if (nextInSpan?.text) {
+					nextTextToPrefetch = nextInSpan.text
+				} else {
+					const nextSpan = findNextSpeak(currentSpan)
+					if (nextSpan) {
+						const nextSpanSegs = splitIntoSentences(
+							nextSpan.textContent || "",
+						)
+						nextTextToPrefetch = nextSpanSegs[0]?.text ?? null
+					}
+				}
+
+				// Start synthesis immediately — the session is now free,
+				// and audio playback happens in parallel while it runs.
+				if (nextTextToPrefetch && token === activeSpeechToken) {
+					const tPre = performance.now()
+					const nextLabel = nextInSpan
+						? `[${currentSentenceIndex + 1}]`
+						: `[next-span[0]]`
+					console.log(
+						`[Reader] ${ts()} Prefetch START ${nextLabel}: "${nextTextToPrefetch.slice(0, 50)}"`,
+					)
+					piperNextSegmentText = nextTextToPrefetch
+					piperNextSegmentPromise = session
+						.predict(nextTextToPrefetch)
+						.then((b) => {
+							console.log(
+								`[Reader] ${ts()} Prefetch DONE ${(performance.now() - tPre).toFixed(0)}ms ${nextLabel}`,
+							)
+							return b
+						})
+				}
+
+				piperVoiceId = candidateVoiceId
+				break
+			} catch (err) {
+				console.error(
+					`[Reader] ${ts()} predict FAILED for voice: ${candidateVoiceId}`,
+					err,
+				)
+				wavBlob = null
+			}
+		}
+
+		isGeneratingPiper = false
+
+		if (!wavBlob) return false
+		if (token !== activeSpeechToken) return true
+
+		cleanupCurrentAudio()
+		currentAudioUrl = URL.createObjectURL(wavBlob)
+		currentAudio = new Audio(currentAudioUrl)
+		currentAudio.volume = Math.min(Math.max(volume, 0), 1)
+		currentAudio.playbackRate = Math.min(Math.max(rate, 0.5), 2)
+
+		if (!isPaused) {
+			try {
+				console.log(
+					`[Reader] ${ts()} audio PLAY START [${currentSentenceIndex}]`,
+				)
+				await currentAudio.play()
+			} catch {
+				return false
+			}
+		}
+
+		if (isPaused) return true
+
+		await new Promise((resolve) => {
+			const onDone = () => {
+				console.log(
+					`[Reader] ${ts()} audio PLAY END [${currentSentenceIndex}]`,
+				)
+				currentAudio?.removeEventListener("ended", onDone)
+				currentAudio?.removeEventListener("error", onDone)
+				resolve()
+			}
+
+			currentAudio?.addEventListener("ended", onDone, {once: true})
+			currentAudio?.addEventListener("error", onDone, {once: true})
+		})
+
+		return true
+	}
+
 	function speakCurrentSentence(token = activeSpeechToken) {
 		if (
-			!speechAvailable ||
+			!ttsAvailable ||
 			token !== activeSpeechToken ||
 			!currentSegments.length ||
 			currentSentenceIndex >= currentSegments.length
@@ -280,6 +581,66 @@
 		}
 
 		const segment = currentSegments[currentSentenceIndex]
+
+		console.log(
+			"[Reader] speakCurrentSentence — engine:",
+			activeEngine,
+			"segment:",
+			segment?.text?.slice(0, 60),
+		)
+		if (activeEngine === "piper") {
+			void (async () => {
+				const ok = await speakCurrentSentenceWithPiper(segment, token)
+				if (token !== activeSpeechToken || isPaused) return
+
+				if (!ok) {
+					console.warn(
+						"[Reader] Piper failed, falling back. speechAvailable:",
+						speechAvailable,
+					)
+					activeEngine = speechAvailable ? "webspeech" : "piper"
+					if (activeEngine === "webspeech") {
+						console.log("[Reader] Falling back to Web Speech API")
+						speakCurrentSentence(token)
+						return
+					}
+
+					stopReading({clearHighlight: true})
+					return
+				}
+
+				currentSentenceIndex += 1
+
+				if (currentSentenceIndex >= currentSegments.length) {
+					cleanupCurrentAudio()
+					const nextSpan = findNextSpeak(currentSpan)
+					if (nextSpan) {
+						const nextSpanPause =
+							activeEngine === "piper"
+								? PIPER_SPAN_PAUSE_MS
+								: SPAN_PAUSE_MS
+						speakTimeout = setTimeout(() => {
+							speakTimeout = null
+							if (token === activeSpeechToken && !isPaused) {
+								startReadingFromSpan(nextSpan)
+							}
+						}, nextSpanPause)
+					} else {
+						stopReading({clearHighlight: true})
+					}
+					return
+				}
+
+				scheduleNextSegment(token, PIPER_SEGMENT_PAUSE_MS)
+			})()
+			return
+		}
+
+		if (!speechAvailable) {
+			stopReading({clearHighlight: true})
+			return
+		}
+
 		const utterance = new SpeechSynthesisUtterance(segment.text)
 		utterance.lang = lang
 		utterance.rate = rate
@@ -311,12 +672,7 @@
 				return
 			}
 
-			speakTimeout = setTimeout(() => {
-				speakTimeout = null
-				if (token === activeSpeechToken && !isPaused) {
-					speakCurrentSentence(token)
-				}
-			}, segment.pauseAfter)
+			scheduleNextSegment(token, segment.pauseAfter)
 		}
 
 		utterance.onerror = () => {
@@ -328,13 +684,13 @@
 	}
 
 	function startReadingFromSpan(span) {
-		if (!speechAvailable) return
+		if (!ttsAvailable) return
 		if (!span) {
 			stopReading({clearHighlight: true})
 			return
 		}
 
-		cancelBrowserSpeech()
+		cancelAllSpeechEngines()
 
 		currentSpan = span
 		ensureSpanInView(span)
@@ -342,6 +698,13 @@
 
 		currentSegments = splitIntoSentences(span.textContent || "")
 		currentSentenceIndex = 0
+		// Preserve an in-flight prefetch if it already matches the first segment
+		// of this span (fired by the previous span's cross-span lookahead).
+		const incomingFirstText = currentSegments[0]?.text ?? ""
+		if (piperNextSegmentText !== incomingFirstText) {
+			piperNextSegmentText = ""
+			piperNextSegmentPromise = null
+		}
 
 		if (!currentSegments.length) {
 			const nextSpan = findNextSpeak(span)
@@ -355,14 +718,61 @@
 
 		isReading = true
 		isPaused = false
+
+		if (activeEngine === "piper") {
+			void (async () => {
+				try {
+					const preferredVoice =
+						piperVoiceId || DEFAULT_PIPER_VOICE_ID
+					const session =
+						await getPiperSessionForVoice(preferredVoice)
+					const firstText = currentSegments[0]?.text
+					if (
+						session &&
+						firstText &&
+						piperNextSegmentText !== firstText
+					) {
+						// Not already in-flight from cross-span lookahead — start now.
+						const tPre = performance.now()
+						console.log(
+							`[Reader] ${ts()} Warmup [0]: "${firstText.slice(0, 50)}"`,
+						)
+						piperNextSegmentText = firstText
+						piperNextSegmentPromise = session
+							.predict(firstText)
+							.then((b) => {
+								console.log(
+									`[Reader] ${ts()} Warmup DONE ${(performance.now() - tPre).toFixed(0)}ms`,
+								)
+								return b
+							})
+					} else if (session && firstText) {
+						console.log(
+							`[Reader] ${ts()} Warmup skipped — cross-span prefetch already in flight: "${firstText.slice(0, 50)}"`,
+						)
+					}
+				} catch {
+					// Best-effort warmup only.
+				}
+			})()
+		}
+
 		speakCurrentSentence(activeSpeechToken)
 	}
 
 	function pauseReading() {
-		if (!speechAvailable || !isReading || isPaused) return
+		if (!ttsAvailable || !isReading || isPaused) return
 
 		if (speakTimeout) {
 			clearSpeakTimeout()
+			isPaused = true
+			return
+		}
+
+		if (activeEngine === "piper") {
+			if (currentAudio && !currentAudio.paused) {
+				currentAudio.pause()
+			}
 			isPaused = true
 			return
 		}
@@ -375,10 +785,27 @@
 	}
 
 	function resumeReading() {
-		if (!speechAvailable || !isReading || !isPaused) return
+		if (!ttsAvailable || !isReading || !isPaused) return
 
 		ensureSpanInView(currentSpan)
 		isPaused = false
+
+		if (activeEngine === "piper") {
+			if (currentAudio && currentAudio.paused) {
+				void currentAudio.play().catch(() => {
+					activeEngine = speechAvailable ? "webspeech" : "piper"
+					if (activeEngine === "webspeech") {
+						speakCurrentSentence(activeSpeechToken)
+					}
+				})
+				return
+			}
+
+			if (!isGeneratingPiper) {
+				speakCurrentSentence(activeSpeechToken)
+			}
+			return
+		}
 
 		if (window.speechSynthesis.paused) {
 			window.speechSynthesis.resume()
@@ -485,11 +912,28 @@
 			"speechSynthesis" in window &&
 			typeof SpeechSynthesisUtterance !== "undefined"
 
-		if (!speechAvailable) return
+		if (speechAvailable) {
+			loadVoices()
+			window.speechSynthesis.onvoiceschanged = loadVoices
+		}
 
-		loadVoices()
+		void (async () => {
+			const piperReady = await ensurePiperReady()
+			ttsAvailable = piperReady || speechAvailable
+			activeEngine = piperReady ? "piper" : "webspeech"
+			console.log(
+				"[Reader] Init complete — piperReady:",
+				piperReady,
+				"speechAvailable:",
+				speechAvailable,
+				"activeEngine:",
+				activeEngine,
+				"piperVoiceId:",
+				piperVoiceId,
+			)
+		})()
+
 		restoreReaderPosition()
-		window.speechSynthesis.onvoiceschanged = loadVoices
 
 		window.addEventListener("mousemove", handleMouseMove)
 		window.addEventListener("mousemove", handleMouseMoveTrash)
@@ -509,12 +953,14 @@
 				handleViewportChange,
 			)
 			stopReading({clearHighlight: true})
-			window.speechSynthesis.onvoiceschanged = null
+			if (speechAvailable && window.speechSynthesis) {
+				window.speechSynthesis.onvoiceschanged = null
+			}
 		}
 	})
 </script>
 
-{#if speechAvailable && !isDeleted}
+{#if ttsAvailable && !isDeleted}
 	{#if isDragging}
 		<div class="trash-overlay" class:trash-hovering={trashHovering}>
 			<Trash2 strokeWidth={1.5} />
@@ -553,7 +999,11 @@
 			aria-pressed={isReading && !isPaused}
 		>
 			{#if isReading && !isPaused}
-				<Pause size={20} strokeWidth={1.5} />
+				<Pause
+					size={20}
+					strokeWidth={1.5}
+					class={isGeneratingPiper ? "spin-wait" : ""}
+				/>
 			{:else}
 				<Play size={20} strokeWidth={1.5} />
 			{/if}
@@ -646,6 +1096,20 @@
 
 	.play-btn:active {
 		transform: scale(0.95);
+	}
+
+	.play-btn :global(svg.spin-wait) {
+		animation: spin-wait 0.9s linear infinite;
+	}
+
+	@keyframes spin-wait {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
 	}
 
 	.side-btn {

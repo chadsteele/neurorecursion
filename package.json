@@ -25,6 +25,7 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
+		"@realtimex/piper-tts-web": "^1.1.1",
 		"@supabase/supabase-js": "^2.104.1",
 		"lucide-svelte": "^1.0.1",
 		"mark.js": "^8.11.1",

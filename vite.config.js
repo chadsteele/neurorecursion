@@ -8,6 +8,9 @@ export default defineConfig({
 			$data: resolve("./src/data"),
 		},
 	},
+	optimizeDeps: {
+		exclude: ["@realtimex/piper-tts-web", "onnxruntime-web"],
+	},
 	build: {
 		chunkSizeWarningLimit: 1500, // Increased: main chunk is 853KB uncompressed but only 122KB gzipped
 		rollupOptions: {
