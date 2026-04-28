@@ -14,6 +14,7 @@
 	} from "$lib/netlifySuccess.js"
 	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
+	import Speak from "$lib/Speak.svelte"
 
 	let showShareModal = $state(false)
 	let highlightedProductId = $state(null)
@@ -732,635 +733,670 @@
 />
 
 <section class="future-page page-shell">
-	<div class="paper container page-stack">
-		<div class="hero-panel paper container">
-			<div class="hero-copy">
-				<div class="eyebrow">The roadmap after the breakthrough</div>
-				<h1>
-					The future is not just symptom relief. <br />It is durable
-					freedom.
-				</h1>
-				<p class="lead">
-					Here is the roadmap to full and sustained recovery: break
-					the old limbic loop, create space for a better one, then
-					reinforce that new path until it holds under real life
-					pressure.
-				</p>
-				<p>
-					The clinical trial is often enough to carry a patient for a
-					lifetime. It is free, and if practiced seriously it can
-					create lasting relief, sometimes permanent relief, depending
-					on the condition and the patient's commitment. But sometimes
-					there is more work to do. More loops to break. More layers
-					to uncover. More life to integrate.
-				</p>
-				<div class="hero-actions">
-					<button
-						type="button"
-						class="share-trigger"
-						onclick={handleShare}
-					>
-						<Share2Icon size={18} strokeWidth={2} />
-						Share this page
-					</button>
+	<Speak>
+		<div class="paper container page-stack">
+			<div class="hero-panel paper container">
+				<div class="hero-copy">
+					<div class="eyebrow">
+						The roadmap after the breakthrough
+					</div>
+					<h1>
+						The future is not just symptom relief. <br />It is
+						durable freedom.
+					</h1>
+					<p class="lead">
+						Here is the roadmap to full and sustained recovery:
+						break the old limbic loop, create space for a better
+						one, then reinforce that new path until it holds under
+						real life pressure.
+					</p>
+					<p>
+						The clinical trial is often enough to carry a patient
+						for a lifetime. It is free, and if practiced seriously
+						it can create lasting relief, sometimes permanent
+						relief, depending on the condition and the patient's
+						commitment. But sometimes there is more work to do. More
+						loops to break. More layers to uncover. More life to
+						integrate.
+					</p>
+					<div class="hero-actions">
+						<button
+							type="button"
+							class="share-trigger"
+							onclick={handleShare}
+						>
+							<Share2Icon size={18} strokeWidth={2} />
+							Share this page
+						</button>
+					</div>
 				</div>
-			</div>
 
-			<div class="hero-stats">
-				<div
-					class="stat-card glow"
-					class:selected-card={isProductSelected(
-						"NeuroRecursion Clinical Trial",
-					)}
-					role="button"
-					tabindex="0"
-					onclick={() =>
-						toggleProductByName("NeuroRecursion Clinical Trial")}
-					onkeydown={(event) =>
-						handleToggleKeydown(
-							event,
+				<div class="hero-stats">
+					<div
+						class="stat-card glow"
+						class:selected-card={isProductSelected(
 							"NeuroRecursion Clinical Trial",
 						)}
-				>
-					<div class="stat-label">
-						<span
-							class="selection-checkbox"
-							class:is-checked={isProductSelected(
+						role="button"
+						tabindex="0"
+						onclick={() =>
+							toggleProductByName(
 								"NeuroRecursion Clinical Trial",
 							)}
-							aria-hidden="true"
-						></span>
-						<span>Clinical trial</span>
+						onkeydown={(event) =>
+							handleToggleKeydown(
+								event,
+								"NeuroRecursion Clinical Trial",
+							)}
+					>
+						<div class="stat-label">
+							<span
+								class="selection-checkbox"
+								class:is-checked={isProductSelected(
+									"NeuroRecursion Clinical Trial",
+								)}
+								aria-hidden="true"
+							></span>
+							<span>Clinical trial</span>
+						</div>
+						<div class="stat-value">
+							{formatPrice(
+								prices["NeuroRecursion Clinical Trial"],
+							)}
+						</div>
+						<p>
+							Built to dismantle entrenched loops and create real
+							breathing room.
+						</p>
 					</div>
-					<div class="stat-value">
-						{formatPrice(prices["NeuroRecursion Clinical Trial"])}
-					</div>
-					<p>
-						Built to dismantle entrenched loops and create real
-						breathing room.
-					</p>
-				</div>
-				<div
-					class="stat-card"
-					class:selected-card={isProductSelected(
-						"Facilitated Small Group Conversations",
-					)}
-					role="button"
-					tabindex="0"
-					onclick={() =>
-						toggleProductByName(
+					<div
+						class="stat-card"
+						class:selected-card={isProductSelected(
 							"Facilitated Small Group Conversations",
 						)}
-					onkeydown={(event) =>
-						handleToggleKeydown(
-							event,
-							"Facilitated Small Group Conversations",
-						)}
-				>
-					<div class="stat-label">
-						<span
-							class="selection-checkbox"
-							class:is-checked={isProductSelected(
+						role="button"
+						tabindex="0"
+						onclick={() =>
+							toggleProductByName(
 								"Facilitated Small Group Conversations",
 							)}
-							aria-hidden="true"
-						></span>
-						<span>Small group practice</span>
+						onkeydown={(event) =>
+							handleToggleKeydown(
+								event,
+								"Facilitated Small Group Conversations",
+							)}
+					>
+						<div class="stat-label">
+							<span
+								class="selection-checkbox"
+								class:is-checked={isProductSelected(
+									"Facilitated Small Group Conversations",
+								)}
+								aria-hidden="true"
+							></span>
+							<span>Small group practice</span>
+						</div>
+						<div class="stat-value">
+							{formatPrice(
+								prices["Facilitated Small Group Conversations"],
+							)}
+						</div>
+						<p>
+							Live reinforcement with other people doing the work
+							beside you.
+						</p>
 					</div>
-					<div class="stat-value">
-						{formatPrice(
-							prices["Facilitated Small Group Conversations"],
+					<div
+						class="stat-card"
+						class:selected-card={isProductSelected(
+							"One-on-One Coaching",
 						)}
-					</div>
-					<p>
-						Live reinforcement with other people doing the work
-						beside you.
-					</p>
-				</div>
-				<div
-					class="stat-card"
-					class:selected-card={isProductSelected(
-						"One-on-One Coaching",
-					)}
-					role="button"
-					tabindex="0"
-					onclick={() => toggleProductByName("One-on-One Coaching")}
-					onkeydown={(event) =>
-						handleToggleKeydown(event, "One-on-One Coaching")}
-				>
-					<div class="stat-label">
-						<span
-							class="selection-checkbox"
-							class:is-checked={isProductSelected(
-								"One-on-One Coaching",
-							)}
-							aria-hidden="true"
-						></span>
-						<span>1:1 coaching</span>
-					</div>
-					<div class="stat-value">
-						{formatPrice(prices["One-on-One Coaching"])} /hr
-					</div>
-					<p>
-						Targeted support for complex cases, stubborn loops, and
-						precision.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="section-shell">
-			<h2>What happens after the first major win?</h2>
-			<p>
-				A major breakthrough can feel almost strange at first. The panic
-				is quieter. The compulsion is less convincing. The shame story
-				is weaker. The body is no longer yelling the same emergency
-				every day. But this is also when patients discover a hard truth:
-				healing is not only about getting unstuck once. It is also about
-				becoming the kind of person who knows how not to get captured
-				again.
-			</p>
-			<p>
-				That is why the future matters. The future is where repetition
-				turns a breakthrough into a baseline. It is where patients stop
-				measuring life by how bad it used to be and start measuring it
-				by what they can build now. Better relationships. Better sleep.
-				Better focus. Better choices. More agency. More calm. More
-				range.
-			</p>
-			<p>
-				And for some people, the future becomes bigger than maintenance.
-				It becomes vocation. They do not just want to stay well. They
-				want to help other people get free too.
-			</p>
-		</div>
-
-		<div class="section-shell roadmap-shell">
-			<h2>The recovery roadmap</h2>
-			<div class="roadmap-grid">
-				{#each roadmap as item}
-					<article class="roadmap-card">
-						<div class="roadmap-phase">{item.phase}</div>
-						<h3>{item.title}</h3>
-						<p>{item.description}</p>
-					</article>
-				{/each}
-			</div>
-		</div>
-
-		<div class="section-shell" id="maintenance">
-			<h2>Maintenance that keeps recovery alive</h2>
-			<p>
-				If old loops were built through repetition, new ones are
-				strengthened the same way. Maintenance is not a consolation
-				prize. It is a deliberate strategy for making recovery more
-				stable, more flexible, and more difficult to reverse.
-			</p>
-			<div class="offer-grid">
-				{#each maintenanceOptions as option}
-					<div
-						class="offer-card spotlight"
-						class:selected-card={isProductSelected(option.name)}
 						role="button"
 						tabindex="0"
-						onclick={() => toggleProductByName(option.name)}
+						onclick={() =>
+							toggleProductByName("One-on-One Coaching")}
 						onkeydown={(event) =>
-							handleToggleKeydown(event, option.name)}
+							handleToggleKeydown(event, "One-on-One Coaching")}
 					>
-						<div class="offer-topline">
-							<div class="card-title">
-								<span
-									class="selection-checkbox"
-									class:is-checked={isProductSelected(
-										option.name,
-									)}
-									aria-hidden="true"
-								></span>
-								<h3>{option.name}</h3>
-							</div>
-							<div class="price-pill">
-								{formatPrice(getProductPrice(option.name))}
-							</div>
+						<div class="stat-label">
+							<span
+								class="selection-checkbox"
+								class:is-checked={isProductSelected(
+									"One-on-One Coaching",
+								)}
+								aria-hidden="true"
+							></span>
+							<span>1:1 coaching</span>
 						</div>
-						<div class="offer-duration">{option.duration}</div>
-						<p>{option.description}</p>
-						<div class="offer-footer">
-							<strong>Best for:</strong>
-							{option.bestFor}
+						<div class="stat-value">
+							{formatPrice(prices["One-on-One Coaching"])} /hr
 						</div>
+						<p>
+							Targeted support for complex cases, stubborn loops,
+							and precision.
+						</p>
 					</div>
-				{/each}
+				</div>
 			</div>
-		</div>
 
-		<div class="section-shell profile-shell">
-			<h2>Three futures patients often discover</h2>
-			<div class="profile-grid">
-				{#each patientProfiles as profile}
-					<article class="profile-card">
-						<h3>{profile.title}</h3>
-						<p>{profile.copy}</p>
-					</article>
-				{/each}
+			<div class="section-shell">
+				<h2>What happens after the first major win?</h2>
+				<p>
+					A major breakthrough can feel almost strange at first. The
+					panic is quieter. The compulsion is less convincing. The
+					shame story is weaker. The body is no longer yelling the
+					same emergency every day. But this is also when patients
+					discover a hard truth: healing is not only about getting
+					unstuck once. It is also about becoming the kind of person
+					who knows how not to get captured again.
+				</p>
+				<p>
+					That is why the future matters. The future is where
+					repetition turns a breakthrough into a baseline. It is where
+					patients stop measuring life by how bad it used to be and
+					start measuring it by what they can build now. Better
+					relationships. Better sleep. Better focus. Better choices.
+					More agency. More calm. More range.
+				</p>
+				<p>
+					And for some people, the future becomes bigger than
+					maintenance. It becomes vocation. They do not just want to
+					stay well. They want to help other people get free too.
+				</p>
 			</div>
-		</div>
 
-		<div class="section-shell" id="certification">
-			<h2>When recovery turns into mission</h2>
-			<p>
-				Therapists, coaches, parents, and many patients eventually
-				arrive at the same thought: "I want to help cure others too."
-				That impulse makes sense. Once you have felt the reality of a
-				nervous system changing, it becomes hard not to want that for
-				somebody else.
-			</p>
-			<p>
-				The certification path exists for that reason. It turns
-				enthusiasm into study, study into discipline, and discipline
-				into a standard you can be proud of.
-			</p>
-			<div class="certification-stack">
-				{#each certificationTrack as step, index}
-					<div
-						class="cert-card"
-						class:selected-card={isProductSelected(step.name)}
-						role="button"
-						tabindex="0"
-						onclick={() => toggleProductByName(step.name)}
-						onkeydown={(event) =>
-							handleToggleKeydown(event, step.name)}
-					>
+			<div class="section-shell roadmap-shell">
+				<h2>The recovery roadmap</h2>
+				<div class="roadmap-grid">
+					{#each roadmap as item}
+						<article class="roadmap-card">
+							<div class="roadmap-phase">{item.phase}</div>
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
+						</article>
+					{/each}
+				</div>
+			</div>
+
+			<div class="section-shell" id="maintenance">
+				<h2>Maintenance that keeps recovery alive</h2>
+				<p>
+					If old loops were built through repetition, new ones are
+					strengthened the same way. Maintenance is not a consolation
+					prize. It is a deliberate strategy for making recovery more
+					stable, more flexible, and more difficult to reverse.
+				</p>
+				<div class="offer-grid">
+					{#each maintenanceOptions as option}
 						<div
-							class="cert-number"
-							class:cert-number-selected={isProductSelected(
-								step.name,
-							)}
+							class="offer-card spotlight"
+							class:selected-card={isProductSelected(option.name)}
+							role="button"
+							tabindex="0"
+							onclick={() => toggleProductByName(option.name)}
+							onkeydown={(event) =>
+								handleToggleKeydown(event, option.name)}
 						>
-							<span
-								class="cert-number-value"
-								class:cert-number-value-hidden={isProductSelected(
-									step.name,
-								)}
-								aria-hidden={isProductSelected(step.name)}
-							>
-								0{index + 1}
-							</span>
-							<span
-								class="cert-number-check"
-								class:cert-number-check-visible={isProductSelected(
-									step.name,
-								)}
-								aria-hidden={!isProductSelected(step.name)}
-								>&check;</span
-							>
-						</div>
-						<div class="cert-copy">
 							<div class="offer-topline">
 								<div class="card-title">
-									<h3>{step.name}</h3>
+									<span
+										class="selection-checkbox"
+										class:is-checked={isProductSelected(
+											option.name,
+										)}
+										aria-hidden="true"
+									></span>
+									<h3>{option.name}</h3>
 								</div>
 								<div class="price-pill">
-									{formatPrice(getProductPrice(step.name))}
+									{formatPrice(getProductPrice(option.name))}
 								</div>
 							</div>
-							<p>{step.description}</p>
-							{#if step.note}
-								<div class="cert-note">{step.note}</div>
-							{/if}
+							<div class="offer-duration">{option.duration}</div>
+							<p>{option.description}</p>
+							<div class="offer-footer">
+								<strong>Best for:</strong>
+								{option.bestFor}
+							</div>
 						</div>
-					</div>
-				{/each}
-			</div>
-		</div>
-
-		<div class="section-shell affiliate-shell">
-			<h2>
-				Love talking about your breakthrough? There is a path for that
-				too.
-			</h2>
-			<p>
-				If your transformation is real, people notice. They ask what
-				changed. They ask what worked. They watch how you carry
-				yourself. For some people, that becomes a natural bridge into
-				affiliate marketing.
-			</p>
-			<p>
-				Affiliate commission is 10% of future purchases by your referred
-				customer. That means your own story can become both testimony
-				and traction. The upside is not imaginary, but it is also not
-				automatic. It depends on trust, attention, message quality, and
-				whether the people you reach are genuinely ready.
-			</p>
-			<div class="example-card">
-				<h3>Illustrative scenario</h3>
-				<p>
-					Suppose a social campaign gets {affiliateExample.views.toLocaleString()}
-					views, and 1% of those viewers attend one small group session.
-				</p>
-				<div class="example-math">
-					<div>
-						<span>Attendees</span>
-						<strong>{attendees.toLocaleString()}</strong>
-					</div>
-					<div>
-						<span>
-							10% commission on one {formatPrice(
-								affiliateSmallGroupPrice,
-							)} small group
-						</span>
-						<strong>{formatPrice(smallGroupCommission)}</strong>
-					</div>
-					<div>
-						<span
-							>10% commission if each also books one {formatPrice(
-								affiliateCoachingPrice,
-							)} coaching hour</span
-						>
-						<strong>{formatPrice(coachingCommission)}</strong>
-					</div>
+					{/each}
 				</div>
-				<p class="fine-print">
-					These numbers are illustrative, not a promise. They show the
-					mechanics, not a guaranteed outcome. Real performance
-					depends on audience quality, platform, offer fit, and
-					follow-through.
+			</div>
+
+			<div class="section-shell profile-shell">
+				<h2>Three futures patients often discover</h2>
+				<div class="profile-grid">
+					{#each patientProfiles as profile}
+						<article class="profile-card">
+							<h3>{profile.title}</h3>
+							<p>{profile.copy}</p>
+						</article>
+					{/each}
+				</div>
+			</div>
+
+			<div class="section-shell" id="certification">
+				<h2>When recovery turns into mission</h2>
+				<p>
+					Therapists, coaches, parents, and many patients eventually
+					arrive at the same thought: "I want to help cure others
+					too." That impulse makes sense. Once you have felt the
+					reality of a nervous system changing, it becomes hard not to
+					want that for somebody else.
 				</p>
+				<p>
+					The certification path exists for that reason. It turns
+					enthusiasm into study, study into discipline, and discipline
+					into a standard you can be proud of.
+				</p>
+				<div class="certification-stack">
+					{#each certificationTrack as step, index}
+						<div
+							class="cert-card"
+							class:selected-card={isProductSelected(step.name)}
+							role="button"
+							tabindex="0"
+							onclick={() => toggleProductByName(step.name)}
+							onkeydown={(event) =>
+								handleToggleKeydown(event, step.name)}
+						>
+							<div
+								class="cert-number"
+								class:cert-number-selected={isProductSelected(
+									step.name,
+								)}
+							>
+								<span
+									class="cert-number-value"
+									class:cert-number-value-hidden={isProductSelected(
+										step.name,
+									)}
+									aria-hidden={isProductSelected(step.name)}
+								>
+									0{index + 1}
+								</span>
+								<span
+									class="cert-number-check"
+									class:cert-number-check-visible={isProductSelected(
+										step.name,
+									)}
+									aria-hidden={!isProductSelected(step.name)}
+									>&check;</span
+								>
+							</div>
+							<div class="cert-copy">
+								<div class="offer-topline">
+									<div class="card-title">
+										<h3>{step.name}</h3>
+									</div>
+									<div class="price-pill">
+										{formatPrice(
+											getProductPrice(step.name),
+										)}
+									</div>
+								</div>
+								<p>{step.description}</p>
+								{#if step.note}
+									<div class="cert-note">{step.note}</div>
+								{/if}
+							</div>
+						</div>
+					{/each}
+				</div>
 			</div>
-		</div>
 
-		<div class="section-shell faq-shell">
-			<h2>Questions people usually ask next</h2>
-			<div class="faq-list">
-				{#each faq as item}
-					<article class="faq-card">
-						<h3>{item.question}</h3>
-						<p>{item.answer}</p>
-					</article>
-				{/each}
-			</div>
-		</div>
-
-		<div class="section-shell closing-shell">
-			<div class="closing-copy">
+			<div class="section-shell affiliate-shell">
 				<h2>
-					Recovery is the beginning. The future is what you do with
-					it.
+					Love talking about your breakthrough? There is a path for
+					that too.
 				</h2>
 				<p>
-					The goal is not endless management. The goal is increasing
-					freedom, increasing capability, and increasing contribution.
-					Maybe you will take one small group session every so often.
-					Maybe you will work with a coach until the next layer breaks
-					open. Maybe you will study, certify, and teach. Maybe your
-					recovery story will quietly change a family, a friend, or a
-					stranger on the internet.
+					If your transformation is real, people notice. They ask what
+					changed. They ask what worked. They watch how you carry
+					yourself. For some people, that becomes a natural bridge
+					into affiliate marketing.
 				</p>
 				<p>
-					Whatever form it takes, the future is not passive. It is
-					practiced. Built. Protected. Shared.
+					Affiliate commission is 10% of future purchases by your
+					referred customer. That means your own story can become both
+					testimony and traction. The upside is not imaginary, but it
+					is also not automatic. It depends on trust, attention,
+					message quality, and whether the people you reach are
+					genuinely ready.
 				</p>
+				<div class="example-card">
+					<h3>Illustrative scenario</h3>
+					<p>
+						Suppose a social campaign gets {affiliateExample.views.toLocaleString()}
+						views, and 1% of those viewers attend one small group session.
+					</p>
+					<div class="example-math">
+						<div>
+							<span>Attendees</span>
+							<strong>{attendees.toLocaleString()}</strong>
+						</div>
+						<div>
+							<span>
+								10% commission on one {formatPrice(
+									affiliateSmallGroupPrice,
+								)} small group
+							</span>
+							<strong>{formatPrice(smallGroupCommission)}</strong>
+						</div>
+						<div>
+							<span
+								>10% commission if each also books one {formatPrice(
+									affiliateCoachingPrice,
+								)} coaching hour</span
+							>
+							<strong>{formatPrice(coachingCommission)}</strong>
+						</div>
+					</div>
+					<p class="fine-print">
+						These numbers are illustrative, not a promise. They show
+						the mechanics, not a guaranteed outcome. Real
+						performance depends on audience quality, platform, offer
+						fit, and follow-through.
+					</p>
+				</div>
 			</div>
-			<div class="closing-actions">
-				<a href="/#signup" class="primary-link">Start the trial</a>
-				<a href="#certification" class="secondary-link"
-					>Explore certification</a
-				>
-				<a
-					href="https://www.linkedin.com/company/neurorecursion"
-					target="_blank"
-					rel="noopener"
-					class="social-inline"
-				>
-					<LinkedInIcon />
-					NeuroRecursion
-				</a>
-			</div>
-		</div>
 
-		<div class="section-shell order-shell" id="order-form">
-			<div class="order-intro">
-				<h2>Build your order request</h2>
-				<p>
-					Choose any products you want more information about or are
-					ready to purchase. Submit the form and NeuroRecursion can
-					follow up with the right next step, scheduling details, and
-					purchase guidance.
-				</p>
+			<div class="section-shell faq-shell">
+				<h2>Questions people usually ask next</h2>
+				<div class="faq-list">
+					{#each faq as item}
+						<article class="faq-card">
+							<h3>{item.question}</h3>
+							<p>{item.answer}</p>
+						</article>
+					{/each}
+				</div>
 			</div>
 
-			<form
-				name="future-order-request"
-				method="POST"
-				action={successAction}
-				netlify-honeypot="bot-field"
-				netlify
-				onsubmit={handleOrderSubmit}
-				class="order-form"
-				class:is-submitting={isSubmitting}
-				aria-busy={isSubmitting}
-			>
-				<input
-					type="hidden"
-					name="form-name"
-					value="future-order-request"
-				/>
-				<input type="hidden" name="form_path" value="" />
-				<input type="hidden" name="selected_products" value="" />
-				<input type="hidden" name="estimated_total" value="" />
+			<div class="section-shell closing-shell">
+				<div class="closing-copy">
+					<h2>
+						Recovery is the beginning. The future is what you do
+						with it.
+					</h2>
+					<p>
+						The goal is not endless management. The goal is
+						increasing freedom, increasing capability, and
+						increasing contribution. Maybe you will take one small
+						group session every so often. Maybe you will work with a
+						coach until the next layer breaks open. Maybe you will
+						study, certify, and teach. Maybe your recovery story
+						will quietly change a family, a friend, or a stranger on
+						the internet.
+					</p>
+					<p>
+						Whatever form it takes, the future is not passive. It is
+						practiced. Built. Protected. Shared.
+					</p>
+				</div>
+				<div class="closing-actions">
+					<a href="/#signup" class="primary-link">Start the trial</a>
+					<a href="#certification" class="secondary-link"
+						>Explore certification</a
+					>
+					<a
+						href="https://www.linkedin.com/company/neurorecursion"
+						target="_blank"
+						rel="noopener"
+						class="social-inline"
+					>
+						<LinkedInIcon />
+						NeuroRecursion
+					</a>
+				</div>
+			</div>
 
-				<div class="hidden-field" aria-hidden="true">
-					<label for="bot-field-future-order">
-						Do not fill this out if you are human
-						<input
-							id="bot-field-future-order"
-							type="text"
-							name="bot-field"
-						/>
-					</label>
+			<div class="section-shell order-shell" id="order-form">
+				<div class="order-intro">
+					<h2>Build your order request</h2>
+					<p>
+						Choose any products you want more information about or
+						are ready to purchase. Submit the form and
+						NeuroRecursion can follow up with the right next step,
+						scheduling details, and purchase guidance.
+					</p>
 				</div>
 
-				<div class="order-grid">
-					<div class="order-fields">
-						<div class="form-grid">
-							<label class="field">
-								<span>Name</span>
-								<input
-									type="text"
-									name="name"
-									bind:value={orderForm.name}
-									required
-									placeholder="Your full name"
-								/>
-							</label>
+				<form
+					name="future-order-request"
+					method="POST"
+					action={successAction}
+					netlify-honeypot="bot-field"
+					netlify
+					onsubmit={handleOrderSubmit}
+					class="order-form"
+					class:is-submitting={isSubmitting}
+					aria-busy={isSubmitting}
+				>
+					<input
+						type="hidden"
+						name="form-name"
+						value="future-order-request"
+					/>
+					<input type="hidden" name="form_path" value="" />
+					<input type="hidden" name="selected_products" value="" />
+					<input type="hidden" name="estimated_total" value="" />
 
-							<label class="field">
-								<span>Email</span>
-								<input
-									type="email"
-									name="email"
-									bind:value={orderForm.email}
-									required
-									placeholder="you@example.com"
-								/>
-							</label>
+					<div class="hidden-field" aria-hidden="true">
+						<label for="bot-field-future-order">
+							Do not fill this out if you are human
+							<input
+								id="bot-field-future-order"
+								type="text"
+								name="bot-field"
+							/>
+						</label>
+					</div>
 
-							<label class="field field-full">
-								<span>Phone</span>
-								<input
-									type="tel"
-									name="phone"
-									bind:value={orderForm.phone}
-									placeholder="Optional phone number"
-								/>
-							</label>
-						</div>
+					<div class="order-grid">
+						<div class="order-fields">
+							<div class="form-grid">
+								<label class="field">
+									<span>Name</span>
+									<input
+										type="text"
+										name="name"
+										bind:value={orderForm.name}
+										required
+										placeholder="Your full name"
+									/>
+								</label>
 
-						<div class="catalog-stack">
-							{#each orderCatalog as group}
-								<fieldset class="catalog-group">
-									<legend>{group.category}</legend>
-									<div class="checkbox-list">
-										{#each group.products as product}
-											<label
-												class="checkbox-card"
-												class:highlighted-checkbox={highlightedProductId ===
-													product.id}
-												for={product.id}
-											>
-												<input
-													id={product.id}
-													type="checkbox"
-													value={product.value}
-													disabled={getProductQuantity(
-														product.id,
-													) > 1}
-													checked={Boolean(
-														orderForm.selected[
-															product.id
-														],
-													)}
-													onchange={(event) =>
-														handleProductCheckboxChange(
-															event,
-															product,
+								<label class="field">
+									<span>Email</span>
+									<input
+										type="email"
+										name="email"
+										bind:value={orderForm.email}
+										required
+										placeholder="you@example.com"
+									/>
+								</label>
+
+								<label class="field field-full">
+									<span>Phone</span>
+									<input
+										type="tel"
+										name="phone"
+										bind:value={orderForm.phone}
+										placeholder="Optional phone number"
+									/>
+								</label>
+							</div>
+
+							<div class="catalog-stack">
+								{#each orderCatalog as group}
+									<fieldset class="catalog-group">
+										<legend>{group.category}</legend>
+										<div class="checkbox-list">
+											{#each group.products as product}
+												<label
+													class="checkbox-card"
+													class:highlighted-checkbox={highlightedProductId ===
+														product.id}
+													for={product.id}
+												>
+													<input
+														id={product.id}
+														type="checkbox"
+														value={product.value}
+														disabled={getProductQuantity(
+															product.id,
+														) > 1}
+														checked={Boolean(
+															orderForm.selected[
+																product.id
+															],
 														)}
-												/>
-												<div class="checkbox-copy">
-													<div
-														class="checkbox-topline"
-													>
-														<strong
-															>{product.name}</strong
-														>
-														<span
-															>{formatPrice(
-																getProductPrice(
-																	product,
-																),
-															)}</span
-														>
-													</div>
-													<p>{product.description}</p>
-													{#if product.duration}
+														onchange={(event) =>
+															handleProductCheckboxChange(
+																event,
+																product,
+															)}
+													/>
+													<div class="checkbox-copy">
 														<div
-															class="checkbox-duration"
+															class="checkbox-topline"
 														>
-															Duration: {product.duration}
+															<strong
+																>{product.name}</strong
+															>
+															<span
+																>{formatPrice(
+																	getProductPrice(
+																		product,
+																	),
+																)}</span
+															>
 														</div>
-													{/if}
-													{#if supportsQuantity(product)}
-														<div
-															class="quantity-controls"
-														>
+														<p>
+															{product.description}
+														</p>
+														{#if product.duration}
 															<div
-																class="fixed-to-top"
+																class="checkbox-duration"
 															>
-																<span
-																	class="quantity-label"
-																	>{getQuantityUnitLabel(
-																		product,
-																		getProductQuantity(
-																			product.id,
-																		) || 2,
-																	)}</span
-																>
-																<div
-																	class="quantity-stepper"
-																>
-																	<button
-																		type="button"
-																		class="quantity-btn"
-																		disabled={getProductQuantity(
-																			product.id,
-																		) === 0}
-																		onclick={(
-																			event,
-																		) =>
-																			handleQuantityAdjust(
-																				event,
-																				product.id,
-																				-1,
-																			)}
-																		aria-label={`Decrease quantity for ${product.name}`}
-																	>
-																		-
-																	</button>
-																	<span
-																		class="quantity-value"
-																		>{getProductQuantity(
-																			product.id,
-																		)}</span
-																	>
-																	<button
-																		type="button"
-																		class="quantity-btn"
-																		onclick={(
-																			event,
-																		) =>
-																			handleQuantityAdjust(
-																				event,
-																				product.id,
-																				1,
-																			)}
-																		aria-label={`Increase quantity for ${product.name}`}
-																	>
-																		+
-																	</button>
-																</div>
+																Duration: {product.duration}
 															</div>
+														{/if}
+														{#if supportsQuantity(product)}
 															<div
-																class="quantity-pricing"
+																class="quantity-controls"
 															>
-																<span
-																	class="quantity-total"
-																	>{getQuantityTotalLabel(
-																		product,
-																	)}</span
+																<div
+																	class="fixed-to-top"
 																>
-																{#if getLineDiscount(product) > 0}
 																	<span
-																		class="quantity-discount"
-																		>{getQuantityDiscountPercent(
-																			product,
-																		)}% off
-																		applied
-																		for {getProductQuantity(
-																			product.id,
-																		)}
-																		{getQuantityUnitLabel(
+																		class="quantity-label"
+																		>{getQuantityUnitLabel(
 																			product,
 																			getProductQuantity(
 																				product.id,
-																			),
+																			) ||
+																				2,
 																		)}</span
 																	>
-																	{#if shouldEncourageNextQuantityDiscount(product)}
+																	<div
+																		class="quantity-stepper"
+																	>
+																		<button
+																			type="button"
+																			class="quantity-btn"
+																			disabled={getProductQuantity(
+																				product.id,
+																			) ===
+																				0}
+																			onclick={(
+																				event,
+																			) =>
+																				handleQuantityAdjust(
+																					event,
+																					product.id,
+																					-1,
+																				)}
+																			aria-label={`Decrease quantity for ${product.name}`}
+																		>
+																			-
+																		</button>
+																		<span
+																			class="quantity-value"
+																			>{getProductQuantity(
+																				product.id,
+																			)}</span
+																		>
+																		<button
+																			type="button"
+																			class="quantity-btn"
+																			onclick={(
+																				event,
+																			) =>
+																				handleQuantityAdjust(
+																					event,
+																					product.id,
+																					1,
+																				)}
+																			aria-label={`Increase quantity for ${product.name}`}
+																		>
+																			+
+																		</button>
+																	</div>
+																</div>
+																<div
+																	class="quantity-pricing"
+																>
+																	<span
+																		class="quantity-total"
+																		>{getQuantityTotalLabel(
+																			product,
+																		)}</span
+																	>
+																	{#if getLineDiscount(product) > 0}
+																		<span
+																			class="quantity-discount"
+																			>{getQuantityDiscountPercent(
+																				product,
+																			)}%
+																			off
+																			applied
+																			for {getProductQuantity(
+																				product.id,
+																			)}
+																			{getQuantityUnitLabel(
+																				product,
+																				getProductQuantity(
+																					product.id,
+																				),
+																			)}</span
+																		>
+																		{#if shouldEncourageNextQuantityDiscount(product)}
+																			<span
+																				class="quantity-notice"
+																				>Order
+																				{getRemainingForQuantityDiscount(
+																					product,
+																				)}
+																				more
+																				to
+																				get
+																				{getNextQuantityDiscountPercent(
+																					product,
+																				)}%
+																				off!</span
+																			>
+																		{/if}
+																	{:else if getProductQuantity(product.id) > 0}
 																		<span
 																			class="quantity-notice"
 																			>Order
 																			{getRemainingForQuantityDiscount(
 																				product,
-																			)} more
+																			)}
+																			more
 																			to get
 																			{getNextQuantityDiscountPercent(
 																				product,
@@ -1368,149 +1404,144 @@
 																			off!</span
 																		>
 																	{/if}
-																{:else if getProductQuantity(product.id) > 0}
-																	<span
-																		class="quantity-notice"
-																		>Order {getRemainingForQuantityDiscount(
-																			product,
-																		)}
-																		more to get
-																		{getNextQuantityDiscountPercent(
-																			product,
-																		)}% off!</span
-																	>
-																{/if}
+																</div>
 															</div>
-														</div>
-													{/if}
-												</div>
-											</label>
-										{/each}
-									</div>
-								</fieldset>
-							{/each}
-						</div>
-
-						<label class="field field-full">
-							<span>Notes</span>
-							<textarea
-								name="notes"
-								bind:value={orderForm.notes}
-								rows="5"
-								placeholder="Tell us what you are interested in, your timeline, or any questions you want answered first."
-							></textarea>
-						</label>
-
-						{#if orderError}
-							<div class="order-message error">{orderError}</div>
-						{/if}
-
-						{#if orderStatus === "success"}
-							<div class="order-message success">
-								Your order request has been sent. We will follow
-								up with next steps.
+														{/if}
+													</div>
+												</label>
+											{/each}
+										</div>
+									</fieldset>
+								{/each}
 							</div>
-						{/if}
 
-						<div
-							class="submit-progress"
-							class:is-visible={isSubmitting}
-						>
-							<div class="submit-progress-bar"></div>
+							<label class="field field-full">
+								<span>Notes</span>
+								<textarea
+									name="notes"
+									bind:value={orderForm.notes}
+									rows="5"
+									placeholder="Tell us what you are interested in, your timeline, or any questions you want answered first."
+								></textarea>
+							</label>
+
+							{#if orderError}
+								<div class="order-message error">
+									{orderError}
+								</div>
+							{/if}
+
+							{#if orderStatus === "success"}
+								<div class="order-message success">
+									Your order request has been sent. We will
+									follow up with next steps.
+								</div>
+							{/if}
+
+							<div
+								class="submit-progress"
+								class:is-visible={isSubmitting}
+							>
+								<div class="submit-progress-bar"></div>
+							</div>
+
+							<button
+								type="submit"
+								class="submit-order-btn"
+								disabled={isSubmitting}
+							>
+								<CheckIcon size={18} strokeWidth={2} />
+								<span
+									>{isSubmitting
+										? "Submitting..."
+										: "Submit"}</span
+								>
+							</button>
+						</div>
+					</div>
+
+					<aside
+						class="order-summary"
+						class:toast-visible={showOrderSummaryToast}
+						aria-live="polite"
+						bind:this={orderSummaryElement}
+					>
+						<div class="summary-header">
+							<button
+								type="button"
+								class="summary-cta"
+								onclick={reviewOrderForm}
+							>
+								<CheckoutIcon size={16} strokeWidth={2} />
+								<span>Checkout</span>
+							</button>
+
+							<button
+								type="button"
+								class="summary-close"
+								aria-label="Close selected products summary"
+								onclick={dismissOrderSummaryToast}
+							>
+								<span
+									class="summary-close-glyph"
+									aria-hidden="true">&times;</span
+								>
+							</button>
 						</div>
 
-						<button
-							type="submit"
-							class="submit-order-btn"
-							disabled={isSubmitting}
-						>
-							<CheckIcon size={18} strokeWidth={2} />
-							<span
-								>{isSubmitting
-									? "Submitting..."
-									: "Submit"}</span
-							>
-						</button>
-					</div>
-				</div>
+						<p class="summary-copy">
+							Review the full order form to confirm your
+							selections and next steps.
+						</p>
 
-				<aside
-					class="order-summary"
-					class:toast-visible={showOrderSummaryToast}
-					aria-live="polite"
-					bind:this={orderSummaryElement}
-				>
-					<div class="summary-header">
-						<button
-							type="button"
-							class="summary-cta"
-							onclick={reviewOrderForm}
-						>
-							<CheckoutIcon size={16} strokeWidth={2} />
-							<span>Checkout</span>
-						</button>
-
-						<button
-							type="button"
-							class="summary-close"
-							aria-label="Close selected products summary"
-							onclick={dismissOrderSummaryToast}
-						>
-							<span class="summary-close-glyph" aria-hidden="true"
-								>&times;</span
-							>
-						</button>
-					</div>
-
-					<p class="summary-copy">
-						Review the full order form to confirm your selections
-						and next steps.
-					</p>
-
-					<ul class="summary-list">
-						{#if getSelectedProducts().length > 0}
-							{#each getSelectedProducts() as product}
-								<li>
-									<span>
-										{product.name}
-										{#if supportsQuantity(product)}
-											<span class="summary-quantity"
-												>x{getProductQuantity(
-													product.id,
-												)}</span
-											>
-										{/if}
-										{#if getLineDiscount(product) > 0}
-											<span class="summary-line-discount"
-												>{getQuantityDiscountPercent(
-													product,
-												)}% off</span
-											>
-										{/if}
-									</span>
+						<ul class="summary-list">
+							{#if getSelectedProducts().length > 0}
+								{#each getSelectedProducts() as product}
+									<li>
+										<span>
+											{product.name}
+											{#if supportsQuantity(product)}
+												<span class="summary-quantity"
+													>x{getProductQuantity(
+														product.id,
+													)}</span
+												>
+											{/if}
+											{#if getLineDiscount(product) > 0}
+												<span
+													class="summary-line-discount"
+													>{getQuantityDiscountPercent(
+														product,
+													)}% off</span
+												>
+											{/if}
+										</span>
+										<strong
+											>{formatPrice(
+												getLineTotal(product),
+											)}</strong
+										>
+									</li>
+								{/each}
+								<div class="summary-total">
+									<span>Estimated total</span>
 									<strong
 										>{formatPrice(
-											getLineTotal(product),
+											getSelectedTotal(),
 										)}</strong
 									>
+								</div>
+							{:else}
+								<li class="summary-empty">
+									No products selected yet.
 								</li>
-							{/each}
-							<div class="summary-total">
-								<span>Estimated total</span>
-								<strong
-									>{formatPrice(getSelectedTotal())}</strong
-								>
-							</div>
-						{:else}
-							<li class="summary-empty">
-								No products selected yet.
-							</li>
-						{/if}
-					</ul>
-				</aside>
-			</form>
+							{/if}
+						</ul>
+					</aside>
+				</form>
+			</div>
 		</div>
-	</div>
+	</Speak>
 </section>
 
 <style>

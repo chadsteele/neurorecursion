@@ -66,48 +66,50 @@
 <PageBackground src={backgroundUrl} />
 
 <section class="job-section page-shell">
-	<div class="paper container page-stack">
-		<!-- <button class="back-button" onclick={goBack}>← Back to Careers</button> -->
+	<Speak>
+		<div class="paper container page-stack">
+			<!-- <button class="back-button" onclick={goBack}>← Back to Careers</button> -->
 
-		<div class="job-content">
-			{#if CurrentComponent}
-				<CurrentComponent />
-				<div class="application-form">
-					<h2>Apply Now</h2>
-					<p>
-						Interested in this position? Please fill out the form
-						below and we'll get back to you soon.
-					</p>
-					<CareersForm jobId={$page.params.slug} />
-					<div class="social-links">
-						<a
-							href="https://www.linkedin.com/company/neurorecursion"
-							target="_blank"
-							rel="noopener"
-							class="social-link"
-							title="Follow us on LinkedIn"
-						>
-							<LinkedInIcon />
-							LinkedIn
-						</a>
+			<div class="job-content">
+				{#if CurrentComponent}
+					<CurrentComponent />
+					<div class="application-form">
+						<h2>Apply Now</h2>
+						<p>
+							Interested in this position? Please fill out the
+							form below and we'll get back to you soon.
+						</p>
+						<CareersForm jobId={$page.params.slug} />
+						<div class="social-links">
+							<a
+								href="https://www.linkedin.com/company/neurorecursion"
+								target="_blank"
+								rel="noopener"
+								class="social-link"
+								title="Follow us on LinkedIn"
+							>
+								<LinkedInIcon />
+								LinkedIn
+							</a>
 
-						<button
-							type="button"
-							class="share-btn"
-							onclick={handleShare}
-						>
-							{#if Share2Icon}
-								<Share2Icon size={18} strokeWidth={2} />
-							{/if}
-							Share
-						</button>
+							<button
+								type="button"
+								class="share-btn"
+								onclick={handleShare}
+							>
+								{#if Share2Icon}
+									<Share2Icon size={18} strokeWidth={2} />
+								{/if}
+								Share
+							</button>
+						</div>
 					</div>
-				</div>
-			{:else}
-				<div class="error-message">Job listing not found</div>
-			{/if}
+				{:else}
+					<div class="error-message">Job listing not found</div>
+				{/if}
+			</div>
 		</div>
-	</div>
+	</Speak>
 </section>
 
 <style>

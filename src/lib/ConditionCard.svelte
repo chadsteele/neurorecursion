@@ -82,8 +82,8 @@
 					can create limbic loops that can terrorize you for a
 					lifetime. This employs the same neuroplasticity, but without
 					the trauma, and it works in reverse. As powerfully as trauma
-					can cause a lifetime of fear, this process can cause a
-					lifetime of freedom from that fear.
+					can cause a lifetime of fear and suffering, this process can
+					cause a lifetime of freedom from that fear and suffering.
 				</div>
 				<p>This could be your breakthrough!</p>
 			{/if}

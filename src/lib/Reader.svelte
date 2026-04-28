@@ -23,6 +23,7 @@
 	let isDragging = $state(false)
 	let dragOffset = $state({x: 0, y: 0})
 	let readerEl = $state(null)
+	let hasSpeakSpans = $state(false)
 	let isDeleted = $state(false)
 	let trashHovering = $state(false)
 	let speakTimeout = null
@@ -44,6 +45,8 @@
 	let navigationDebounceTimer = null
 	let pausedSpanAtPause = null
 	let currentAudioSpan = null
+	let lastTouchPos = {x: 0, y: 0}
+	let speakSpanObserver = null
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
@@ -213,17 +216,10 @@
 		piperLoadAttempted = true
 
 		try {
-			console.log("[Reader] Loading @realtimex/piper-tts-web...")
 			const module = await import("@realtimex/piper-tts-web")
 			piperApi = module
-			console.log("[Reader] Piper module loaded:", Object.keys(module))
 
 			const voicesResult = await piperApi.voices?.()
-			console.log("[Reader] Piper voices() raw result:", voicesResult)
-			console.log(
-				"[Reader] First voice object sample:",
-				voicesResult?.[0],
-			)
 
 			// voices() returns an array of objects; extract the string ID from
 			// whichever property holds it (key > id > name)
@@ -237,13 +233,8 @@
 				: voicesResult && typeof voicesResult === "object"
 					? Object.keys(voicesResult)
 					: []
-			console.log(
-				"[Reader] Available Piper voice IDs:",
-				availableVoiceIds,
-			)
 
 			piperVoiceId = selectPiperVoiceId(availableVoiceIds)
-			console.log("[Reader] Selected Piper voice ID:", piperVoiceId)
 			return true
 		} catch (err) {
 			console.error("[Reader] Piper load FAILED:", err)
@@ -264,10 +255,6 @@
 			return piperSessionInitPromise.get(voiceId)
 		}
 
-		console.log(
-			`[Reader] ${ts()} Creating Piper session for voice: ${voiceId}`,
-		)
-
 		// Force single-threading on the ort instance Piper uses internally.
 		try {
 			const ortEnv =
@@ -284,11 +271,9 @@
 			allowLocalModels: true,
 			fallbackStrategy: "local",
 			wasmPaths: PIPER_WASM_PATHS,
-			logger: (msg) => console.log(`[Reader][Session]`, msg),
 		}).then((session) => {
 			piperSessionByVoice.set(voiceId, session)
 			piperSessionInitPromise.delete(voiceId)
-			console.log(`[Reader] ${ts()} Session ready for: ${voiceId}`)
 			return session
 		})
 
@@ -392,6 +377,14 @@
 		return Array.from(document.querySelectorAll("span.speak")).filter(
 			(span) => !span.closest("button"),
 		)
+	}
+
+	function refreshSpeakSpanPresence() {
+		hasSpeakSpans = findAllSpeakSpans().length > 0
+
+		if (!hasSpeakSpans && isReading) {
+			stopReading({clearHighlight: true})
+		}
 	}
 
 	function isSpanInView(span) {
@@ -602,23 +595,8 @@
 						firstText &&
 						piperNextSegmentText !== firstText
 					) {
-						const tPre = performance.now()
-						console.log(
-							`[Reader] ${ts()} Warmup [0]: "${firstText.slice(0, 50)}"`,
-						)
 						piperNextSegmentText = firstText
-						piperNextSegmentPromise = session
-							.predict(firstText)
-							.then((b) => {
-								console.log(
-									`[Reader] ${ts()} Warmup DONE ${(performance.now() - tPre).toFixed(0)}ms`,
-								)
-								return b
-							})
-					} else if (session && firstText) {
-						console.log(
-							`[Reader] ${ts()} Warmup skipped — cross-span prefetch already in flight: "${firstText.slice(0, 50)}"`,
-						)
+						piperNextSegmentPromise = session.predict(firstText)
 					}
 				} catch {
 					// Best-effort warmup only.
@@ -639,9 +617,6 @@
 	}
 
 	async function speakCurrentSentenceWithPiper(segment, token) {
-		console.log(
-			`[Reader] ${ts()} speakWithPiper [${currentSentenceIndex}]: "${segment.text.slice(0, 60)}"`,
-		)
 		if (!piperApi) return false
 
 		isGeneratingPiper = true
@@ -666,23 +641,9 @@
 					piperNextSegmentText === segment.text &&
 					piperNextSegmentPromise
 				) {
-					const tWait = performance.now()
-					console.log(
-						`[Reader] ${ts()} Prefetch HIT — waiting: "${segment.text.slice(0, 50)}"`,
-					)
 					wavBlob = await piperNextSegmentPromise
-					console.log(
-						`[Reader] ${ts()} Prefetch resolved after ${(performance.now() - tWait).toFixed(0)}ms wait`,
-					)
 				} else {
-					console.log(
-						`[Reader] ${ts()} Prefetch MISS — fresh synthesis: "${segment.text.slice(0, 50)}"`,
-					)
-					const tSynth = performance.now()
 					wavBlob = await session.predict(segment.text)
-					console.log(
-						`[Reader] ${ts()} Fresh synthesis: ${(performance.now() - tSynth).toFixed(0)}ms`,
-					)
 				}
 
 				piperNextSegmentText = ""
@@ -708,22 +669,9 @@
 				// Start synthesis immediately — the session is now free,
 				// and audio playback happens in parallel while it runs.
 				if (nextTextToPrefetch && token === activeSpeechToken) {
-					const tPre = performance.now()
-					const nextLabel = nextInSpan
-						? `[${currentSentenceIndex + 1}]`
-						: `[next-span[0]]`
-					console.log(
-						`[Reader] ${ts()} Prefetch START ${nextLabel}: "${nextTextToPrefetch.slice(0, 50)}"`,
-					)
 					piperNextSegmentText = nextTextToPrefetch
-					piperNextSegmentPromise = session
-						.predict(nextTextToPrefetch)
-						.then((b) => {
-							console.log(
-								`[Reader] ${ts()} Prefetch DONE ${(performance.now() - tPre).toFixed(0)}ms ${nextLabel}`,
-							)
-							return b
-						})
+					piperNextSegmentPromise =
+						session.predict(nextTextToPrefetch)
 				}
 
 				piperVoiceId = candidateVoiceId
@@ -751,9 +699,6 @@
 
 		if (!isPaused) {
 			try {
-				console.log(
-					`[Reader] ${ts()} audio PLAY START [${currentSentenceIndex}]`,
-				)
 				await currentAudio.play()
 			} catch {
 				return false
@@ -764,9 +709,6 @@
 
 		await new Promise((resolve) => {
 			const onDone = () => {
-				console.log(
-					`[Reader] ${ts()} audio PLAY END [${currentSentenceIndex}]`,
-				)
 				currentAudio?.removeEventListener("ended", onDone)
 				currentAudio?.removeEventListener("error", onDone)
 				resolve()
@@ -790,13 +732,6 @@
 		}
 
 		const segment = currentSegments[currentSentenceIndex]
-
-		console.log(
-			"[Reader] speakCurrentSentence — engine:",
-			activeEngine,
-			"segment:",
-			segment?.text?.slice(0, 60),
-		)
 		if (activeEngine === "piper") {
 			void (async () => {
 				const ok = await speakCurrentSentenceWithPiper(segment, token)
@@ -810,7 +745,6 @@
 					)
 					activeEngine = speechAvailable ? "webspeech" : "piper"
 					if (activeEngine === "webspeech") {
-						console.log("[Reader] Falling back to Web Speech API")
 						speakCurrentSentence(token)
 						return
 					}
@@ -1034,7 +968,7 @@
 	}
 
 	function handleMouseUp(e) {
-		if (isDragging && isMouseOverTrash(e)) {
+		if (isDragging && isPointOverTrash(e.clientX, e.clientY)) {
 			isDeleted = true
 			stopReading({clearHighlight: true})
 		} else if (isDragging) {
@@ -1045,15 +979,14 @@
 		trashHovering = false
 	}
 
-	function isMouseOverTrash(e) {
+	function isPointOverTrash(x, y) {
 		const trashCenter = {
 			x: window.innerWidth / 2,
 			y: window.innerHeight / 2,
 		}
 
 		const distance = Math.sqrt(
-			Math.pow(e.clientX - trashCenter.x, 2) +
-				Math.pow(e.clientY - trashCenter.y, 2),
+			Math.pow(x - trashCenter.x, 2) + Math.pow(y - trashCenter.y, 2),
 		)
 
 		const trashRadiusPx =
@@ -1064,8 +997,46 @@
 
 	function handleMouseMoveTrash(e) {
 		if (isDragging) {
-			trashHovering = isMouseOverTrash(e)
+			trashHovering = isPointOverTrash(e.clientX, e.clientY)
 		}
+	}
+
+	function handleTouchStart(e) {
+		if (e.touches.length !== 1) return
+		const touch = e.touches[0]
+		isDragging = true
+		lastTouchPos = {x: touch.clientX, y: touch.clientY}
+		dragOffset = {
+			x: touch.clientX - position.x,
+			y: touch.clientY - position.y,
+		}
+	}
+
+	function handleTouchMove(e) {
+		if (!isDragging) {
+			handleUserScrollIntent()
+			return
+		}
+		e.preventDefault()
+		const touch = e.touches[0]
+		lastTouchPos = {x: touch.clientX, y: touch.clientY}
+		const nextX = touch.clientX - dragOffset.x
+		const nextY = touch.clientY - dragOffset.y
+		position = clampDragPosition(nextX, nextY)
+		trashHovering = isPointOverTrash(touch.clientX, touch.clientY)
+	}
+
+	function handleTouchEnd() {
+		if (isDragging) {
+			if (isPointOverTrash(lastTouchPos.x, lastTouchPos.y)) {
+				isDeleted = true
+				stopReading({clearHighlight: true})
+			} else {
+				saveReaderPosition(position)
+			}
+		}
+		isDragging = false
+		trashHovering = false
 	}
 
 	function handleScroll() {
@@ -1095,28 +1066,28 @@
 			const piperReady = await ensurePiperReady()
 			ttsAvailable = piperReady || speechAvailable
 			activeEngine = piperReady ? "piper" : "webspeech"
-			console.log(
-				"[Reader] Init complete — piperReady:",
-				piperReady,
-				"speechAvailable:",
-				speechAvailable,
-				"activeEngine:",
-				activeEngine,
-				"piperVoiceId:",
-				piperVoiceId,
-			)
 		})()
+
+		refreshSpeakSpanPresence()
+		speakSpanObserver = new MutationObserver(() => {
+			refreshSpeakSpanPresence()
+		})
+		speakSpanObserver.observe(document.body, {
+			childList: true,
+			subtree: true,
+			attributes: true,
+			attributeFilter: ["class"],
+		})
 
 		restoreReaderPosition()
 
 		window.addEventListener("mousemove", handleMouseMove)
 		window.addEventListener("mousemove", handleMouseMoveTrash)
 		window.addEventListener("mouseup", handleMouseUp)
+		window.addEventListener("touchmove", handleTouchMove, {passive: false})
+		window.addEventListener("touchend", handleTouchEnd)
 		window.addEventListener("scroll", handleScroll)
 		window.addEventListener("wheel", handleUserScrollIntent, {
-			passive: true,
-		})
-		window.addEventListener("touchmove", handleUserScrollIntent, {
 			passive: true,
 		})
 		window.addEventListener("keydown", handleScrollKeydown)
@@ -1126,12 +1097,15 @@
 
 		return () => {
 			clearNavigationDebounce()
+			speakSpanObserver?.disconnect()
+			speakSpanObserver = null
 			window.removeEventListener("mousemove", handleMouseMove)
 			window.removeEventListener("mousemove", handleMouseMoveTrash)
 			window.removeEventListener("mouseup", handleMouseUp)
+			window.removeEventListener("touchmove", handleTouchMove)
+			window.removeEventListener("touchend", handleTouchEnd)
 			window.removeEventListener("scroll", handleScroll)
 			window.removeEventListener("wheel", handleUserScrollIntent)
-			window.removeEventListener("touchmove", handleUserScrollIntent)
 			window.removeEventListener("keydown", handleScrollKeydown)
 			window.removeEventListener("keydown", handleReaderHotkeys)
 			window.removeEventListener("resize", handleViewportChange)
@@ -1151,7 +1125,7 @@
 	})
 </script>
 
-{#if ttsAvailable && !isDeleted}
+{#if ttsAvailable && !isDeleted && hasSpeakSpans}
 	{#if isDragging}
 		<div class="trash-overlay" class:trash-hovering={trashHovering}>
 			<Trash2 strokeWidth={1.5} />
@@ -1166,6 +1140,7 @@
 		bind:this={readerEl}
 		style="transform: translate({position.x}px, {position.y}px)"
 		onmousedown={handleMouseDown}
+		ontouchstart={handleTouchStart}
 	>
 		{#if isReading}
 			<button
@@ -1341,17 +1316,19 @@
 	}
 
 	.trash-overlay {
+		--trash-size: min(33dvw, 33dvh);
 		position: fixed;
 		top: 50%;
 		left: 50%;
 
 		transform: translate(-50%, -50%);
-		z-index: 999;
+		z-index: 2001;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: min(33dvw, 33dvh);
-		height: min(33dvw, 33dvh);
+		width: var(--trash-size);
+		height: var(--trash-size);
+		aspect-ratio: 1 / 1;
 		border-radius: 50%;
 		color: rgba(255, 100, 100, 0.4);
 		transition: color 0.2s ease;
@@ -1360,10 +1337,13 @@
 	}
 
 	.trash-overlay :global(svg) {
-		width: min(33dvw, 33dvh);
-		height: min(33dvw, 33dvh);
+		width: var(--trash-size);
+		height: var(--trash-size);
+		aspect-ratio: 1 / 1;
 		max-width: 300px;
 		max-height: 300px;
+		display: block;
+		box-sizing: border-box;
 		background-color: rgba(255, 255, 255, 0.15);
 		border-radius: 50%;
 		padding: 50px;

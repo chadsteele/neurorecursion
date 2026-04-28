@@ -23,6 +23,46 @@ html {
 	scroll-behavior: smooth;
 }
 
+:where(a, button, input, select, textarea, summary, label, [role="button"]) {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+:where(
+	a,
+	button,
+	input,
+	select,
+	textarea,
+	summary,
+	label,
+	[role="button"]
+):focus,
+:where(
+	a,
+	button,
+	input,
+	select,
+	textarea,
+	summary,
+	label,
+	[role="button"]
+):focus-visible,
+:where(
+	a,
+	button,
+	input,
+	select,
+	textarea,
+	summary,
+	label,
+	[role="button"]
+):active {
+	outline: none;
+	box-shadow: none;
+}
+
 [id],
 [path],
 h1,

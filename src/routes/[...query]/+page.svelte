@@ -14,6 +14,7 @@
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
 	import Reader from "$lib/Reader.svelte"
+	import Speak from "$lib/Speak.svelte"
 
 	let {data} = $props()
 
@@ -246,120 +247,128 @@
 	{/each}
 </svelte:head>
 
-<Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.avif"
->
-	<div id="about" path="/about"></div>
-	<Intro class="paper container" />
-	<div id="references" path="/references"></div>
-	<References class="paper container" />
-</Parallax>
+<Speak>
+	<Parallax
+		background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.avif"
+	>
+		<div id="about" path="/about"></div>
+		<Intro class="paper container" />
+		<div id="references" path="/references"></div>
+		<References class="paper container" />
+	</Parallax>
 
-<div id="signup" path="/signup"></div>
-<SignUp bind:formData {getCondition} {ConditionsMap} />
+	<div id="signup" path="/signup"></div>
+	<SignUp bind:formData {getCondition} {ConditionsMap} />
 
-<div id="trials" path="/clinical-trials"></div>
-<div class="category-section">
-	<h1>Clinical Trials</h1>
-</div>
-<Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-grass.avif"
->
-	<section class="paper container">
-		<span class="speak">
-			<h2>Enrolling now!</h2>
-			<p>Find your condition below and sign up to see if you qualify!</p>
+	<div id="trials" path="/clinical-trials"></div>
+	<div class="category-section">
+		<h1>Clinical Trials</h1>
+	</div>
+	<Parallax
+		background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-grass.avif"
+	>
+		<section class="paper container">
+			<span class="speak">
+				<h2>Enrolling now!</h2>
+				<p>
+					Find your condition below and sign up to see if you qualify!
+				</p>
+				<p>
+					These conditions benefit from our technology that targets
+					neuroplasticity and replaces hardened limbic loops with new
+					neural pathways that increase your capacity for confidence,
+					security, and joy.
+				</p>
+			</span>
 			<p>
-				These conditions benefit from our technology that targets
-				neuroplasticity and replaces hardened limbic loops with new
-				neural pathways that increase your capacity for confidence,
-				security, and joy.
+				We are continuously adding more. Don't see your condition? Sign
+				up anyway. Also, the descriptions are brief summaries of complex
+				conditions - your experience will differ and may be less severe
+				than described. Also, you may have multiple conditions, so don't
+				hesitate to sign up for more than one.
 			</p>
-		</span>
-		<p>
-			We are continuously adding more. Don't see your condition? Sign up
-			anyway. Also, the descriptions are brief summaries of complex
-			conditions - your experience will differ and may be less severe than
-			described. Also, you may have multiple conditions, so don't hesitate
-			to sign up for more than one.
-		</p>
-		<p><strong>This could be your breakthrough! Don't hesitate.</strong></p>
-
-		<div class="categories-grid">
-			{#each Categories as category}
-				<a href={category.path} class="category-link"
-					>{formatName(category.category_name)}</a
+			<p>
+				<strong>This could be your breakthrough! Don't hesitate.</strong
 				>
-			{/each}
-		</div>
-	</section>
-</Parallax>
+			</p>
 
-{#each Categories as category (category.category_name)}
-	<div class="category-section" path={category.path}>
-		<h1>{category.category_name}</h1>
+			<div class="categories-grid">
+				{#each Categories as category}
+					<a href={category.path} class="category-link"
+						>{formatName(category.category_name)}</a
+					>
+				{/each}
+			</div>
+		</section>
+	</Parallax>
+
+	{#each Categories as category (category.category_name)}
+		<div class="category-section" path={category.path}>
+			<h1>{category.category_name}</h1>
+		</div>
+
+		{#each category.ids as id (id)}
+			{@const condition = ConditionsMap[id]}
+			{@const virtue = VirtuesMap[id]}
+			{#if condition}
+				<ConditionCard {condition} {formData} />
+			{:else if virtue}
+				<ConditionCard condition={virtue} />
+			{/if}
+		{/each}
+	{/each}
+
+	<div id="pioneers" path="/pioneers"></div>
+	<div class="category-section">
+		<h1>Partners & Pioneers</h1>
 	</div>
 
-	{#each category.ids as id (id)}
-		{@const condition = ConditionsMap[id]}
-		{@const virtue = VirtuesMap[id]}
-		{#if condition}
-			<ConditionCard {condition} {formData} />
-		{:else if virtue}
-			<ConditionCard condition={virtue} />
-		{/if}
-	{/each}
-{/each}
+	<section class="paper container">
+		<p>
+			For decades, neuroscientists have puzzled over why our brains react
+			to perceived threats in ways that feel beyond conscious control. In
+			the 1990s, Paul MacLean and later Daniel Goleman introduced the
+			concept of "<strong>amygdala hijacks</strong>" - moments when
+			emotion overwhelms reason. Their work showed that trauma and anxiety
+			stem from a <strong>limbic loop</strong>, a self-reinforcing circuit
+			where emotional memory hardens into fixed neural patterns. For
+			years, these patterns seemed unchangeable in adults. But recent
+			neuroplasticity research reveals something remarkable: these
+			hardened loops can be reopened, rewired, and healed. This has
+			transformed how we treat anxiety, PTSD, phobias, and other
+			neurological conditions.
+		</p>
+		<p>
+			Our research is built on the pioneering work of world-class
+			scientists whose discoveries have advanced our understanding of
+			neuroplasticity, limbic loops, and the therapeutic potential of
+			targeting these pathways to reduce neurological symptoms.
+		</p>
+		<p>
+			We are deeply grateful for their contributions to science and
+			humanity.
+		</p>
+	</section>
 
-<div id="pioneers" path="/pioneers"></div>
-<div class="category-section">
-	<h1>Partners & Pioneers</h1>
-</div>
+	<div class="pioneers-grid">
+		{#each sortedPioneers as pioneerId (pioneerId)}
+			{@const pioneer = PioneersMap[pioneerId]}
+			{#if pioneer}
+				<PioneerCard {pioneer} />
+			{/if}
+		{/each}
+	</div>
 
-<section class="paper container">
-	<p>
-		For decades, neuroscientists have puzzled over why our brains react to
-		perceived threats in ways that feel beyond conscious control. In the
-		1990s, Paul MacLean and later Daniel Goleman introduced the concept of "<strong
-			>amygdala hijacks</strong
-		>" - moments when emotion overwhelms reason. Their work showed that
-		trauma and anxiety stem from a <strong>limbic loop</strong>, a
-		self-reinforcing circuit where emotional memory hardens into fixed
-		neural patterns. For years, these patterns seemed unchangeable in
-		adults. But recent neuroplasticity research reveals something
-		remarkable: these hardened loops can be reopened, rewired, and healed.
-		This has transformed how we treat anxiety, PTSD, phobias, and other
-		neurological conditions.
-	</p>
-	<p>
-		Our research is built on the pioneering work of world-class scientists
-		whose discoveries have advanced our understanding of neuroplasticity,
-		limbic loops, and the therapeutic potential of targeting these pathways
-		to reduce neurological symptoms.
-	</p>
-	<p>
-		We are deeply grateful for their contributions to science and humanity.
-	</p>
-</section>
-
-<div class="pioneers-grid">
-	{#each sortedPioneers as pioneerId (pioneerId)}
-		{@const pioneer = PioneersMap[pioneerId]}
-		{#if pioneer}
-			<PioneerCard {pioneer} />
-		{/if}
-	{/each}
-</div>
-
-<div class="category-section">
-	<h1>Supportive Communities</h1>
-</div>
-<div id="support" path="/support"></div>
-<Parallax
-	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-blowing-bubbles.avif"
->
-	<Orgs class="paper container" />
-</Parallax>
+	<div class="category-section">
+		<h1>Supportive Communities</h1>
+	</div>
+	<div id="support" path="/support"></div>
+	<Parallax
+		background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-blowing-bubbles.avif"
+	>
+		<Orgs class="paper container" />
+	</Parallax>
+</Speak>
 
 <style>
 	:global(.category-section) {

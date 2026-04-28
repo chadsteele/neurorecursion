@@ -2,6 +2,7 @@
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 	import PageBackground from "$lib/PageBackground.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
+	import Speak from "$lib/Speak.svelte"
 	import jobs from "../../data/Jobs.js"
 
 	let showShareModal = $state(false)
@@ -36,68 +37,71 @@
 
 <section class="careers-section page-shell">
 	<div class="paper container page-stack">
-		<div class="header-flex">
-			<img
-				src="/logo.avif"
-				alt="Neuro Recursion Institute"
-				class="float-logo"
-			/>
-			<div>
-				<h2>Careers</h2>
-				<p>
-					We're always looking for talented people to join our team.
-					If you're passionate about neuroscience research and
-					clinical innovation, we'd love to hear from you.
-				</p>
+		<Speak>
+			<div class="header-flex">
+				<img
+					src="/logo.avif"
+					alt="Neuro Recursion Institute"
+					class="float-logo"
+				/>
+				<div>
+					<h2>Careers</h2>
+					<p>
+						We're always looking for talented people to join our
+						team. If you're passionate about neuroscience research
+						and clinical innovation, we'd love to hear from you.
+					</p>
 
-				<p>
-					<strong>Why Join Us?</strong><br />
-					We offer a fully remote work environment with generous benefits
-					including competitive compensation, flexible scheduling, and
-					professional development opportunities. We are an equal opportunity
-					employer committed to building a diverse and inclusive team that
-					reflects the communities we serve.
-				</p>
+					<p>
+						<strong>Why Join Us?</strong><br />
+						We offer a fully remote work environment with generous benefits
+						including competitive compensation, flexible scheduling,
+						and professional development opportunities. We are an equal
+						opportunity employer committed to building a diverse and
+						inclusive team that reflects the communities we serve.
+					</p>
 
-				<p>
-					If you're interested in becoming a certified practitioner of
-					our protocol or joining our mission to advance neuroscience
-					research, please reach out to discuss opportunities and how
-					to get involved in our work.
-				</p>
+					<p>
+						If you're interested in becoming a certified
+						practitioner of our protocol or joining our mission to
+						advance neuroscience research, please reach out to
+						discuss opportunities and how to get involved in our
+						work.
+					</p>
+				</div>
 			</div>
-		</div>
-		<div class="jobs-section">
-			<h3>Open Positions</h3>
-			<div class="jobs-list">
-				{#each jobs as job}
-					<a href={`/careers/${job.id}`} class="job-item">
-						<div class="job-title">{job.title}</div>
-						<div class="job-info">{job.info}</div>
-					</a>
-				{/each}
+			<div class="jobs-section">
+				<h3>Open Positions</h3>
+				<div class="jobs-list">
+					{#each jobs as job}
+						<a href={`/careers/${job.id}`} class="job-item">
+							<div class="job-title">{job.title}</div>
+							<div class="job-info">{job.info}</div>
+						</a>
+					{/each}
+				</div>
 			</div>
-		</div>
 
-		<div class="social-links">
-			<a
-				href="https://www.linkedin.com/company/neurorecursion"
-				target="_blank"
-				rel="noopener"
-				class="social-link"
-				title="Follow us on LinkedIn"
-			>
-				<LinkedInIcon />
-				LinkedIn
-			</a>
+			<div class="social-links">
+				<a
+					href="https://www.linkedin.com/company/neurorecursion"
+					target="_blank"
+					rel="noopener"
+					class="social-link"
+					title="Follow us on LinkedIn"
+				>
+					<LinkedInIcon />
+					LinkedIn
+				</a>
 
-			<button type="button" class="share-btn" onclick={handleShare}>
-				{#if Share2Icon}
-					<Share2Icon size={18} strokeWidth={2} />
-				{/if}
-				Share
-			</button>
-		</div>
+				<button type="button" class="share-btn" onclick={handleShare}>
+					{#if Share2Icon}
+						<Share2Icon size={18} strokeWidth={2} />
+					{/if}
+					Share
+				</button>
+			</div>
+		</Speak>
 	</div>
 </section>
 

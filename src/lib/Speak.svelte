@@ -6,6 +6,13 @@
 	let observer = null
 	let isWrapping = false
 	const IGNORED_TAGS = new Set(["script", "style", "noscript"])
+	const HIDDEN_CLASS_NAMES = new Set([
+		"hidden",
+		"invisible",
+		"sr-only",
+		"visually-hidden",
+		"d-none",
+	])
 	const SENTENCE_DELIMITERS = new Set([".", "?", "!"])
 	const EQUATION_CHARS = new Set([
 		"=",
@@ -41,7 +48,29 @@
 		}
 
 		if (element.hidden) return true
-		if (element.getAttribute("aria-hidden") === "true") return true
+		if (element.inert) return true
+
+		const ariaHidden = element.getAttribute("aria-hidden")
+		if (
+			typeof ariaHidden === "string" &&
+			ariaHidden.toLowerCase() === "true"
+		) {
+			return true
+		}
+
+		for (const className of HIDDEN_CLASS_NAMES) {
+			if (element.classList.contains(className)) return true
+		}
+
+		const computed = getComputedStyle(element)
+		if (
+			computed.display === "none" ||
+			computed.visibility === "hidden" ||
+			computed.visibility === "collapse" ||
+			computed.contentVisibility === "hidden"
+		) {
+			return true
+		}
 
 		return false
 	}

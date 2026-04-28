@@ -10,6 +10,7 @@
 	} from "lucide-svelte"
 	import LinkedInIcon from "$lib/LinkedInIcon.svelte"
 	import PageBackground from "$lib/PageBackground.svelte"
+	import Speak from "$lib/Speak.svelte"
 
 	let showShareModal = $state(false)
 	let affiliateId = "NR-8742-XKPQ"
@@ -41,576 +42,589 @@
 />
 
 <section class="affiliate-page page-shell">
-	<div class="paper container page-stack">
-		<div class="section-shell teaser-shell">
-			<div class="teaser-copy">
-				<h2>Show me the money!</h2>
-				<div class="teaser-links">
-					<a href="#math" class="primary-link">10% commission</a>
-					<a href="#math" class="primary-link">$10k example</a>
-					<a href="#math" class="primary-link">$25k example</a>
-					<a href="#math" class="primary-link">$60k example</a>
+	<Speak>
+		<div class="paper container page-stack">
+			<div class="section-shell teaser-shell">
+				<div class="teaser-copy">
+					<h2>Show me the money!</h2>
+					<div class="teaser-links">
+						<a href="#math" class="primary-link">10% commission</a>
+						<a href="#math" class="primary-link">$10k example</a>
+						<a href="#math" class="primary-link">$25k example</a>
+						<a href="#math" class="primary-link">$60k example</a>
+					</div>
+					<div>
+						NeuroRecursion offers a flat 10% commission on referred
+						purchases, tracked end to end, with revenue scenarios
+						below so you can evaluate the opportunity without hype.
+					</div>
 				</div>
-				<div>
-					NeuroRecursion offers a flat 10% commission on referred
-					purchases, tracked end to end, with revenue scenarios below
-					so you can evaluate the opportunity without hype.
+				<div class="teaser-visual">
+					<img
+						src="/money-man.png"
+						alt="Money-themed illustration"
+						class="teaser-money-image"
+					/>
 				</div>
 			</div>
-			<div class="teaser-visual">
-				<img
-					src="/money-man.png"
-					alt="Money-themed illustration"
-					class="teaser-money-image"
-				/>
+			<div class="hero-panel">
+				<div class="hero-copy">
+					<h1>
+						Your recovery story is worth something. <br />To you and
+						to others.
+					</h1>
+					<p class="lead">
+						When you share what worked, you do two things at once:
+						you help someone else find their way out, and you build
+						something real from your own breakthrough. The
+						NeuroRecursion affiliate program formalizes what
+						naturally happens when recovery is genuine.
+					</p>
+					<p>
+						You arrived with an ID. Every click you create is
+						tracked. Every person who lands here through your link
+						is known. All that's left is to get registered so we can
+						honor your work with real payment.
+					</p>
+					<div class="hero-actions">
+						<a
+							href="https://neurorecursion.lemonsqueezy.com/affiliates"
+							target="_blank"
+							rel="noopener"
+							class="primary-link"
+						>
+							→ Register as affiliate
+						</a>
+						<button
+							type="button"
+							class="share-trigger"
+							onclick={handleShare}
+						>
+							<Share2Icon size={18} strokeWidth={2} />
+							Share this
+						</button>
+					</div>
+				</div>
+
+				<div class="hero-stats">
+					<div class="stat-card glow">
+						<div class="stat-label">The real reason to do this</div>
+						<div class="stat-value">Empathy</div>
+						<p>
+							You know what it's like to be trapped in a loop. You
+							know the cost. You know the relief when it breaks.
+							That knowing is something most marketers will never
+							have. It is credible, rare, and transferable.
+						</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-label">The second reason</div>
+						<div class="stat-value">Purpose</div>
+						<p>
+							Sharing your recovery is not selling. It is
+							testimony. It is evidence. It is an invitation to
+							someone else to try what worked for you. When they
+							get better, you get better too. The ROI is human.
+						</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-label">The practical reason</div>
+						<div class="stat-value">Money</div>
+						<p>
+							10% commission on every purchase your referral
+							makes. Simple. Sustainable. No tricks. The math can
+							be good if your audience is real and your message is
+							true.
+						</p>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="hero-panel">
-			<div class="hero-copy">
-				<h1>
-					Your recovery story is worth something. <br />To you and to
-					others.
-				</h1>
-				<p class="lead">
-					When you share what worked, you do two things at once: you
-					help someone else find their way out, and you build
-					something real from your own breakthrough. The
-					NeuroRecursion affiliate program formalizes what naturally
-					happens when recovery is genuine.
+
+			<div class="section-shell prerequisite-shell">
+				<h2>The first step is not optional</h2>
+				<p>
+					You cannot be an effective affiliate without a recovery
+					story. And you cannot have a recovery story without doing
+					the work.
 				</p>
 				<p>
-					You arrived with an ID. Every click you create is tracked.
-					Every person who lands here through your link is known. All
-					that's left is to get registered so we can honor your work
-					with real payment.
+					The clinical trial is free. Everyone has a source of
+					anxiety, a pattern they've carried, a condition or
+					circumstance that costs them. There is no stressful nervous
+					system that cannot benefit from NeuroRecursion. That
+					includes yours.
 				</p>
-				<div class="hero-actions">
+
+				<div class="prerequisite-content">
+					<div class="prerequisite-card">
+						<h3>Why this matters</h3>
+						<p>
+							When you share your transformation, you're not
+							making a pitch. You're giving testimony. You're
+							saying: "This was hard for me. This worked for me.
+							It can work for you too."
+						</p>
+						<p>
+							That testimony only has power if it's real. And it
+							can only be real if you've lived through it
+							yourself.
+						</p>
+					</div>
+
+					<div class="prerequisite-card">
+						<h3>Everyone qualifies</h3>
+						<p>
+							You might think you don't have a "condition." You
+							might think your anxiety or stress or pattern is
+							just how you are. But if it costs you—in sleep,
+							relationships, focus, peace, agency—then it
+							qualifies.
+						</p>
+						<p>
+							Do the trial. Let it work. Then share what you
+							discovered.
+						</p>
+					</div>
+				</div>
+
+				<div class="prerequisite-cta">
+					<p class="prerequisite-note">
+						Do this first. Then come back here when you have your
+						story to tell.
+					</p>
+					<a href="/#signup" class="primary-link"> → Start </a>
+					&nbsp; the clinical trial. It's fast and free!
+				</div>
+			</div>
+
+			<div class="section-shell how-it-works-shell">
+				<h2>How it actually works</h2>
+				<div class="timeline-grid">
+					<article class="timeline-card">
+						<div class="timeline-number">1</div>
+						<h3>You already have an ID</h3>
+						<p>
+							When you first arrived here, the system gave you a
+							unique affiliate identifier. It's been with you
+							since that moment.
+						</p>
+					</article>
+					<article class="timeline-card">
+						<div class="timeline-number">2</div>
+						<h3>Every share gets tracked</h3>
+						<p>
+							Share a link to any product page, training, or your
+							own breakthrough story. If someone clicks it, the
+							system knows it was you.
+						</p>
+					</article>
+					<article class="timeline-card">
+						<div class="timeline-number">3</div>
+						<h3>They buy, you earn</h3>
+						<p>
+							If someone who clicks your link purchases a product,
+							you get 10% of that purchase. No expiration. No
+							games. Clean accounting.
+						</p>
+					</article>
+					<article class="timeline-card">
+						<div class="timeline-number">4</div>
+						<h3>We send you payment</h3>
+						<p>
+							Register your account in LemonSqueezy, provide
+							payment details, and you're ready to receive
+							commissions. We process payouts monthly.
+						</p>
+					</article>
+				</div>
+			</div>
+
+			<div class="section-shell empathy-shell">
+				<h2>Empathy: Your unfair advantage</h2>
+				<div class="advantage-grid">
+					<div class="advantage-card">
+						<div class="advantage-icon">
+							<Heart size={20} strokeWidth={2} />
+						</div>
+						<h3>You've lived it</h3>
+						<p>
+							You didn't buy marketing data. You didn't hire
+							consultants. You lived through the panic, the shame,
+							the exhaustion. That lived experience is worth more
+							than a thousand ad campaigns. People can feel it.
+						</p>
+					</div>
+					<div class="advantage-card">
+						<div class="advantage-icon">
+							<Users size={20} strokeWidth={2} />
+						</div>
+						<h3>You know the audience</h3>
+						<p>
+							You know what questions they're asking because you
+							asked them. You know what doubts they have because
+							you had them. You know what keeps them stuck and
+							what breaks them free.
+						</p>
+					</div>
+					<div class="advantage-card">
+						<div class="advantage-icon">
+							<CheckCircle size={20} strokeWidth={2} />
+						</div>
+						<h3>You know what proof looks like</h3>
+						<p>
+							You don't need a testimonial. You are the proof.
+							Your baseline is different now. Your presence is
+							different. People notice and they believe.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-shell purpose-shell">
+				<h2>Purpose: Make recovery contagious</h2>
+				<p>
+					The goal of NeuroRecursion is not to put people on
+					medication for life. It is not to make therapy a permanent
+					dependency. It is to give people durable freedom. To give
+					them their agency back.
+				</p>
+				<p>
+					When you share that mission with someone else, you are not
+					selling. You are inviting. You are saying: "I got free. You
+					can too."
+				</p>
+				<p>
+					That is not a marketing message. That is a covenant. And
+					people who believe in covenants attract other people who
+					believe in covenants.
+				</p>
+
+				<div class="purpose-stats">
+					<div class="stat-item">
+						<div class="stat-item-label">Your recovery</div>
+						<div class="stat-item-value">Durable</div>
+						<p>The breakthrough holds because you practice it.</p>
+					</div>
+					<div class="stat-item">
+						<div class="stat-item-label">Their hope</div>
+						<div class="stat-item-value">Real</div>
+						<p>
+							Because you are proof that it is possible for them
+							too.
+						</p>
+					</div>
+					<div class="stat-item">
+						<div class="stat-item-label">Your commission</div>
+						<div class="stat-item-value">Earned</div>
+						<p>
+							For bridging the gap between their desperation and
+							their freedom.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-shell strategy-shell">
+				<h2>Strategy: Beyond the usual channels</h2>
+				<p>
+					Social media will get you starts. Email lists will get you
+					consistency. Your personal network will get you credibility.
+					But if you want to scale, you need a strategy that plays to
+					your strengths: authenticity, empathy, and lived knowledge.
+				</p>
+
+				<div class="strategy-grid">
+					<article class="strategy-card">
+						<h3>1. Document your practice</h3>
+						<p>
+							Show what a week of NeuroRecursion practice looks
+							like. Not a sales pitch. Just the mechanics. "This
+							is how I do it. This is what changed."
+						</p>
+						<div class="strategy-note">
+							Where: Blog, LinkedIn, YouTube Shorts, TikTok
+						</div>
+					</article>
+
+					<article class="strategy-card">
+						<h3>2. Answer the unasked questions</h3>
+						<p>
+							People don't ask "Is this real?" They ask "Will it
+							work for me?" Address that. "I had X condition.
+							Here's why I was skeptical. Here's what shifted."
+						</p>
+						<div class="strategy-note">
+							Where: Podcast guest appearances, LinkedIn articles,
+							Medium
+						</div>
+					</article>
+
+					<article class="strategy-card">
+						<h3>3. Build in the gaps</h3>
+						<p>
+							Find the communities of people with your condition.
+							Not to pitch. To participate. To share what you've
+							learned. To be present. Links happen naturally when
+							you're genuinely helpful.
+						</p>
+						<div class="strategy-note">
+							Where: Reddit communities, Facebook groups, Discord
+							servers, support forums
+						</div>
+					</article>
+
+					<article class="strategy-card">
+						<h3>4. Teach what you learned</h3>
+						<p>
+							Host a free workshop on the fundamental principles.
+							Share the mindset shifts that matter. Link to the
+							full program for people ready to go deeper. You're
+							not selling. You're filtering for people who are
+							ready.
+						</p>
+						<div class="strategy-note">
+							Where: Zoom webinars, YouTube, LinkedIn Live,
+							Twitter Spaces
+						</div>
+					</article>
+
+					<article class="strategy-card">
+						<h3>5. Partner with other recovering people</h3>
+						<p>
+							Collaborate with therapists, coaches, and other
+							practitioners who serve people with your condition.
+							You don't compete. You complement. You
+							cross-reference. You amplify.
+						</p>
+						<div class="strategy-note">
+							Where: Joint webinars, podcast interviews,
+							co-authored articles
+						</div>
+					</article>
+
+					<article class="strategy-card">
+						<h3>6. Use your story as infrastructure</h3>
+						<p>
+							The best marketing is just telling the truth in a
+							way that lands. Share your recovery journey broken
+							into chapters. Share setbacks and how you managed
+							them. Share the real mechanics of how you stay free.
+						</p>
+						<div class="strategy-note">
+							Where: Email newsletter, personal website, video
+							series
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<div class="section-shell confidentiality-shell">
+				<h2>Important: What you can and cannot share</h2>
+				<p>
+					The NeuroRecursion clinical trial process is proprietary.
+					When you register as an affiliate, you're signing an NDA.
+					That means the fundamental mechanics—how the protocol works,
+					the specific technique, the detailed clinical
+					methodology—are confidential. They belong to NeuroRecursion,
+					not to you.
+				</p>
+				<p>
+					This is not to limit your voice. It's to protect the
+					integrity of something that works.
+				</p>
+
+				<div class="confidentiality-grid">
+					<article class="confidentiality-card allowed">
+						<div class="confidentiality-header">
+							<h3>✓ You can share</h3>
+						</div>
+						<ul class="confidentiality-list">
+							<li>
+								<strong>Your transformation:</strong>
+								"I was stuck in panic loops for 5 years. After the
+								trial, things shifted."
+							</li>
+							<li>
+								<strong>Your enthusiasm:</strong>
+								"This changed my life. I'm serious."
+							</li>
+							<li>
+								<strong>Your results:</strong>
+								"My anxiety is down 80%. I sleep again. I'm functional."
+							</li>
+							<li>
+								<strong>Your honest assessment:</strong>
+								"It's not magic, but it's real. It requires practice."
+							</li>
+							<li>
+								<strong>General principles:</strong>
+								"It's about rewiring nervous system patterns through
+								specific practice."
+							</li>
+							<li>
+								<strong>Your invitation:</strong>
+								"If you're struggling, it's worth trying. Click my
+								link to learn more."
+							</li>
+						</ul>
+					</article>
+
+					<article class="confidentiality-card restricted">
+						<div class="confidentiality-header">
+							<h3>✗ You cannot share</h3>
+						</div>
+						<ul class="confidentiality-list">
+							<li>
+								<strong>The exact protocol:</strong>
+								Step-by-step instructions for the clinical trial
+								technique.
+							</li>
+							<li>
+								<strong>Detailed methodology:</strong>
+								How the technique is structured, why specific elements
+								matter, exact timing/sequences.
+							</li>
+							<li>
+								<strong>Training materials:</strong>
+								Any internal guides, videos, or resources designed
+								for certified practitioners.
+							</li>
+							<li>
+								<strong>Clinical data:</strong>
+								Specific results, statistics, or data from the trial
+								that you don't have permission to share.
+							</li>
+							<li>
+								<strong>Images or video:</strong>
+								Recordings of yourself or others performing the technique
+								(unless specifically authorized).
+							</li>
+							<li>
+								<strong>Beyond your scope:</strong>
+								Medical claims, diagnostic statements, or clinical
+								guidance you're not certified to provide.
+							</li>
+						</ul>
+					</article>
+				</div>
+
+				<div class="confidentiality-exception">
+					<h3>When you can share everything</h3>
+					<p>
+						If you become a <strong>certified researcher</strong> or
+						<strong>certified facilitator/coach</strong> professionally
+						engaged with NeuroRecursion, you will receive specific training
+						and authorization to teach the methodology. At that point,
+						you have the legal authority and professional responsibility
+						to share the process with your clients or research subjects.
+					</p>
+					<p>
+						Until then, you're an affiliate sharing your story. Your
+						story is powerful. Your story is enough. And your story
+						is honest within the bounds of the NDA you've agreed to.
+					</p>
+				</div>
+			</div>
+
+			<div id="math" class="section-shell money-shell">
+				<h2>Money: The math that works</h2>
+				<p>
+					Commission is 10% of every purchase your referral makes.
+					There is no upper limit. No capping. No games.
+				</p>
+
+				<div class="revenue-examples">
+					<div class="revenue-card">
+						<div class="revenue-scenario">
+							<h4>Conservative: 50 referrals per month</h4>
+							<p>Average purchase value: $200</p>
+						</div>
+						<div class="revenue-math">
+							<div class="math-row">
+								<span>50 referrals × $200</span>
+								<strong>$10,000</strong>
+							</div>
+							<div class="math-row">
+								<span>10% commission</span>
+								<strong>$1,000/month</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="revenue-card">
+						<div class="revenue-scenario">
+							<h4>Moderate: 100 referrals per month</h4>
+							<p>Average purchase value: $250</p>
+						</div>
+						<div class="revenue-math">
+							<div class="math-row">
+								<span>100 referrals × $250</span>
+								<strong>$25,000</strong>
+							</div>
+							<div class="math-row">
+								<span>10% commission</span>
+								<strong>$2,500/month</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="revenue-card">
+						<div class="revenue-scenario">
+							<h4>Ambitious: 200 referrals per month</h4>
+							<p>Average purchase value: $300</p>
+						</div>
+						<div class="revenue-math">
+							<div class="math-row">
+								<span>200 referrals × $300</span>
+								<strong>$60,000</strong>
+							</div>
+							<div class="math-row">
+								<span>10% commission</span>
+								<strong>$6,000/month</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="revenue-note">
+					These numbers represent potential, not guarantees. Real
+					results depend on audience size, message quality, platform
+					reach, and the genuine relevance of NeuroRecursion to your
+					audience. But the math is real, the commission is real, and
+					people do earn this kind of income from affiliate work when
+					audience and offer align.
+				</p>
+			</div>
+
+			<div class="section-shell closing-shell">
+				<div class="closing-copy">
+					<h2>You don't have to do this alone.</h2>
+					<p>
+						Your recovery is already proof. You don't need
+						permission or credentials to share what saved your life.
+						You need confidence, and that comes from knowing you're
+						not selling something. You're inviting someone into
+						freedom.
+					</p>
+					<p>
+						The commission is real. The purpose is real. The impact
+						is real. And it all starts with you deciding that your
+						breakthrough is worth sharing.
+					</p>
+				</div>
+				<div class="closing-actions">
 					<a
 						href="https://neurorecursion.lemonsqueezy.com/affiliates"
 						target="_blank"
 						rel="noopener"
 						class="primary-link"
 					>
-						→ Register as affiliate
+						→ Complete affiliate registration
 					</a>
-					<button
-						type="button"
-						class="share-trigger"
-						onclick={handleShare}
-					>
-						<Share2Icon size={18} strokeWidth={2} />
-						Share this
-					</button>
-				</div>
-			</div>
-
-			<div class="hero-stats">
-				<div class="stat-card glow">
-					<div class="stat-label">The real reason to do this</div>
-					<div class="stat-value">Empathy</div>
-					<p>
-						You know what it's like to be trapped in a loop. You
-						know the cost. You know the relief when it breaks. That
-						knowing is something most marketers will never have. It
-						is credible, rare, and transferable.
-					</p>
-				</div>
-				<div class="stat-card">
-					<div class="stat-label">The second reason</div>
-					<div class="stat-value">Purpose</div>
-					<p>
-						Sharing your recovery is not selling. It is testimony.
-						It is evidence. It is an invitation to someone else to
-						try what worked for you. When they get better, you get
-						better too. The ROI is human.
-					</p>
-				</div>
-				<div class="stat-card">
-					<div class="stat-label">The practical reason</div>
-					<div class="stat-value">Money</div>
-					<p>
-						10% commission on every purchase your referral makes.
-						Simple. Sustainable. No tricks. The math can be good if
-						your audience is real and your message is true.
-					</p>
 				</div>
 			</div>
 		</div>
-
-		<div class="section-shell prerequisite-shell">
-			<h2>The first step is not optional</h2>
-			<p>
-				You cannot be an effective affiliate without a recovery story.
-				And you cannot have a recovery story without doing the work.
-			</p>
-			<p>
-				The clinical trial is free. Everyone has a source of anxiety, a
-				pattern they've carried, a condition or circumstance that costs
-				them. There is no stressful nervous system that cannot benefit
-				from NeuroRecursion. That includes yours.
-			</p>
-
-			<div class="prerequisite-content">
-				<div class="prerequisite-card">
-					<h3>Why this matters</h3>
-					<p>
-						When you share your transformation, you're not making a
-						pitch. You're giving testimony. You're saying: "This was
-						hard for me. This worked for me. It can work for you
-						too."
-					</p>
-					<p>
-						That testimony only has power if it's real. And it can
-						only be real if you've lived through it yourself.
-					</p>
-				</div>
-
-				<div class="prerequisite-card">
-					<h3>Everyone qualifies</h3>
-					<p>
-						You might think you don't have a "condition." You might
-						think your anxiety or stress or pattern is just how you
-						are. But if it costs you—in sleep, relationships, focus,
-						peace, agency—then it qualifies.
-					</p>
-					<p>
-						Do the trial. Let it work. Then share what you
-						discovered.
-					</p>
-				</div>
-			</div>
-
-			<div class="prerequisite-cta">
-				<p class="prerequisite-note">
-					Do this first. Then come back here when you have your story
-					to tell.
-				</p>
-				<a href="/#signup" class="primary-link"> → Start </a>
-				&nbsp; the clinical trial. It's fast and free!
-			</div>
-		</div>
-
-		<div class="section-shell how-it-works-shell">
-			<h2>How it actually works</h2>
-			<div class="timeline-grid">
-				<article class="timeline-card">
-					<div class="timeline-number">1</div>
-					<h3>You already have an ID</h3>
-					<p>
-						When you first arrived here, the system gave you a
-						unique affiliate identifier. It's been with you since
-						that moment.
-					</p>
-				</article>
-				<article class="timeline-card">
-					<div class="timeline-number">2</div>
-					<h3>Every share gets tracked</h3>
-					<p>
-						Share a link to any product page, training, or your own
-						breakthrough story. If someone clicks it, the system
-						knows it was you.
-					</p>
-				</article>
-				<article class="timeline-card">
-					<div class="timeline-number">3</div>
-					<h3>They buy, you earn</h3>
-					<p>
-						If someone who clicks your link purchases a product, you
-						get 10% of that purchase. No expiration. No games. Clean
-						accounting.
-					</p>
-				</article>
-				<article class="timeline-card">
-					<div class="timeline-number">4</div>
-					<h3>We send you payment</h3>
-					<p>
-						Register your account in LemonSqueezy, provide payment
-						details, and you're ready to receive commissions. We
-						process payouts monthly.
-					</p>
-				</article>
-			</div>
-		</div>
-
-		<div class="section-shell empathy-shell">
-			<h2>Empathy: Your unfair advantage</h2>
-			<div class="advantage-grid">
-				<div class="advantage-card">
-					<div class="advantage-icon">
-						<Heart size={20} strokeWidth={2} />
-					</div>
-					<h3>You've lived it</h3>
-					<p>
-						You didn't buy marketing data. You didn't hire
-						consultants. You lived through the panic, the shame, the
-						exhaustion. That lived experience is worth more than a
-						thousand ad campaigns. People can feel it.
-					</p>
-				</div>
-				<div class="advantage-card">
-					<div class="advantage-icon">
-						<Users size={20} strokeWidth={2} />
-					</div>
-					<h3>You know the audience</h3>
-					<p>
-						You know what questions they're asking because you asked
-						them. You know what doubts they have because you had
-						them. You know what keeps them stuck and what breaks
-						them free.
-					</p>
-				</div>
-				<div class="advantage-card">
-					<div class="advantage-icon">
-						<CheckCircle size={20} strokeWidth={2} />
-					</div>
-					<h3>You know what proof looks like</h3>
-					<p>
-						You don't need a testimonial. You are the proof. Your
-						baseline is different now. Your presence is different.
-						People notice and they believe.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="section-shell purpose-shell">
-			<h2>Purpose: Make recovery contagious</h2>
-			<p>
-				The goal of NeuroRecursion is not to put people on medication
-				for life. It is not to make therapy a permanent dependency. It
-				is to give people durable freedom. To give them their agency
-				back.
-			</p>
-			<p>
-				When you share that mission with someone else, you are not
-				selling. You are inviting. You are saying: "I got free. You can
-				too."
-			</p>
-			<p>
-				That is not a marketing message. That is a covenant. And people
-				who believe in covenants attract other people who believe in
-				covenants.
-			</p>
-
-			<div class="purpose-stats">
-				<div class="stat-item">
-					<div class="stat-item-label">Your recovery</div>
-					<div class="stat-item-value">Durable</div>
-					<p>The breakthrough holds because you practice it.</p>
-				</div>
-				<div class="stat-item">
-					<div class="stat-item-label">Their hope</div>
-					<div class="stat-item-value">Real</div>
-					<p>
-						Because you are proof that it is possible for them too.
-					</p>
-				</div>
-				<div class="stat-item">
-					<div class="stat-item-label">Your commission</div>
-					<div class="stat-item-value">Earned</div>
-					<p>
-						For bridging the gap between their desperation and their
-						freedom.
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="section-shell strategy-shell">
-			<h2>Strategy: Beyond the usual channels</h2>
-			<p>
-				Social media will get you starts. Email lists will get you
-				consistency. Your personal network will get you credibility. But
-				if you want to scale, you need a strategy that plays to your
-				strengths: authenticity, empathy, and lived knowledge.
-			</p>
-
-			<div class="strategy-grid">
-				<article class="strategy-card">
-					<h3>1. Document your practice</h3>
-					<p>
-						Show what a week of NeuroRecursion practice looks like.
-						Not a sales pitch. Just the mechanics. "This is how I do
-						it. This is what changed."
-					</p>
-					<div class="strategy-note">
-						Where: Blog, LinkedIn, YouTube Shorts, TikTok
-					</div>
-				</article>
-
-				<article class="strategy-card">
-					<h3>2. Answer the unasked questions</h3>
-					<p>
-						People don't ask "Is this real?" They ask "Will it work
-						for me?" Address that. "I had X condition. Here's why I
-						was skeptical. Here's what shifted."
-					</p>
-					<div class="strategy-note">
-						Where: Podcast guest appearances, LinkedIn articles,
-						Medium
-					</div>
-				</article>
-
-				<article class="strategy-card">
-					<h3>3. Build in the gaps</h3>
-					<p>
-						Find the communities of people with your condition. Not
-						to pitch. To participate. To share what you've learned.
-						To be present. Links happen naturally when you're
-						genuinely helpful.
-					</p>
-					<div class="strategy-note">
-						Where: Reddit communities, Facebook groups, Discord
-						servers, support forums
-					</div>
-				</article>
-
-				<article class="strategy-card">
-					<h3>4. Teach what you learned</h3>
-					<p>
-						Host a free workshop on the fundamental principles.
-						Share the mindset shifts that matter. Link to the full
-						program for people ready to go deeper. You're not
-						selling. You're filtering for people who are ready.
-					</p>
-					<div class="strategy-note">
-						Where: Zoom webinars, YouTube, LinkedIn Live, Twitter
-						Spaces
-					</div>
-				</article>
-
-				<article class="strategy-card">
-					<h3>5. Partner with other recovering people</h3>
-					<p>
-						Collaborate with therapists, coaches, and other
-						practitioners who serve people with your condition. You
-						don't compete. You complement. You cross-reference. You
-						amplify.
-					</p>
-					<div class="strategy-note">
-						Where: Joint webinars, podcast interviews, co-authored
-						articles
-					</div>
-				</article>
-
-				<article class="strategy-card">
-					<h3>6. Use your story as infrastructure</h3>
-					<p>
-						The best marketing is just telling the truth in a way
-						that lands. Share your recovery journey broken into
-						chapters. Share setbacks and how you managed them. Share
-						the real mechanics of how you stay free.
-					</p>
-					<div class="strategy-note">
-						Where: Email newsletter, personal website, video series
-					</div>
-				</article>
-			</div>
-		</div>
-
-		<div class="section-shell confidentiality-shell">
-			<h2>Important: What you can and cannot share</h2>
-			<p>
-				The NeuroRecursion clinical trial process is proprietary. When
-				you register as an affiliate, you're signing an NDA. That means
-				the fundamental mechanics—how the protocol works, the specific
-				technique, the detailed clinical methodology—are confidential.
-				They belong to NeuroRecursion, not to you.
-			</p>
-			<p>
-				This is not to limit your voice. It's to protect the integrity
-				of something that works.
-			</p>
-
-			<div class="confidentiality-grid">
-				<article class="confidentiality-card allowed">
-					<div class="confidentiality-header">
-						<h3>✓ You can share</h3>
-					</div>
-					<ul class="confidentiality-list">
-						<li>
-							<strong>Your transformation:</strong>
-							"I was stuck in panic loops for 5 years. After the trial,
-							things shifted."
-						</li>
-						<li>
-							<strong>Your enthusiasm:</strong>
-							"This changed my life. I'm serious."
-						</li>
-						<li>
-							<strong>Your results:</strong>
-							"My anxiety is down 80%. I sleep again. I'm functional."
-						</li>
-						<li>
-							<strong>Your honest assessment:</strong>
-							"It's not magic, but it's real. It requires practice."
-						</li>
-						<li>
-							<strong>General principles:</strong>
-							"It's about rewiring nervous system patterns through
-							specific practice."
-						</li>
-						<li>
-							<strong>Your invitation:</strong>
-							"If you're struggling, it's worth trying. Click my link
-							to learn more."
-						</li>
-					</ul>
-				</article>
-
-				<article class="confidentiality-card restricted">
-					<div class="confidentiality-header">
-						<h3>✗ You cannot share</h3>
-					</div>
-					<ul class="confidentiality-list">
-						<li>
-							<strong>The exact protocol:</strong>
-							Step-by-step instructions for the clinical trial technique.
-						</li>
-						<li>
-							<strong>Detailed methodology:</strong>
-							How the technique is structured, why specific elements
-							matter, exact timing/sequences.
-						</li>
-						<li>
-							<strong>Training materials:</strong>
-							Any internal guides, videos, or resources designed for
-							certified practitioners.
-						</li>
-						<li>
-							<strong>Clinical data:</strong>
-							Specific results, statistics, or data from the trial
-							that you don't have permission to share.
-						</li>
-						<li>
-							<strong>Images or video:</strong>
-							Recordings of yourself or others performing the technique
-							(unless specifically authorized).
-						</li>
-						<li>
-							<strong>Beyond your scope:</strong>
-							Medical claims, diagnostic statements, or clinical guidance
-							you're not certified to provide.
-						</li>
-					</ul>
-				</article>
-			</div>
-
-			<div class="confidentiality-exception">
-				<h3>When you can share everything</h3>
-				<p>
-					If you become a <strong>certified researcher</strong> or
-					<strong>certified facilitator/coach</strong> professionally engaged
-					with NeuroRecursion, you will receive specific training and authorization
-					to teach the methodology. At that point, you have the legal authority
-					and professional responsibility to share the process with your
-					clients or research subjects.
-				</p>
-				<p>
-					Until then, you're an affiliate sharing your story. Your
-					story is powerful. Your story is enough. And your story is
-					honest within the bounds of the NDA you've agreed to.
-				</p>
-			</div>
-		</div>
-
-		<div id="math" class="section-shell money-shell">
-			<h2>Money: The math that works</h2>
-			<p>
-				Commission is 10% of every purchase your referral makes. There
-				is no upper limit. No capping. No games.
-			</p>
-
-			<div class="revenue-examples">
-				<div class="revenue-card">
-					<div class="revenue-scenario">
-						<h4>Conservative: 50 referrals per month</h4>
-						<p>Average purchase value: $200</p>
-					</div>
-					<div class="revenue-math">
-						<div class="math-row">
-							<span>50 referrals × $200</span>
-							<strong>$10,000</strong>
-						</div>
-						<div class="math-row">
-							<span>10% commission</span>
-							<strong>$1,000/month</strong>
-						</div>
-					</div>
-				</div>
-
-				<div class="revenue-card">
-					<div class="revenue-scenario">
-						<h4>Moderate: 100 referrals per month</h4>
-						<p>Average purchase value: $250</p>
-					</div>
-					<div class="revenue-math">
-						<div class="math-row">
-							<span>100 referrals × $250</span>
-							<strong>$25,000</strong>
-						</div>
-						<div class="math-row">
-							<span>10% commission</span>
-							<strong>$2,500/month</strong>
-						</div>
-					</div>
-				</div>
-
-				<div class="revenue-card">
-					<div class="revenue-scenario">
-						<h4>Ambitious: 200 referrals per month</h4>
-						<p>Average purchase value: $300</p>
-					</div>
-					<div class="revenue-math">
-						<div class="math-row">
-							<span>200 referrals × $300</span>
-							<strong>$60,000</strong>
-						</div>
-						<div class="math-row">
-							<span>10% commission</span>
-							<strong>$6,000/month</strong>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<p class="revenue-note">
-				These numbers represent potential, not guarantees. Real results
-				depend on audience size, message quality, platform reach, and
-				the genuine relevance of NeuroRecursion to your audience. But
-				the math is real, the commission is real, and people do earn
-				this kind of income from affiliate work when audience and offer
-				align.
-			</p>
-		</div>
-
-		<div class="section-shell closing-shell">
-			<div class="closing-copy">
-				<h2>You don't have to do this alone.</h2>
-				<p>
-					Your recovery is already proof. You don't need permission or
-					credentials to share what saved your life. You need
-					confidence, and that comes from knowing you're not selling
-					something. You're inviting someone into freedom.
-				</p>
-				<p>
-					The commission is real. The purpose is real. The impact is
-					real. And it all starts with you deciding that your
-					breakthrough is worth sharing.
-				</p>
-			</div>
-			<div class="closing-actions">
-				<a
-					href="https://neurorecursion.lemonsqueezy.com/affiliates"
-					target="_blank"
-					rel="noopener"
-					class="primary-link"
-				>
-					→ Complete affiliate registration
-				</a>
-			</div>
-		</div>
-	</div>
+	</Speak>
 </section>
 
 <style>
