@@ -1,3 +1,60 @@
+<script module>
+	const speakRegistry = new WeakMap()
+	let globallyPaused = false
+
+	function forEachSpeakController(callback) {
+		if (typeof document === "undefined") return
+
+		const wrappers = Array.from(document.querySelectorAll(".speak-wrapper"))
+		for (const wrapper of wrappers) {
+			const controller = speakRegistry.get(wrapper)
+			if (!controller) continue
+			callback(controller)
+		}
+	}
+
+	function registerSpeakInstance(element, controller) {
+		speakRegistry.set(element, controller)
+	}
+
+	function unregisterSpeakInstance(element) {
+		speakRegistry.delete(element)
+	}
+
+	function pauseAllSpeakInstances() {
+		globallyPaused = true
+		forEachSpeakController((controller) => controller.pause?.())
+	}
+
+	function resumeAllSpeakInstances() {
+		globallyPaused = false
+		forEachSpeakController((controller) => controller.resume?.())
+	}
+
+	function isSpeakGloballyPaused() {
+		return globallyPaused
+	}
+
+	function startNextSpeakInstance(currentElement) {
+		if (typeof document === "undefined" || !currentElement) return
+		if (globallyPaused) return
+
+		const wrappers = Array.from(document.querySelectorAll(".speak-wrapper"))
+		const currentIndex = wrappers.indexOf(currentElement)
+		if (currentIndex === -1) return
+
+		for (let i = currentIndex + 1; i < wrappers.length; i += 1) {
+			const nextElement = wrappers[i]
+			const controller = speakRegistry.get(nextElement)
+			if (!controller) continue
+			if (!controller.canStart()) continue
+
+			controller.start()
+			break
+		}
+	}
+</script>
+
 <script>
 	import {onMount} from "svelte"
 	import {Pause, Play} from "lucide-svelte"
@@ -19,6 +76,7 @@
 	let currentIndex = $state(0)
 	let isSpeaking = $state(false)
 	let isPaused = $state(false)
+	let wrapperEl
 
 	const SENTENCE_PAUSE_MS = 220
 	const PARAGRAPH_PAUSE_MS = 420
@@ -226,7 +284,7 @@
 		return queue
 	}
 
-	function finishSpeech() {
+	function finishSpeech(shouldContinue = false) {
 		if (speakTimeout) {
 			clearTimeout(speakTimeout)
 			speakTimeout = null
@@ -236,6 +294,10 @@
 		currentIndex = 0
 		isSpeaking = false
 		isPaused = false
+
+		if (shouldContinue) {
+			startNextSpeakInstance(wrapperEl)
+		}
 	}
 
 	function speakCurrentSegment() {
@@ -266,7 +328,7 @@
 			currentIndex += 1
 
 			if (currentIndex >= speechQueue.length) {
-				finishSpeech()
+				finishSpeech(true)
 				return
 			}
 
@@ -296,7 +358,20 @@
 		loadVoices()
 		window.speechSynthesis.onvoiceschanged = loadVoices
 
+		if (wrapperEl) {
+			registerSpeakInstance(wrapperEl, {
+				start: startSpeech,
+				canStart: () => speechAvailable && !isSpeaking,
+				pause: pauseSpeech,
+				resume: resumeSpeech,
+			})
+		}
+
 		return () => {
+			if (wrapperEl) {
+				unregisterSpeakInstance(wrapperEl)
+			}
+
 			clearSpeechState()
 
 			if (window.speechSynthesis) {
@@ -334,6 +409,14 @@
 		speakCurrentSegment()
 	}
 
+	function pauseAllSpeaks() {
+		pauseAllSpeakInstances()
+	}
+
+	function resumeAllSpeaks() {
+		resumeAllSpeakInstances()
+	}
+
 	function startSpeech() {
 		if (!speechAvailable || !contentEl) return
 
@@ -350,11 +433,16 @@
 	function toggleSpeech() {
 		if (isSpeaking) {
 			if (isPaused) {
-				resumeSpeech()
+				resumeAllSpeaks()
 				return
 			}
 
-			pauseSpeech()
+			pauseAllSpeaks()
+			return
+		}
+
+		if (isSpeakGloballyPaused()) {
+			resumeAllSpeaks()
 			return
 		}
 
@@ -368,7 +456,7 @@
 	})
 </script>
 
-<div class="speak-wrapper">
+<div class="speak-wrapper" bind:this={wrapperEl}>
 	{#if speechAvailable}
 		<button
 			type="button"
