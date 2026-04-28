@@ -4,11 +4,13 @@
 	import Navbar from "$lib/Navbar.svelte"
 	import SearchBar from "$lib/SearchBar.svelte"
 	import {pageBackground} from "$lib/stores"
+	import Reader from "$lib/Reader.svelte"
 
 	let {children} = $props()
 </script>
 
 <div class="site-shell">
+	<Reader />
 	{#if $pageBackground.src}
 		{#key `${$pageBackground.src}:${$pageBackground.blur}`}
 			<div

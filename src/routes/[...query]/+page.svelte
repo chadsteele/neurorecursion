@@ -245,7 +245,6 @@
 		</script>
 	{/each}
 </svelte:head>
-<Reader />
 
 <Parallax
 	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.avif"

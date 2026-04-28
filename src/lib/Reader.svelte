@@ -2,19 +2,130 @@
 	import {onMount} from "svelte"
 	import {Play, Pause, ChevronLeft, ChevronRight, Trash2} from "lucide-svelte"
 
+	let {
+		voiceName = "",
+		lang = "en-US",
+		rate = 0.96,
+		pitch = 1.05,
+		volume = 1,
+	} = $props()
+
 	let speechAvailable = $state(false)
+	let voices = $state([])
 	let isReading = $state(false)
 	let isPaused = $state(false)
 	let currentSpan = $state(null)
+	let currentSegments = $state([])
+	let currentSentenceIndex = $state(0)
 	let position = $state({x: 0, y: 0})
 	let isDragging = $state(false)
 	let dragOffset = $state({x: 0, y: 0})
 	let readerEl = $state(null)
 	let isDeleted = $state(false)
 	let trashHovering = $state(false)
+	let speakTimeout = null
+	let activeSpeechToken = 0
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
+	const SENTENCE_PAUSE_MS = 220
+	const HYPHEN_PAUSE_MS = SENTENCE_PAUSE_MS
+	const SPAN_PAUSE_MS = 420
+	const FEMALE_VOICE_HINTS = ["moira", "zira", "aria", "jenny", "female"]
+	const READER_POSITION_STORAGE_KEY = "reader-floating-position"
+	const READER_BASE_LEFT_PX = 50
+	const READER_BASE_TOP_PX = 100
+
+	function loadVoices() {
+		if (typeof window === "undefined" || !window.speechSynthesis) return
+		voices = window.speechSynthesis.getVoices() || []
+	}
+
+	function pickVoice() {
+		if (!voices.length) return null
+
+		if (voiceName) {
+			const exact = voices.find(
+				(voice) => voice.name.toLowerCase() === voiceName.toLowerCase(),
+			)
+			if (exact) return exact
+		}
+
+		const preferredLangPrefix = (lang || "en").toLowerCase().split("-")[0]
+		const sameLang = voices.filter((voice) =>
+			voice.lang.toLowerCase().startsWith(preferredLangPrefix),
+		)
+
+		const femalePreferred = sameLang.find((voice) =>
+			FEMALE_VOICE_HINTS.some((hint) =>
+				voice.name.toLowerCase().includes(hint),
+			),
+		)
+		if (femalePreferred) return femalePreferred
+
+		return sameLang[0] || voices[0]
+	}
+
+	function splitIntoSentences(text) {
+		const normalizedText = (text || "").trim()
+		if (!normalizedText) return []
+
+		const sentenceParts = normalizedText
+			.split(/(?<=[.!?])\s+/)
+			.map((sentence) => sentence.trim())
+			.filter(Boolean)
+
+		const segments = []
+
+		for (const sentence of sentenceParts) {
+			const hyphenParts = sentence
+				.split(/\s+-\s+/)
+				.map((part) => part.trim())
+				.filter(Boolean)
+
+			hyphenParts.forEach((part, index) => {
+				const isLastPartInSentence = index === hyphenParts.length - 1
+				segments.push({
+					text: part,
+					pauseAfter: isLastPartInSentence
+						? SENTENCE_PAUSE_MS
+						: HYPHEN_PAUSE_MS,
+				})
+			})
+		}
+
+		return segments
+	}
+
+	function clearSpeakTimeout() {
+		if (speakTimeout) {
+			clearTimeout(speakTimeout)
+			speakTimeout = null
+		}
+	}
+
+	function cancelBrowserSpeech() {
+		clearSpeakTimeout()
+
+		if (typeof window !== "undefined" && window.speechSynthesis) {
+			window.speechSynthesis.cancel()
+		}
+
+		activeSpeechToken += 1
+	}
+
+	function stopReading({clearHighlight = false} = {}) {
+		cancelBrowserSpeech()
+		currentSegments = []
+		currentSentenceIndex = 0
+		isReading = false
+		isPaused = false
+
+		if (clearHighlight) {
+			currentSpan = null
+			highlightSpan(null)
+		}
+	}
 
 	function remToPx(rem) {
 		if (typeof window === "undefined") return rem * 16
@@ -32,14 +143,20 @@
 		const rect = readerEl.getBoundingClientRect()
 		const horizontalSideSpace = remToPx(SIDE_REVEAL_REM)
 
-		const minX = VIEWPORT_PADDING_PX + horizontalSideSpace
+		const minX =
+			VIEWPORT_PADDING_PX + horizontalSideSpace - READER_BASE_LEFT_PX
 		const maxX =
 			window.innerWidth -
 			rect.width -
 			VIEWPORT_PADDING_PX -
-			horizontalSideSpace
-		const minY = VIEWPORT_PADDING_PX
-		const maxY = window.innerHeight - rect.height - VIEWPORT_PADDING_PX
+			horizontalSideSpace -
+			READER_BASE_LEFT_PX
+		const minY = VIEWPORT_PADDING_PX - READER_BASE_TOP_PX
+		const maxY =
+			window.innerHeight -
+			rect.height -
+			VIEWPORT_PADDING_PX -
+			READER_BASE_TOP_PX
 
 		return {
 			x: Math.min(Math.max(nextX, minX), Math.max(minX, maxX)),
@@ -47,8 +164,65 @@
 		}
 	}
 
+	function syncReaderPositionToViewport({persist = false} = {}) {
+		if (typeof window === "undefined" || !readerEl || isDeleted) return
+
+		const clampedPosition = clampDragPosition(position.x, position.y)
+		const hasChanged =
+			clampedPosition.x !== position.x || clampedPosition.y !== position.y
+
+		if (!hasChanged) return
+
+		position = clampedPosition
+
+		if (persist) {
+			saveReaderPosition(clampedPosition)
+		}
+	}
+
+	function saveReaderPosition(nextPosition) {
+		if (typeof window === "undefined") return
+
+		window.localStorage.setItem(
+			READER_POSITION_STORAGE_KEY,
+			JSON.stringify(nextPosition),
+		)
+	}
+
+	function restoreReaderPosition() {
+		if (typeof window === "undefined") return
+
+		const savedPosition = window.localStorage.getItem(
+			READER_POSITION_STORAGE_KEY,
+		)
+		if (!savedPosition) return
+
+		try {
+			const parsed = JSON.parse(savedPosition)
+			if (
+				typeof parsed?.x !== "number" ||
+				typeof parsed?.y !== "number"
+			) {
+				return
+			}
+
+			requestAnimationFrame(() => {
+				position = {x: parsed.x, y: parsed.y}
+				syncReaderPositionToViewport({persist: true})
+			})
+		} catch {
+			window.localStorage.removeItem(READER_POSITION_STORAGE_KEY)
+		}
+	}
+
+	function handleViewportChange() {
+		syncReaderPositionToViewport({persist: true})
+	}
+
 	function findAllSpeakSpans() {
-		return Array.from(document.querySelectorAll("span.speak"))
+		return Array.from(document.querySelectorAll("span.speak")).filter(
+			(span) => !span.closest("button"),
+		)
 	}
 
 	function findFirstVisibleSpeak() {
@@ -75,8 +249,8 @@
 	}
 
 	function highlightSpan(span) {
-		findAllSpeakSpans().forEach((s) => {
-			s.classList.remove("reader-current")
+		findAllSpeakSpans().forEach((candidate) => {
+			candidate.classList.remove("reader-current")
 		})
 
 		if (span) {
@@ -95,80 +269,152 @@
 		})
 	}
 
-	function speakSpan(span) {
-		if (!span) {
-			isReading = false
+	function speakCurrentSentence(token = activeSpeechToken) {
+		if (
+			!speechAvailable ||
+			token !== activeSpeechToken ||
+			!currentSegments.length ||
+			currentSentenceIndex >= currentSegments.length
+		) {
 			return
 		}
 
-		const text = span.textContent
-		const utterance = new SpeechSynthesisUtterance(text)
+		const segment = currentSegments[currentSentenceIndex]
+		const utterance = new SpeechSynthesisUtterance(segment.text)
+		utterance.lang = lang
+		utterance.rate = rate
+		utterance.pitch = pitch
+		utterance.volume = volume
+
+		const selectedVoice = pickVoice()
+		if (selectedVoice) {
+			utterance.voice = selectedVoice
+		}
 
 		utterance.onend = () => {
-			if (isPaused) return
+			if (token !== activeSpeechToken || isPaused) return
 
-			const nextSpan = findNextSpeak(span)
-			if (nextSpan) {
-				currentSpan = nextSpan
-				highlightSpan(nextSpan)
-				speakSpan(nextSpan)
-			} else {
-				isReading = false
-				isPaused = false
-				highlightSpan(null)
+			currentSentenceIndex += 1
+
+			if (currentSentenceIndex >= currentSegments.length) {
+				const nextSpan = findNextSpeak(currentSpan)
+				if (nextSpan) {
+					speakTimeout = setTimeout(() => {
+						speakTimeout = null
+						if (token === activeSpeechToken && !isPaused) {
+							startReadingFromSpan(nextSpan)
+						}
+					}, SPAN_PAUSE_MS)
+				} else {
+					stopReading({clearHighlight: true})
+				}
+				return
 			}
+
+			speakTimeout = setTimeout(() => {
+				speakTimeout = null
+				if (token === activeSpeechToken && !isPaused) {
+					speakCurrentSentence(token)
+				}
+			}, segment.pauseAfter)
 		}
 
 		utterance.onerror = () => {
-			isReading = false
+			if (token !== activeSpeechToken) return
+			stopReading({clearHighlight: true})
 		}
 
-		window.speechSynthesis.cancel()
 		window.speechSynthesis.speak(utterance)
+	}
+
+	function startReadingFromSpan(span) {
+		if (!speechAvailable) return
+		if (!span) {
+			stopReading({clearHighlight: true})
+			return
+		}
+
+		cancelBrowserSpeech()
+
+		currentSpan = span
+		ensureSpanInView(span)
+		highlightSpan(span)
+
+		currentSegments = splitIntoSentences(span.textContent || "")
+		currentSentenceIndex = 0
+
+		if (!currentSegments.length) {
+			const nextSpan = findNextSpeak(span)
+			if (nextSpan) {
+				startReadingFromSpan(nextSpan)
+			} else {
+				stopReading({clearHighlight: true})
+			}
+			return
+		}
+
+		isReading = true
+		isPaused = false
+		speakCurrentSentence(activeSpeechToken)
+	}
+
+	function pauseReading() {
+		if (!speechAvailable || !isReading || isPaused) return
+
+		if (speakTimeout) {
+			clearSpeakTimeout()
+			isPaused = true
+			return
+		}
+
+		if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+			window.speechSynthesis.pause()
+		}
+
+		isPaused = true
+	}
+
+	function resumeReading() {
+		if (!speechAvailable || !isReading || !isPaused) return
+
+		ensureSpanInView(currentSpan)
+		isPaused = false
+
+		if (window.speechSynthesis.paused) {
+			window.speechSynthesis.resume()
+			return
+		}
+
+		speakCurrentSentence(activeSpeechToken)
 	}
 
 	function togglePlay() {
 		if (isReading) {
 			if (isPaused) {
-				ensureSpanInView(currentSpan)
-				isPaused = false
-				window.speechSynthesis.resume()
+				resumeReading()
 			} else {
-				isPaused = true
-				window.speechSynthesis.pause()
+				pauseReading()
 			}
-		} else {
-			const firstVisible = findFirstVisibleSpeak()
-			if (firstVisible) {
-				currentSpan = firstVisible
-				ensureSpanInView(firstVisible)
-				highlightSpan(firstVisible)
-				isReading = true
-				isPaused = false
-				speakSpan(firstVisible)
-			}
+			return
+		}
+
+		const firstVisible = findFirstVisibleSpeak()
+		if (firstVisible) {
+			startReadingFromSpan(firstVisible)
 		}
 	}
 
 	function gotoPrev() {
 		const prevSpan = findPrevSpeak(currentSpan)
 		if (prevSpan) {
-			currentSpan = prevSpan
-			ensureSpanInView(prevSpan)
-			highlightSpan(prevSpan)
-			isPaused = false
-			speakSpan(prevSpan)
+			startReadingFromSpan(prevSpan)
 		}
 	}
 
 	function gotoNext() {
 		const nextSpan = findNextSpeak(currentSpan)
 		if (nextSpan) {
-			currentSpan = nextSpan
-			ensureSpanInView(nextSpan)
-			highlightSpan(nextSpan)
-			isPaused = false
-			speakSpan(nextSpan)
+			startReadingFromSpan(nextSpan)
 		}
 	}
 
@@ -191,11 +437,9 @@
 	function handleMouseUp(e) {
 		if (isDragging && isMouseOverTrash(e)) {
 			isDeleted = true
-			isReading = false
-			isPaused = false
-			if (typeof window !== "undefined" && window.speechSynthesis) {
-				window.speechSynthesis.cancel()
-			}
+			stopReading({clearHighlight: true})
+		} else if (isDragging) {
+			saveReaderPosition(position)
 		}
 
 		isDragging = false
@@ -226,7 +470,7 @@
 	}
 
 	function handleScroll() {
-		if (isReading || isPaused) return
+		if (isReading && !isPaused) return
 
 		const firstVisible = findFirstVisibleSpeak()
 		if (firstVisible && firstVisible !== currentSpan) {
@@ -243,17 +487,29 @@
 
 		if (!speechAvailable) return
 
+		loadVoices()
+		restoreReaderPosition()
+		window.speechSynthesis.onvoiceschanged = loadVoices
+
 		window.addEventListener("mousemove", handleMouseMove)
 		window.addEventListener("mousemove", handleMouseMoveTrash)
 		window.addEventListener("mouseup", handleMouseUp)
 		window.addEventListener("scroll", handleScroll)
+		window.addEventListener("resize", handleViewportChange)
+		window.addEventListener("orientationchange", handleViewportChange)
 
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove)
 			window.removeEventListener("mousemove", handleMouseMoveTrash)
 			window.removeEventListener("mouseup", handleMouseUp)
 			window.removeEventListener("scroll", handleScroll)
-			window.speechSynthesis.cancel()
+			window.removeEventListener("resize", handleViewportChange)
+			window.removeEventListener(
+				"orientationchange",
+				handleViewportChange,
+			)
+			stopReading({clearHighlight: true})
+			window.speechSynthesis.onvoiceschanged = null
 		}
 	})
 </script>
@@ -419,25 +675,33 @@
 	}
 
 	:global(span.reader-current) {
-		font-style: italic;
-		text-decoration-color: rgba(74, 159, 216, 0.7);
-		text-decoration-line: underline;
+		/* font-style: italic; */
+		/* font-weight: 900; */
+		color: white;
+		text-shadow:
+			0 0 8px rgba(255, 255, 255, 0.9),
+			0 0 18px rgba(255, 255, 255, 0.55);
+		/* text-decoration-color: rgba(74, 159, 216, 0.7);
+		text-decoration-line: underline; */
 	}
 
 	.trash-overlay {
 		position: fixed;
 		top: 50%;
 		left: 50%;
+
 		transform: translate(-50%, -50%);
 		z-index: 999;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 50%;
-		height: 50%;
+		width: min(33dvw, 33dvh);
+		height: min(33dvw, 33dvh);
+		border-radius: 50%;
 		color: rgba(255, 100, 100, 0.4);
 		transition: color 0.2s ease;
 		pointer-events: none;
+		padding: 50px;
 	}
 
 	.trash-overlay :global(svg) {
