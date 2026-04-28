@@ -5,17 +5,38 @@
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false
+	const IGNORED_TAGS = new Set(["script", "style", "noscript", "button"])
+	const SENTENCE_DELIMITERS = new Set([".", "?", "!"])
+	const EQUATION_CHARS = new Set([
+		"=",
+		"+",
+		"-",
+		"*",
+		"/",
+		"\\",
+		"×",
+		"÷",
+		"^",
+		"(",
+		")",
+		"[",
+		"]",
+	])
+
+	function startObservingContent() {
+		if (!observer || !contentEl) return
+
+		observer.observe(contentEl, {
+			childList: true,
+			subtree: true,
+		})
+	}
 
 	function isIgnorableElement(element) {
 		if (!(element instanceof HTMLElement)) return true
 
 		const tag = element.tagName.toLowerCase()
-		if (
-			tag === "script" ||
-			tag === "style" ||
-			tag === "noscript" ||
-			tag === "button"
-		) {
+		if (IGNORED_TAGS.has(tag)) {
 			return true
 		}
 
@@ -34,7 +55,6 @@
 		const parent = node.parentElement
 		if (!parent) return false
 		if (parent.closest("span.speak")) return false
-		if (parent.closest("button")) return false
 
 		let current = parent
 		while (current && current !== contentEl) {
@@ -45,10 +65,113 @@
 		return true
 	}
 
+	function getPreviousSignificantChar(text, index) {
+		for (
+			let currentIndex = index - 1;
+			currentIndex >= 0;
+			currentIndex -= 1
+		) {
+			const char = text[currentIndex]
+			if (!/\s/.test(char)) return char
+		}
+
+		return ""
+	}
+
+	function getNextSignificantChar(text, index) {
+		for (
+			let currentIndex = index + 1;
+			currentIndex < text.length;
+			currentIndex += 1
+		) {
+			const char = text[currentIndex]
+			if (!/\s/.test(char)) return char
+		}
+
+		return ""
+	}
+
+	function isEquationChar(char) {
+		return EQUATION_CHARS.has(char)
+	}
+
+	function isSentenceBoundary(text, index) {
+		const char = text[index]
+		if (!SENTENCE_DELIMITERS.has(char)) return false
+
+		const nextChar = text[index + 1] || ""
+		return !nextChar || /\s/.test(nextChar)
+	}
+
+	function isPauseHyphen(text, index) {
+		if (text[index] !== "-") return false
+
+		const previousChar = text[index - 1] || ""
+		const nextChar = text[index + 1] || ""
+		const previousSignificant = getPreviousSignificantChar(text, index)
+		const nextSignificant = getNextSignificantChar(text, index)
+
+		if (!previousSignificant || !nextSignificant) return false
+		if (!/\s/.test(previousChar) && !/\s/.test(nextChar)) return false
+		if (/\d/.test(nextSignificant)) return false
+		if (
+			isEquationChar(previousSignificant) ||
+			isEquationChar(nextSignificant)
+		) {
+			return false
+		}
+		if (/\d/.test(previousSignificant) && /\d/.test(nextSignificant)) {
+			return false
+		}
+
+		return true
+	}
+
+	function splitReadableText(text) {
+		const segments = []
+		let segmentStart = 0
+
+		function pushWrappedSegment(endIndex) {
+			if (endIndex <= segmentStart) return
+
+			segments.push({
+				text: text.slice(segmentStart, endIndex),
+				wrap: true,
+			})
+			segmentStart = endIndex
+		}
+
+		for (let index = 0; index < text.length; index += 1) {
+			if (isSentenceBoundary(text, index)) {
+				pushWrappedSegment(index + 1)
+				continue
+			}
+
+			if (isPauseHyphen(text, index)) {
+				pushWrappedSegment(index)
+				segments.push({
+					text: text[index],
+					wrap: false,
+				})
+				segmentStart = index + 1
+			}
+		}
+
+		if (segmentStart < text.length) {
+			segments.push({
+				text: text.slice(segmentStart),
+				wrap: true,
+			})
+		}
+
+		return segments
+	}
+
 	function wrapReadableText() {
 		if (!contentEl || isWrapping) return
 
 		isWrapping = true
+		observer?.disconnect()
 
 		try {
 			const walker = document.createTreeWalker(
@@ -72,12 +195,27 @@
 			}
 
 			for (const textNode of textNodes) {
-				const span = document.createElement("span")
-				span.className = "speak"
-				span.textContent = textNode.textContent
-				textNode.parentNode?.replaceChild(span, textNode)
+				const fragment = document.createDocumentFragment()
+				const segments = splitReadableText(textNode.textContent || "")
+
+				for (const segment of segments) {
+					if (!segment.text) continue
+
+					if (segment.wrap && segment.text.trim()) {
+						const span = document.createElement("span")
+						span.className = "speak"
+						span.textContent = segment.text
+						fragment.appendChild(span)
+						continue
+					}
+
+					fragment.appendChild(document.createTextNode(segment.text))
+				}
+
+				textNode.parentNode?.replaceChild(fragment, textNode)
 			}
 		} finally {
+			startObservingContent()
 			isWrapping = false
 		}
 	}
@@ -91,10 +229,7 @@
 			wrapReadableText()
 		})
 
-		observer.observe(contentEl, {
-			childList: true,
-			subtree: true,
-		})
+		startObservingContent()
 
 		return () => {
 			observer?.disconnect()

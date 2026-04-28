@@ -8,7 +8,10 @@
 	<div class="references">
 		<Speak>
 			<h3 path="/brain-science">Brain Science</h3>
-			<p>Fear makes every thing worse. Disease is dis-ease.</p>
+			<p>
+				Fear makes every thing worse.
+				<br />Disease. Is. Dis. Ease.
+			</p>
 			<p>
 				Chronic pain, suffering, anxiety, phobias and neuroses are
 				evidence of a hardened limbic loop. Limbic loops are like brain
