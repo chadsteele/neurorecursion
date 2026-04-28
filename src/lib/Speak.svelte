@@ -5,7 +5,7 @@
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false
-	const IGNORED_TAGS = new Set(["script", "style", "noscript", "button"])
+	const IGNORED_TAGS = new Set(["script", "style", "noscript"])
 	const SENTENCE_DELIMITERS = new Set([".", "?", "!"])
 	const EQUATION_CHARS = new Set([
 		"=",

@@ -10,7 +10,7 @@
 			<h3 path="/brain-science">Brain Science</h3>
 			<p>
 				Fear makes every thing worse.
-				<br />Disease. Is. Dis. Ease.
+				<br />Disease is... Dis. Ease.
 			</p>
 			<p>
 				Chronic pain, suffering, anxiety, phobias and neuroses are

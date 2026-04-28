@@ -38,11 +38,18 @@
 	let currentAudio = null
 	let currentAudioUrl = ""
 	let isGeneratingPiper = $state(false)
+	let disableAutoScrollWhilePlaying = false
+	let isProgrammaticScroll = false
+	let programmaticScrollResetTimer = null
+	let navigationDebounceTimer = null
+	let pausedSpanAtPause = null
+	let currentAudioSpan = null
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
 	const SENTENCE_PAUSE_MS = 220
 	const SPAN_PAUSE_MS = 420
+	const NAVIGATION_READ_DEBOUNCE_MS = 700
 	const PIPER_SEGMENT_PAUSE_MS = 0
 	const PIPER_SPAN_PAUSE_MS = 100
 	const FEMALE_VOICE_HINTS = ["moira", "zira", "aria", "jenny", "female"]
@@ -128,6 +135,8 @@
 			currentAudio = null
 		}
 
+		currentAudioSpan = null
+
 		if (currentAudioUrl) {
 			URL.revokeObjectURL(currentAudioUrl)
 			currentAudioUrl = ""
@@ -146,7 +155,15 @@
 		activeSpeechToken += 1
 	}
 
+	function clearNavigationDebounce() {
+		if (navigationDebounceTimer) {
+			clearTimeout(navigationDebounceTimer)
+			navigationDebounceTimer = null
+		}
+	}
+
 	function stopReading({clearHighlight = false} = {}) {
+		clearNavigationDebounce()
 		cancelAllSpeechEngines()
 		piperNextSegmentText = ""
 		piperNextSegmentPromise = null
@@ -377,6 +394,12 @@
 		)
 	}
 
+	function isSpanInView(span) {
+		if (!span) return false
+		const rect = span.getBoundingClientRect()
+		return rect.top < window.innerHeight && rect.bottom > 0
+	}
+
 	function findFirstVisibleSpeak() {
 		const spans = findAllSpeakSpans()
 		for (const span of spans) {
@@ -401,24 +424,209 @@
 	}
 
 	function highlightSpan(span) {
-		findAllSpeakSpans().forEach((candidate) => {
-			candidate.classList.remove("reader-current")
-		})
+		const currentHighlighted = document.querySelector(
+			"span.speak.reader-current",
+		)
+		if (currentHighlighted && currentHighlighted !== span) {
+			currentHighlighted.classList.remove("reader-current")
+		}
 
 		if (span) {
 			span.classList.add("reader-current")
-			span.focus()
+			return
 		}
 	}
 
 	function ensureSpanInView(span) {
 		if (!span) return
+		if (isReading && !isPaused && disableAutoScrollWhilePlaying) return
+
+		isProgrammaticScroll = true
+		if (programmaticScrollResetTimer) {
+			clearTimeout(programmaticScrollResetTimer)
+		}
+		programmaticScrollResetTimer = setTimeout(() => {
+			isProgrammaticScroll = false
+			programmaticScrollResetTimer = null
+		}, 1200)
 
 		span.scrollIntoView({
 			behavior: "smooth",
 			block: "center",
 			inline: "nearest",
 		})
+	}
+
+	function handleUserScrollIntent() {
+		if (!isReading || isPaused) return
+		if (isProgrammaticScroll) return
+		disableAutoScrollWhilePlaying = true
+	}
+
+	function handleScrollKeydown(e) {
+		if (!isReading || isPaused) return
+		if (isProgrammaticScroll) return
+
+		const key = e.key
+		if (
+			key === "PageUp" ||
+			key === "PageDown" ||
+			key === "Home" ||
+			key === "End"
+		) {
+			disableAutoScrollWhilePlaying = true
+		}
+	}
+
+	function isEditableTarget(target) {
+		if (!(target instanceof HTMLElement)) return false
+		if (target.isContentEditable) return true
+		const tag = target.tagName
+		return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT"
+	}
+
+	function handleReaderHotkeys(e) {
+		if (!ttsAvailable) return
+		if (isEditableTarget(e.target)) return
+
+		if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+			e.preventDefault()
+			gotoPrev()
+			return
+		}
+
+		if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+			e.preventDefault()
+			gotoNext()
+			return
+		}
+
+		if (e.key === " ") {
+			e.preventDefault()
+			togglePlay()
+		}
+	}
+
+	function setCurrentSpanSelection(span) {
+		if (!span) return
+		currentSpan = span
+		highlightSpan(span)
+		ensureSpanInView(span)
+	}
+
+	function handleNavigatedSelection(span, shouldResumeReading) {
+		// 1) interrupt playback/piper work right away
+		// 2) invalidate token via cancelAllSpeechEngines()
+		// 3) drop stale prefetch references so old results are ignored
+		clearNavigationDebounce()
+		cancelAllSpeechEngines()
+		piperNextSegmentText = ""
+		piperNextSegmentPromise = null
+
+		if (!shouldResumeReading) return
+
+		navigationDebounceTimer = setTimeout(() => {
+			navigationDebounceTimer = null
+			if (currentSpan === span && !isPaused) {
+				beginReadingCurrentSpan()
+			}
+		}, NAVIGATION_READ_DEBOUNCE_MS)
+	}
+
+	function getAdjacentSpanFromHighlight(direction) {
+		const spans = findAllSpeakSpans()
+		if (!spans.length) return null
+
+		const highlighted = document.querySelector("span.speak.reader-current")
+		let index = spans.indexOf(highlighted)
+
+		if (index === -1) {
+			index = spans.indexOf(currentSpan)
+		}
+
+		if (index === -1) {
+			const firstVisible = findFirstVisibleSpeak()
+			index = spans.indexOf(firstVisible)
+		}
+
+		if (index === -1) return null
+
+		const nextIndex = index + direction
+		if (nextIndex < 0 || nextIndex >= spans.length) return null
+
+		return spans[nextIndex]
+	}
+
+	function beginReadingCurrentSpan() {
+		if (!ttsAvailable || !currentSpan) return
+		clearNavigationDebounce()
+
+		cancelAllSpeechEngines()
+
+		const span = currentSpan
+		currentSegments = splitIntoSentences(span.textContent || "")
+		currentSentenceIndex = 0
+
+		// Preserve an in-flight prefetch if it already matches the first segment
+		// of this span (fired by the previous span's cross-span lookahead).
+		const incomingFirstText = currentSegments[0]?.text ?? ""
+		if (piperNextSegmentText !== incomingFirstText) {
+			piperNextSegmentText = ""
+			piperNextSegmentPromise = null
+		}
+
+		if (!currentSegments.length) {
+			const nextSpan = findNextSpeak(span)
+			if (nextSpan) {
+				setCurrentSpanSelection(nextSpan)
+				beginReadingCurrentSpan()
+			} else {
+				stopReading({clearHighlight: true})
+			}
+			return
+		}
+
+		isReading = true
+		isPaused = false
+
+		if (activeEngine === "piper") {
+			void (async () => {
+				try {
+					const preferredVoice =
+						piperVoiceId || DEFAULT_PIPER_VOICE_ID
+					const session =
+						await getPiperSessionForVoice(preferredVoice)
+					const firstText = currentSegments[0]?.text
+					if (
+						session &&
+						firstText &&
+						piperNextSegmentText !== firstText
+					) {
+						const tPre = performance.now()
+						console.log(
+							`[Reader] ${ts()} Warmup [0]: "${firstText.slice(0, 50)}"`,
+						)
+						piperNextSegmentText = firstText
+						piperNextSegmentPromise = session
+							.predict(firstText)
+							.then((b) => {
+								console.log(
+									`[Reader] ${ts()} Warmup DONE ${(performance.now() - tPre).toFixed(0)}ms`,
+								)
+								return b
+							})
+					} else if (session && firstText) {
+						console.log(
+							`[Reader] ${ts()} Warmup skipped — cross-span prefetch already in flight: "${firstText.slice(0, 50)}"`,
+						)
+					}
+				} catch {
+					// Best-effort warmup only.
+				}
+			})()
+		}
+
+		speakCurrentSentence(activeSpeechToken)
 	}
 
 	function scheduleNextSegment(token, pauseAfter) {
@@ -535,6 +743,7 @@
 		if (token !== activeSpeechToken) return true
 
 		cleanupCurrentAudio()
+		currentAudioSpan = currentSpan
 		currentAudioUrl = URL.createObjectURL(wavBlob)
 		currentAudio = new Audio(currentAudioUrl)
 		currentAudio.volume = Math.min(Math.max(volume, 0), 1)
@@ -591,6 +800,7 @@
 		if (activeEngine === "piper") {
 			void (async () => {
 				const ok = await speakCurrentSentenceWithPiper(segment, token)
+
 				if (token !== activeSpeechToken || isPaused) return
 
 				if (!ok) {
@@ -689,79 +899,14 @@
 			stopReading({clearHighlight: true})
 			return
 		}
-
-		cancelAllSpeechEngines()
-
-		currentSpan = span
-		ensureSpanInView(span)
-		highlightSpan(span)
-
-		currentSegments = splitIntoSentences(span.textContent || "")
-		currentSentenceIndex = 0
-		// Preserve an in-flight prefetch if it already matches the first segment
-		// of this span (fired by the previous span's cross-span lookahead).
-		const incomingFirstText = currentSegments[0]?.text ?? ""
-		if (piperNextSegmentText !== incomingFirstText) {
-			piperNextSegmentText = ""
-			piperNextSegmentPromise = null
-		}
-
-		if (!currentSegments.length) {
-			const nextSpan = findNextSpeak(span)
-			if (nextSpan) {
-				startReadingFromSpan(nextSpan)
-			} else {
-				stopReading({clearHighlight: true})
-			}
-			return
-		}
-
-		isReading = true
-		isPaused = false
-
-		if (activeEngine === "piper") {
-			void (async () => {
-				try {
-					const preferredVoice =
-						piperVoiceId || DEFAULT_PIPER_VOICE_ID
-					const session =
-						await getPiperSessionForVoice(preferredVoice)
-					const firstText = currentSegments[0]?.text
-					if (
-						session &&
-						firstText &&
-						piperNextSegmentText !== firstText
-					) {
-						// Not already in-flight from cross-span lookahead — start now.
-						const tPre = performance.now()
-						console.log(
-							`[Reader] ${ts()} Warmup [0]: "${firstText.slice(0, 50)}"`,
-						)
-						piperNextSegmentText = firstText
-						piperNextSegmentPromise = session
-							.predict(firstText)
-							.then((b) => {
-								console.log(
-									`[Reader] ${ts()} Warmup DONE ${(performance.now() - tPre).toFixed(0)}ms`,
-								)
-								return b
-							})
-					} else if (session && firstText) {
-						console.log(
-							`[Reader] ${ts()} Warmup skipped — cross-span prefetch already in flight: "${firstText.slice(0, 50)}"`,
-						)
-					}
-				} catch {
-					// Best-effort warmup only.
-				}
-			})()
-		}
-
-		speakCurrentSentence(activeSpeechToken)
+		setCurrentSpanSelection(span)
+		beginReadingCurrentSpan()
 	}
 
 	function pauseReading() {
 		if (!ttsAvailable || !isReading || isPaused) return
+		disableAutoScrollWhilePlaying = false
+		pausedSpanAtPause = currentSpan
 
 		if (speakTimeout) {
 			clearSpeakTimeout()
@@ -786,12 +931,25 @@
 
 	function resumeReading() {
 		if (!ttsAvailable || !isReading || !isPaused) return
+		isPaused = false
+		pausedSpanAtPause = null
+
+		if (!isSpanInView(currentSpan)) {
+			const visible = findFirstVisibleSpeak()
+			if (visible) {
+				startReadingFromSpan(visible)
+				return
+			}
+		}
 
 		ensureSpanInView(currentSpan)
-		isPaused = false
 
 		if (activeEngine === "piper") {
 			if (currentAudio && currentAudio.paused) {
+				if (currentAudioSpan && currentAudioSpan !== currentSpan) {
+					startReadingFromSpan(currentSpan)
+					return
+				}
 				void currentAudio.play().catch(() => {
 					activeEngine = speechAvailable ? "webspeech" : "piper"
 					if (activeEngine === "webspeech") {
@@ -832,17 +990,31 @@
 	}
 
 	function gotoPrev() {
-		const prevSpan = findPrevSpeak(currentSpan)
-		if (prevSpan) {
-			startReadingFromSpan(prevSpan)
-		}
+		disableAutoScrollWhilePlaying = false
+		const prevSpan = getAdjacentSpanFromHighlight(-1)
+		if (!prevSpan) return
+
+		const shouldResumeReading = isReading && !isPaused
+
+		// Pure, immediate UI selection path.
+		setCurrentSpanSelection(prevSpan)
+
+		// Separate processing pipeline path.
+		handleNavigatedSelection(prevSpan, shouldResumeReading)
 	}
 
 	function gotoNext() {
-		const nextSpan = findNextSpeak(currentSpan)
-		if (nextSpan) {
-			startReadingFromSpan(nextSpan)
-		}
+		disableAutoScrollWhilePlaying = false
+		const nextSpan = getAdjacentSpanFromHighlight(1)
+		if (!nextSpan) return
+
+		const shouldResumeReading = isReading && !isPaused
+
+		// Pure, immediate UI selection path.
+		setCurrentSpanSelection(nextSpan)
+
+		// Separate processing pipeline path.
+		handleNavigatedSelection(nextSpan, shouldResumeReading)
 	}
 
 	function handleMouseDown(e) {
@@ -897,7 +1069,9 @@
 	}
 
 	function handleScroll() {
-		if (isReading && !isPaused) return
+		if (isReading && !isPaused) {
+			return
+		}
 
 		const firstVisible = findFirstVisibleSpeak()
 		if (firstVisible && firstVisible !== currentSpan) {
@@ -939,19 +1113,36 @@
 		window.addEventListener("mousemove", handleMouseMoveTrash)
 		window.addEventListener("mouseup", handleMouseUp)
 		window.addEventListener("scroll", handleScroll)
+		window.addEventListener("wheel", handleUserScrollIntent, {
+			passive: true,
+		})
+		window.addEventListener("touchmove", handleUserScrollIntent, {
+			passive: true,
+		})
+		window.addEventListener("keydown", handleScrollKeydown)
+		window.addEventListener("keydown", handleReaderHotkeys)
 		window.addEventListener("resize", handleViewportChange)
 		window.addEventListener("orientationchange", handleViewportChange)
 
 		return () => {
+			clearNavigationDebounce()
 			window.removeEventListener("mousemove", handleMouseMove)
 			window.removeEventListener("mousemove", handleMouseMoveTrash)
 			window.removeEventListener("mouseup", handleMouseUp)
 			window.removeEventListener("scroll", handleScroll)
+			window.removeEventListener("wheel", handleUserScrollIntent)
+			window.removeEventListener("touchmove", handleUserScrollIntent)
+			window.removeEventListener("keydown", handleScrollKeydown)
+			window.removeEventListener("keydown", handleReaderHotkeys)
 			window.removeEventListener("resize", handleViewportChange)
 			window.removeEventListener(
 				"orientationchange",
 				handleViewportChange,
 			)
+			if (programmaticScrollResetTimer) {
+				clearTimeout(programmaticScrollResetTimer)
+				programmaticScrollResetTimer = null
+			}
 			stopReading({clearHighlight: true})
 			if (speechAvailable && window.speechSynthesis) {
 				window.speechSynthesis.onvoiceschanged = null
