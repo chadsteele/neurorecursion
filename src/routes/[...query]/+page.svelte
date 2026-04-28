@@ -288,7 +288,8 @@
 				hesitate to sign up for more than one.
 			</p>
 			<p>
-				<strong>This could be your breakthrough! Don't hesitate.</strong
+				<strong
+					>This could be your breakthrough. Yay! Don't hesitate.</strong
 				>
 			</p>
 

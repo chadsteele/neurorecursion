@@ -85,7 +85,7 @@
 					can cause a lifetime of fear and suffering, this process can
 					cause a lifetime of freedom from that fear and suffering.
 				</div>
-				<p>This could be your breakthrough!</p>
+				<p>This could be your breakthrough. Yay!</p>
 			{/if}
 
 			<div class="condition-description">
@@ -98,7 +98,7 @@
 			</div>
 
 			{#if condition.type !== "virtue"}
-				<p>This could be your breakthrough! Sign up now.</p>
+				<p>This could be your breakthrough. Yay! Sign up now.</p>
 			{/if}
 		</Speak>
 
