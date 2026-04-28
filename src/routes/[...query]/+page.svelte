@@ -13,6 +13,7 @@
 	import {getPioneer} from "$data/Pioneers.js"
 	import PioneerCard from "$lib/PioneerCard.svelte"
 	import Disclaimer from "$lib/Disclaimer.svelte"
+	import Reader from "$lib/Reader.svelte"
 
 	let {data} = $props()
 
@@ -244,6 +245,7 @@
 		</script>
 	{/each}
 </svelte:head>
+<Reader />
 
 <Parallax
 	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/children.avif"
@@ -265,14 +267,16 @@
 	background="https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/kids-grass.avif"
 >
 	<section class="paper container">
-		<h2>Enrolling now!</h2>
-		<p>Find your condition below and sign up to see if you qualify!</p>
-		<p>
-			These conditions benefit from our technology that targets
-			neuroplasticity and replaces hardened limbic loops with new neural
-			pathways that increase your capacity for confidence, security, and
-			joy.
-		</p>
+		<span class="speak">
+			<h2>Enrolling now!</h2>
+			<p>Find your condition below and sign up to see if you qualify!</p>
+			<p>
+				These conditions benefit from our technology that targets
+				neuroplasticity and replaces hardened limbic loops with new
+				neural pathways that increase your capacity for confidence,
+				security, and joy.
+			</p>
+		</span>
 		<p>
 			We are continuously adding more. Don't see your condition? Sign up
 			anyway. Also, the descriptions are brief summaries of complex
