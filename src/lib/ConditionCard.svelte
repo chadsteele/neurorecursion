@@ -13,6 +13,7 @@
 	} from "lucide-svelte"
 	import Virtues from "$data/Virtues.js"
 	import RelatedVirtues from "$data/RelatedVirtues.js"
+	import Speak from "./Speak.svelte"
 
 	let {condition = {}, formData = {}, blur = 10} = $props()
 	let showShareModal = $state(false)
@@ -72,33 +73,34 @@
 				alt={condition.name}
 			/>
 		{/if}
+		<Speak>
+			<h3>{condition.name}</h3>
 
-		<h3>{condition.name}</h3>
+			{#if condition.type !== "virtue"}
+				<div class="condition-description">
+					A single traumatic moment that takes a fraction of a second
+					can create limbic loops that can terrorize you for a
+					lifetime. This employs the same neuroplasticity, but without
+					the trauma, and it works in reverse. As powerfully as trauma
+					can cause a lifetime of fear, this process can cause a
+					lifetime of freedom from that fear.
+				</div>
+				<p>This could be your breakthrough!</p>
+			{/if}
 
-		{#if condition.type !== "virtue"}
 			<div class="condition-description">
-				A single traumatic moment that takes a fraction of a second can
-				create limbic loops that can terrorize you for a lifetime. This
-				employs the same neuroplasticity, but without the trauma, and it
-				works in reverse. As powerfully as trauma can cause a lifetime
-				of fear, this process can cause a lifetime of freedom from that
-				fear.
+				{@html condition?.description
+					?.trim()
+					.split("\n\n")
+					.map((para) => `<p>${para.trim().replace(/\n/g, " ")}</p>`)
+					.filter((p) => p !== "<p></p>")
+					.join("")}
 			</div>
-			<p>This could be your breakthrough!</p>
-		{/if}
 
-		<div class="condition-description">
-			{@html condition?.description
-				?.trim()
-				.split("\n\n")
-				.map((para) => `<p>${para.trim().replace(/\n/g, " ")}</p>`)
-				.filter((p) => p !== "<p></p>")
-				.join("")}
-		</div>
-
-		{#if condition.type !== "virtue"}
-			<p>This could be your breakthrough! Sign up now.</p>
-		{/if}
+			{#if condition.type !== "virtue"}
+				<p>This could be your breakthrough! Sign up now.</p>
+			{/if}
+		</Speak>
 
 		<div class="condition-links">
 			{#if condition.type !== "virtue"}
