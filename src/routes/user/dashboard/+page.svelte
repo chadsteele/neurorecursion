@@ -11,8 +11,8 @@
 	const SUPABASE_URL = PUBLIC_SUPABASE_URL
 	const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY
 	const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
-	const MAX_CODE_LENGTH = 32
-	const DEFAULT_DESTINATION_PATH = "/marketplace"
+	const MAX_CODE_LENGTH = 125
+	const SHARE_DESTINATION_PATH = "/marketplace"
 	const MIN_DISCOUNT_PERCENT = 0
 	const MAX_DISCOUNT_PERCENT = 50
 
@@ -29,11 +29,10 @@
 	let createSuccess = $state("")
 	let codesError = $state("")
 	let clipboardMessage = $state("")
+	let codeCharHelperVisible = $state(false)
 	let clipboardTimeout = null
 
 	let newCode = $state("")
-	let campaignName = $state("")
-	let destinationPath = $state(DEFAULT_DESTINATION_PATH)
 	let discountPercent = $state("10")
 	let affiliateCodes = $state([])
 	let qrPreviews = $state({})
@@ -51,15 +50,8 @@
 
 	function normalizeCode(value) {
 		return (value || "")
-			.toUpperCase()
-			.replace(/[^A-Z0-9_-]/g, "")
+			.replace(/[^A-Za-z0-9._~-]/g, "")
 			.slice(0, MAX_CODE_LENGTH)
-	}
-
-	function normalizePath(value) {
-		const trimmed = (value || "").trim()
-		if (!trimmed) return DEFAULT_DESTINATION_PATH
-		return trimmed.startsWith("/") ? trimmed : `/${trimmed}`
 	}
 
 	function validateCode(code) {
@@ -67,12 +59,8 @@
 			return "Code is required"
 		}
 
-		if (code.length < 3) {
-			return "Code must be at least 3 characters"
-		}
-
-		if (!/^[A-Z0-9][A-Z0-9_-]{2,31}$/.test(code)) {
-			return "Use only A-Z, 0-9, underscores, or hyphens"
+		if (!/^[A-Za-z0-9._~-]{1,125}$/.test(code)) {
+			return "Use only URI-safe characters: A-Z, a-z, 0-9, -, ., _, ~"
 		}
 
 		return ""
@@ -102,16 +90,14 @@
 		return ""
 	}
 
-	function getShareUrl(code, path = DEFAULT_DESTINATION_PATH) {
-		const normalizedPath = normalizePath(path)
-
+	function getShareUrl(code) {
 		if (browser && window?.location?.origin) {
-			const url = new URL(normalizedPath, window.location.origin)
+			const url = new URL(SHARE_DESTINATION_PATH, window.location.origin)
 			url.searchParams.set("discount", code)
 			return url.toString()
 		}
 
-		return `${normalizedPath}?discount=${encodeURIComponent(code)}`
+		return `${SHARE_DESTINATION_PATH}?discount=${encodeURIComponent(code)}`
 	}
 
 	async function copyToClipboard(value, successText) {
@@ -136,9 +122,7 @@
 
 		const {data, error} = await supabase
 			.from("affiliate_discount_codes")
-			.select(
-				"id, user_id, code, campaign_name, destination_path, discount_percent, created_at",
-			)
+			.select("id, user_id, code, discount_percent, created_at")
 			.eq("user_id", user.id)
 			.order("created_at", {ascending: false})
 
@@ -203,7 +187,6 @@
 			return
 		}
 
-		const normalizedDestinationPath = normalizePath(destinationPath)
 		isCreating = true
 
 		const {data, error} = await supabase
@@ -211,13 +194,9 @@
 			.insert({
 				user_id: user.id,
 				code: normalizedCode,
-				campaign_name: campaignName.trim() || null,
-				destination_path: normalizedDestinationPath,
 				discount_percent: Number(normalizedDiscountPercent),
 			})
-			.select(
-				"id, user_id, code, campaign_name, destination_path, discount_percent, created_at",
-			)
+			.select("id, user_id, code, discount_percent, created_at")
 			.single()
 
 		if (error) {
@@ -232,15 +211,14 @@
 
 		affiliateCodes = [data, ...affiliateCodes]
 		newCode = ""
-		campaignName = ""
-		destinationPath = DEFAULT_DESTINATION_PATH
+		codeCharHelperVisible = false
 		discountPercent = "10"
 		createSuccess = `Code ${data.code} created and linked to your account.`
 		isCreating = false
 	}
 
-	async function handleDownloadQr(code, path) {
-		const shareUrl = getShareUrl(code, path)
+	async function handleDownloadQr(code) {
+		const shareUrl = getShareUrl(code)
 
 		try {
 			const qrDataUrl = await QRCode.toDataURL(shareUrl, {
@@ -334,24 +312,24 @@
 						<span>Discount Code</span>
 						<input
 							type="text"
-							placeholder="EXAMPLE10"
+							placeholder="my-code_2026~launch"
 							bind:value={newCode}
-							oninput={() => {
-								newCode = normalizeCode(newCode)
+							oninput={(event) => {
+								const rawCode = event.currentTarget.value
+								const normalizedCode = normalizeCode(rawCode)
+								codeCharHelperVisible =
+									rawCode !== normalizedCode
+								newCode = normalizedCode
 							}}
 							maxlength={MAX_CODE_LENGTH}
 							required
 						/>
-					</label>
-
-					<label>
-						<span>Campaign Name (Optional)</span>
-						<input
-							type="text"
-							placeholder="Instagram Reel April"
-							bind:value={campaignName}
-							maxlength="120"
-						/>
+						{#if codeCharHelperVisible}
+							<span class="input-helper">
+								Only URI-safe chars are allowed: A-Z, a-z, 0-9,
+								-, ., _, ~
+							</span>
+						{/if}
 					</label>
 
 					<label>
@@ -367,16 +345,6 @@
 								discountPercent =
 									normalizeDiscountPercent(discountPercent)
 							}}
-							required
-						/>
-					</label>
-
-					<label>
-						<span>Destination Path</span>
-						<input
-							type="text"
-							placeholder="/marketplace"
-							bind:value={destinationPath}
 							required
 						/>
 					</label>
@@ -422,20 +390,10 @@
 										UUID linked: {item.user_id}
 									</p>
 									<p class="muted">
-										Destination: {normalizePath(
-											item.destination_path,
-										)}
-									</p>
-									<p class="muted">
 										Discount: {Number(
 											item.discount_percent,
 										)}%
 									</p>
-									{#if item.campaign_name}
-										<p class="muted">
-											Campaign: {item.campaign_name}
-										</p>
-									{/if}
 								</div>
 								<div class="code-buttons">
 									<button
@@ -452,10 +410,7 @@
 										type="button"
 										onclick={() =>
 											copyToClipboard(
-												getShareUrl(
-													item.code,
-													item.destination_path,
-												),
+												getShareUrl(item.code),
 												"Share URL copied",
 											)}
 									>
@@ -464,10 +419,7 @@
 									<button
 										type="button"
 										onclick={() =>
-											handleDownloadQr(
-												item.code,
-												item.destination_path,
-											)}
+											handleDownloadQr(item.code)}
 									>
 										Download QR
 									</button>
@@ -475,7 +427,7 @@
 							</div>
 
 							<div class="share-url-box">
-								{getShareUrl(item.code, item.destination_path)}
+								{getShareUrl(item.code)}
 							</div>
 
 							{#if qrPreviews[item.code]}
@@ -640,6 +592,11 @@
 		outline: none;
 		border-color: #667eea;
 		box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+	}
+
+	.input-helper {
+		font-size: 0.82rem;
+		color: #7c2d12;
 	}
 
 	.form-actions {

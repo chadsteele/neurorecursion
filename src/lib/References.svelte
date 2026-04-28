@@ -7,9 +7,19 @@
 		<h3 path="/brain-science">Brain Science</h3>
 		<p>Fear makes every thing worse. Disease is dis-ease.</p>
 		<p>
-			Chronic pain, phobias and neuroses usually stem from accidental
-			trauma that locks the brain into a permanent limbic loop. Because
-			the limbic system cannot distinguish between a nightmare and
+			Chronic pain, suffering, anxiety, phobias and neuroses are evidence
+			of a hardened limbic loop. Limbic loops are like brain muscles, they
+			get stronger the more you stress them, but just like a muscle they
+			can atrophy and weaken when you stop using them. The NeuroRecursion
+			protocol empowers you to create a powerful, conscious "relief" from
+			the old loop and create new neural pathways that liberate you from
+			the chronic cycles of suffering your brain can be stuck in. By
+			participating in our research, patients contribute to a growing body
+			of evidence that neurodivergent symptoms are not static; they can be
+			rewired and overcome through targeted neuroplasticity.
+		</p>
+		<p>
+			Because the limbic system cannot distinguish between a nightmare and
 			reality, these loops trigger chronic physical stress. Persistent
 			fear and anxiety cause the hypothalamus to over-stimulate the
 			adrenal glands, flooding the body with cortisol and adrenaline. This
