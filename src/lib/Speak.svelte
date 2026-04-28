@@ -20,20 +20,16 @@
 	let isSpeaking = $state(false)
 	let isPaused = $state(false)
 
-	const SEMANTIC_BLOCK_SELECTOR =
-		"h1, h2, h3, h4, h5, h6, p, li, blockquote, figcaption, dd, dt"
-	const READABLE_BLOCK_SELECTOR = `${SEMANTIC_BLOCK_SELECTOR}, div`
-
 	const SENTENCE_PAUSE_MS = 220
 	const PARAGRAPH_PAUSE_MS = 420
 	const HEADING_PAUSE_MS = 650
 
 	const FEMALE_VOICE_HINTS = [
-		"samantha",
-		"victoria",
-		"ava",
-		"karen",
-		"allison",
+		// "samantha",
+		// "victoria",
+		// "ava",
+		// "karen",
+		// "allison",
 		"moira",
 		"zira",
 		"aria",
@@ -95,30 +91,103 @@
 			.filter(Boolean)
 	}
 
-	function getReadableBlocks() {
+	function isIgnorableElement(element) {
+		if (!(element instanceof HTMLElement)) return true
+
+		const tag = element.tagName.toLowerCase()
+		if (tag === "script" || tag === "style" || tag === "noscript")
+			return true
+		if (element.hidden) return true
+		if (element.getAttribute("aria-hidden") === "true") return true
+
+		return false
+	}
+
+	function hasMeaningfulText(element) {
+		return Boolean((element.textContent || "").trim())
+	}
+
+	function hasMeaningfulDirectText(element) {
+		return Array.from(element.childNodes).some((node) => {
+			return (
+				node.nodeType === Node.TEXT_NODE &&
+				Boolean((node.textContent || "").trim())
+			)
+		})
+	}
+
+	function isHeadingElement(element) {
+		return /^H[1-6]$/.test(element.tagName)
+	}
+
+	function isLikelyBlockElement(element) {
+		if (typeof window === "undefined") return false
+
+		const display = window.getComputedStyle(element).display
+		return (
+			display === "block" ||
+			display === "list-item" ||
+			display === "table" ||
+			display === "flex" ||
+			display === "grid" ||
+			display === "flow-root"
+		)
+	}
+
+	function collectReadableBlocks() {
 		if (!contentEl) return []
 
-		return Array.from(
-			contentEl.querySelectorAll(READABLE_BLOCK_SELECTOR),
-		).filter((block) => {
-			const text = (block.textContent || "").trim()
-			if (!text) return false
+		const elements = Array.from(contentEl.querySelectorAll("*")).filter(
+			(element) => {
+				if (isIgnorableElement(element)) return false
+				if (!hasMeaningfulText(element)) return false
 
-			if (!block.matches("div")) return true
+				if (isHeadingElement(element)) return true
+				if (isLikelyBlockElement(element)) return true
 
-			return !Array.from(block.children).some((child) => {
-				if (!(child instanceof HTMLElement)) return false
-				if (!child.matches(READABLE_BLOCK_SELECTOR)) return false
+				return (
+					hasMeaningfulDirectText(element) &&
+					element.parentElement === contentEl
+				)
+			},
+		)
 
-				return Boolean((child.textContent || "").trim())
-			})
-		})
+		return elements
+	}
+
+	function getOwnedTextForBlock(block, blockSet) {
+		const chunks = []
+
+		function visit(node) {
+			if (node.nodeType === Node.TEXT_NODE) {
+				const text = (node.textContent || "")
+					.replace(/\s+/g, " ")
+					.trim()
+				if (text) chunks.push(text)
+				return
+			}
+
+			if (node.nodeType !== Node.ELEMENT_NODE) return
+
+			const element = node
+			if (!(element instanceof HTMLElement)) return
+			if (isIgnorableElement(element)) return
+
+			if (element !== block && blockSet.has(element)) {
+				return
+			}
+
+			Array.from(element.childNodes).forEach(visit)
+		}
+
+		Array.from(block.childNodes).forEach(visit)
+		return chunks.join(" ").replace(/\s+/g, " ").trim()
 	}
 
 	function buildSpeechQueue() {
 		if (!contentEl) return []
 
-		const blocks = getReadableBlocks()
+		const blocks = collectReadableBlocks()
 		if (!blocks.length) {
 			return splitIntoSentences(contentEl.textContent || "").map(
 				(sentence, index, sentences) => ({
@@ -132,13 +201,14 @@
 		}
 
 		const queue = []
+		const blockSet = new Set(blocks)
 
 		for (const block of blocks) {
-			const text = (block.textContent || "").trim()
+			const text = getOwnedTextForBlock(block, blockSet)
 			if (!text) continue
 
 			const sentences = splitIntoSentences(text)
-			const blockPause = block.matches("h1, h2, h3, h4, h5, h6")
+			const blockPause = isHeadingElement(block)
 				? HEADING_PAUSE_MS
 				: PARAGRAPH_PAUSE_MS
 

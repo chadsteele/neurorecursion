@@ -2,6 +2,7 @@
 	import Parallax from "$lib/Parallax.svelte"
 	import ShareModal from "$lib/ShareModal.svelte"
 	import Tag from "$lib/Tag.svelte"
+	import Speak from "./Speak.svelte"
 
 	let {pioneer = {}} = $props()
 	let showShareModal = $state(false)
@@ -38,85 +39,89 @@
 
 <Parallax background={pioneer.background_url || ""} {blur}>
 	<section class="paper container">
-		<div class="pioneer-header">
-			{#if pioneer.img_url}
-				<img
-					src={pioneer.img_url}
-					alt={pioneer.name}
-					class="pioneer-image"
-				/>
+		<Speak>
+			<div class="pioneer-header">
+				{#if pioneer.img_url}
+					<img
+						src={pioneer.img_url}
+						alt={pioneer.name}
+						class="pioneer-image"
+					/>
+				{/if}
+				<div class="pioneer-info">
+					<h3>{pioneer.name}</h3>
+					<p class="title">{pioneer.title}</p>
+					<p class="institution">{pioneer.institution}</p>
+					{#if pioneer.department}
+						<p class="department">
+							Department of {pioneer.department}
+						</p>
+					{/if}
+				</div>
+			</div>
+
+			{#if pioneer.education}
+				<div class="credentials">
+					<h4>Education</h4>
+					<p>{pioneer.education}</p>
+				</div>
 			{/if}
-			<div class="pioneer-info">
-				<h3>{pioneer.name}</h3>
-				<p class="title">{pioneer.title}</p>
-				<p class="institution">{pioneer.institution}</p>
-				{#if pioneer.department}
-					<p class="department">Department of {pioneer.department}</p>
-				{/if}
-			</div>
-		</div>
 
-		{#if pioneer.education}
-			<div class="credentials">
-				<h4>Education</h4>
-				<p>{pioneer.education}</p>
-			</div>
-		{/if}
-
-		{#if pioneer.researchFocus}
-			<div class="research-focus">
-				<h4>Research Focus</h4>
-				<p>{pioneer.researchFocus}</p>
-			</div>
-		{/if}
-
-		{#if pioneer.description}
-			<div class="description">
-				<h4>Research</h4>
-				<div>
-					{@html pioneer.description
-						?.trim()
-						.split("\n\n")
-						.map(
-							(para) =>
-								`<p>${para.trim().replace(/\n/g, " ")}</p>`,
-						)
-						.filter((p) => p !== "<p></p>")
-						.join("")}
+			{#if pioneer.researchFocus}
+				<div class="research-focus">
+					<h4>Research Focus</h4>
+					<p>{pioneer.researchFocus}</p>
 				</div>
-			</div>
-		{/if}
+			{/if}
 
-		{#if pioneer.researchAreas && pioneer.researchAreas.length > 0}
-			<div class="research-areas">
-				<h4>Research Areas</h4>
-				<div class="tags">
-					{#each pioneer.researchAreas as area (area)}
-						<Tag label={area} />
-					{/each}
+			{#if pioneer.description}
+				<div class="description">
+					<h4>Research</h4>
+					<div>
+						{@html pioneer.description
+							?.trim()
+							.split("\n\n")
+							.map(
+								(para) =>
+									`<p>${para.trim().replace(/\n/g, " ")}</p>`,
+							)
+							.filter((p) => p !== "<p></p>")
+							.join("")}
+					</div>
 				</div>
-			</div>
-		{/if}
+			{/if}
 
-		<div class="pioneer-actions">
-			<button type="button" class="share-btn" onclick={handleShare}>
-				{#if Share2Icon}
-					<Share2Icon size={18} strokeWidth={2} />
-				{/if}
-				Share
-			</button>
-			<a
-				class="share-btn"
-				href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
-				target="_blank"
-				rel="noopener"
-			>
-				{#if PlayIcon}
-					<PlayIcon size={18} strokeWidth={2} />
-				{/if}
-				Watch
-			</a>
-		</div>
+			{#if pioneer.researchAreas && pioneer.researchAreas.length > 0}
+				<div class="research-areas">
+					<h4>Research Areas</h4>
+					<div class="tags">
+						{#each pioneer.researchAreas as area (area)}
+							<Tag label={area} />
+						{/each}
+					</div>
+				</div>
+			{/if}
+
+			<div class="pioneer-actions">
+				<button type="button" class="share-btn" onclick={handleShare}>
+					{#if Share2Icon}
+						<Share2Icon size={18} strokeWidth={2} />
+					{/if}
+					Share
+				</button>
+				<a
+					class="share-btn"
+					href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
+					target="_blank"
+					rel="noopener"
+				>
+					{#if PlayIcon}
+						<PlayIcon size={18} strokeWidth={2} />
+					{/if}
+					Watch
+				</a>
+			</div>
+		</Speak>
 	</section>
 </Parallax>
 
