@@ -1,7 +1,10 @@
 <script>
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
-	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
+	import {
+		getSupabaseClient,
+		isSupabaseConfigured,
+	} from "$lib/supabaseClient.js"
 	import {onMount} from "svelte"
 
 	const EMAIL_COOLDOWN_SECONDS = 60

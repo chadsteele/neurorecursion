@@ -7,7 +7,10 @@
 		isOfflineEnabled,
 		setOfflineEnabled,
 	} from "$lib/offlineSettings.js"
-	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
+	import {
+		getSupabaseClient,
+		isSupabaseConfigured,
+	} from "$lib/supabaseClient.js"
 	import QRCode from "qrcode"
 	import {onMount} from "svelte"
 
@@ -168,14 +171,16 @@
 			await Promise.all(names.map((name) => caches.delete(name)))
 
 			if ("serviceWorker" in navigator) {
-				const registration = await navigator.serviceWorker.getRegistration()
+				const registration =
+					await navigator.serviceWorker.getRegistration()
 				if (registration) {
 					await registration.update()
 				}
 			}
 
 			await loadOfflineDiagnostics()
-			cacheMessage = "Cache cleared. Reloading to rebuild offline cache..."
+			cacheMessage =
+				"Cache cleared. Reloading to rebuild offline cache..."
 			window.location.reload()
 		} catch (error) {
 			cacheMessage = getErrorMessage(error, "Failed to refresh cache.")
@@ -657,7 +662,9 @@
 				</div>
 				<div class="info-item">
 					<span class="label">Last Updated</span>
-					<span class="value">{diagnosticsUpdatedAt || "Not yet"}</span>
+					<span class="value"
+						>{diagnosticsUpdatedAt || "Not yet"}</span
+					>
 				</div>
 			</div>
 
@@ -676,11 +683,9 @@
 					type="button"
 					class="create-button secondary-button"
 					onclick={refreshCache}
-					disabled={
-						isRefreshingCache ||
+					disabled={isRefreshingCache ||
 						networkStatus !== "Online" ||
-						!offlineEnabled
-					}
+						!offlineEnabled}
 				>
 					{isRefreshingCache
 						? "Refreshing Cache..."

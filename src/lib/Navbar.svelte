@@ -1,7 +1,10 @@
 <script>
 	import {browser} from "$app/environment"
 	import {searchOpen} from "$lib/stores.js"
-	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
+	import {
+		getSupabaseClient,
+		isSupabaseConfigured,
+	} from "$lib/supabaseClient.js"
 	import {onMount} from "svelte"
 	import Logo from "$lib/Logo.svelte"
 

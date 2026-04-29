@@ -1,6 +1,9 @@
 <script>
 	import {goto} from "$app/navigation"
-	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
+	import {
+		getSupabaseClient,
+		isSupabaseConfigured,
+	} from "$lib/supabaseClient.js"
 
 	let message = $state("Completing secure sign-in...")
 	let error = $state("")
