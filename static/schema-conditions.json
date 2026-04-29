@@ -135,7 +135,7 @@
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
     "name": "Pain & Suffering - Context-Driven Pain Amplification",
-    "description": "Some people love pain.  If you're one of them, you don't need this, but if you're like most of us, you suffer about pain, and that suffering is often more debilitating than the pain itself.  This can help.\n\n\t\tYour pain is real. But the suffering built around pain is being actively amplified by the brain. Pain is not a passive meter reading from injured tissue. It is a context-sensitive protection output that the nervous system increases, decreases, suppresses, or prioritizes depending on what it",
+    "description": "Some people love pain.  If you're one of them, you don't need this, but if you're like most of us, you suffer about pain, and that suffering is often more debilitating than the pain itself.  This can help.\n\n\t\tYour pain is real, but the suffering built around pain is being actively amplified by the brain. Pain is not a passive meter reading from injured tissue. It is a context-sensitive protection output that the nervous system increases, decreases, suppresses, or prioritizes depending on what it",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/pain/suffering-loop/context-driven-amplification",
     "identifier": "pain-suffering",
     "mainEntity": {

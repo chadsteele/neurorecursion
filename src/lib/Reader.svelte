@@ -165,6 +165,30 @@
 		}
 	}
 
+	function getPageOgImage() {
+		if (typeof document === "undefined") return ""
+		const meta = document.querySelector('meta[property="og:image"]')
+		return meta?.getAttribute("content") || ""
+	}
+
+	function updateMediaSession(playbackState = "playing") {
+		if (typeof navigator === "undefined" || !("mediaSession" in navigator))
+			return
+
+		const title =
+			typeof document !== "undefined" ? document.title : "Neuro Recursion"
+		const artwork = getPageOgImage()
+
+		navigator.mediaSession.metadata = new MediaMetadata({
+			title,
+			artist: "Neuro Recursion Institute",
+			album: "Clinical Trials",
+			...(artwork ? {artwork: [{src: artwork, sizes: "512x512"}]} : {}),
+		})
+
+		navigator.mediaSession.playbackState = playbackState
+	}
+
 	function stopReading({clearHighlight = false} = {}) {
 		clearNavigationDebounce()
 		cancelAllSpeechEngines()
@@ -174,6 +198,10 @@
 		currentSentenceIndex = 0
 		isReading = false
 		isPaused = false
+
+		if (typeof navigator !== "undefined" && "mediaSession" in navigator) {
+			navigator.mediaSession.playbackState = "none"
+		}
 
 		if (clearHighlight) {
 			currentSpan = null
@@ -635,6 +663,8 @@
 		isReading = true
 		isPaused = false
 
+		updateMediaSession("playing")
+
 		if (activeEngine === "piper") {
 			void (async () => {
 				try {
@@ -894,6 +924,7 @@
 		if (!ttsAvailable || !isReading || isPaused) return
 		disableAutoScrollWhilePlaying = false
 		pausedSpanAtPause = currentSpan
+		updateMediaSession("paused")
 
 		if (speakTimeout) {
 			clearSpeakTimeout()
@@ -920,6 +951,7 @@
 		if (!ttsAvailable || !isReading || !isPaused) return
 		isPaused = false
 		pausedSpanAtPause = null
+		updateMediaSession("playing")
 
 		if (!isSpanInView(currentSpan)) {
 			const visible = findFirstVisibleSpeak()
@@ -1133,6 +1165,25 @@
 		})
 
 		restoreReaderPosition()
+
+		// Register persistent Media Session action handlers for lock screen / background controls
+		if ("mediaSession" in navigator) {
+			navigator.mediaSession.setActionHandler("play", () => {
+				if (isPaused) resumeReading()
+				else if (!isReading) startReadingFromSpan(currentSpan)
+			})
+			navigator.mediaSession.setActionHandler("pause", () => {
+				pauseReading()
+			})
+			navigator.mediaSession.setActionHandler("previoustrack", () => {
+				const prev = findPrevSpeak(currentSpan)
+				if (prev) startReadingFromSpan(prev)
+			})
+			navigator.mediaSession.setActionHandler("nexttrack", () => {
+				const next = findNextSpeak(currentSpan)
+				if (next) startReadingFromSpan(next)
+			})
+		}
 
 		window.addEventListener("mousemove", handleMouseMove)
 		window.addEventListener("mousemove", handleMouseMoveTrash)
