@@ -36,6 +36,7 @@ export const Categories = [
 			"agoraphobia-social-phobia",
 			"panic-disorder-agoraphobia-fear",
 			"hyperhidrosis-emotional-sweating-social-fear",
+			"pain-suffering",
 		],
 	},
 	{

@@ -83,7 +83,7 @@
 					lifetime. This employs the same neuroplasticity, but without
 					the trauma, and it works in reverse. As powerfully as trauma
 					can cause a lifetime of fear and suffering, this process can
-					cause a lifetime of freedom from that fear and suffering.
+					cause a lifetime of freedom from it.
 				</div>
 				<p>This could be your breakthrough. Yay!</p>
 			{/if}
