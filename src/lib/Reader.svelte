@@ -395,13 +395,66 @@
 
 	function findFirstVisibleSpeak() {
 		const spans = findAllSpeakSpans()
-		for (const span of spans) {
+		if (!spans.length) return null
+
+		const viewportHeight = window.innerHeight || 0
+		const viewportWidth = window.innerWidth || 0
+		const targetY = viewportHeight * 0.4
+		let bestFullyVisible = null
+		let bestPartiallyVisible = null
+
+		for (let index = 0; index < spans.length; index += 1) {
+			const span = spans[index]
 			const rect = span.getBoundingClientRect()
-			if (rect.top < window.innerHeight && rect.bottom > 0) {
-				return span
+
+			const visibleTop = Math.max(rect.top, 0)
+			const visibleBottom = Math.min(rect.bottom, viewportHeight)
+			const visibleHeight = visibleBottom - visibleTop
+
+			const visibleLeft = Math.max(rect.left, 0)
+			const visibleRight = Math.min(rect.right, viewportWidth)
+			const visibleWidth = visibleRight - visibleLeft
+
+			if (visibleHeight <= 0 || visibleWidth <= 0) continue
+
+			const centerY = rect.top + rect.height / 2
+			const candidate = {
+				span,
+				distanceToTarget: Math.abs(centerY - targetY),
+				visibleHeight,
+				index,
+			}
+
+			const isFullyVisible =
+				rect.top >= 0 &&
+				rect.bottom <= viewportHeight &&
+				rect.left >= 0 &&
+				rect.right <= viewportWidth
+
+			const isBetterCandidate = (currentBest, next) => {
+				if (!currentBest) return true
+				if (next.distanceToTarget !== currentBest.distanceToTarget) {
+					return next.distanceToTarget < currentBest.distanceToTarget
+				}
+				if (next.visibleHeight !== currentBest.visibleHeight) {
+					return next.visibleHeight > currentBest.visibleHeight
+				}
+				return next.index < currentBest.index
+			}
+
+			if (isFullyVisible) {
+				if (isBetterCandidate(bestFullyVisible, candidate)) {
+					bestFullyVisible = candidate
+				}
+				continue
+			}
+
+			if (isBetterCandidate(bestPartiallyVisible, candidate)) {
+				bestPartiallyVisible = candidate
 			}
 		}
-		return spans[0] || null
+
+		return bestFullyVisible?.span || bestPartiallyVisible?.span || spans[0]
 	}
 
 	function findNextSpeak(current) {
