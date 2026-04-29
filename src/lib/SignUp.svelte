@@ -205,7 +205,7 @@
 
 <section class="paper container">
 	<h2>Sign Up</h2>
-	<p>This could be your breakthrough. Yay!</p>
+	<p>This could be your breakthrough. Let's do this!</p>
 	<p>
 		Sign up to join a clinical study designed to inhibit frequency and
 		intensity of neurological symptoms through targeted neuroplasticity.

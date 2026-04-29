@@ -7,10 +7,10 @@ function buildPathMappings() {
 	const PATH_TO_ID = {}
 	const PIONEERS_MAP = {}
 
-	// Map condition paths to IDs
+	// Map condition paths to condition objects
 	Conditions.forEach((condition) => {
 		if (condition.path && condition.id) {
-			PATH_TO_ID[condition.path] = condition.id
+			PATH_TO_ID[condition.path] = condition
 		}
 	})
 
@@ -77,14 +77,14 @@ export default async (request, context) => {
 			const pioneerName = toTitleCase(pioneerId)
 			ogTitle = `${pioneerName} | Neuroscience Pioneer`
 			ogDescription = `Learn about ${pioneerName}'s groundbreaking contributions to neuroscience research and neuroplasticity at Neuro Recursion Institute.`
-			ogImage = `https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/${pioneerId}.png`
+			ogImage = `https://cri-cdn.netlify.app/src/neurorecursion.com/pioneers/${pioneerId}.avif`
 			console.log(`[edge] Pioneer: ${pioneerName}`)
 		}
 	} else if (searchPath.startsWith("/remote-clinical-trial/")) {
-		// Look up the condition ID from PATH_TO_ID mapping
-		const conditionId = PATH_TO_ID[searchPath]
+		// Look up the condition from PATH_TO_ID mapping
+		const condition = PATH_TO_ID[searchPath]
 
-		if (conditionId) {
+		if (condition) {
 			// Extract first two path segments for title/description
 			const parts = searchPath.split("/").filter((p) => p)
 			if (parts.length >= 3) {
@@ -97,8 +97,10 @@ export default async (request, context) => {
 				ogDescription = variantName
 					? `Evidence-based treatment for ${conditionName.toLowerCase()} related to ${variantName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
 					: `Evidence-based treatment for ${conditionName.toLowerCase()} through targeted neuroplasticity at Neuro Recursion Institute.`
-				ogImage = `https://cri-cdn.netlify.app/og/neurorecursion.com/backgrounds/${conditionId}.png`
-				console.log(`[edge] Condition: ${conditionId}`)
+				ogImage =
+					condition.background_image ||
+					`https://cri-cdn.netlify.app/src/neurorecursion.com/backgrounds/${condition.id}.avif`
+				console.log(`[edge] Condition: ${condition.id}`)
 			}
 		}
 	}

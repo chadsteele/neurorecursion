@@ -73,98 +73,103 @@
 				alt={condition.name}
 			/>
 		{/if}
-		<Speak>
-			<h3>{condition.name}</h3>
 
-			{#if condition.type !== "virtue"}
-				<div class="condition-description">
-					A single traumatic moment that takes a fraction of a second
-					can create limbic loops that can terrorize you for a
-					lifetime. This employs the same neuroplasticity, but without
-					the trauma, and it works in reverse. As powerfully as trauma
-					can cause a lifetime of fear and suffering, this process can
-					cause a lifetime of freedom from it.
-				</div>
-				<p>This could be your breakthrough. Yay!</p>
-			{/if}
+		<h3>{condition.name}</h3>
 
+		{#if condition.type !== "virtue"}
 			<div class="condition-description">
-				{@html condition?.description
-					?.trim()
-					.split("\n\n")
-					.map((para) => `<p>${para.trim().replace(/\n/g, " ")}</p>`)
-					.filter((p) => p !== "<p></p>")
-					.join("")}
+				A single traumatic moment that takes a fraction of a second can
+				create limbic loops that can terrorize you for a lifetime. This
+				employs the same neuroplasticity, but without the trauma, and it
+				works in reverse. As powerfully as trauma can cause a lifetime
+				of fear and suffering, this process can cause a lifetime of
+				freedom from it.
 			</div>
+			<p>This could be your breakthrough. Let's do this!</p>
+		{/if}
 
-			{#if condition.type !== "virtue"}
-				<p>This could be your breakthrough. Yay! Sign up now.</p>
-			{/if}
-		</Speak>
-
-		<div class="condition-links">
-			{#if condition.type !== "virtue"}
-				<label class="toggle-slider">
-					<input
-						type="checkbox"
-						{checked}
-						onchange={handleCheckedChange}
-					/>
-					<span class="slider"></span>
-					<span class="toggle-label">
-						{formData.conditions &&
-						condition.name &&
-						formData.conditions[condition.name]
-							? "Yes, maybe?"
-							: "No, not me!"}
-					</span>
-				</label>
-				<a type="button" class="signup-btn" href="/signup">
-					<CheckCircle2 size={18} strokeWidth={2} />
-					Sign up!
-				</a>
-			{/if}
-
-			{#if condition.ngo_url}
-				<a href={condition.ngo_url} target="_blank" rel="noopener">
-					<Heart size={18} strokeWidth={2} />
-					Support
-				</a>
-			{/if}
-
-			{#if condition.type !== "virtue"}
-				<a
-					href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
-					target="_blank"
-					rel="noopener"
-				>
-					<MapPin size={18} strokeWidth={2} />
-					Help near you
-				</a>
-				<a
-					href={condition.scientific_reference ||
-						`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
-					target="_blank"
-					rel="noopener"
-				>
-					<FlaskConical size={18} strokeWidth={2} />
-					Science
-				</a>
-				<a
-					class="share-btn"
-					href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
-					target="_blank"
-					rel="noopener"
-				>
-					<Play size={18} strokeWidth={2} />
-					Watch
-				</a>
-				<button type="button" class="share-btn" onclick={handleShare}>
-					<Share2 size={18} strokeWidth={2} />
-					Share
-				</button>
-			{/if}
+		<div class="condition-description">
+			{@html condition?.description
+				?.trim()
+				.split("\n\n")
+				.map((para) => `<p>${para.trim().replace(/\n/g, " ")}</p>`)
+				.filter((p) => p !== "<p></p>")
+				.join("")}
 		</div>
+
+		{#if condition.type !== "virtue"}
+			<p>This could be your breakthrough. Let's do this! Sign up now.</p>
+		{/if}
+
+		<Speak mode="off" force>
+			<div class="condition-links">
+				{#if condition.type !== "virtue"}
+					<label class="toggle-slider">
+						<input
+							type="checkbox"
+							{checked}
+							onchange={handleCheckedChange}
+						/>
+						<span class="slider"></span>
+						<span class="toggle-label">
+							{formData.conditions &&
+							condition.name &&
+							formData.conditions[condition.name]
+								? "Yes, maybe?"
+								: "No, not me!"}
+						</span>
+					</label>
+					<a type="button" class="signup-btn" href="/signup">
+						<CheckCircle2 size={18} strokeWidth={2} />
+						Sign up!
+					</a>
+				{/if}
+
+				{#if condition.ngo_url}
+					<a href={condition.ngo_url} target="_blank" rel="noopener">
+						<Heart size={18} strokeWidth={2} />
+						Support
+					</a>
+				{/if}
+
+				{#if condition.type !== "virtue"}
+					<a
+						href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<MapPin size={18} strokeWidth={2} />
+						Help near you
+					</a>
+					<a
+						href={condition.scientific_reference ||
+							`https://pmc.ncbi.nlm.nih.gov/search/?term=${condition.name}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<FlaskConical size={18} strokeWidth={2} />
+						Science
+					</a>
+					<a
+						class="share-btn"
+						href={`https://www.youtube.com/results?search_query=${encodeURIComponent("neurorecursion neuroscience neuroplasticity " + condition.name)}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Play size={18} strokeWidth={2} />
+						Watch
+					</a>
+					<button
+						type="button"
+						class="share-btn"
+						onclick={handleShare}
+					>
+						<Share2 size={18} strokeWidth={2} />
+						Share
+					</button>
+				{/if}
+			</div>
+		</Speak>
 
 		{#if relatedVirtues.length > 0}
 			<h3 style="margin-top:2rem">

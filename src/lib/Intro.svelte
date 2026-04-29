@@ -23,8 +23,8 @@
 
 			<p>
 				<strong
-					>This could be your breakthrough. Yay! Bonus! It's fast and
-					Free!</strong
+					>This could be your breakthrough. Let's do this! Bonus! It's
+					fast and Free!</strong
 				>
 			</p>
 			The Neuro Recursion Institute (<strong>NRI</strong>) studies the
@@ -94,7 +94,7 @@
 				}}>Sign up</button
 			>
 		</p>
-		<p>This could be your breakthrough. Yay!</p>
+		<p>This could be your breakthrough. Let's do this!</p>
 	</Speak>
 </section>
 

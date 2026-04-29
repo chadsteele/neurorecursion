@@ -1,7 +1,31 @@
 <script>
-	import {onMount} from "svelte"
+	import {onMount, setContext, getContext} from "svelte"
 
-	let {children} = $props()
+	let {children, mode = "on", force = false} = $props()
+
+	const parentForcedOn = getContext("speak:forcedOn") ?? false
+	const parentForcedOff = getContext("speak:forcedOff") ?? false
+
+	// Innermost force wins: force-on clears inherited forced-off and vice versa
+	setContext(
+		"speak:forcedOn",
+		mode === "on" && force
+			? true
+			: mode === "off" && force
+				? false
+				: parentForcedOn,
+	)
+	setContext(
+		"speak:forcedOff",
+		mode === "off" && force
+			? true
+			: mode === "on" && force
+				? false
+				: parentForcedOff,
+	)
+
+	// Active if a parent forced it on, or mode is "on" and no parent forced it off
+	const isActive = parentForcedOn || (mode === "on" && !parentForcedOff)
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false
@@ -84,6 +108,10 @@
 		const parent = node.parentElement
 		if (!parent) return false
 		if (parent.closest("span.speak")) return false
+
+		// Do not wrap text owned by a nested <Speak> instance.
+		const nearestSpeakRoot = parent.closest("[data-speak-root]")
+		if (nearestSpeakRoot && nearestSpeakRoot !== contentEl) return false
 
 		let current = parent
 		while (current && current !== contentEl) {
@@ -241,7 +269,7 @@
 	}
 
 	onMount(() => {
-		if (!contentEl) return
+		if (!contentEl || !isActive) return
 
 		wrapReadableText()
 
@@ -257,7 +285,7 @@
 	})
 </script>
 
-<div class="speak-content" bind:this={contentEl}>
+<div class="speak-content" data-speak-root bind:this={contentEl}>
 	{@render children?.()}
 </div>
 

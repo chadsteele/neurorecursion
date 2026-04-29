@@ -289,7 +289,8 @@
 			</p>
 			<p>
 				<strong
-					>This could be your breakthrough. Yay! Don't hesitate.</strong
+					>This could be your breakthrough. Let's do this! Don't
+					hesitate.</strong
 				>
 			</p>
 
