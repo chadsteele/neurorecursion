@@ -1,8 +1,7 @@
 <script>
 	import {browser} from "$app/environment"
-	import {env} from "$env/dynamic/public"
 	import {searchOpen} from "$lib/stores.js"
-	import {createClient} from "@supabase/supabase-js"
+	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
 	import {onMount} from "svelte"
 	import Logo from "$lib/Logo.svelte"
 
@@ -12,12 +11,6 @@
 	let username = $state("")
 	let User = $state(null)
 	let Search = $state(null)
-	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
-	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
-
-	const isSupabaseConfigured = Boolean(
-		PUBLIC_SUPABASE_URL && PUBLIC_SUPABASE_ANON_KEY,
-	)
 
 	if (browser) {
 		import("lucide-svelte").then((module) => {
@@ -67,10 +60,8 @@
 	onMount(() => {
 		if (!isSupabaseConfigured) return
 
-		const supabase = createClient(
-			PUBLIC_SUPABASE_URL,
-			PUBLIC_SUPABASE_ANON_KEY,
-		)
+		const supabase = getSupabaseClient()
+		if (!supabase) return
 
 		supabase.auth.getUser().then(({data}) => {
 			updateUserState(data?.user ?? null)

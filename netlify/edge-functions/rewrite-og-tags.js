@@ -54,7 +54,7 @@ export default async (request, context) => {
 	let ogDescription =
 		"Neuro Recursion Institute - our clinical trial is fast, easy, no drugs, devices or hypnotherapy.  This could be your breakthrough. Join us and experience the future of mental health treatment today."
 	let ogImage =
-		"https://cri-cdn.netlify.app/src/neurorecursion.com/ogfamily.png"
+		"https://cri-cdn.netlify.app/src/neurorecursion.com/ogfamily.avif"
 	let ogUrl = url.href
 
 	// Helper function to convert kebab-case to Title Case

@@ -131,16 +131,16 @@
       "name": "Chronic Pain - Psychosomatic and Nervous System Amplification"
     }
   },
-  "pain-suffering-loop-context-driven-amplification": {
+  "pain-suffering": {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
-    "name": "Pain Suffering Loop - Context-Driven Pain Amplification",
-    "description": "Your pain is real. But the suffering built around pain is often being actively amplified by the brain. Pain is not a passive meter reading from injured tissue. It is a context-sensitive protection output that the nervous system increases, decreases, suppresses, or prioritizes depending on what it thinks matters most. You already know this neurologically: people can ignore major pain when trauma is severe enough, when adrenaline is high enough, or when the task is critical enough. The brain can s",
+    "name": "Pain & Suffering - Context-Driven Pain Amplification",
+    "description": "Some people love pain.  If you're one of them, you don't need this, but if you're like most of us.  You suffer about pain, and that suffering is often more debilitating than the pain itself.  This can help.\n\n\t\tYour pain is real. But the suffering built around pain is being actively amplified by the brain. Pain is not a passive meter reading from injured tissue. It is a context-sensitive protection output that the nervous system increases, decreases, suppresses, or prioritizes depending on what i",
     "url": "https://neurorecursion.com/remote-clinical-trial/free/pain/suffering-loop/context-driven-amplification",
-    "identifier": "pain-suffering-loop-context-driven-amplification",
+    "identifier": "pain-suffering",
     "mainEntity": {
       "@type": "Thing",
-      "name": "Pain Suffering Loop - Context-Driven Pain Amplification"
+      "name": "Pain & Suffering - Context-Driven Pain Amplification"
     }
   },
   "stuttering-childhood-onset-fluency-disorder": {

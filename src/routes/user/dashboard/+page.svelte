@@ -1,24 +1,22 @@
 <script>
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
-	import {env} from "$env/dynamic/public"
-	import {createClient} from "@supabase/supabase-js"
+	import {
+		disableOfflineResources,
+		enableOfflineResources,
+		isOfflineEnabled,
+		setOfflineEnabled,
+	} from "$lib/offlineSettings.js"
+	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
 	import QRCode from "qrcode"
 	import {onMount} from "svelte"
 
-	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
-	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
-	const SUPABASE_URL = PUBLIC_SUPABASE_URL
-	const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY
-	const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
 	const MAX_CODE_LENGTH = 125
 	const SHARE_DESTINATION_PATH = "/marketplace"
 	const MIN_DISCOUNT_PERCENT = 0
 	const MAX_DISCOUNT_PERCENT = 50
 
-	const supabase = isSupabaseConfigured
-		? createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-		: null
+	const supabase = getSupabaseClient()
 
 	let user = $state(null)
 	let loading = $state(true)
@@ -36,6 +34,155 @@
 	let discountPercent = $state("10")
 	let affiliateCodes = $state([])
 	let qrPreviews = $state({})
+	let networkStatus = $state("Unknown")
+	let serviceWorkerScope = $state("Not registered")
+	let serviceWorkerState = $state("Unknown")
+	let cacheCount = $state(0)
+	let cacheNames = $state([])
+	let diagnosticsUpdatedAt = $state("")
+	let cacheMessage = $state("")
+	let isRefreshingWorker = $state(false)
+	let isRefreshingCache = $state(false)
+	let offlineEnabled = $state(true)
+
+	function getErrorMessage(error, fallback) {
+		if (error instanceof Error && error.message) return error.message
+		return fallback
+	}
+
+	async function loadOfflineDiagnostics() {
+		if (!browser) return
+
+		offlineEnabled = isOfflineEnabled()
+
+		networkStatus = navigator.onLine ? "Online" : "Offline"
+
+		if ("serviceWorker" in navigator) {
+			const registration = await navigator.serviceWorker.getRegistration()
+			serviceWorkerScope = registration?.scope || "Not registered"
+			serviceWorkerState =
+				registration?.active?.state ||
+				registration?.waiting?.state ||
+				registration?.installing?.state ||
+				(registration ? "registered" : "not-registered")
+		} else {
+			serviceWorkerScope = "Unsupported"
+			serviceWorkerState = "unsupported"
+		}
+
+		if ("caches" in window) {
+			const names = await caches.keys()
+			cacheNames = names
+			cacheCount = names.length
+		} else {
+			cacheNames = []
+			cacheCount = 0
+		}
+
+		diagnosticsUpdatedAt = new Date().toLocaleTimeString()
+	}
+
+	async function handleOfflineEnabledToggle(event) {
+		const enabled = Boolean(event.currentTarget?.checked)
+		offlineEnabled = enabled
+		setOfflineEnabled(enabled)
+		cacheMessage = ""
+
+		try {
+			if (enabled) {
+				await enableOfflineResources()
+				cacheMessage =
+					"Offline mode enabled. Service worker registration is active."
+			} else {
+				await disableOfflineResources()
+				cacheMessage =
+					"Offline mode disabled. Service worker and caches were removed."
+			}
+			await loadOfflineDiagnostics()
+		} catch (error) {
+			cacheMessage = getErrorMessage(
+				error,
+				"Failed to update offline mode setting.",
+			)
+		}
+	}
+
+	async function refreshServiceWorker() {
+		if (!offlineEnabled) {
+			cacheMessage = "Offline mode is disabled. Enable it first."
+			return
+		}
+
+		if (!browser || !("serviceWorker" in navigator)) {
+			cacheMessage = "Service workers are not supported in this browser."
+			return
+		}
+
+		isRefreshingWorker = true
+		cacheMessage = ""
+
+		try {
+			let registration = await navigator.serviceWorker.getRegistration()
+			if (!registration) {
+				registration = await navigator.serviceWorker.register(
+					"/service-worker.js",
+					{type: "module"},
+				)
+			}
+
+			await registration.update()
+			await loadOfflineDiagnostics()
+			cacheMessage = "Service worker refreshed."
+		} catch (error) {
+			cacheMessage = getErrorMessage(
+				error,
+				"Failed to refresh the service worker.",
+			)
+		} finally {
+			isRefreshingWorker = false
+		}
+	}
+
+	async function refreshCache() {
+		if (!offlineEnabled) {
+			cacheMessage = "Offline mode is disabled. Enable it first."
+			return
+		}
+
+		if (!browser || !("caches" in window)) {
+			cacheMessage = "Cache API is not available in this browser."
+			return
+		}
+
+		if (!navigator.onLine) {
+			cacheMessage =
+				"Go online before refreshing cache so assets can be downloaded again."
+			return
+		}
+
+		isRefreshingCache = true
+		cacheMessage = ""
+
+		try {
+			const names = await caches.keys()
+			await Promise.all(names.map((name) => caches.delete(name)))
+
+			if ("serviceWorker" in navigator) {
+				const registration = await navigator.serviceWorker.getRegistration()
+				if (registration) {
+					await registration.update()
+				}
+			}
+
+			await loadOfflineDiagnostics()
+			cacheMessage = "Cache cleared. Reloading to rebuild offline cache..."
+			window.location.reload()
+		} catch (error) {
+			cacheMessage = getErrorMessage(error, "Failed to refresh cache.")
+		} finally {
+			isRefreshingCache = false
+		}
+	}
 
 	function clearClipboardMessageSoon() {
 		if (clipboardTimeout) {
@@ -136,32 +283,49 @@
 		codesLoading = false
 	}
 
-	onMount(async () => {
-		if (!supabase) {
-			loading = false
-			return
+	onMount(() => {
+		const handleNetworkChange = () => {
+			loadOfflineDiagnostics().catch(() => {
+				cacheMessage = "Failed to refresh offline status."
+			})
 		}
 
-		try {
-			const {data, error} = await supabase.auth.getUser()
+		window.addEventListener("online", handleNetworkChange)
+		window.addEventListener("offline", handleNetworkChange)
 
-			if (error || !data?.user) {
-				goto("/user/login")
+		const runInit = async () => {
+			if (!supabase) {
+				loading = false
+				await loadOfflineDiagnostics()
 				return
 			}
 
-			user = data.user
-			await loadAffiliateCodes()
-		} catch {
-			goto("/user/login")
-		} finally {
-			loading = false
+			try {
+				const {data, error} = await supabase.auth.getUser()
+
+				if (error || !data?.user) {
+					goto("/user/login")
+					return
+				}
+
+				user = data.user
+				await loadAffiliateCodes()
+			} catch {
+				goto("/user/login")
+			} finally {
+				loading = false
+				await loadOfflineDiagnostics()
+			}
 		}
+
+		runInit()
 
 		return () => {
 			if (clipboardTimeout) {
 				clearTimeout(clipboardTimeout)
 			}
+			window.removeEventListener("online", handleNetworkChange)
+			window.removeEventListener("offline", handleNetworkChange)
 		}
 	})
 
@@ -452,6 +616,92 @@
 				>
 				<a href="/marketplace" class="action-link">Open Marketplace</a>
 			</div>
+		</div>
+
+		<div class="dashboard-card">
+			<h2>Offline &amp; Cache</h2>
+			<p class="section-intro">
+				Check network and service worker state, refresh the service
+				worker, or rebuild offline caches.
+			</p>
+
+			<div class="offline-status-grid">
+				<div class="info-item">
+					<span class="label">Offline Mode</span>
+					<label class="offline-toggle">
+						<input
+							type="checkbox"
+							checked={offlineEnabled}
+							onchange={handleOfflineEnabledToggle}
+						/>
+						<span>
+							{offlineEnabled ? "Enabled" : "Disabled"}
+						</span>
+					</label>
+				</div>
+				<div class="info-item">
+					<span class="label">Network</span>
+					<span class="value">{networkStatus}</span>
+				</div>
+				<div class="info-item">
+					<span class="label">Service Worker State</span>
+					<span class="value">{serviceWorkerState}</span>
+				</div>
+				<div class="info-item">
+					<span class="label">Service Worker Scope</span>
+					<span class="value">{serviceWorkerScope}</span>
+				</div>
+				<div class="info-item">
+					<span class="label">Cache Stores</span>
+					<span class="value">{cacheCount}</span>
+				</div>
+				<div class="info-item">
+					<span class="label">Last Updated</span>
+					<span class="value">{diagnosticsUpdatedAt || "Not yet"}</span>
+				</div>
+			</div>
+
+			<div class="offline-actions">
+				<button
+					type="button"
+					class="create-button"
+					onclick={refreshServiceWorker}
+					disabled={isRefreshingWorker || !offlineEnabled}
+				>
+					{isRefreshingWorker
+						? "Refreshing Service Worker..."
+						: "Refresh Service Worker"}
+				</button>
+				<button
+					type="button"
+					class="create-button secondary-button"
+					onclick={refreshCache}
+					disabled={
+						isRefreshingCache ||
+						networkStatus !== "Online" ||
+						!offlineEnabled
+					}
+				>
+					{isRefreshingCache
+						? "Refreshing Cache..."
+						: "Refresh Cache"}
+				</button>
+				<button
+					type="button"
+					class="create-button secondary-button"
+					onclick={loadOfflineDiagnostics}
+				>
+					Refresh Status
+				</button>
+			</div>
+
+			{#if cacheMessage}
+				<p class="message info">{cacheMessage}</p>
+			{/if}
+
+			{#if cacheNames.length > 0}
+				<p class="muted">Active caches: {cacheNames.join(", ")}</p>
+			{/if}
 		</div>
 	</div>
 {:else}
@@ -760,6 +1010,43 @@
 		gap: 1rem;
 	}
 
+	.offline-status-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.offline-actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-bottom: 0.75rem;
+	}
+
+	.offline-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 600;
+		color: #1c1e21;
+	}
+
+	.offline-toggle input {
+		width: 18px;
+		height: 18px;
+	}
+
+	.secondary-button {
+		background: #fff;
+		color: #3730a3;
+		border: 1px solid #c7d2fe;
+	}
+
+	.secondary-button:hover {
+		background: #eef2ff;
+	}
+
 	.action-link {
 		display: inline-block;
 		padding: 12px 16px;
@@ -825,6 +1112,10 @@
 		}
 
 		.code-buttons button {
+			flex: 1 1 100%;
+		}
+
+		.offline-actions .create-button {
 			flex: 1 1 100%;
 		}
 	}

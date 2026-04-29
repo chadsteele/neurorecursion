@@ -1,4 +1,11 @@
 <script>
+	import {onMount} from "svelte"
+	import {
+		disableOfflineResources,
+		enableOfflineResources,
+		isOfflineEnabled,
+		OFFLINE_ENABLED_STORAGE_KEY,
+	} from "$lib/offlineSettings.js"
 	import "../app.css"
 	import Footer from "$lib/Footer.svelte"
 	import Navbar from "$lib/Navbar.svelte"
@@ -7,6 +14,50 @@
 	import Reader from "$lib/Reader.svelte"
 
 	let {children} = $props()
+
+	onMount(() => {
+		const syncOfflinePreference = async () => {
+			if (!isOfflineEnabled()) {
+				await disableOfflineResources()
+				console.log("[service-worker] offline disabled by user")
+				return
+			}
+
+			if (!("serviceWorker" in navigator)) return
+
+			await enableOfflineResources()
+			console.log("[service-worker] registration complete")
+		}
+
+		const logConnectionStatus = () => {
+			const status = navigator.onLine ? "online" : "offline"
+			const offsiteStatus = navigator.onLine ? "onsite" : "offsite"
+			console.log(`[network] status=${status} offsite=${offsiteStatus}`)
+		}
+
+		const handleStorageChange = (event) => {
+			if (event.key !== OFFLINE_ENABLED_STORAGE_KEY) return
+
+			syncOfflinePreference().catch((error) => {
+				console.warn("Failed to apply offline preference", error)
+			})
+		}
+
+		logConnectionStatus()
+		window.addEventListener("online", logConnectionStatus)
+		window.addEventListener("offline", logConnectionStatus)
+		window.addEventListener("storage", handleStorageChange)
+
+		syncOfflinePreference().catch((error) => {
+			console.warn("Service worker registration failed", error)
+		})
+
+		return () => {
+			window.removeEventListener("online", logConnectionStatus)
+			window.removeEventListener("offline", logConnectionStatus)
+			window.removeEventListener("storage", handleStorageChange)
+		}
+	})
 </script>
 
 <div class="site-shell">

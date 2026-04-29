@@ -1,15 +1,9 @@
 <script>
 	import {browser} from "$app/environment"
 	import {goto} from "$app/navigation"
-	import {env} from "$env/dynamic/public"
-	import {createClient} from "@supabase/supabase-js"
+	import {getSupabaseClient, isSupabaseConfigured} from "$lib/supabaseClient.js"
 	import {onMount} from "svelte"
 
-	const PUBLIC_SUPABASE_URL = env.PUBLIC_SUPABASE_URL
-	const PUBLIC_SUPABASE_ANON_KEY = env.PUBLIC_SUPABASE_ANON_KEY
-	const SUPABASE_URL = PUBLIC_SUPABASE_URL
-	const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY
-	const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
 	const EMAIL_COOLDOWN_SECONDS = 60
 	const EMAIL_COOLDOWN_STORAGE_KEY = "auth:registration-email-cooldown-until"
 
@@ -164,7 +158,13 @@
 		successMessage = ""
 
 		try {
-			const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+			const supabase = getSupabaseClient()
+			if (!supabase) {
+				errors.submit =
+					"Supabase client is unavailable in this environment."
+				isSubmitting = false
+				return
+			}
 			const emailRedirectTo = `${window.location.origin}/auth/callback`
 
 			const {error} = await supabase.auth.signInWithOtp({

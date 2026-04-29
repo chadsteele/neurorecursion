@@ -154,7 +154,7 @@ async function main() {
 		for (const condition of conditions) {
 			if (
 				!condition.background_image ||
-				condition.background_image === "/ogfamily.png"
+				condition.background_image === "/ogfamily.avif"
 			) {
 				continue
 			}

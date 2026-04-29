@@ -1,6 +1,6 @@
 # Exclude large pre-generated OG images from deploy
 # They are hosted separately on the asset site
 .svelte-kit/netlify/ogimages/
-.svelte-kit/netlify/ogfamily.png
+.svelte-kit/netlify/ogfamily.avif
 
 
