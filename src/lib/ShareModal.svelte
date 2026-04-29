@@ -1,4 +1,6 @@
 <script>
+	import {onDestroy, onMount} from "svelte"
+
 	let {
 		title = "",
 		description = "",
@@ -6,6 +8,8 @@
 		url = "",
 		onClose = () => {},
 	} = $props()
+
+	let didReplaceAddress = false
 
 	// Convert \n to <br/> tags for HTML rendering
 	function formatDescription(text) {
@@ -89,6 +93,28 @@
 		copyTimeout = setTimeout(() => {
 			copied = false
 		}, 2000)
+	}
+
+	function updateAddressBarForShare() {
+		if (typeof window === "undefined" || !url) return
+
+		try {
+			const target = new URL(url, window.location.origin)
+			if (target.origin !== window.location.origin) return
+
+			const currentRelative =
+				window.location.pathname +
+				window.location.search +
+				window.location.hash
+			const targetRelative = target.pathname + target.search + target.hash
+
+			if (currentRelative === targetRelative) return
+
+			history.replaceState(history.state, "", targetRelative)
+			didReplaceAddress = true
+		} catch {
+			// Ignore malformed URL or restricted history calls.
+		}
 	}
 
 	function legacyCopyRichContent(htmlContent, plainText) {
@@ -257,6 +283,14 @@
 			handleClose()
 		}
 	}
+
+	onMount(() => {
+		updateAddressBarForShare()
+	})
+
+	onDestroy(() => {
+		clearTimeout(copyTimeout)
+	})
 </script>
 
 <div
