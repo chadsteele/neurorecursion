@@ -1,18 +1,12 @@
 <script>
 	import {onMount, setContext, getContext} from "svelte"
 
-	let {
-		children,
-		on = undefined,
-		off = undefined,
-		force = false,
-	} = $props()
+	let {children, on = undefined, off = undefined, force = false} = $props()
 
 	// Supported call styles:
 	// - <Speak>, <Speak on>, <Speak off>
 	// When both on and off are present, default to on.
-	const isLocalOn =
-		on === true ? true : off === true ? false : true
+	const isLocalOn = on === true ? true : off === true ? false : true
 
 	const parentForcedOn = getContext("speak:forcedOn") ?? false
 	const parentForcedOff = getContext("speak:forcedOff") ?? false
