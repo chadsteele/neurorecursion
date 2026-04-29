@@ -101,7 +101,7 @@
 			<p>This could be your breakthrough. Let's do this! Sign up now.</p>
 		{/if}
 
-		<Speak mode="off" force>
+		<Speak off force>
 			<div class="condition-links">
 				{#if condition.type !== "virtue"}
 					<label class="toggle-slider">

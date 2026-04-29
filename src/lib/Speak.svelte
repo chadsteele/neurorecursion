@@ -1,7 +1,18 @@
 <script>
 	import {onMount, setContext, getContext} from "svelte"
 
-	let {children, mode = "on", force = false} = $props()
+	let {
+		children,
+		on = undefined,
+		off = undefined,
+		force = false,
+	} = $props()
+
+	// Supported call styles:
+	// - <Speak>, <Speak on>, <Speak off>
+	// When both on and off are present, default to on.
+	const isLocalOn =
+		on === true ? true : off === true ? false : true
 
 	const parentForcedOn = getContext("speak:forcedOn") ?? false
 	const parentForcedOff = getContext("speak:forcedOff") ?? false
@@ -9,23 +20,23 @@
 	// Innermost force wins: force-on clears inherited forced-off and vice versa
 	setContext(
 		"speak:forcedOn",
-		mode === "on" && force
+		isLocalOn && force
 			? true
-			: mode === "off" && force
+			: !isLocalOn && force
 				? false
 				: parentForcedOn,
 	)
 	setContext(
 		"speak:forcedOff",
-		mode === "off" && force
+		!isLocalOn && force
 			? true
-			: mode === "on" && force
+			: isLocalOn && force
 				? false
 				: parentForcedOff,
 	)
 
 	// Active if a parent forced it on, or mode is "on" and no parent forced it off
-	const isActive = parentForcedOn || (mode === "on" && !parentForcedOff)
+	const isActive = parentForcedOn || (isLocalOn && !parentForcedOff)
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false

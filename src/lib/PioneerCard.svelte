@@ -102,25 +102,31 @@
 				</div>
 			{/if}
 
-			<div class="pioneer-actions">
-				<button type="button" class="share-btn" onclick={handleShare}>
-					{#if Share2Icon}
-						<Share2Icon size={18} strokeWidth={2} />
-					{/if}
-					Share
-				</button>
-				<a
-					class="share-btn"
-					href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
-					target="_blank"
-					rel="noopener"
-				>
-					{#if PlayIcon}
-						<PlayIcon size={18} strokeWidth={2} />
-					{/if}
-					Watch
-				</a>
-			</div>
+			<Speak off force>
+				<div class="pioneer-actions">
+					<button
+						type="button"
+						class="share-btn"
+						onclick={handleShare}
+					>
+						{#if Share2Icon}
+							<Share2Icon size={18} strokeWidth={2} />
+						{/if}
+						Share
+					</button>
+					<a
+						class="share-btn"
+						href={`https://www.youtube.com/results?search_query=${encodeURIComponent(pioneer.name + " " + pioneer.title)}`}
+						target="_blank"
+						rel="noopener"
+					>
+						{#if PlayIcon}
+							<PlayIcon size={18} strokeWidth={2} />
+						{/if}
+						Watch
+					</a>
+				</div>
+			</Speak>
 		</Speak>
 	</section>
 </Parallax>
