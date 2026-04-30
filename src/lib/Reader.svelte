@@ -1,11 +1,12 @@
 <script>
 	import {onMount} from "svelte"
 	import {Play, Pause, ChevronLeft, ChevronRight, Trash2} from "lucide-svelte"
+	import {splitIntoSentences as splitTextIntoSentences} from "$lib/utils/textSegmentation"
 
 	let {
 		voiceName = "",
 		lang = "en-US",
-		rate = 0.96,
+		rate = 1.0,
 		pitch = 1.05,
 		volume = 1,
 	} = $props()
@@ -46,7 +47,11 @@
 	let pausedSpanAtPause = null
 	let currentAudioSpan = null
 	let lastTouchPos = {x: 0, y: 0}
+	let touchStartPos = {x: 0, y: 0}
+	let touchDragPending = false
+	let activeButtonFeedback = $state("")
 	let speakSpanObserver = null
+	let buttonFeedbackTimer = null
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
@@ -55,10 +60,18 @@
 	const NAVIGATION_READ_DEBOUNCE_MS = 700
 	const PIPER_SEGMENT_PAUSE_MS = 0
 	const PIPER_SPAN_PAUSE_MS = 100
+	const PIPER_RATE_MULTIPLIER = 1.0
 	const FEMALE_VOICE_HINTS = ["moira", "zira", "aria", "jenny", "female"]
 	const READER_POSITION_STORAGE_KEY = "reader-floating-position"
+	const READER_SPEED_STORAGE_KEY = "reader-playback-speed"
 	const READER_BASE_LEFT_PX = 50
 	const READER_BASE_TOP_PX = 100
+	const TOUCH_DRAG_THRESHOLD_PX = 10
+	const MIN_SPEED = 0.5
+	const MAX_SPEED = 2.0
+	const DEFAULT_SPEED = 1.0
+	const SPEED_STEP = 0.1
+	const BUTTON_FEEDBACK_MS = 220
 	const DEFAULT_PIPER_VOICE_ID = "en_US-libritts_r-medium"
 	const PIPER_WASM_PATHS = {
 		onnxWasm: "/piper/onnx/",
@@ -74,6 +87,28 @@
 		"en_US-ryan-medium",
 		"en_US-hfc_female-medium",
 	]
+
+	function getViewportRect() {
+		if (typeof window === "undefined") {
+			return {left: 0, top: 0, width: 0, height: 0}
+		}
+
+		if (window.visualViewport) {
+			return {
+				left: window.visualViewport.offsetLeft,
+				top: window.visualViewport.offsetTop,
+				width: window.visualViewport.width,
+				height: window.visualViewport.height,
+			}
+		}
+
+		return {
+			left: 0,
+			top: 0,
+			width: window.innerWidth,
+			height: window.innerHeight,
+		}
+	}
 
 	function loadVoices() {
 		if (typeof window === "undefined" || !window.speechSynthesis) return
@@ -109,16 +144,61 @@
 		return `+${performance.now().toFixed(0)}ms`
 	}
 
+	function clampSpeed(nextRate) {
+		const rounded = Math.round(nextRate * 10) / 10
+		return Math.min(MAX_SPEED, Math.max(MIN_SPEED, rounded))
+	}
+
+	function applyCurrentAudioRate() {
+		if (!currentAudio) return
+		currentAudio.playbackRate = Math.min(
+			Math.max(rate * PIPER_RATE_MULTIPLIER, MIN_SPEED),
+			MAX_SPEED,
+		)
+	}
+
+	function adjustSpeed(delta) {
+		rate = clampSpeed(rate + delta)
+		saveReaderSpeed(rate)
+		applyCurrentAudioRate()
+	}
+
+	function resetSpeed() {
+		rate = DEFAULT_SPEED
+		saveReaderSpeed(rate)
+		applyCurrentAudioRate()
+	}
+
+	function formatSpeedLabel(nextRate) {
+		return Number(nextRate).toFixed(1)
+	}
+
+	function saveReaderSpeed(nextRate) {
+		if (typeof window === "undefined") return
+
+		window.localStorage.setItem(
+			READER_SPEED_STORAGE_KEY,
+			String(clampSpeed(nextRate)),
+		)
+	}
+
+	function restoreReaderSpeed() {
+		if (typeof window === "undefined") return
+
+		const savedRate = window.localStorage.getItem(READER_SPEED_STORAGE_KEY)
+		if (savedRate == null) return
+
+		const parsedRate = Number(savedRate)
+		if (Number.isNaN(parsedRate)) {
+			window.localStorage.removeItem(READER_SPEED_STORAGE_KEY)
+			return
+		}
+
+		rate = clampSpeed(parsedRate)
+	}
+
 	function splitIntoSentences(text) {
-		const normalizedText = (text || "").trim()
-		if (!normalizedText) return []
-
-		const sentenceParts = normalizedText
-			.split(/(?<=[.!?])\s+/)
-			.map((sentence) => sentence.trim())
-			.filter(Boolean)
-
-		return sentenceParts.map((text) => ({
+		return splitTextIntoSentences(text).map((text) => ({
 			text,
 			pauseAfter: SENTENCE_PAUSE_MS,
 		}))
@@ -129,6 +209,43 @@
 			clearTimeout(speakTimeout)
 			speakTimeout = null
 		}
+	}
+
+	function triggerButtonFeedback(buttonId) {
+		activeButtonFeedback = buttonId
+
+		if (buttonFeedbackTimer) {
+			clearTimeout(buttonFeedbackTimer)
+		}
+
+		buttonFeedbackTimer = setTimeout(() => {
+			activeButtonFeedback = ""
+			buttonFeedbackTimer = null
+		}, BUTTON_FEEDBACK_MS)
+	}
+
+	function isDocumentHidden() {
+		if (typeof document === "undefined") return false
+		return document.visibilityState === "hidden"
+	}
+
+	function scheduleContinuation(token, pauseAfter, continuation) {
+		const shouldRunImmediately = pauseAfter <= 0 || isDocumentHidden()
+
+		if (shouldRunImmediately) {
+			speakTimeout = null
+			queueMicrotask(() => {
+				if (token !== activeSpeechToken || isPaused) return
+				continuation()
+			})
+			return
+		}
+
+		speakTimeout = setTimeout(() => {
+			speakTimeout = null
+			if (token !== activeSpeechToken || isPaused) return
+			continuation()
+		}, pauseAfter)
 	}
 
 	function cleanupCurrentAudio() {
@@ -323,21 +440,29 @@
 		}
 
 		const rect = readerEl.getBoundingClientRect()
+		const viewport = getViewportRect()
 		const horizontalSideSpace = remToPx(SIDE_REVEAL_REM)
+		const verticalControlsSpace = remToPx(SIDE_REVEAL_REM)
 
 		const minX =
-			VIEWPORT_PADDING_PX + horizontalSideSpace - READER_BASE_LEFT_PX
+			viewport.left +
+			VIEWPORT_PADDING_PX +
+			horizontalSideSpace -
+			READER_BASE_LEFT_PX
 		const maxX =
-			window.innerWidth -
+			viewport.left +
+			viewport.width -
 			rect.width -
 			VIEWPORT_PADDING_PX -
 			horizontalSideSpace -
 			READER_BASE_LEFT_PX
-		const minY = VIEWPORT_PADDING_PX - READER_BASE_TOP_PX
+		const minY = viewport.top + VIEWPORT_PADDING_PX - READER_BASE_TOP_PX
 		const maxY =
-			window.innerHeight -
+			viewport.top +
+			viewport.height -
 			rect.height -
 			VIEWPORT_PADDING_PX -
+			verticalControlsSpace -
 			READER_BASE_TOP_PX
 
 		return {
@@ -401,10 +526,23 @@
 		syncReaderPositionToViewport({persist: true})
 	}
 
+	const SPEAK_SEGMENT_SELECTOR = 'span.speak, [data-speak-segment="true"]'
+
 	function findAllSpeakSpans() {
-		return Array.from(document.querySelectorAll("span.speak")).filter(
-			(span) => !span.closest("button"),
-		)
+		return Array.from(
+			document.querySelectorAll(SPEAK_SEGMENT_SELECTOR),
+		).filter((span) => {
+			if (span.closest("button")) return false
+
+			// If this element is inside another explicit speak segment,
+			// keep only the outer segment to avoid duplicate reads/highlights.
+			const parentSegment = span.parentElement?.closest(
+				'[data-speak-segment="true"]',
+			)
+			if (parentSegment && parentSegment !== span) return false
+
+			return true
+		})
 	}
 
 	function refreshSpeakSpanPresence() {
@@ -498,9 +636,7 @@
 	}
 
 	function highlightSpan(span) {
-		const currentHighlighted = document.querySelector(
-			"span.speak.reader-current",
-		)
+		const currentHighlighted = document.querySelector(".reader-current")
 		if (currentHighlighted && currentHighlighted !== span) {
 			currentHighlighted.classList.remove("reader-current")
 		}
@@ -611,7 +747,7 @@
 		const spans = findAllSpeakSpans()
 		if (!spans.length) return null
 
-		const highlighted = document.querySelector("span.speak.reader-current")
+		const highlighted = document.querySelector(".reader-current")
 		let index = spans.indexOf(highlighted)
 
 		if (index === -1) {
@@ -631,6 +767,107 @@
 		return spans[nextIndex]
 	}
 
+	/**
+	 * Returns the text to be spoken for an element, respecting data-speak overrides.
+	 * Elements with a data-speak attribute substitute their attribute value for their
+	 * inner text, allowing display text (e.g. "aka") to differ from spoken text
+	 * (e.g. "also known as").
+	 */
+	/**
+	 * Title abbreviations that cause Piper to insert a prosodic pause at the
+	 * period even though they are not sentence boundaries. Replacing them with
+	 * their full spoken forms before synthesis eliminates the pause.
+	 * Keys must be lowercase; the regex built below is case-insensitive.
+	 */
+	const TITLE_ABBREV_MAP = /** @type {Record<string,string>} */ ({
+		"dr.": "Doctor",
+		"mr.": "Mister",
+		"mrs.": "Missus",
+		"ms.": "Miss",
+		"prof.": "Professor",
+		"rev.": "Reverend",
+		"sr.": "Senior",
+		"jr.": "Junior",
+		"st.": "Saint",
+		"vs.": "versus",
+		"gov.": "Governor",
+		"gen.": "General",
+		"sgt.": "Sergeant",
+		"capt.": "Captain",
+		"lt.": "Lieutenant",
+		"col.": "Colonel",
+		"cmdr.": "Commander",
+		"atty.": "Attorney",
+		"rep.": "Representative",
+		"sen.": "Senator",
+		"dept.": "Department",
+		"corp.": "Corporation",
+		"inc.": "Incorporated",
+		"est.": "Established",
+		"approx.": "approximately",
+	})
+
+	const TITLE_ABBREV_RE = new RegExp(
+		`(?<![\\w])(${Object.keys(TITLE_ABBREV_MAP)
+			.sort((a, b) => b.length - a.length)
+			.map((k) => k.replace(/\./g, "\\."))
+			.join("|")})(?=\\s|$)`,
+		"gi",
+	)
+
+	/**
+	 * Expands title abbreviations (Dr., Mr., etc.) in raw spoken text so that
+	 * Piper does not insert a prosodic pause at the period.
+	 */
+	function expandTitleAbbreviations(text) {
+		return text.replace(TITLE_ABBREV_RE, (match) => {
+			return TITLE_ABBREV_MAP[match.toLowerCase()] ?? match
+		})
+	}
+
+	// Inline semantic elements whose content should be spoken in ALL CAPS so
+	// that Piper naturally stresses them without inserting element-boundary pauses.
+	const SPOKEN_EMPHASIS_TAGS = new Set([
+		"strong",
+		"b",
+		"em",
+		"i",
+		"mark",
+		"u",
+	])
+
+	/**
+	 * Returns the text to be spoken for an element.
+	 * If the element itself has a data-speak attribute, that value is returned
+	 * directly (short-circuits recursion). Otherwise, child nodes are walked:
+	 * text nodes contribute their textContent; element nodes recurse. Text inside
+	 * semantic emphasis elements (strong, b, em, i, mark, u) is uppercased so
+	 * Piper stresses it naturally without inserting element-boundary pauses.
+	 * Title abbreviations are expanded to avoid Piper prosodic pauses.
+	 */
+	function getSpokenText(el, inEmphasis = false) {
+		// Short-circuit: the element itself declares what to speak.
+		const selfOverride = el.getAttribute?.("data-speak")
+		if (selfOverride !== null && selfOverride !== undefined) {
+			const text = expandTitleAbbreviations(selfOverride)
+			return inEmphasis ? text.toUpperCase() : text
+		}
+
+		const tag = el.tagName?.toLowerCase()
+		const nowInEmphasis = inEmphasis || SPOKEN_EMPHASIS_TAGS.has(tag)
+
+		let result = ""
+		for (const node of el.childNodes) {
+			if (node.nodeType === Node.TEXT_NODE) {
+				const t = node.textContent ?? ""
+				result += nowInEmphasis ? t.toUpperCase() : t
+			} else if (node.nodeType === Node.ELEMENT_NODE) {
+				result += getSpokenText(node, nowInEmphasis)
+			}
+		}
+		return expandTitleAbbreviations(result)
+	}
+
 	function beginReadingCurrentSpan() {
 		if (!ttsAvailable || !currentSpan) return
 		clearNavigationDebounce()
@@ -638,7 +875,7 @@
 		cancelAllSpeechEngines()
 
 		const span = currentSpan
-		currentSegments = splitIntoSentences(span.textContent || "")
+		currentSegments = splitIntoSentences(getSpokenText(span))
 		currentSentenceIndex = 0
 
 		// Preserve an in-flight prefetch if it already matches the first segment
@@ -691,12 +928,9 @@
 	}
 
 	function scheduleNextSegment(token, pauseAfter) {
-		speakTimeout = setTimeout(() => {
-			speakTimeout = null
-			if (token === activeSpeechToken && !isPaused) {
-				speakCurrentSentence(token)
-			}
-		}, pauseAfter)
+		scheduleContinuation(token, pauseAfter, () => {
+			speakCurrentSentence(token)
+		})
 	}
 
 	async function speakCurrentSentenceWithPiper(segment, token) {
@@ -743,7 +977,7 @@
 					const nextSpan = findNextSpeak(currentSpan)
 					if (nextSpan) {
 						const nextSpanSegs = splitIntoSentences(
-							nextSpan.textContent || "",
+							getSpokenText(nextSpan),
 						)
 						nextTextToPrefetch = nextSpanSegs[0]?.text ?? null
 					}
@@ -778,7 +1012,7 @@
 		currentAudioUrl = URL.createObjectURL(wavBlob)
 		currentAudio = new Audio(currentAudioUrl)
 		currentAudio.volume = Math.min(Math.max(volume, 0), 1)
-		currentAudio.playbackRate = Math.min(Math.max(rate, 0.5), 2)
+		applyCurrentAudioRate()
 
 		if (!isPaused) {
 			try {
@@ -846,12 +1080,9 @@
 							activeEngine === "piper"
 								? PIPER_SPAN_PAUSE_MS
 								: SPAN_PAUSE_MS
-						speakTimeout = setTimeout(() => {
-							speakTimeout = null
-							if (token === activeSpeechToken && !isPaused) {
-								startReadingFromSpan(nextSpan)
-							}
-						}, nextSpanPause)
+						scheduleContinuation(token, nextSpanPause, () => {
+							startReadingFromSpan(nextSpan)
+						})
 					} else {
 						stopReading({clearHighlight: true})
 					}
@@ -887,12 +1118,9 @@
 			if (currentSentenceIndex >= currentSegments.length) {
 				const nextSpan = findNextSpeak(currentSpan)
 				if (nextSpan) {
-					speakTimeout = setTimeout(() => {
-						speakTimeout = null
-						if (token === activeSpeechToken && !isPaused) {
-							startReadingFromSpan(nextSpan)
-						}
-					}, SPAN_PAUSE_MS)
+					scheduleContinuation(token, SPAN_PAUSE_MS, () => {
+						startReadingFromSpan(nextSpan)
+					})
 				} else {
 					stopReading({clearHighlight: true})
 				}
@@ -1009,6 +1237,7 @@
 	}
 
 	function gotoPrev() {
+		triggerButtonFeedback("prev")
 		disableAutoScrollWhilePlaying = false
 		const prevSpan = getAdjacentSpanFromHighlight(-1)
 		if (!prevSpan) return
@@ -1023,6 +1252,7 @@
 	}
 
 	function gotoNext() {
+		triggerButtonFeedback("next")
 		disableAutoScrollWhilePlaying = false
 		const nextSpan = getAdjacentSpanFromHighlight(1)
 		if (!nextSpan) return
@@ -1089,8 +1319,10 @@
 	function handleTouchStart(e) {
 		if (e.touches.length !== 1) return
 		const touch = e.touches[0]
-		isDragging = true
+		isDragging = false
+		touchDragPending = true
 		lastTouchPos = {x: touch.clientX, y: touch.clientY}
+		touchStartPos = {x: touch.clientX, y: touch.clientY}
 		dragOffset = {
 			x: touch.clientX - position.x,
 			y: touch.clientY - position.y,
@@ -1098,6 +1330,20 @@
 	}
 
 	function handleTouchMove(e) {
+		if (!isDragging && touchDragPending) {
+			const touch = e.touches[0]
+			const dx = touch.clientX - touchStartPos.x
+			const dy = touch.clientY - touchStartPos.y
+			const movedDistance = Math.hypot(dx, dy)
+
+			if (movedDistance < TOUCH_DRAG_THRESHOLD_PX) {
+				handleUserScrollIntent()
+				return
+			}
+
+			isDragging = true
+		}
+
 		if (!isDragging) {
 			handleUserScrollIntent()
 			return
@@ -1112,6 +1358,7 @@
 	}
 
 	function handleTouchEnd() {
+		touchDragPending = false
 		if (isDragging) {
 			if (isPointOverTrash(lastTouchPos.x, lastTouchPos.y)) {
 				isDeleted = true
@@ -1165,6 +1412,7 @@
 		})
 
 		restoreReaderPosition()
+		restoreReaderSpeed()
 
 		// Register persistent Media Session action handlers for lock screen / background controls
 		if ("mediaSession" in navigator) {
@@ -1199,6 +1447,17 @@
 		window.addEventListener("resize", handleViewportChange)
 		window.addEventListener("orientationchange", handleViewportChange)
 
+		if (window.visualViewport) {
+			window.visualViewport.addEventListener(
+				"resize",
+				handleViewportChange,
+			)
+			window.visualViewport.addEventListener(
+				"scroll",
+				handleViewportChange,
+			)
+		}
+
 		return () => {
 			clearNavigationDebounce()
 			speakSpanObserver?.disconnect()
@@ -1217,9 +1476,23 @@
 				"orientationchange",
 				handleViewportChange,
 			)
+			if (window.visualViewport) {
+				window.visualViewport.removeEventListener(
+					"resize",
+					handleViewportChange,
+				)
+				window.visualViewport.removeEventListener(
+					"scroll",
+					handleViewportChange,
+				)
+			}
 			if (programmaticScrollResetTimer) {
 				clearTimeout(programmaticScrollResetTimer)
 				programmaticScrollResetTimer = null
+			}
+			if (buttonFeedbackTimer) {
+				clearTimeout(buttonFeedbackTimer)
+				buttonFeedbackTimer = null
 			}
 			stopReading({clearHighlight: true})
 			if (speechAvailable && window.speechSynthesis) {
@@ -1249,11 +1522,14 @@
 		{#if isReading}
 			<button
 				class="reader-btn side-btn prev-btn"
+				class:bounce-left={activeButtonFeedback === "prev"}
 				onclick={gotoPrev}
 				title="Previous span"
 				aria-label="Previous"
 			>
-				<ChevronLeft size={18} strokeWidth={2} />
+				<span class="reader-btn-content">
+					<ChevronLeft size={18} strokeWidth={2} />
+				</span>
 			</button>
 		{/if}
 
@@ -1282,13 +1558,51 @@
 		{#if isReading}
 			<button
 				class="reader-btn side-btn next-btn"
+				class:bounce-right={activeButtonFeedback === "next"}
 				onclick={gotoNext}
 				title="Next span"
 				aria-label="Next"
 			>
-				<ChevronRight size={18} strokeWidth={2} />
+				<span class="reader-btn-content">
+					<ChevronRight size={18} strokeWidth={2} />
+				</span>
 			</button>
 		{/if}
+
+		<button
+			class="reader-btn side-btn speed-btn speed-down-btn"
+			class:bounce-left={activeButtonFeedback === "speed-down"}
+			onclick={() => {
+				triggerButtonFeedback("speed-down")
+				adjustSpeed(-SPEED_STEP)
+			}}
+			title="Decrease speed"
+			aria-label="Decrease speed"
+		>
+			<span class="reader-btn-content">-</span>
+		</button>
+
+		<button
+			class="reader-btn side-btn speed-btn speed-reset-btn"
+			onclick={resetSpeed}
+			title="Reset speed"
+			aria-label="Reset speed"
+		>
+			<span class="reader-btn-content">{formatSpeedLabel(rate)}</span>
+		</button>
+
+		<button
+			class="reader-btn side-btn speed-btn speed-up-btn"
+			class:bounce-right={activeButtonFeedback === "speed-up"}
+			onclick={() => {
+				triggerButtonFeedback("speed-up")
+				adjustSpeed(SPEED_STEP)
+			}}
+			title="Increase speed"
+			aria-label="Increase speed"
+		>
+			<span class="reader-btn-content">+</span>
+		</button>
 	</div>
 {/if}
 
@@ -1340,6 +1654,14 @@
 	.reader-btn:hover {
 		background: rgba(48, 68, 128, 0.8);
 		border-color: rgba(255, 255, 255, 0.4);
+	}
+
+	.reader-btn-content {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
 	}
 
 	.play-btn {
@@ -1408,7 +1730,88 @@
 		transform: translate(calc(-50% + 3.1rem), -50%);
 	}
 
-	:global(span.reader-current) {
+	.reader-btn.bounce-left .reader-btn-content {
+		animation: bounce-left 0.22s ease-out;
+	}
+
+	.reader-btn.bounce-right .reader-btn-content {
+		animation: bounce-right 0.22s ease-out;
+	}
+
+	@keyframes bounce-left {
+		0% {
+			transform: translateX(0);
+		}
+
+		35% {
+			transform: translateX(-0.26rem);
+		}
+
+		70% {
+			transform: translateX(0.12rem);
+		}
+
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes bounce-right {
+		0% {
+			transform: translateX(0);
+		}
+
+		35% {
+			transform: translateX(0.26rem);
+		}
+
+		70% {
+			transform: translateX(-0.12rem);
+		}
+
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	.speed-btn {
+		font-weight: 700;
+		font-size: 0.8rem;
+		line-height: 1;
+		width: 2.1rem;
+		height: 2.1rem;
+		min-width: 2.1rem;
+		background: rgba(128, 128, 128, 0.14);
+		border-color: rgba(128, 128, 128, 0.22);
+	}
+
+	.speed-reset-btn {
+		min-width: 2.5rem;
+		width: auto;
+		padding: 0 0.45rem;
+		font-size: 0.72rem;
+		background: transparent;
+		border-color: transparent;
+	}
+
+	.speed-reset-btn:hover {
+		background: transparent;
+		border-color: transparent;
+	}
+
+	.reader-container.controls-expanded .speed-down-btn {
+		transform: translate(calc(-50% - 2.3rem), calc(-50% + 2.5rem));
+	}
+
+	.reader-container.controls-expanded .speed-reset-btn {
+		transform: translate(-50%, calc(-50% + 2.5rem));
+	}
+
+	.reader-container.controls-expanded .speed-up-btn {
+		transform: translate(calc(-50% + 2.3rem), calc(-50% + 2.5rem));
+	}
+
+	:global(.reader-current) {
 		/* font-style: italic; */
 		/* font-weight: 900; */
 		color: white;

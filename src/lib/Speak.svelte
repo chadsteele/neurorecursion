@@ -1,5 +1,6 @@
 <script>
 	import {onMount, setContext, getContext} from "svelte"
+	import {isPauseHyphen, splitReadableText} from "$lib/utils/textSegmentation"
 
 	let {children, on = undefined, off = undefined, force = false} = $props()
 
@@ -34,29 +35,48 @@
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false
+	/**
+	 * Acronyms whose display form should be replaced with a more speakable
+	 * alternative. Each entry wraps the matched text in a <span data-speak="...">.
+	 * Reader.svelte's getSpokenText() reads data-speak instead of textContent.
+	 */
+	const ACRONYM_MAP = new Map([
+		["aka", "also known as"],
+		["iow", "in other words"],
+		["lol", "laughing out loud"],
+		["tl;dr", "too long, didn't read"],
+		["fyi", "for your information"],
+		["afaik", "as far as I know"],
+		["imho", "in my humble opinion"],
+		["imo", "in my opinion"],
+		["asap", "as soon as possible"],
+		["eta", "estimated time of arrival"],
+		["btw", "by the way"],
+		["diy", "do it yourself"],
+		["rsvp", "please respond"],
+		["i.e.", "that is"],
+		["e.g.", "for example"],
+	])
+
+	// Built from ACRONYM_MAP keys — order matters (longer matches first).
+	const ACRONYM_RE = new RegExp(
+		`(?<![a-zA-Z])(${[...ACRONYM_MAP.keys()]
+			.sort((a, b) => b.length - a.length)
+			.map((k) => k.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&"))
+			.join("|")})(?![a-zA-Z])`,
+		"gi",
+	)
+
 	const IGNORED_TAGS = new Set(["script", "style", "noscript"])
 	const HIDDEN_CLASS_NAMES = new Set([
+		// NOTE: "silence" is intentionally NOT here — silenced elements are visible
+		// and must not be skipped by isIgnorableElement. They are excluded from
+		// wrapping via the data-speak attribute guard in shouldWrapTextNode.
 		"hidden",
 		"invisible",
 		"sr-only",
 		"visually-hidden",
 		"d-none",
-	])
-	const SENTENCE_DELIMITERS = new Set([".", "?", "!"])
-	const EQUATION_CHARS = new Set([
-		"=",
-		"+",
-		"-",
-		"*",
-		"/",
-		"\\",
-		"×",
-		"÷",
-		"^",
-		"(",
-		")",
-		"[",
-		"]",
 	])
 
 	function startObservingContent() {
@@ -113,6 +133,9 @@
 		const parent = node.parentElement
 		if (!parent) return false
 		if (parent.closest("span.speak")) return false
+		// Do not wrap the display text of an acronym span — the data-speak
+		// attribute already carries the spoken form for Reader.svelte.
+		if (parent.closest("[data-speak]")) return false
 
 		// Do not wrap text owned by a nested <Speak> instance.
 		const nearestSpeakRoot = parent.closest("[data-speak-root]")
@@ -127,97 +150,176 @@
 		return true
 	}
 
-	function getPreviousSignificantChar(text, index) {
-		for (
-			let currentIndex = index - 1;
-			currentIndex >= 0;
-			currentIndex -= 1
-		) {
-			const char = text[currentIndex]
-			if (!/\s/.test(char)) return char
-		}
+	function annotateEquations() {
+		if (!contentEl) return
 
-		return ""
+		const equations = contentEl.querySelectorAll("div.equation")
+
+		for (const equation of equations) {
+			if (!(equation instanceof HTMLElement)) continue
+
+			const valueEl = equation.querySelector("div.value")
+			const fraction = equation.querySelector("div.fraction")
+			if (!valueEl || !fraction) continue
+
+			const numeratorEl = fraction.querySelector("div.numerator")
+			const denominatorEl = fraction.querySelector("div.denominator")
+			if (!numeratorEl || !denominatorEl) continue
+
+			const valueText =
+				(valueEl.textContent || "")
+					.replace(/=/g, " equals ")
+					.replace(/\s+/g, " ")
+					.trim() || ""
+			const numeratorText = numeratorEl.textContent?.trim() || ""
+			const denominatorText = denominatorEl.textContent?.trim() || ""
+			if (!valueText || !numeratorText || !denominatorText) continue
+
+			// Mark the whole equation as one speak segment so it is read and
+			// highlighted fluidly as: "Infinity equals dharma over karma".
+			equation.classList.add("speak")
+			equation.setAttribute("data-speak-segment", "true")
+			equation.setAttribute(
+				"data-speak",
+				`${valueText} ${numeratorText} over ${denominatorText}`,
+			)
+		}
 	}
 
-	function getNextSignificantChar(text, index) {
-		for (
-			let currentIndex = index + 1;
-			currentIndex < text.length;
-			currentIndex += 1
-		) {
-			const char = text[currentIndex]
-			if (!/\s/.test(char)) return char
+	function appendEquationOperatorHints() {
+		if (!contentEl) return
+
+		const speakSpans = contentEl.querySelectorAll("span.speak")
+		const operatorLabels = {
+			"/": "divided by",
+			"*": "times",
+			"+": "plus",
+			"-": "minus",
 		}
 
-		return ""
-	}
-
-	function isEquationChar(char) {
-		return EQUATION_CHARS.has(char)
-	}
-
-	function isSentenceBoundary(text, index) {
-		const char = text[index]
-		if (!SENTENCE_DELIMITERS.has(char)) return false
-
-		const nextChar = text[index + 1] || ""
-		return !nextChar || /\s/.test(nextChar)
-	}
-
-	function isPauseHyphen(text, index) {
-		if (text[index] !== "-") return false
-
-		const previousChar = text[index - 1] || ""
-		const nextChar = text[index + 1] || ""
-		const previousSignificant = getPreviousSignificantChar(text, index)
-		const nextSignificant = getNextSignificantChar(text, index)
-
-		if (!previousSignificant || !nextSignificant) return false
-		if (!/\s/.test(previousChar) && !/\s/.test(nextChar)) return false
-		if (/\d/.test(nextSignificant)) return false
-		if (
-			isEquationChar(previousSignificant) ||
-			isEquationChar(nextSignificant)
-		) {
-			return false
-		}
-		if (/\d/.test(previousSignificant) && /\d/.test(nextSignificant)) {
-			return false
-		}
-
-		return true
-	}
-
-	function splitReadableText(text) {
-		const segments = []
-		let segmentStart = 0
-
-		function pushWrappedSegment(endIndex) {
-			if (endIndex <= segmentStart) return
-
-			segments.push({
-				text: text.slice(segmentStart, endIndex),
-				wrap: true,
-			})
-			segmentStart = endIndex
-		}
-
-		for (let index = 0; index < text.length; index += 1) {
-			if (isSentenceBoundary(text, index)) {
-				pushWrappedSegment(index + 1)
+		for (const speakSpan of speakSpans) {
+			if (!(speakSpan instanceof HTMLElement)) continue
+			if (speakSpan.querySelector('[data-speak-operator-hint="true"]')) {
 				continue
 			}
+
+			const text = speakSpan.textContent || ""
+			if (!text.includes("=")) continue
+			if (
+				!["/", "*", "+", "-"].some((operator) =>
+					text.includes(operator),
+				)
+			) {
+				continue
+			}
+
+			const childNodes = Array.from(speakSpan.childNodes)
+
+			for (const childNode of childNodes) {
+				if (!(childNode instanceof Text)) continue
+
+				const nodeText = childNode.textContent || ""
+				if (!/[/*+\-]/.test(nodeText)) continue
+
+				const fragment = document.createDocumentFragment()
+				let currentText = ""
+
+				for (const char of nodeText) {
+					if (char in operatorLabels) {
+						if (currentText) {
+							fragment.appendChild(
+								document.createTextNode(currentText),
+							)
+							currentText = ""
+						}
+						const opSpan = document.createElement("span")
+						opSpan.setAttribute("data-speak", operatorLabels[char])
+						opSpan.setAttribute("data-speak-operator-hint", "true")
+						opSpan.textContent = char
+						fragment.appendChild(opSpan)
+					} else {
+						currentText += char
+					}
+				}
+
+				if (currentText) {
+					fragment.appendChild(document.createTextNode(currentText))
+				}
+
+				childNode.parentNode?.replaceChild(fragment, childNode)
+			}
+		}
+	}
+
+	/**
+	 * Replaces known acronyms in text nodes with <span data-speak="spoken form">
+	 * so the display text is preserved visually while getSpokenText() in
+	 * Reader.svelte reads the spoken alternative.
+	 */
+	function expandAcronyms() {
+		if (!contentEl) return
+
+		const walker = document.createTreeWalker(
+			contentEl,
+			NodeFilter.SHOW_TEXT,
+			{
+				acceptNode(node) {
+					if (node.parentElement?.closest("[data-speak]")) {
+						return NodeFilter.FILTER_REJECT
+					}
+					const text = node.textContent || ""
+					ACRONYM_RE.lastIndex = 0
+					const hasMatch = ACRONYM_RE.test(text)
+					ACRONYM_RE.lastIndex = 0
+					return hasMatch
+						? NodeFilter.FILTER_ACCEPT
+						: NodeFilter.FILTER_REJECT
+				},
+			},
+		)
+
+		const textNodes = []
+		let node = walker.nextNode()
+		while (node) {
+			textNodes.push(node)
+			node = walker.nextNode()
 		}
 
-		if (segmentStart < text.length) {
-			segments.push({
-				text: text.slice(segmentStart),
-				wrap: true,
-			})
-		}
+		for (const textNode of textNodes) {
+			const text = textNode.textContent || ""
+			ACRONYM_RE.lastIndex = 0
 
-		return segments
+			const fragment = document.createDocumentFragment()
+			let lastIndex = 0
+			let match
+
+			while ((match = ACRONYM_RE.exec(text)) !== null) {
+				if (match.index > lastIndex) {
+					fragment.appendChild(
+						document.createTextNode(
+							text.slice(lastIndex, match.index),
+						),
+					)
+				}
+
+				const spoken =
+					ACRONYM_MAP.get(match[0].toLowerCase()) ?? match[0]
+				const span = document.createElement("span")
+				span.setAttribute("data-speak", spoken)
+				span.textContent = match[0]
+				fragment.appendChild(span)
+
+				lastIndex = match.index + match[0].length
+			}
+
+			if (lastIndex < text.length) {
+				fragment.appendChild(
+					document.createTextNode(text.slice(lastIndex)),
+				)
+			}
+
+			textNode.parentNode?.replaceChild(fragment, textNode)
+		}
 	}
 
 	function wrapReadableText() {
@@ -267,6 +369,10 @@
 
 				textNode.parentNode?.replaceChild(fragment, textNode)
 			}
+
+			annotateEquations()
+			appendEquationOperatorHints()
+			expandAcronyms()
 		} finally {
 			startObservingContent()
 			isWrapping = false
@@ -297,5 +403,9 @@
 <style>
 	.speak-content {
 		display: contents;
+	}
+
+	:global(.hidden) {
+		display: none;
 	}
 </style>
