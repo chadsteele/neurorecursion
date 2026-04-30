@@ -56,6 +56,30 @@
 		["rsvp", "please respond"],
 		["i.e.", "that is"],
 		["e.g.", "for example"],
+		["tm", "trademark"],
+		["etc.", "et cetera"],
+		["etc", "et cetera"],
+		["vs.", "versus"],
+		["vs", "versus"],
+		["(r)", "registered"],
+		["®", "registered trademark"],
+		["(c)", "copyright"],
+		["©", "copyright"],
+		["tba", "to be announced"],
+		["tbd", "to be determined"],
+		["faq", "frequently asked questions"],
+		["n/a", "not applicable"],
+		["wrt", "with regard to"],
+		["approx", "approximately"],
+		["est", "established"],
+		["inc", "incorporated"],
+		["ltd", "limited"],
+		["sm", "service mark"],
+		["tm", "trademark"],
+		["et.al.", "and others"],
+		["et al.", "and others"],
+		["♾️", "infinity"],
+		["∞", "infinity"],
 	])
 
 	// Built from ACRONYM_MAP keys — order matters (longer matches first).
@@ -77,6 +101,18 @@
 		"sr-only",
 		"visually-hidden",
 		"d-none",
+	])
+
+	// Inline phrasing elements whose text should NOT get their own speak span.
+	// They will be absorbed into the surrounding sentence span so that emphasis
+	// words flow without prosodic pauses before and after them.
+	const INLINE_PHRASING_TAGS = new Set([
+		"strong",
+		"b",
+		"em",
+		"i",
+		"mark",
+		"u",
 	])
 
 	function startObservingContent() {
@@ -148,6 +184,143 @@
 		}
 
 		return true
+	}
+
+	/**
+	 * After text nodes are wrapped in span.speak elements, inline phrasing
+	 * elements (strong, em, etc.) sit unwrapped between adjacent spans. This
+	 * function merges consecutive speak spans that are separated only by inline
+	 * phrasing elements (and optional whitespace), provided the first span does
+	 * not end at a sentence boundary. The inline elements are moved inside the
+	 * merged span so getSpokenText() in Reader.svelte reads them naturally.
+	 */
+	function mergeSpeakSpansAcrossInlines() {
+		if (!contentEl) return
+
+		// Re-query each pass because we mutate the DOM.
+		let changed = true
+		while (changed) {
+			changed = false
+			const spans = Array.from(contentEl.querySelectorAll("span.speak"))
+
+			for (let i = 0; i < spans.length - 1; i++) {
+				const a = spans[i]
+				const b = spans[i + 1]
+
+				// Don't merge across sentence boundaries.
+				const aText = (a.textContent || "").trimEnd()
+				const lastChar = aText[aText.length - 1] || ""
+				if (lastChar === "." || lastChar === "?" || lastChar === "!")
+					continue
+
+				// Find the lowest common ancestor (LCA) of a and b.
+				const aAncestors = []
+				let node = a.parentElement
+				while (node) {
+					aAncestors.push(node)
+					node = node.parentElement
+				}
+				let cursor = b.parentElement
+				let lca = null
+				while (cursor) {
+					if (aAncestors.includes(cursor)) {
+						lca = cursor
+						break
+					}
+					cursor = cursor.parentElement
+				}
+				if (!lca) continue
+
+				// Path from a to LCA must pass only through inline elements.
+				let pathOk = true
+				node = a.parentElement
+				while (node && node !== lca) {
+					const t = node.tagName?.toLowerCase()
+					if (!INLINE_PHRASING_TAGS.has(t) && t !== "span") {
+						pathOk = false
+						break
+					}
+					node = node.parentElement
+				}
+				if (!pathOk) continue
+
+				// Path from b to LCA must pass only through inline elements.
+				node = b.parentElement
+				while (node && node !== lca) {
+					const t = node.tagName?.toLowerCase()
+					if (!INLINE_PHRASING_TAGS.has(t) && t !== "span") {
+						pathOk = false
+						break
+					}
+					node = node.parentElement
+				}
+				if (!pathOk) continue
+
+				// Find the child of LCA that contains a (aRoot) and b (bRoot).
+				let aRoot = a
+				while (aRoot.parentElement !== lca) aRoot = aRoot.parentElement
+				let bRoot = b
+				while (bRoot.parentElement !== lca) bRoot = bRoot.parentElement
+				if (aRoot === bRoot) continue
+
+				// Collect siblings between aRoot and bRoot.
+				const between = []
+				node = aRoot.nextSibling
+				while (node && node !== bRoot) {
+					between.push(node)
+					node = node.nextSibling
+				}
+				if (!node) continue // bRoot is not after aRoot
+
+				// Everything between them must be inline phrasing or whitespace.
+				const allAbsorbable = between.every(
+					(n) =>
+						(n instanceof Text && !(n.textContent || "").trim()) ||
+						(n instanceof Element &&
+							INLINE_PHRASING_TAGS.has(n.tagName.toLowerCase())),
+				)
+				if (!allAbsorbable) continue
+
+				// Build a new merged span at the LCA level.
+				const merged = document.createElement("span")
+				merged.className = "speak"
+				lca.insertBefore(merged, aRoot)
+				merged.appendChild(aRoot)
+				for (const n of between) merged.appendChild(n)
+				merged.appendChild(bRoot)
+
+				// Unwrap any nested speak spans now inside the merged span.
+				for (const nested of Array.from(
+					merged.querySelectorAll("span.speak"),
+				)) {
+					while (nested.firstChild)
+						nested.parentNode.insertBefore(
+							nested.firstChild,
+							nested,
+						)
+					nested.remove()
+				}
+
+				changed = true
+				break
+			}
+		}
+	}
+
+	function annotateImages() {
+		if (!contentEl) return
+
+		for (const img of contentEl.querySelectorAll("img")) {
+			if (!(img instanceof HTMLElement)) continue
+			if (img.hasAttribute("data-speak")) continue
+
+			const alt = img.getAttribute("alt")?.trim()
+			if (!alt) continue
+
+			img.setAttribute("data-speak", alt)
+			img.setAttribute("data-speak-segment", "true")
+			img.classList.add("speak")
+		}
 	}
 
 	function annotateEquations() {
@@ -370,6 +543,8 @@
 				textNode.parentNode?.replaceChild(fragment, textNode)
 			}
 
+			mergeSpeakSpansAcrossInlines()
+			annotateImages()
 			annotateEquations()
 			appendEquationOperatorHints()
 			expandAcronyms()

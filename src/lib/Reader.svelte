@@ -52,6 +52,12 @@
 	let activeButtonFeedback = $state("")
 	let speakSpanObserver = null
 	let buttonFeedbackTimer = null
+	let showVolumeWarning = $state(false)
+	let isSliding = $state(false)
+	let showThoughtBubble = $state(false)
+	let isIntroVisible = $state(false)
+	let initialReaderTarget = $state(null)
+	let hasRunIntro = $state(false)
 
 	const VIEWPORT_PADDING_PX = 8
 	const SIDE_REVEAL_REM = 3.1
@@ -502,7 +508,11 @@
 		const savedPosition = window.localStorage.getItem(
 			READER_POSITION_STORAGE_KEY,
 		)
-		if (!savedPosition) return
+
+		if (!savedPosition) {
+			initialReaderTarget = {x: 0, y: 0}
+			return
+		}
 
 		try {
 			const parsed = JSON.parse(savedPosition)
@@ -513,14 +523,74 @@
 				return
 			}
 
-			requestAnimationFrame(() => {
-				position = {x: parsed.x, y: parsed.y}
-				syncReaderPositionToViewport({persist: true})
-			})
+			initialReaderTarget = {x: parsed.x, y: parsed.y}
 		} catch {
 			window.localStorage.removeItem(READER_POSITION_STORAGE_KEY)
+			initialReaderTarget = {x: 0, y: 0}
 		}
 	}
+
+	function getFurthestCornerFrom(target) {
+		const viewport = getViewportRect()
+		const readerWidth = readerEl?.offsetWidth ?? 60
+		const readerHeight = readerEl?.offsetHeight ?? 60
+
+		const minX = viewport.left + VIEWPORT_PADDING_PX - READER_BASE_LEFT_PX
+		const maxX =
+			viewport.left +
+			viewport.width -
+			readerWidth -
+			VIEWPORT_PADDING_PX -
+			READER_BASE_LEFT_PX
+		const minY = viewport.top + VIEWPORT_PADDING_PX - READER_BASE_TOP_PX
+		const maxY =
+			viewport.top +
+			viewport.height -
+			readerHeight -
+			VIEWPORT_PADDING_PX -
+			READER_BASE_TOP_PX
+
+		const oppositeX = target.x < (minX + maxX) / 2 ? maxX : minX
+		const oppositeY = target.y < (minY + maxY) / 2 ? maxY : minY
+
+		return clampDragPosition(oppositeX, oppositeY)
+	}
+
+	$effect(() => {
+		if (typeof window === "undefined") return
+		if (!readerEl || !ttsAvailable || !hasSpeakSpans) return
+		if (!initialReaderTarget || hasRunIntro) return
+
+		hasRunIntro = true
+
+		const target = clampDragPosition(
+			initialReaderTarget.x,
+			initialReaderTarget.y,
+		)
+		const start = getFurthestCornerFrom(target)
+
+		showThoughtBubble = false
+		isSliding = false
+		position = start
+		isIntroVisible = true
+
+		requestAnimationFrame(() => {
+			// Ensure the start position is painted before enabling transition.
+			requestAnimationFrame(() => {
+				isSliding = true
+				position = target
+				saveReaderPosition(target)
+
+				setTimeout(() => {
+					isSliding = false
+					showThoughtBubble = true
+					setTimeout(() => {
+						showThoughtBubble = false
+					}, 4000)
+				}, 900)
+			})
+		})
+	})
 
 	function handleViewportChange() {
 		syncReaderPositionToViewport({persist: true})
@@ -825,44 +895,29 @@
 		})
 	}
 
-	// Inline semantic elements whose content should be spoken in ALL CAPS so
-	// that Piper naturally stresses them without inserting element-boundary pauses.
-	const SPOKEN_EMPHASIS_TAGS = new Set([
-		"strong",
-		"b",
-		"em",
-		"i",
-		"mark",
-		"u",
-	])
-
 	/**
 	 * Returns the text to be spoken for an element.
 	 * If the element itself has a data-speak attribute, that value is returned
 	 * directly (short-circuits recursion). Otherwise, child nodes are walked:
-	 * text nodes contribute their textContent; element nodes recurse. Text inside
-	 * semantic emphasis elements (strong, b, em, i, mark, u) is uppercased so
-	 * Piper stresses it naturally without inserting element-boundary pauses.
+	 * text nodes contribute their textContent; element nodes recurse.
 	 * Title abbreviations are expanded to avoid Piper prosodic pauses.
+	 * Note: SSML inline emphasis tags are intentionally not emitted here —
+	 * Piper inserts a prosodic boundary pause at every element edge, which
+	 * makes emphasized words sound more awkward, not less.
 	 */
-	function getSpokenText(el, inEmphasis = false) {
+	function getSpokenText(el) {
 		// Short-circuit: the element itself declares what to speak.
 		const selfOverride = el.getAttribute?.("data-speak")
 		if (selfOverride !== null && selfOverride !== undefined) {
-			const text = expandTitleAbbreviations(selfOverride)
-			return inEmphasis ? text.toUpperCase() : text
+			return expandTitleAbbreviations(selfOverride)
 		}
-
-		const tag = el.tagName?.toLowerCase()
-		const nowInEmphasis = inEmphasis || SPOKEN_EMPHASIS_TAGS.has(tag)
 
 		let result = ""
 		for (const node of el.childNodes) {
 			if (node.nodeType === Node.TEXT_NODE) {
-				const t = node.textContent ?? ""
-				result += nowInEmphasis ? t.toUpperCase() : t
+				result += node.textContent ?? ""
 			} else if (node.nodeType === Node.ELEMENT_NODE) {
-				result += getSpokenText(node, nowInEmphasis)
+				result += getSpokenText(node)
 			}
 		}
 		return expandTitleAbbreviations(result)
@@ -1230,6 +1285,11 @@
 			return
 		}
 
+		if (volume < 0.05) {
+			showVolumeWarning = true
+			return
+		}
+
 		const firstVisible = findFirstVisibleSpeak()
 		if (firstVisible) {
 			startReadingFromSpan(firstVisible)
@@ -1503,6 +1563,35 @@
 </script>
 
 {#if ttsAvailable && !isDeleted && hasSpeakSpans}
+	{#if showVolumeWarning}
+		<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions a11y_interactive_supports_focus -->
+		<div
+			class="volume-warning-backdrop"
+			role="dialog"
+			aria-modal="true"
+			aria-label="Volume too low"
+			tabindex="-1"
+			onclick={() => (showVolumeWarning = false)}
+		>
+			<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+			<div class="volume-warning-box">
+				<p>Your volume appears to be off or very low.</p>
+				<p>Please turn up your device volume to hear the audio.</p>
+				<button
+					class="volume-warning-ok"
+					onclick={() => {
+						showVolumeWarning = false
+						const firstVisible = findFirstVisibleSpeak()
+						if (firstVisible) startReadingFromSpan(firstVisible)
+					}}>Play anyway</button
+				>
+				<button
+					class="volume-warning-dismiss"
+					onclick={() => (showVolumeWarning = false)}>Dismiss</button
+				>
+			</div>
+		</div>
+	{/if}
 	{#if isDragging}
 		<div class="trash-overlay" class:trash-hovering={trashHovering}>
 			<Trash2 strokeWidth={1.5} />
@@ -1512,6 +1601,8 @@
 	<div
 		class="reader-container"
 		class:controls-expanded={isReading && !isPaused}
+		class:sliding-in={isSliding}
+		class:intro-hidden={!isIntroVisible}
 		role="button"
 		tabindex="0"
 		bind:this={readerEl}
@@ -1519,6 +1610,9 @@
 		onmousedown={handleMouseDown}
 		ontouchstart={handleTouchStart}
 	>
+		{#if showThoughtBubble}
+			<div class="thought-bubble">I can read it for you</div>
+		{/if}
 		{#if isReading}
 			<button
 				class="reader-btn side-btn prev-btn"
@@ -1629,6 +1723,80 @@
 
 	.reader-container:active {
 		cursor: grabbing;
+	}
+
+	.reader-container.sliding-in {
+		transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.reader-container.intro-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.thought-bubble {
+		position: absolute;
+		bottom: calc(100% + 0.6rem);
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+			"Lucida Sans", Arial, sans-serif;
+		white-space: nowrap;
+		background: var(--button-bg, #fff);
+		color: var(--text-primary, #111);
+		border: 1px solid var(--border-color, #ccc);
+		border-radius: 1rem;
+		padding: 0.45rem 0.9rem;
+		font-size: 0.8rem;
+		box-shadow: 0 4px 12px var(--shadow-medium, rgba(0, 0, 0, 0.15));
+		animation:
+			bubble-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+			bubble-out 0.3s ease-in 3.7s both;
+		pointer-events: none;
+		z-index: 10;
+	}
+
+	.thought-bubble::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		border: 6px solid transparent;
+		border-top-color: var(--border-color, #ccc);
+	}
+
+	.thought-bubble::before {
+		content: "";
+		position: absolute;
+		top: calc(100% - 1px);
+		left: 50%;
+		transform: translateX(-50%);
+		border: 6px solid transparent;
+		border-top-color: var(--button-bg, #fff);
+		z-index: 1;
+	}
+
+	@keyframes bubble-in {
+		from {
+			opacity: 0;
+			transform: translateX(-50%) scale(0.7);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-50%) scale(1);
+		}
+	}
+
+	@keyframes bubble-out {
+		from {
+			opacity: 1;
+			transform: translateX(-50%) scale(1);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(-50%) scale(0.7);
+		}
 	}
 
 	.reader-btn {
@@ -1841,6 +2009,58 @@
 		transition: color 0.2s ease;
 		pointer-events: none;
 		padding: 50px;
+	}
+
+	.volume-warning-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 2000;
+		background: rgba(0, 0, 0, 0.45);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		backdrop-filter: blur(4px);
+	}
+
+	.volume-warning-box {
+		background: var(--button-bg, #fff);
+		color: var(--text-primary, #111);
+		border: 1px solid var(--border-color, #ccc);
+		border-radius: 1rem;
+		padding: 1.5rem 2rem;
+		max-width: 22rem;
+		text-align: center;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.volume-warning-box p {
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.volume-warning-ok,
+	.volume-warning-dismiss {
+		appearance: none;
+		border-radius: 2rem;
+		padding: 0.5rem 1.25rem;
+		cursor: pointer;
+		font-size: 0.9rem;
+		transition: background 0.2s ease;
+	}
+
+	.volume-warning-ok {
+		background: var(--button-hover-bg, #333);
+		color: var(--text-primary, #111);
+		border: 1px solid var(--border-hover, #999);
+	}
+
+	.volume-warning-dismiss {
+		background: transparent;
+		color: var(--text-muted, #666);
+		border: 1px solid var(--border-color, #ccc);
 	}
 
 	.trash-overlay :global(svg) {
