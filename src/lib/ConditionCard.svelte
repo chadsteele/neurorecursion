@@ -76,17 +76,15 @@
 
 		<h3>{condition.name}</h3>
 
-		{#if condition.type !== "virtue"}
-			<div class="condition-description">
-				A single traumatic moment that takes a fraction of a second can
-				create limbic loops that can terrorize you for a lifetime. This
-				employs the same neuroplasticity, but without the trauma, and it
-				works in reverse. As powerfully as trauma can cause a lifetime
-				of fear and suffering, this process can cause a lifetime of
-				freedom from it.
-			</div>
-			<p>This could be your breakthrough. Let's do this!</p>
-		{/if}
+		<div class="condition-description">
+			A single traumatic moment that takes a fraction of a second can
+			create limbic loops that can terrorize you for a lifetime. This
+			employs the same neuroplasticity, but without the trauma, and it
+			works in reverse. As powerfully as trauma can cause a lifetime of
+			fear and suffering, this process can cause a lifetime of freedom
+			from it.
+		</div>
+		<p>This could be your breakthrough. Let's do this!</p>
 
 		<div class="condition-description">
 			{@html condition?.description
@@ -97,38 +95,40 @@
 				.join("")}
 		</div>
 
-		<div class="disclaimer-block">
-			<h4>Disclaimer</h4>
-			This study is conducted for neuroscience research purposes and does not constitute medical treatment, psychological counseling, or clinical therapy. The researcher is a student of neuroscience and is not a licensed medical doctor or psychologist. All procedures are strictly for investigative data collection; therefore, participants should not interpret any part of this interaction as medical advice or a substitute for professional healthcare.
-		</div>
+		<p>This could be your breakthrough. Let's do this! Sign up now.</p>
 
-		{#if condition.type !== "virtue"}
-			<p>This could be your breakthrough. Let's do this! Sign up now.</p>
+		{#if !isVirtue}
+			<p><strong>Disclaimer:</strong></p>
+			This study is conducted for neuroscience research purposes and does not
+			constitute medical treatment, psychological counseling, or clinical therapy.
+			The researcher is a student of neuroscience and is not a licensed medical
+			doctor or psychologist. All procedures are strictly for investigative
+			data collection; therefore, participants should not interpret any part
+			of this interaction as medical advice or a substitute for professional
+			healthcare.
 		{/if}
 
 		<Speak off force>
 			<div class="condition-links">
-				{#if condition.type !== "virtue"}
-					<label class="toggle-slider">
-						<input
-							type="checkbox"
-							{checked}
-							onchange={handleCheckedChange}
-						/>
-						<span class="slider"></span>
-						<span class="toggle-label">
-							{formData.conditions &&
-							condition.name &&
-							formData.conditions[condition.name]
-								? "Yes, maybe?"
-								: "No, not me!"}
-						</span>
-					</label>
-					<a type="button" class="signup-btn" href="/signup">
-						<CheckCircle2 size={18} strokeWidth={2} />
-						Sign up!
-					</a>
-				{/if}
+				<label class="toggle-slider">
+					<input
+						type="checkbox"
+						{checked}
+						onchange={handleCheckedChange}
+					/>
+					<span class="slider"></span>
+					<span class="toggle-label">
+						{formData.conditions &&
+						condition.name &&
+						formData.conditions[condition.name]
+							? "Yes, maybe?"
+							: "No, not me!"}
+					</span>
+				</label>
+				<a type="button" class="signup-btn" href="/signup">
+					<CheckCircle2 size={18} strokeWidth={2} />
+					Sign up!
+				</a>
 
 				{#if condition.ngo_url}
 					<a href={condition.ngo_url} target="_blank" rel="noopener">
@@ -137,7 +137,7 @@
 					</a>
 				{/if}
 
-				{#if condition.type !== "virtue"}
+				{#if !isVirtue}
 					<a
 						href={`https://www.google.com/search?q=near+me+${encodeURIComponent(condition.name)}`}
 						target="_blank"
@@ -164,15 +164,11 @@
 						<Play size={18} strokeWidth={2} />
 						Watch
 					</a>
-					<button
-						type="button"
-						class="share-btn"
-						onclick={handleShare}
-					>
-						<Share2 size={18} strokeWidth={2} />
-						Share
-					</button>
 				{/if}
+				<button type="button" class="share-btn" onclick={handleShare}>
+					<Share2 size={18} strokeWidth={2} />
+					Share
+				</button>
 			</div>
 		</Speak>
 
@@ -357,7 +353,7 @@
 		color: #ffbdbd;
 		font-size: 1rem;
 		font-style: italic;
-		box-shadow: 0 2px 8px 0 rgba(74,159,216,0.07);
+		box-shadow: 0 2px 8px 0 rgba(74, 159, 216, 0.07);
 	}
 	.disclaimer-block h4 {
 		color: #e57373;
