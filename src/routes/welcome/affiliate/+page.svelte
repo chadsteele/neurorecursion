@@ -46,17 +46,18 @@
 		<div class="paper container page-stack">
 			<div class="section-shell teaser-shell">
 				<div class="teaser-copy">
-					<h2>Show me the money!</h2>
-					<div class="teaser-links">
-						<a href="#math" class="primary-link">10% commission</a>
-						<a href="#math" class="primary-link">$10k example</a>
-						<a href="#math" class="primary-link">$25k example</a>
-						<a href="#math" class="primary-link">$60k example</a>
-					</div>
-					<div>
-						NeuroRecursion offers a flat 10% commission on referred
-						purchases, tracked end to end, with revenue scenarios
-						below so you can evaluate the opportunity without hype.
+					<h2>The "Custom Control" Partner Program</h2>
+					<div class="elevator-pitch">
+						<strong>Elevator Pitch:</strong> <br />
+						<em
+							>Stop guessing if your audience is using your links.
+							With our platform, you are the architect. Create
+							your own branded discount codes, set the incentive
+							level that fits your audience, and watch your
+							conversions soar. Because you choose the discount,
+							we can offer higher base commissions and total
+							transparency. Your brand, your code, your profit.</em
+						>
 					</div>
 				</div>
 				<div class="teaser-visual">
@@ -69,22 +70,41 @@
 			</div>
 			<div class="hero-panel">
 				<div class="hero-copy">
-					<h1>
-						Your recovery story is worth something. <br />To you and
-						to others.
-					</h1>
+					<h1>Your code. Your brand. Your profit.</h1>
 					<p class="lead">
-						When you share what worked, you do two things at once:
-						you help someone else find their way out, and you build
-						something real from your own breakthrough. The
-						NeuroRecursion affiliate program formalizes what
-						naturally happens when recovery is genuine.
+						<strong
+							>Plain English: How It Works & Why It’s Great</strong
+						>
 					</p>
 					<p>
-						You arrived with an ID. Every click you create is
-						tracked. Every person who lands here through your link
-						is known. All that's left is to get registered so we can
-						honor your work with real payment.
+						<strong>The Problem:</strong> Most affiliate programs are
+						"black boxes." You share a link, and you hope the cookies
+						work. If a customer manually types in a generic "SAVE10"
+						code they found on a coupon site, you lose your commission.
+					</p>
+					<p>
+						<strong>The Solution:</strong> We give you a unique
+						4-digit ID (like <code>B7X9</code>). You can create up
+						to <strong>10 free discount codes</strong> with your
+						prefix (e.g., <code>B7X9_SUMMER</code>). Want a code
+						without your prefix? <strong>Premium codes</strong> (no prefix)
+						are available as well.
+					</p>
+					<p>
+						<strong>Total Attribution:</strong> Because the code is tied
+						to your ID, if a customer types it in, you get paid. No cookie-clearing
+						"leakage."
+					</p>
+					<p>
+						<strong>Flexible Incentives:</strong> You can choose a 5%
+						discount for high-ticket items or 20% for a flash sale.
+					</p>
+					<p>
+						<strong>Margin Protection:</strong> To keep the program sustainable,
+						your commission is dynamic. If you give a bigger discount
+						to your fans, your per-sale commission adjusts. This allows
+						us to give you a much higher "ceiling" for earnings than
+						traditional fixed-rate programs.
 					</p>
 					<div class="hero-actions">
 						<a
@@ -93,49 +113,8 @@
 							rel="noopener"
 							class="primary-link"
 						>
-							→ Register as affiliate
+							→ Register as a partner
 						</a>
-						<button
-							type="button"
-							class="share-trigger"
-							onclick={handleShare}
-						>
-							<Share2Icon size={18} strokeWidth={2} />
-							Share this
-						</button>
-					</div>
-				</div>
-
-				<div class="hero-stats">
-					<div class="stat-card glow">
-						<div class="stat-label">The real reason to do this</div>
-						<div class="stat-value">Empathy</div>
-						<p>
-							You know what it's like to be trapped in a loop. You
-							know the cost. You know the relief when it breaks.
-							That knowing is something most marketers will never
-							have. It is credible, rare, and transferable.
-						</p>
-					</div>
-					<div class="stat-card">
-						<div class="stat-label">The second reason</div>
-						<div class="stat-value">Purpose</div>
-						<p>
-							Sharing your recovery is not selling. It is
-							testimony. It is evidence. It is an invitation to
-							someone else to try what worked for you. When they
-							get better, you get better too. The ROI is human.
-						</p>
-					</div>
-					<div class="stat-card">
-						<div class="stat-label">The practical reason</div>
-						<div class="stat-value">Money</div>
-						<p>
-							10% commission on every purchase your referral
-							makes. Simple. Sustainable. No tricks. The math can
-							be good if your audience is real and your message is
-							true.
-						</p>
 					</div>
 				</div>
 			</div>
@@ -198,42 +177,68 @@
 			</div>
 
 			<div class="section-shell how-it-works-shell">
-				<h2>How it actually works</h2>
+				<h2>How the Custom Control Program Works</h2>
 				<div class="timeline-grid">
 					<article class="timeline-card">
 						<div class="timeline-number">1</div>
-						<h3>You already have an ID</h3>
+						<h3>Get Your Unique ID</h3>
 						<p>
-							When you first arrived here, the system gave you a
-							unique affiliate identifier. It's been with you
-							since that moment.
+							When you join, you receive a unique 4-character
+							Partner ID (e.g., <code>B7X9</code>).
 						</p>
 					</article>
 					<article class="timeline-card">
 						<div class="timeline-number">2</div>
-						<h3>Every share gets tracked</h3>
+						<h3>Create Your Own Codes</h3>
 						<p>
-							Share a link to any product page, training, or your
-							own breakthrough story. If someone clicks it, the
-							system knows it was you.
+							You can create up to <strong
+								>10 free discount codes</strong
+							>
+							with your unique prefix (e.g.,
+							<code>B7X9_SUMMER</code>,
+							<code>B7X9_JANETHECOACH</code>). Need more or want a
+							code without your prefix?
+							<strong>Premium codes</strong> (no prefix) are available
+							for purchase.
 						</p>
 					</article>
 					<article class="timeline-card">
 						<div class="timeline-number">3</div>
-						<h3>They buy, you earn</h3>
+						<h3>Set Your Discount</h3>
 						<p>
-							If someone who clicks your link purchases a product,
-							you get 10% of that purchase. No expiration. No
-							games. Clean accounting.
+							Choose the discount percentage for each code. Go big
+							for a flash sale, or keep it modest for evergreen
+							offers.
 						</p>
 					</article>
 					<article class="timeline-card">
 						<div class="timeline-number">4</div>
-						<h3>We send you payment</h3>
+						<h3>Share and Track</h3>
 						<p>
-							Register your account in LemonSqueezy, provide
-							payment details, and you're ready to receive
-							commissions. We process payouts monthly.
+							Share your code anywhere. <strong
+								>Your discount codes are automatically applied
+								at checkout for customers who use your link</strong
+							>—no need for them to type it in. If multiple codes
+							are present, the last one wins. If a customer enters
+							your code manually, you get full credit—no cookies,
+							no tracking leaks.
+						</p>
+					</article>
+					<article class="timeline-card">
+						<div class="timeline-number">5</div>
+						<h3>Earn Dynamic Commissions</h3>
+						<p>
+							The higher the discount you offer, the more your
+							commission adjusts. This keeps the program
+							sustainable and lets you earn more overall.
+						</p>
+					</article>
+					<article class="timeline-card">
+						<div class="timeline-number">6</div>
+						<h3>Get Paid, Transparently</h3>
+						<p>
+							All code redemptions are tracked to you. Payouts are
+							monthly, with a full dashboard for transparency.
 						</p>
 					</article>
 				</div>
@@ -527,72 +532,68 @@
 			</div>
 
 			<div id="math" class="section-shell money-shell">
-				<h2>Money: The math that works</h2>
+				<h2>Money: Example Scenarios</h2>
 				<p>
-					Commission is 10% of every purchase your referral makes.
-					There is no upper limit. No capping. No games.
+					<strong>Commission is dynamic:</strong> The more generous your
+					discount, the more your commission adjusts. This lets you run
+					high-incentive campaigns without losing out on total earnings.
+					Here are some example scenarios:
 				</p>
-
 				<div class="revenue-examples">
 					<div class="revenue-card">
 						<div class="revenue-scenario">
-							<h4>Conservative: 50 referrals per month</h4>
-							<p>Average purchase value: $200</p>
+							<h4>Evergreen: 5% discount</h4>
+							<p>Base commission: <strong>15%</strong></p>
 						</div>
 						<div class="revenue-math">
 							<div class="math-row">
-								<span>50 referrals × $200</span>
+								<span>50 redemptions × $200</span>
 								<strong>$10,000</strong>
 							</div>
 							<div class="math-row">
-								<span>10% commission</span>
-								<strong>$1,000/month</strong>
+								<span>15% commission</span>
+								<strong>$1,500/month</strong>
 							</div>
 						</div>
 					</div>
-
 					<div class="revenue-card">
 						<div class="revenue-scenario">
-							<h4>Moderate: 100 referrals per month</h4>
-							<p>Average purchase value: $250</p>
+							<h4>Flash Sale: 20% discount</h4>
+							<p>Commission: <strong>8%</strong></p>
 						</div>
 						<div class="revenue-math">
 							<div class="math-row">
-								<span>100 referrals × $250</span>
+								<span>100 redemptions × $250</span>
 								<strong>$25,000</strong>
 							</div>
 							<div class="math-row">
-								<span>10% commission</span>
-								<strong>$2,500/month</strong>
+								<span>8% commission</span>
+								<strong>$2,000/month</strong>
 							</div>
 						</div>
 					</div>
-
 					<div class="revenue-card">
 						<div class="revenue-scenario">
-							<h4>Ambitious: 200 referrals per month</h4>
-							<p>Average purchase value: $300</p>
+							<h4>Custom Campaign: 10% discount</h4>
+							<p>Commission: <strong>12%</strong></p>
 						</div>
 						<div class="revenue-math">
 							<div class="math-row">
-								<span>200 referrals × $300</span>
+								<span>200 redemptions × $300</span>
 								<strong>$60,000</strong>
 							</div>
 							<div class="math-row">
-								<span>10% commission</span>
-								<strong>$6,000/month</strong>
+								<span>12% commission</span>
+								<strong>$7,200/month</strong>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<p class="revenue-note">
-					These numbers represent potential, not guarantees. Real
-					results depend on audience size, message quality, platform
-					reach, and the genuine relevance of NeuroRecursion to your
-					audience. But the math is real, the commission is real, and
-					people do earn this kind of income from affiliate work when
-					audience and offer align.
+					These numbers are for illustration. Your actual commission
+					depends on the discount you set and the volume you drive.
+					The more creative and relevant your codes, the more you can
+					earn.
 				</p>
 			</div>
 
@@ -799,9 +800,12 @@
 	}
 
 	.timeline-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.timeline-card {
+		/* Remove min-width and flex for vertical layout */
 	}
 
 	.timeline-card {
@@ -1172,5 +1176,19 @@
 
 	#math {
 		scroll-margin-top: 80px;
+	}
+
+	.hero-panel {
+		width: 100%;
+		display: block;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.hero-copy {
+		width: 100%;
+		margin: 0;
+		max-width: none;
+		box-sizing: border-box;
 	}
 </style>

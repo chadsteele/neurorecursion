@@ -1436,6 +1436,16 @@
 			return
 		}
 
+		// If scrolled to (or near) the top, highlight the very first span
+		if (window.scrollY < 4) {
+			const spans = findAllSpeakSpans()
+			if (spans.length && currentSpan !== spans[0]) {
+				currentSpan = spans[0]
+				highlightSpan(spans[0])
+			}
+			return
+		}
+
 		const firstVisible = findFirstVisibleSpeak()
 		if (firstVisible && firstVisible !== currentSpan) {
 			currentSpan = firstVisible
