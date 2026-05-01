@@ -9,6 +9,16 @@
 	import PageBackground from "$lib/PageBackground.svelte"
 	import Speak from "$lib/Speak.svelte"
 
+	let referrer = ""
+	onMount(() => {
+		if (typeof window !== "undefined") {
+			referrer =
+				localStorage.getItem("original_referrer") ||
+				window.__original_referrer ||
+				""
+		}
+	})
+
 	let formData = $state({
 		signupData: {
 			name: "",
@@ -201,6 +211,7 @@
 			<!-- Hidden field for Netlify Forms -->
 			<input type="hidden" name="form-name" value="consent" />
 			<input type="hidden" name="form_path" value="" />
+			<input type="hidden" name="original_referrer" value={referrer} />
 			<input
 				type="hidden"
 				name="signup_name"

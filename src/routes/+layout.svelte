@@ -16,6 +16,24 @@
 	let {children} = $props()
 
 	onMount(() => {
+		// --- Referrer capture logic ---
+		const REFERRER_KEY = "original_referrer"
+		if (typeof window !== "undefined") {
+			const existing = localStorage.getItem(REFERRER_KEY)
+			if (!existing) {
+				let ref = document.referrer
+				// Optionally, check for UTM params
+				const urlParams = new URLSearchParams(window.location.search)
+				const utmSource = urlParams.get("utm_source")
+				if (utmSource) {
+					ref = window.location.href
+				}
+				localStorage.setItem(REFERRER_KEY, ref || "")
+				window.__original_referrer = ref || ""
+			} else {
+				window.__original_referrer = existing
+			}
+		}
 		const syncOfflinePreference = async () => {
 			if (!isOfflineEnabled()) {
 				await disableOfflineResources()

@@ -5,12 +5,43 @@
 		handleLocalFormNavigation,
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
+	import rawConditions from "$data/Conditions.js"
+	import rawVirtues from "$data/Virtues.js"
+
+	import {onMount} from "svelte"
+	let referrer = $state("")
+	onMount(() => {
+		if (typeof window !== "undefined") {
+			referrer =
+				localStorage.getItem("original_referrer") ||
+				window.__original_referrer ||
+				""
+		}
+	})
 
 	let {
 		formData = {conditions: {}},
 		getCondition = null,
-		ConditionsMap = {},
+		ConditionsMap: passedConditionsMap = {},
 	} = $props()
+
+	// Merge conditions and virtues
+	const mergedConditions = [...rawConditions, ...rawVirtues]
+	const ConditionsMap = Object.fromEntries(
+		mergedConditions.map((c) => [c.id, c]),
+	)
+
+	// getCondition helper for suggestion matching
+	if (!getCondition) {
+		getCondition = (word) => {
+			word = word.toLowerCase()
+			return mergedConditions.find(
+				(c) =>
+					c.name.toLowerCase().includes(word) ||
+					c.id.toLowerCase().includes(word),
+			)
+		}
+	}
 	let conditionSuggestion = $state("")
 	let suggestionDebounceTimer = $state(null)
 
@@ -122,11 +153,22 @@
 			const maxSelections = Math.min(words.length, words.length)
 			const selectedConditions = new Set()
 
+			// Always use the latest getCondition or fallback
+			const getCond =
+				typeof getCondition === "function"
+					? getCondition
+					: (word) =>
+							mergedConditions.find(
+								(c) =>
+									c.name.toLowerCase().includes(word) ||
+									c.id.toLowerCase().includes(word),
+							)
+
 			// For each word, find the best matching condition
 			for (const word of words) {
 				if (selectedConditions.size >= maxSelections) break
 
-				const matchedCondition = getCondition(word)
+				const matchedCondition = getCond(word)
 				if (matchedCondition) {
 					selectedConditions.add(matchedCondition.name)
 				}
@@ -245,6 +287,7 @@
 		<input type="hidden" name="form-name" value="signup" />
 		<input type="hidden" name="form_path" value="" />
 		<input type="hidden" name="conditions" value={selectedConditions} />
+		<input type="hidden" name="original_referrer" value={referrer} />
 		<!-- Honeypot field for spam protection -->
 		<div class="hidden">
 			<label for="bot-field">

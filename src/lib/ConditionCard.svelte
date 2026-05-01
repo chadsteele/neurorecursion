@@ -97,6 +97,11 @@
 				.join("")}
 		</div>
 
+		<div class="disclaimer-block">
+			<h4>Disclaimer</h4>
+			This study is conducted for neuroscience research purposes and does not constitute medical treatment, psychological counseling, or clinical therapy. The researcher is a student of neuroscience and is not a licensed medical doctor or psychologist. All procedures are strictly for investigative data collection; therefore, participants should not interpret any part of this interaction as medical advice or a substitute for professional healthcare.
+		</div>
+
 		{#if condition.type !== "virtue"}
 			<p>This could be your breakthrough. Let's do this! Sign up now.</p>
 		{/if}
@@ -342,5 +347,24 @@
 		font-size: clamp(0.7rem, 2vw, 0.95rem);
 		color: #a0d8ff;
 		min-width: 35px;
+	}
+	.disclaimer-block {
+		background: rgba(255, 255, 255, 0.07);
+		border-left: 4px solid #e57373;
+		border-radius: 6px;
+		padding: 1.1rem 1.25rem 1.1rem 1.5rem;
+		margin: 2rem 0 1.5rem 0;
+		color: #ffbdbd;
+		font-size: 1rem;
+		font-style: italic;
+		box-shadow: 0 2px 8px 0 rgba(74,159,216,0.07);
+	}
+	.disclaimer-block h4 {
+		color: #e57373;
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		font-weight: 700;
+		letter-spacing: 0.01em;
 	}
 </style>

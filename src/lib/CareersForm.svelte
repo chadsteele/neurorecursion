@@ -6,6 +6,17 @@
 		saveNetlifySuccessContext,
 	} from "$lib/netlifySuccess.js"
 
+	import {onMount} from "svelte"
+	let referrer = ""
+	onMount(() => {
+		if (typeof window !== "undefined") {
+			referrer =
+				localStorage.getItem("original_referrer") ||
+				window.__original_referrer ||
+				""
+		}
+	})
+
 	let {jobId = ""} = $props()
 
 	let formData = $state({
@@ -166,6 +177,7 @@
 	<!-- Hidden field for Netlify Forms -->
 	<input type="hidden" name="form-name" value="careers" />
 	<input type="hidden" name="form_path" value="" />
+	<input type="hidden" name="original_referrer" value={referrer} />
 	<!-- Job ID field -->
 	{#if jobId}
 		<input type="hidden" name="job_id" value={jobId} />

@@ -141,7 +141,7 @@
 						<div class="stat-label">The practical reason</div>
 						<div class="stat-value">Money</div>
 						<p>
-							10% commission on every purchase your referral
+							Up to 50% commission on every purchase your referral
 							makes. Simple. Sustainable. No tricks. The math can
 							be good if your audience is real and your message is
 							true.
@@ -233,17 +233,21 @@
 						<h3>They buy, you earn</h3>
 						<p>
 							If someone who clicks your link purchases a product,
-							you get 10% of that purchase. No expiration. No
-							games. Clean accounting.
+							you get up to 50% of that purchase. No expiration.
+							No games. Clean accounting.
 						</p>
 					</article>
 					<article class="timeline-card">
 						<div class="timeline-number">4</div>
 						<h3>We send you payment</h3>
 						<p>
-							Register your account in LemonSqueezy, provide
-							payment details, and you're ready to receive
-							commissions. We process payouts monthly.
+							Register your account, provide payment details, and
+							you're ready to receive commissions. We process
+							payouts monthly.
+						</p>
+						<p>
+							<sup>*</sup>We use Stripe to ensure secure and
+							timely payments.
 						</p>
 					</article>
 				</div>
