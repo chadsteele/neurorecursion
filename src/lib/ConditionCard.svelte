@@ -33,7 +33,9 @@
 		}
 	}
 
-	let isVirtue = $derived(!RelatedVirtues[condition.id])
+	import VirtuesList from "$data/Virtues.js"
+
+	let isVirtue = $derived(VirtuesList.some((v) => v.id === condition.id))
 	let relatedVirtueIds = $derived(
 		isVirtue ? [] : (RelatedVirtues[condition.id] ?? []),
 	)
