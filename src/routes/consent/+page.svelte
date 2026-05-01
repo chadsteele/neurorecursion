@@ -9,7 +9,7 @@
 	import PageBackground from "$lib/PageBackground.svelte"
 	import Speak from "$lib/Speak.svelte"
 
-	let referrer = ""
+	let referrer = $state("")
 	onMount(() => {
 		if (typeof window !== "undefined") {
 			referrer =

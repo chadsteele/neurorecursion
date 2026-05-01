@@ -7,31 +7,42 @@
 	// Supported call styles:
 	// - <Speak>, <Speak on>, <Speak off>
 	// When both on and off are present, default to on.
-	const isLocalOn = on === true ? true : off === true ? false : true
 
-	const parentForcedOn = getContext("speak:forcedOn") ?? false
-	const parentForcedOff = getContext("speak:forcedOff") ?? false
-
-	// Innermost force wins: force-on clears inherited forced-off and vice versa
-	setContext(
-		"speak:forcedOn",
-		isLocalOn && force
-			? true
-			: !isLocalOn && force
-				? false
-				: parentForcedOn,
+	const isLocalOn = $derived(() =>
+		on === true ? true : off === true ? false : true,
 	)
-	setContext(
-		"speak:forcedOff",
-		!isLocalOn && force
-			? true
-			: isLocalOn && force
-				? false
-				: parentForcedOff,
+	const parentForcedOn = $derived(() => getContext("speak:forcedOn") ?? false)
+	const parentForcedOff = $derived(
+		() => getContext("speak:forcedOff") ?? false,
 	)
 
-	// Active if a parent forced it on, or mode is "on" and no parent forced it off
-	const isActive = parentForcedOn || (isLocalOn && !parentForcedOff)
+	$effect(() => {
+		// Innermost force wins: force-on clears inherited forced-off and vice versa
+		setContext(
+			"speak:forcedOn",
+			isLocalOn
+				? force
+					? true
+					: parentForcedOn
+				: force
+					? false
+					: parentForcedOn,
+		)
+		setContext(
+			"speak:forcedOff",
+			!isLocalOn
+				? force
+					? true
+					: parentForcedOff
+				: force
+					? false
+					: parentForcedOff,
+		)
+	})
+
+	const isActive = $derived(
+		() => parentForcedOn || (isLocalOn && !parentForcedOff),
+	)
 	let contentEl = $state(null)
 	let observer = null
 	let isWrapping = false

@@ -1,5 +1,14 @@
 <script>
-	import {tick} from "svelte"
+	import {tick, onMount} from "svelte"
+	let referrer = $state("")
+	onMount(() => {
+		if (typeof window !== "undefined") {
+			referrer =
+				localStorage.getItem("original_referrer") ||
+				window.__original_referrer ||
+				""
+		}
+	})
 	import {
 		Share2 as Share2Icon,
 		ShoppingCart as CheckoutIcon,
@@ -1181,11 +1190,13 @@
 					<input type="hidden" name="form_path" value="" />
 					<input type="hidden" name="selected_products" value="" />
 					<input type="hidden" name="estimated_total" value="" />
-					<input
-						type="hidden"
-						name="original_referrer"
-						value={referrer}
-					/>
+					{#if typeof window !== "undefined"}
+						<input
+							type="hidden"
+							name="original_referrer"
+							value={referrer}
+						/>
+					{/if}
 
 					<div class="hidden-field" aria-hidden="true">
 						<label for="bot-field-future-order">

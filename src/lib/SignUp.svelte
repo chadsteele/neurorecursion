@@ -31,17 +31,7 @@
 		mergedConditions.map((c) => [c.id, c]),
 	)
 
-	// getCondition helper for suggestion matching
-	if (!getCondition) {
-		getCondition = (word) => {
-			word = word.toLowerCase()
-			return mergedConditions.find(
-				(c) =>
-					c.name.toLowerCase().includes(word) ||
-					c.id.toLowerCase().includes(word),
-			)
-		}
-	}
+	// getCondition fallback logic is now handled inside selectConditionsBySuggestion to avoid Svelte closure warning
 	let conditionSuggestion = $state("")
 	let suggestionDebounceTimer = $state(null)
 

@@ -7,7 +7,7 @@
 	} from "$lib/netlifySuccess.js"
 
 	import {onMount} from "svelte"
-	let referrer = ""
+	let referrer = $state("")
 	onMount(() => {
 		if (typeof window !== "undefined") {
 			referrer =
